@@ -5,6 +5,10 @@ app_description = "custom"
 app_email = "shailesh.parmar@aavatto.com"
 app_license = "mit"
 
+app_include_js = [
+    "/assets/custom_dashboard/dist/aavatto_test.bundle.js"
+]
+
 # Apps
 # ------------------
 
