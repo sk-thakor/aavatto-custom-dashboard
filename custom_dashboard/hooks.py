@@ -9,6 +9,10 @@ app_include_js = [
     "/assets/custom_dashboard/dist/aavatto_test.bundle.js"
 ]
 
+app_include_css = [
+    "/assets/custom_dashboard/css/styles.css"
+]
+
 # Apps
 # ------------------
 
