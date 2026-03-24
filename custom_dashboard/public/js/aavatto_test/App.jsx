@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Dashboard from "./pages/Dashboard";
 import Customers from "./pages/Customers";
 import Orders from "./pages/Orders";
+import "./styles.css";
 
 const App = () => {
     const [currentRoute, setCurrentRoute] = useState("");
@@ -21,11 +22,13 @@ const App = () => {
             }
         };
 
+        window.update_aavatto_react_route = handleRoute;
         window.addEventListener("hashchange", handleRoute);
         handleRoute(); // Initial sync
 
         return () => {
             window.removeEventListener("hashchange", handleRoute);
+            delete window.update_aavatto_react_route;
         };
     }, []);
 
@@ -44,9 +47,9 @@ const App = () => {
     };
 
     return (
-        <div style={{ border: "4px solid red", minHeight: "100%", width: "100%", background: "#fff" }}>
+        <div style={{paddingTop:"20px"}}>
             <Navbar />
-            <div style={{ padding: "20px" }}>
+            <div style={{ padding: "20px 0px" }}>
                 {renderPage()}
             </div>
         </div>

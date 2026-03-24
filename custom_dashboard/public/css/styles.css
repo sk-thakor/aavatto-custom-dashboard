@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+.layout {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 220px;
+    background: #1e1e2f;
+    color: white;
+    padding: 20px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+}
+
+.logo {
+    margin: 0;
+}
+
+.content {
+    flex: 1;
+    padding: 30px;
+    background: #fff;
+}
+
+.card {
+    padding: 10px;
+    background: white;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+.page-container {
+    padding-top: 20px !important;
+}
+
+.page-head {
+    display: none !important;
+}
+
+.test {
+    background: #000;
+    color: white;
+}

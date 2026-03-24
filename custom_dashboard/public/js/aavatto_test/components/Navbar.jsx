@@ -9,7 +9,7 @@ const Navbar = () => {
 
   return (
     <div style={styles.navbar}>
-      <h3 style={styles.logo}>Aavatto App</h3>
+      <h3 className="test" style={styles.logo}>Aavatto App</h3>
 
       <div style={styles.links}>
         <button onClick={() => handleNav("")} style={styles.link}>Dashboard</button>
