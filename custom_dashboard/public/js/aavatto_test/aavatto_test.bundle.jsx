@@ -1,7 +1,11 @@
-import * as React from "react";
+import React from "react";
 import { App } from "./App";
 import { createRoot } from "react-dom/client";
-import { HashRouter, MemoryRouter } from "react-router-dom";
+
+if (typeof $ !== "undefined" && $("#react-root").length) {
+    $("#react-root").append("<p style='color: green;'>Bundle JS self-execution started!</p>");
+}
+console.log("AavattoTest Bundle script executing...");
 
 class AavattoTest {
 	constructor({ page, wrapper }) {
@@ -26,9 +30,7 @@ class AavattoTest {
 	setup_app() {
 		const root = createRoot(this.$wrapper.get(0));
 		root.render(
-			<MemoryRouter>
-				<App />
-			</MemoryRouter>
+			<App />
 		);
 		this.$aavatto_test = root;
 	}
