@@ -10,9 +10,8 @@ app_include_js = [
 ]
 
 app_include_css = [
-    "/assets/custom_dashboard/css/styles.css",
+    # "/assets/custom_dashboard/css/styles.css",
     "/apps/custom_dashboard/custom_dashboard/public/css/styles.css"
-
 ]
 
 # Apps

@@ -60,7 +60,7 @@
       "use strict";
       (function() {
         function defineDeprecationWarning(methodName, info) {
-          Object.defineProperty(Component5.prototype, methodName, {
+          Object.defineProperty(Component7.prototype, methodName, {
             get: function() {
               console.warn(
                 "%s(...) is deprecated in plain JavaScript React classes. %s",
@@ -85,7 +85,7 @@
             publicInstance
           ), didWarnStateUpdateForUnmountedComponent[warningKey] = true);
         }
-        function Component5(props, context, updater) {
+        function Component7(props, context, updater) {
           this.props = props;
           this.context = context;
           this.refs = emptyObject;
@@ -273,9 +273,9 @@
           return newKey;
         }
         function validateChildKeys(node2) {
-          isValidElement27(node2) ? node2._store && (node2._store.validated = 1) : "object" === typeof node2 && null !== node2 && node2.$$typeof === REACT_LAZY_TYPE && ("fulfilled" === node2._payload.status ? isValidElement27(node2._payload.value) && node2._payload.value._store && (node2._payload.value._store.validated = 1) : node2._store && (node2._store.validated = 1));
+          isValidElement28(node2) ? node2._store && (node2._store.validated = 1) : "object" === typeof node2 && null !== node2 && node2.$$typeof === REACT_LAZY_TYPE && ("fulfilled" === node2._payload.status ? isValidElement28(node2._payload.value) && node2._payload.value._store && (node2._payload.value._store.validated = 1) : node2._store && (node2._store.validated = 1));
         }
-        function isValidElement27(object4) {
+        function isValidElement28(object4) {
           return "object" === typeof object4 && null !== object4 && object4.$$typeof === REACT_ELEMENT_TYPE;
         }
         function escape(key) {
@@ -284,8 +284,8 @@
             return escaperLookup[match3];
           });
         }
-        function getElementKey(element, index) {
-          return "object" === typeof element && null !== element && null != element.key ? (checkKeyStringCoercion(element.key), escape("" + element.key)) : index.toString(36);
+        function getElementKey(element, index2) {
+          return "object" === typeof element && null !== element && null != element.key ? (checkKeyStringCoercion(element.key), escape("" + element.key)) : index2.toString(36);
         }
         function resolveThenable(thenable) {
           switch (thenable.status) {
@@ -346,13 +346,13 @@
             var childKey = "" === nameSoFar ? "." + getElementKey(invokeCallback, 0) : nameSoFar;
             isArrayImpl(callback) ? (escapedPrefix = "", null != childKey && (escapedPrefix = childKey.replace(userProvidedKeyEscapeRegex, "$&/") + "/"), mapIntoArray(callback, array4, escapedPrefix, "", function(c) {
               return c;
-            })) : null != callback && (isValidElement27(callback) && (null != callback.key && (invokeCallback && invokeCallback.key === callback.key || checkKeyStringCoercion(callback.key)), escapedPrefix = cloneAndReplaceKey(
+            })) : null != callback && (isValidElement28(callback) && (null != callback.key && (invokeCallback && invokeCallback.key === callback.key || checkKeyStringCoercion(callback.key)), escapedPrefix = cloneAndReplaceKey(
               callback,
               escapedPrefix + (null == callback.key || invokeCallback && invokeCallback.key === callback.key ? "" : ("" + callback.key).replace(
                 userProvidedKeyEscapeRegex,
                 "$&/"
               ) + "/") + childKey
-            ), "" !== nameSoFar && null != invokeCallback && isValidElement27(invokeCallback) && null == invokeCallback.key && invokeCallback._store && !invokeCallback._store.validated && (escapedPrefix._store.validated = 2), callback = escapedPrefix), array4.push(callback));
+            ), "" !== nameSoFar && null != invokeCallback && isValidElement28(invokeCallback) && null == invokeCallback.key && invokeCallback._store && !invokeCallback._store.validated && (escapedPrefix._store.validated = 2), callback = escapedPrefix), array4.push(callback));
             return 1;
           }
           invokeCallback = 0;
@@ -547,15 +547,15 @@
           }
         }, assign2 = Object.assign, emptyObject = {};
         Object.freeze(emptyObject);
-        Component5.prototype.isReactComponent = {};
-        Component5.prototype.setState = function(partialState, callback) {
+        Component7.prototype.isReactComponent = {};
+        Component7.prototype.setState = function(partialState, callback) {
           if ("object" !== typeof partialState && "function" !== typeof partialState && null != partialState)
             throw Error(
               "takes an object of state variables to update or a function which returns an object of state variables."
             );
           this.updater.enqueueSetState(this, partialState, callback, "setState");
         };
-        Component5.prototype.forceUpdate = function(callback) {
+        Component7.prototype.forceUpdate = function(callback) {
           this.updater.enqueueForceUpdate(this, callback, "forceUpdate");
         };
         var deprecatedAPIs = {
@@ -570,10 +570,10 @@
         };
         for (fnName in deprecatedAPIs)
           deprecatedAPIs.hasOwnProperty(fnName) && defineDeprecationWarning(fnName, deprecatedAPIs[fnName]);
-        ComponentDummy.prototype = Component5.prototype;
+        ComponentDummy.prototype = Component7.prototype;
         deprecatedAPIs = PureComponent2.prototype = new ComponentDummy();
         deprecatedAPIs.constructor = PureComponent2;
-        assign2(deprecatedAPIs, Component5.prototype);
+        assign2(deprecatedAPIs, Component7.prototype);
         deprecatedAPIs.isPureReactComponent = true;
         var isArrayImpl = Array.isArray, REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), ReactSharedInternals = {
           H: null,
@@ -653,7 +653,7 @@
             }) || [];
           },
           only: function(children) {
-            if (!isValidElement27(children))
+            if (!isValidElement28(children))
               throw Error(
                 "React.Children.only expected to receive a single React element child."
               );
@@ -662,7 +662,7 @@
         };
         exports.Activity = REACT_ACTIVITY_TYPE;
         exports.Children = fnName;
-        exports.Component = Component5;
+        exports.Component = Component7;
         exports.Fragment = REACT_FRAGMENT_TYPE2;
         exports.Profiler = REACT_PROFILER_TYPE;
         exports.PureComponent = PureComponent2;
@@ -863,20 +863,20 @@
           Object.seal(refObject);
           return refObject;
         };
-        exports.forwardRef = function(render2) {
-          null != render2 && render2.$$typeof === REACT_MEMO_TYPE ? console.error(
+        exports.forwardRef = function(render4) {
+          null != render4 && render4.$$typeof === REACT_MEMO_TYPE ? console.error(
             "forwardRef requires a render function but received a `memo` component. Instead of forwardRef(memo(...)), use memo(forwardRef(...))."
-          ) : "function" !== typeof render2 ? console.error(
+          ) : "function" !== typeof render4 ? console.error(
             "forwardRef requires a render function but was given %s.",
-            null === render2 ? "null" : typeof render2
-          ) : 0 !== render2.length && 2 !== render2.length && console.error(
+            null === render4 ? "null" : typeof render4
+          ) : 0 !== render4.length && 2 !== render4.length && console.error(
             "forwardRef render functions accept exactly two parameters: props and ref. %s",
-            1 === render2.length ? "Did you forget to use the ref parameter?" : "Any additional parameter will be undefined."
+            1 === render4.length ? "Did you forget to use the ref parameter?" : "Any additional parameter will be undefined."
           );
-          null != render2 && null != render2.defaultProps && console.error(
+          null != render4 && null != render4.defaultProps && console.error(
             "forwardRef render functions do not support defaultProps. Did you accidentally pass a React component?"
           );
-          var elementType = { $$typeof: REACT_FORWARD_REF_TYPE, render: render2 }, ownName;
+          var elementType = { $$typeof: REACT_FORWARD_REF_TYPE, render: render4 }, ownName;
           Object.defineProperty(elementType, "displayName", {
             enumerable: false,
             configurable: true,
@@ -885,12 +885,12 @@
             },
             set: function(name) {
               ownName = name;
-              render2.name || render2.displayName || (Object.defineProperty(render2, "name", { value: name }), render2.displayName = name);
+              render4.name || render4.displayName || (Object.defineProperty(render4, "name", { value: name }), render4.displayName = name);
             }
           });
           return elementType;
         };
-        exports.isValidElement = isValidElement27;
+        exports.isValidElement = isValidElement28;
         exports.lazy = function(ctor) {
           ctor = { _status: -1, _result: ctor };
           var lazyType = {
@@ -1132,7 +1132,7 @@
           var ContextProvider = REACT_PROVIDER_TYPE;
           var Element3 = REACT_ELEMENT_TYPE;
           var ForwardRef2 = REACT_FORWARD_REF_TYPE;
-          var Fragment23 = REACT_FRAGMENT_TYPE2;
+          var Fragment24 = REACT_FRAGMENT_TYPE2;
           var Lazy = REACT_LAZY_TYPE;
           var Memo = REACT_MEMO_TYPE;
           var Portal2 = REACT_PORTAL_TYPE;
@@ -1200,7 +1200,7 @@
           exports.ContextProvider = ContextProvider;
           exports.Element = Element3;
           exports.ForwardRef = ForwardRef2;
-          exports.Fragment = Fragment23;
+          exports.Fragment = Fragment24;
           exports.Lazy = Lazy;
           exports.Memo = Memo;
           exports.Portal = Portal2;
@@ -1291,7 +1291,7 @@
           return dispatcher;
         }
         "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-        var React370 = require_react(), Internals = {
+        var React392 = require_react(), Internals = {
           d: {
             f: noop4,
             r: function() {
@@ -1309,7 +1309,7 @@
           },
           p: 0,
           findDOMNode: null
-        }, REACT_PORTAL_TYPE = Symbol.for("react.portal"), ReactSharedInternals = React370.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
+        }, REACT_PORTAL_TYPE = Symbol.for("react.portal"), ReactSharedInternals = React392.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
         "function" === typeof Map && null != Map.prototype && "function" === typeof Map.prototype.forEach && "function" === typeof Set && null != Set.prototype && "function" === typeof Set.prototype.clear && "function" === typeof Set.prototype.forEach || console.error(
           "React depends on Map and Set built-in types. Make sure that you load a polyfill in older browsers. https://reactjs.org/link/react-polyfills"
         );
@@ -1564,13 +1564,13 @@
           }
         }
         function push(heap, node2) {
-          var index = heap.length;
+          var index2 = heap.length;
           heap.push(node2);
           a:
-            for (; 0 < index; ) {
-              var parentIndex = index - 1 >>> 1, parent = heap[parentIndex];
+            for (; 0 < index2; ) {
+              var parentIndex = index2 - 1 >>> 1, parent = heap[parentIndex];
               if (0 < compare(parent, node2))
-                heap[parentIndex] = node2, heap[index] = parent, index = parentIndex;
+                heap[parentIndex] = node2, heap[index2] = parent, index2 = parentIndex;
               else
                 break a;
             }
@@ -1585,12 +1585,12 @@
           if (last !== first) {
             heap[0] = last;
             a:
-              for (var index = 0, length2 = heap.length, halfLength = length2 >>> 1; index < halfLength; ) {
-                var leftIndex = 2 * (index + 1) - 1, left = heap[leftIndex], rightIndex = leftIndex + 1, right = heap[rightIndex];
+              for (var index2 = 0, length2 = heap.length, halfLength = length2 >>> 1; index2 < halfLength; ) {
+                var leftIndex = 2 * (index2 + 1) - 1, left = heap[leftIndex], rightIndex = leftIndex + 1, right = heap[rightIndex];
                 if (0 > compare(left, last))
-                  rightIndex < length2 && 0 > compare(right, left) ? (heap[index] = right, heap[rightIndex] = last, index = rightIndex) : (heap[index] = left, heap[leftIndex] = last, index = leftIndex);
+                  rightIndex < length2 && 0 > compare(right, left) ? (heap[index2] = right, heap[rightIndex] = last, index2 = rightIndex) : (heap[index2] = left, heap[leftIndex] = last, index2 = leftIndex);
                 else if (rightIndex < length2 && 0 > compare(right, last))
-                  heap[index] = right, heap[rightIndex] = last, index = rightIndex;
+                  heap[index2] = right, heap[rightIndex] = last, index2 = rightIndex;
                 else
                   break a;
               }
@@ -1790,11 +1790,11 @@
             fiber = fiber.next, id--;
           return fiber;
         }
-        function copyWithSetImpl(obj, path, index, value) {
-          if (index >= path.length)
+        function copyWithSetImpl(obj, path, index2, value) {
+          if (index2 >= path.length)
             return value;
-          var key = path[index], updated = isArrayImpl(obj) ? obj.slice() : assign2({}, obj);
-          updated[key] = copyWithSetImpl(obj[key], path, index + 1, value);
+          var key = path[index2], updated = isArrayImpl(obj) ? obj.slice() : assign2({}, obj);
+          updated[key] = copyWithSetImpl(obj[key], path, index2 + 1, value);
           return updated;
         }
         function copyWithRename(obj, oldPath, newPath) {
@@ -1811,21 +1811,21 @@
             return copyWithRenameImpl(obj, oldPath, newPath, 0);
           }
         }
-        function copyWithRenameImpl(obj, oldPath, newPath, index) {
-          var oldKey = oldPath[index], updated = isArrayImpl(obj) ? obj.slice() : assign2({}, obj);
-          index + 1 === oldPath.length ? (updated[newPath[index]] = updated[oldKey], isArrayImpl(updated) ? updated.splice(oldKey, 1) : delete updated[oldKey]) : updated[oldKey] = copyWithRenameImpl(
+        function copyWithRenameImpl(obj, oldPath, newPath, index2) {
+          var oldKey = oldPath[index2], updated = isArrayImpl(obj) ? obj.slice() : assign2({}, obj);
+          index2 + 1 === oldPath.length ? (updated[newPath[index2]] = updated[oldKey], isArrayImpl(updated) ? updated.splice(oldKey, 1) : delete updated[oldKey]) : updated[oldKey] = copyWithRenameImpl(
             obj[oldKey],
             oldPath,
             newPath,
-            index + 1
+            index2 + 1
           );
           return updated;
         }
-        function copyWithDeleteImpl(obj, path, index) {
-          var key = path[index], updated = isArrayImpl(obj) ? obj.slice() : assign2({}, obj);
-          if (index + 1 === path.length)
+        function copyWithDeleteImpl(obj, path, index2) {
+          var key = path[index2], updated = isArrayImpl(obj) ? obj.slice() : assign2({}, obj);
+          if (index2 + 1 === path.length)
             return isArrayImpl(updated) ? updated.splice(key, 1) : delete updated[key], updated;
-          updated[key] = copyWithDeleteImpl(obj[key], path, index + 1);
+          updated[key] = copyWithDeleteImpl(obj[key], path, index2 + 1);
           return updated;
         }
         function shouldSuspendImpl() {
@@ -2741,13 +2741,13 @@
           root2.shellSuspendCounter = 0;
           var entanglements = root2.entanglements, expirationTimes = root2.expirationTimes, hiddenUpdates = root2.hiddenUpdates;
           for (remainingLanes = previouslyPendingLanes & ~remainingLanes; 0 < remainingLanes; ) {
-            var index = 31 - clz32(remainingLanes), lane = 1 << index;
-            entanglements[index] = 0;
-            expirationTimes[index] = -1;
-            var hiddenUpdatesForLane = hiddenUpdates[index];
+            var index2 = 31 - clz32(remainingLanes), lane = 1 << index2;
+            entanglements[index2] = 0;
+            expirationTimes[index2] = -1;
+            var hiddenUpdatesForLane = hiddenUpdates[index2];
             if (null !== hiddenUpdatesForLane)
-              for (hiddenUpdates[index] = null, index = 0; index < hiddenUpdatesForLane.length; index++) {
-                var update = hiddenUpdatesForLane[index];
+              for (hiddenUpdates[index2] = null, index2 = 0; index2 < hiddenUpdatesForLane.length; index2++) {
+                var update = hiddenUpdatesForLane[index2];
                 null !== update && (update.lane &= -536870913);
               }
             remainingLanes &= ~lane;
@@ -2765,8 +2765,8 @@
         function markRootEntangled(root2, entangledLanes) {
           var rootEntangledLanes = root2.entangledLanes |= entangledLanes;
           for (root2 = root2.entanglements; rootEntangledLanes; ) {
-            var index = 31 - clz32(rootEntangledLanes), lane = 1 << index;
-            lane & entangledLanes | root2[index] & entangledLanes && (root2[index] |= entangledLanes);
+            var index2 = 31 - clz32(rootEntangledLanes), lane = 1 << index2;
+            lane & entangledLanes | root2[index2] & entangledLanes && (root2[index2] |= entangledLanes);
             rootEntangledLanes &= ~lane;
           }
         }
@@ -2817,21 +2817,21 @@
         function addFiberToLanesMap(root2, fiber, lanes) {
           if (isDevToolsPresent)
             for (root2 = root2.pendingUpdatersLaneMap; 0 < lanes; ) {
-              var index = 31 - clz32(lanes), lane = 1 << index;
-              root2[index].add(fiber);
+              var index2 = 31 - clz32(lanes), lane = 1 << index2;
+              root2[index2].add(fiber);
               lanes &= ~lane;
             }
         }
         function movePendingFibersToMemoized(root2, lanes) {
           if (isDevToolsPresent)
             for (var pendingUpdatersLaneMap = root2.pendingUpdatersLaneMap, memoizedUpdaters = root2.memoizedUpdaters; 0 < lanes; ) {
-              var index = 31 - clz32(lanes);
-              root2 = 1 << index;
-              index = pendingUpdatersLaneMap[index];
-              0 < index.size && (index.forEach(function(fiber) {
+              var index2 = 31 - clz32(lanes);
+              root2 = 1 << index2;
+              index2 = pendingUpdatersLaneMap[index2];
+              0 < index2.size && (index2.forEach(function(fiber) {
                 var alternate = fiber.alternate;
                 null !== alternate && memoizedUpdaters.has(alternate) || memoizedUpdaters.add(fiber);
-              }), index.clear());
+              }), index2.clear());
               lanes &= ~root2;
             }
         }
@@ -3161,7 +3161,7 @@
           "number" === type5 && getActiveElement(node2.ownerDocument) === node2 || node2.defaultValue === "" + value || (node2.defaultValue = "" + value);
         }
         function validateOptionProps(element, props) {
-          null == props.value && ("object" === typeof props.children && null !== props.children ? React370.Children.forEach(props.children, function(child) {
+          null == props.value && ("object" === typeof props.children && null !== props.children ? React392.Children.forEach(props.children, function(child) {
             null == child || "string" === typeof child || "number" === typeof child || "bigint" === typeof child || didWarnInvalidChild || (didWarnInvalidChild = true, console.error(
               "Cannot infer the option value of complex children. Pass a `value` prop or use a plain string as children to <option>."
             ));
@@ -5201,9 +5201,9 @@
           this._debugHookTypes = null;
           hasBadMapPolyfill || "function" !== typeof Object.preventExtensions || Object.preventExtensions(this);
         }
-        function shouldConstruct(Component5) {
-          Component5 = Component5.prototype;
-          return !(!Component5 || !Component5.isReactComponent);
+        function shouldConstruct(Component7) {
+          Component7 = Component7.prototype;
+          return !(!Component7 || !Component7.isReactComponent);
         }
         function createWorkInProgress(current2, pendingProps) {
           var workInProgress2 = current2.alternate;
@@ -5398,7 +5398,7 @@
           treeForkProvider = workInProgress2;
           treeForkCount = totalChildren;
         }
-        function pushTreeId(workInProgress2, totalChildren, index) {
+        function pushTreeId(workInProgress2, totalChildren, index2) {
           warnIfNotHydrating();
           idStack[idStackIndex++] = treeContextId;
           idStack[idStackIndex++] = treeContextOverflow;
@@ -5408,17 +5408,17 @@
           workInProgress2 = treeContextOverflow;
           var baseLength = 32 - clz32(baseIdWithLeadingBit) - 1;
           baseIdWithLeadingBit &= ~(1 << baseLength);
-          index += 1;
+          index2 += 1;
           var length2 = 32 - clz32(totalChildren) + baseLength;
           if (30 < length2) {
             var numberOfOverflowBits = baseLength - baseLength % 5;
             length2 = (baseIdWithLeadingBit & (1 << numberOfOverflowBits) - 1).toString(32);
             baseIdWithLeadingBit >>= numberOfOverflowBits;
             baseLength -= numberOfOverflowBits;
-            treeContextId = 1 << 32 - clz32(totalChildren) + baseLength | index << baseLength | baseIdWithLeadingBit;
+            treeContextId = 1 << 32 - clz32(totalChildren) + baseLength | index2 << baseLength | baseIdWithLeadingBit;
             treeContextOverflow = length2 + workInProgress2;
           } else
-            treeContextId = 1 << length2 | index << baseLength | baseIdWithLeadingBit, treeContextOverflow = workInProgress2;
+            treeContextId = 1 << length2 | index2 << baseLength | baseIdWithLeadingBit, treeContextOverflow = workInProgress2;
         }
         function pushMaterializedTreeId(workInProgress2) {
           warnIfNotHydrating();
@@ -5857,8 +5857,8 @@
         }
         function startUpdateTimerByLane(lane, method4, fiber) {
           if (0 !== (lane & 127))
-            0 > blockingUpdateTime && (blockingUpdateTime = now(), blockingUpdateTask = createTask(method4), blockingUpdateMethodName = method4, null != fiber && (blockingUpdateComponentName = getComponentNameFromFiber(fiber)), (executionContext & (RenderContext | CommitContext)) !== NoContext && (componentEffectSpawnedUpdate = true, blockingUpdateType = SPAWNED_UPDATE), lane = resolveEventTimeStamp(), method4 = resolveEventType(), lane !== blockingEventRepeatTime || method4 !== blockingEventType ? blockingEventRepeatTime = -1.1 : null !== method4 && (blockingUpdateType = SPAWNED_UPDATE), blockingEventTime = lane, blockingEventType = method4);
-          else if (0 !== (lane & 4194048) && 0 > transitionUpdateTime && (transitionUpdateTime = now(), transitionUpdateTask = createTask(method4), transitionUpdateMethodName = method4, null != fiber && (transitionUpdateComponentName = getComponentNameFromFiber(fiber)), 0 > transitionStartTime)) {
+            0 > blockingUpdateTime && (blockingUpdateTime = now2(), blockingUpdateTask = createTask(method4), blockingUpdateMethodName = method4, null != fiber && (blockingUpdateComponentName = getComponentNameFromFiber(fiber)), (executionContext & (RenderContext | CommitContext)) !== NoContext && (componentEffectSpawnedUpdate = true, blockingUpdateType = SPAWNED_UPDATE), lane = resolveEventTimeStamp(), method4 = resolveEventType(), lane !== blockingEventRepeatTime || method4 !== blockingEventType ? blockingEventRepeatTime = -1.1 : null !== method4 && (blockingUpdateType = SPAWNED_UPDATE), blockingEventTime = lane, blockingEventType = method4);
+          else if (0 !== (lane & 4194048) && 0 > transitionUpdateTime && (transitionUpdateTime = now2(), transitionUpdateTask = createTask(method4), transitionUpdateMethodName = method4, null != fiber && (transitionUpdateComponentName = getComponentNameFromFiber(fiber)), 0 > transitionStartTime)) {
             lane = resolveEventTimeStamp();
             method4 = resolveEventType();
             if (lane !== transitionEventRepeatTime || method4 !== transitionEventType)
@@ -5869,7 +5869,7 @@
         }
         function startHostActionTimer(fiber) {
           if (0 > blockingUpdateTime) {
-            blockingUpdateTime = now();
+            blockingUpdateTime = now2();
             blockingUpdateTask = null != fiber._debugTask ? fiber._debugTask : null;
             (executionContext & (RenderContext | CommitContext)) !== NoContext && (blockingUpdateType = SPAWNED_UPDATE);
             var newEventTime = resolveEventTimeStamp(), newEventType = resolveEventType();
@@ -5877,7 +5877,7 @@
             blockingEventTime = newEventTime;
             blockingEventType = newEventType;
           }
-          if (0 > transitionUpdateTime && (transitionUpdateTime = now(), transitionUpdateTask = null != fiber._debugTask ? fiber._debugTask : null, 0 > transitionStartTime)) {
+          if (0 > transitionUpdateTime && (transitionUpdateTime = now2(), transitionUpdateTask = null != fiber._debugTask ? fiber._debugTask : null, 0 > transitionStartTime)) {
             fiber = resolveEventTimeStamp();
             newEventTime = resolveEventType();
             if (fiber !== transitionEventRepeatTime || newEventTime !== transitionEventType)
@@ -5931,12 +5931,12 @@
           return prev2;
         }
         function startProfilerTimer(fiber) {
-          profilerStartTime = now();
+          profilerStartTime = now2();
           0 > fiber.actualStartTime && (fiber.actualStartTime = profilerStartTime);
         }
         function stopProfilerTimerIfRunningAndRecordDuration(fiber) {
           if (0 <= profilerStartTime) {
-            var elapsedTime = now() - profilerStartTime;
+            var elapsedTime = now2() - profilerStartTime;
             fiber.actualDuration += elapsedTime;
             fiber.selfBaseDuration = elapsedTime;
             profilerStartTime = -1;
@@ -5944,14 +5944,14 @@
         }
         function stopProfilerTimerIfRunningAndRecordIncompleteDuration(fiber) {
           if (0 <= profilerStartTime) {
-            var elapsedTime = now() - profilerStartTime;
+            var elapsedTime = now2() - profilerStartTime;
             fiber.actualDuration += elapsedTime;
             profilerStartTime = -1;
           }
         }
         function recordEffectDuration() {
           if (0 <= profilerStartTime) {
-            var endTime = now(), elapsedTime = endTime - profilerStartTime;
+            var endTime = now2(), elapsedTime = endTime - profilerStartTime;
             profilerStartTime = -1;
             profilerEffectDuration += elapsedTime;
             componentEffectDuration += elapsedTime;
@@ -5965,7 +5965,7 @@
           commitErrors.push(errorInfo);
         }
         function startEffectTimer() {
-          profilerStartTime = now();
+          profilerStartTime = now2();
           0 > componentEffectStartTime && (componentEffectStartTime = profilerStartTime);
         }
         function transferActualDuration(fiber) {
@@ -6043,13 +6043,13 @@
           thenable = thenable.status;
           return "fulfilled" === thenable || "rejected" === thenable;
         }
-        function trackUsedThenable(thenableState2, thenable, index) {
+        function trackUsedThenable(thenableState2, thenable, index2) {
           null !== ReactSharedInternals.actQueue && (ReactSharedInternals.didUsePromise = true);
           var trackedThenables = thenableState2.thenables;
-          index = trackedThenables[index];
-          void 0 === index ? trackedThenables.push(thenable) : index !== thenable && (thenableState2.didWarnAboutUncachedPromise || (thenableState2.didWarnAboutUncachedPromise = true, console.error(
+          index2 = trackedThenables[index2];
+          void 0 === index2 ? trackedThenables.push(thenable) : index2 !== thenable && (thenableState2.didWarnAboutUncachedPromise || (thenableState2.didWarnAboutUncachedPromise = true, console.error(
             "A component was suspended by an uncached promise. Creating promises inside a Client Component or hook is not yet supported, except via a Suspense-compatible library or framework."
-          )), thenable.then(noop$1, noop$1), thenable = index);
+          )), thenable.then(noop$1, noop$1), thenable = index2);
           if (void 0 === thenable._debugInfo) {
             thenableState2 = performance.now();
             trackedThenables = thenable.displayName;
@@ -6170,10 +6170,10 @@
           }
         }
         function unwrapThenable(thenable) {
-          var index = thenableIndexCounter$1;
+          var index2 = thenableIndexCounter$1;
           thenableIndexCounter$1 += 1;
           null === thenableState$1 && (thenableState$1 = createThenableState());
-          return trackUsedThenable(thenableState$1, thenable, index);
+          return trackUsedThenable(thenableState$1, thenable, index2);
         }
         function coerceRef(workInProgress2, element) {
           element = element.props.ref;
@@ -6861,13 +6861,13 @@
             }
           };
         }
-        function validateSuspenseListNestedChild(childSlot, index) {
+        function validateSuspenseListNestedChild(childSlot, index2) {
           var isAnArray = isArrayImpl(childSlot);
           childSlot = !isAnArray && "function" === typeof getIteratorFn(childSlot);
           return isAnArray || childSlot ? (isAnArray = isAnArray ? "array" : "iterable", console.error(
             "A nested %s was passed to row #%s in <SuspenseList />. Wrap it in an additional SuspenseList to configure its revealOrder: <SuspenseList revealOrder=...> ... <SuspenseList revealOrder=...>{%s}</SuspenseList> ... </SuspenseList>",
             isAnArray,
-            index,
+            index2,
             isAnArray
           ), false) : true;
         }
@@ -7242,13 +7242,13 @@
               return false;
           return true;
         }
-        function renderWithHooks(current2, workInProgress2, Component5, props, secondArg, nextRenderLanes) {
+        function renderWithHooks(current2, workInProgress2, Component7, props, secondArg, nextRenderLanes) {
           renderLanes = nextRenderLanes;
           currentlyRenderingFiber = workInProgress2;
           hookTypesDev = null !== current2 ? current2._debugHookTypes : null;
           hookTypesUpdateIndexDev = -1;
           ignorePreviousDependencies = null !== current2 && current2.type !== workInProgress2.type;
-          if ("[object AsyncFunction]" === Object.prototype.toString.call(Component5) || "[object AsyncGeneratorFunction]" === Object.prototype.toString.call(Component5))
+          if ("[object AsyncFunction]" === Object.prototype.toString.call(Component7) || "[object AsyncGeneratorFunction]" === Object.prototype.toString.call(Component7))
             nextRenderLanes = getComponentNameFromFiber(currentlyRenderingFiber), didWarnAboutAsyncClientComponent.has(nextRenderLanes) || (didWarnAboutAsyncClientComponent.add(nextRenderLanes), console.error(
               "%s is an async Client Component. Only Server Components can be async at the moment. This error is often caused by accidentally adding `'use client'` to a module that was originally written for the server.",
               null === nextRenderLanes ? "An unknown Component" : "<" + nextRenderLanes + ">"
@@ -7258,11 +7258,11 @@
           workInProgress2.lanes = 0;
           ReactSharedInternals.H = null !== current2 && null !== current2.memoizedState ? HooksDispatcherOnUpdateInDEV : null !== hookTypesDev ? HooksDispatcherOnMountWithHookTypesInDEV : HooksDispatcherOnMountInDEV;
           shouldDoubleInvokeUserFnsInHooksDEV = nextRenderLanes = (workInProgress2.mode & StrictLegacyMode) !== NoMode;
-          var children = callComponentInDEV(Component5, props, secondArg);
+          var children = callComponentInDEV(Component7, props, secondArg);
           shouldDoubleInvokeUserFnsInHooksDEV = false;
           didScheduleRenderPhaseUpdateDuringThisPass && (children = renderWithHooksAgain(
             workInProgress2,
-            Component5,
+            Component7,
             props,
             secondArg
           ));
@@ -7271,7 +7271,7 @@
             try {
               children = renderWithHooksAgain(
                 workInProgress2,
-                Component5,
+                Component7,
                 props,
                 secondArg
               );
@@ -7310,7 +7310,7 @@
             "`use` was called from inside a try/catch block. This is not allowed and can lead to unexpected behavior. To handle errors triggered by `use`, wrap your component in a error boundary."
           )));
         }
-        function renderWithHooksAgain(workInProgress2, Component5, props, secondArg) {
+        function renderWithHooksAgain(workInProgress2, Component7, props, secondArg) {
           currentlyRenderingFiber = workInProgress2;
           var numberOfReRenders = 0;
           do {
@@ -7333,7 +7333,7 @@
             }
             hookTypesUpdateIndexDev = -1;
             ReactSharedInternals.H = HooksDispatcherOnRerenderInDEV;
-            children = callComponentInDEV(Component5, props, secondArg);
+            children = callComponentInDEV(Component7, props, secondArg);
           } while (didScheduleRenderPhaseUpdateDuringThisPass);
           return children;
         }
@@ -7415,12 +7415,12 @@
           return { lastEffect: null, events: null, stores: null, memoCache: null };
         }
         function useThenable(thenable) {
-          var index = thenableIndexCounter;
+          var index2 = thenableIndexCounter;
           thenableIndexCounter += 1;
           null === thenableState && (thenableState = createThenableState());
-          thenable = trackUsedThenable(thenableState, thenable, index);
-          index = currentlyRenderingFiber;
-          null === (null === workInProgressHook ? index.memoizedState : workInProgressHook.next) && (index = index.alternate, ReactSharedInternals.H = null !== index && null !== index.memoizedState ? HooksDispatcherOnUpdateInDEV : HooksDispatcherOnMountInDEV);
+          thenable = trackUsedThenable(thenableState, thenable, index2);
+          index2 = currentlyRenderingFiber;
+          null === (null === workInProgressHook ? index2.memoizedState : workInProgressHook.next) && (index2 = index2.alternate, ReactSharedInternals.H = null !== index2 && null !== index2.memoizedState ? HooksDispatcherOnUpdateInDEV : HooksDispatcherOnMountInDEV);
           return thenable;
         }
         function use(usable) {
@@ -8565,17 +8565,17 @@
             null
           ));
         }
-        function resolveClassComponentProps(Component5, baseProps) {
+        function resolveClassComponentProps(Component7, baseProps) {
           var newProps = baseProps;
           if ("ref" in baseProps) {
             newProps = {};
             for (var propName in baseProps)
               "ref" !== propName && (newProps[propName] = baseProps[propName]);
           }
-          if (Component5 = Component5.defaultProps) {
+          if (Component7 = Component7.defaultProps) {
             newProps === baseProps && (newProps = assign2({}, newProps));
-            for (var _propName in Component5)
-              void 0 === newProps[_propName] && (newProps[_propName] = Component5[_propName]);
+            for (var _propName in Component7)
+              void 0 === newProps[_propName] && (newProps[_propName] = Component7[_propName]);
           }
           return newProps;
         }
@@ -8805,8 +8805,8 @@
             renderLanes2
           );
         }
-        function updateForwardRef(current2, workInProgress2, Component5, nextProps, renderLanes2) {
-          Component5 = Component5.render;
+        function updateForwardRef(current2, workInProgress2, Component7, nextProps, renderLanes2) {
+          Component7 = Component7.render;
           var ref = workInProgress2.ref;
           if ("ref" in nextProps) {
             var propsWithoutRef = {};
@@ -8818,7 +8818,7 @@
           nextProps = renderWithHooks(
             current2,
             workInProgress2,
-            Component5,
+            Component7,
             propsWithoutRef,
             ref,
             renderLanes2
@@ -8831,19 +8831,19 @@
           reconcileChildren(current2, workInProgress2, nextProps, renderLanes2);
           return workInProgress2.child;
         }
-        function updateMemoComponent(current2, workInProgress2, Component5, nextProps, renderLanes2) {
+        function updateMemoComponent(current2, workInProgress2, Component7, nextProps, renderLanes2) {
           if (null === current2) {
-            var type5 = Component5.type;
-            if ("function" === typeof type5 && !shouldConstruct(type5) && void 0 === type5.defaultProps && null === Component5.compare)
-              return Component5 = resolveFunctionForHotReloading(type5), workInProgress2.tag = 15, workInProgress2.type = Component5, validateFunctionComponentInDev(workInProgress2, type5), updateSimpleMemoComponent(
+            var type5 = Component7.type;
+            if ("function" === typeof type5 && !shouldConstruct(type5) && void 0 === type5.defaultProps && null === Component7.compare)
+              return Component7 = resolveFunctionForHotReloading(type5), workInProgress2.tag = 15, workInProgress2.type = Component7, validateFunctionComponentInDev(workInProgress2, type5), updateSimpleMemoComponent(
                 current2,
                 workInProgress2,
-                Component5,
+                Component7,
                 nextProps,
                 renderLanes2
               );
             current2 = createFiberFromTypeAndProps(
-              Component5.type,
+              Component7.type,
               null,
               nextProps,
               workInProgress2,
@@ -8857,9 +8857,9 @@
           type5 = current2.child;
           if (!checkScheduledUpdateOrContext(current2, renderLanes2)) {
             var prevProps = type5.memoizedProps;
-            Component5 = Component5.compare;
-            Component5 = null !== Component5 ? Component5 : shallowEqual;
-            if (Component5(prevProps, nextProps) && current2.ref === workInProgress2.ref)
+            Component7 = Component7.compare;
+            Component7 = null !== Component7 ? Component7 : shallowEqual;
+            if (Component7(prevProps, nextProps) && current2.ref === workInProgress2.ref)
               return bailoutOnAlreadyFinishedWork(
                 current2,
                 workInProgress2,
@@ -8872,7 +8872,7 @@
           current2.return = workInProgress2;
           return workInProgress2.child = current2;
         }
-        function updateSimpleMemoComponent(current2, workInProgress2, Component5, nextProps, renderLanes2) {
+        function updateSimpleMemoComponent(current2, workInProgress2, Component7, nextProps, renderLanes2) {
           if (null !== current2) {
             var prevProps = current2.memoizedProps;
             if (shallowEqual(prevProps, nextProps) && current2.ref === workInProgress2.ref && workInProgress2.type === current2.type)
@@ -8884,7 +8884,7 @@
           return updateFunctionComponent(
             current2,
             workInProgress2,
-            Component5,
+            Component7,
             nextProps,
             renderLanes2
           );
@@ -9075,9 +9075,9 @@
               workInProgress2.flags |= 4194816;
           }
         }
-        function updateFunctionComponent(current2, workInProgress2, Component5, nextProps, renderLanes2) {
-          if (Component5.prototype && "function" === typeof Component5.prototype.render) {
-            var componentName2 = getComponentNameFromType(Component5) || "Unknown";
+        function updateFunctionComponent(current2, workInProgress2, Component7, nextProps, renderLanes2) {
+          if (Component7.prototype && "function" === typeof Component7.prototype.render) {
+            var componentName2 = getComponentNameFromType(Component7) || "Unknown";
             didWarnAboutBadClass[componentName2] || (console.error(
               "The <%s /> component appears to have a render method, but doesn't extend React.Component. This is likely to cause errors. Change %s to extend React.Component instead.",
               componentName2,
@@ -9088,15 +9088,15 @@
             workInProgress2,
             null
           );
-          null === current2 && (validateFunctionComponentInDev(workInProgress2, workInProgress2.type), Component5.contextTypes && (componentName2 = getComponentNameFromType(Component5) || "Unknown", didWarnAboutContextTypes[componentName2] || (didWarnAboutContextTypes[componentName2] = true, console.error(
+          null === current2 && (validateFunctionComponentInDev(workInProgress2, workInProgress2.type), Component7.contextTypes && (componentName2 = getComponentNameFromType(Component7) || "Unknown", didWarnAboutContextTypes[componentName2] || (didWarnAboutContextTypes[componentName2] = true, console.error(
             "%s uses the legacy contextTypes API which was removed in React 19. Use React.createContext() with React.useContext() instead. (https://react.dev/link/legacy-context)",
             componentName2
           ))));
           prepareToReadContext(workInProgress2);
-          Component5 = renderWithHooks(
+          Component7 = renderWithHooks(
             current2,
             workInProgress2,
-            Component5,
+            Component7,
             nextProps,
             void 0,
             renderLanes2
@@ -9106,30 +9106,30 @@
             return bailoutHooks(current2, workInProgress2, renderLanes2), bailoutOnAlreadyFinishedWork(current2, workInProgress2, renderLanes2);
           isHydrating && nextProps && pushMaterializedTreeId(workInProgress2);
           workInProgress2.flags |= 1;
-          reconcileChildren(current2, workInProgress2, Component5, renderLanes2);
+          reconcileChildren(current2, workInProgress2, Component7, renderLanes2);
           return workInProgress2.child;
         }
-        function replayFunctionComponent(current2, workInProgress2, nextProps, Component5, secondArg, renderLanes2) {
+        function replayFunctionComponent(current2, workInProgress2, nextProps, Component7, secondArg, renderLanes2) {
           prepareToReadContext(workInProgress2);
           hookTypesUpdateIndexDev = -1;
           ignorePreviousDependencies = null !== current2 && current2.type !== workInProgress2.type;
           workInProgress2.updateQueue = null;
           nextProps = renderWithHooksAgain(
             workInProgress2,
-            Component5,
+            Component7,
             nextProps,
             secondArg
           );
           finishRenderingHooks(current2, workInProgress2);
-          Component5 = checkDidRenderIdHook();
+          Component7 = checkDidRenderIdHook();
           if (null !== current2 && !didReceiveUpdate)
             return bailoutHooks(current2, workInProgress2, renderLanes2), bailoutOnAlreadyFinishedWork(current2, workInProgress2, renderLanes2);
-          isHydrating && Component5 && pushMaterializedTreeId(workInProgress2);
+          isHydrating && Component7 && pushMaterializedTreeId(workInProgress2);
           workInProgress2.flags |= 1;
           reconcileChildren(current2, workInProgress2, nextProps, renderLanes2);
           return workInProgress2.child;
         }
-        function updateClassComponent(current2, workInProgress2, Component5, nextProps, renderLanes2) {
+        function updateClassComponent(current2, workInProgress2, Component7, nextProps, renderLanes2) {
           switch (shouldErrorImpl(workInProgress2)) {
             case false:
               var _instance = workInProgress2.stateNode, state = new workInProgress2.type(
@@ -9161,18 +9161,18 @@
           prepareToReadContext(workInProgress2);
           if (null === workInProgress2.stateNode) {
             state = emptyContextObject;
-            _instance = Component5.contextType;
-            "contextType" in Component5 && null !== _instance && (void 0 === _instance || _instance.$$typeof !== REACT_CONTEXT_TYPE) && !didWarnAboutInvalidateContextType.has(Component5) && (didWarnAboutInvalidateContextType.add(Component5), lane = void 0 === _instance ? " However, it is set to undefined. This can be caused by a typo or by mixing up named and default imports. This can also happen due to a circular dependency, so try moving the createContext() call to a separate file." : "object" !== typeof _instance ? " However, it is set to a " + typeof _instance + "." : _instance.$$typeof === REACT_CONSUMER_TYPE ? " Did you accidentally pass the Context.Consumer instead?" : " However, it is set to an object with keys {" + Object.keys(_instance).join(", ") + "}.", console.error(
+            _instance = Component7.contextType;
+            "contextType" in Component7 && null !== _instance && (void 0 === _instance || _instance.$$typeof !== REACT_CONTEXT_TYPE) && !didWarnAboutInvalidateContextType.has(Component7) && (didWarnAboutInvalidateContextType.add(Component7), lane = void 0 === _instance ? " However, it is set to undefined. This can be caused by a typo or by mixing up named and default imports. This can also happen due to a circular dependency, so try moving the createContext() call to a separate file." : "object" !== typeof _instance ? " However, it is set to a " + typeof _instance + "." : _instance.$$typeof === REACT_CONSUMER_TYPE ? " Did you accidentally pass the Context.Consumer instead?" : " However, it is set to an object with keys {" + Object.keys(_instance).join(", ") + "}.", console.error(
               "%s defines an invalid contextType. contextType should point to the Context object returned by React.createContext().%s",
-              getComponentNameFromType(Component5) || "Component",
+              getComponentNameFromType(Component7) || "Component",
               lane
             ));
             "object" === typeof _instance && null !== _instance && (state = readContext(_instance));
-            _instance = new Component5(nextProps, state);
+            _instance = new Component7(nextProps, state);
             if (workInProgress2.mode & StrictLegacyMode) {
               setIsStrictModeForDevtools(true);
               try {
-                _instance = new Component5(nextProps, state);
+                _instance = new Component7(nextProps, state);
               } finally {
                 setIsStrictModeForDevtools(false);
               }
@@ -9182,20 +9182,20 @@
             workInProgress2.stateNode = _instance;
             _instance._reactInternals = workInProgress2;
             _instance._reactInternalInstance = fakeInternalInstance;
-            "function" === typeof Component5.getDerivedStateFromProps && null === state && (state = getComponentNameFromType(Component5) || "Component", didWarnAboutUninitializedState.has(state) || (didWarnAboutUninitializedState.add(state), console.error(
+            "function" === typeof Component7.getDerivedStateFromProps && null === state && (state = getComponentNameFromType(Component7) || "Component", didWarnAboutUninitializedState.has(state) || (didWarnAboutUninitializedState.add(state), console.error(
               "`%s` uses `getDerivedStateFromProps` but its initial state is %s. This is not recommended. Instead, define the initial state by assigning an object to `this.state` in the constructor of `%s`. This ensures that `getDerivedStateFromProps` arguments have a consistent shape.",
               state,
               null === _instance.state ? "null" : "undefined",
               state
             )));
-            if ("function" === typeof Component5.getDerivedStateFromProps || "function" === typeof _instance.getSnapshotBeforeUpdate) {
+            if ("function" === typeof Component7.getDerivedStateFromProps || "function" === typeof _instance.getSnapshotBeforeUpdate) {
               var foundWillUpdateName = lane = state = null;
               "function" === typeof _instance.componentWillMount && true !== _instance.componentWillMount.__suppressDeprecationWarning ? state = "componentWillMount" : "function" === typeof _instance.UNSAFE_componentWillMount && (state = "UNSAFE_componentWillMount");
               "function" === typeof _instance.componentWillReceiveProps && true !== _instance.componentWillReceiveProps.__suppressDeprecationWarning ? lane = "componentWillReceiveProps" : "function" === typeof _instance.UNSAFE_componentWillReceiveProps && (lane = "UNSAFE_componentWillReceiveProps");
               "function" === typeof _instance.componentWillUpdate && true !== _instance.componentWillUpdate.__suppressDeprecationWarning ? foundWillUpdateName = "componentWillUpdate" : "function" === typeof _instance.UNSAFE_componentWillUpdate && (foundWillUpdateName = "UNSAFE_componentWillUpdate");
               if (null !== state || null !== lane || null !== foundWillUpdateName) {
-                _instance = getComponentNameFromType(Component5) || "Component";
-                var newApiName = "function" === typeof Component5.getDerivedStateFromProps ? "getDerivedStateFromProps()" : "getSnapshotBeforeUpdate()";
+                _instance = getComponentNameFromType(Component7) || "Component";
+                var newApiName = "function" === typeof Component7.getDerivedStateFromProps ? "getDerivedStateFromProps()" : "getSnapshotBeforeUpdate()";
                 didWarnAboutLegacyLifecyclesAndDerivedState.has(_instance) || (didWarnAboutLegacyLifecyclesAndDerivedState.add(_instance), console.error(
                   "Unsafe legacy lifecycles will not be called for components using new component APIs.\n\n%s uses %s but also contains the following legacy lifecycles:%s%s%s\n\nThe above lifecycles should be removed. Learn more about this warning here:\nhttps://react.dev/link/unsafe-component-lifecycles",
                   _instance,
@@ -9207,8 +9207,8 @@
               }
             }
             _instance = workInProgress2.stateNode;
-            state = getComponentNameFromType(Component5) || "Component";
-            _instance.render || (Component5.prototype && "function" === typeof Component5.prototype.render ? console.error(
+            state = getComponentNameFromType(Component7) || "Component";
+            _instance.render || (Component7.prototype && "function" === typeof Component7.prototype.render ? console.error(
               "No `render` method found on the %s instance: did you accidentally return an object from the constructor?",
               state
             ) : console.error(
@@ -9227,11 +9227,11 @@
               "contextType was defined as an instance property on %s. Use a static property to define contextType instead.",
               state
             );
-            Component5.childContextTypes && !didWarnAboutChildContextTypes.has(Component5) && (didWarnAboutChildContextTypes.add(Component5), console.error(
+            Component7.childContextTypes && !didWarnAboutChildContextTypes.has(Component7) && (didWarnAboutChildContextTypes.add(Component7), console.error(
               "%s uses the legacy childContextTypes API which was removed in React 19. Use React.createContext() instead. (https://react.dev/link/legacy-context)",
               state
             ));
-            Component5.contextTypes && !didWarnAboutContextTypes$1.has(Component5) && (didWarnAboutContextTypes$1.add(Component5), console.error(
+            Component7.contextTypes && !didWarnAboutContextTypes$1.has(Component7) && (didWarnAboutContextTypes$1.add(Component7), console.error(
               "%s uses the legacy contextTypes API which was removed in React 19. Use React.createContext() with static contextType instead. (https://react.dev/link/legacy-context)",
               state
             ));
@@ -9239,9 +9239,9 @@
               "%s has a method called componentShouldUpdate(). Did you mean shouldComponentUpdate()? The name is phrased as a question because the function is expected to return a value.",
               state
             );
-            Component5.prototype && Component5.prototype.isPureReactComponent && "undefined" !== typeof _instance.shouldComponentUpdate && console.error(
+            Component7.prototype && Component7.prototype.isPureReactComponent && "undefined" !== typeof _instance.shouldComponentUpdate && console.error(
               "%s has a method called shouldComponentUpdate(). shouldComponentUpdate should not be used when extending React.PureComponent. Please extend React.Component if shouldComponentUpdate is used.",
-              getComponentNameFromType(Component5) || "A pure component"
+              getComponentNameFromType(Component7) || "A pure component"
             );
             "function" === typeof _instance.componentDidUnmount && console.error(
               "%s has a method called componentDidUnmount(). But there is no such lifecycle method. Did you mean componentWillUnmount()?",
@@ -9269,9 +9269,9 @@
               state,
               state
             );
-            "function" !== typeof _instance.getSnapshotBeforeUpdate || "function" === typeof _instance.componentDidUpdate || didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate.has(Component5) || (didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate.add(Component5), console.error(
+            "function" !== typeof _instance.getSnapshotBeforeUpdate || "function" === typeof _instance.componentDidUpdate || didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate.has(Component7) || (didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate.add(Component7), console.error(
               "%s: getSnapshotBeforeUpdate() should be used with componentDidUpdate(). This component defines getSnapshotBeforeUpdate() only.",
-              getComponentNameFromType(Component5)
+              getComponentNameFromType(Component7)
             ));
             "function" === typeof _instance.getDerivedStateFromProps && console.error(
               "%s: getDerivedStateFromProps() is defined as an instance method and will be ignored. Instead, declare it as a static method.",
@@ -9281,12 +9281,12 @@
               "%s: getDerivedStateFromError() is defined as an instance method and will be ignored. Instead, declare it as a static method.",
               state
             );
-            "function" === typeof Component5.getSnapshotBeforeUpdate && console.error(
+            "function" === typeof Component7.getSnapshotBeforeUpdate && console.error(
               "%s: getSnapshotBeforeUpdate() is defined as a static method and will be ignored. Instead, declare it as an instance method.",
               state
             );
             (lane = _instance.state) && ("object" !== typeof lane || isArrayImpl(lane)) && console.error("%s.state: must be set to an object or null", state);
-            "function" === typeof _instance.getChildContext && "object" !== typeof Component5.childContextTypes && console.error(
+            "function" === typeof _instance.getChildContext && "object" !== typeof Component7.childContextTypes && console.error(
               "%s.getChildContext(): childContextTypes must be defined in order to use getChildContext().",
               state
             );
@@ -9295,9 +9295,9 @@
             _instance.state = workInProgress2.memoizedState;
             _instance.refs = {};
             initializeUpdateQueue(workInProgress2);
-            state = Component5.contextType;
+            state = Component7.contextType;
             _instance.context = "object" === typeof state && null !== state ? readContext(state) : emptyContextObject;
-            _instance.state === nextProps && (state = getComponentNameFromType(Component5) || "Component", didWarnAboutDirectlyAssigningPropsToState.has(state) || (didWarnAboutDirectlyAssigningPropsToState.add(state), console.error(
+            _instance.state === nextProps && (state = getComponentNameFromType(Component7) || "Component", didWarnAboutDirectlyAssigningPropsToState.has(state) || (didWarnAboutDirectlyAssigningPropsToState.add(state), console.error(
               "%s: It is not recommended to assign props directly to state because updates to props won't be reflected in state. In most cases, it is better to use props directly.",
               state
             )));
@@ -9310,14 +9310,14 @@
               _instance
             );
             _instance.state = workInProgress2.memoizedState;
-            state = Component5.getDerivedStateFromProps;
+            state = Component7.getDerivedStateFromProps;
             "function" === typeof state && (applyDerivedStateFromProps(
               workInProgress2,
-              Component5,
+              Component7,
               state,
               nextProps
             ), _instance.state = workInProgress2.memoizedState);
-            "function" === typeof Component5.getDerivedStateFromProps || "function" === typeof _instance.getSnapshotBeforeUpdate || "function" !== typeof _instance.UNSAFE_componentWillMount && "function" !== typeof _instance.componentWillMount || (state = _instance.state, "function" === typeof _instance.componentWillMount && _instance.componentWillMount(), "function" === typeof _instance.UNSAFE_componentWillMount && _instance.UNSAFE_componentWillMount(), state !== _instance.state && (console.error(
+            "function" === typeof Component7.getDerivedStateFromProps || "function" === typeof _instance.getSnapshotBeforeUpdate || "function" !== typeof _instance.UNSAFE_componentWillMount && "function" !== typeof _instance.componentWillMount || (state = _instance.state, "function" === typeof _instance.componentWillMount && _instance.componentWillMount(), "function" === typeof _instance.UNSAFE_componentWillMount && _instance.UNSAFE_componentWillMount(), state !== _instance.state && (console.error(
               "%s.componentWillMount(): Assigning directly to this.state is deprecated (except inside a component's constructor). Use setState instead.",
               getComponentNameFromFiber(workInProgress2) || "Component"
             ), classComponentUpdater.enqueueReplaceState(
@@ -9331,13 +9331,13 @@
           } else if (null === current2) {
             _instance = workInProgress2.stateNode;
             var unresolvedOldProps = workInProgress2.memoizedProps;
-            lane = resolveClassComponentProps(Component5, unresolvedOldProps);
+            lane = resolveClassComponentProps(Component7, unresolvedOldProps);
             _instance.props = lane;
             var oldContext = _instance.context;
-            foundWillUpdateName = Component5.contextType;
+            foundWillUpdateName = Component7.contextType;
             state = emptyContextObject;
             "object" === typeof foundWillUpdateName && null !== foundWillUpdateName && (state = readContext(foundWillUpdateName));
-            newApiName = Component5.getDerivedStateFromProps;
+            newApiName = Component7.getDerivedStateFromProps;
             foundWillUpdateName = "function" === typeof newApiName || "function" === typeof _instance.getSnapshotBeforeUpdate;
             unresolvedOldProps = workInProgress2.pendingProps !== unresolvedOldProps;
             foundWillUpdateName || "function" !== typeof _instance.UNSAFE_componentWillReceiveProps && "function" !== typeof _instance.componentWillReceiveProps || (unresolvedOldProps || oldContext !== state) && callComponentWillReceiveProps(
@@ -9354,12 +9354,12 @@
             oldContext = workInProgress2.memoizedState;
             unresolvedOldProps || oldState !== oldContext || hasForceUpdate ? ("function" === typeof newApiName && (applyDerivedStateFromProps(
               workInProgress2,
-              Component5,
+              Component7,
               newApiName,
               nextProps
             ), oldContext = workInProgress2.memoizedState), (lane = hasForceUpdate || checkShouldComponentUpdate(
               workInProgress2,
-              Component5,
+              Component7,
               lane,
               nextProps,
               oldState,
@@ -9370,14 +9370,14 @@
             _instance = workInProgress2.stateNode;
             cloneUpdateQueue(current2, workInProgress2);
             state = workInProgress2.memoizedProps;
-            foundWillUpdateName = resolveClassComponentProps(Component5, state);
+            foundWillUpdateName = resolveClassComponentProps(Component7, state);
             _instance.props = foundWillUpdateName;
             newApiName = workInProgress2.pendingProps;
             oldState = _instance.context;
-            oldContext = Component5.contextType;
+            oldContext = Component7.contextType;
             lane = emptyContextObject;
             "object" === typeof oldContext && null !== oldContext && (lane = readContext(oldContext));
-            unresolvedOldProps = Component5.getDerivedStateFromProps;
+            unresolvedOldProps = Component7.getDerivedStateFromProps;
             (oldContext = "function" === typeof unresolvedOldProps || "function" === typeof _instance.getSnapshotBeforeUpdate) || "function" !== typeof _instance.UNSAFE_componentWillReceiveProps && "function" !== typeof _instance.componentWillReceiveProps || (state !== newApiName || oldState !== lane) && callComponentWillReceiveProps(
               workInProgress2,
               _instance,
@@ -9392,12 +9392,12 @@
             var newState = workInProgress2.memoizedState;
             state !== newApiName || oldState !== newState || hasForceUpdate || null !== current2 && null !== current2.dependencies && checkIfContextChanged(current2.dependencies) ? ("function" === typeof unresolvedOldProps && (applyDerivedStateFromProps(
               workInProgress2,
-              Component5,
+              Component7,
               unresolvedOldProps,
               nextProps
             ), newState = workInProgress2.memoizedState), (foundWillUpdateName = hasForceUpdate || checkShouldComponentUpdate(
               workInProgress2,
-              Component5,
+              Component7,
               foundWillUpdateName,
               nextProps,
               oldState,
@@ -9415,9 +9415,9 @@
           if (lane || state) {
             lane = workInProgress2.stateNode;
             setCurrentFiber(workInProgress2);
-            if (state && "function" !== typeof Component5.getDerivedStateFromError)
-              Component5 = null, profilerStartTime = -1;
-            else if (Component5 = callRenderInDEV(lane), workInProgress2.mode & StrictLegacyMode) {
+            if (state && "function" !== typeof Component7.getDerivedStateFromError)
+              Component7 = null, profilerStartTime = -1;
+            else if (Component7 = callRenderInDEV(lane), workInProgress2.mode & StrictLegacyMode) {
               setIsStrictModeForDevtools(true);
               try {
                 callRenderInDEV(lane);
@@ -9434,9 +9434,9 @@
             ), workInProgress2.child = reconcileChildFibers(
               workInProgress2,
               null,
-              Component5,
+              Component7,
               renderLanes2
-            )) : reconcileChildren(current2, workInProgress2, Component5, renderLanes2);
+            )) : reconcileChildren(current2, workInProgress2, Component7, renderLanes2);
             workInProgress2.memoizedState = lane.state;
             current2 = workInProgress2.child;
           } else
@@ -9458,19 +9458,19 @@
           reconcileChildren(current2, workInProgress2, nextChildren, renderLanes2);
           return workInProgress2.child;
         }
-        function validateFunctionComponentInDev(workInProgress2, Component5) {
-          Component5 && Component5.childContextTypes && console.error(
+        function validateFunctionComponentInDev(workInProgress2, Component7) {
+          Component7 && Component7.childContextTypes && console.error(
             "childContextTypes cannot be defined on a function component.\n  %s.childContextTypes = ...",
-            Component5.displayName || Component5.name || "Component"
+            Component7.displayName || Component7.name || "Component"
           );
-          "function" === typeof Component5.getDerivedStateFromProps && (workInProgress2 = getComponentNameFromType(Component5) || "Unknown", didWarnAboutGetDerivedStateOnFunctionComponent[workInProgress2] || (console.error(
+          "function" === typeof Component7.getDerivedStateFromProps && (workInProgress2 = getComponentNameFromType(Component7) || "Unknown", didWarnAboutGetDerivedStateOnFunctionComponent[workInProgress2] || (console.error(
             "%s: Function components do not support getDerivedStateFromProps.",
             workInProgress2
           ), didWarnAboutGetDerivedStateOnFunctionComponent[workInProgress2] = true));
-          "object" === typeof Component5.contextType && null !== Component5.contextType && (Component5 = getComponentNameFromType(Component5) || "Unknown", didWarnAboutContextTypeOnFunctionComponent[Component5] || (console.error(
+          "object" === typeof Component7.contextType && null !== Component7.contextType && (Component7 = getComponentNameFromType(Component7) || "Unknown", didWarnAboutContextTypeOnFunctionComponent[Component7] || (console.error(
             "%s: Function components do not support contextType.",
-            Component5
-          ), didWarnAboutContextTypeOnFunctionComponent[Component5] = true));
+            Component7
+          ), didWarnAboutContextTypeOnFunctionComponent[Component7] = true));
         }
         function mountSuspenseOffscreenState(renderLanes2) {
           return { baseLanes: renderLanes2, cachePool: getSuspendedCache() };
@@ -13435,7 +13435,7 @@
             if (startTime === RootInProgress) {
               workInProgressRootIsPrerendering && !forceSync && markRootSuspended(root2, lanes, 0, false);
               lanes = workInProgressSuspendedReason;
-              yieldStartTime = now();
+              yieldStartTime = now2();
               yieldReason = lanes;
               break;
             } else {
@@ -13739,8 +13739,8 @@
           didAttemptEntireTree && (root2.warmLanes |= suspendedLanes);
           didAttemptEntireTree = root2.expirationTimes;
           for (var lanes = suspendedLanes; 0 < lanes; ) {
-            var index = 31 - clz32(lanes), lane = 1 << index;
-            didAttemptEntireTree[index] = -1;
+            var index2 = 31 - clz32(lanes), lane = 1 << index2;
+            didAttemptEntireTree[index2] = -1;
             lanes &= ~lane;
           }
           0 !== spawnedLane && markSpawnedDeferredLane(root2, spawnedLane, suspendedLanes);
@@ -13796,7 +13796,7 @@
             "primary-light"
           ));
           var previousRenderStartTime = renderStartTime;
-          renderStartTime = now();
+          renderStartTime = now2();
           if (0 !== workInProgressRootRenderLanes && 0 < previousRenderStartTime) {
             setCurrentTrackFromLanes(workInProgressRootRenderLanes);
             if (workInProgressRootExitStatus === RootSuspended || workInProgressRootExitStatus === RootSuspendedWithDelay)
@@ -13901,7 +13901,7 @@
             blockingSuspendedTime = -1.1;
             blockingEventRepeatTime = blockingEventTime;
             blockingEventTime = -1.1;
-            blockingClampTime = now();
+            blockingClampTime = now2();
           }
           0 !== (lanes & 4194048) && (workInProgressUpdateTask = transitionUpdateTask, debugTask = 0 <= transitionStartTime && transitionStartTime < transitionClampTime ? transitionClampTime : transitionStartTime, previousRenderStartTime = 0 <= transitionUpdateTime && transitionUpdateTime < transitionClampTime ? transitionClampTime : transitionUpdateTime, endTime = 0 <= transitionEventTime && transitionEventTime < transitionClampTime ? transitionClampTime : transitionEventTime, color = 0 <= endTime ? endTime : 0 <= previousRenderStartTime ? previousRenderStartTime : renderStartTime, 0 <= transitionSuspendedTime ? (setCurrentTrackFromLanes(256), logSuspendedWithDelayPhase(
             transitionSuspendedTime,
@@ -13959,7 +13959,7 @@
               debugTask,
               previousRenderStartTime
             )
-          ) : performance.measure(debugTask, previousRenderStartTime))), transitionUpdateTime = transitionStartTime = -1.1, transitionUpdateType = 0, transitionSuspendedTime = -1.1, transitionEventRepeatTime = transitionEventTime, transitionEventTime = -1.1, transitionClampTime = now());
+          ) : performance.measure(debugTask, previousRenderStartTime))), transitionUpdateTime = transitionStartTime = -1.1, transitionUpdateType = 0, transitionSuspendedTime = -1.1, transitionEventRepeatTime = transitionEventTime, transitionEventTime = -1.1, transitionClampTime = now2());
           0 !== (lanes & 62914560) && 0 !== (animatingLanes & 62914560) && (setCurrentTrackFromLanes(4194304), logAnimatingPhase(retryClampTime, renderStartTime, animatingTask));
           0 !== (lanes & 2080374784) && 0 !== (animatingLanes & 2080374784) && (setCurrentTrackFromLanes(268435456), logAnimatingPhase(idleClampTime, renderStartTime, animatingTask));
           previousRenderStartTime = root2.timeoutHandle;
@@ -14459,7 +14459,7 @@
               return null;
             })) : (root2.callbackNode = null, root2.callbackPriority = 0);
             commitErrors = null;
-            commitStartTime = now();
+            commitStartTime = now2();
             null !== suspendedCommitReason && logSuspendedCommitPhase(
               completedRenderEndTime,
               commitStartTime,
@@ -14570,7 +14570,7 @@
             pendingEffectsStatus = NO_PENDING_EFFECTS;
             var suspendedViewTransitionReason = pendingSuspendedViewTransitionReason;
             if (null !== suspendedViewTransitionReason) {
-              commitStartTime = now();
+              commitStartTime = now2();
               var startTime = commitEndTime, endTime = commitStartTime;
               !supportsUserTiming || endTime <= startTime || (animatingTask ? animatingTask.run(
                 console.timeStamp.bind(
@@ -14614,7 +14614,7 @@
             }
             suspendedViewTransitionReason = pendingEffectsRenderEndTime;
             startTime = pendingSuspendedCommitReason;
-            commitEndTime = now();
+            commitEndTime = now2();
             suspendedViewTransitionReason = null === startTime ? suspendedViewTransitionReason : commitStartTime;
             startTime = commitEndTime;
             endTime = pendingDelayedCommitReason === ABORTED_VIEW_TRANSITION_COMMIT;
@@ -14650,7 +14650,7 @@
           if (pendingEffectsStatus === PENDING_SPAWNED_WORK || pendingEffectsStatus === PENDING_AFTER_MUTATION_PHASE) {
             if (pendingEffectsStatus === PENDING_SPAWNED_WORK) {
               var startViewTransitionStartTime = commitEndTime;
-              commitEndTime = now();
+              commitEndTime = now2();
               var endTime = commitEndTime, abortedViewTransition = pendingDelayedCommitReason === ABORTED_VIEW_TRANSITION_COMMIT;
               !supportsUserTiming || endTime <= startViewTransitionStartTime || (animatingTask ? animatingTask.run(
                 console.timeStamp.bind(
@@ -14947,7 +14947,7 @@
           null !== pingCache && pingCache.delete(wakeable);
           root2.pingedLanes |= root2.suspendedLanes & pingedLanes;
           root2.warmLanes &= ~pingedLanes;
-          0 !== (pingedLanes & 127) ? 0 > blockingUpdateTime && (blockingClampTime = blockingUpdateTime = now(), blockingUpdateTask = createTask("Promise Resolved"), blockingUpdateType = PINGED_UPDATE) : 0 !== (pingedLanes & 4194048) && 0 > transitionUpdateTime && (transitionClampTime = transitionUpdateTime = now(), transitionUpdateTask = createTask("Promise Resolved"), transitionUpdateType = PINGED_UPDATE);
+          0 !== (pingedLanes & 127) ? 0 > blockingUpdateTime && (blockingClampTime = blockingUpdateTime = now2(), blockingUpdateTask = createTask("Promise Resolved"), blockingUpdateType = PINGED_UPDATE) : 0 !== (pingedLanes & 4194048) && 0 > transitionUpdateTime && (transitionClampTime = transitionUpdateTime = now2(), transitionUpdateTask = createTask("Promise Resolved"), transitionUpdateType = PINGED_UPDATE);
           isConcurrentActEnvironment() && null === ReactSharedInternals.actQueue && console.error(
             "A suspended resource finished loading inside a test, but the event was not wrapped in act(...).\n\nWhen testing, code that resolves suspended data should be wrapped into act(...):\n\nact(() => {\n  /* finish loading suspended data */\n});\n/* assert on the output */\n\nThis ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act"
           );
@@ -15125,10 +15125,10 @@
         }
         function scheduleTaskForRootDuringMicrotask(root2, currentTime) {
           for (var suspendedLanes = root2.suspendedLanes, pingedLanes = root2.pingedLanes, expirationTimes = root2.expirationTimes, lanes = root2.pendingLanes & -62914561; 0 < lanes; ) {
-            var index = 31 - clz32(lanes), lane = 1 << index, expirationTime = expirationTimes[index];
+            var index2 = 31 - clz32(lanes), lane = 1 << index2, expirationTime = expirationTimes[index2];
             if (-1 === expirationTime) {
               if (0 === (lane & suspendedLanes) || 0 !== (lane & pingedLanes))
-                expirationTimes[index] = computeExpirationTime(lane, currentTime);
+                expirationTimes[index2] = computeExpirationTime(lane, currentTime);
             } else
               expirationTime <= currentTime && (root2.expiredLanes |= lane);
             lanes &= ~lane;
@@ -18999,14 +18999,14 @@
           ));
         }
         "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-        var Scheduler = require_scheduler(), React370 = require_react(), ReactDOM = require_react_dom(), assign2 = Object.assign, REACT_LEGACY_ELEMENT_TYPE = Symbol.for("react.element"), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE2 = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy");
+        var Scheduler = require_scheduler(), React392 = require_react(), ReactDOM = require_react_dom(), assign2 = Object.assign, REACT_LEGACY_ELEMENT_TYPE = Symbol.for("react.element"), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE2 = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy");
         Symbol.for("react.scope");
         var REACT_ACTIVITY_TYPE = Symbol.for("react.activity");
         Symbol.for("react.legacy_hidden");
         Symbol.for("react.tracing_marker");
         var REACT_MEMO_CACHE_SENTINEL = Symbol.for("react.memo_cache_sentinel");
         Symbol.for("react.view_transition");
-        var MAYBE_ITERATOR_SYMBOL = Symbol.iterator, REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), isArrayImpl = Array.isArray, ReactSharedInternals = React370.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, ReactDOMSharedInternals = ReactDOM.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, NotPending = Object.freeze({
+        var MAYBE_ITERATOR_SYMBOL = Symbol.iterator, REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), isArrayImpl = Array.isArray, ReactSharedInternals = React392.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, ReactDOMSharedInternals = ReactDOM.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, NotPending = Object.freeze({
           pending: false,
           data: null,
           method: null,
@@ -20097,14 +20097,14 @@
           _threadCount: 0,
           _currentRenderer: null,
           _currentRenderer2: null
-        }, now = Scheduler.unstable_now, createTask = console.createTask ? console.createTask : function() {
+        }, now2 = Scheduler.unstable_now, createTask = console.createTask ? console.createTask : function() {
           return null;
         }, SPAWNED_UPDATE = 1, PINGED_UPDATE = 2, renderStartTime = -0, commitStartTime = -0, commitEndTime = -0, commitErrors = null, profilerStartTime = -1.1, profilerEffectDuration = -0, componentEffectDuration = -0, componentEffectStartTime = -1.1, componentEffectEndTime = -1.1, componentEffectErrors = null, componentEffectSpawnedUpdate = false, blockingClampTime = -0, blockingUpdateTime = -1.1, blockingUpdateTask = null, blockingUpdateType = 0, blockingUpdateMethodName = null, blockingUpdateComponentName = null, blockingEventTime = -1.1, blockingEventType = null, blockingEventRepeatTime = -1.1, blockingSuspendedTime = -1.1, transitionClampTime = -0, transitionStartTime = -1.1, transitionUpdateTime = -1.1, transitionUpdateType = 0, transitionUpdateTask = null, transitionUpdateMethodName = null, transitionUpdateComponentName = null, transitionEventTime = -1.1, transitionEventType = null, transitionEventRepeatTime = -1.1, transitionSuspendedTime = -1.1, retryClampTime = -0, idleClampTime = -0, animatingLanes = 0, animatingTask = null, yieldReason = 0, yieldStartTime = -1.1, currentUpdateIsNested = false, nestedUpdateScheduled = false, currentEntangledListeners = null, currentEntangledPendingCount = 0, currentEntangledLane = 0, currentEntangledActionThenable = null, prevOnStartTransitionFinish = ReactSharedInternals.S;
         ReactSharedInternals.S = function(transition, returnValue) {
           globalMostRecentTransitionTime = now$1();
           if ("object" === typeof returnValue && null !== returnValue && "function" === typeof returnValue.then) {
             if (0 > transitionStartTime && 0 > transitionUpdateTime) {
-              transitionStartTime = now();
+              transitionStartTime = now2();
               var newEventTime = resolveEventTimeStamp(), newEventType = resolveEventType();
               if (newEventTime !== transitionEventRepeatTime || newEventType !== transitionEventType)
                 transitionEventRepeatTime = -1.1;
@@ -20248,11 +20248,11 @@
           pendingLegacyContextWarning = /* @__PURE__ */ new Map();
         };
         var callComponent = {
-          react_stack_bottom_frame: function(Component5, props, secondArg) {
+          react_stack_bottom_frame: function(Component7, props, secondArg) {
             var wasRendering = isRendering;
             isRendering = true;
             try {
-              return Component5(props, secondArg);
+              return Component7(props, secondArg);
             } finally {
               isRendering = wasRendering;
             }
@@ -21799,7 +21799,7 @@
           }
         };
         (function() {
-          var isomorphicReactPackageVersion = React370.version;
+          var isomorphicReactPackageVersion = React392.version;
           if ("19.2.4" !== isomorphicReactPackageVersion)
             throw Error(
               'Incompatible React versions: The "react" and "react-dom" packages must have the exact same version. Instead got:\n  - react:      ' + (isomorphicReactPackageVersion + "\n  - react-dom:  19.2.4\nLearn more: https://react.dev/warnings/version-mismatch")
@@ -21940,10 +21940,10 @@
   });
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/aavatto_test.bundle.jsx
-  var import_react134 = __toESM(require_react());
+  var import_react140 = __toESM(require_react());
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/App.jsx
-  var import_react133 = __toESM(require_react());
+  var import_react139 = __toESM(require_react());
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/components/Navbar.jsx
   var import_react = __toESM(require_react());
@@ -22008,7 +22008,7 @@
   var Dashboard_default = Dashboard;
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/pages/Customers.jsx
-  var import_react131 = __toESM(require_react());
+  var import_react137 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/_util/getReactMajorVersionCanDelMe.js
   var import_react3 = __toESM(require_react());
@@ -22592,11 +22592,11 @@
         warning(false, "`children` of ResizeObserver is empty. Nothing is in observe.");
       }
     }
-    return childNodes.map((child, index) => {
-      const key = (child == null ? void 0 : child.key) || `${INTERNAL_PREFIX_KEY}-${index}`;
+    return childNodes.map((child, index2) => {
+      const key = (child == null ? void 0 : child.key) || `${INTERNAL_PREFIX_KEY}-${index2}`;
       return /* @__PURE__ */ React12.createElement(SingleObserver_default, _extends({}, props, {
         key,
-        ref: index === 0 ? ref : void 0
+        ref: index2 === 0 ? ref : void 0
       }), child);
     });
   }
@@ -23103,8 +23103,8 @@
         this.keys.push(derivativeOption);
       }
       let cache = this.cache;
-      derivativeOption.forEach((derivative2, index) => {
-        if (index === derivativeOption.length - 1) {
+      derivativeOption.forEach((derivative2, index2) => {
+        if (index2 === derivativeOption.length - 1) {
           cache.set(derivative2, {
             value: [value, this.cacheCallTimes++]
           });
@@ -23603,8 +23603,8 @@
   function indexof(value, search, position3) {
     return value.indexOf(search, position3);
   }
-  function charat(value, index) {
-    return value.charCodeAt(index) | 0;
+  function charat(value, index2) {
+    return value.charCodeAt(index2) | 0;
   }
   function substr(value, begin, end) {
     return value.slice(begin, end);
@@ -23718,11 +23718,11 @@
         break;
     return token(type5) > 2 || token(character) > 3 ? "" : " ";
   }
-  function escaping(index, count) {
+  function escaping(index2, count) {
     while (--count && next())
       if (character < 48 || character > 102 || character > 57 && character < 65 || character > 70 && character < 97)
         break;
-    return slice(index, caret() + (count < 6 && peek() == 32 && next() == 32));
+    return slice(index2, caret() + (count < 6 && peek() == 32 && next() == 32));
   }
   function delimiter(type5) {
     while (next())
@@ -23744,18 +23744,18 @@
       }
     return position;
   }
-  function commenter(type5, index) {
+  function commenter(type5, index2) {
     while (next())
       if (type5 + character === 47 + 10)
         break;
       else if (type5 + character === 42 + 42 && peek() === 47)
         break;
-    return "/*" + slice(index, position - 1) + "*" + from(type5 === 47 ? type5 : next());
+    return "/*" + slice(index2, position - 1) + "*" + from(type5 === 47 ? type5 : next());
   }
-  function identifier(index) {
+  function identifier(index2) {
     while (!token(peek()))
       next();
-    return slice(index, position);
+    return slice(index2, position);
   }
 
   // ../custom_dashboard/node_modules/stylis/src/Parser.js
@@ -23763,7 +23763,7 @@
     return dealloc(parse("", null, null, null, [""], value = alloc(value), 0, [0], value));
   }
   function parse(value, root, parent, rule, rules, rulesets, pseudo, points, declarations) {
-    var index = 0;
+    var index2 = 0;
     var offset3 = 0;
     var length2 = pseudo;
     var atrule = 0;
@@ -23782,7 +23782,7 @@
       switch (previous = character2, character2 = next()) {
         case 40:
           if (previous != 108 && charat(characters2, length2 - 1) == 58) {
-            if (indexof(characters2 += replace(delimit(character2), "&", "&\f"), "&\f", abs(index ? points[index - 1] : 0)) != -1)
+            if (indexof(characters2 += replace(delimit(character2), "&", "&\f"), "&\f", abs(index2 ? points[index2 - 1] : 0)) != -1)
               ampersand = -1;
             break;
           }
@@ -23813,7 +23813,7 @@
           }
           break;
         case 123 * variable:
-          points[index++] = strlen(characters2) * ampersand;
+          points[index2++] = strlen(characters2) * ampersand;
         case 125 * variable:
         case 59:
         case 0:
@@ -23830,7 +23830,7 @@
             case 59:
               characters2 += ";";
             default:
-              append(reference = ruleset(characters2, root, parent, index, offset3, rules, points, type5, props = [], children = [], length2, rulesets), rulesets);
+              append(reference = ruleset(characters2, root, parent, index2, offset3, rules, points, type5, props = [], children = [], length2, rulesets), rulesets);
               if (character2 === 123)
                 if (offset3 === 0)
                   parse(characters2, root, reference, reference, props, rulesets, length2, points, children);
@@ -23854,7 +23854,7 @@
                     parse(characters2, reference, reference, reference, [""], children, 0, points, children);
                 }
           }
-          index = offset3 = property = 0, variable = ampersand = 1, type5 = characters2 = "", length2 = pseudo;
+          index2 = offset3 = property = 0, variable = ampersand = 1, type5 = characters2 = "", length2 = pseudo;
           break;
         case 58:
           length2 = 1 + strlen(characters2), property = previous;
@@ -23870,7 +23870,7 @@
               ampersand = offset3 > 0 ? 1 : (characters2 += "\f", -1);
               break;
             case 44:
-              points[index++] = (strlen(characters2) - 1) * ampersand, ampersand = 1;
+              points[index2++] = (strlen(characters2) - 1) * ampersand, ampersand = 1;
               break;
             case 64:
               if (peek() === 45)
@@ -23884,11 +23884,11 @@
       }
     return rulesets;
   }
-  function ruleset(value, root, parent, index, offset3, rules, points, type5, props, children, length2, siblings) {
+  function ruleset(value, root, parent, index2, offset3, rules, points, type5, props, children, length2, siblings) {
     var post = offset3 - 1;
     var rule = offset3 === 0 ? rules : [""];
     var size = sizeof(rule);
-    for (var i = 0, j = 0, k = 0; i < index; ++i)
+    for (var i = 0, j = 0, k = 0; i < index2; ++i)
       for (var x = 0, y = substr(value, post + 1, post = abs(j = points[i])), z = value; x < size; ++x)
         if (z = trim(j > 0 ? rule[x] + " " + y : replace(y, /&\f/g, rule[x])))
           props[k++] = z;
@@ -23986,8 +23986,8 @@
         return MS + replace(value, "template-", "") + value;
       case 4384:
       case 3616:
-        if (children && children.some(function(element, index) {
-          return length2 = index, match(element.props, /grid-\w+-end/);
+        if (children && children.some(function(element, index2) {
+          return length2 = index2, match(element.props, /grid-\w+-end/);
         })) {
           return ~indexof(value + (children = children[length2].value), "span", 0) ? value : MS + replace(value, "-start", "") + value + MS + "grid-row-span:" + (~indexof(children, "span", 0) ? match(children, /\d+/) : +match(children, /\d+/) - +match(value, /\d+/)) + ";";
         }
@@ -24059,7 +24059,7 @@
       output += callback(children[i], i, children, callback) || "";
     return output;
   }
-  function stringify(element, index, children, callback) {
+  function stringify(element, index2, children, callback) {
     switch (element.type) {
       case LAYER:
         if (element.children.length)
@@ -24082,14 +24082,14 @@
   // ../custom_dashboard/node_modules/stylis/src/Middleware.js
   function middleware(collection) {
     var length2 = sizeof(collection);
-    return function(element, index, children, callback) {
+    return function(element, index2, children, callback) {
       var output = "";
       for (var i = 0; i < length2; i++)
-        output += collection[i](element, index, children, callback) || "";
+        output += collection[i](element, index2, children, callback) || "";
       return output;
     };
   }
-  function prefixer(element, index, children, callback) {
+  function prefixer(element, index2, children, callback) {
     if (element.length > -1) {
       if (!element.return)
         switch (element.type) {
@@ -25227,9 +25227,9 @@
       value: function clear() {
         var _this2 = this;
         if (this.accessBeat > 1e4) {
-          var now = Date.now();
+          var now2 = Date.now();
           this.lastAccessBeat.forEach(function(beat, key) {
-            if (now - beat > BEAT_LIMIT) {
+            if (now2 - beat > BEAT_LIMIT) {
               _this2.map.delete(key);
               _this2.lastAccessBeat.delete(key);
             }
@@ -25451,10 +25451,10 @@
   function getFontSizes(base) {
     const fontSizes = Array.from({
       length: 10
-    }).map((_, index) => {
-      const i = index - 1;
+    }).map((_, index2) => {
+      const i = index2 - 1;
       const baseSize = base * Math.E ** (i / 5);
-      const intSize = index > 1 ? Math.floor(baseSize) : Math.ceil(baseSize);
+      const intSize = index2 > 1 ? Math.floor(baseSize) : Math.ceil(baseSize);
       return Math.floor(intSize / 2) * 2;
     });
     fontSizes[1] = base;
@@ -25699,7 +25699,7 @@
     }
     return numList;
   }
-  var parseHSVorHSL = (num, _, index) => index === 0 ? num : num / 100;
+  var parseHSVorHSL = (num, _, index2) => index2 === 0 ? num : num / 100;
   function limitRange(value, max) {
     const mergedMax = max || 255;
     if (value > mergedMax) {
@@ -26257,9 +26257,9 @@
     }
     if (opts.theme === "dark") {
       return darkColorMap.map(({
-        index,
+        index: index2,
         amount
-      }) => new FastColor(opts.backgroundColor || "#141414").mix(patterns[index], amount).toHexString());
+      }) => new FastColor(opts.backgroundColor || "#141414").mix(patterns[index2], amount).toHexString());
     }
     return patterns.map((c) => c.toHexString());
   }
@@ -27250,11 +27250,11 @@
     if (!rootProps) {
       return /* @__PURE__ */ import_react16.default.createElement(node2.tag, __spreadValues({
         key
-      }, normalizeAttrs(node2.attrs)), (node2.children || []).map((child, index) => generate2(child, `${key}-${node2.tag}-${index}`)));
+      }, normalizeAttrs(node2.attrs)), (node2.children || []).map((child, index2) => generate2(child, `${key}-${node2.tag}-${index2}`)));
     }
     return /* @__PURE__ */ import_react16.default.createElement(node2.tag, __spreadValues(__spreadValues({
       key
-    }, normalizeAttrs(node2.attrs)), rootProps), (node2.children || []).map((child, index) => generate2(child, `${key}-${node2.tag}-${index}`)));
+    }, normalizeAttrs(node2.attrs)), rootProps), (node2.children || []).map((child, index2) => generate2(child, `${key}-${node2.tag}-${index2}`)));
   }
   function getSecondaryColor(primaryColor) {
     return generate(primaryColor)[0];
@@ -27864,8 +27864,8 @@ ${mergedStyleStr}
     const STEP_QUEUE = prepareOnly ? SIMPLE_STEP_QUEUE : FULL_STEP_QUEUE;
     useIsomorphicLayoutEffect_default(() => {
       if (step !== STEP_NONE && step !== STEP_ACTIVATED) {
-        const index = STEP_QUEUE.indexOf(step);
-        const nextStep = STEP_QUEUE[index + 1];
+        const index2 = STEP_QUEUE.indexOf(step);
+        const nextStep = STEP_QUEUE[index2 + 1];
         const result = callback(step);
         if (result === SkipStep) {
           setStep(nextStep, true);
@@ -28349,14 +28349,14 @@ ${mergedStyleStr}
           "onVisibleChanged",
           "onAllRemoved"
         ]);
-        const Component5 = component || React35.Fragment;
+        const Component7 = component || React35.Fragment;
         const motionProps = {};
         MOTION_PROP_NAMES.forEach((prop) => {
           motionProps[prop] = restProps[prop];
           delete restProps[prop];
         });
         delete restProps.keys;
-        return /* @__PURE__ */ React35.createElement(Component5, restProps, keyEntities.map((_b, index) => {
+        return /* @__PURE__ */ React35.createElement(Component7, restProps, keyEntities.map((_b, index2) => {
           var _c = _b, {
             status
           } = _c, eventProps = __objRest(_c, [
@@ -28376,7 +28376,7 @@ ${mergedStyleStr}
               }
             }
           }), (props, ref) => children(__spreadProps(__spreadValues({}, props), {
-            index
+            index: index2
           }), ref));
         }));
       }
@@ -29641,7 +29641,7 @@ ${mergedStyleStr}
       }
     }, {
       key: "render",
-      value: function render2() {
+      value: function render4() {
         const {
           message: message2,
           title,
@@ -29881,7 +29881,7 @@ ${mergedStyleStr}
   // ../custom_dashboard/node_modules/@rc-component/portal/es/useDom.js
   var React48 = __toESM(require_react());
   var EMPTY_LIST = [];
-  function useDom(render2, debug) {
+  function useDom(render4, debug) {
     const [ele] = React48.useState(() => {
       if (!canUseDom()) {
         return null;
@@ -29913,7 +29913,7 @@ ${mergedStyleStr}
       appendedRef.current = false;
     }
     useLayoutEffect_default(() => {
-      if (render2) {
+      if (render4) {
         if (queueCreate) {
           queueCreate(append2);
         } else {
@@ -29923,7 +29923,7 @@ ${mergedStyleStr}
         cleanup2();
       }
       return cleanup2;
-    }, [render2]);
+    }, [render4]);
     useLayoutEffect_default(() => {
       if (queue.length) {
         queue.forEach((appendFn) => appendFn());
@@ -30078,8 +30078,8 @@ html body {
   var lastCompositionEndTime = 0;
   var onGlobalKeyDown = (event) => {
     if (event.key === "Escape" && !event.isComposing) {
-      const now = Date.now();
-      if (now - lastCompositionEndTime < IME_LOCK_DURATION) {
+      const now2 = Date.now();
+      if (now2 - lastCompositionEndTime < IME_LOCK_DURATION) {
         return;
       }
       const len = stack.length;
@@ -30586,7 +30586,7 @@ html body {
 
   // ../custom_dashboard/node_modules/@rc-component/trigger/es/util.js
   function isPointsEq(a1 = [], a2 = [], isAlignPoint) {
-    const getVal = (a, index) => a[index] || "";
+    const getVal = (a, index2) => a[index2] || "";
     if (isAlignPoint) {
       return getVal(a1, 0) === getVal(a2, 0);
     }
@@ -30724,7 +30724,7 @@ html body {
       y
     };
   }
-  function reversePoints(points, index) {
+  function reversePoints(points, index2) {
     const reverseMap = {
       t: "b",
       b: "t",
@@ -30732,7 +30732,7 @@ html body {
       r: "l"
     };
     const clone = [...points];
-    clone[index] = reverseMap[points[index]] || "c";
+    clone[index2] = reverseMap[points[index2]] || "c";
     return clone;
   }
   function flatPoints(points) {
@@ -32099,8 +32099,8 @@ html body {
         components: mergedComponents,
         cssVar: mergedCssVar
       });
-    }, [themeConfig, parentThemeConfig], (prev2, next2) => prev2.some((prevTheme, index) => {
-      const nextTheme = next2[index];
+    }, [themeConfig, parentThemeConfig], (prev2, next2) => prev2.some((prevTheme, index2) => {
+      const nextTheme = next2[index2];
       return !isEqual_default(prevTheme, nextTheme, true);
     }));
   }
@@ -32262,7 +32262,7 @@ html body {
       input,
       textArea,
       otp,
-      empty,
+      empty: empty2,
       badge,
       radio,
       rate,
@@ -32278,7 +32278,7 @@ html body {
       tabs,
       timeline,
       timePicker,
-      upload,
+      upload: upload2,
       notification,
       tree,
       colorPicker,
@@ -32364,7 +32364,7 @@ html body {
       masonry,
       menu,
       pagination,
-      empty,
+      empty: empty2,
       badge,
       radio,
       rate,
@@ -32380,7 +32380,7 @@ html body {
       tabs,
       timeline,
       timePicker,
-      upload,
+      upload: upload2,
       notification,
       tree,
       colorPicker,
@@ -33018,16 +33018,16 @@ html body {
       const dataIndex = keys2.findIndex((item) => item.key === strKey);
       const stackStyle = {};
       if (stack2) {
-        const index = keys2.length - 1 - (dataIndex > -1 ? dataIndex : motionIndex - 1);
+        const index2 = keys2.length - 1 - (dataIndex > -1 ? dataIndex : motionIndex - 1);
         const transformX = placement === "top" || placement === "bottom" ? "-50%" : "0";
-        if (index > 0) {
+        if (index2 > 0) {
           stackStyle.height = expanded ? (_b = dictRef.current[strKey]) == null ? void 0 : _b.offsetHeight : latestNotice == null ? void 0 : latestNotice.offsetHeight;
           let verticalOffset = 0;
-          for (let i = 0; i < index; i++) {
+          for (let i = 0; i < index2; i++) {
             verticalOffset += ((_c = dictRef.current[keys2[keys2.length - 1 - i].key]) == null ? void 0 : _c.offsetHeight) + gap;
           }
-          const transformY = (expanded ? verticalOffset : index * offset3) * (placement.startsWith("top") ? 1 : -1);
-          const scaleX = !expanded && (latestNotice == null ? void 0 : latestNotice.offsetWidth) && ((_d = dictRef.current[strKey]) == null ? void 0 : _d.offsetWidth) ? ((latestNotice == null ? void 0 : latestNotice.offsetWidth) - offset3 * 2 * (index < 3 ? index : 3)) / ((_e = dictRef.current[strKey]) == null ? void 0 : _e.offsetWidth) : 1;
+          const transformY = (expanded ? verticalOffset : index2 * offset3) * (placement.startsWith("top") ? 1 : -1);
+          const scaleX = !expanded && (latestNotice == null ? void 0 : latestNotice.offsetWidth) && ((_d = dictRef.current[strKey]) == null ? void 0 : _d.offsetWidth) ? ((latestNotice == null ? void 0 : latestNotice.offsetWidth) - offset3 * 2 * (index2 < 3 ? index2 : 3)) / ((_e = dictRef.current[strKey]) == null ? void 0 : _e.offsetWidth) : 1;
           stackStyle.transform = `translate3d(${transformX}, ${transformY}px, 0) scaleX(${scaleX})`;
         } else {
           stackStyle.transform = `translate3d(${transformX}, 0, 0)`;
@@ -33096,11 +33096,11 @@ html body {
         setConfigList((list) => {
           var _a;
           let clone = [...list];
-          const index = clone.findIndex((item) => item.key === config.key);
+          const index2 = clone.findIndex((item) => item.key === config.key);
           const innerConfig = __spreadValues({}, config);
-          if (index >= 0) {
-            innerConfig.times = (((_a = list[index]) == null ? void 0 : _a.times) || 0) + 1;
-            clone[index] = innerConfig;
+          if (index2 >= 0) {
+            innerConfig.times = (((_a = list[index2]) == null ? void 0 : _a.times) || 0) + 1;
+            clone[index2] = innerConfig;
           } else {
             innerConfig.times = 0;
             clone.push(innerConfig);
@@ -38038,15 +38038,15 @@ html body {
     });
   }
   function asyncSerialArray(arr, func, callback) {
-    var index = 0;
+    var index2 = 0;
     var arrLength = arr.length;
     function next2(errors) {
       if (errors && errors.length) {
         callback(errors);
         return;
       }
-      var original = index;
-      index = index + 1;
+      var original = index2;
+      index2 = index2 + 1;
       if (original < arrLength) {
         func(arr[original], next2);
       } else {
@@ -39046,10 +39046,10 @@ html body {
       if (errObj.errors) {
         result = errObj.errors.map(({
           message: message2
-        }, index) => {
+        }, index2) => {
           const mergedMessage = message2 === CODE_LOGIC_ERROR ? messages2.default : message2;
           return /* @__PURE__ */ React115.isValidElement(mergedMessage) ? /* @__PURE__ */ React115.cloneElement(mergedMessage, {
-            key: `error_${index}`
+            key: `error_${index2}`
           }) : mergedMessage;
         });
       }
@@ -39860,13 +39860,13 @@ html body {
         return values || [];
       };
       const operations = {
-        add: (defaultValue, index) => {
+        add: (defaultValue, index2) => {
           const newValue = getNewValue();
-          if (index >= 0 && index <= newValue.length) {
-            keyManager.keys = [...keyManager.keys.slice(0, index), keyManager.id, ...keyManager.keys.slice(index)];
-            onChange([...newValue.slice(0, index), defaultValue, ...newValue.slice(index)]);
+          if (index2 >= 0 && index2 <= newValue.length) {
+            keyManager.keys = [...keyManager.keys.slice(0, index2), keyManager.id, ...keyManager.keys.slice(index2)];
+            onChange([...newValue.slice(0, index2), defaultValue, ...newValue.slice(index2)]);
           } else {
-            if (index < 0 || index > newValue.length) {
+            if (index2 < 0 || index2 > newValue.length) {
               warning_default(false, "The second parameter of the add function should be a valid positive number.");
             }
             keyManager.keys = [...keyManager.keys, keyManager.id];
@@ -39874,9 +39874,9 @@ html body {
           }
           keyManager.id += 1;
         },
-        remove: (index) => {
+        remove: (index2) => {
           const newValue = getNewValue();
-          const indexSet = new Set(Array.isArray(index) ? index : [index]);
+          const indexSet = new Set(Array.isArray(index2) ? index2 : [index2]);
           if (indexSet.size <= 0) {
             return;
           }
@@ -39902,15 +39902,15 @@ html body {
           warning_default(false, `Current value of '${prefixName.join(" > ")}' is not an array type.`);
         }
       }
-      return children(listValue.map((__2, index) => {
-        let key = keyManager.keys[index];
+      return children(listValue.map((__2, index2) => {
+        let key = keyManager.keys[index2];
         if (key === void 0) {
-          keyManager.keys[index] = keyManager.id;
-          key = keyManager.keys[index];
+          keyManager.keys[index2] = keyManager.id;
+          key = keyManager.keys[index2];
           keyManager.id += 1;
         }
         return {
-          name: index,
+          name: index2,
           key,
           isListField: true
         };
@@ -39931,13 +39931,13 @@ html body {
       return Promise.resolve([]);
     }
     return new Promise((resolve, reject) => {
-      promiseList.forEach((promise, index) => {
+      promiseList.forEach((promise, index2) => {
         promise.catch((e3) => {
           hasError = true;
           return e3;
         }).then((result) => {
           count -= 1;
-          results[index] = result;
+          results[index2] = result;
           if (count > 0) {
             return;
           }
@@ -40222,7 +40222,7 @@ html body {
       __publicField(this, "getFieldsError", (nameList) => {
         this.warningUnhooked();
         const fieldEntities = this.getFieldEntitiesForNamePathList(nameList);
-        return fieldEntities.map((entity, index) => {
+        return fieldEntities.map((entity, index2) => {
           if (entity && !entity.INVALIDATE_NAME_PATH) {
             return {
               name: entity.getNamePath(),
@@ -40231,7 +40231,7 @@ html body {
             };
           }
           return {
-            name: getNamePath(nameList[index]),
+            name: getNamePath(nameList[index2]),
             errors: [],
             warnings: []
           };
@@ -40868,7 +40868,7 @@ html body {
       form,
       preserve: preserve2,
       children,
-      component: Component5 = "form",
+      component: Component7 = "form",
       validateMessages,
       validateTrigger = "onChange",
       onValuesChange,
@@ -40963,10 +40963,10 @@ html body {
     }, /* @__PURE__ */ React120.createElement(FieldContext_default.Provider, {
       value: formContextValue
     }, childrenNode));
-    if (Component5 === false) {
+    if (Component7 === false) {
       return wrapperNode;
     }
-    return /* @__PURE__ */ React120.createElement(Component5, _extends24({}, restProps, {
+    return /* @__PURE__ */ React120.createElement(Component7, _extends24({}, restProps, {
       ref: nativeElementRef,
       onSubmit: (event) => {
         event.preventDefault();
@@ -41689,15 +41689,15 @@ html body {
   // ../custom_dashboard/node_modules/antd/es/skeleton/Paragraph.js
   var React130 = __toESM(require_react());
   "use client";
-  var getWidth = (index, props) => {
+  var getWidth = (index2, props) => {
     const {
       width,
       rows = 2
     } = props;
     if (Array.isArray(width)) {
-      return width[index];
+      return width[index2];
     }
-    if (rows - 1 === index) {
+    if (rows - 1 === index2) {
       return width;
     }
     return void 0;
@@ -41711,10 +41711,10 @@ html body {
     } = props;
     const rowList = Array.from({
       length: rows
-    }).map((_, index) => /* @__PURE__ */ React130.createElement("li", {
-      key: index,
+    }).map((_, index2) => /* @__PURE__ */ React130.createElement("li", {
+      key: index2,
       style: {
-        width: getWidth(index, props)
+        width: getWidth(index2, props)
       }
     }));
     return /* @__PURE__ */ React130.createElement("ul", {
@@ -42399,8 +42399,8 @@ html body {
     }));
     return {
       [`${componentCls}-root`]: {
-        [componentCls]: [].concat(_toConsumableArray(Object.keys(oriGridMediaSizesMap).map((currentKey, index) => {
-          const previousKey = Object.keys(oriGridMediaSizesMap)[index - 1];
+        [componentCls]: [].concat(_toConsumableArray(Object.keys(oriGridMediaSizesMap).map((currentKey, index2) => {
+          const previousKey = Object.keys(oriGridMediaSizesMap)[index2 - 1];
           return previousKey ? {
             [`${cssVarPrefix}${currentKey}-width`]: `var(${cssVarPrefix}${previousKey}-width)`
           } : null;
@@ -43275,7 +43275,7 @@ html body {
   // ../custom_dashboard/node_modules/antd/es/_util/PurePanel.js
   var React143 = __toESM(require_react());
   "use client";
-  function withPureRenderTheme(Component5) {
+  function withPureRenderTheme(Component7) {
     return (props) => /* @__PURE__ */ React143.createElement(config_provider_default, {
       theme: {
         token: {
@@ -43283,9 +43283,9 @@ html body {
           zIndexPopupBase: 0
         }
       }
-    }, /* @__PURE__ */ React143.createElement(Component5, __spreadValues({}, props)));
+    }, /* @__PURE__ */ React143.createElement(Component7, __spreadValues({}, props)));
   }
-  var genPurePanel = (Component5, alignPropName, postProps, defaultPrefixCls2, getDropdownCls) => {
+  var genPurePanel = (Component7, alignPropName, postProps, defaultPrefixCls2, getDropdownCls) => {
     const PurePanel6 = (props) => {
       const {
         prefixCls: customizePrefixCls,
@@ -43350,7 +43350,7 @@ html body {
       return /* @__PURE__ */ React143.createElement("div", {
         ref: holderRef,
         style: mergedStyle
-      }, /* @__PURE__ */ React143.createElement(Component5, __spreadValues({}, mergedProps)));
+      }, /* @__PURE__ */ React143.createElement(Component7, __spreadValues({}, mergedProps)));
     };
     return withPureRenderTheme(PurePanel6);
   };
@@ -43519,7 +43519,7 @@ html body {
       popupRender,
       popupAlign,
       getPopupContainer,
-      empty,
+      empty: empty2,
       onPopupVisibleChange,
       onPopupMouseEnter,
       onPopupMouseDown,
@@ -43594,7 +43594,7 @@ html body {
       popupVisible: visible,
       getPopupContainer,
       popupClassName: clsx(popupClassName, {
-        [`${popupPrefixCls}-empty`]: empty
+        [`${popupPrefixCls}-empty`]: empty2
       }),
       popupStyle: mergedPopupStyle,
       onPopupVisibleChange
@@ -43607,7 +43607,7 @@ html body {
   var SelectTrigger_default = RefSelectTrigger;
 
   // ../custom_dashboard/node_modules/@rc-component/select/es/utils/valueUtil.js
-  function getKey(data, index) {
+  function getKey(data, index2) {
     const {
       key
     } = data;
@@ -43623,7 +43623,7 @@ html body {
     if (value !== void 0) {
       return value;
     }
-    return `rc-index-key-${index}`;
+    return `rc-index-key-${index2}`;
   }
   function isValidCount(value) {
     return typeof value !== "undefined" && !Number.isNaN(value);
@@ -43988,8 +43988,8 @@ html body {
       mergedProps.ref = composeRef(InputComponent.ref, sharedInputProps.ref);
       return /* @__PURE__ */ React151.cloneElement(InputComponent, mergedProps);
     }
-    const Component5 = InputComponent;
-    return /* @__PURE__ */ React151.createElement(Component5, sharedInputProps);
+    const Component7 = InputComponent;
+    return /* @__PURE__ */ React151.createElement(Component7, sharedInputProps);
   });
   var Input_default2 = Input;
 
@@ -44177,7 +44177,7 @@ html body {
       children,
       display,
       order,
-      component: Component5 = "div"
+      component: Component7 = "div"
     } = _a, restProps = __objRest(_a, [
       "prefixCls",
       "invalidate",
@@ -44219,7 +44219,7 @@ html body {
     if (mergedHidden) {
       overflowProps["aria-hidden"] = true;
     }
-    let itemNode = /* @__PURE__ */ React155.createElement(Component5, _extends17({
+    let itemNode = /* @__PURE__ */ React155.createElement(Component7, _extends17({
       className: clsx(!invalidate && prefixCls, className),
       style: __spreadValues(__spreadValues({}, overflowStyle), style2)
     }, overflowProps, restProps, {
@@ -44299,11 +44299,11 @@ html body {
     const context = React158.useContext(OverflowContext);
     if (!context) {
       const _a = props, {
-        component: Component5 = "div"
+        component: Component7 = "div"
       } = _a, restProps2 = __objRest(_a, [
         "component"
       ]);
-      return /* @__PURE__ */ React158.createElement(Component5, _extends17({}, restProps2, {
+      return /* @__PURE__ */ React158.createElement(Component7, _extends17({}, restProps2, {
         ref
       }));
     }
@@ -44352,7 +44352,7 @@ html body {
       renderRawRest,
       prefix: prefix2,
       suffix,
-      component: Component5 = "div",
+      component: Component7 = "div",
       itemComponent,
       onVisibleChange
     } = _a, restProps = __objRest(_a, [
@@ -44417,12 +44417,12 @@ html body {
       }
       return data.slice(mergedData.length);
     }, [data, mergedData, shouldResponsive, mergedDisplayCount]);
-    const getKey3 = (0, import_react76.useCallback)((item, index) => {
+    const getKey3 = (0, import_react76.useCallback)((item, index2) => {
       var _a2;
       if (typeof itemKey3 === "function") {
         return itemKey3(item);
       }
-      return (_a2 = itemKey3 && (item == null ? void 0 : item[itemKey3])) != null ? _a2 : index;
+      return (_a2 = itemKey3 && (item == null ? void 0 : item[itemKey3])) != null ? _a2 : index2;
     }, [itemKey3]);
     const mergedRenderItem = (0, import_react76.useCallback)(renderItem || ((item) => item), [renderItem]);
     function updateDisplayCount(count, suffixFixedStartVal, notReady) {
@@ -44462,8 +44462,8 @@ html body {
     function registerSuffixSize(_, width) {
       setSuffixWidth(width);
     }
-    function getItemWidth(index) {
-      return itemWidths.get(getKey3(mergedData[index], index));
+    function getItemWidth(index2) {
+      return itemWidths.get(getKey3(mergedData[index2], index2));
     }
     useLayoutEffect_default(() => {
       if (mergedContainerWidth && typeof mergedRestWidth === "number" && mergedData) {
@@ -44512,28 +44512,28 @@ html body {
       component: itemComponent,
       invalidate
     };
-    const internalRenderItemNode = renderRawItem ? (item, index) => {
-      const key = getKey3(item, index);
+    const internalRenderItemNode = renderRawItem ? (item, index2) => {
+      const key = getKey3(item, index2);
       return /* @__PURE__ */ React159.createElement(OverflowContext.Provider, {
         key,
         value: __spreadProps(__spreadValues({}, itemSharedProps), {
-          order: index,
+          order: index2,
           item,
           itemKey: key,
           registerSize,
-          display: index <= mergedDisplayCount
+          display: index2 <= mergedDisplayCount
         })
-      }, renderRawItem(item, index));
-    } : (item, index) => {
-      const key = getKey3(item, index);
+      }, renderRawItem(item, index2));
+    } : (item, index2) => {
+      const key = getKey3(item, index2);
       return /* @__PURE__ */ React159.createElement(Item_default, _extends17({}, itemSharedProps, {
-        order: index,
+        order: index2,
         key,
         item,
         renderItem: mergedRenderItem,
         itemKey: key,
         registerSize,
-        display: index <= mergedDisplayCount
+        display: index2 <= mergedDisplayCount
       }));
     };
     const restContextProps = {
@@ -44546,7 +44546,7 @@ html body {
     const restNode = renderRawRest ? /* @__PURE__ */ React159.createElement(OverflowContext.Provider, {
       value: __spreadValues(__spreadValues({}, itemSharedProps), restContextProps)
     }, renderRawRest(omittedItems)) : /* @__PURE__ */ React159.createElement(Item_default, _extends17({}, itemSharedProps, restContextProps), typeof mergedRenderRest === "function" ? mergedRenderRest(omittedItems) : mergedRenderRest);
-    const overflowNode = /* @__PURE__ */ React159.createElement(Component5, _extends17({
+    const overflowNode = /* @__PURE__ */ React159.createElement(Component7, _extends17({
       className: clsx(!invalidate && prefixCls, className),
       style: style2,
       ref
@@ -45591,8 +45591,8 @@ html body {
   function useChildren(list, startIndex, endIndex, scrollWidth, offsetX, setNodeRef, renderFunc, {
     getKey: getKey3
   }) {
-    return list.slice(startIndex, endIndex + 1).map((item, index) => {
-      const eleIndex = startIndex + index;
+    return list.slice(startIndex, endIndex + 1).map((item, index2) => {
+      const eleIndex = startIndex + index2;
       const node2 = renderFunc(item, eleIndex, {
         style: {
           width: scrollWidth
@@ -45786,7 +45786,7 @@ html body {
   var React170 = __toESM(require_react());
   function useGetSize(mergedData, getKey3, heights, itemHeight) {
     const [key2Index, bottomList] = React170.useMemo(() => [/* @__PURE__ */ new Map(), []], [mergedData, heights.id, itemHeight]);
-    const getSize = (startKey, endKey = startKey) => {
+    const getSize2 = (startKey, endKey = startKey) => {
       var _a;
       let startIndex = key2Index.get(startKey);
       let endIndex = key2Index.get(endKey);
@@ -45814,7 +45814,7 @@ html body {
         bottom: bottomList[endIndex]
       };
     };
-    return getSize;
+    return getSize2;
   }
 
   // ../custom_dashboard/node_modules/@rc-component/virtual-list/es/hooks/useHeights.js
@@ -46093,7 +46093,7 @@ html body {
         const {
           targetAlign,
           originAlign,
-          index,
+          index: index2,
           offset: offset3
         } = syncState;
         const height = containerRef.current.clientHeight;
@@ -46105,7 +46105,7 @@ html body {
           let stackTop = 0;
           let itemTop = 0;
           let itemBottom = 0;
-          const maxLen = Math.min(data.length - 1, index);
+          const maxLen = Math.min(data.length - 1, index2);
           for (let i = 0; i <= maxLen; i += 1) {
             const key = getKey3(data[i]);
             itemTop = stackTop;
@@ -46172,23 +46172,23 @@ html body {
       if (typeof arg === "number") {
         syncScrollTop(arg);
       } else if (arg && typeof arg === "object") {
-        let index;
+        let index2;
         const {
           align
         } = arg;
         if ("index" in arg) {
           ({
-            index
+            index: index2
           } = arg);
         } else {
-          index = data.findIndex((item) => getKey3(item) === arg.key);
+          index2 = data.findIndex((item) => getKey3(item) === arg.key);
         }
         const {
           offset: offset3 = 0
         } = arg;
         setSyncState({
           times: 0,
-          index,
+          index: index2,
           offset: offset3,
           originAlign: align
         });
@@ -46442,7 +46442,7 @@ html body {
       virtual,
       direction,
       scrollWidth,
-      component: Component5 = "div",
+      component: Component7 = "div",
       onScroll,
       onVirtualScroll,
       onVisibleChange,
@@ -46774,7 +46774,7 @@ html body {
         onVisibleChange(renderList, mergedData);
       }
     }, [start, end, mergedData]);
-    const getSize = useGetSize(mergedData, getKey3, heights, itemHeight);
+    const getSize2 = useGetSize(mergedData, getKey3, heights, itemHeight);
     const extraContent = extraRender == null ? void 0 : extraRender({
       start,
       end,
@@ -46782,7 +46782,7 @@ html body {
       offsetX: offsetLeft,
       offsetY: fillerOffset,
       rtl: isRTL,
-      getSize
+      getSize: getSize2
     });
     const listChildren = useChildren(mergedData, start, end, scrollWidth, offsetLeft, setInstanceRef, children, sharedConfig);
     let componentStyle = null;
@@ -46812,7 +46812,7 @@ html body {
       className: mergedClassName
     }, containerProps, restProps), /* @__PURE__ */ React175.createElement(es_default, {
       onResize: onHolderResize
-    }, /* @__PURE__ */ React175.createElement(Component5, {
+    }, /* @__PURE__ */ React175.createElement(Component7, {
       className: `${prefixCls}-holder`,
       style: componentStyle,
       ref: componentRef,
@@ -46945,10 +46945,10 @@ html body {
       }
       return rawValues.has(value);
     }, [mode, [...rawValues].toString(), rawValues.size]);
-    const getEnabledActiveIndex = (index, offset3 = 1) => {
+    const getEnabledActiveIndex = (index2, offset3 = 1) => {
       const len = memoFlattenOptions.length;
       for (let i = 0; i < len; i += 1) {
-        const current = (index + i * offset3 + len) % len;
+        const current = (index2 + i * offset3 + len) % len;
         const {
           group,
           data
@@ -46960,17 +46960,17 @@ html body {
       return -1;
     };
     const [activeIndex, setActiveIndex] = React176.useState(() => getEnabledActiveIndex(0));
-    const setActive = (index, fromKeyboard = false) => {
-      setActiveIndex(index);
+    const setActive = (index2, fromKeyboard = false) => {
+      setActiveIndex(index2);
       const info = {
         source: fromKeyboard ? "keyboard" : "mouse"
       };
-      const flattenItem = memoFlattenOptions[index];
+      const flattenItem = memoFlattenOptions[index2];
       if (!flattenItem) {
         onActiveValue(null, -1, info);
         return;
       }
-      onActiveValue(flattenItem.value, index, info);
+      onActiveValue(flattenItem.value, index2, info);
     };
     (0, import_react82.useEffect)(() => {
       setActive(defaultActiveFirstOption !== false ? getEnabledActiveIndex(0) : -1);
@@ -46986,13 +46986,13 @@ html body {
       let timeoutId;
       if (!multiple && open2 && rawValues.size === 1) {
         const value = Array.from(rawValues)[0];
-        const index = memoFlattenOptions.findIndex(({
+        const index2 = memoFlattenOptions.findIndex(({
           data
         }) => searchValue ? String(data.value).startsWith(searchValue) : data.value === value);
-        if (index !== -1) {
-          setActive(index);
+        if (index2 !== -1) {
+          setActive(index2);
           timeoutId = setTimeout(() => {
-            scrollIntoView(index);
+            scrollIntoView(index2);
           });
         }
       }
@@ -47067,8 +47067,8 @@ html body {
       },
       onKeyUp: () => {
       },
-      scrollTo: (index) => {
-        scrollIntoView(index);
+      scrollTo: (index2) => {
+        scrollIntoView(index2);
       }
     }));
     if (memoFlattenOptions.length === 0) {
@@ -47081,17 +47081,17 @@ html body {
     }
     const omitFieldNameList = Object.keys(fieldNames).map((key) => fieldNames[key]);
     const getLabel = (item) => item.label;
-    function getItemAriaProps(item, index) {
+    function getItemAriaProps(item, index2) {
       const {
         group
       } = item;
       return {
         role: group ? "presentation" : "option",
-        id: `${id}_list_${index}`
+        id: `${id}_list_${index2}`
       };
     }
-    const renderItem = (index) => {
-      const item = memoFlattenOptions[index];
+    const renderItem = (index2) => {
+      const item = memoFlattenOptions[index2];
       if (!item) {
         return null;
       }
@@ -47108,8 +47108,8 @@ html body {
       return item ? /* @__PURE__ */ React176.createElement("div", _extends30({
         "aria-label": typeof mergedLabel === "string" && !group ? mergedLabel : null
       }, attrs, {
-        key: index
-      }, getItemAriaProps(item, index), {
+        key: index2
+      }, getItemAriaProps(item, index2), {
         "aria-selected": isAriaSelected(value),
         "aria-disabled": disabled
       }), value) : null;
@@ -47335,7 +47335,7 @@ html body {
     }, restProps);
   }
   function convertChildrenToData(nodes, optionOnly = false) {
-    return toArray(nodes).map((node2, index) => {
+    return toArray(nodes).map((node2, index2) => {
       if (!/* @__PURE__ */ React179.isValidElement(node2) || !node2.type) {
         return null;
       }
@@ -47354,7 +47354,7 @@ html body {
         return convertNodeToOption(node2);
       }
       return __spreadProps(__spreadValues({
-        key: `__RC_SELECT_GRP__${key === null ? index : key}__`,
+        key: `__RC_SELECT_GRP__${key === null ? index2 : key}__`,
         label: key
       }, restProps), {
         options: convertChildrenToData(children)
@@ -47803,9 +47803,9 @@ html body {
     const triggerChange = (values) => {
       const labeledValues = convert2LabelValues(values);
       setInternalValue(labeledValues);
-      if (onChange && (labeledValues.length !== mergedValues.length || labeledValues.some((newVal, index) => {
+      if (onChange && (labeledValues.length !== mergedValues.length || labeledValues.some((newVal, index2) => {
         var _a2;
-        return ((_a2 = mergedValues[index]) == null ? void 0 : _a2.value) !== (newVal == null ? void 0 : newVal.value);
+        return ((_a2 = mergedValues[index2]) == null ? void 0 : _a2.value) !== (newVal == null ? void 0 : newVal.value);
       }))) {
         const returnValues = labelInValue ? labeledValues.map(({
           label: l2,
@@ -47825,10 +47825,10 @@ html body {
     const [accessibilityIndex, setAccessibilityIndex] = React184.useState(0);
     const mergedDefaultActiveFirstOption = defaultActiveFirstOption !== void 0 ? defaultActiveFirstOption : mode !== "combobox";
     const activeEventRef = React184.useRef();
-    const onActiveValue = React184.useCallback((active, index, {
+    const onActiveValue = React184.useCallback((active, index2, {
       source = "keyboard"
     } = {}) => {
-      setAccessibilityIndex(index);
+      setAccessibilityIndex(index2);
       if (backfill && mode === "combobox" && active !== null && source === "keyboard") {
         setActiveValue(String(active));
       }
@@ -51812,7 +51812,7 @@ html body {
   // ../custom_dashboard/node_modules/@rc-component/menu/es/utils/commonUtil.js
   var React218 = __toESM(require_react());
   function parseChildren(children, keyPath) {
-    return toArray(children).map((child, index) => {
+    return toArray(children).map((child, index2) => {
       var _a, _b;
       if (/* @__PURE__ */ React218.isValidElement(child)) {
         const {
@@ -51821,7 +51821,7 @@ html body {
         let eventKey = (_b = (_a = child.props) == null ? void 0 : _a.eventKey) != null ? _b : key;
         const emptyKey = eventKey === null || eventKey === void 0;
         if (emptyKey) {
-          eventKey = `tmp_key-${[...keyPath, index].join("-")}`;
+          eventKey = `tmp_key-${[...keyPath, index2].join("-")}`;
         }
         const cloneProps = {
           key: eventKey,
@@ -52483,7 +52483,7 @@ html body {
       submenu: MergedSubMenu,
       divider: MergedDivider
     } = components;
-    return (list || []).map((opt, index) => {
+    return (list || []).map((opt, index2) => {
       if (opt && typeof opt === "object") {
         const _a = opt, {
           label,
@@ -52498,7 +52498,7 @@ html body {
           "type",
           "extra"
         ]);
-        const mergedKey = key != null ? key : `tmp-${index}`;
+        const mergedKey = key != null ? key : `tmp-${index2}`;
         if (children || type5 === "group") {
           if (type5 === "group") {
             return /* @__PURE__ */ React224.createElement(MergedMenuItemGroup, _extends43({
@@ -52843,9 +52843,9 @@ html body {
       _internalRenderMenuItem,
       _internalRenderSubMenuItem
     }), [_internalRenderMenuItem, _internalRenderSubMenuItem]);
-    const wrappedChildList = internalMode !== "horizontal" || disabledOverflow ? childList : childList.map((child, index) => /* @__PURE__ */ React225.createElement(InheritableContextProvider, {
+    const wrappedChildList = internalMode !== "horizontal" || disabledOverflow ? childList : childList.map((child, index2) => /* @__PURE__ */ React225.createElement(InheritableContextProvider, {
       key: child.key,
-      overflowDisabled: index > lastVisibleIndex,
+      overflowDisabled: index2 > lastVisibleIndex,
       classNames: menuClassNames,
       styles: styles2
     }, child));
@@ -57059,8 +57059,8 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/utils/treeUtil.js
-  function getPosition2(level, index) {
-    return `${level}-${index}`;
+  function getPosition2(level, index2) {
+    return `${level}-${index2}`;
   }
   function isTreeNode(node2) {
     return node2 && node2.type && node2.type.isTreeNode;
@@ -57138,8 +57138,8 @@ html body {
     const expandedKeySet = new Set(expandedKeys === true ? [] : expandedKeys);
     const flattenList = [];
     function dig(list, parent = null) {
-      return list.map((treeNode, index) => {
-        const pos = getPosition2(parent ? parent.pos : "0", index);
+      return list.map((treeNode, index2) => {
+        const pos = getPosition2(parent ? parent.pos : "0", index2);
         const mergedKey = getKey2(treeNode[fieldKey], pos);
         let mergedTitle;
         for (let i = 0; i < fieldTitles.length; i += 1) {
@@ -57156,8 +57156,8 @@ html body {
           pos,
           children: null,
           data: treeNode,
-          isStart: [...parent ? parent.isStart : [], index === 0],
-          isEnd: [...parent ? parent.isEnd : [], index === list.length - 1]
+          isStart: [...parent ? parent.isStart : [], index2 === 0],
+          isEnd: [...parent ? parent.isEnd : [], index2 === list.length - 1]
         });
         flattenList.push(flattenNode);
         if (expandedKeys === true || expandedKeySet.has(mergedKey)) {
@@ -57201,15 +57201,15 @@ html body {
     } else {
       syntheticGetKey = (node2, pos) => getKey2(node2[fieldKey], pos);
     }
-    function processNode(node2, index, parent, pathNodes) {
+    function processNode(node2, index2, parent, pathNodes) {
       const children = node2 ? node2[mergeChildrenPropName] : dataNodes;
-      const pos = node2 ? getPosition2(parent.pos, index) : "0";
+      const pos = node2 ? getPosition2(parent.pos, index2) : "0";
       const connectNodes = node2 ? [...pathNodes, node2] : [];
       if (node2) {
         const key = syntheticGetKey(node2, pos);
         const data = {
           node: node2,
-          index,
+          index: index2,
           pos,
           key,
           parentPos: parent.node ? parent.pos : null,
@@ -57251,7 +57251,7 @@ html body {
     traverseDataNodes(dataNodes, (item) => {
       const {
         node: node2,
-        index,
+        index: index2,
         pos,
         key,
         parentPos,
@@ -57261,7 +57261,7 @@ html body {
       const entity = {
         node: node2,
         nodes,
-        index,
+        index: index2,
         key,
         pos,
         level
@@ -58117,17 +58117,17 @@ html body {
       xxl: true,
       xxxl: true
     };
-    normalizedGutter.forEach((g, index) => {
+    normalizedGutter.forEach((g, index2) => {
       if (typeof g === "object" && g !== null) {
         for (let i = 0; i < responsiveArray.length; i++) {
           const breakpoint = responsiveArray[i];
           if (mergedScreens[breakpoint] && g[breakpoint] !== void 0) {
-            results[index] = g[breakpoint];
+            results[index2] = g[breakpoint];
             break;
           }
         }
       } else {
-        results[index] = g;
+        results[index2] = g;
       }
     });
     return results;
@@ -59081,7 +59081,7 @@ html body {
     const {
       className,
       prefix: prefix2,
-      index,
+      index: index2,
       children,
       separator,
       style: style2,
@@ -59097,7 +59097,7 @@ html body {
     return /* @__PURE__ */ React256.createElement(React256.Fragment, null, /* @__PURE__ */ React256.createElement("div", {
       className,
       style: style2
-    }, children), index < latestIndex && separator && /* @__PURE__ */ React256.createElement("span", {
+    }, children), index2 < latestIndex && separator && /* @__PURE__ */ React256.createElement("span", {
       className: clsx(`${prefix2}-item-separator`, classNames == null ? void 0 : classNames.separator),
       style: styles2 == null ? void 0 : styles2.separator
     }, separator));
@@ -59962,9 +59962,9 @@ html body {
   // ../custom_dashboard/node_modules/antd/es/form/ErrorList.js
   "use client";
   var EMPTY_LIST3 = [];
-  function toErrorEntity(error, prefix2, errorStatus, index = 0) {
+  function toErrorEntity(error, prefix2, errorStatus, index2 = 0) {
     return {
-      key: typeof error === "string" ? error : `${prefix2}-${index}`,
+      key: typeof error === "string" ? error : `${prefix2}-${index2}`,
       error,
       errorStatus
     };
@@ -59991,7 +59991,7 @@ html body {
       if (isNonNullable_default(help)) {
         return [toErrorEntity(help, "help", helpStatus)];
       }
-      return [].concat(_toConsumableArray(debounceErrors.map((error, index) => toErrorEntity(error, "error", "error", index))), _toConsumableArray(debounceWarnings.map((warning6, index) => toErrorEntity(warning6, "warning", "warning", index))));
+      return [].concat(_toConsumableArray(debounceErrors.map((error, index2) => toErrorEntity(error, "error", "error", index2))), _toConsumableArray(debounceWarnings.map((warning6, index2) => toErrorEntity(warning6, "warning", "warning", index2))));
     }, [help, helpStatus, debounceErrors, debounceWarnings]);
     const filledKeyFullKeyList = React260.useMemo(() => {
       const keysCount = {};
@@ -60000,8 +60000,8 @@ html body {
       }) => {
         keysCount[key] = (keysCount[key] || 0) + 1;
       });
-      return fullKeyList.map((entity, index) => __spreadProps(__spreadValues({}, entity), {
-        key: keysCount[entity.key] > 1 ? `${entity.key}-fallback-${index}` : entity.key
+      return fullKeyList.map((entity, index2) => __spreadProps(__spreadValues({}, entity), {
+        key: keysCount[entity.key] > 1 ? `${entity.key}-fallback-${index2}` : entity.key
       }));
     }, [fullKeyList]);
     const helpProps = {};
@@ -60832,7 +60832,7 @@ html body {
       return propValueA === propValueB || typeof propValueA === "function" || typeof propValueB === "function";
     });
   }
-  var MemoInput = /* @__PURE__ */ React271.memo((props) => props.children, (prev2, next2) => isSimilarControl(prev2.control, next2.control) && prev2.update === next2.update && prev2.childProps.length === next2.childProps.length && prev2.childProps.every((value, index) => value === next2.childProps[index]));
+  var MemoInput = /* @__PURE__ */ React271.memo((props) => props.children, (prev2, next2) => isSimilarControl(prev2.control, next2.control) && prev2.update === next2.update && prev2.childProps.length === next2.childProps.length && prev2.childProps.every((value, index2) => value === next2.childProps[index2]));
   function genEmptyMeta() {
     return {
       errors: [],
@@ -61213,7 +61213,7 @@ html body {
       value,
       onChange,
       onActiveChange,
-      index,
+      index: index2,
       mask,
       onFocus
     } = _a, restProps = __objRest(_a, [
@@ -61233,7 +61233,7 @@ html body {
     const inputRef = React275.useRef(null);
     React275.useImperativeHandle(ref, () => inputRef.current);
     const onInternalChange = (e3) => {
-      onChange(index, e3.target.value);
+      onChange(index2, e3.target.value);
     };
     const syncSelection = () => {
       raf_default(() => {
@@ -61255,13 +61255,13 @@ html body {
         metaKey
       } = event;
       if (key === "ArrowLeft") {
-        onActiveChange(index - 1);
+        onActiveChange(index2 - 1);
       } else if (key === "ArrowRight") {
-        onActiveChange(index + 1);
+        onActiveChange(index2 + 1);
       } else if (key === "z" && (ctrlKey || metaKey)) {
         event.preventDefault();
       } else if (key === "Backspace" && !value) {
-        onActiveChange(index - 1);
+        onActiveChange(index2 - 1);
       }
       syncSelection();
     };
@@ -61272,7 +61272,7 @@ html body {
       className: `${prefixCls}-mask-icon`,
       "aria-hidden": "true"
     }, maskValue), /* @__PURE__ */ React275.createElement(Input_default4, __spreadProps(__spreadValues({
-      "aria-label": `OTP Input ${index + 1}`,
+      "aria-label": `OTP Input ${index2 + 1}`,
       type: mask === true ? "password" : "text"
     }, restProps), {
       ref: inputRef,
@@ -61296,13 +61296,13 @@ html body {
   }
   var Separator = (props) => {
     const {
-      index,
+      index: index2,
       prefixCls,
       separator,
       className: semanticClassName,
       style: semanticStyle
     } = props;
-    const separatorNode = typeof separator === "function" ? separator(index) : separator;
+    const separatorNode = typeof separator === "function" ? separator(index2) : separator;
     if (!separatorNode) {
       return null;
     }
@@ -61419,21 +61419,21 @@ html body {
       if (onInput) {
         onInput(nextValueCells);
       }
-      if (onChange && nextValueCells.length === length2 && nextValueCells.every((c) => c) && nextValueCells.some((c, index) => valueCells[index] !== c)) {
+      if (onChange && nextValueCells.length === length2 && nextValueCells.every((c) => c) && nextValueCells.some((c, index2) => valueCells[index2] !== c)) {
         onChange(nextValueCells.join(""));
       }
     });
-    const patchValue = useEvent_default((index, txt) => {
+    const patchValue = useEvent_default((index2, txt) => {
       let nextCells = _toConsumableArray(valueCells);
-      for (let i = 0; i < index; i += 1) {
+      for (let i = 0; i < index2; i += 1) {
         if (!nextCells[i]) {
           nextCells[i] = "";
         }
       }
       if (txt.length <= 1) {
-        nextCells[index] = txt;
+        nextCells[index2] = txt;
       } else {
-        nextCells = nextCells.slice(0, index).concat(strToArr(txt));
+        nextCells = nextCells.slice(0, index2).concat(strToArr(txt));
       }
       nextCells = nextCells.slice(0, length2);
       for (let i = nextCells.length - 1; i >= 0; i -= 1) {
@@ -61451,11 +61451,11 @@ html body {
       });
       return nextCells;
     });
-    const onInputChange = (index, txt) => {
+    const onInputChange = (index2, txt) => {
       var _a2;
-      const nextCells = patchValue(index, txt);
-      const nextIndex = Math.min(index + txt.length, length2 - 1);
-      if (nextIndex !== index && nextCells[index] !== void 0) {
+      const nextCells = patchValue(index2, txt);
+      const nextIndex = Math.min(index2 + txt.length, length2 - 1);
+      if (nextIndex !== index2 && nextCells[index2] !== void 0) {
         (_a2 = inputsRef.current[nextIndex]) == null ? void 0 : _a2.focus();
       }
       triggerValueCellsChange(nextCells);
@@ -61464,9 +61464,9 @@ html body {
       var _a2;
       (_a2 = inputsRef.current[nextIndex]) == null ? void 0 : _a2.focus();
     };
-    const onInputFocus = (event, index) => {
+    const onInputFocus = (event, index2) => {
       var _a2, _b, _c;
-      for (let i = 0; i < index; i += 1) {
+      for (let i = 0; i < index2; i += 1) {
         if (!((_b = (_a2 = inputsRef.current[i]) == null ? void 0 : _a2.input) == null ? void 0 : _b.value)) {
           (_c = inputsRef.current[i]) == null ? void 0 : _c.focus();
           break;
@@ -61496,16 +61496,16 @@ html body {
       value: proxyFormContext
     }, Array.from({
       length: length2
-    }).map((_, index) => {
-      const key = `otp-${index}`;
-      const singleValue = valueCells[index] || "";
+    }).map((_, index2) => {
+      const key = `otp-${index2}`;
+      const singleValue = valueCells[index2] || "";
       return /* @__PURE__ */ React276.createElement(React276.Fragment, {
         key
       }, /* @__PURE__ */ React276.createElement(OTPInput_default, __spreadValues({
         ref: (inputEle) => {
-          inputsRef.current[index] = inputEle;
+          inputsRef.current[index2] = inputEle;
         },
-        index,
+        index: index2,
         size: mergedSize,
         htmlSize: 1,
         className: clsx(mergedClassNames.input, `${prefixCls}-input`),
@@ -61513,11 +61513,11 @@ html body {
         onChange: onInputChange,
         value: singleValue,
         onActiveChange: onInputActiveChange,
-        autoFocus: index === 0 && autoFocus,
-        onFocus: (event) => onInputFocus(event, index)
-      }, inputSharedProps)), index < length2 - 1 && /* @__PURE__ */ React276.createElement(Separator, {
+        autoFocus: index2 === 0 && autoFocus,
+        onFocus: (event) => onInputFocus(event, index2)
+      }, inputSharedProps)), index2 < length2 - 1 && /* @__PURE__ */ React276.createElement(Separator, {
         separator,
-        index,
+        index: index2,
         prefixCls,
         className: clsx(mergedClassNames.separator),
         style: mergedStyles.separator
@@ -64124,14 +64124,14 @@ html body {
     const dotClassName = `${prefixCls}-dot`;
     const holderClassName = `${dotClassName}-holder`;
     const hideClassName = `${holderClassName}-hidden`;
-    const [render2, setRender] = React290.useState(false);
+    const [render4, setRender] = React290.useState(false);
     useLayoutEffect_default(() => {
       if (percent !== 0) {
         setRender(true);
       }
     }, [percent !== 0]);
     const safePtg = Math.max(Math.min(percent, 100), 0);
-    if (!render2) {
+    if (!render4) {
       return null;
     }
     const circleStyle = {
@@ -64946,25 +64946,1289 @@ html body {
   }
   var modal_default = Modal2;
 
+  // ../custom_dashboard/node_modules/antd/es/progress/progress.js
+  var React305 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/antd/es/progress/Circle.js
+  var React302 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@rc-component/progress/es/Line.js
+  var React298 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@rc-component/progress/es/common.js
+  var import_react119 = __toESM(require_react());
+  var defaultProps = {
+    percent: 0,
+    prefixCls: "rc-progress",
+    strokeColor: "#2db7f5",
+    strokeLinecap: "round",
+    strokeWidth: 1,
+    railColor: "#D9D9D9",
+    railWidth: 1,
+    gapPosition: "bottom",
+    loading: false
+  };
+  var useTransitionDuration = () => {
+    const pathsRef = (0, import_react119.useRef)([]);
+    const prevTimeStamp = (0, import_react119.useRef)(null);
+    (0, import_react119.useEffect)(() => {
+      const now2 = Date.now();
+      let updated = false;
+      pathsRef.current.forEach((path) => {
+        if (!path) {
+          return;
+        }
+        updated = true;
+        const pathStyle = path.style;
+        pathStyle.transitionDuration = ".3s, .3s, .3s, .06s";
+        if (prevTimeStamp.current && now2 - prevTimeStamp.current < 100) {
+          pathStyle.transitionDuration = "0s, 0s";
+        }
+      });
+      if (updated) {
+        prevTimeStamp.current = Date.now();
+      }
+    });
+    return pathsRef.current;
+  };
+
+  // ../custom_dashboard/node_modules/@rc-component/progress/es/utils/getIndeterminateLine.js
+  var import_react120 = __toESM(require_react());
+  var getIndeterminateLine_default = (options) => {
+    const {
+      id,
+      percent,
+      strokeLinecap,
+      strokeWidth,
+      loading
+    } = options;
+    if (!loading) {
+      return {
+        indeterminateStyleProps: {},
+        indeterminateStyleAnimation: null
+      };
+    }
+    const animationName = `${id}-indeterminate-animate`;
+    const strokeDashOffset = 100 - (percent + (strokeLinecap === "round" ? strokeWidth : 0));
+    return {
+      indeterminateStyleProps: {
+        strokeDasharray: `${percent} 100`,
+        animation: `${animationName} .6s linear alternate infinite`,
+        strokeDashoffset: 0
+      },
+      indeterminateStyleAnimation: /* @__PURE__ */ import_react120.default.createElement("style", null, `@keyframes ${animationName} {
+            0% { stroke-dashoffset: 0; }
+            100% { stroke-dashoffset: -${strokeDashOffset};
+          }`)
+    };
+  };
+
+  // ../custom_dashboard/node_modules/@rc-component/progress/es/Line.js
+  function _extends58() {
+    _extends58 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends58.apply(this, arguments);
+  }
+  var Line = (props) => {
+    const _a = __spreadValues(__spreadValues({}, defaultProps), props), {
+      id,
+      className,
+      percent,
+      prefixCls,
+      strokeColor,
+      strokeLinecap,
+      strokeWidth,
+      style: style2,
+      railColor,
+      railWidth,
+      transition,
+      loading
+    } = _a, restProps = __objRest(_a, [
+      "id",
+      "className",
+      "percent",
+      "prefixCls",
+      "strokeColor",
+      "strokeLinecap",
+      "strokeWidth",
+      "style",
+      "railColor",
+      "railWidth",
+      "transition",
+      "loading"
+    ]);
+    const mergedId = useId_default(id);
+    delete restProps.gapPosition;
+    const percentList = Array.isArray(percent) ? percent : [percent];
+    const strokeColorList = Array.isArray(strokeColor) ? strokeColor : [strokeColor];
+    const paths = useTransitionDuration();
+    const center = strokeWidth / 2;
+    const right = 100 - strokeWidth / 2;
+    const pathString = `M ${strokeLinecap === "round" ? center : 0},${center}
+         L ${strokeLinecap === "round" ? right : 100},${center}`;
+    const viewBoxString = `0 0 100 ${strokeWidth}`;
+    let stackPtg = 0;
+    const {
+      indeterminateStyleProps,
+      indeterminateStyleAnimation
+    } = getIndeterminateLine_default({
+      id: mergedId,
+      loading,
+      percent: percentList[0],
+      strokeLinecap,
+      strokeWidth
+    });
+    return /* @__PURE__ */ React298.createElement("svg", _extends58({
+      className: clsx(`${prefixCls}-line`, className),
+      viewBox: viewBoxString,
+      preserveAspectRatio: "none",
+      style: style2
+    }, restProps), /* @__PURE__ */ React298.createElement("path", {
+      className: `${prefixCls}-line-rail`,
+      d: pathString,
+      strokeLinecap,
+      stroke: railColor,
+      strokeWidth: railWidth || strokeWidth,
+      fillOpacity: "0"
+    }), percentList.map((ptg, index2) => {
+      let dashPercent = 1;
+      switch (strokeLinecap) {
+        case "round":
+          dashPercent = 1 - strokeWidth / 100;
+          break;
+        case "square":
+          dashPercent = 1 - strokeWidth / 2 / 100;
+          break;
+        default:
+          dashPercent = 1;
+          break;
+      }
+      const pathStyle = __spreadValues({
+        strokeDasharray: `${ptg * dashPercent}px, 100px`,
+        strokeDashoffset: `-${stackPtg}px`,
+        transition: transition || "stroke-dashoffset 0.3s ease 0s, stroke-dasharray .3s ease 0s, stroke 0.3s linear"
+      }, indeterminateStyleProps);
+      const color = strokeColorList[index2] || strokeColorList[strokeColorList.length - 1];
+      stackPtg += ptg;
+      return /* @__PURE__ */ React298.createElement("path", {
+        key: index2,
+        className: `${prefixCls}-line-path`,
+        d: pathString,
+        strokeLinecap,
+        stroke: color,
+        strokeWidth,
+        fillOpacity: "0",
+        ref: (elem) => {
+          paths[index2] = elem;
+        },
+        style: pathStyle
+      });
+    }), indeterminateStyleAnimation);
+  };
+  if (true) {
+    Line.displayName = "Line";
+  }
+
+  // ../custom_dashboard/node_modules/@rc-component/progress/es/Circle/index.js
+  var React301 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@rc-component/progress/es/Circle/PtgCircle.js
+  var React299 = __toESM(require_react());
+  var Block = ({
+    bg,
+    children
+  }) => /* @__PURE__ */ React299.createElement("div", {
+    style: {
+      width: "100%",
+      height: "100%",
+      background: bg
+    }
+  }, children);
+  function getPtgColors(color, scale) {
+    return Object.keys(color).map((key) => {
+      const parsedKey = parseFloat(key);
+      const ptgKey = `${Math.floor(parsedKey * scale)}%`;
+      return `${color[key]} ${ptgKey}`;
+    });
+  }
+  var PtgCircle = /* @__PURE__ */ React299.forwardRef((props, ref) => {
+    const {
+      prefixCls,
+      color,
+      gradientId,
+      radius: radius2,
+      className,
+      style: circleStyleForStack,
+      ptg,
+      strokeLinecap,
+      strokeWidth,
+      size,
+      gapDegree
+    } = props;
+    const isGradient = color && typeof color === "object";
+    const stroke = isGradient ? `#FFF` : void 0;
+    const halfSize = size / 2;
+    const circleNode = /* @__PURE__ */ React299.createElement("circle", {
+      className: clsx(`${prefixCls}-circle-path`, className),
+      r: radius2,
+      cx: halfSize,
+      cy: halfSize,
+      stroke,
+      strokeLinecap,
+      strokeWidth,
+      opacity: ptg === 0 ? 0 : 1,
+      style: circleStyleForStack,
+      ref
+    });
+    if (!isGradient) {
+      return circleNode;
+    }
+    const maskId = `${gradientId}-conic`;
+    const fromDeg = gapDegree ? `${180 + gapDegree / 2}deg` : "0deg";
+    const conicColors = getPtgColors(color, (360 - gapDegree) / 360);
+    const linearColors = getPtgColors(color, 1);
+    const conicColorBg = `conic-gradient(from ${fromDeg}, ${conicColors.join(", ")})`;
+    const linearColorBg = `linear-gradient(to ${gapDegree ? "bottom" : "top"}, ${linearColors.join(", ")})`;
+    return /* @__PURE__ */ React299.createElement(React299.Fragment, null, /* @__PURE__ */ React299.createElement("mask", {
+      id: maskId
+    }, circleNode), /* @__PURE__ */ React299.createElement("foreignObject", {
+      x: 0,
+      y: 0,
+      width: size,
+      height: size,
+      mask: `url(#${maskId})`
+    }, /* @__PURE__ */ React299.createElement(Block, {
+      bg: linearColorBg
+    }, /* @__PURE__ */ React299.createElement(Block, {
+      bg: conicColorBg
+    }))));
+  });
+  if (true) {
+    PtgCircle.displayName = "PtgCircle";
+  }
+  var PtgCircle_default = PtgCircle;
+
+  // ../custom_dashboard/node_modules/@rc-component/progress/es/Circle/util.js
+  var VIEW_BOX_SIZE = 100;
+  var getCircleStyle = (perimeter, perimeterWithoutGap, offset3, percent, rotateDeg, gapDegree, gapPosition, strokeColor, strokeLinecap, strokeWidth, stepSpace = 0) => {
+    const offsetDeg = offset3 / 100 * 360 * ((360 - gapDegree) / 360);
+    const positionDeg = gapDegree === 0 ? 0 : {
+      bottom: 0,
+      top: 180,
+      left: 90,
+      right: -90
+    }[gapPosition];
+    let strokeDashoffset = (100 - percent) / 100 * perimeterWithoutGap;
+    if (strokeLinecap === "round" && percent !== 100) {
+      strokeDashoffset += strokeWidth / 2;
+      if (strokeDashoffset >= perimeterWithoutGap) {
+        strokeDashoffset = perimeterWithoutGap - 0.01;
+      }
+    }
+    const halfSize = VIEW_BOX_SIZE / 2;
+    return {
+      stroke: typeof strokeColor === "string" ? strokeColor : void 0,
+      strokeDasharray: `${perimeterWithoutGap}px ${perimeter}`,
+      strokeDashoffset: strokeDashoffset + stepSpace,
+      transform: `rotate(${rotateDeg + offsetDeg + positionDeg}deg)`,
+      transformOrigin: `${halfSize}px ${halfSize}px`,
+      transition: "stroke-dashoffset .3s ease 0s, stroke-dasharray .3s ease 0s, stroke .3s, stroke-width .06s ease .3s, opacity .3s ease 0s",
+      fillOpacity: 0
+    };
+  };
+
+  // ../custom_dashboard/node_modules/@rc-component/progress/es/utils/getIndeterminateCircle.js
+  var import_react121 = __toESM(require_react());
+  var getIndeterminateCircle_default = ({
+    id,
+    loading
+  }) => {
+    if (!loading) {
+      return {
+        indeterminateStyleProps: {},
+        indeterminateStyleAnimation: null
+      };
+    }
+    const animationName = `${id}-indeterminate-animate`;
+    return {
+      indeterminateStyleProps: {
+        transform: "rotate(0deg)",
+        animation: `${animationName} 1s linear infinite`
+      },
+      indeterminateStyleAnimation: /* @__PURE__ */ import_react121.default.createElement("style", null, `@keyframes ${animationName} {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }`)
+    };
+  };
+
+  // ../custom_dashboard/node_modules/@rc-component/progress/es/Circle/index.js
+  function _extends59() {
+    _extends59 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends59.apply(this, arguments);
+  }
+  function toArray6(value) {
+    const mergedValue = value != null ? value : [];
+    return Array.isArray(mergedValue) ? mergedValue : [mergedValue];
+  }
+  var Circle = (props) => {
+    const _a = __spreadValues(__spreadValues({}, defaultProps), props), {
+      id,
+      prefixCls,
+      classNames = {},
+      styles: styles2 = {},
+      steps,
+      strokeWidth,
+      railWidth,
+      gapDegree = 0,
+      gapPosition,
+      railColor,
+      strokeLinecap,
+      style: style2,
+      className,
+      strokeColor,
+      percent,
+      loading
+    } = _a, restProps = __objRest(_a, [
+      "id",
+      "prefixCls",
+      "classNames",
+      "styles",
+      "steps",
+      "strokeWidth",
+      "railWidth",
+      "gapDegree",
+      "gapPosition",
+      "railColor",
+      "strokeLinecap",
+      "style",
+      "className",
+      "strokeColor",
+      "percent",
+      "loading"
+    ]);
+    const halfSize = VIEW_BOX_SIZE / 2;
+    const mergedId = useId_default(id);
+    const gradientId = `${mergedId}-gradient`;
+    const radius2 = halfSize - strokeWidth / 2;
+    const perimeter = Math.PI * 2 * radius2;
+    const rotateDeg = gapDegree > 0 ? 90 + gapDegree / 2 : -90;
+    const perimeterWithoutGap = perimeter * ((360 - gapDegree) / 360);
+    const {
+      count: stepCount,
+      gap: stepGap
+    } = typeof steps === "object" ? steps : {
+      count: steps,
+      gap: 2
+    };
+    const percentList = toArray6(percent);
+    const strokeColorList = toArray6(strokeColor);
+    const gradient = strokeColorList.find((color) => color && typeof color === "object");
+    const isConicGradient = gradient && typeof gradient === "object";
+    const mergedStrokeLinecap = isConicGradient ? "butt" : strokeLinecap;
+    const {
+      indeterminateStyleProps,
+      indeterminateStyleAnimation
+    } = getIndeterminateCircle_default({
+      id: mergedId,
+      loading
+    });
+    const circleStyle = getCircleStyle(perimeter, perimeterWithoutGap, 0, 100, rotateDeg, gapDegree, gapPosition, railColor, mergedStrokeLinecap, strokeWidth);
+    const paths = useTransitionDuration();
+    const getStokeList = () => {
+      let stackPtg = 0;
+      return percentList.map((ptg, index2) => {
+        const color = strokeColorList[index2] || strokeColorList[strokeColorList.length - 1];
+        const circleStyleForStack = getCircleStyle(perimeter, perimeterWithoutGap, stackPtg, ptg, rotateDeg, gapDegree, gapPosition, color, mergedStrokeLinecap, strokeWidth);
+        stackPtg += ptg;
+        return /* @__PURE__ */ React301.createElement(PtgCircle_default, {
+          key: index2,
+          color,
+          ptg,
+          radius: radius2,
+          prefixCls,
+          gradientId,
+          className: classNames.track,
+          style: __spreadValues(__spreadValues(__spreadValues({}, circleStyleForStack), indeterminateStyleProps), styles2.track),
+          strokeLinecap: mergedStrokeLinecap,
+          strokeWidth,
+          gapDegree,
+          ref: (elem) => {
+            paths[index2] = elem;
+          },
+          size: VIEW_BOX_SIZE
+        });
+      }).reverse();
+    };
+    const getStepStokeList = () => {
+      const current = Math.round(stepCount * (percentList[0] / 100));
+      const stepPtg = 100 / stepCount;
+      let stackPtg = 0;
+      return new Array(stepCount).fill(null).map((_, index2) => {
+        const color = index2 <= current - 1 ? strokeColorList[0] : railColor;
+        const stroke = color && typeof color === "object" ? `url(#${gradientId})` : void 0;
+        const circleStyleForStack = getCircleStyle(perimeter, perimeterWithoutGap, stackPtg, stepPtg, rotateDeg, gapDegree, gapPosition, color, "butt", strokeWidth, stepGap);
+        stackPtg += (perimeterWithoutGap - circleStyleForStack.strokeDashoffset + stepGap) * 100 / perimeterWithoutGap;
+        return /* @__PURE__ */ React301.createElement("circle", {
+          key: index2,
+          className: clsx(`${prefixCls}-circle-path`, classNames.track),
+          r: radius2,
+          cx: halfSize,
+          cy: halfSize,
+          stroke,
+          strokeWidth,
+          opacity: 1,
+          style: __spreadValues(__spreadValues({}, circleStyleForStack), styles2.track),
+          ref: (elem) => {
+            paths[index2] = elem;
+          }
+        });
+      });
+    };
+    return /* @__PURE__ */ React301.createElement("svg", _extends59({
+      className: clsx(`${prefixCls}-circle`, classNames.root, className),
+      viewBox: `0 0 ${VIEW_BOX_SIZE} ${VIEW_BOX_SIZE}`,
+      style: __spreadValues(__spreadValues({}, styles2.root), style2),
+      id,
+      role: "presentation"
+    }, restProps), !stepCount && /* @__PURE__ */ React301.createElement("circle", {
+      className: clsx(`${prefixCls}-circle-rail`, classNames.rail),
+      r: radius2,
+      cx: halfSize,
+      cy: halfSize,
+      stroke: railColor,
+      strokeLinecap: mergedStrokeLinecap,
+      strokeWidth: railWidth || strokeWidth,
+      style: __spreadValues(__spreadValues({}, circleStyle), styles2.rail)
+    }), stepCount ? getStepStokeList() : getStokeList(), indeterminateStyleAnimation);
+  };
+  if (true) {
+    Circle.displayName = "Circle";
+  }
+  var Circle_default = Circle;
+
+  // ../custom_dashboard/node_modules/antd/es/progress/utils.js
+  function validProgress(progress) {
+    if (!progress || progress < 0) {
+      return 0;
+    }
+    if (progress > 100) {
+      return 100;
+    }
+    return progress;
+  }
+  function getSuccessPercent({
+    success
+  }) {
+    let percent;
+    if (success && "percent" in success) {
+      percent = success.percent;
+    }
+    return percent;
+  }
+  var getPercentage = ({
+    percent,
+    success
+  }) => {
+    const realSuccessPercent = validProgress(getSuccessPercent({
+      success
+    }));
+    return [realSuccessPercent, validProgress(validProgress(percent) - realSuccessPercent)];
+  };
+  var getStrokeColor = ({
+    success = {},
+    strokeColor
+  }) => {
+    const {
+      strokeColor: successColor
+    } = success;
+    return [successColor || presetPrimaryColors.green, strokeColor || null];
+  };
+  var getSize = (size, type5, extra) => {
+    var _a, _b, _c, _d;
+    let width = -1;
+    let height = -1;
+    if (type5 === "step") {
+      const steps = extra.steps;
+      const strokeWidth = extra.strokeWidth;
+      if (typeof size === "string" || typeof size === "undefined") {
+        width = size === "small" ? 2 : 14;
+        height = strokeWidth != null ? strokeWidth : 8;
+      } else if (typeof size === "number") {
+        [width, height] = [size, size];
+      } else {
+        [width = 14, height = 8] = Array.isArray(size) ? size : [size.width, size.height];
+      }
+      width *= steps;
+    } else if (type5 === "line") {
+      const strokeWidth = extra == null ? void 0 : extra.strokeWidth;
+      if (typeof size === "string" || typeof size === "undefined") {
+        height = strokeWidth || (size === "small" ? 6 : 8);
+      } else if (typeof size === "number") {
+        [width, height] = [size, size];
+      } else {
+        [width = -1, height = 8] = Array.isArray(size) ? size : [size.width, size.height];
+      }
+    } else if (type5 === "circle" || type5 === "dashboard") {
+      if (typeof size === "string" || typeof size === "undefined") {
+        [width, height] = size === "small" ? [60, 60] : [120, 120];
+      } else if (typeof size === "number") {
+        [width, height] = [size, size];
+      } else if (Array.isArray(size)) {
+        width = (_b = (_a = size[0]) != null ? _a : size[1]) != null ? _b : 120;
+        height = (_d = (_c = size[0]) != null ? _c : size[1]) != null ? _d : 120;
+      }
+    }
+    return [width, height];
+  };
+
+  // ../custom_dashboard/node_modules/antd/es/progress/Circle.js
+  "use client";
+  var CIRCLE_MIN_STROKE_WIDTH = 3;
+  var getMinPercent = (width) => CIRCLE_MIN_STROKE_WIDTH / width * 100;
+  var OMIT_SEMANTIC_NAMES = ["root", "body", "indicator"];
+  var Circle2 = (props) => {
+    const {
+      prefixCls,
+      classNames,
+      styles: styles2,
+      railColor,
+      trailColor,
+      strokeLinecap = "round",
+      gapPosition,
+      gapPlacement,
+      gapDegree,
+      width: originWidth = 120,
+      type: type5,
+      children,
+      success,
+      size = originWidth,
+      steps
+    } = props;
+    const {
+      direction
+    } = useComponentConfig("progress");
+    const mergedRailColor = railColor != null ? railColor : trailColor;
+    const [width, height] = getSize(size, "circle");
+    let {
+      strokeWidth
+    } = props;
+    if (strokeWidth === void 0) {
+      strokeWidth = Math.max(getMinPercent(width), 6);
+    }
+    const circleStyle = {
+      width,
+      height,
+      fontSize: width * 0.15 + 6
+    };
+    const realGapDegree = React302.useMemo(() => {
+      if (gapDegree || gapDegree === 0) {
+        return gapDegree;
+      }
+      if (type5 === "dashboard") {
+        return 75;
+      }
+      return void 0;
+    }, [gapDegree, type5]);
+    const percentArray = getPercentage(props);
+    const gapPos = React302.useMemo(() => {
+      const mergedPlacement = (gapPlacement != null ? gapPlacement : gapPosition) || type5 === "dashboard" && "bottom" || void 0;
+      const isRTL = direction === "rtl";
+      switch (mergedPlacement) {
+        case "start":
+          return isRTL ? "right" : "left";
+        case "end":
+          return isRTL ? "left" : "right";
+        default:
+          return mergedPlacement;
+      }
+    }, [direction, gapPlacement, gapPosition, type5]);
+    const isGradient = Object.prototype.toString.call(props.strokeColor) === "[object Object]";
+    const strokeColor = getStrokeColor({
+      success,
+      strokeColor: props.strokeColor
+    });
+    const wrapperClassName = clsx(`${prefixCls}-body`, {
+      [`${prefixCls}-circle-gradient`]: isGradient
+    }, classNames.body);
+    const circleContent = /* @__PURE__ */ React302.createElement(Circle_default, {
+      steps,
+      percent: steps ? percentArray[1] : percentArray,
+      strokeWidth,
+      railWidth: strokeWidth,
+      strokeColor: steps ? strokeColor[1] : strokeColor,
+      strokeLinecap,
+      railColor: mergedRailColor,
+      prefixCls,
+      gapDegree: realGapDegree,
+      gapPosition: gapPos,
+      classNames: omit(classNames, OMIT_SEMANTIC_NAMES),
+      styles: omit(styles2, OMIT_SEMANTIC_NAMES)
+    });
+    const smallCircle = width <= 20;
+    const node2 = /* @__PURE__ */ React302.createElement("div", {
+      className: wrapperClassName,
+      style: __spreadValues(__spreadValues({}, circleStyle), styles2.body)
+    }, circleContent, !smallCircle && children);
+    if (smallCircle) {
+      return /* @__PURE__ */ React302.createElement(tooltip_default, {
+        title: children
+      }, node2);
+    }
+    return node2;
+  };
+  var Circle_default2 = Circle2;
+
+  // ../custom_dashboard/node_modules/antd/es/progress/Line.js
+  var React303 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/antd/es/progress/style/index.js
+  var LineStrokeColorVar = "--progress-line-stroke-color";
+  var genAntProgressActive = (isRtl) => {
+    const direction = isRtl ? "100%" : "-100%";
+    return new Keyframes_default(`antProgress${isRtl ? "RTL" : "LTR"}Active`, {
+      "0%": {
+        transform: `translateX(${direction}) scaleX(0)`,
+        opacity: 0.1
+      },
+      "20%": {
+        transform: `translateX(${direction}) scaleX(0)`,
+        opacity: 0.5
+      },
+      to: {
+        transform: "translateX(0) scaleX(1)",
+        opacity: 0
+      }
+    });
+  };
+  var genBaseStyle5 = (token2) => {
+    const {
+      componentCls: progressCls,
+      iconCls: iconPrefixCls
+    } = token2;
+    return {
+      [progressCls]: __spreadProps(__spreadValues({}, resetComponent(token2)), {
+        display: "inline-flex",
+        "&-rtl": {
+          direction: "rtl"
+        },
+        [`${progressCls}-indicator`]: {
+          color: token2.colorText,
+          lineHeight: 1,
+          whiteSpace: "nowrap",
+          verticalAlign: "middle",
+          wordBreak: "normal",
+          [iconPrefixCls]: {
+            fontSize: token2.fontSize
+          }
+        },
+        [`&${progressCls}-status-exception`]: {
+          [`${progressCls}-indicator`]: {
+            color: token2.colorError
+          }
+        },
+        [`&${progressCls}-status-success`]: {
+          [`${progressCls}-indicator`]: {
+            color: token2.colorSuccess
+          }
+        }
+      })
+    };
+  };
+  var genLineStyle = (token2) => {
+    const {
+      componentCls
+    } = token2;
+    return {
+      [`${componentCls}-line`]: {
+        position: "relative",
+        width: "100%",
+        fontSize: token2.fontSize,
+        [`${componentCls}-body`]: {
+          display: "inline-flex",
+          alignItems: "center",
+          width: "100%",
+          gap: token2.marginXS
+        },
+        [`${componentCls}-rail`]: {
+          flex: "auto",
+          background: token2.remainingColor,
+          borderRadius: token2.lineBorderRadius,
+          position: "relative",
+          width: "100%",
+          overflow: "hidden"
+        },
+        [`&${componentCls}-status-active`]: {
+          [`${componentCls}-track:after`]: {
+            content: '""',
+            position: "absolute",
+            inset: 0,
+            backgroundColor: token2.colorBgContainer,
+            borderRadius: "inherit",
+            opacity: 0,
+            animationName: genAntProgressActive(),
+            animationDuration: token2.progressActiveMotionDuration,
+            animationTimingFunction: token2.motionEaseOutQuint,
+            animationIterationCount: "infinite"
+          }
+        },
+        [`${componentCls}-track`]: {
+          position: "absolute",
+          insetInlineStart: 0,
+          insetBlock: 0,
+          borderRadius: "inherit",
+          background: token2.defaultColor,
+          transition: `all ${token2.motionDurationSlow} ${token2.motionEaseInOutCirc}`,
+          minWidth: "max-content",
+          display: "flex",
+          alignItems: "center",
+          "&-success": {
+            background: token2.colorSuccess
+          }
+        },
+        [`&${componentCls}-status-exception`]: {
+          [`${componentCls}-track`]: {
+            background: token2.colorError
+          }
+        },
+        [`&${componentCls}-status-success`]: {
+          [`${componentCls}-track`]: {
+            background: token2.colorSuccess
+          }
+        },
+        [`${componentCls}-indicator-outer`]: {
+          [`&${componentCls}-indicator-start`]: {
+            order: -1
+          }
+        },
+        [`${componentCls}-body-layout-bottom`]: {
+          flexDirection: "column",
+          alignItems: "center",
+          gap: token2.marginXXS
+        },
+        [`${componentCls}-indicator${componentCls}-indicator-inner`]: {
+          color: token2.colorWhite,
+          paddingInline: token2.paddingXXS,
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          [`&${componentCls}-indicator-end`]: {
+            justifyContent: "end"
+          },
+          [`&${componentCls}-indicator-start`]: {
+            justifyContent: "start"
+          },
+          [`&${componentCls}-indicator-bright`]: {
+            color: "rgba(0, 0, 0, 0.45)"
+          }
+        }
+      }
+    };
+  };
+  var genCircleStyle = (token2) => {
+    const {
+      componentCls: progressCls,
+      iconCls: iconPrefixCls
+    } = token2;
+    return {
+      [`${progressCls}-circle`]: {
+        [`${progressCls}-circle-rail`]: {
+          stroke: token2.remainingColor
+        },
+        [`${progressCls}-body:not(${progressCls}-circle-gradient)`]: {
+          [`${progressCls}-circle-path`]: {
+            stroke: token2.defaultColor
+          }
+        },
+        [`${progressCls}-body`]: {
+          position: "relative",
+          lineHeight: 1,
+          backgroundColor: "transparent"
+        },
+        [`${progressCls}-indicator`]: {
+          position: "absolute",
+          insetBlockStart: "50%",
+          insetInlineStart: 0,
+          width: "100%",
+          margin: 0,
+          padding: 0,
+          color: token2.circleTextColor,
+          fontSize: token2.circleTextFontSize,
+          lineHeight: 1,
+          whiteSpace: "normal",
+          textAlign: "center",
+          transform: "translateY(-50%)",
+          [iconPrefixCls]: {
+            fontSize: token2.circleIconFontSize
+          }
+        },
+        [`&${progressCls}-status-exception`]: {
+          [`${progressCls}-body:not(${progressCls}-circle-gradient)`]: {
+            [`${progressCls}-circle-path`]: {
+              stroke: token2.colorError
+            }
+          }
+        },
+        [`&${progressCls}-status-success`]: {
+          [`${progressCls}-body:not(${progressCls}-circle-gradient)`]: {
+            [`${progressCls}-circle-path`]: {
+              stroke: token2.colorSuccess
+            }
+          }
+        }
+      },
+      [`${progressCls}-inline-circle`]: {
+        lineHeight: 1,
+        [`${progressCls}-inner`]: {
+          verticalAlign: "bottom"
+        }
+      }
+    };
+  };
+  var genStepStyle = (token2) => {
+    const {
+      componentCls: progressCls
+    } = token2;
+    return {
+      [progressCls]: {
+        [`${progressCls}-steps`]: {
+          display: "inline-block",
+          "&-body": {
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            gap: token2.progressStepMarginInlineEnd,
+            [`${progressCls}-indicator`]: {
+              marginInlineStart: token2.marginXS
+            }
+          },
+          "&-item": {
+            flexShrink: 0,
+            minWidth: token2.progressStepMinWidth,
+            backgroundColor: token2.remainingColor,
+            transition: `all ${token2.motionDurationSlow}`,
+            "&-active": {
+              backgroundColor: token2.defaultColor
+            }
+          }
+        }
+      }
+    };
+  };
+  var genSmallLine = (token2) => {
+    const {
+      componentCls: progressCls,
+      iconCls: iconPrefixCls
+    } = token2;
+    return {
+      [progressCls]: {
+        [`${progressCls}-small&-line, ${progressCls}-small&-line ${progressCls}-indicator ${iconPrefixCls}`]: {
+          fontSize: token2.fontSizeSM
+        }
+      }
+    };
+  };
+  var prepareComponentToken15 = (token2) => ({
+    circleTextColor: token2.colorText,
+    defaultColor: token2.colorInfo,
+    remainingColor: token2.colorFillSecondary,
+    lineBorderRadius: 100,
+    circleTextFontSize: "1em",
+    circleIconFontSize: `${token2.fontSize / token2.fontSizeSM}em`
+  });
+  var style_default20 = genStyleHooks("Progress", (token2) => {
+    const progressStepMarginInlineEnd = token2.calc(token2.marginXXS).div(2).equal();
+    const progressToken = merge2(token2, {
+      progressStepMarginInlineEnd,
+      progressStepMinWidth: progressStepMarginInlineEnd,
+      progressActiveMotionDuration: "2.4s"
+    });
+    return [genBaseStyle5(progressToken), genLineStyle(progressToken), genCircleStyle(progressToken), genStepStyle(progressToken), genSmallLine(progressToken)];
+  }, prepareComponentToken15);
+
+  // ../custom_dashboard/node_modules/antd/es/progress/Line.js
+  "use client";
+  var sortGradient = (gradients) => {
+    let tempArr = [];
+    Object.keys(gradients).forEach((key) => {
+      const formattedKey = Number.parseFloat(key.replace(/%/g, ""));
+      if (!Number.isNaN(formattedKey)) {
+        tempArr.push({
+          key: formattedKey,
+          value: gradients[key]
+        });
+      }
+    });
+    tempArr = tempArr.sort((a, b) => a.key - b.key);
+    return tempArr.map(({
+      key,
+      value
+    }) => `${value} ${key}%`).join(", ");
+  };
+  var handleGradient = (strokeColor, directionConfig) => {
+    const _a = strokeColor, {
+      from: from2 = presetPrimaryColors.blue,
+      to = presetPrimaryColors.blue,
+      direction = directionConfig === "rtl" ? "to left" : "to right"
+    } = _a, rest = __objRest(_a, [
+      "from",
+      "to",
+      "direction"
+    ]);
+    if (Object.keys(rest).length !== 0) {
+      const sortedGradients = sortGradient(rest);
+      const background2 = `linear-gradient(${direction}, ${sortedGradients})`;
+      return {
+        background: background2,
+        [LineStrokeColorVar]: background2
+      };
+    }
+    const background = `linear-gradient(${direction}, ${from2}, ${to})`;
+    return {
+      background,
+      [LineStrokeColorVar]: background
+    };
+  };
+  var Line2 = (props) => {
+    const {
+      prefixCls,
+      classNames,
+      styles: styles2,
+      direction: directionConfig,
+      percent,
+      size,
+      strokeWidth,
+      strokeColor,
+      strokeLinecap = "round",
+      children,
+      railColor,
+      trailColor,
+      percentPosition,
+      success
+    } = props;
+    const {
+      align: infoAlign,
+      type: infoPosition
+    } = percentPosition;
+    const mergedRailColor = railColor != null ? railColor : trailColor;
+    const borderRadius = strokeLinecap === "square" || strokeLinecap === "butt" ? 0 : void 0;
+    if (true) {
+      const warning6 = devUseWarning("Progress");
+      warning6.deprecated(!("strokeWidth" in props), "strokeWidth", "size");
+    }
+    const mergedSize = size != null ? size : [-1, strokeWidth || (size === "small" ? 6 : 8)];
+    const [width, height] = getSize(mergedSize, "line", {
+      strokeWidth
+    });
+    const railStyle = {
+      backgroundColor: mergedRailColor || void 0,
+      borderRadius,
+      height
+    };
+    const trackCls = `${prefixCls}-track`;
+    const backgroundProps = strokeColor && typeof strokeColor !== "string" ? handleGradient(strokeColor, directionConfig) : {
+      [LineStrokeColorVar]: strokeColor,
+      background: strokeColor
+    };
+    const percentTrackStyle = __spreadValues({
+      width: `${validProgress(percent)}%`,
+      height,
+      borderRadius
+    }, backgroundProps);
+    const successPercent = getSuccessPercent(props);
+    const successTrackStyle = {
+      width: `${validProgress(successPercent)}%`,
+      height,
+      borderRadius,
+      backgroundColor: success == null ? void 0 : success.strokeColor
+    };
+    return /* @__PURE__ */ React303.createElement("div", {
+      className: clsx(`${prefixCls}-body`, classNames.body, {
+        [`${prefixCls}-body-layout-bottom`]: infoAlign === "center" && infoPosition === "outer"
+      }),
+      style: __spreadValues({
+        width: width > 0 ? width : "100%"
+      }, styles2.body)
+    }, /* @__PURE__ */ React303.createElement("div", {
+      className: clsx(`${prefixCls}-rail`, classNames.rail),
+      style: __spreadValues(__spreadValues({}, railStyle), styles2.rail)
+    }, /* @__PURE__ */ React303.createElement("div", {
+      className: clsx(trackCls, classNames.track),
+      style: __spreadValues(__spreadValues({}, percentTrackStyle), styles2.track)
+    }, infoPosition === "inner" && children), successPercent !== void 0 && /* @__PURE__ */ React303.createElement("div", {
+      className: clsx(trackCls, `${trackCls}-success`, classNames.track),
+      style: __spreadValues(__spreadValues({}, successTrackStyle), styles2.track)
+    })), infoPosition === "outer" && children);
+  };
+  var Line_default2 = Line2;
+
+  // ../custom_dashboard/node_modules/antd/es/progress/Steps.js
+  var React304 = __toESM(require_react());
+  "use client";
+  var Steps = (props) => {
+    const {
+      classNames,
+      styles: styles2,
+      size,
+      steps,
+      rounding: customRounding = Math.round,
+      percent = 0,
+      strokeWidth = 8,
+      strokeColor,
+      railColor,
+      trailColor,
+      prefixCls,
+      children
+    } = props;
+    const current = customRounding(steps * (percent / 100));
+    const stepWidth = size === "small" ? 2 : 14;
+    const mergedSize = size != null ? size : [stepWidth, strokeWidth];
+    const [width, height] = getSize(mergedSize, "step", {
+      steps,
+      strokeWidth
+    });
+    const unitWidth = width / steps;
+    const styledSteps = Array.from({
+      length: steps
+    });
+    const mergedRailColor = railColor != null ? railColor : trailColor;
+    for (let i = 0; i < steps; i++) {
+      const color = Array.isArray(strokeColor) ? strokeColor[i] : strokeColor;
+      styledSteps[i] = /* @__PURE__ */ React304.createElement("div", {
+        key: i,
+        className: clsx(`${prefixCls}-steps-item`, {
+          [`${prefixCls}-steps-item-active`]: i <= current - 1
+        }, classNames.track),
+        style: __spreadValues({
+          backgroundColor: i <= current - 1 ? color : mergedRailColor,
+          width: unitWidth,
+          height
+        }, styles2.track)
+      });
+    }
+    return /* @__PURE__ */ React304.createElement("div", {
+      className: clsx(`${prefixCls}-steps-body`, classNames.body),
+      style: styles2.body
+    }, styledSteps, children);
+  };
+  var Steps_default = Steps;
+
+  // ../custom_dashboard/node_modules/antd/es/progress/progress.js
+  "use client";
+  var ProgressStatuses = ["normal", "exception", "active", "success"];
+  var Progress2 = /* @__PURE__ */ React305.forwardRef((props, ref) => {
+    const _a = props, {
+      prefixCls: customizePrefixCls,
+      className,
+      rootClassName,
+      classNames,
+      styles: styles2,
+      steps,
+      strokeColor,
+      percent = 0,
+      size = "medium",
+      showInfo = true,
+      type: type5 = "line",
+      status,
+      format: format2,
+      style: style2,
+      percentPosition = {}
+    } = _a, restProps = __objRest(_a, [
+      "prefixCls",
+      "className",
+      "rootClassName",
+      "classNames",
+      "styles",
+      "steps",
+      "strokeColor",
+      "percent",
+      "size",
+      "showInfo",
+      "type",
+      "status",
+      "format",
+      "style",
+      "percentPosition"
+    ]);
+    const {
+      align: infoAlign = "end",
+      type: infoPosition = "outer"
+    } = percentPosition;
+    const strokeColorNotArray = Array.isArray(strokeColor) ? strokeColor[0] : strokeColor;
+    const strokeColorNotGradient = typeof strokeColor === "string" || Array.isArray(strokeColor) ? strokeColor : void 0;
+    const strokeColorIsBright = React305.useMemo(() => {
+      if (strokeColorNotArray) {
+        const color = typeof strokeColorNotArray === "string" ? strokeColorNotArray : Object.values(strokeColorNotArray)[0];
+        return new FastColor(color).isLight();
+      }
+      return false;
+    }, [strokeColor]);
+    const percentNumber = React305.useMemo(() => {
+      var _a2, _b;
+      const successPercent = getSuccessPercent(props);
+      return Number.parseInt(successPercent !== void 0 ? (_a2 = successPercent != null ? successPercent : 0) == null ? void 0 : _a2.toString() : (_b = percent != null ? percent : 0) == null ? void 0 : _b.toString(), 10);
+    }, [percent, props.success]);
+    const progressStatus = React305.useMemo(() => {
+      if (!ProgressStatuses.includes(status) && percentNumber >= 100) {
+        return "success";
+      }
+      return status || "normal";
+    }, [status, percentNumber]);
+    const {
+      getPrefixCls,
+      direction,
+      className: contextClassName,
+      style: contextStyle,
+      classNames: contextClassNames,
+      styles: contextStyles
+    } = useComponentConfig("progress");
+    const prefixCls = getPrefixCls("progress", customizePrefixCls);
+    const [hashId, cssVarCls] = style_default20(prefixCls);
+    const mergedProps = __spreadProps(__spreadValues({}, props), {
+      percent,
+      type: type5,
+      size,
+      showInfo,
+      percentPosition
+    });
+    const [mergedClassNames, mergedStyles] = useMergeSemantic([contextClassNames, classNames], [contextStyles, styles2], {
+      props: mergedProps
+    });
+    const isLineType = type5 === "line";
+    const isPureLineType = isLineType && !steps;
+    const progressInfo = React305.useMemo(() => {
+      if (!showInfo) {
+        return null;
+      }
+      const successPercent = getSuccessPercent(props);
+      let text;
+      const textFormatter = format2 || ((number4) => `${number4}%`);
+      const isBrightInnerColor = isLineType && strokeColorIsBright && infoPosition === "inner";
+      if (infoPosition === "inner" || format2 || progressStatus !== "exception" && progressStatus !== "success") {
+        text = textFormatter(validProgress(percent), validProgress(successPercent));
+      } else if (progressStatus === "exception") {
+        text = isLineType ? /* @__PURE__ */ React305.createElement(CloseCircleFilled_default2, null) : /* @__PURE__ */ React305.createElement(CloseOutlined_default2, null);
+      } else if (progressStatus === "success") {
+        text = isLineType ? /* @__PURE__ */ React305.createElement(CheckCircleFilled_default2, null) : /* @__PURE__ */ React305.createElement(CheckOutlined_default2, null);
+      }
+      return /* @__PURE__ */ React305.createElement("span", {
+        className: clsx(`${prefixCls}-indicator`, {
+          [`${prefixCls}-indicator-bright`]: isBrightInnerColor,
+          [`${prefixCls}-indicator-${infoAlign}`]: isPureLineType,
+          [`${prefixCls}-indicator-${infoPosition}`]: isPureLineType
+        }, mergedClassNames.indicator),
+        style: mergedStyles.indicator,
+        title: typeof text === "string" ? text : void 0
+      }, text);
+    }, [showInfo, percent, percentNumber, progressStatus, type5, prefixCls, format2, isLineType, strokeColorIsBright, infoPosition, infoAlign, isPureLineType, mergedClassNames.indicator, mergedStyles.indicator]);
+    if (true) {
+      const warning6 = devUseWarning("Progress");
+      [["width", "size"], ["trailColor", "railColor"], ["gapPosition", "gapPlacement"]].forEach(([deprecatedName, newName]) => {
+        warning6.deprecated(!(deprecatedName in props), deprecatedName, newName);
+      });
+      if (type5 === "circle" || type5 === "dashboard") {
+        if (Array.isArray(size)) {
+          true ? warning6(false, "usage", 'Type "circle" and "dashboard" do not accept array as `size`, please use number or preset size instead.') : void 0;
+        } else if (typeof size === "object") {
+          true ? warning6(false, "usage", 'Type "circle" and "dashboard" do not accept object as `size`, please use number or preset size instead.') : void 0;
+        }
+      }
+      warning6.deprecated(size !== "default", 'size="default"', 'size="medium"');
+    }
+    const sharedProps = __spreadProps(__spreadValues({}, props), {
+      classNames: mergedClassNames,
+      styles: mergedStyles
+    });
+    let progress;
+    if (type5 === "line") {
+      progress = steps ? /* @__PURE__ */ React305.createElement(Steps_default, __spreadProps(__spreadValues({}, sharedProps), {
+        strokeColor: strokeColorNotGradient,
+        prefixCls,
+        steps: typeof steps === "object" ? steps.count : steps
+      }), progressInfo) : /* @__PURE__ */ React305.createElement(Line_default2, __spreadProps(__spreadValues({}, sharedProps), {
+        strokeColor: strokeColorNotArray,
+        prefixCls,
+        direction,
+        percentPosition: {
+          align: infoAlign,
+          type: infoPosition
+        }
+      }), progressInfo);
+    } else if (type5 === "circle" || type5 === "dashboard") {
+      progress = /* @__PURE__ */ React305.createElement(Circle_default2, __spreadProps(__spreadValues({}, sharedProps), {
+        strokeColor: strokeColorNotArray,
+        prefixCls,
+        progressStatus
+      }), progressInfo);
+    }
+    const classString = clsx(prefixCls, `${prefixCls}-status-${progressStatus}`, {
+      [`${prefixCls}-${type5 === "dashboard" && "circle" || type5}`]: type5 !== "line",
+      [`${prefixCls}-inline-circle`]: type5 === "circle" && getSize(size, "circle")[0] <= 20,
+      [`${prefixCls}-line`]: isPureLineType,
+      [`${prefixCls}-line-align-${infoAlign}`]: isPureLineType,
+      [`${prefixCls}-line-position-${infoPosition}`]: isPureLineType,
+      [`${prefixCls}-steps`]: steps,
+      [`${prefixCls}-show-info`]: showInfo,
+      [`${prefixCls}-small`]: size === "small",
+      [`${prefixCls}-rtl`]: direction === "rtl"
+    }, contextClassName, className, rootClassName, mergedClassNames.root, hashId, cssVarCls);
+    return /* @__PURE__ */ React305.createElement("div", __spreadValues({
+      ref,
+      style: __spreadValues(__spreadValues(__spreadValues({}, contextStyle), mergedStyles.root), style2),
+      className: classString,
+      role: "progressbar",
+      "aria-valuenow": percentNumber,
+      "aria-valuemin": 0,
+      "aria-valuemax": 100
+    }, omit(restProps, ["railColor", "trailColor", "strokeWidth", "width", "gapDegree", "gapPosition", "gapPlacement", "strokeLinecap", "success"])), progress);
+  });
+  if (true) {
+    Progress2.displayName = "Progress";
+  }
+  var progress_default = Progress2;
+
+  // ../custom_dashboard/node_modules/antd/es/progress/index.js
+  "use client";
+  var progress_default2 = progress_default;
+
   // ../custom_dashboard/node_modules/antd/es/table/Table.js
-  var React365 = __toESM(require_react());
+  var React374 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/constant.js
   var EXPAND_COLUMN = {};
   var INTERNAL_HOOKS = "rc-table-internal-hook";
 
   // ../custom_dashboard/node_modules/@rc-component/context/es/context.js
-  var React297 = __toESM(require_react());
+  var React306 = __toESM(require_react());
   var import_react_dom7 = __toESM(require_react_dom());
   function createContext36(defaultValue) {
-    const Context3 = /* @__PURE__ */ React297.createContext(void 0);
+    const Context3 = /* @__PURE__ */ React306.createContext(void 0);
     const Provider = ({
       value,
       children
     }) => {
-      const valueRef = React297.useRef(value);
+      const valueRef = React306.useRef(value);
       valueRef.current = value;
-      const [context] = React297.useState(() => ({
+      const [context] = React306.useState(() => ({
         getValue: () => valueRef.current,
         listeners: /* @__PURE__ */ new Set()
       }));
@@ -64975,7 +66239,7 @@ html body {
           });
         });
       }, [value]);
-      return /* @__PURE__ */ React297.createElement(Context3.Provider, {
+      return /* @__PURE__ */ React306.createElement(Context3.Provider, {
         value: context
       }, children);
     };
@@ -64999,14 +66263,14 @@ html body {
       });
       return obj;
     });
-    const context = React297.useContext(holder == null ? void 0 : holder.Context);
+    const context = React306.useContext(holder == null ? void 0 : holder.Context);
     const {
       listeners,
       getValue: getValue3
     } = context || {};
-    const valueRef = React297.useRef();
+    const valueRef = React306.useRef();
     valueRef.current = eventSelector(context ? getValue3() : holder == null ? void 0 : holder.defaultValue);
-    const [, forceUpdate] = React297.useState({});
+    const [, forceUpdate] = React306.useState({});
     useLayoutEffect_default(() => {
       if (!context) {
         return;
@@ -65026,9 +66290,9 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/context/es/Immutable.js
-  var React298 = __toESM(require_react());
-  function _extends58() {
-    _extends58 = Object.assign ? Object.assign.bind() : function(target) {
+  var React307 = __toESM(require_react());
+  function _extends60() {
+    _extends60 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -65039,51 +66303,51 @@ html body {
       }
       return target;
     };
-    return _extends58.apply(this, arguments);
+    return _extends60.apply(this, arguments);
   }
   function createImmutable() {
-    const ImmutableContext = /* @__PURE__ */ React298.createContext(null);
+    const ImmutableContext = /* @__PURE__ */ React307.createContext(null);
     function useImmutableMark3() {
-      return React298.useContext(ImmutableContext);
+      return React307.useContext(ImmutableContext);
     }
-    function makeImmutable3(Component5, shouldTriggerRender) {
-      const refAble = supportRef(Component5);
+    function makeImmutable3(Component7, shouldTriggerRender) {
+      const refAble = supportRef(Component7);
       const ImmutableComponent = (props, ref) => {
         const refProps = refAble ? {
           ref
         } : {};
-        const renderTimesRef = React298.useRef(0);
-        const prevProps = React298.useRef(props);
+        const renderTimesRef = React307.useRef(0);
+        const prevProps = React307.useRef(props);
         const mark = useImmutableMark3();
         if (mark !== null) {
-          return /* @__PURE__ */ React298.createElement(Component5, _extends58({}, props, refProps));
+          return /* @__PURE__ */ React307.createElement(Component7, _extends60({}, props, refProps));
         }
         if (!shouldTriggerRender || shouldTriggerRender(prevProps.current, props)) {
           renderTimesRef.current += 1;
         }
         prevProps.current = props;
-        return /* @__PURE__ */ React298.createElement(ImmutableContext.Provider, {
+        return /* @__PURE__ */ React307.createElement(ImmutableContext.Provider, {
           value: renderTimesRef.current
-        }, /* @__PURE__ */ React298.createElement(Component5, _extends58({}, props, refProps)));
+        }, /* @__PURE__ */ React307.createElement(Component7, _extends60({}, props, refProps)));
       };
       if (true) {
-        ImmutableComponent.displayName = `ImmutableRoot(${Component5.displayName || Component5.name})`;
+        ImmutableComponent.displayName = `ImmutableRoot(${Component7.displayName || Component7.name})`;
       }
-      return refAble ? /* @__PURE__ */ React298.forwardRef(ImmutableComponent) : ImmutableComponent;
+      return refAble ? /* @__PURE__ */ React307.forwardRef(ImmutableComponent) : ImmutableComponent;
     }
-    function responseImmutable3(Component5, propsAreEqual) {
-      const refAble = supportRef(Component5);
+    function responseImmutable3(Component7, propsAreEqual) {
+      const refAble = supportRef(Component7);
       const ImmutableComponent = (props, ref) => {
         const refProps = refAble ? {
           ref
         } : {};
         useImmutableMark3();
-        return /* @__PURE__ */ React298.createElement(Component5, _extends58({}, props, refProps));
+        return /* @__PURE__ */ React307.createElement(Component7, _extends60({}, props, refProps));
       };
       if (true) {
-        ImmutableComponent.displayName = `ImmutableResponse(${Component5.displayName || Component5.name})`;
+        ImmutableComponent.displayName = `ImmutableResponse(${Component7.displayName || Component7.name})`;
       }
-      return /* @__PURE__ */ React298.memo(refAble ? /* @__PURE__ */ React298.forwardRef(ImmutableComponent) : ImmutableComponent, propsAreEqual);
+      return /* @__PURE__ */ React307.memo(refAble ? /* @__PURE__ */ React307.forwardRef(ImmutableComponent) : ImmutableComponent, propsAreEqual);
     }
     return {
       makeImmutable: makeImmutable3,
@@ -65100,7 +66364,7 @@ html body {
   } = createImmutable();
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Footer/index.js
-  var React306 = __toESM(require_react());
+  var React315 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/context/TableContext.js
   var {
@@ -65112,11 +66376,11 @@ html body {
   var TableContext_default = TableContext;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useRenderTimes.js
-  var React299 = __toESM(require_react());
+  var React308 = __toESM(require_react());
   function useRenderTimes(props, debug) {
-    const timesRef = React299.useRef(0);
+    const timesRef = React308.useRef(0);
     timesRef.current += 1;
-    const propsRef = React299.useRef(props);
+    const propsRef = React308.useRef(props);
     const keys2 = [];
     Object.keys(props || {}).map((key) => {
       var _a;
@@ -65125,12 +66389,12 @@ html body {
       }
     });
     propsRef.current = props;
-    const keysRef = React299.useRef([]);
+    const keysRef = React308.useRef([]);
     if (keys2.length) {
       keysRef.current = keys2;
     }
-    React299.useDebugValue(timesRef.current);
-    React299.useDebugValue(keysRef.current.join(", "));
+    React308.useDebugValue(timesRef.current);
+    React308.useDebugValue(keysRef.current.join(", "));
     if (debug) {
       console.log(`${debug}:`, timesRef.current, keysRef.current);
     }
@@ -65138,33 +66402,33 @@ html body {
   }
   var useRenderTimes_default = true ? useRenderTimes : () => {
   };
-  var RenderBlock = /* @__PURE__ */ React299.memo(() => {
+  var RenderBlock = /* @__PURE__ */ React308.memo(() => {
     const times = useRenderTimes();
-    return /* @__PURE__ */ React299.createElement("h1", null, "Render Times: ", times);
+    return /* @__PURE__ */ React308.createElement("h1", null, "Render Times: ", times);
   });
   if (true) {
     RenderBlock.displayName = "RenderBlock";
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Footer/Cell.js
-  var React304 = __toESM(require_react());
+  var React313 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Cell/index.js
-  var React302 = __toESM(require_react());
+  var React311 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Cell/useCellRender.js
-  var React301 = __toESM(require_react());
+  var React310 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/context/PerfContext.js
-  var React300 = __toESM(require_react());
-  var PerfContext = /* @__PURE__ */ React300.createContext({
+  var React309 = __toESM(require_react());
+  var PerfContext = /* @__PURE__ */ React309.createContext({
     renderWithProps: false
   });
   var PerfContext_default = PerfContext;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/utils/valueUtil.js
   var INTERNAL_KEY_PREFIX = "RC_TABLE_KEY";
-  function toArray6(arr) {
+  function toArray7(arr) {
     if (arr === void 0 || arr === null) {
       return [];
     }
@@ -65178,7 +66442,7 @@ html body {
         key,
         dataIndex
       } = column2 || {};
-      let mergedKey = key || toArray6(dataIndex).join("-") || INTERNAL_KEY_PREFIX;
+      let mergedKey = key || toArray7(dataIndex).join("-") || INTERNAL_KEY_PREFIX;
       while (keys2[mergedKey]) {
         mergedKey = `${mergedKey}_next`;
       }
@@ -65196,10 +66460,10 @@ html body {
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Cell/useCellRender.js
   function isRenderCell(data) {
-    return data && typeof data === "object" && !Array.isArray(data) && !/* @__PURE__ */ React301.isValidElement(data);
+    return data && typeof data === "object" && !Array.isArray(data) && !/* @__PURE__ */ React310.isValidElement(data);
   }
-  function useCellRender(record, dataIndex, renderIndex, children, render2, shouldCellUpdate) {
-    const perfRecord = React301.useContext(PerfContext_default);
+  function useCellRender(record, dataIndex, renderIndex, children, render4, shouldCellUpdate) {
+    const perfRecord = React310.useContext(PerfContext_default);
     const mark = useImmutableMark2();
     const retData = useMemo(() => {
       if (validateValue(children)) {
@@ -65209,8 +66473,8 @@ html body {
       const value = get(record, path);
       let returnChildNode = value;
       let returnCellProps = void 0;
-      if (render2) {
-        const renderData = render2(value, record, renderIndex);
+      if (render4) {
+        const renderData = render4(value, record, renderIndex);
         if (isRenderCell(renderData)) {
           if (true) {
             warning_default(false, "`columns.render` return cell props is deprecated with perf issue, please use `onCell` instead.");
@@ -65228,7 +66492,7 @@ html body {
       record,
       children,
       dataIndex,
-      render2,
+      render4,
       renderIndex
     ], (prev2, next2) => {
       if (shouldCellUpdate) {
@@ -65257,8 +66521,8 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Cell/index.js
-  function _extends59() {
-    _extends59 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends61() {
+    _extends61 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -65269,7 +66533,7 @@ html body {
       }
       return target;
     };
-    return _extends59.apply(this, arguments);
+    return _extends61.apply(this, arguments);
   }
   var getTitleFromCellRenderChildren = ({
     ellipsis,
@@ -65284,7 +66548,7 @@ html body {
     if (ellipsisConfig && (ellipsisConfig.showTitle || rowType === "header")) {
       if (typeof children === "string" || typeof children === "number") {
         title = children.toString();
-      } else if (/* @__PURE__ */ React302.isValidElement(children) && typeof ((_a = children.props) == null ? void 0 : _a.children) === "string") {
+      } else if (/* @__PURE__ */ React311.isValidElement(children) && typeof ((_a = children.props) == null ? void 0 : _a.children) === "string") {
         title = (_b = children.props) == null ? void 0 : _b.children;
       }
     }
@@ -65296,7 +66560,7 @@ html body {
       useRenderTimes_default(props);
     }
     const {
-      component: Component5,
+      component: Component7,
       children,
       ellipsis,
       scope,
@@ -65305,11 +66569,11 @@ html body {
       style: style2,
       align,
       record,
-      render: render2,
+      render: render4,
       dataIndex,
       renderIndex,
       shouldCellUpdate,
-      index,
+      index: index2,
       rowType,
       colSpan,
       rowSpan,
@@ -65330,7 +66594,7 @@ html body {
       allColumnsFixedLeft,
       rowHoverable
     } = useContext108(TableContext_default, ["allColumnsFixedLeft", "rowHoverable"]);
-    const [childNode, legacyCellProps] = useCellRender(record, dataIndex, renderIndex, children, render2, shouldCellUpdate);
+    const [childNode, legacyCellProps] = useCellRender(record, dataIndex, renderIndex, children, render4, shouldCellUpdate);
     const fixedStyle = {};
     const isFixStart = typeof fixStart === "number" && !allColumnsFixedLeft;
     const isFixEnd = typeof fixEnd === "number" && !allColumnsFixedLeft;
@@ -65357,11 +66621,11 @@ html body {
     }
     const mergedColSpan = (_c = (_b = (_a = legacyCellProps == null ? void 0 : legacyCellProps.colSpan) != null ? _a : additionalProps.colSpan) != null ? _b : colSpan) != null ? _c : 1;
     const mergedRowSpan = (_f = (_e = (_d = legacyCellProps == null ? void 0 : legacyCellProps.rowSpan) != null ? _d : additionalProps.rowSpan) != null ? _e : rowSpan) != null ? _f : 1;
-    const [hovering, onHover] = useHoverState(index, mergedRowSpan);
+    const [hovering, onHover] = useHoverState(index2, mergedRowSpan);
     const onMouseEnter = useEvent_default((event) => {
       var _a2;
       if (record) {
-        onHover(index, index + mergedRowSpan - 1);
+        onHover(index2, index2 + mergedRowSpan - 1);
       }
       (_a2 = additionalProps == null ? void 0 : additionalProps.onMouseEnter) == null ? void 0 : _a2.call(additionalProps, event);
     });
@@ -65399,15 +66663,15 @@ html body {
     }
     const mergedStyle = __spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues({}, legacyCellProps == null ? void 0 : legacyCellProps.style), fixedStyle), alignStyle), additionalProps.style), style2);
     let mergedChildNode = childNode;
-    if (typeof mergedChildNode === "object" && !Array.isArray(mergedChildNode) && !/* @__PURE__ */ React302.isValidElement(mergedChildNode)) {
+    if (typeof mergedChildNode === "object" && !Array.isArray(mergedChildNode) && !/* @__PURE__ */ React311.isValidElement(mergedChildNode)) {
       mergedChildNode = null;
     }
     if (ellipsis && (fixedStartShadow || fixedEndShadow)) {
-      mergedChildNode = /* @__PURE__ */ React302.createElement("span", {
+      mergedChildNode = /* @__PURE__ */ React311.createElement("span", {
         className: `${cellPrefixCls}-content`
       }, mergedChildNode);
     }
-    return /* @__PURE__ */ React302.createElement(Component5, _extends59({}, legacyCellProps, additionalProps, {
+    return /* @__PURE__ */ React311.createElement(Component7, _extends61({}, legacyCellProps, additionalProps, {
       className: mergedClassName,
       style: mergedStyle,
       title,
@@ -65418,7 +66682,7 @@ html body {
       rowSpan: mergedRowSpan !== 1 ? mergedRowSpan : null
     }), appendNode, mergedChildNode);
   };
-  var Cell_default = /* @__PURE__ */ React302.memo(Cell);
+  var Cell_default = /* @__PURE__ */ React311.memo(Cell);
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/utils/fixUtil.js
   function isFixedStart(column2) {
@@ -65481,13 +66745,13 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Footer/SummaryContext.js
-  var React303 = __toESM(require_react());
-  var SummaryContext = /* @__PURE__ */ React303.createContext({});
+  var React312 = __toESM(require_react());
+  var SummaryContext = /* @__PURE__ */ React312.createContext({});
   var SummaryContext_default = SummaryContext;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Footer/Cell.js
-  function _extends60() {
-    _extends60 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends62() {
+    _extends62 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -65498,12 +66762,12 @@ html body {
       }
       return target;
     };
-    return _extends60.apply(this, arguments);
+    return _extends62.apply(this, arguments);
   }
   var SummaryCell = (props) => {
     const {
       className,
-      index,
+      index: index2,
       children,
       colSpan = 1,
       rowSpan,
@@ -65516,13 +66780,13 @@ html body {
       scrollColumnIndex,
       stickyOffsets,
       flattenColumns
-    } = React304.useContext(SummaryContext_default);
-    const lastIndex = index + colSpan - 1;
+    } = React313.useContext(SummaryContext_default);
+    const lastIndex = index2 + colSpan - 1;
     const mergedColSpan = lastIndex + 1 === scrollColumnIndex ? colSpan + 1 : colSpan;
-    const fixedInfo = React304.useMemo(() => getCellFixedInfo(index, index + mergedColSpan - 1, flattenColumns, stickyOffsets), [index, mergedColSpan, flattenColumns, stickyOffsets]);
-    return /* @__PURE__ */ React304.createElement(Cell_default, _extends60({
+    const fixedInfo = React313.useMemo(() => getCellFixedInfo(index2, index2 + mergedColSpan - 1, flattenColumns, stickyOffsets), [index2, mergedColSpan, flattenColumns, stickyOffsets]);
+    return /* @__PURE__ */ React313.createElement(Cell_default, _extends62({
       className,
-      index,
+      index: index2,
       component: "td",
       prefixCls,
       record: null,
@@ -65536,14 +66800,14 @@ html body {
   var Cell_default2 = SummaryCell;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Footer/Row.js
-  var React305 = __toESM(require_react());
+  var React314 = __toESM(require_react());
   var FooterRow = (props) => {
     const _a = props, {
       children
     } = _a, restProps = __objRest(_a, [
       "children"
     ]);
-    return /* @__PURE__ */ React305.createElement("tr", restProps, children);
+    return /* @__PURE__ */ React314.createElement("tr", restProps, children);
   };
   var Row_default = FooterRow;
 
@@ -65571,14 +66835,14 @@ html body {
     const prefixCls = useContext108(TableContext_default, "prefixCls");
     const lastColumnIndex = flattenColumns.length - 1;
     const scrollColumn = flattenColumns[lastColumnIndex];
-    const summaryContext = React306.useMemo(() => ({
+    const summaryContext = React315.useMemo(() => ({
       stickyOffsets,
       flattenColumns,
       scrollColumnIndex: (scrollColumn == null ? void 0 : scrollColumn.scrollbar) ? lastColumnIndex : null
     }), [scrollColumn, flattenColumns, lastColumnIndex, stickyOffsets]);
-    return /* @__PURE__ */ React306.createElement(SummaryContext_default.Provider, {
+    return /* @__PURE__ */ React315.createElement(SummaryContext_default.Provider, {
       value: summaryContext
-    }, /* @__PURE__ */ React306.createElement("tfoot", {
+    }, /* @__PURE__ */ React315.createElement("tfoot", {
       className: `${prefixCls}-summary`
     }, children));
   };
@@ -65598,19 +66862,19 @@ html body {
   var ColumnGroup_default = ColumnGroup;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Table.js
-  var React326 = __toESM(require_react());
+  var React335 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Body/index.js
-  var React313 = __toESM(require_react());
+  var React322 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useFlattenRecords.js
-  var React307 = __toESM(require_react());
-  function fillRecords(list, record, indent, childrenColumnName, expandedKeys, getRowKey, index) {
-    const key = getRowKey(record, index);
+  var React316 = __toESM(require_react());
+  function fillRecords(list, record, indent, childrenColumnName, expandedKeys, getRowKey, index2) {
+    const key = getRowKey(record, index2);
     list.push({
       record,
       indent,
-      index,
+      index: index2,
       rowKey: key
     });
     const expanded = expandedKeys == null ? void 0 : expandedKeys.has(key);
@@ -65621,7 +66885,7 @@ html body {
     }
   }
   function useFlattenRecords(data, childrenColumnName, expandedKeys, getRowKey) {
-    const arr = React307.useMemo(() => {
+    const arr = React316.useMemo(() => {
       if (expandedKeys == null ? void 0 : expandedKeys.size) {
         const list = [];
         for (let i = 0; i < (data == null ? void 0 : data.length); i += 1) {
@@ -65630,12 +66894,12 @@ html body {
         }
         return list;
       }
-      return data == null ? void 0 : data.map((item, index) => {
+      return data == null ? void 0 : data.map((item, index2) => {
         return {
           record: item,
           indent: 0,
-          index,
-          rowKey: getRowKey(item, index)
+          index: index2,
+          rowKey: getRowKey(item, index2)
         };
       });
     }, [data, childrenColumnName, expandedKeys, getRowKey]);
@@ -65643,7 +66907,7 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Body/BodyRow.js
-  var React310 = __toESM(require_react());
+  var React319 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useRowInfo.js
   function useRowInfo(record, rowKey, recordIndex, indent) {
@@ -65697,7 +66961,7 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Body/ExpandedRow.js
-  var React308 = __toESM(require_react());
+  var React317 = __toESM(require_react());
   var ExpandedRow = (props) => {
     if (true) {
       useRenderTimes_default(props);
@@ -65705,7 +66969,7 @@ html body {
     const {
       prefixCls,
       children,
-      component: Component5,
+      component: Component7,
       cellComponent,
       className,
       expanded,
@@ -65722,7 +66986,7 @@ html body {
     } = useContext108(TableContext_default, ["scrollbarSize", "fixHeader", "fixColumn", "componentWidth", "horizonScroll"]);
     let contentNode = children;
     if (isEmpty ? horizonScroll && componentWidth : fixColumn) {
-      contentNode = /* @__PURE__ */ React308.createElement("div", {
+      contentNode = /* @__PURE__ */ React317.createElement("div", {
         style: {
           width: componentWidth - stickyOffset - (fixHeader && !isEmpty ? scrollbarSize : 0),
           position: "sticky",
@@ -65732,12 +66996,12 @@ html body {
         className: `${prefixCls}-expanded-row-fixed`
       }, contentNode);
     }
-    return /* @__PURE__ */ React308.createElement(Component5, {
+    return /* @__PURE__ */ React317.createElement(Component7, {
       className,
       style: {
         display: expanded ? null : "none"
       }
-    }, /* @__PURE__ */ React308.createElement(Cell_default, {
+    }, /* @__PURE__ */ React317.createElement(Cell_default, {
       component: cellComponent,
       prefixCls,
       colSpan
@@ -65746,7 +67010,7 @@ html body {
   var ExpandedRow_default = ExpandedRow;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/utils/expandUtil.js
-  var React309 = __toESM(require_react());
+  var React318 = __toESM(require_react());
   function renderExpandIcon({
     prefixCls,
     record,
@@ -65756,7 +67020,7 @@ html body {
   }) {
     const expandClassName = `${prefixCls}-row-expand-icon`;
     if (!expandable) {
-      return /* @__PURE__ */ React309.createElement("span", {
+      return /* @__PURE__ */ React318.createElement("span", {
         className: clsx(expandClassName, `${prefixCls}-row-spaced`)
       });
     }
@@ -65764,7 +67028,7 @@ html body {
       onExpand(record, event);
       event.stopPropagation();
     };
-    return /* @__PURE__ */ React309.createElement("span", {
+    return /* @__PURE__ */ React318.createElement("span", {
       className: clsx(expandClassName, {
         [`${prefixCls}-row-expanded`]: expanded,
         [`${prefixCls}-row-collapsed`]: !expanded
@@ -65775,27 +67039,27 @@ html body {
   function findAllChildrenKeys(data, getRowKey, childrenColumnName) {
     const keys2 = [];
     function dig(list) {
-      (list || []).forEach((item, index) => {
-        keys2.push(getRowKey(item, index));
+      (list || []).forEach((item, index2) => {
+        keys2.push(getRowKey(item, index2));
         dig(item[childrenColumnName]);
       });
     }
     dig(data);
     return keys2;
   }
-  function computedExpandedClassName(cls, record, index, indent) {
+  function computedExpandedClassName(cls, record, index2, indent) {
     if (typeof cls === "string") {
       return cls;
     }
     if (typeof cls === "function") {
-      return cls(record, index, indent);
+      return cls(record, index2, indent);
     }
     return "";
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Body/BodyRow.js
-  function _extends61() {
-    _extends61 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends63() {
+    _extends63 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -65806,9 +67070,9 @@ html body {
       }
       return target;
     };
-    return _extends61.apply(this, arguments);
+    return _extends63.apply(this, arguments);
   }
-  function getCellProps(rowInfo, column2, colIndex, indent, index, rowKeys = [], expandedRowOffset = 0) {
+  function getCellProps(rowInfo, column2, colIndex, indent, index2, rowKeys = [], expandedRowOffset = 0) {
     var _a;
     const {
       record,
@@ -65829,7 +67093,7 @@ html body {
     const fixedInfo = fixedInfoList[colIndex];
     let appendCellNode;
     if (colIndex === (expandIconColumnIndex || 0) && nestExpandable) {
-      appendCellNode = /* @__PURE__ */ React310.createElement(React310.Fragment, null, /* @__PURE__ */ React310.createElement("span", {
+      appendCellNode = /* @__PURE__ */ React319.createElement(React319.Fragment, null, /* @__PURE__ */ React319.createElement("span", {
         style: {
           paddingLeft: `${indentSize * indent}px`
         },
@@ -65842,14 +67106,14 @@ html body {
         onExpand: onTriggerExpand
       }));
     }
-    const additionalCellProps = ((_a = column2.onCell) == null ? void 0 : _a.call(column2, record, index)) || {};
+    const additionalCellProps = ((_a = column2.onCell) == null ? void 0 : _a.call(column2, record, index2)) || {};
     if (expandedRowOffset) {
       const {
         rowSpan = 1
       } = additionalCellProps;
       if (expandable && rowSpan && colIndex < expandedRowOffset) {
         let currentRowSpan = rowSpan;
-        for (let i = index; i < index + rowSpan; i += 1) {
+        for (let i = index2; i < index2 + rowSpan; i += 1) {
           const rowKey = rowKeys[i];
           if (expandedKeys.has(rowKey)) {
             currentRowSpan += 1;
@@ -65875,7 +67139,7 @@ html body {
       classNames,
       styles: styles2,
       record,
-      index,
+      index: index2,
       renderIndex,
       rowKey,
       rowKeys,
@@ -65885,7 +67149,7 @@ html body {
       scopeCellComponent,
       expandedRowInfo
     } = props;
-    const rowInfo = useRowInfo(record, rowKey, index, indent);
+    const rowInfo = useRowInfo(record, rowKey, index2, indent);
     const {
       prefixCls,
       flattenColumns,
@@ -65895,13 +67159,13 @@ html body {
       expanded,
       rowSupportExpand
     } = rowInfo;
-    const expandedRef = React310.useRef(false);
+    const expandedRef = React319.useRef(false);
     expandedRef.current || (expandedRef.current = expanded);
     if (true) {
       useRenderTimes_default(props);
     }
-    const expandedClsName = computedExpandedClassName(expandedRowClassName, record, index, indent);
-    const baseRowNode = /* @__PURE__ */ React310.createElement(RowComponent, _extends61({}, rowProps, {
+    const expandedClsName = computedExpandedClassName(expandedRowClassName, record, index2, indent);
+    const baseRowNode = /* @__PURE__ */ React319.createElement(RowComponent, _extends63({}, rowProps, {
       "data-row-key": rowKey,
       className: clsx(className, `${prefixCls}-row`, `${prefixCls}-row-level-${indent}`, rowProps == null ? void 0 : rowProps.className, classNames.row, {
         [expandedClsName]: indent >= 1
@@ -65909,7 +67173,7 @@ html body {
       style: __spreadValues(__spreadValues(__spreadValues({}, style2), rowProps == null ? void 0 : rowProps.style), styles2.row)
     }), flattenColumns.map((column2, colIndex) => {
       const {
-        render: render2,
+        render: render4,
         dataIndex,
         className: columnClassName
       } = column2;
@@ -65918,8 +67182,8 @@ html body {
         fixedInfo,
         appendCellNode,
         additionalCellProps
-      } = getCellProps(rowInfo, column2, colIndex, indent, index, rowKeys, expandedRowInfo == null ? void 0 : expandedRowInfo.offset);
-      return /* @__PURE__ */ React310.createElement(Cell_default, _extends61({
+      } = getCellProps(rowInfo, column2, colIndex, indent, index2, rowKeys, expandedRowInfo == null ? void 0 : expandedRowInfo.offset);
+      return /* @__PURE__ */ React319.createElement(Cell_default, _extends63({
         className: clsx(columnClassName, classNames.cell),
         style: styles2.cell,
         ellipsis: column2.ellipsis,
@@ -65929,10 +67193,10 @@ html body {
         prefixCls,
         key,
         record,
-        index,
+        index: index2,
         renderIndex,
         dataIndex,
-        render: render2,
+        render: render4,
         shouldCellUpdate: column2.shouldCellUpdate
       }, fixedInfo, {
         appendNode: appendCellNode,
@@ -65941,8 +67205,8 @@ html body {
     }));
     let expandRowNode;
     if (rowSupportExpand && (expandedRef.current || expanded)) {
-      const expandContent = expandedRowRender(record, index, indent + 1, expanded);
-      expandRowNode = /* @__PURE__ */ React310.createElement(ExpandedRow_default, {
+      const expandContent = expandedRowRender(record, index2, indent + 1, expanded);
+      expandRowNode = /* @__PURE__ */ React319.createElement(ExpandedRow_default, {
         expanded,
         className: clsx(`${prefixCls}-expanded-row`, `${prefixCls}-expanded-row-level-${indent + 1}`, expandedClsName),
         prefixCls,
@@ -65953,7 +67217,7 @@ html body {
         stickyOffset: expandedRowInfo == null ? void 0 : expandedRowInfo.sticky
       }, expandContent);
     }
-    return /* @__PURE__ */ React310.createElement(React310.Fragment, null, baseRowNode, expandRowNode);
+    return /* @__PURE__ */ React319.createElement(React319.Fragment, null, baseRowNode, expandRowNode);
   };
   if (true) {
     BodyRow.displayName = "BodyRow";
@@ -65961,25 +67225,25 @@ html body {
   var BodyRow_default = responseImmutable2(BodyRow);
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Body/MeasureRow.js
-  var React312 = __toESM(require_react());
+  var React321 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Body/MeasureCell.js
-  var React311 = __toESM(require_react());
+  var React320 = __toESM(require_react());
   var MeasureCell = (props) => {
     const {
       columnKey,
       onColumnResize,
       title
     } = props;
-    const cellRef = React311.useRef(null);
+    const cellRef = React320.useRef(null);
     useLayoutEffect_default(() => {
       if (cellRef.current) {
         onColumnResize(columnKey, cellRef.current.offsetWidth);
       }
     }, []);
-    return /* @__PURE__ */ React311.createElement(es_default, {
+    return /* @__PURE__ */ React320.createElement(es_default, {
       data: columnKey
-    }, /* @__PURE__ */ React311.createElement("td", {
+    }, /* @__PURE__ */ React320.createElement("td", {
       ref: cellRef,
       style: {
         paddingTop: 0,
@@ -65988,7 +67252,7 @@ html body {
         borderBottom: 0,
         height: 0
       }
-    }, /* @__PURE__ */ React311.createElement("div", {
+    }, /* @__PURE__ */ React320.createElement("div", {
       style: {
         height: 0,
         overflow: "hidden",
@@ -66005,18 +67269,18 @@ html body {
     onColumnResize,
     columns
   }) => {
-    const ref = React312.useRef(null);
+    const ref = React321.useRef(null);
     const {
       measureRowRender
     } = useContext108(TableContext_default, ["measureRowRender"]);
-    const measureRow = /* @__PURE__ */ React312.createElement("tr", {
+    const measureRow = /* @__PURE__ */ React321.createElement("tr", {
       "aria-hidden": "true",
       className: `${prefixCls}-measure-row`,
       style: {
         height: 0
       },
       ref
-    }, /* @__PURE__ */ React312.createElement(es_default.Collection, {
+    }, /* @__PURE__ */ React321.createElement(es_default.Collection, {
       onBatchResize: (infoList) => {
         if (isVisible_default(ref.current)) {
           infoList.forEach(({
@@ -66030,10 +67294,10 @@ html body {
     }, columnsKey.map((columnKey) => {
       const column2 = columns.find((col) => col.key === columnKey);
       const rawTitle = column2 == null ? void 0 : column2.title;
-      const titleForMeasure = /* @__PURE__ */ React312.isValidElement(rawTitle) ? /* @__PURE__ */ React312.cloneElement(rawTitle, {
+      const titleForMeasure = /* @__PURE__ */ React321.isValidElement(rawTitle) ? /* @__PURE__ */ React321.cloneElement(rawTitle, {
         ref: null
       }) : rawTitle;
-      return /* @__PURE__ */ React312.createElement(MeasureCell_default, {
+      return /* @__PURE__ */ React321.createElement(MeasureCell_default, {
         key: columnKey,
         columnKey,
         onColumnResize,
@@ -66074,11 +67338,11 @@ html body {
       body: bodyStyles = {}
     } = styles2 || {};
     const flattenData2 = useFlattenRecords(data, childrenColumnName, expandedKeys, getRowKey);
-    const rowKeys = React313.useMemo(() => flattenData2.map((item) => item.rowKey), [flattenData2]);
-    const perfRef = React313.useRef({
+    const rowKeys = React322.useMemo(() => flattenData2.map((item) => item.rowKey), [flattenData2]);
+    const perfRef = React322.useRef({
       renderWithProps: false
     });
-    const expandedRowInfo = React313.useMemo(() => {
+    const expandedRowInfo = React322.useMemo(() => {
       const expandedColSpan = flattenColumns.length - expandedRowOffset;
       let expandedStickyStart = 0;
       for (let i = 0; i < expandedRowOffset; i += 1) {
@@ -66103,7 +67367,7 @@ html body {
           index: renderIndex,
           rowKey
         } = item;
-        return /* @__PURE__ */ React313.createElement(BodyRow_default, {
+        return /* @__PURE__ */ React322.createElement(BodyRow_default, {
           classNames: bodyCls,
           styles: bodyStyles,
           key: rowKey,
@@ -66120,7 +67384,7 @@ html body {
         });
       });
     } else {
-      rows = /* @__PURE__ */ React313.createElement(ExpandedRow_default, {
+      rows = /* @__PURE__ */ React322.createElement(ExpandedRow_default, {
         expanded: true,
         className: `${prefixCls}-placeholder`,
         prefixCls,
@@ -66131,12 +67395,12 @@ html body {
       }, emptyNode);
     }
     const columnsKey = getColumnsKey(flattenColumns);
-    return /* @__PURE__ */ React313.createElement(PerfContext_default.Provider, {
+    return /* @__PURE__ */ React322.createElement(PerfContext_default.Provider, {
       value: perfRef.current
-    }, /* @__PURE__ */ React313.createElement(WrapperComponent, {
+    }, /* @__PURE__ */ React322.createElement(WrapperComponent, {
       style: bodyStyles.wrapper,
       className: clsx(`${prefixCls}-tbody`, bodyCls.wrapper)
-    }, measureColumnWidth && /* @__PURE__ */ React313.createElement(MeasureRow_default, {
+    }, measureColumnWidth && /* @__PURE__ */ React322.createElement(MeasureRow_default, {
       prefixCls,
       columnsKey,
       onColumnResize,
@@ -66149,7 +67413,7 @@ html body {
   var Body_default = responseImmutable2(Body);
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/ColGroup.js
-  var React314 = __toESM(require_react());
+  var React323 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/utils/legacyUtil.js
   var INTERNAL_COL_DEFINE = "RC_TABLE_INTERNAL_COL_DEFINE";
@@ -66175,8 +67439,8 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/ColGroup.js
-  function _extends62() {
-    _extends62 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends64() {
+    _extends64 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -66187,7 +67451,7 @@ html body {
       }
       return target;
     };
-    return _extends62.apply(this, arguments);
+    return _extends64.apply(this, arguments);
   }
   var ColGroup = (props) => {
     const {
@@ -66218,7 +67482,7 @@ html body {
         } = _a, restAdditionalProps = __objRest(_a, [
           "columnType"
         ]);
-        cols.unshift(/* @__PURE__ */ React314.createElement("col", _extends62({
+        cols.unshift(/* @__PURE__ */ React323.createElement("col", _extends64({
           key: i,
           style: {
             width,
@@ -66228,15 +67492,15 @@ html body {
         mustInsert = true;
       }
     }
-    return cols.length > 0 ? /* @__PURE__ */ React314.createElement("colgroup", null, cols) : null;
+    return cols.length > 0 ? /* @__PURE__ */ React323.createElement("colgroup", null, cols) : null;
   };
   var ColGroup_default = ColGroup;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/FixedHolder/index.js
-  var React315 = __toESM(require_react());
-  var import_react119 = __toESM(require_react());
+  var React324 = __toESM(require_react());
+  var import_react122 = __toESM(require_react());
   function useColumnWidth(colWidths, columCount) {
-    return (0, import_react119.useMemo)(() => {
+    return (0, import_react122.useMemo)(() => {
       const cloneColumns = [];
       for (let i = 0; i < columCount; i += 1) {
         const val = colWidths[i];
@@ -66249,7 +67513,7 @@ html body {
       return cloneColumns;
     }, [colWidths.join("_"), columCount]);
   }
-  var FixedHolder = /* @__PURE__ */ React315.forwardRef((props, ref) => {
+  var FixedHolder = /* @__PURE__ */ React324.forwardRef((props, ref) => {
     if (true) {
       useRenderTimes_default(props);
     }
@@ -66302,12 +67566,12 @@ html body {
     } = useContext108(TableContext_default, ["prefixCls", "scrollbarSize", "isSticky", "getComponent"]);
     const TableComponent = getComponent(["header", "table"], "table");
     const combinationScrollBarSize = isSticky && !fixHeader ? 0 : scrollbarSize;
-    const scrollRef = React315.useRef(null);
-    const setScrollRef = React315.useCallback((element) => {
+    const scrollRef = React324.useRef(null);
+    const setScrollRef = React324.useCallback((element) => {
       fillRef(ref, element);
       fillRef(scrollRef, element);
     }, []);
-    React315.useEffect(() => {
+    React324.useEffect(() => {
       function onWheel(e3) {
         const {
           currentTarget,
@@ -66351,9 +67615,9 @@ html body {
         className: `${prefixCls}-cell-scrollbar`
       })
     };
-    const columnsWithScrollbar = (0, import_react119.useMemo)(() => combinationScrollBarSize ? [...columns, ScrollBarColumn] : columns, [combinationScrollBarSize, columns]);
-    const flattenColumnsWithScrollbar = (0, import_react119.useMemo)(() => combinationScrollBarSize ? [...flattenColumns, ScrollBarColumn] : flattenColumns, [combinationScrollBarSize, flattenColumns]);
-    const headerStickyOffsets = (0, import_react119.useMemo)(() => {
+    const columnsWithScrollbar = (0, import_react122.useMemo)(() => combinationScrollBarSize ? [...columns, ScrollBarColumn] : columns, [combinationScrollBarSize, columns]);
+    const flattenColumnsWithScrollbar = (0, import_react122.useMemo)(() => combinationScrollBarSize ? [...flattenColumns, ScrollBarColumn] : flattenColumns, [combinationScrollBarSize, flattenColumns]);
+    const headerStickyOffsets = (0, import_react122.useMemo)(() => {
       const {
         start,
         end
@@ -66365,11 +67629,11 @@ html body {
       });
     }, [combinationScrollBarSize, stickyOffsets, isSticky]);
     const mergedColumnWidth = useColumnWidth(colWidths, columCount);
-    const isColGroupEmpty = (0, import_react119.useMemo)(() => {
+    const isColGroupEmpty = (0, import_react122.useMemo)(() => {
       const noWidth = !mergedColumnWidth || !mergedColumnWidth.length || mergedColumnWidth.every((w) => !w);
       return noData || noWidth;
     }, [noData, mergedColumnWidth]);
-    return /* @__PURE__ */ React315.createElement("div", {
+    return /* @__PURE__ */ React324.createElement("div", {
       style: __spreadValues(__spreadValues({
         overflow: "hidden"
       }, isSticky ? {
@@ -66380,13 +67644,13 @@ html body {
       className: clsx(className, {
         [stickyClassName]: !!stickyClassName
       })
-    }, /* @__PURE__ */ React315.createElement(TableComponent, {
+    }, /* @__PURE__ */ React324.createElement(TableComponent, {
       style: {
         tableLayout,
         minWidth: "100%",
         width: scrollX
       }
-    }, isColGroupEmpty ? colGroup : /* @__PURE__ */ React315.createElement(ColGroup_default, {
+    }, isColGroupEmpty ? colGroup : /* @__PURE__ */ React324.createElement(ColGroup_default, {
       colWidths: [...mergedColumnWidth, combinationScrollBarSize],
       columCount: columCount + 1,
       columns: flattenColumnsWithScrollbar
@@ -66399,15 +67663,15 @@ html body {
   if (true) {
     FixedHolder.displayName = "FixedHolder";
   }
-  var FixedHolder_default = /* @__PURE__ */ React315.memo(FixedHolder);
+  var FixedHolder_default = /* @__PURE__ */ React324.memo(FixedHolder);
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Header/Header.js
-  var React317 = __toESM(require_react());
+  var React326 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Header/HeaderRow.js
-  var React316 = __toESM(require_react());
-  function _extends63() {
-    _extends63 = Object.assign ? Object.assign.bind() : function(target) {
+  var React325 = __toESM(require_react());
+  function _extends65() {
+    _extends65 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -66418,7 +67682,7 @@ html body {
       }
       return target;
     };
-    return _extends63.apply(this, arguments);
+    return _extends65.apply(this, arguments);
   }
   var HeaderRow = (props) => {
     const {
@@ -66428,7 +67692,7 @@ html body {
       rowComponent: RowComponent,
       cellComponent: CellComponent,
       onHeaderRow,
-      index,
+      index: index2,
       classNames,
       styles: styles2
     } = props;
@@ -66437,10 +67701,10 @@ html body {
     } = useContext108(TableContext_default, ["prefixCls"]);
     let rowProps;
     if (onHeaderRow) {
-      rowProps = onHeaderRow(cells.map((cell) => cell.column), index);
+      rowProps = onHeaderRow(cells.map((cell) => cell.column), index2);
     }
     const columnsKey = getColumnsKey(cells.map((cell) => cell.column));
-    return /* @__PURE__ */ React316.createElement(RowComponent, _extends63({}, rowProps, {
+    return /* @__PURE__ */ React325.createElement(RowComponent, _extends65({}, rowProps, {
       className: classNames.row,
       style: styles2.row
     }), cells.map((cell, cellIndex) => {
@@ -66453,7 +67717,7 @@ html body {
       } = cell;
       const fixedInfo = getCellFixedInfo(colStart, colEnd, flattenColumns, stickyOffsets);
       const additionalProps = ((_a = column2 == null ? void 0 : column2.onHeaderCell) == null ? void 0 : _a.call(column2, column2)) || {};
-      return /* @__PURE__ */ React316.createElement(Cell_default, _extends63({}, cell, {
+      return /* @__PURE__ */ React325.createElement(Cell_default, _extends65({}, cell, {
         scope: column2.title ? colSpan > 1 ? "colgroup" : "col" : null,
         ellipsis: column2.ellipsis,
         align: column2.align,
@@ -66541,15 +67805,15 @@ html body {
     const {
       header: headerStyles = {}
     } = styles2 || {};
-    const rows = React317.useMemo(() => parseHeaderRows(columns, headerCls, headerStyles), [columns, headerCls, headerStyles]);
+    const rows = React326.useMemo(() => parseHeaderRows(columns, headerCls, headerStyles), [columns, headerCls, headerStyles]);
     const WrapperComponent = getComponent(["header", "wrapper"], "thead");
     const trComponent = getComponent(["header", "row"], "tr");
     const thComponent = getComponent(["header", "cell"], "th");
-    return /* @__PURE__ */ React317.createElement(WrapperComponent, {
+    return /* @__PURE__ */ React326.createElement(WrapperComponent, {
       className: clsx(`${prefixCls}-thead`, headerCls.wrapper),
       style: headerStyles.wrapper
     }, rows.map((row, rowIndex) => {
-      const rowNode = /* @__PURE__ */ React317.createElement(HeaderRow_default, {
+      const rowNode = /* @__PURE__ */ React326.createElement(HeaderRow_default, {
         classNames: headerCls,
         styles: headerStyles,
         key: rowIndex,
@@ -66567,10 +67831,10 @@ html body {
   var Header_default = responseImmutable2(Header);
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useColumns/index.js
-  var React319 = __toESM(require_react());
+  var React328 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useColumns/useWidthColumns.js
-  var React318 = __toESM(require_react());
+  var React327 = __toESM(require_react());
   function parseColWidth(totalWidth, width = "") {
     if (typeof width === "number") {
       return width;
@@ -66581,7 +67845,7 @@ html body {
     return null;
   }
   function useWidthColumns(flattenColumns, scrollWidth, clientWidth) {
-    return React318.useMemo(() => {
+    return React327.useMemo(() => {
       if (scrollWidth && scrollWidth > 0) {
         let totalWidth = 0;
         let missWidthCount = 0;
@@ -66615,9 +67879,9 @@ html body {
         if (realTotal < maxFitWidth) {
           const scale = maxFitWidth / realTotal;
           restWidth = maxFitWidth;
-          filledColumns.forEach((col, index) => {
+          filledColumns.forEach((col, index2) => {
             const colWidth = Math.floor(col.width * scale);
-            col.width = index === filledColumns.length - 1 ? restWidth : colWidth;
+            col.width = index2 === filledColumns.length - 1 ? restWidth : colWidth;
             restWidth -= colWidth;
           });
         }
@@ -66629,7 +67893,7 @@ html body {
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useColumns/index.js
   function convertChildrenToColumns(children) {
-    return toArray(children).filter((node2) => /* @__PURE__ */ React319.isValidElement(node2)).map((node2) => {
+    return toArray(children).filter((node2) => /* @__PURE__ */ React328.isValidElement(node2)).map((node2) => {
       const {
         key,
         props
@@ -66660,12 +67924,12 @@ html body {
     });
   }
   function flatColumns(columns, parentKey = "key") {
-    return columns.filter((column2) => column2 && typeof column2 === "object").reduce((list, column2, index) => {
+    return columns.filter((column2) => column2 && typeof column2 === "object").reduce((list, column2, index2) => {
       const {
         fixed
       } = column2;
       const parsedFixed = fixed === true || fixed === "left" ? "start" : fixed === "right" ? "end" : fixed;
-      const mergedKey = `${parentKey}-${index}`;
+      const mergedKey = `${parentKey}-${index2}`;
       const subColumns = column2.children;
       if (subColumns && subColumns.length > 0) {
         return [...list, ...flatColumns(subColumns, mergedKey).map((subColum) => {
@@ -66702,11 +67966,11 @@ html body {
     scrollWidth,
     clientWidth
   }, transformColumns) {
-    const baseColumns = React319.useMemo(() => {
+    const baseColumns = React328.useMemo(() => {
       const newColumns = columns || convertChildrenToColumns(children) || [];
       return filterHiddenColumns(newColumns.slice());
     }, [columns, children]);
-    const withExpandColumns = React319.useMemo(() => {
+    const withExpandColumns = React328.useMemo(() => {
       if (expandable) {
         let cloneColumns = baseColumns.slice();
         if (expandIconColumnIndex >= 0) {
@@ -66723,7 +67987,7 @@ html body {
           warning_default(false, "There exist more than one `EXPAND_COLUMN` in `columns`.");
         }
         const expandColumnIndex = cloneColumns.indexOf(EXPAND_COLUMN);
-        cloneColumns = cloneColumns.filter((column2, index) => column2 !== EXPAND_COLUMN || index === expandColumnIndex);
+        cloneColumns = cloneColumns.filter((column2, index2) => column2 !== EXPAND_COLUMN || index2 === expandColumnIndex);
         const prevColumn = baseColumns[expandColumnIndex];
         let fixedColumn;
         if (fixed) {
@@ -66740,8 +68004,8 @@ html body {
           fixed: fixedColumn,
           className: `${prefixCls}-row-expand-icon-cell`,
           width: columnWidth,
-          render: (_, record, index) => {
-            const rowKey = getRowKey(record, index);
+          render: (_, record, index2) => {
+            const rowKey = getRowKey(record, index2);
             const expanded = expandedKeys.has(rowKey);
             const recordExpandable = rowExpandable ? rowExpandable(record) : true;
             const icon = expandIcon({
@@ -66752,16 +68016,16 @@ html body {
               onExpand: onTriggerExpand
             });
             if (expandRowByClick) {
-              return /* @__PURE__ */ React319.createElement("span", {
+              return /* @__PURE__ */ React328.createElement("span", {
                 onClick: (e3) => e3.stopPropagation()
               }, icon);
             }
             return icon;
           }
         };
-        return cloneColumns.map((col, index) => {
+        return cloneColumns.map((col, index2) => {
           const column2 = col === EXPAND_COLUMN ? expandColumn : col;
-          if (index < expandedRowOffset) {
+          if (index2 < expandedRowOffset) {
             return __spreadProps(__spreadValues({}, column2), {
               fixed: column2.fixed || "start"
             });
@@ -66774,7 +68038,7 @@ html body {
       }
       return baseColumns.filter((col) => col !== EXPAND_COLUMN);
     }, [expandable, baseColumns, getRowKey, expandedKeys, expandIcon, direction, expandedRowOffset]);
-    const mergedColumns = React319.useMemo(() => {
+    const mergedColumns = React328.useMemo(() => {
       let finalColumns = withExpandColumns;
       if (transformColumns) {
         finalColumns = transformColumns(finalColumns);
@@ -66786,7 +68050,7 @@ html body {
       }
       return finalColumns;
     }, [transformColumns, withExpandColumns, direction]);
-    const flattenColumns = React319.useMemo(
+    const flattenColumns = React328.useMemo(
       () => flatColumns(mergedColumns),
       [mergedColumns, direction, scrollWidth]
     );
@@ -66796,7 +68060,7 @@ html body {
   var useColumns_default = useColumns;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useExpand.js
-  var React320 = __toESM(require_react());
+  var React329 = __toESM(require_react());
   function useExpand(props, mergedData, getRowKey) {
     const expandableConfig = getExpandableProps(props);
     const {
@@ -66811,7 +68075,7 @@ html body {
     } = expandableConfig;
     const mergedExpandIcon = expandIcon || renderExpandIcon;
     const mergedChildrenColumnName = childrenColumnName || "children";
-    const expandableType = React320.useMemo(() => {
+    const expandableType = React329.useMemo(() => {
       if (expandedRowRender) {
         return "row";
       }
@@ -66820,7 +68084,7 @@ html body {
       }
       return false;
     }, [!!expandedRowRender, mergedData]);
-    const [innerExpandedKeys, setInnerExpandedKeys] = React320.useState(() => {
+    const [innerExpandedKeys, setInnerExpandedKeys] = React329.useState(() => {
       if (defaultExpandedRowKeys) {
         return defaultExpandedRowKeys;
       }
@@ -66829,8 +68093,8 @@ html body {
       }
       return [];
     });
-    const mergedExpandedKeys = React320.useMemo(() => new Set(expandedRowKeys || innerExpandedKeys || []), [expandedRowKeys, innerExpandedKeys]);
-    const onTriggerExpand = React320.useCallback((record) => {
+    const mergedExpandedKeys = React329.useMemo(() => new Set(expandedRowKeys || innerExpandedKeys || []), [expandedRowKeys, innerExpandedKeys]);
+    const onTriggerExpand = React329.useCallback((record) => {
       const key = getRowKey(record, mergedData.indexOf(record));
       let newExpandedKeys;
       const hasKey = mergedExpandedKeys.has(key);
@@ -66857,19 +68121,19 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useFixedInfo.js
-  var React321 = __toESM(require_react());
+  var React330 = __toESM(require_react());
   function useFixedInfo(flattenColumns, stickyOffsets) {
-    const fixedInfoList = React321.useMemo(() => flattenColumns.map((_, colIndex) => getCellFixedInfo(colIndex, colIndex, flattenColumns, stickyOffsets)), [flattenColumns, stickyOffsets]);
+    const fixedInfoList = React330.useMemo(() => flattenColumns.map((_, colIndex) => getCellFixedInfo(colIndex, colIndex, flattenColumns, stickyOffsets)), [flattenColumns, stickyOffsets]);
     return useMemo(() => fixedInfoList, [fixedInfoList], (prev2, next2) => !isEqual_default(prev2, next2));
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useFrame.js
-  var import_react120 = __toESM(require_react());
+  var import_react123 = __toESM(require_react());
   function useLayoutState(defaultState) {
-    const stateRef = (0, import_react120.useRef)(defaultState);
-    const [, forceUpdate] = (0, import_react120.useState)({});
-    const lastPromiseRef = (0, import_react120.useRef)(null);
-    const updateBatchRef = (0, import_react120.useRef)([]);
+    const stateRef = (0, import_react123.useRef)(defaultState);
+    const [, forceUpdate] = (0, import_react123.useState)({});
+    const lastPromiseRef = (0, import_react123.useRef)(null);
+    const updateBatchRef = (0, import_react123.useRef)([]);
     function setFrameState(updater) {
       updateBatchRef.current.push(updater);
       const promise = Promise.resolve();
@@ -66889,14 +68153,14 @@ html body {
         }
       });
     }
-    (0, import_react120.useEffect)(() => () => {
+    (0, import_react123.useEffect)(() => () => {
       lastPromiseRef.current = null;
     }, []);
     return [stateRef.current, setFrameState];
   }
   function useTimeoutLock(defaultState) {
-    const frameRef = (0, import_react120.useRef)(defaultState || null);
-    const timeoutRef = (0, import_react120.useRef)(null);
+    const frameRef = (0, import_react123.useRef)(defaultState || null);
+    const timeoutRef = (0, import_react123.useRef)(null);
     function cleanUp() {
       clearTimeout(timeoutRef.current);
     }
@@ -66911,16 +68175,16 @@ html body {
     function getState() {
       return frameRef.current;
     }
-    (0, import_react120.useEffect)(() => cleanUp, []);
+    (0, import_react123.useEffect)(() => cleanUp, []);
     return [setState, getState];
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useHover.js
-  var React322 = __toESM(require_react());
+  var React331 = __toESM(require_react());
   function useHover() {
-    const [startRow, setStartRow] = React322.useState(-1);
-    const [endRow, setEndRow] = React322.useState(-1);
-    const onHover = React322.useCallback((start, end) => {
+    const [startRow, setStartRow] = React331.useState(-1);
+    const [endRow, setEndRow] = React331.useState(-1);
+    const onHover = React331.useCallback((start, end) => {
       setStartRow(start);
       setEndRow(end);
     }, []);
@@ -66928,7 +68192,7 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useSticky.js
-  var React323 = __toESM(require_react());
+  var React332 = __toESM(require_react());
   var defaultContainer = canUseDom() ? window : null;
   function useSticky(sticky, prefixCls) {
     const {
@@ -66939,7 +68203,7 @@ html body {
     } = typeof sticky === "object" ? sticky : {};
     const container = getContainer2() || defaultContainer;
     const isSticky = !!sticky;
-    return React323.useMemo(() => {
+    return React332.useMemo(() => {
       return {
         isSticky,
         stickyClassName: isSticky ? `${prefixCls}-sticky-holder` : "",
@@ -66952,9 +68216,9 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useStickyOffsets.js
-  var import_react121 = __toESM(require_react());
+  var import_react124 = __toESM(require_react());
   function useStickyOffsets(colWidths, flattenColumns) {
-    const stickyOffsets = (0, import_react121.useMemo)(() => {
+    const stickyOffsets = (0, import_react124.useMemo)(() => {
       const columnCount = flattenColumns.length;
       const getOffsets = (startIndex, endIndex, offset3) => {
         const offsets = [];
@@ -66980,14 +68244,14 @@ html body {
   var useStickyOffsets_default = useStickyOffsets;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Panel/index.js
-  var React324 = __toESM(require_react());
+  var React333 = __toESM(require_react());
   var Panel2 = (props) => {
     const {
       children,
       className,
       style: style2
     } = props;
-    return /* @__PURE__ */ React324.createElement("div", {
+    return /* @__PURE__ */ React333.createElement("div", {
       className,
       style: style2
     }, children);
@@ -66995,7 +68259,7 @@ html body {
   var Panel_default2 = Panel2;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/stickyScrollBar.js
-  var React325 = __toESM(require_react());
+  var React334 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/utils/offsetUtil.js
   function getOffset2(node2) {
@@ -67026,18 +68290,18 @@ html body {
     const bodyScrollWidth = ((_a = scrollBodyRef.current) == null ? void 0 : _a.scrollWidth) || 0;
     const bodyWidth = ((_b = scrollBodyRef.current) == null ? void 0 : _b.clientWidth) || 0;
     const scrollBarWidth = bodyScrollWidth && bodyWidth * (bodyWidth / bodyScrollWidth);
-    const scrollBarRef = React325.useRef(null);
+    const scrollBarRef = React334.useRef(null);
     const [scrollState, setScrollState] = useLayoutState({
       scrollLeft: 0,
       isHiddenScrollBar: true
     });
-    const refState = React325.useRef({
+    const refState = React334.useRef({
       delta: 0,
       x: 0
     });
-    const [isActive2, setActive] = React325.useState(false);
-    const rafRef = React325.useRef(null);
-    React325.useEffect(() => () => {
+    const [isActive2, setActive] = React334.useState(false);
+    const rafRef = React334.useRef(null);
+    React334.useEffect(() => () => {
       raf_default.cancel(rafRef.current);
     }, []);
     const onMouseUp = () => {
@@ -67098,11 +68362,11 @@ html body {
         });
       });
     };
-    React325.useImperativeHandle(ref, () => ({
+    React334.useImperativeHandle(ref, () => ({
       setScrollLeft,
       checkScrollBarVisible
     }));
-    React325.useEffect(() => {
+    React334.useEffect(() => {
       document.body.addEventListener(MOUSEUP_EVENT, onMouseUp, false);
       document.body.addEventListener(MOUSEMOVE_EVENT, onMouseMove, false);
       checkScrollBarVisible();
@@ -67111,7 +68375,7 @@ html body {
         document.body.removeEventListener(MOUSEMOVE_EVENT, onMouseMove);
       };
     }, [scrollBarWidth, isActive2]);
-    React325.useEffect(() => {
+    React334.useEffect(() => {
       if (scrollBodyRef.current) {
         const scrollParents = [];
         let parent = getDOM(scrollBodyRef.current);
@@ -67135,7 +68399,7 @@ html body {
         };
       }
     }, [container]);
-    React325.useEffect(() => {
+    React334.useEffect(() => {
       if (!scrollState.isHiddenScrollBar) {
         setScrollState((state) => {
           const bodyNode = scrollBodyRef.current;
@@ -67151,14 +68415,14 @@ html body {
     if (bodyScrollWidth <= bodyWidth || !scrollBarWidth || scrollState.isHiddenScrollBar) {
       return null;
     }
-    return /* @__PURE__ */ React325.createElement("div", {
+    return /* @__PURE__ */ React334.createElement("div", {
       style: {
         height: getScrollBarSize(),
         width: bodyWidth,
         bottom: offsetScroll
       },
       className: `${prefixCls}-sticky-scroll`
-    }, /* @__PURE__ */ React325.createElement("div", {
+    }, /* @__PURE__ */ React334.createElement("div", {
       onMouseDown,
       ref: scrollBarRef,
       className: clsx(`${prefixCls}-sticky-scroll-bar`, {
@@ -67170,11 +68434,11 @@ html body {
       }
     }));
   };
-  var stickyScrollBar_default = /* @__PURE__ */ React325.forwardRef(StickyScrollBar);
+  var stickyScrollBar_default = /* @__PURE__ */ React334.forwardRef(StickyScrollBar);
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Table.js
-  function _extends64() {
-    _extends64 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends66() {
+    _extends66 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -67185,7 +68449,7 @@ html body {
       }
       return target;
     };
-    return _extends64.apply(this, arguments);
+    return _extends66.apply(this, arguments);
   }
   var DEFAULT_PREFIX = "rc-table";
   var EMPTY_DATA2 = [];
@@ -67241,8 +68505,8 @@ html body {
       });
       warning_default(!("getBodyWrapper" in props), "`getBodyWrapper` is deprecated, please use custom `components` instead.");
     }
-    const getComponent = React326.useCallback((path, defaultComponent) => get(components, path) || defaultComponent, [components]);
-    const getRowKey = React326.useMemo(() => {
+    const getComponent = React335.useCallback((path, defaultComponent) => get(components, path) || defaultComponent, [components]);
+    const getRowKey = React335.useMemo(() => {
       if (typeof rowKey === "function") {
         return rowKey;
       }
@@ -67258,7 +68522,7 @@ html body {
     const [startRow, endRow, onHover] = useHover();
     const [expandableConfig, expandableType, mergedExpandedKeys, mergedExpandIcon, mergedChildrenColumnName, onTriggerExpand] = useExpand(props, mergedData, getRowKey);
     const scrollX = scroll == null ? void 0 : scroll.x;
-    const [componentWidth, setComponentWidth] = React326.useState(0);
+    const [componentWidth, setComponentWidth] = React335.useState(0);
     const [columns, flattenColumns, flattenScrollX] = useColumns_default(__spreadProps(__spreadValues(__spreadValues({}, props), expandableConfig), {
       expandable: !!expandableConfig.expandedRowRender,
       columnTitle: expandableConfig.columnTitle,
@@ -67272,22 +68536,22 @@ html body {
       clientWidth: componentWidth
     }), useInternalHooks ? transformColumns : null);
     const mergedScrollX = flattenScrollX != null ? flattenScrollX : scrollX;
-    const columnContext = React326.useMemo(() => ({
+    const columnContext = React335.useMemo(() => ({
       columns,
       flattenColumns
     }), [columns, flattenColumns]);
-    const fullTableRef = React326.useRef(null);
-    const scrollHeaderRef = React326.useRef(null);
-    const scrollBodyRef = React326.useRef(null);
-    const scrollBodyContainerRef = React326.useRef(null);
-    React326.useImperativeHandle(ref, () => {
+    const fullTableRef = React335.useRef(null);
+    const scrollHeaderRef = React335.useRef(null);
+    const scrollBodyRef = React335.useRef(null);
+    const scrollBodyContainerRef = React335.useRef(null);
+    React335.useImperativeHandle(ref, () => {
       return {
         nativeElement: fullTableRef.current,
         scrollTo: (config) => {
           var _a2, _b2;
           if (scrollBodyRef.current instanceof HTMLElement) {
             const {
-              index,
+              index: index2,
               top,
               key,
               offset: offset3
@@ -67297,7 +68561,7 @@ html body {
                 top
               });
             } else {
-              const mergedKey = key != null ? key : getRowKey(mergedData[index]);
+              const mergedKey = key != null ? key : getRowKey(mergedData[index2]);
               const targetElement = scrollBodyRef.current.querySelector(`[data-row-key="${mergedKey}"]`);
               if (targetElement) {
                 if (!offset3) {
@@ -67316,20 +68580,20 @@ html body {
         }
       };
     });
-    const scrollSummaryRef = React326.useRef(null);
-    const [shadowStart, setShadowStart] = React326.useState(false);
-    const [shadowEnd, setShadowEnd] = React326.useState(false);
-    const [colsWidths, updateColsWidths] = React326.useState(/* @__PURE__ */ new Map());
+    const scrollSummaryRef = React335.useRef(null);
+    const [shadowStart, setShadowStart] = React335.useState(false);
+    const [shadowEnd, setShadowEnd] = React335.useState(false);
+    const [colsWidths, updateColsWidths] = React335.useState(/* @__PURE__ */ new Map());
     const colsKeys = getColumnsKey(flattenColumns);
     const pureColWidths = colsKeys.map((columnKey) => colsWidths.get(columnKey));
-    const colWidths = React326.useMemo(() => pureColWidths, [pureColWidths.join("_")]);
+    const colWidths = React335.useMemo(() => pureColWidths, [pureColWidths.join("_")]);
     const stickyOffsets = useStickyOffsets_default(colWidths, flattenColumns);
     const fixHeader = scroll && validateValue(scroll.y);
     const horizonScroll = scroll && validateValue(mergedScrollX) || Boolean(expandableConfig.fixed);
     const fixColumn = horizonScroll && flattenColumns.some(({
       fixed
     }) => fixed);
-    const stickyRef = React326.useRef(null);
+    const stickyRef = React335.useRef(null);
     const {
       isSticky,
       offsetHeader,
@@ -67338,8 +68602,8 @@ html body {
       stickyClassName,
       container
     } = useSticky(sticky, prefixCls);
-    const summaryNode = React326.useMemo(() => summary == null ? void 0 : summary(mergedData), [summary, mergedData]);
-    const fixFooter = (fixHeader || isSticky) && /* @__PURE__ */ React326.isValidElement(summaryNode) && summaryNode.type === Summary_default && summaryNode.props.fixed;
+    const summaryNode = React335.useMemo(() => summary == null ? void 0 : summary(mergedData), [summary, mergedData]);
+    const fixFooter = (fixHeader || isSticky) && /* @__PURE__ */ React335.isValidElement(summaryNode) && summaryNode.type === Summary_default && summaryNode.props.fixed;
     let scrollXStyle;
     let scrollYStyle;
     let scrollTableStyle;
@@ -67363,7 +68627,7 @@ html body {
         minWidth: "100%"
       };
     }
-    const onColumnResize = React326.useCallback((columnKey, width) => {
+    const onColumnResize = React335.useCallback((columnKey, width) => {
       updateColsWidths((widths) => {
         if (widths.get(columnKey) !== width) {
           const newWidths = new Map(widths);
@@ -67389,7 +68653,7 @@ html body {
         }
       }
     }
-    const [scrollInfo, setScrollInfo] = React326.useState([0, 0]);
+    const [scrollInfo, setScrollInfo] = React335.useState([0, 0]);
     const onInternalScroll = useEvent_default(({
       currentTarget,
       scrollLeft
@@ -67455,16 +68719,16 @@ html body {
         onFullTableResize();
       }
     }, [horizonScroll]);
-    const mounted = React326.useRef(false);
-    React326.useEffect(() => {
+    const mounted = React335.useRef(false);
+    React335.useEffect(() => {
       if (mounted.current) {
         triggerOnScroll();
       }
     }, [horizonScroll, data, columns.length]);
-    React326.useEffect(() => {
+    React335.useEffect(() => {
       mounted.current = true;
     }, []);
-    const [scrollbarSize, setScrollbarSize] = React326.useState(0);
+    const [scrollbarSize, setScrollbarSize] = React335.useState(0);
     useLayoutEffect_default(() => {
       if (!tailor || !useInternalHooks) {
         if (scrollBodyRef.current instanceof Element) {
@@ -67474,15 +68738,15 @@ html body {
         }
       }
     }, []);
-    React326.useEffect(() => {
+    React335.useEffect(() => {
       if (useInternalHooks && internalRefs) {
         internalRefs.body.current = scrollBodyRef.current;
       }
     });
-    const renderFixedHeaderTable = React326.useCallback((fixedHolderPassProps) => /* @__PURE__ */ React326.createElement(React326.Fragment, null, /* @__PURE__ */ React326.createElement(Header_default, fixedHolderPassProps), fixFooter === "top" && /* @__PURE__ */ React326.createElement(Footer_default, fixedHolderPassProps, summaryNode)), [fixFooter, summaryNode]);
-    const renderFixedFooterTable = React326.useCallback((fixedHolderPassProps) => /* @__PURE__ */ React326.createElement(Footer_default, fixedHolderPassProps, summaryNode), [summaryNode]);
+    const renderFixedHeaderTable = React335.useCallback((fixedHolderPassProps) => /* @__PURE__ */ React335.createElement(React335.Fragment, null, /* @__PURE__ */ React335.createElement(Header_default, fixedHolderPassProps), fixFooter === "top" && /* @__PURE__ */ React335.createElement(Footer_default, fixedHolderPassProps, summaryNode)), [fixFooter, summaryNode]);
+    const renderFixedFooterTable = React335.useCallback((fixedHolderPassProps) => /* @__PURE__ */ React335.createElement(Footer_default, fixedHolderPassProps, summaryNode), [summaryNode]);
     const TableComponent = getComponent(["table"], "table");
-    const mergedTableLayout = React326.useMemo(() => {
+    const mergedTableLayout = React335.useMemo(() => {
       if (tableLayout) {
         return tableLayout;
       }
@@ -67505,7 +68769,7 @@ html body {
       fixHeader,
       scroll
     };
-    const emptyNode = React326.useMemo(() => {
+    const emptyNode = React335.useMemo(() => {
       if (hasData) {
         return null;
       }
@@ -67514,17 +68778,17 @@ html body {
       }
       return emptyText;
     }, [hasData, emptyText]);
-    const bodyTable = /* @__PURE__ */ React326.createElement(Body_default, {
+    const bodyTable = /* @__PURE__ */ React335.createElement(Body_default, {
       data: mergedData,
       measureColumnWidth: fixHeader || horizonScroll || isSticky
     });
-    const bodyColGroup = /* @__PURE__ */ React326.createElement(ColGroup_default, {
+    const bodyColGroup = /* @__PURE__ */ React335.createElement(ColGroup_default, {
       colWidths: flattenColumns.map(({
         width
       }) => width),
       columns: flattenColumns
     });
-    const captionElement = caption !== null && caption !== void 0 ? /* @__PURE__ */ React326.createElement("caption", {
+    const captionElement = caption !== null && caption !== void 0 ? /* @__PURE__ */ React335.createElement("caption", {
       className: `${prefixCls}-caption`
     }, caption) : void 0;
     const dataProps = pickAttrs(props, {
@@ -67543,8 +68807,8 @@ html body {
         });
         headerProps.colWidths = flattenColumns.map(({
           width
-        }, index) => {
-          const colWidth = index === flattenColumns.length - 1 ? width - scrollbarSize : width;
+        }, index2) => {
+          const colWidth = index2 === flattenColumns.length - 1 ? width - scrollbarSize : width;
           if (typeof colWidth === "number" && !Number.isNaN(colWidth)) {
             return colWidth;
           }
@@ -67554,16 +68818,16 @@ html body {
           return 0;
         });
       } else {
-        bodyContent = /* @__PURE__ */ React326.createElement("div", {
+        bodyContent = /* @__PURE__ */ React335.createElement("div", {
           style: __spreadValues(__spreadValues({}, scrollXStyle), scrollYStyle),
           onScroll: onBodyScroll,
           ref: scrollBodyRef,
           className: `${prefixCls}-body`
-        }, /* @__PURE__ */ React326.createElement(TableComponent, _extends64({
+        }, /* @__PURE__ */ React335.createElement(TableComponent, _extends66({
           style: __spreadProps(__spreadValues({}, scrollTableStyle), {
             tableLayout: mergedTableLayout
           })
-        }, ariaProps), captionElement, bodyColGroup, bodyTable, !fixFooter && summaryNode && /* @__PURE__ */ React326.createElement(Footer_default, {
+        }, ariaProps), captionElement, bodyColGroup, bodyTable, !fixFooter && summaryNode && /* @__PURE__ */ React335.createElement(Footer_default, {
           stickyOffsets,
           flattenColumns
         }, summaryNode)));
@@ -67578,17 +68842,17 @@ html body {
         tableLayout: mergedTableLayout,
         onScroll: onInternalScroll
       });
-      groupTableNode = /* @__PURE__ */ React326.createElement(React326.Fragment, null, showHeader !== false && /* @__PURE__ */ React326.createElement(FixedHolder_default, _extends64({}, fixedHolderProps, {
+      groupTableNode = /* @__PURE__ */ React335.createElement(React335.Fragment, null, showHeader !== false && /* @__PURE__ */ React335.createElement(FixedHolder_default, _extends66({}, fixedHolderProps, {
         stickyTopOffset: offsetHeader,
         className: `${prefixCls}-header`,
         ref: scrollHeaderRef,
         colGroup: bodyColGroup
-      }), renderFixedHeaderTable), bodyContent, fixFooter && fixFooter !== "top" && /* @__PURE__ */ React326.createElement(FixedHolder_default, _extends64({}, fixedHolderProps, {
+      }), renderFixedHeaderTable), bodyContent, fixFooter && fixFooter !== "top" && /* @__PURE__ */ React335.createElement(FixedHolder_default, _extends66({}, fixedHolderProps, {
         stickyBottomOffset: offsetSummary,
         className: `${prefixCls}-summary`,
         ref: scrollSummaryRef,
         colGroup: bodyColGroup
-      }), renderFixedFooterTable), isSticky && scrollBodyRef.current && scrollBodyRef.current instanceof Element && /* @__PURE__ */ React326.createElement(stickyScrollBar_default, {
+      }), renderFixedFooterTable), isSticky && scrollBodyRef.current && scrollBodyRef.current instanceof Element && /* @__PURE__ */ React335.createElement(stickyScrollBar_default, {
         ref: stickyRef,
         offsetScroll,
         scrollBodyRef,
@@ -67597,16 +68861,16 @@ html body {
         direction
       }));
     } else {
-      groupTableNode = /* @__PURE__ */ React326.createElement("div", {
+      groupTableNode = /* @__PURE__ */ React335.createElement("div", {
         style: __spreadValues(__spreadValues(__spreadValues({}, scrollXStyle), scrollYStyle), styles2 == null ? void 0 : styles2.content),
         className: clsx(`${prefixCls}-content`, classNames == null ? void 0 : classNames.content),
         onScroll: onInternalScroll,
         ref: scrollBodyRef
-      }, /* @__PURE__ */ React326.createElement(TableComponent, _extends64({
+      }, /* @__PURE__ */ React335.createElement(TableComponent, _extends66({
         style: __spreadProps(__spreadValues({}, scrollTableStyle), {
           tableLayout: mergedTableLayout
         })
-      }, ariaProps), captionElement, bodyColGroup, showHeader !== false && /* @__PURE__ */ React326.createElement(Header_default, _extends64({}, headerProps, columnContext)), bodyTable, summaryNode && /* @__PURE__ */ React326.createElement(Footer_default, {
+      }, ariaProps), captionElement, bodyColGroup, showHeader !== false && /* @__PURE__ */ React335.createElement(Header_default, _extends66({}, headerProps, columnContext)), bodyTable, summaryNode && /* @__PURE__ */ React335.createElement(Footer_default, {
         stickyOffsets,
         flattenColumns
       }, summaryNode)));
@@ -67615,7 +68879,7 @@ html body {
     if (isSticky) {
       tableStyle["--columns-count"] = flattenColumns.length;
     }
-    let fullTable = /* @__PURE__ */ React326.createElement("div", _extends64({
+    let fullTable = /* @__PURE__ */ React335.createElement("div", _extends66({
       className: clsx(prefixCls, className, {
         [`${prefixCls}-rtl`]: direction === "rtl",
         [`${prefixCls}-fix-start-shadow`]: horizonScroll,
@@ -67632,26 +68896,26 @@ html body {
       style: tableStyle,
       id,
       ref: fullTableRef
-    }, dataProps), title && /* @__PURE__ */ React326.createElement(Panel_default2, {
+    }, dataProps), title && /* @__PURE__ */ React335.createElement(Panel_default2, {
       className: clsx(`${prefixCls}-title`, classNames == null ? void 0 : classNames.title),
       style: styles2 == null ? void 0 : styles2.title
-    }, title(mergedData)), /* @__PURE__ */ React326.createElement("div", {
+    }, title(mergedData)), /* @__PURE__ */ React335.createElement("div", {
       ref: scrollBodyContainerRef,
       className: clsx(`${prefixCls}-container`, classNames == null ? void 0 : classNames.section),
       style: styles2 == null ? void 0 : styles2.section
-    }, groupTableNode), footer && /* @__PURE__ */ React326.createElement(Panel_default2, {
+    }, groupTableNode), footer && /* @__PURE__ */ React335.createElement(Panel_default2, {
       className: clsx(`${prefixCls}-footer`, classNames == null ? void 0 : classNames.footer),
       style: styles2 == null ? void 0 : styles2.footer
     }, footer(mergedData)));
     if (horizonScroll) {
-      fullTable = /* @__PURE__ */ React326.createElement(es_default, {
+      fullTable = /* @__PURE__ */ React335.createElement(es_default, {
         onResize: ({
           offsetWidth
         }) => onFullTableResize(offsetWidth)
       }, fullTable);
     }
     const fixedInfoList = useFixedInfo(flattenColumns, stickyOffsets);
-    const TableContextValue = React326.useMemo(() => ({
+    const TableContextValue = React335.useMemo(() => ({
       scrollX: mergedScrollX,
       scrollInfo,
       classNames,
@@ -67735,11 +68999,11 @@ html body {
       rowHoverable,
       measureRowRender
     ]);
-    return /* @__PURE__ */ React326.createElement(TableContext_default.Provider, {
+    return /* @__PURE__ */ React335.createElement(TableContext_default.Provider, {
       value: TableContextValue
     }, fullTable);
   };
-  var RefTable = /* @__PURE__ */ React326.forwardRef(Table);
+  var RefTable = /* @__PURE__ */ React335.forwardRef(Table);
   if (true) {
     RefTable.displayName = "Table";
   }
@@ -67755,24 +69019,24 @@ html body {
   var Table_default = ImmutableTable;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/VirtualTable/index.js
-  var React330 = __toESM(require_react());
+  var React339 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/VirtualTable/BodyGrid.js
-  var React329 = __toESM(require_react());
+  var React338 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/VirtualTable/BodyLine.js
-  var React328 = __toESM(require_react());
+  var React337 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/VirtualTable/VirtualCell.js
-  var React327 = __toESM(require_react());
+  var React336 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/VirtualTable/context.js
   var StaticContext = createContext36(null);
   var GridContext = createContext36(null);
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/VirtualTable/VirtualCell.js
-  function _extends65() {
-    _extends65 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends67() {
+    _extends67 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -67783,7 +69047,7 @@ html body {
       }
       return target;
     };
-    return _extends65.apply(this, arguments);
+    return _extends67.apply(this, arguments);
   }
   function getColumnWidth(colIndex, colSpan, columnsOffset) {
     const mergedColSpan = colSpan || 1;
@@ -67795,7 +69059,7 @@ html body {
       column: column2,
       colIndex,
       indent,
-      index,
+      index: index2,
       component,
       renderIndex,
       record,
@@ -67805,7 +69069,7 @@ html body {
       getHeight
     } = props;
     const {
-      render: render2,
+      render: render4,
       dataIndex,
       className: columnClassName,
       width: colWidth
@@ -67818,7 +69082,7 @@ html body {
       fixedInfo,
       appendCellNode,
       additionalCellProps
-    } = getCellProps(rowInfo, column2, colIndex, indent, index);
+    } = getCellProps(rowInfo, column2, colIndex, indent, index2);
     const {
       style: cellStyle,
       colSpan = 1,
@@ -67833,7 +69097,7 @@ html body {
       marginRight: marginOffset,
       pointerEvents: "auto"
     });
-    const needHide = React327.useMemo(() => {
+    const needHide = React336.useMemo(() => {
       if (inverse) {
         return rowSpan <= 1;
       } else {
@@ -67845,13 +69109,13 @@ html body {
     } else if (inverse) {
       mergedStyle.height = getHeight == null ? void 0 : getHeight(rowSpan);
     }
-    const mergedRender = needHide ? () => null : render2;
+    const mergedRender = needHide ? () => null : render4;
     const cellSpan = {};
     if (rowSpan === 0 || colSpan === 0) {
       cellSpan.rowSpan = 1;
       cellSpan.colSpan = 1;
     }
-    return /* @__PURE__ */ React327.createElement(Cell_default, _extends65({
+    return /* @__PURE__ */ React336.createElement(Cell_default, _extends67({
       className: clsx(columnClassName, className),
       ellipsis: column2.ellipsis,
       align: column2.align,
@@ -67860,7 +69124,7 @@ html body {
       prefixCls: rowInfo.prefixCls,
       key,
       record,
-      index,
+      index: index2,
       renderIndex,
       dataIndex,
       render: mergedRender,
@@ -67875,8 +69139,8 @@ html body {
   var VirtualCell_default = VirtualCell;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/VirtualTable/BodyLine.js
-  function _extends66() {
-    _extends66 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends68() {
+    _extends68 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -67887,12 +69151,12 @@ html body {
       }
       return target;
     };
-    return _extends66.apply(this, arguments);
+    return _extends68.apply(this, arguments);
   }
-  var BodyLine = /* @__PURE__ */ React328.forwardRef((props, ref) => {
+  var BodyLine = /* @__PURE__ */ React337.forwardRef((props, ref) => {
     const _a = props, {
       data,
-      index,
+      index: index2,
       className,
       rowKey,
       style: style2,
@@ -67922,7 +69186,7 @@ html body {
     const {
       getComponent
     } = useContext108(StaticContext, ["getComponent"]);
-    const rowInfo = useRowInfo(record, rowKey, index, indent);
+    const rowInfo = useRowInfo(record, rowKey, index2, indent);
     const RowComponent = getComponent(["body", "row"], "div");
     const cellComponent = getComponent(["body", "cell"], "div");
     const {
@@ -67934,8 +69198,8 @@ html body {
     } = rowInfo;
     let expandRowNode;
     if (rowSupportExpand && expanded) {
-      const expandContent = expandedRowRender(record, index, indent + 1, expanded);
-      const expandedClsName = computedExpandedClassName(expandedRowClassName, record, index, indent);
+      const expandContent = expandedRowRender(record, index2, indent + 1, expanded);
+      const expandedClsName = computedExpandedClassName(expandedRowClassName, record, index2, indent);
       let additionalProps = {};
       if (fixColumn) {
         additionalProps = {
@@ -67945,9 +69209,9 @@ html body {
         };
       }
       const rowCellCls = `${prefixCls}-expanded-row-cell`;
-      expandRowNode = /* @__PURE__ */ React328.createElement(RowComponent, {
+      expandRowNode = /* @__PURE__ */ React337.createElement(RowComponent, {
         className: clsx(`${prefixCls}-expanded-row`, `${prefixCls}-expanded-row-level-${indent + 1}`, expandedClsName)
-      }, /* @__PURE__ */ React328.createElement(Cell_default, {
+      }, /* @__PURE__ */ React337.createElement(Cell_default, {
         component: cellComponent,
         prefixCls,
         className: clsx(rowCellCls, {
@@ -67963,7 +69227,7 @@ html body {
       rowStyle.position = "absolute";
       rowStyle.pointerEvents = "none";
     }
-    const rowNode = /* @__PURE__ */ React328.createElement(RowComponent, _extends66({}, rowProps, restProps, {
+    const rowNode = /* @__PURE__ */ React337.createElement(RowComponent, _extends68({}, rowProps, restProps, {
       "data-row-key": rowKey,
       ref: rowSupportExpand ? null : ref,
       className: clsx(className, `${prefixCls}-row`, rowProps == null ? void 0 : rowProps.className, {
@@ -67971,14 +69235,14 @@ html body {
       }),
       style: __spreadValues(__spreadValues({}, rowStyle), rowProps == null ? void 0 : rowProps.style)
     }), flattenColumns.map((column2, colIndex) => {
-      return /* @__PURE__ */ React328.createElement(VirtualCell_default, {
+      return /* @__PURE__ */ React337.createElement(VirtualCell_default, {
         key: colIndex,
         component: cellComponent,
         rowInfo,
         column: column2,
         colIndex,
         indent,
-        index,
+        index: index2,
         renderIndex,
         record,
         inverse: extra,
@@ -67986,7 +69250,7 @@ html body {
       });
     }));
     if (rowSupportExpand) {
-      return /* @__PURE__ */ React328.createElement("div", {
+      return /* @__PURE__ */ React337.createElement("div", {
         ref
       }, rowNode, expandRowNode);
     }
@@ -67999,7 +69263,7 @@ html body {
   var BodyLine_default = ResponseBodyLine;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/VirtualTable/BodyGrid.js
-  var Grid = /* @__PURE__ */ React329.forwardRef((props, ref) => {
+  var Grid = /* @__PURE__ */ React338.forwardRef((props, ref) => {
     const {
       data,
       onScroll
@@ -68021,9 +69285,9 @@ html body {
       getComponent,
       onScroll: onTablePropScroll
     } = useContext108(StaticContext);
-    const listRef = React329.useRef(null);
+    const listRef = React338.useRef(null);
     const flattenData2 = useFlattenRecords(data, childrenColumnName, expandedKeys, getRowKey);
-    const columnsWidth = React329.useMemo(() => {
+    const columnsWidth = React338.useMemo(() => {
       let total = 0;
       return flattenColumns.map(({
         width,
@@ -68035,13 +69299,13 @@ html body {
         return [key, finalWidth, total];
       });
     }, [flattenColumns]);
-    const columnsOffset = React329.useMemo(() => columnsWidth.map((colWidth) => colWidth[2]), [columnsWidth]);
-    React329.useEffect(() => {
+    const columnsOffset = React338.useMemo(() => columnsWidth.map((colWidth) => colWidth[2]), [columnsWidth]);
+    React338.useEffect(() => {
       columnsWidth.forEach(([key, width]) => {
         onColumnResize(key, width);
       });
     }, [columnsWidth]);
-    React329.useImperativeHandle(ref, () => {
+    React338.useImperativeHandle(ref, () => {
       var _a;
       const obj = {
         scrollTo: (config) => {
@@ -68088,14 +69352,14 @@ html body {
       });
       return obj;
     });
-    const getRowSpan = (column2, index) => {
+    const getRowSpan = (column2, index2) => {
       var _a, _b;
-      const record = (_a = flattenData2[index]) == null ? void 0 : _a.record;
+      const record = (_a = flattenData2[index2]) == null ? void 0 : _a.record;
       const {
         onCell
       } = column2;
       if (onCell) {
-        const cellProps = onCell(record, index);
+        const cellProps = onCell(record, index2);
         return (_b = cellProps == null ? void 0 : cellProps.rowSpan) != null ? _b : 1;
       }
       return 1;
@@ -68104,7 +69368,7 @@ html body {
       const {
         start,
         end,
-        getSize,
+        getSize: getSize2,
         offsetY
       } = info;
       if (end < 0) {
@@ -68142,29 +69406,29 @@ html body {
           spanLines.push(i);
         }
       }
-      const nodes = spanLines.map((index) => {
-        const item = flattenData2[index];
-        const rowKey = getRowKey(item.record, index);
+      const nodes = spanLines.map((index2) => {
+        const item = flattenData2[index2];
+        const rowKey = getRowKey(item.record, index2);
         const getHeight = (rowSpan) => {
-          const endItemIndex = index + rowSpan - 1;
+          const endItemIndex = index2 + rowSpan - 1;
           const endItem = flattenData2[endItemIndex];
           if (!endItem || !endItem.record) {
             const safeEndIndex = Math.min(endItemIndex, flattenData2.length - 1);
             const safeEndItem = flattenData2[safeEndIndex];
             const endItemKey2 = getRowKey(safeEndItem.record, safeEndIndex);
-            const sizeInfo3 = getSize(rowKey, endItemKey2);
+            const sizeInfo3 = getSize2(rowKey, endItemKey2);
             return sizeInfo3.bottom - sizeInfo3.top;
           }
           const endItemKey = getRowKey(endItem.record, endItemIndex);
-          const sizeInfo2 = getSize(rowKey, endItemKey);
+          const sizeInfo2 = getSize2(rowKey, endItemKey);
           return sizeInfo2.bottom - sizeInfo2.top;
         };
-        const sizeInfo = getSize(rowKey);
-        return /* @__PURE__ */ React329.createElement(BodyLine_default, {
-          key: index,
+        const sizeInfo = getSize2(rowKey);
+        return /* @__PURE__ */ React338.createElement(BodyLine_default, {
+          key: index2,
           data: item,
           rowKey,
-          index,
+          index: index2,
           style: {
             top: -offsetY + sizeInfo.top
           },
@@ -68174,7 +69438,7 @@ html body {
       });
       return nodes;
     };
-    const gridContext = React329.useMemo(() => ({
+    const gridContext = React338.useMemo(() => ({
       columnsOffset
     }), [columnsOffset]);
     const tblPrefixCls = `${prefixCls}-tbody`;
@@ -68187,9 +69451,9 @@ html body {
         horizontalScrollBarStyle.bottom = sticky.offsetScroll;
       }
     }
-    return /* @__PURE__ */ React329.createElement(GridContext.Provider, {
+    return /* @__PURE__ */ React338.createElement(GridContext.Provider, {
       value: gridContext
-    }, /* @__PURE__ */ React329.createElement(es_default9, {
+    }, /* @__PURE__ */ React338.createElement(es_default9, {
       fullHeight: false,
       ref: listRef,
       prefixCls: `${tblPrefixCls}-virtual`,
@@ -68215,12 +69479,12 @@ html body {
       },
       onScroll: onTablePropScroll,
       extraRender
-    }, (item, index, itemProps) => {
-      const rowKey = getRowKey(item.record, index);
-      return /* @__PURE__ */ React329.createElement(BodyLine_default, {
+    }, (item, index2, itemProps) => {
+      const rowKey = getRowKey(item.record, index2);
+      return /* @__PURE__ */ React338.createElement(BodyLine_default, {
         data: item,
         rowKey,
-        index,
+        index: index2,
         style: itemProps.style
       });
     }));
@@ -68232,8 +69496,8 @@ html body {
   var BodyGrid_default = ResponseGrid;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/VirtualTable/index.js
-  function _extends67() {
-    _extends67 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends69() {
+    _extends69 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -68244,14 +69508,14 @@ html body {
       }
       return target;
     };
-    return _extends67.apply(this, arguments);
+    return _extends69.apply(this, arguments);
   }
   var renderBody = (rawData, props) => {
     const {
       ref,
       onScroll
     } = props;
-    return /* @__PURE__ */ React330.createElement(BodyGrid_default, {
+    return /* @__PURE__ */ React339.createElement(BodyGrid_default, {
       ref,
       data: rawData,
       onScroll
@@ -68287,16 +69551,16 @@ html body {
     }
     const getComponent = useEvent_default((path, defaultComponent) => get(components, path) || defaultComponent);
     const onInternalScroll = useEvent_default(onScroll);
-    const context = React330.useMemo(() => ({
+    const context = React339.useMemo(() => ({
       sticky,
       scrollY,
       listItemHeight,
       getComponent,
       onScroll: onInternalScroll
     }), [sticky, scrollY, listItemHeight, getComponent, onInternalScroll]);
-    return /* @__PURE__ */ React330.createElement(StaticContext.Provider, {
+    return /* @__PURE__ */ React339.createElement(StaticContext.Provider, {
       value: context
-    }, /* @__PURE__ */ React330.createElement(Table_default, _extends67({}, props, {
+    }, /* @__PURE__ */ React339.createElement(Table_default, _extends69({}, props, {
       className: clsx(className, `${prefixCls}-virtual`),
       scroll: __spreadProps(__spreadValues({}, scroll), {
         x: scrollX
@@ -68310,7 +69574,7 @@ html body {
       ref
     })));
   };
-  var RefVirtualTable = /* @__PURE__ */ React330.forwardRef(VirtualTable);
+  var RefVirtualTable = /* @__PURE__ */ React339.forwardRef(VirtualTable);
   if (true) {
     RefVirtualTable.displayName = "VirtualTable";
   }
@@ -68328,22 +69592,22 @@ html body {
   var ColumnGroup_default2 = ColumnGroup2;
 
   // ../custom_dashboard/node_modules/antd/es/table/hooks/useSelection.js
-  var React335 = __toESM(require_react());
-  var import_react124 = __toESM(require_react());
+  var React344 = __toESM(require_react());
+  var import_react127 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/util.js
-  var import_react123 = __toESM(require_react());
+  var import_react126 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/TreeNode.js
-  var import_react122 = __toESM(require_react());
+  var import_react125 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/contextTypes.js
-  var React331 = __toESM(require_react());
-  var TreeContext = /* @__PURE__ */ React331.createContext(null);
-  var UnstableContext = /* @__PURE__ */ React331.createContext({});
+  var React340 = __toESM(require_react());
+  var TreeContext = /* @__PURE__ */ React340.createContext(null);
+  var UnstableContext = /* @__PURE__ */ React340.createContext({});
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/Indent.js
-  var React332 = __toESM(require_react());
+  var React341 = __toESM(require_react());
   var Indent = ({
     prefixCls,
     level,
@@ -68353,7 +69617,7 @@ html body {
     const baseClassName = `${prefixCls}-indent-unit`;
     const list = [];
     for (let i = 0; i < level; i += 1) {
-      list.push(/* @__PURE__ */ React332.createElement("span", {
+      list.push(/* @__PURE__ */ React341.createElement("span", {
         key: i,
         className: clsx(baseClassName, {
           [`${baseClassName}-start`]: isStart[i],
@@ -68361,16 +69625,16 @@ html body {
         })
       }));
     }
-    return /* @__PURE__ */ React332.createElement("span", {
+    return /* @__PURE__ */ React341.createElement("span", {
       "aria-hidden": "true",
       className: `${prefixCls}-indent`
     }, list);
   };
-  var Indent_default = /* @__PURE__ */ React332.memo(Indent);
+  var Indent_default = /* @__PURE__ */ React341.memo(Indent);
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/TreeNode.js
-  function _extends68() {
-    _extends68 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends70() {
+    _extends70 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -68381,7 +69645,7 @@ html body {
       }
       return target;
     };
-    return _extends68.apply(this, arguments);
+    return _extends70.apply(this, arguments);
   }
   var ICON_OPEN = "open";
   var ICON_CLOSE = "close";
@@ -68432,16 +69696,16 @@ html body {
       "treeId"
     ]);
     const nodeId = getId(treeId, eventKey);
-    const context = import_react122.default.useContext(TreeContext);
+    const context = import_react125.default.useContext(TreeContext);
     const {
       classNames: treeClassNames,
       styles: styles2
     } = context || {};
-    const unstableContext = import_react122.default.useContext(UnstableContext);
-    const selectHandleRef = import_react122.default.useRef(null);
-    const [dragNodeHighlight, setDragNodeHighlight] = import_react122.default.useState(false);
+    const unstableContext = import_react125.default.useContext(UnstableContext);
+    const selectHandleRef = import_react125.default.useRef(null);
+    const [dragNodeHighlight, setDragNodeHighlight] = import_react125.default.useState(false);
     const isDisabled = !!(context.disabled || props.disabled || ((_b = unstableContext.nodeDisabled) == null ? void 0 : _b.call(unstableContext, data)));
-    const isCheckable = import_react122.default.useMemo(() => {
+    const isCheckable = import_react125.default.useMemo(() => {
       if (!context.checkable || props.checkable === false) {
         return false;
       }
@@ -68462,7 +69726,7 @@ html body {
       }
       context.onNodeCheck(e3, convertNodePropsToEventData(props), !checked);
     };
-    const isSelectable = import_react122.default.useMemo(() => {
+    const isSelectable = import_react125.default.useMemo(() => {
       if (typeof selectable === "boolean") {
         return selectable;
       }
@@ -68488,7 +69752,7 @@ html body {
     const onContextMenu = (e3) => {
       context.onNodeContextMenu(e3, convertNodePropsToEventData(props));
     };
-    const isDraggable = import_react122.default.useMemo(() => {
+    const isDraggable = import_react125.default.useMemo(() => {
       return !!(context.draggable && (!context.draggable.nodeDraggable || context.draggable.nodeDraggable(data)));
     }, [context.draggable, data]);
     const onDragStart = (e3) => {
@@ -68531,16 +69795,16 @@ html body {
       }
       context.onNodeExpand(e3, convertNodePropsToEventData(props));
     };
-    const hasChildren = import_react122.default.useMemo(() => {
+    const hasChildren = import_react125.default.useMemo(() => {
       const {
         children
       } = getEntity(context.keyEntities, eventKey) || {};
       return Boolean((children || []).length);
     }, [context.keyEntities, eventKey]);
-    const memoizedIsLeaf = import_react122.default.useMemo(() => {
+    const memoizedIsLeaf = import_react125.default.useMemo(() => {
       return isLeafNode(isLeaf, context.loadData, hasChildren, props.loaded);
     }, [isLeaf, context.loadData, hasChildren, props.loaded]);
-    import_react122.default.useEffect(() => {
+    import_react125.default.useEffect(() => {
       if (loading) {
         return;
       }
@@ -68548,12 +69812,12 @@ html body {
         context.onNodeLoad(convertNodePropsToEventData(props));
       }
     }, [loading, context.loadData, context.onNodeLoad, expanded, memoizedIsLeaf, props]);
-    const dragHandlerNode = import_react122.default.useMemo(() => {
+    const dragHandlerNode = import_react125.default.useMemo(() => {
       var _a2;
       if (!((_a2 = context.draggable) == null ? void 0 : _a2.icon)) {
         return null;
       }
-      return /* @__PURE__ */ import_react122.default.createElement("span", {
+      return /* @__PURE__ */ import_react125.default.createElement("span", {
         className: `${context.prefixCls}-draggable-icon`
       }, context.draggable.icon);
     }, [context.draggable]);
@@ -68569,22 +69833,22 @@ html body {
     const renderSwitcher = () => {
       if (memoizedIsLeaf) {
         const switcherIconDom2 = renderSwitcherIconDom(true);
-        return switcherIconDom2 !== false ? /* @__PURE__ */ import_react122.default.createElement("span", {
+        return switcherIconDom2 !== false ? /* @__PURE__ */ import_react125.default.createElement("span", {
           className: clsx(`${context.prefixCls}-switcher`, `${context.prefixCls}-switcher-noop`)
         }, switcherIconDom2) : null;
       }
       const switcherIconDom = renderSwitcherIconDom(false);
-      return switcherIconDom !== false ? /* @__PURE__ */ import_react122.default.createElement("span", {
+      return switcherIconDom !== false ? /* @__PURE__ */ import_react125.default.createElement("span", {
         onClick: onExpand,
         className: clsx(`${context.prefixCls}-switcher`, `${context.prefixCls}-switcher_${expanded ? ICON_OPEN : ICON_CLOSE}`)
       }, switcherIconDom) : null;
     };
-    const checkboxNode = import_react122.default.useMemo(() => {
+    const checkboxNode = import_react125.default.useMemo(() => {
       if (!isCheckable) {
         return null;
       }
       const $custom = typeof isCheckable !== "boolean" ? isCheckable : null;
-      return /* @__PURE__ */ import_react122.default.createElement("span", {
+      return /* @__PURE__ */ import_react125.default.createElement("span", {
         className: clsx(`${context.prefixCls}-checkbox`, {
           [`${context.prefixCls}-checkbox-checked`]: checked,
           [`${context.prefixCls}-checkbox-indeterminate`]: !checked && halfChecked,
@@ -68597,21 +69861,21 @@ html body {
         "aria-labelledby": nodeId
       }, $custom);
     }, [isCheckable, checked, halfChecked, isDisabled, props.disableCheckbox, nodeId]);
-    const nodeState = import_react122.default.useMemo(() => {
+    const nodeState = import_react125.default.useMemo(() => {
       if (memoizedIsLeaf) {
         return null;
       }
       return expanded ? ICON_OPEN : ICON_CLOSE;
     }, [memoizedIsLeaf, expanded]);
-    const iconNode = import_react122.default.useMemo(() => {
-      return /* @__PURE__ */ import_react122.default.createElement("span", {
+    const iconNode = import_react125.default.useMemo(() => {
+      return /* @__PURE__ */ import_react125.default.createElement("span", {
         className: clsx(treeClassNames == null ? void 0 : treeClassNames.itemIcon, `${context.prefixCls}-iconEle`, `${context.prefixCls}-icon__${nodeState || "docu"}`, {
           [`${context.prefixCls}-icon_loading`]: loading
         }),
         style: styles2 == null ? void 0 : styles2.itemIcon
       });
     }, [context.prefixCls, nodeState, loading]);
-    const dropIndicatorNode = import_react122.default.useMemo(() => {
+    const dropIndicatorNode = import_react125.default.useMemo(() => {
       const rootDraggable = Boolean(context.draggable);
       const showIndicator = !props.disabled && rootDraggable && context.dragOverNodeKey === eventKey;
       if (!showIndicator) {
@@ -68625,7 +69889,7 @@ html body {
         direction: context.direction
       });
     }, [context.dropPosition, context.dropLevelOffset, context.indent, context.prefixCls, context.direction, context.draggable, context.dragOverNodeKey, context.dropIndicatorRender]);
-    const selectorNode = import_react122.default.useMemo(() => {
+    const selectorNode = import_react125.default.useMemo(() => {
       const {
         title = defaultTitle
       } = props;
@@ -68633,7 +69897,7 @@ html body {
       let $icon;
       if (context.showIcon) {
         const currentIcon = props.icon || context.icon;
-        $icon = currentIcon ? /* @__PURE__ */ import_react122.default.createElement("span", {
+        $icon = currentIcon ? /* @__PURE__ */ import_react125.default.createElement("span", {
           className: clsx(treeClassNames == null ? void 0 : treeClassNames.itemIcon, `${context.prefixCls}-iconEle`, `${context.prefixCls}-icon__customize`),
           style: styles2 == null ? void 0 : styles2.itemIcon
         }, typeof currentIcon === "function" ? currentIcon(props) : currentIcon) : iconNode;
@@ -68648,7 +69912,7 @@ html body {
       } else {
         titleNode = title;
       }
-      return /* @__PURE__ */ import_react122.default.createElement("span", {
+      return /* @__PURE__ */ import_react125.default.createElement("span", {
         ref: selectHandleRef,
         title: typeof title === "string" ? title : "",
         className: clsx(wrapClass, `${wrapClass}-${nodeState || "normal"}`, {
@@ -68659,7 +69923,7 @@ html body {
         onContextMenu,
         onClick: onSelectorClick,
         onDoubleClick: onSelectorDoubleClick
-      }, $icon, /* @__PURE__ */ import_react122.default.createElement("span", {
+      }, $icon, /* @__PURE__ */ import_react125.default.createElement("span", {
         className: clsx(`${context.prefixCls}-title`, treeClassNames == null ? void 0 : treeClassNames.itemTitle),
         style: styles2 == null ? void 0 : styles2.itemTitle
       }, titleNode), dropIndicatorNode);
@@ -68674,7 +69938,7 @@ html body {
     const isEndNode = isEnd[isEnd.length - 1];
     const draggableWithoutDisabled = !isDisabled && isDraggable;
     const dragging = context.draggingNodeKey === eventKey;
-    return /* @__PURE__ */ import_react122.default.createElement("div", _extends68({
+    return /* @__PURE__ */ import_react125.default.createElement("div", _extends70({
       ref: domRef,
       role: "treeitem",
       id: nodeId,
@@ -68710,7 +69974,7 @@ html body {
       onDrop: isDraggable ? onDrop : void 0,
       onDragEnd: isDraggable ? onDragEnd : void 0,
       onMouseMove
-    }, dataOrAriaAttributeProps), /* @__PURE__ */ import_react122.default.createElement(Indent_default, {
+    }, dataOrAriaAttributeProps), /* @__PURE__ */ import_react125.default.createElement(Indent_default, {
       prefixCls: context.prefixCls,
       level,
       isStart,
@@ -68728,9 +69992,9 @@ html body {
     if (!list)
       return [];
     const clone = list.slice();
-    const index = clone.indexOf(value);
-    if (index >= 0) {
-      clone.splice(index, 1);
+    const index2 = clone.indexOf(value);
+    if (index2 >= 0) {
+      clone.splice(index2, 1);
     }
     return clone;
   }
@@ -68987,8 +70251,8 @@ html body {
     const warning6 = devUseWarning("Table");
     const [multipleSelect, updatePrevSelectedIndex] = useMultipleSelect((item) => item);
     const [mergedSelectedKeys, setMergedSelectedKeys] = useControlledState(defaultSelectedRowKeys || EMPTY_LIST4, selectedRowKeys);
-    const preserveRecordsRef = React335.useRef(/* @__PURE__ */ new Map());
-    const updatePreserveRecordsCache = (0, import_react124.useCallback)((keys2) => {
+    const preserveRecordsRef = React344.useRef(/* @__PURE__ */ new Map());
+    const updatePreserveRecordsCache = (0, import_react127.useCallback)((keys2) => {
       if (preserveSelectedRowKeys) {
         const newCache = /* @__PURE__ */ new Map();
         keys2.forEach((key) => {
@@ -69001,13 +70265,13 @@ html body {
         preserveRecordsRef.current = newCache;
       }
     }, [getRecordByKey, preserveSelectedRowKeys]);
-    React335.useEffect(() => {
+    React344.useEffect(() => {
       updatePreserveRecordsCache(mergedSelectedKeys);
     }, [mergedSelectedKeys]);
-    const flattedData = (0, import_react124.useMemo)(() => flattenData(childrenColumnName, pageData), [childrenColumnName, pageData]);
+    const flattedData = (0, import_react127.useMemo)(() => flattenData(childrenColumnName, pageData), [childrenColumnName, pageData]);
     const {
       keyEntities
-    } = (0, import_react124.useMemo)(() => {
+    } = (0, import_react127.useMemo)(() => {
       if (checkStrictly) {
         return {
           keyEntities: null
@@ -69024,17 +70288,17 @@ html body {
         childrenPropName: childrenColumnName
       });
     }, [data, getRowKey, checkStrictly, childrenColumnName, preserveSelectedRowKeys, flattedData]);
-    const checkboxPropsMap = (0, import_react124.useMemo)(() => {
+    const checkboxPropsMap = (0, import_react127.useMemo)(() => {
       const map = /* @__PURE__ */ new Map();
-      flattedData.forEach((record, index) => {
-        const key = getRowKey(record, index);
+      flattedData.forEach((record, index2) => {
+        const key = getRowKey(record, index2);
         const checkboxProps = (getCheckboxProps ? getCheckboxProps(record) : null) || {};
         map.set(key, checkboxProps);
         true ? warning6(!("checked" in checkboxProps || "defaultChecked" in checkboxProps), "usage", "Do not set `checked` or `defaultChecked` in `getCheckboxProps`. Please use `selectedRowKeys` instead.") : void 0;
       });
       return map;
     }, [flattedData, getRowKey, getCheckboxProps]);
-    const isCheckboxDisabled = (0, import_react124.useCallback)((r3) => {
+    const isCheckboxDisabled = (0, import_react127.useCallback)((r3) => {
       const rowKey = getRowKey(r3);
       let checkboxProps;
       if (checkboxPropsMap.has(rowKey)) {
@@ -69044,7 +70308,7 @@ html body {
       }
       return !!(checkboxProps == null ? void 0 : checkboxProps.disabled);
     }, [checkboxPropsMap, getRowKey]);
-    const [derivedSelectedKeys, derivedHalfSelectedKeys] = (0, import_react124.useMemo)(() => {
+    const [derivedSelectedKeys, derivedHalfSelectedKeys] = (0, import_react127.useMemo)(() => {
       if (checkStrictly) {
         return [mergedSelectedKeys || [], []];
       }
@@ -69054,17 +70318,17 @@ html body {
       } = conductCheck(mergedSelectedKeys, true, keyEntities, isCheckboxDisabled);
       return [checkedKeys || [], halfCheckedKeys];
     }, [mergedSelectedKeys, checkStrictly, keyEntities, isCheckboxDisabled]);
-    const derivedSelectedKeySet = (0, import_react124.useMemo)(() => {
+    const derivedSelectedKeySet = (0, import_react127.useMemo)(() => {
       const keys2 = selectionType === "radio" ? derivedSelectedKeys.slice(0, 1) : derivedSelectedKeys;
       return new Set(keys2);
     }, [derivedSelectedKeys, selectionType]);
-    const derivedHalfSelectedKeySet = (0, import_react124.useMemo)(() => selectionType === "radio" ? /* @__PURE__ */ new Set() : new Set(derivedHalfSelectedKeys), [derivedHalfSelectedKeys, selectionType]);
-    React335.useEffect(() => {
+    const derivedHalfSelectedKeySet = (0, import_react127.useMemo)(() => selectionType === "radio" ? /* @__PURE__ */ new Set() : new Set(derivedHalfSelectedKeys), [derivedHalfSelectedKeys, selectionType]);
+    React344.useEffect(() => {
       if (!rowSelection) {
         setMergedSelectedKeys(EMPTY_LIST4);
       }
     }, [!!rowSelection]);
-    const setSelectedKeys = (0, import_react124.useCallback)((keys2, method4) => {
+    const setSelectedKeys = (0, import_react127.useCallback)((keys2, method4) => {
       let availableKeys;
       let records;
       updatePreserveRecordsCache(keys2);
@@ -69087,14 +70351,14 @@ html body {
         type: method4
       });
     }, [setMergedSelectedKeys, getRecordByKey, onSelectionChange, preserveSelectedRowKeys]);
-    const triggerSingleSelection = (0, import_react124.useCallback)((key, selected, keys2, event) => {
+    const triggerSingleSelection = (0, import_react127.useCallback)((key, selected, keys2, event) => {
       if (onSelect) {
         const rows = keys2.map(getRecordByKey);
         onSelect(getRecordByKey(key), selected, rows, event);
       }
       setSelectedKeys(keys2, "single");
     }, [onSelect, getRecordByKey, setSelectedKeys]);
-    const mergedSelections = (0, import_react124.useMemo)(() => {
+    const mergedSelections = (0, import_react127.useMemo)(() => {
       if (!selections || hideSelectAll) {
         return null;
       }
@@ -69105,7 +70369,7 @@ html body {
             key: "all",
             text: tableLocale.selectionAll,
             onSelect() {
-              setSelectedKeys(data.map((record, index) => getRowKey(record, index)).filter((key) => {
+              setSelectedKeys(data.map((record, index2) => getRowKey(record, index2)).filter((key) => {
                 const checkProps = checkboxPropsMap.get(key);
                 return !(checkProps == null ? void 0 : checkProps.disabled) || derivedSelectedKeySet.has(key);
               }), "all");
@@ -69118,8 +70382,8 @@ html body {
             text: tableLocale.selectInvert,
             onSelect() {
               const keySet = new Set(derivedSelectedKeySet);
-              pageData.forEach((record, index) => {
-                const key = getRowKey(record, index);
+              pageData.forEach((record, index2) => {
+                const key = getRowKey(record, index2);
                 const checkProps = checkboxPropsMap.get(key);
                 if (!(checkProps == null ? void 0 : checkProps.disabled)) {
                   if (keySet.has(key)) {
@@ -69160,7 +70424,7 @@ html body {
         }
       }));
     }, [selections, hideSelectAll, tableLocale.selectionAll, tableLocale.selectInvert, tableLocale.selectNone, checkboxPropsMap, derivedSelectedKeySet, data, pageData, getRowKey, onSelectInvert, setSelectedKeys]);
-    const transformColumns = (0, import_react124.useCallback)((columns) => {
+    const transformColumns = (0, import_react127.useCallback)((columns) => {
       var _a;
       if (!rowSelection) {
         true ? warning6(!columns.includes(SELECTION_COLUMN), "usage", "`rowSelection` is not config but `SELECTION_COLUMN` exists in the `columns`.") : void 0;
@@ -69198,14 +70462,14 @@ html body {
         if (mergedSelections) {
           const menu = {
             getPopupContainer,
-            items: mergedSelections.map((selection, index) => {
+            items: mergedSelections.map((selection, index2) => {
               const {
                 key,
                 text,
                 onSelect: onSelectionClick
               } = selection;
               return {
-                key: key != null ? key : index,
+                key: key != null ? key : index2,
                 onClick: () => {
                   onSelectionClick == null ? void 0 : onSelectionClick(recordKeys);
                 },
@@ -69213,15 +70477,15 @@ html body {
               };
             })
           };
-          customizeSelections = /* @__PURE__ */ React335.createElement("div", {
+          customizeSelections = /* @__PURE__ */ React344.createElement("div", {
             className: `${prefixCls}-selection-extra`
-          }, /* @__PURE__ */ React335.createElement(dropdown_default3, {
+          }, /* @__PURE__ */ React344.createElement(dropdown_default3, {
             menu,
             getPopupContainer
-          }, /* @__PURE__ */ React335.createElement("span", null, /* @__PURE__ */ React335.createElement(DownOutlined_default2, null))));
+          }, /* @__PURE__ */ React344.createElement("span", null, /* @__PURE__ */ React344.createElement(DownOutlined_default2, null))));
         }
-        const allDisabledData = flattedData.map((record, index) => {
-          const key = getRowKey(record, index);
+        const allDisabledData = flattedData.map((record, index2) => {
+          const key = getRowKey(record, index2);
           const checkboxProps = checkboxPropsMap.get(key) || {};
           return __spreadValues({
             checked: keySet.has(key)
@@ -69241,7 +70505,7 @@ html body {
           onChange,
           disabled
         } = customCheckboxProps;
-        columnTitleCheckbox = /* @__PURE__ */ React335.createElement(checkbox_default, __spreadProps(__spreadValues({
+        columnTitleCheckbox = /* @__PURE__ */ React344.createElement(checkbox_default, __spreadProps(__spreadValues({
           "aria-label": customizeSelections ? "Custom selection" : "Select all"
         }, customCheckboxProps), {
           checked: !allDisabled ? !!flattedData.length && checkedCurrentAll : allDisabledAndChecked,
@@ -69253,18 +70517,18 @@ html body {
           disabled: disabled != null ? disabled : flattedData.length === 0 || allDisabled,
           skipGroup: true
         }));
-        title = !hideSelectAll && /* @__PURE__ */ React335.createElement("div", {
+        title = !hideSelectAll && /* @__PURE__ */ React344.createElement("div", {
           className: `${prefixCls}-selection`
         }, columnTitleCheckbox, customizeSelections);
       }
       let renderCell;
       if (selectionType === "radio") {
-        renderCell = (_, record, index) => {
-          const key = getRowKey(record, index);
+        renderCell = (_, record, index2) => {
+          const key = getRowKey(record, index2);
           const checked = keySet.has(key);
           const checkboxProps = checkboxPropsMap.get(key);
           return {
-            node: /* @__PURE__ */ React335.createElement(radio_default2, __spreadProps(__spreadValues({}, checkboxProps), {
+            node: /* @__PURE__ */ React344.createElement(radio_default2, __spreadProps(__spreadValues({}, checkboxProps), {
               checked,
               onClick: (e3) => {
                 var _a2;
@@ -69283,9 +70547,9 @@ html body {
           };
         };
       } else {
-        renderCell = (_, record, index) => {
+        renderCell = (_, record, index2) => {
           var _a2;
-          const key = getRowKey(record, index);
+          const key = getRowKey(record, index2);
           const checked = keySet.has(key);
           const indeterminate = derivedHalfSelectedKeySet.has(key);
           const checkboxProps = checkboxPropsMap.get(key);
@@ -69297,7 +70561,7 @@ html body {
             mergedIndeterminate = (_a2 = checkboxProps == null ? void 0 : checkboxProps.indeterminate) != null ? _a2 : indeterminate;
           }
           return {
-            node: /* @__PURE__ */ React335.createElement(checkbox_default, __spreadProps(__spreadValues({}, checkboxProps), {
+            node: /* @__PURE__ */ React344.createElement(checkbox_default, __spreadProps(__spreadValues({}, checkboxProps), {
               indeterminate: mergedIndeterminate,
               checked,
               skipGroup: true,
@@ -69356,13 +70620,13 @@ html body {
           };
         };
       }
-      const renderSelectionCell = (_, record, index) => {
+      const renderSelectionCell = (_, record, index2) => {
         const {
           node: node2,
           checked
-        } = renderCell(_, record, index);
+        } = renderCell(_, record, index2);
         if (customizeRenderCell) {
-          return customizeRenderCell(checked, record, index, node2);
+          return customizeRenderCell(checked, record, index2, node2);
         }
         return node2;
       };
@@ -69379,7 +70643,7 @@ html body {
       }
       const selectionColumnIndex = cloneColumns.indexOf(SELECTION_COLUMN);
       true ? warning6(cloneColumns.filter((col) => col === SELECTION_COLUMN).length <= 1, "usage", "Multiple `SELECTION_COLUMN` exist in `columns`.") : void 0;
-      cloneColumns = cloneColumns.filter((column2, index) => column2 !== SELECTION_COLUMN || index === selectionColumnIndex);
+      cloneColumns = cloneColumns.filter((column2, index2) => column2 !== SELECTION_COLUMN || index2 === selectionColumnIndex);
       const prevCol = cloneColumns[selectionColumnIndex - 1];
       const nextCol = cloneColumns[selectionColumnIndex + 1];
       let mergedFixed = fixed;
@@ -69424,10 +70688,10 @@ html body {
   var useSelection_default = useSelection;
 
   // ../custom_dashboard/node_modules/antd/es/table/InternalTable.js
-  var React364 = __toESM(require_react());
+  var React373 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/table/ExpandIcon.js
-  var React336 = __toESM(require_react());
+  var React345 = __toESM(require_react());
   "use client";
   function renderExpandIcon2(locale6) {
     return (props) => {
@@ -69439,7 +70703,7 @@ html body {
         expandable
       } = props;
       const iconPrefix = `${prefixCls}-row-expand-icon`;
-      return /* @__PURE__ */ React336.createElement("button", {
+      return /* @__PURE__ */ React345.createElement("button", {
         type: "button",
         onClick: (e3) => {
           onExpand(record, e3);
@@ -69474,7 +70738,7 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/antd/es/table/hooks/useFilter/index.js
-  var React358 = __toESM(require_react());
+  var React367 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/table/util.js
   var getColumnKey = (column2, defaultKey) => {
@@ -69486,8 +70750,8 @@ html body {
     }
     return defaultKey;
   };
-  function getColumnPos(index, pos) {
-    return pos ? `${pos}-${index}` : `${index}`;
+  function getColumnPos(index2, pos) {
+    return pos ? `${pos}-${index2}` : `${index2}`;
   }
   var renderColumnTitle = (title, props) => {
     if (typeof title === "function") {
@@ -69504,18 +70768,18 @@ html body {
   };
 
   // ../custom_dashboard/node_modules/antd/es/table/hooks/useFilter/FilterDropdown.js
-  var React357 = __toESM(require_react());
+  var React366 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FilterFilled.js
-  var React337 = __toESM(require_react());
+  var React346 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/FilterFilled.js
   var FilterFilled = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M349 838c0 17.7 14.2 32 31.8 32h262.4c17.6 0 31.8-14.3 31.8-32V642H349v196zm531.1-684H143.9c-24.5 0-39.8 26.7-27.5 48l221.3 376h348.8l221.3-376c12.1-21.3-3.2-48-27.7-48z" } }] }, "name": "filter", "theme": "filled" };
   var FilterFilled_default = FilterFilled;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FilterFilled.js
-  function _extends69() {
-    _extends69 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends71() {
+    _extends71 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -69526,23 +70790,23 @@ html body {
       }
       return target;
     };
-    return _extends69.apply(this, arguments);
+    return _extends71.apply(this, arguments);
   }
-  var FilterFilled2 = (props, ref) => /* @__PURE__ */ React337.createElement(AntdIcon_default, _extends69({}, props, {
+  var FilterFilled2 = (props, ref) => /* @__PURE__ */ React346.createElement(AntdIcon_default, _extends71({}, props, {
     ref,
     icon: FilterFilled_default
   }));
-  var RefIcon19 = /* @__PURE__ */ React337.forwardRef(FilterFilled2);
+  var RefIcon19 = /* @__PURE__ */ React346.forwardRef(FilterFilled2);
   if (true) {
     RefIcon19.displayName = "FilterFilled";
   }
   var FilterFilled_default2 = RefIcon19;
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/Tree.js
-  var React342 = __toESM(require_react());
+  var React351 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/DropIndicator.js
-  var import_react125 = __toESM(require_react());
+  var import_react128 = __toESM(require_react());
   var DropIndicator = (props) => {
     const {
       dropPosition,
@@ -69570,7 +70834,7 @@ html body {
         style2.left = indent;
         break;
     }
-    return /* @__PURE__ */ import_react125.default.createElement("div", {
+    return /* @__PURE__ */ import_react128.default.createElement("div", {
       style: style2
     });
   };
@@ -69580,15 +70844,15 @@ html body {
   var DropIndicator_default = DropIndicator;
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/NodeList.js
-  var React341 = __toESM(require_react());
+  var React350 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/MotionTreeNode.js
-  var React340 = __toESM(require_react());
+  var React349 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/useUnmount.js
-  var React339 = __toESM(require_react());
+  var React348 = __toESM(require_react());
   function useUnmount(triggerStart, triggerEnd) {
-    const [firstMount, setFirstMount] = React339.useState(false);
+    const [firstMount, setFirstMount] = React348.useState(false);
     useLayoutEffect_default(() => {
       if (firstMount) {
         triggerStart();
@@ -69607,8 +70871,8 @@ html body {
   var useUnmount_default = useUnmount;
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/MotionTreeNode.js
-  function _extends70() {
-    _extends70 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends72() {
+    _extends72 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -69619,9 +70883,9 @@ html body {
       }
       return target;
     };
-    return _extends70.apply(this, arguments);
+    return _extends72.apply(this, arguments);
   }
-  var MotionTreeNode = /* @__PURE__ */ React340.forwardRef((oriProps, ref) => {
+  var MotionTreeNode = /* @__PURE__ */ React349.forwardRef((oriProps, ref) => {
     const _a = oriProps, {
       className,
       style: style2,
@@ -69643,10 +70907,10 @@ html body {
       "active",
       "treeNodeRequiredProps"
     ]);
-    const [visible, setVisible] = React340.useState(true);
+    const [visible, setVisible] = React349.useState(true);
     const {
       prefixCls
-    } = React340.useContext(TreeContext);
+    } = React349.useContext(TreeContext);
     const targetVisible = motionNodes && motionType !== "hide";
     useLayoutEffect_default(() => {
       if (motionNodes) {
@@ -69660,7 +70924,7 @@ html body {
         onOriginMotionStart();
       }
     };
-    const triggerMotionEndRef = React340.useRef(false);
+    const triggerMotionEndRef = React349.useRef(false);
     const triggerMotionEnd = () => {
       if (motionNodes && !triggerMotionEndRef.current) {
         triggerMotionEndRef.current = true;
@@ -69674,7 +70938,7 @@ html body {
       }
     };
     if (motionNodes) {
-      return /* @__PURE__ */ React340.createElement(es_default2, _extends70({
+      return /* @__PURE__ */ React349.createElement(es_default2, _extends72({
         ref,
         visible
       }, motion, {
@@ -69683,7 +70947,7 @@ html body {
       }), ({
         className: motionClassName,
         style: motionStyle
-      }, motionRef) => /* @__PURE__ */ React340.createElement("div", {
+      }, motionRef) => /* @__PURE__ */ React349.createElement("div", {
         ref: motionRef,
         className: clsx(`${prefixCls}-treenode-motion`, motionClassName),
         style: motionStyle
@@ -69698,7 +70962,7 @@ html body {
         } = _a2;
         delete restProps.children;
         const treeNodeProps = getTreeNodeProps(key, treeNodeRequiredProps);
-        return /* @__PURE__ */ React340.createElement(TreeNode_default, _extends70({}, restProps, treeNodeProps, {
+        return /* @__PURE__ */ React349.createElement(TreeNode_default, _extends72({}, restProps, treeNodeProps, {
           title,
           active,
           data: treeNode.data,
@@ -69708,7 +70972,7 @@ html body {
         }));
       })));
     }
-    return /* @__PURE__ */ React340.createElement(TreeNode_default, _extends70({
+    return /* @__PURE__ */ React349.createElement(TreeNode_default, _extends72({
       domRef: ref,
       className,
       style: style2
@@ -69762,8 +71026,8 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/NodeList.js
-  function _extends71() {
-    _extends71 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends73() {
+    _extends73 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -69774,7 +71038,7 @@ html body {
       }
       return target;
     };
-    return _extends71.apply(this, arguments);
+    return _extends73.apply(this, arguments);
   }
   var MOTION_KEY = `RC_TREE_MOTION_${Math.random()}`;
   var MotionNode = {
@@ -69811,7 +71075,7 @@ html body {
     } = item;
     return getKey2(key, pos);
   }
-  var NodeList = /* @__PURE__ */ React341.forwardRef((props, ref) => {
+  var NodeList = /* @__PURE__ */ React350.forwardRef((props, ref) => {
     const _a = props, {
       prefixCls,
       data,
@@ -69878,20 +71142,20 @@ html body {
       "onListChangeEnd"
     ]);
     const treeId = useId_default();
-    const listRef = React341.useRef(null);
-    const indentMeasurerRef = React341.useRef(null);
-    React341.useImperativeHandle(ref, () => ({
+    const listRef = React350.useRef(null);
+    const indentMeasurerRef = React350.useRef(null);
+    React350.useImperativeHandle(ref, () => ({
       scrollTo: (scroll) => {
         listRef.current.scrollTo(scroll);
       },
       getIndentWidth: () => indentMeasurerRef.current.offsetWidth
     }));
-    const [prevExpandedKeys, setPrevExpandedKeys] = React341.useState(expandedKeys);
-    const [prevData, setPrevData] = React341.useState(data);
-    const [transitionData, setTransitionData] = React341.useState(data);
-    const [transitionRange, setTransitionRange] = React341.useState([]);
-    const [motionType, setMotionType] = React341.useState(null);
-    const dataRef = React341.useRef(data);
+    const [prevExpandedKeys, setPrevExpandedKeys] = React350.useState(expandedKeys);
+    const [prevData, setPrevData] = React350.useState(data);
+    const [transitionData, setTransitionData] = React350.useState(data);
+    const [transitionRange, setTransitionRange] = React350.useState([]);
+    const [motionType, setMotionType] = React350.useState(null);
+    const dataRef = React350.useRef(data);
     dataRef.current = data;
     function onMotionEnd() {
       const latestData = dataRef.current;
@@ -69931,7 +71195,7 @@ html body {
         setTransitionData(data);
       }
     }, [expandedKeys, data]);
-    React341.useEffect(() => {
+    React350.useEffect(() => {
       if (!dragging) {
         onMotionEnd();
       }
@@ -69948,7 +71212,7 @@ html body {
       dropPosition,
       keyEntities
     };
-    return /* @__PURE__ */ React341.createElement(React341.Fragment, null, /* @__PURE__ */ React341.createElement("div", {
+    return /* @__PURE__ */ React350.createElement(React350.Fragment, null, /* @__PURE__ */ React350.createElement("div", {
       className: `${prefixCls}-treenode`,
       "aria-hidden": true,
       style: {
@@ -69960,12 +71224,12 @@ html body {
         border: 0,
         padding: 0
       }
-    }, /* @__PURE__ */ React341.createElement("div", {
+    }, /* @__PURE__ */ React350.createElement("div", {
       className: `${prefixCls}-indent`
-    }, /* @__PURE__ */ React341.createElement("div", {
+    }, /* @__PURE__ */ React350.createElement("div", {
       ref: indentMeasurerRef,
       className: `${prefixCls}-indent-unit`
-    }))), /* @__PURE__ */ React341.createElement(es_default9, _extends71({}, domProps, {
+    }))), /* @__PURE__ */ React350.createElement(es_default9, _extends73({}, domProps, {
       data: mergedData,
       itemKey: itemKey2,
       height,
@@ -70002,7 +71266,7 @@ html body {
       delete restProps.key;
       delete restProps.children;
       const treeNodeProps = getTreeNodeProps(mergedKey, treeNodeRequiredProps);
-      return /* @__PURE__ */ React341.createElement(MotionTreeNode_default, _extends71({}, restProps, treeNodeProps, {
+      return /* @__PURE__ */ React350.createElement(MotionTreeNode_default, _extends73({}, restProps, treeNodeProps, {
         title,
         active: !!activeItem && key === activeItem.key,
         pos,
@@ -70028,8 +71292,8 @@ html body {
   var NodeList_default = NodeList;
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/Tree.js
-  function _extends72() {
-    _extends72 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends74() {
+    _extends74 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -70040,10 +71304,10 @@ html body {
       }
       return target;
     };
-    return _extends72.apply(this, arguments);
+    return _extends74.apply(this, arguments);
   }
   var MAX_RETRY_TIMES = 10;
-  var Tree = class extends React342.Component {
+  var Tree = class extends React351.Component {
     constructor() {
       super(...arguments);
       __publicField(this, "destroyed", false);
@@ -70078,7 +71342,7 @@ html body {
       __publicField(this, "dragNodeProps", null);
       __publicField(this, "currentMouseOverDroppableNodeKey", null);
       __publicField(this, "focusedByMouse", false);
-      __publicField(this, "listRef", /* @__PURE__ */ React342.createRef());
+      __publicField(this, "listRef", /* @__PURE__ */ React351.createRef());
       __publicField(this, "onNodeDragStart", (event, nodeProps) => {
         const {
           expandedKeys,
@@ -70758,14 +72022,14 @@ html body {
           flattenNodes,
           activeKey
         } = this.state;
-        let index = flattenNodes.findIndex(({
+        let index2 = flattenNodes.findIndex(({
           key
         }) => key === activeKey);
-        if (index === -1 && offset3 < 0) {
-          index = flattenNodes.length;
+        if (index2 === -1 && offset3 < 0) {
+          index2 = flattenNodes.length;
         }
-        index = (index + offset3 + flattenNodes.length) % flattenNodes.length;
-        const item = flattenNodes[index];
+        index2 = (index2 + offset3 + flattenNodes.length) % flattenNodes.length;
+        const item = flattenNodes[index2];
         if (item) {
           const {
             key
@@ -71140,14 +72404,14 @@ html body {
         onNodeDragEnd: this.onNodeDragEnd,
         onNodeDrop: this.onNodeDrop
       };
-      return /* @__PURE__ */ React342.createElement(TreeContext.Provider, {
+      return /* @__PURE__ */ React351.createElement(TreeContext.Provider, {
         value: contextValue
-      }, /* @__PURE__ */ React342.createElement("div", {
+      }, /* @__PURE__ */ React351.createElement("div", {
         className: clsx(prefixCls, className, rootClassName, {
           [`${prefixCls}-show-line`]: showLine
         }),
         style: rootStyle
-      }, /* @__PURE__ */ React342.createElement(NodeList_default, _extends72({
+      }, /* @__PURE__ */ React351.createElement(NodeList_default, _extends74({
         ref: this.listRef,
         prefixCls,
         style: style2,
@@ -71204,80 +72468,16 @@ html body {
   var es_default17 = Tree_default;
 
   // ../custom_dashboard/node_modules/antd/es/tree/DirectoryTree.js
-  var React353 = __toESM(require_react());
+  var React362 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FileOutlined.js
-  var React343 = __toESM(require_react());
+  var React352 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/FileOutlined.js
   var FileOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M854.6 288.6L639.4 73.4c-6-6-14.1-9.4-22.6-9.4H192c-17.7 0-32 14.3-32 32v832c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V311.3c0-8.5-3.4-16.7-9.4-22.7zM790.2 326H602V137.8L790.2 326zm1.8 562H232V136h302v216a42 42 0 0042 42h216v494z" } }] }, "name": "file", "theme": "outlined" };
   var FileOutlined_default = FileOutlined;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FileOutlined.js
-  function _extends73() {
-    _extends73 = Object.assign ? Object.assign.bind() : function(target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
-      }
-      return target;
-    };
-    return _extends73.apply(this, arguments);
-  }
-  var FileOutlined2 = (props, ref) => /* @__PURE__ */ React343.createElement(AntdIcon_default, _extends73({}, props, {
-    ref,
-    icon: FileOutlined_default
-  }));
-  var RefIcon20 = /* @__PURE__ */ React343.forwardRef(FileOutlined2);
-  if (true) {
-    RefIcon20.displayName = "FileOutlined";
-  }
-  var FileOutlined_default2 = RefIcon20;
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FolderOpenOutlined.js
-  var React344 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/FolderOpenOutlined.js
-  var FolderOpenOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M928 444H820V330.4c0-17.7-14.3-32-32-32H473L355.7 186.2a8.15 8.15 0 00-5.5-2.2H96c-17.7 0-32 14.3-32 32v592c0 17.7 14.3 32 32 32h698c13 0 24.8-7.9 29.7-20l134-332c1.5-3.8 2.3-7.9 2.3-12 0-17.7-14.3-32-32-32zM136 256h188.5l119.6 114.4H748V444H238c-13 0-24.8 7.9-29.7 20L136 643.2V256zm635.3 512H159l103.3-256h612.4L771.3 768z" } }] }, "name": "folder-open", "theme": "outlined" };
-  var FolderOpenOutlined_default = FolderOpenOutlined;
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FolderOpenOutlined.js
-  function _extends74() {
-    _extends74 = Object.assign ? Object.assign.bind() : function(target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
-      }
-      return target;
-    };
-    return _extends74.apply(this, arguments);
-  }
-  var FolderOpenOutlined2 = (props, ref) => /* @__PURE__ */ React344.createElement(AntdIcon_default, _extends74({}, props, {
-    ref,
-    icon: FolderOpenOutlined_default
-  }));
-  var RefIcon21 = /* @__PURE__ */ React344.forwardRef(FolderOpenOutlined2);
-  if (true) {
-    RefIcon21.displayName = "FolderOpenOutlined";
-  }
-  var FolderOpenOutlined_default2 = RefIcon21;
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FolderOutlined.js
-  var React345 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/FolderOutlined.js
-  var FolderOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M880 298.4H521L403.7 186.2a8.15 8.15 0 00-5.5-2.2H144c-17.7 0-32 14.3-32 32v592c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V330.4c0-17.7-14.3-32-32-32zM840 768H184V256h188.5l119.6 114.4H840V768z" } }] }, "name": "folder", "theme": "outlined" };
-  var FolderOutlined_default = FolderOutlined;
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FolderOutlined.js
   function _extends75() {
     _extends75 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -71292,27 +72492,24 @@ html body {
     };
     return _extends75.apply(this, arguments);
   }
-  var FolderOutlined2 = (props, ref) => /* @__PURE__ */ React345.createElement(AntdIcon_default, _extends75({}, props, {
+  var FileOutlined2 = (props, ref) => /* @__PURE__ */ React352.createElement(AntdIcon_default, _extends75({}, props, {
     ref,
-    icon: FolderOutlined_default
+    icon: FileOutlined_default
   }));
-  var RefIcon22 = /* @__PURE__ */ React345.forwardRef(FolderOutlined2);
+  var RefIcon20 = /* @__PURE__ */ React352.forwardRef(FileOutlined2);
   if (true) {
-    RefIcon22.displayName = "FolderOutlined";
+    RefIcon20.displayName = "FileOutlined";
   }
-  var FolderOutlined_default2 = RefIcon22;
+  var FileOutlined_default2 = RefIcon20;
 
-  // ../custom_dashboard/node_modules/antd/es/tree/Tree.js
-  var import_react127 = __toESM(require_react());
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FolderOpenOutlined.js
+  var React353 = __toESM(require_react());
 
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/HolderOutlined.js
-  var React346 = __toESM(require_react());
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/FolderOpenOutlined.js
+  var FolderOpenOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M928 444H820V330.4c0-17.7-14.3-32-32-32H473L355.7 186.2a8.15 8.15 0 00-5.5-2.2H96c-17.7 0-32 14.3-32 32v592c0 17.7 14.3 32 32 32h698c13 0 24.8-7.9 29.7-20l134-332c1.5-3.8 2.3-7.9 2.3-12 0-17.7-14.3-32-32-32zM136 256h188.5l119.6 114.4H748V444H238c-13 0-24.8 7.9-29.7 20L136 643.2V256zm635.3 512H159l103.3-256h612.4L771.3 768z" } }] }, "name": "folder-open", "theme": "outlined" };
+  var FolderOpenOutlined_default = FolderOpenOutlined;
 
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/HolderOutlined.js
-  var HolderOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M300 276.5a56 56 0 1056-97 56 56 0 00-56 97zm0 284a56 56 0 1056-97 56 56 0 00-56 97zM640 228a56 56 0 10112 0 56 56 0 00-112 0zm0 284a56 56 0 10112 0 56 56 0 00-112 0zM300 844.5a56 56 0 1056-97 56 56 0 00-56 97zM640 796a56 56 0 10112 0 56 56 0 00-112 0z" } }] }, "name": "holder", "theme": "outlined" };
-  var HolderOutlined_default = HolderOutlined;
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/HolderOutlined.js
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FolderOpenOutlined.js
   function _extends76() {
     _extends76 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -71327,11 +72524,78 @@ html body {
     };
     return _extends76.apply(this, arguments);
   }
-  var HolderOutlined2 = (props, ref) => /* @__PURE__ */ React346.createElement(AntdIcon_default, _extends76({}, props, {
+  var FolderOpenOutlined2 = (props, ref) => /* @__PURE__ */ React353.createElement(AntdIcon_default, _extends76({}, props, {
+    ref,
+    icon: FolderOpenOutlined_default
+  }));
+  var RefIcon21 = /* @__PURE__ */ React353.forwardRef(FolderOpenOutlined2);
+  if (true) {
+    RefIcon21.displayName = "FolderOpenOutlined";
+  }
+  var FolderOpenOutlined_default2 = RefIcon21;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FolderOutlined.js
+  var React354 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/FolderOutlined.js
+  var FolderOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M880 298.4H521L403.7 186.2a8.15 8.15 0 00-5.5-2.2H144c-17.7 0-32 14.3-32 32v592c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V330.4c0-17.7-14.3-32-32-32zM840 768H184V256h188.5l119.6 114.4H840V768z" } }] }, "name": "folder", "theme": "outlined" };
+  var FolderOutlined_default = FolderOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FolderOutlined.js
+  function _extends77() {
+    _extends77 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends77.apply(this, arguments);
+  }
+  var FolderOutlined2 = (props, ref) => /* @__PURE__ */ React354.createElement(AntdIcon_default, _extends77({}, props, {
+    ref,
+    icon: FolderOutlined_default
+  }));
+  var RefIcon22 = /* @__PURE__ */ React354.forwardRef(FolderOutlined2);
+  if (true) {
+    RefIcon22.displayName = "FolderOutlined";
+  }
+  var FolderOutlined_default2 = RefIcon22;
+
+  // ../custom_dashboard/node_modules/antd/es/tree/Tree.js
+  var import_react130 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/HolderOutlined.js
+  var React355 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/HolderOutlined.js
+  var HolderOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M300 276.5a56 56 0 1056-97 56 56 0 00-56 97zm0 284a56 56 0 1056-97 56 56 0 00-56 97zM640 228a56 56 0 10112 0 56 56 0 00-112 0zm0 284a56 56 0 10112 0 56 56 0 00-112 0zM300 844.5a56 56 0 1056-97 56 56 0 00-56 97zM640 796a56 56 0 10112 0 56 56 0 00-112 0z" } }] }, "name": "holder", "theme": "outlined" };
+  var HolderOutlined_default = HolderOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/HolderOutlined.js
+  function _extends78() {
+    _extends78 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends78.apply(this, arguments);
+  }
+  var HolderOutlined2 = (props, ref) => /* @__PURE__ */ React355.createElement(AntdIcon_default, _extends78({}, props, {
     ref,
     icon: HolderOutlined_default
   }));
-  var RefIcon23 = /* @__PURE__ */ React346.forwardRef(HolderOutlined2);
+  var RefIcon23 = /* @__PURE__ */ React355.forwardRef(HolderOutlined2);
   if (true) {
     RefIcon23.displayName = "HolderOutlined";
   }
@@ -71433,7 +72697,7 @@ html body {
       }
     }
   });
-  var genBaseStyle5 = (prefixCls, token2) => {
+  var genBaseStyle6 = (prefixCls, token2) => {
     const {
       treeCls,
       treeNodeCls,
@@ -71697,7 +72961,7 @@ html body {
       treeNodePadding
     });
     return [
-      genBaseStyle5(prefixCls, treeToken),
+      genBaseStyle6(prefixCls, treeToken),
       enableDirectory && genDirectoryStyle(treeToken)
     ].filter(Boolean);
   };
@@ -71718,7 +72982,7 @@ html body {
       nodeSelectedColor: token2.colorText
     };
   };
-  var prepareComponentToken15 = (token2) => {
+  var prepareComponentToken16 = (token2) => {
     const {
       colorTextLightSolid,
       colorPrimary
@@ -71728,14 +72992,14 @@ html body {
       directoryNodeSelectedBg: colorPrimary
     });
   };
-  var style_default20 = genStyleHooks("Tree", (token2, {
+  var style_default21 = genStyleHooks("Tree", (token2, {
     prefixCls
   }) => [{
     [token2.componentCls]: getStyle(`${prefixCls}-checkbox`, token2)
-  }, genTreeStyle(prefixCls, token2), collapse_default(token2)], prepareComponentToken15);
+  }, genTreeStyle(prefixCls, token2), collapse_default(token2)], prepareComponentToken16);
 
   // ../custom_dashboard/node_modules/antd/es/tree/utils/dropIndicator.js
-  var import_react126 = __toESM(require_react());
+  var import_react129 = __toESM(require_react());
   "use client";
   var offset2 = 4;
   var dropIndicatorRender = (props) => {
@@ -71764,7 +73028,7 @@ html body {
         style2[startPosition] = indent + offset2;
         break;
     }
-    return /* @__PURE__ */ import_react126.default.createElement("div", {
+    return /* @__PURE__ */ import_react129.default.createElement("div", {
       style: style2,
       className: `${prefixCls}-drop-indicator`
     });
@@ -71772,80 +73036,16 @@ html body {
   var dropIndicator_default = dropIndicatorRender;
 
   // ../custom_dashboard/node_modules/antd/es/tree/utils/iconUtil.js
-  var React351 = __toESM(require_react());
+  var React360 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CaretDownFilled.js
-  var React348 = __toESM(require_react());
+  var React357 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/CaretDownFilled.js
   var CaretDownFilled = { "icon": { "tag": "svg", "attrs": { "viewBox": "0 0 1024 1024", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z" } }] }, "name": "caret-down", "theme": "filled" };
   var CaretDownFilled_default = CaretDownFilled;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CaretDownFilled.js
-  function _extends77() {
-    _extends77 = Object.assign ? Object.assign.bind() : function(target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
-      }
-      return target;
-    };
-    return _extends77.apply(this, arguments);
-  }
-  var CaretDownFilled2 = (props, ref) => /* @__PURE__ */ React348.createElement(AntdIcon_default, _extends77({}, props, {
-    ref,
-    icon: CaretDownFilled_default
-  }));
-  var RefIcon24 = /* @__PURE__ */ React348.forwardRef(CaretDownFilled2);
-  if (true) {
-    RefIcon24.displayName = "CaretDownFilled";
-  }
-  var CaretDownFilled_default2 = RefIcon24;
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/MinusSquareOutlined.js
-  var React349 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/MinusSquareOutlined.js
-  var MinusSquareOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M328 544h368c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H328c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8z" } }, { "tag": "path", "attrs": { "d": "M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z" } }] }, "name": "minus-square", "theme": "outlined" };
-  var MinusSquareOutlined_default = MinusSquareOutlined;
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/MinusSquareOutlined.js
-  function _extends78() {
-    _extends78 = Object.assign ? Object.assign.bind() : function(target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
-      }
-      return target;
-    };
-    return _extends78.apply(this, arguments);
-  }
-  var MinusSquareOutlined2 = (props, ref) => /* @__PURE__ */ React349.createElement(AntdIcon_default, _extends78({}, props, {
-    ref,
-    icon: MinusSquareOutlined_default
-  }));
-  var RefIcon25 = /* @__PURE__ */ React349.forwardRef(MinusSquareOutlined2);
-  if (true) {
-    RefIcon25.displayName = "MinusSquareOutlined";
-  }
-  var MinusSquareOutlined_default2 = RefIcon25;
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/PlusSquareOutlined.js
-  var React350 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/PlusSquareOutlined.js
-  var PlusSquareOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M328 544h152v152c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V544h152c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H544V328c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v152H328c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8z" } }, { "tag": "path", "attrs": { "d": "M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z" } }] }, "name": "plus-square", "theme": "outlined" };
-  var PlusSquareOutlined_default = PlusSquareOutlined;
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/PlusSquareOutlined.js
   function _extends79() {
     _extends79 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -71860,11 +73060,75 @@ html body {
     };
     return _extends79.apply(this, arguments);
   }
-  var PlusSquareOutlined2 = (props, ref) => /* @__PURE__ */ React350.createElement(AntdIcon_default, _extends79({}, props, {
+  var CaretDownFilled2 = (props, ref) => /* @__PURE__ */ React357.createElement(AntdIcon_default, _extends79({}, props, {
+    ref,
+    icon: CaretDownFilled_default
+  }));
+  var RefIcon24 = /* @__PURE__ */ React357.forwardRef(CaretDownFilled2);
+  if (true) {
+    RefIcon24.displayName = "CaretDownFilled";
+  }
+  var CaretDownFilled_default2 = RefIcon24;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/MinusSquareOutlined.js
+  var React358 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/MinusSquareOutlined.js
+  var MinusSquareOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M328 544h368c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H328c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8z" } }, { "tag": "path", "attrs": { "d": "M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z" } }] }, "name": "minus-square", "theme": "outlined" };
+  var MinusSquareOutlined_default = MinusSquareOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/MinusSquareOutlined.js
+  function _extends80() {
+    _extends80 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends80.apply(this, arguments);
+  }
+  var MinusSquareOutlined2 = (props, ref) => /* @__PURE__ */ React358.createElement(AntdIcon_default, _extends80({}, props, {
+    ref,
+    icon: MinusSquareOutlined_default
+  }));
+  var RefIcon25 = /* @__PURE__ */ React358.forwardRef(MinusSquareOutlined2);
+  if (true) {
+    RefIcon25.displayName = "MinusSquareOutlined";
+  }
+  var MinusSquareOutlined_default2 = RefIcon25;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/PlusSquareOutlined.js
+  var React359 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/PlusSquareOutlined.js
+  var PlusSquareOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M328 544h152v152c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V544h152c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H544V328c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v152H328c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8z" } }, { "tag": "path", "attrs": { "d": "M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z" } }] }, "name": "plus-square", "theme": "outlined" };
+  var PlusSquareOutlined_default = PlusSquareOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/PlusSquareOutlined.js
+  function _extends81() {
+    _extends81 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends81.apply(this, arguments);
+  }
+  var PlusSquareOutlined2 = (props, ref) => /* @__PURE__ */ React359.createElement(AntdIcon_default, _extends81({}, props, {
     ref,
     icon: PlusSquareOutlined_default
   }));
-  var RefIcon26 = /* @__PURE__ */ React350.forwardRef(PlusSquareOutlined2);
+  var RefIcon26 = /* @__PURE__ */ React359.forwardRef(PlusSquareOutlined2);
   if (true) {
     RefIcon26.displayName = "PlusSquareOutlined";
   }
@@ -71887,10 +73151,10 @@ html body {
       loading
     } = treeNodeProps;
     if (loading) {
-      if (/* @__PURE__ */ React351.isValidElement(switcherLoadingIcon)) {
+      if (/* @__PURE__ */ React360.isValidElement(switcherLoadingIcon)) {
         return switcherLoadingIcon;
       }
-      return /* @__PURE__ */ React351.createElement(LoadingOutlined_default2, {
+      return /* @__PURE__ */ React360.createElement(LoadingOutlined_default2, {
         className: `${prefixCls}-switcher-loading-icon`
       });
     }
@@ -71905,22 +73169,22 @@ html body {
       if (typeof showLeafIcon !== "boolean" && !!showLeafIcon) {
         const leafIcon = typeof showLeafIcon === "function" ? showLeafIcon(treeNodeProps) : showLeafIcon;
         const leafCls = `${prefixCls}-switcher-line-custom-icon`;
-        if (/* @__PURE__ */ React351.isValidElement(leafIcon)) {
+        if (/* @__PURE__ */ React360.isValidElement(leafIcon)) {
           return cloneElement5(leafIcon, {
             className: clsx((_a = leafIcon.props) == null ? void 0 : _a.className, leafCls)
           });
         }
         return leafIcon;
       }
-      return showLeafIcon ? /* @__PURE__ */ React351.createElement(FileOutlined_default2, {
+      return showLeafIcon ? /* @__PURE__ */ React360.createElement(FileOutlined_default2, {
         className: `${prefixCls}-switcher-line-icon`
-      }) : /* @__PURE__ */ React351.createElement("span", {
+      }) : /* @__PURE__ */ React360.createElement("span", {
         className: `${prefixCls}-switcher-leaf-line`
       });
     }
     const switcherCls = `${prefixCls}-switcher-icon`;
     const switcher = typeof switcherIcon === "function" ? switcherIcon(treeNodeProps) : switcherIcon;
-    if (/* @__PURE__ */ React351.isValidElement(switcher)) {
+    if (/* @__PURE__ */ React360.isValidElement(switcher)) {
       return cloneElement5(switcher, {
         className: clsx((_b = switcher.props) == null ? void 0 : _b.className, switcherCls)
       });
@@ -71929,13 +73193,13 @@ html body {
       return switcher;
     }
     if (showLine) {
-      return expanded ? /* @__PURE__ */ React351.createElement(MinusSquareOutlined_default2, {
+      return expanded ? /* @__PURE__ */ React360.createElement(MinusSquareOutlined_default2, {
         className: `${prefixCls}-switcher-line-icon`
-      }) : /* @__PURE__ */ React351.createElement(PlusSquareOutlined_default2, {
+      }) : /* @__PURE__ */ React360.createElement(PlusSquareOutlined_default2, {
         className: `${prefixCls}-switcher-line-icon`
       });
     }
-    return /* @__PURE__ */ React351.createElement(CaretDownFilled_default2, {
+    return /* @__PURE__ */ React360.createElement(CaretDownFilled_default2, {
       className: switcherCls
     });
   };
@@ -71943,7 +73207,7 @@ html body {
 
   // ../custom_dashboard/node_modules/antd/es/tree/Tree.js
   "use client";
-  var Tree2 = /* @__PURE__ */ import_react127.default.forwardRef((props, ref) => {
+  var Tree2 = /* @__PURE__ */ import_react130.default.forwardRef((props, ref) => {
     var _a;
     const {
       getPrefixCls,
@@ -71955,7 +73219,7 @@ html body {
     } = useComponentConfig("tree");
     const {
       virtual
-    } = import_react127.default.useContext(ConfigContext);
+    } = import_react130.default.useContext(ConfigContext);
     const {
       prefixCls: customizePrefixCls,
       className,
@@ -71976,7 +73240,7 @@ html body {
       styles: styles2,
       icon
     } = props;
-    const contextDisabled = import_react127.default.useContext(DisabledContext_default);
+    const contextDisabled = import_react130.default.useContext(DisabledContext_default);
     const mergedDisabled = disabled != null ? disabled : contextDisabled;
     const prefixCls = getPrefixCls("tree", customizePrefixCls);
     const rootPrefixCls = getPrefixCls();
@@ -71999,10 +73263,10 @@ html body {
       icon,
       dropIndicatorRender: dropIndicator_default
     });
-    const [hashId, cssVarCls] = style_default20(prefixCls);
+    const [hashId, cssVarCls] = style_default21(prefixCls);
     const [, token2] = useToken();
     const itemHeight = token2.paddingXS / 2 + (((_a = token2.Tree) == null ? void 0 : _a.titleHeight) || token2.controlHeightSM);
-    const draggableConfig = import_react127.default.useMemo(() => {
+    const draggableConfig = import_react130.default.useMemo(() => {
       if (!draggable) {
         return false;
       }
@@ -72018,18 +73282,18 @@ html body {
           break;
       }
       if (mergedDraggable.icon !== false) {
-        mergedDraggable.icon = mergedDraggable.icon || /* @__PURE__ */ import_react127.default.createElement(HolderOutlined_default2, null);
+        mergedDraggable.icon = mergedDraggable.icon || /* @__PURE__ */ import_react130.default.createElement(HolderOutlined_default2, null);
       }
       return mergedDraggable;
     }, [draggable]);
-    const renderSwitcherIcon = (nodeProps) => /* @__PURE__ */ import_react127.default.createElement(iconUtil_default, {
+    const renderSwitcherIcon = (nodeProps) => /* @__PURE__ */ import_react130.default.createElement(iconUtil_default, {
       prefixCls,
       switcherIcon,
       switcherLoadingIcon,
       treeNodeProps: nodeProps,
       showLine
     });
-    return /* @__PURE__ */ import_react127.default.createElement(es_default17, __spreadProps(__spreadValues({
+    return /* @__PURE__ */ import_react130.default.createElement(es_default17, __spreadProps(__spreadValues({
       itemHeight,
       ref,
       virtual
@@ -72048,7 +73312,7 @@ html body {
       classNames: mergedClassNames,
       styles: mergedStyles,
       direction,
-      checkable: checkable ? /* @__PURE__ */ import_react127.default.createElement("span", {
+      checkable: checkable ? /* @__PURE__ */ import_react130.default.createElement("span", {
         className: `${prefixCls}-checkbox-inner`
       }) : checkable,
       selectable,
@@ -72120,10 +73384,10 @@ html body {
     const restKeys = _toConsumableArray(keys2);
     const nodes = [];
     traverseNodesKey(treeData, (key, node2) => {
-      const index = restKeys.indexOf(key);
-      if (index !== -1) {
+      const index2 = restKeys.indexOf(key);
+      if (index2 !== -1) {
         nodes.push(node2);
-        restKeys.splice(index, 1);
+        restKeys.splice(index2, 1);
       }
       return !!restKeys.length;
     }, fillFieldNames2(fieldNames));
@@ -72138,9 +73402,9 @@ html body {
       expanded
     } = props;
     if (isLeaf) {
-      return /* @__PURE__ */ React353.createElement(FileOutlined_default2, null);
+      return /* @__PURE__ */ React362.createElement(FileOutlined_default2, null);
     }
-    return expanded ? /* @__PURE__ */ React353.createElement(FolderOpenOutlined_default2, null) : /* @__PURE__ */ React353.createElement(FolderOutlined_default2, null);
+    return expanded ? /* @__PURE__ */ React362.createElement(FolderOpenOutlined_default2, null) : /* @__PURE__ */ React362.createElement(FolderOutlined_default2, null);
   }
   function getTreeData({
     treeData,
@@ -72148,7 +73412,7 @@ html body {
   }) {
     return treeData || convertTreeToData(children);
   }
-  var DirectoryTree = /* @__PURE__ */ React353.forwardRef((oriProps, ref) => {
+  var DirectoryTree = /* @__PURE__ */ React362.forwardRef((oriProps, ref) => {
     const _a = oriProps, {
       defaultExpandAll,
       defaultExpandParent,
@@ -72158,8 +73422,8 @@ html body {
       "defaultExpandParent",
       "defaultExpandedKeys"
     ]);
-    const lastSelectedKeyRef = React353.useRef(null);
-    const cachedSelectedKeysRef = React353.useRef(null);
+    const lastSelectedKeyRef = React362.useRef(null);
+    const cachedSelectedKeysRef = React362.useRef(null);
     const getInitExpandedKeys = () => {
       const {
         keyEntities
@@ -72177,14 +73441,14 @@ html body {
       }
       return initExpandedKeys;
     };
-    const [selectedKeys, setSelectedKeys] = React353.useState(props.selectedKeys || props.defaultSelectedKeys || []);
-    const [expandedKeys, setExpandedKeys] = React353.useState(() => getInitExpandedKeys());
-    React353.useEffect(() => {
+    const [selectedKeys, setSelectedKeys] = React362.useState(props.selectedKeys || props.defaultSelectedKeys || []);
+    const [expandedKeys, setExpandedKeys] = React362.useState(() => getInitExpandedKeys());
+    React362.useEffect(() => {
       if ("selectedKeys" in props) {
         setSelectedKeys(props.selectedKeys);
       }
     }, [props.selectedKeys]);
-    React353.useEffect(() => {
+    React362.useEffect(() => {
       if ("expandedKeys" in props) {
         setExpandedKeys(props.expandedKeys);
       }
@@ -72244,7 +73508,7 @@ html body {
     const {
       getPrefixCls,
       direction
-    } = React353.useContext(ConfigContext);
+    } = React362.useContext(ConfigContext);
     const _b = props, {
       prefixCls: customizePrefixCls,
       className,
@@ -72260,7 +73524,7 @@ html body {
     const connectClassName = clsx(`${prefixCls}-directory`, {
       [`${prefixCls}-directory-rtl`]: direction === "rtl"
     }, className);
-    return /* @__PURE__ */ React353.createElement(Tree_default2, __spreadProps(__spreadValues({
+    return /* @__PURE__ */ React362.createElement(Tree_default2, __spreadProps(__spreadValues({
       icon: getIcon,
       ref,
       blockNode: true
@@ -72288,12 +73552,12 @@ html body {
   var tree_default = Tree3;
 
   // ../custom_dashboard/node_modules/antd/es/table/TableMeasureRowContext.js
-  var import_react128 = __toESM(require_react());
-  var TableMeasureRowContext = /* @__PURE__ */ import_react128.default.createContext(false);
+  var import_react131 = __toESM(require_react());
+  var TableMeasureRowContext = /* @__PURE__ */ import_react131.default.createContext(false);
   var TableMeasureRowContext_default = TableMeasureRowContext;
 
   // ../custom_dashboard/node_modules/antd/es/table/hooks/useFilter/FilterSearch.js
-  var React355 = __toESM(require_react());
+  var React364 = __toESM(require_react());
   "use client";
   var FilterSearch = (props) => {
     const {
@@ -72306,10 +73570,10 @@ html body {
     if (!filterSearch) {
       return null;
     }
-    return /* @__PURE__ */ React355.createElement("div", {
+    return /* @__PURE__ */ React364.createElement("div", {
       className: `${tablePrefixCls}-filter-dropdown-search`
-    }, /* @__PURE__ */ React355.createElement(Input_default4, {
-      prefix: /* @__PURE__ */ React355.createElement(SearchOutlined_default2, null),
+    }, /* @__PURE__ */ React364.createElement(Input_default4, {
+      prefix: /* @__PURE__ */ React364.createElement(SearchOutlined_default2, null),
       placeholder: locale6.filterSearchPlaceholder,
       onChange,
       value,
@@ -72320,7 +73584,7 @@ html body {
   var FilterSearch_default = FilterSearch;
 
   // ../custom_dashboard/node_modules/antd/es/table/hooks/useFilter/FilterWrapper.js
-  var React356 = __toESM(require_react());
+  var React365 = __toESM(require_react());
   "use client";
   var onKeyDown = (event) => {
     const {
@@ -72330,7 +73594,7 @@ html body {
       event.stopPropagation();
     }
   };
-  var FilterDropdownMenuWrapper = /* @__PURE__ */ React356.forwardRef((props, ref) => /* @__PURE__ */ React356.createElement("div", {
+  var FilterDropdownMenuWrapper = /* @__PURE__ */ React365.forwardRef((props, ref) => /* @__PURE__ */ React365.createElement("div", {
     className: props.className,
     onClick: (e3) => e3.stopPropagation(),
     onKeyDown,
@@ -72375,11 +73639,11 @@ html body {
     searchValue,
     filterSearch
   }) {
-    return filters.map((filter2, index) => {
+    return filters.map((filter2, index2) => {
       const key = String(filter2.value);
       if (filter2.children) {
         return {
-          key: key || index,
+          key: key || index2,
           label: filter2.text,
           popupClassName: `${prefixCls}-dropdown-submenu`,
           children: renderFilterItems({
@@ -72392,12 +73656,12 @@ html body {
           })
         };
       }
-      const Component5 = filterMultiple ? checkbox_default : radio_default2;
+      const Component7 = filterMultiple ? checkbox_default : radio_default2;
       const item = {
-        key: filter2.value !== void 0 ? key : index,
-        label: /* @__PURE__ */ React357.createElement(React357.Fragment, null, /* @__PURE__ */ React357.createElement(Component5, {
+        key: filter2.value !== void 0 ? key : index2,
+        label: /* @__PURE__ */ React366.createElement(React366.Fragment, null, /* @__PURE__ */ React366.createElement(Component7, {
           checked: filteredKeys.includes(key)
-        }), /* @__PURE__ */ React357.createElement("span", null, filter2.text))
+        }), /* @__PURE__ */ React366.createElement("span", null, filter2.text))
       };
       if (searchValue.trim()) {
         if (typeof filterSearch === "function") {
@@ -72437,8 +73701,8 @@ html body {
       filterDropdownOpen,
       onFilterDropdownOpenChange
     } = column2;
-    const [visible, setVisible] = React357.useState(false);
-    const inMeasureRow = React357.useContext(TableMeasureRowContext_default);
+    const [visible, setVisible] = React366.useState(false);
+    const inMeasureRow = React366.useContext(TableMeasureRowContext_default);
     const filtered = !!(filterState && (((_a = filterState.filteredKeys) == null ? void 0 : _a.length) || filterState.forceFiltered));
     const triggerVisible = (newVisible) => {
       var _a2;
@@ -72476,7 +73740,7 @@ html body {
         });
       }
     };
-    React357.useEffect(() => {
+    React366.useEffect(() => {
       if (!visible) {
         return;
       }
@@ -72484,18 +73748,18 @@ html body {
         selectedKeys: wrapStringListType(propFilteredKeys)
       });
     }, [propFilteredKeys]);
-    const [openKeys, setOpenKeys] = React357.useState([]);
+    const [openKeys, setOpenKeys] = React366.useState([]);
     const onOpenChange = (keys2) => {
       setOpenKeys(keys2);
     };
-    const [searchValue, setSearchValue] = React357.useState("");
+    const [searchValue, setSearchValue] = React366.useState("");
     const onSearch = (e3) => {
       const {
         value
       } = e3.target;
       setSearchValue(value);
     };
-    React357.useEffect(() => {
+    React366.useEffect(() => {
       if (!visible) {
         setSearchValue("");
       }
@@ -72572,11 +73836,11 @@ html body {
     };
     const getTreeData2 = ({
       filters
-    }) => (filters || []).map((filter2, index) => {
+    }) => (filters || []).map((filter2, index2) => {
       const key = String(filter2.value);
       const item = {
         title: filter2.text,
-        key: filter2.value !== void 0 ? key : String(index)
+        key: filter2.value !== void 0 ? key : String(index2)
       };
       if (filter2.children) {
         item.children = getTreeData2({
@@ -72597,7 +73861,7 @@ html body {
     const {
       direction,
       renderEmpty
-    } = React357.useContext(ConfigContext);
+    } = React366.useContext(ConfigContext);
     if (typeof column2.filterDropdown === "function") {
       dropdownContent = column2.filterDropdown({
         prefixCls: `${dropdownPrefixCls}-custom`,
@@ -72619,7 +73883,7 @@ html body {
       const selectedKeys = getFilteredKeysSync() || [];
       const getFilterComponent = () => {
         var _a2, _b2;
-        const empty = (_a2 = renderEmpty == null ? void 0 : renderEmpty("Table.filter")) != null ? _a2 : /* @__PURE__ */ React357.createElement(empty_default2, {
+        const empty2 = (_a2 = renderEmpty == null ? void 0 : renderEmpty("Table.filter")) != null ? _a2 : /* @__PURE__ */ React366.createElement(empty_default2, {
           image: empty_default2.PRESENTED_IMAGE_SIMPLE,
           description: locale6.filterEmptyText,
           styles: {
@@ -72633,23 +73897,23 @@ html body {
           }
         });
         if ((column2.filters || []).length === 0) {
-          return empty;
+          return empty2;
         }
         if (filterMode === "tree") {
-          return /* @__PURE__ */ React357.createElement(React357.Fragment, null, /* @__PURE__ */ React357.createElement(FilterSearch_default, {
+          return /* @__PURE__ */ React366.createElement(React366.Fragment, null, /* @__PURE__ */ React366.createElement(FilterSearch_default, {
             filterSearch,
             value: searchValue,
             onChange: onSearch,
             tablePrefixCls,
             locale: locale6
-          }), /* @__PURE__ */ React357.createElement("div", {
+          }), /* @__PURE__ */ React366.createElement("div", {
             className: `${tablePrefixCls}-filter-dropdown-tree`
-          }, filterMultiple ? /* @__PURE__ */ React357.createElement(checkbox_default, {
+          }, filterMultiple ? /* @__PURE__ */ React366.createElement(checkbox_default, {
             checked: selectedKeys.length === flattenKeys(column2.filters).length,
             indeterminate: selectedKeys.length > 0 && selectedKeys.length < flattenKeys(column2.filters).length,
             className: `${tablePrefixCls}-filter-dropdown-checkall`,
             onChange: onCheckAll
-          }, (_b2 = locale6 == null ? void 0 : locale6.filterCheckall) != null ? _b2 : locale6 == null ? void 0 : locale6.filterCheckAll) : null, /* @__PURE__ */ React357.createElement(tree_default, {
+          }, (_b2 = locale6 == null ? void 0 : locale6.filterCheckall) != null ? _b2 : locale6 == null ? void 0 : locale6.filterCheckAll) : null, /* @__PURE__ */ React366.createElement(tree_default, {
             checkable: true,
             selectable: false,
             blockNode: true,
@@ -72682,13 +73946,13 @@ html body {
           searchValue
         });
         const isEmpty = items.every((item) => item === null);
-        return /* @__PURE__ */ React357.createElement(React357.Fragment, null, /* @__PURE__ */ React357.createElement(FilterSearch_default, {
+        return /* @__PURE__ */ React366.createElement(React366.Fragment, null, /* @__PURE__ */ React366.createElement(FilterSearch_default, {
           filterSearch,
           value: searchValue,
           onChange: onSearch,
           tablePrefixCls,
           locale: locale6
-        }), isEmpty ? empty : /* @__PURE__ */ React357.createElement(menu_default2, {
+        }), isEmpty ? empty2 : /* @__PURE__ */ React366.createElement(menu_default2, {
           selectable: true,
           multiple: filterMultiple,
           prefixCls: `${dropdownPrefixCls}-menu`,
@@ -72708,25 +73972,25 @@ html body {
         }
         return selectedKeys.length === 0;
       };
-      dropdownContent = /* @__PURE__ */ React357.createElement(React357.Fragment, null, getFilterComponent(), /* @__PURE__ */ React357.createElement("div", {
+      dropdownContent = /* @__PURE__ */ React366.createElement(React366.Fragment, null, getFilterComponent(), /* @__PURE__ */ React366.createElement("div", {
         className: `${prefixCls}-dropdown-btns`
-      }, /* @__PURE__ */ React357.createElement(Button_default, {
+      }, /* @__PURE__ */ React366.createElement(Button_default, {
         type: "link",
         size: "small",
         disabled: getResetDisabled(),
         onClick: () => onReset()
-      }, locale6.filterReset), /* @__PURE__ */ React357.createElement(Button_default, {
+      }, locale6.filterReset), /* @__PURE__ */ React366.createElement(Button_default, {
         type: "primary",
         size: "small",
         onClick: onConfirm
       }, locale6.filterConfirm)));
     }
     if (column2.filterDropdown) {
-      dropdownContent = /* @__PURE__ */ React357.createElement(OverrideProvider, {
+      dropdownContent = /* @__PURE__ */ React366.createElement(OverrideProvider, {
         selectable: void 0
       }, dropdownContent);
     }
-    dropdownContent = /* @__PURE__ */ React357.createElement(FilterWrapper_default, {
+    dropdownContent = /* @__PURE__ */ React366.createElement(FilterWrapper_default, {
       className: `${prefixCls}-dropdown`
     }, dropdownContent);
     const getDropdownTrigger = () => {
@@ -72736,9 +74000,9 @@ html body {
       } else if (column2.filterIcon) {
         filterIcon = column2.filterIcon;
       } else {
-        filterIcon = /* @__PURE__ */ React357.createElement(FilterFilled_default2, null);
+        filterIcon = /* @__PURE__ */ React366.createElement(FilterFilled_default2, null);
       }
-      return /* @__PURE__ */ React357.createElement("span", {
+      return /* @__PURE__ */ React366.createElement("span", {
         role: "button",
         tabIndex: -1,
         className: clsx(`${prefixCls}-trigger`, {
@@ -72751,9 +74015,9 @@ html body {
     };
     const triggerNode = getDropdownTrigger();
     if (inMeasureRow) {
-      return /* @__PURE__ */ React357.createElement("div", {
+      return /* @__PURE__ */ React366.createElement("div", {
         className: `${prefixCls}-column`
-      }, /* @__PURE__ */ React357.createElement("span", {
+      }, /* @__PURE__ */ React366.createElement("span", {
         className: `${tablePrefixCls}-column-title`
       }, children), triggerNode);
     }
@@ -72773,11 +74037,11 @@ html body {
         return dropdownContent;
       }
     }));
-    return /* @__PURE__ */ React357.createElement("div", {
+    return /* @__PURE__ */ React366.createElement("div", {
       className: `${prefixCls}-column`
-    }, /* @__PURE__ */ React357.createElement("span", {
+    }, /* @__PURE__ */ React366.createElement("span", {
       className: `${tablePrefixCls}-column-title`
-    }, children), /* @__PURE__ */ React357.createElement(dropdown_default3, __spreadValues({}, mergedDropdownProps)));
+    }, children), /* @__PURE__ */ React366.createElement(dropdown_default3, __spreadValues({}, mergedDropdownProps)));
   };
   var FilterDropdown_default = FilterDropdown;
 
@@ -72785,9 +74049,9 @@ html body {
   "use client";
   var collectFilterStates = (columns, init, pos) => {
     let filterStates = [];
-    (columns || []).forEach((column2, index) => {
+    (columns || []).forEach((column2, index2) => {
       var _a;
-      const columnPos = getColumnPos(index, pos);
+      const columnPos = getColumnPos(index2, pos);
       const filterDropdownIsDefined = column2.filterDropdown !== void 0;
       if (column2.filters || filterDropdownIsDefined || "onFilter" in column2) {
         if ("filteredValue" in column2) {
@@ -72817,8 +74081,8 @@ html body {
     return filterStates;
   };
   function injectFilter(prefixCls, dropdownPrefixCls, columns, filterStates, locale6, triggerFilter, getPopupContainer, pos, rootClassName) {
-    return columns.map((column2, index) => {
-      const columnPos = getColumnPos(index, pos);
+    return columns.map((column2, index2) => {
+      const columnPos = getColumnPos(index2, pos);
       const {
         filterOnClose = true,
         filterMultiple = true,
@@ -72832,7 +74096,7 @@ html body {
           key
         }) => columnKey === key);
         newColumn = __spreadProps(__spreadValues({}, newColumn), {
-          title: (renderProps) => /* @__PURE__ */ React358.createElement(FilterDropdown_default, {
+          title: (renderProps) => /* @__PURE__ */ React367.createElement(FilterDropdown_default, {
             tablePrefixCls: prefixCls,
             prefixCls: `${prefixCls}-filter`,
             dropdownPrefixCls,
@@ -72922,9 +74186,9 @@ html body {
       rootClassName
     } = props;
     const warning6 = devUseWarning("Table");
-    const mergedColumns = React358.useMemo(() => getMergedColumns(rawMergedColumns || []), [rawMergedColumns]);
-    const [filterStates, setFilterStates] = React358.useState(() => collectFilterStates(mergedColumns, true));
-    const mergedFilterStates = React358.useMemo(() => {
+    const mergedColumns = React367.useMemo(() => getMergedColumns(rawMergedColumns || []), [rawMergedColumns]);
+    const [filterStates, setFilterStates] = React367.useState(() => collectFilterStates(mergedColumns, true));
+    const mergedFilterStates = React367.useMemo(() => {
       const collectedStates = collectFilterStates(mergedColumns, false);
       if (collectedStates.length === 0) {
         return collectedStates;
@@ -72941,7 +74205,7 @@ html body {
         }
       });
       if (filteredKeysIsAllNotControlled) {
-        const keyList = (mergedColumns || []).map((column2, index) => getColumnKey(column2, getColumnPos(index)));
+        const keyList = (mergedColumns || []).map((column2, index2) => getColumnKey(column2, getColumnPos(index2)));
         return filterStates.filter(({
           key
         }) => keyList.includes(key)).map((item) => {
@@ -72955,7 +74219,7 @@ html body {
       true ? warning6(filteredKeysIsAllControlled, "usage", "Columns should all contain `filteredValue` or not contain `filteredValue`.") : void 0;
       return collectedStates;
     }, [mergedColumns, filterStates]);
-    const filters = React358.useMemo(() => generateFilterInfo(mergedFilterStates), [mergedFilterStates]);
+    const filters = React367.useMemo(() => generateFilterInfo(mergedFilterStates), [mergedFilterStates]);
     const triggerFilter = (filterState) => {
       const newFilterStates = mergedFilterStates.filter(({
         key
@@ -72970,15 +74234,15 @@ html body {
   var useFilter_default = useFilter;
 
   // ../custom_dashboard/node_modules/antd/es/table/hooks/useLazyKVMap.js
-  var React359 = __toESM(require_react());
+  var React368 = __toESM(require_react());
   var useLazyKVMap = (data, childrenColumnName, getRowKey) => {
-    const mapCacheRef = React359.useRef({});
+    const mapCacheRef = React368.useRef({});
     function getRecordByKey(key) {
       var _a;
       if (!mapCacheRef.current || mapCacheRef.current.data !== data || mapCacheRef.current.childrenColumnName !== childrenColumnName || mapCacheRef.current.getRowKey !== getRowKey) {
         let dig = function(records) {
-          records.forEach((record, index) => {
-            const rowKey = getRowKey(record, index);
+          records.forEach((record, index2) => {
+            const rowKey = getRowKey(record, index2);
             kvMap.set(rowKey, record);
             if (record && typeof record === "object" && childrenColumnName in record) {
               dig(record[childrenColumnName] || []);
@@ -73001,7 +74265,7 @@ html body {
   var useLazyKVMap_default = useLazyKVMap;
 
   // ../custom_dashboard/node_modules/antd/es/table/hooks/usePagination.js
-  var import_react129 = __toESM(require_react());
+  var import_react132 = __toESM(require_react());
   var DEFAULT_PAGE_SIZE = 10;
   function getPaginationParam(mergedPagination, pagination) {
     const param = {
@@ -73023,7 +74287,7 @@ html body {
     } = _a, paginationObj = __objRest(_a, [
       "total"
     ]);
-    const [innerPagination, setInnerPagination] = (0, import_react129.useState)(() => ({
+    const [innerPagination, setInnerPagination] = (0, import_react132.useState)(() => ({
       current: "defaultCurrent" in paginationObj ? paginationObj.defaultCurrent : 1,
       pageSize: "defaultPageSize" in paginationObj ? paginationObj.defaultPageSize : DEFAULT_PAGE_SIZE
     }));
@@ -73059,18 +74323,18 @@ html body {
   var usePagination_default = usePagination;
 
   // ../custom_dashboard/node_modules/antd/es/table/hooks/useSorter.js
-  var React362 = __toESM(require_react());
+  var React371 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CaretDownOutlined.js
-  var React360 = __toESM(require_react());
+  var React369 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/CaretDownOutlined.js
   var CaretDownOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "0 0 1024 1024", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z" } }] }, "name": "caret-down", "theme": "outlined" };
   var CaretDownOutlined_default = CaretDownOutlined;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CaretDownOutlined.js
-  function _extends80() {
-    _extends80 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends82() {
+    _extends82 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -73081,28 +74345,28 @@ html body {
       }
       return target;
     };
-    return _extends80.apply(this, arguments);
+    return _extends82.apply(this, arguments);
   }
-  var CaretDownOutlined2 = (props, ref) => /* @__PURE__ */ React360.createElement(AntdIcon_default, _extends80({}, props, {
+  var CaretDownOutlined2 = (props, ref) => /* @__PURE__ */ React369.createElement(AntdIcon_default, _extends82({}, props, {
     ref,
     icon: CaretDownOutlined_default
   }));
-  var RefIcon27 = /* @__PURE__ */ React360.forwardRef(CaretDownOutlined2);
+  var RefIcon27 = /* @__PURE__ */ React369.forwardRef(CaretDownOutlined2);
   if (true) {
     RefIcon27.displayName = "CaretDownOutlined";
   }
   var CaretDownOutlined_default2 = RefIcon27;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CaretUpOutlined.js
-  var React361 = __toESM(require_react());
+  var React370 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/CaretUpOutlined.js
   var CaretUpOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "0 0 1024 1024", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M858.9 689L530.5 308.2c-9.4-10.9-27.5-10.9-37 0L165.1 689c-12.2 14.2-1.2 35 18.5 35h656.8c19.7 0 30.7-20.8 18.5-35z" } }] }, "name": "caret-up", "theme": "outlined" };
   var CaretUpOutlined_default = CaretUpOutlined;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CaretUpOutlined.js
-  function _extends81() {
-    _extends81 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends83() {
+    _extends83 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -73113,13 +74377,13 @@ html body {
       }
       return target;
     };
-    return _extends81.apply(this, arguments);
+    return _extends83.apply(this, arguments);
   }
-  var CaretUpOutlined2 = (props, ref) => /* @__PURE__ */ React361.createElement(AntdIcon_default, _extends81({}, props, {
+  var CaretUpOutlined2 = (props, ref) => /* @__PURE__ */ React370.createElement(AntdIcon_default, _extends83({}, props, {
     ref,
     icon: CaretUpOutlined_default
   }));
-  var RefIcon28 = /* @__PURE__ */ React361.forwardRef(CaretUpOutlined2);
+  var RefIcon28 = /* @__PURE__ */ React370.forwardRef(CaretUpOutlined2);
   if (true) {
     RefIcon28.displayName = "CaretUpOutlined";
   }
@@ -73160,8 +74424,8 @@ html body {
         sortOrder: column2.sortOrder
       });
     };
-    (columns || []).forEach((column2, index) => {
-      const columnPos = getColumnPos(index, pos);
+    (columns || []).forEach((column2, index2) => {
+      const columnPos = getColumnPos(index2, pos);
       if (column2.children) {
         if ("sortOrder" in column2) {
           pushState(column2, columnPos);
@@ -73183,8 +74447,8 @@ html body {
     return sortStates;
   };
   var injectSorter = (prefixCls, columns, sorterStates, triggerSorter, defaultSortDirections, tableLocale, tableShowSorterTooltip, pos, a11yLocale) => {
-    const finalColumns = (columns || []).map((column2, index) => {
-      const columnPos = getColumnPos(index, pos);
+    const finalColumns = (columns || []).map((column2, index2) => {
+      const columnPos = getColumnPos(index2, pos);
       let newColumn = column2;
       if (newColumn.sorter) {
         const sortDirections = newColumn.sortDirections || defaultSortDirections;
@@ -73201,21 +74465,21 @@ html body {
             sortOrder
           });
         } else {
-          const upNode = sortDirections.includes(ASCEND) && /* @__PURE__ */ React362.createElement(CaretUpOutlined_default2, {
+          const upNode = sortDirections.includes(ASCEND) && /* @__PURE__ */ React371.createElement(CaretUpOutlined_default2, {
             className: clsx(`${prefixCls}-column-sorter-up`, {
               active: sortOrder === ASCEND
             })
           });
-          const downNode = sortDirections.includes(DESCEND) && /* @__PURE__ */ React362.createElement(CaretDownOutlined_default2, {
+          const downNode = sortDirections.includes(DESCEND) && /* @__PURE__ */ React371.createElement(CaretDownOutlined_default2, {
             className: clsx(`${prefixCls}-column-sorter-down`, {
               active: sortOrder === DESCEND
             })
           });
-          sorter = /* @__PURE__ */ React362.createElement("span", {
+          sorter = /* @__PURE__ */ React371.createElement("span", {
             className: clsx(`${prefixCls}-column-sorter`, {
               [`${prefixCls}-column-sorter-full`]: !!(upNode && downNode)
             })
-          }, /* @__PURE__ */ React362.createElement("span", {
+          }, /* @__PURE__ */ React371.createElement("span", {
             className: `${prefixCls}-column-sorter-inner`,
             "aria-hidden": "true"
           }, upNode, downNode));
@@ -73242,19 +74506,19 @@ html body {
           }),
           title: (renderProps) => {
             const columnSortersClass = `${prefixCls}-column-sorters`;
-            const renderColumnTitleWrapper = /* @__PURE__ */ React362.createElement("span", {
+            const renderColumnTitleWrapper = /* @__PURE__ */ React371.createElement("span", {
               className: `${prefixCls}-column-title`
             }, renderColumnTitle(column2.title, renderProps));
-            const renderSortTitle = /* @__PURE__ */ React362.createElement("div", {
+            const renderSortTitle = /* @__PURE__ */ React371.createElement("div", {
               className: columnSortersClass
             }, renderColumnTitleWrapper, sorter);
             if (showSorterTooltip) {
               if (typeof showSorterTooltip !== "boolean" && (showSorterTooltip == null ? void 0 : showSorterTooltip.target) === "sorter-icon") {
-                return /* @__PURE__ */ React362.createElement("div", {
+                return /* @__PURE__ */ React371.createElement("div", {
                   className: clsx(columnSortersClass, `${columnSortersClass}-tooltip-target-sorter`)
-                }, renderColumnTitleWrapper, /* @__PURE__ */ React362.createElement(tooltip_default, __spreadValues({}, tooltipProps), sorter));
+                }, renderColumnTitleWrapper, /* @__PURE__ */ React371.createElement(tooltip_default, __spreadValues({}, tooltipProps), sorter));
               }
-              return /* @__PURE__ */ React362.createElement(tooltip_default, __spreadValues({}, tooltipProps), renderSortTitle);
+              return /* @__PURE__ */ React371.createElement(tooltip_default, __spreadValues({}, tooltipProps), renderSortTitle);
             }
             return renderSortTitle;
           },
@@ -73388,11 +74652,11 @@ html body {
       onSorterChange,
       globalLocale
     } = props;
-    const [sortStates, setSortStates] = React362.useState(() => collectSortStates(mergedColumns, true));
+    const [sortStates, setSortStates] = React371.useState(() => collectSortStates(mergedColumns, true));
     const getColumnKeys = (columns, pos) => {
       const newKeys = [];
-      columns.forEach((item, index) => {
-        const columnPos = getColumnPos(index, pos);
+      columns.forEach((item, index2) => {
+        const columnPos = getColumnPos(index2, pos);
         newKeys.push(getColumnKey(item, columnPos));
         if (Array.isArray(item.children)) {
           const childKeys = getColumnKeys(item.children, columnPos);
@@ -73401,7 +74665,7 @@ html body {
       });
       return newKeys;
     };
-    const mergedSorterStates = React362.useMemo(() => {
+    const mergedSorterStates = React371.useMemo(() => {
       let validate = true;
       const collectedStates = collectSortStates(mergedColumns, false);
       if (!collectedStates.length) {
@@ -73440,7 +74704,7 @@ html body {
       });
       return validateStates;
     }, [mergedColumns, sortStates]);
-    const columnTitleSorterProps = React362.useMemo(() => {
+    const columnTitleSorterProps = React371.useMemo(() => {
       var _a, _b;
       const sortColumns = mergedSorterStates.map(({
         column: column2,
@@ -73474,7 +74738,7 @@ html body {
   var useSorter_default = useFilterSorter;
 
   // ../custom_dashboard/node_modules/antd/es/table/hooks/useTitleColumns.js
-  var React363 = __toESM(require_react());
+  var React372 = __toESM(require_react());
   var fillTitle = (columns, columnTitleProps) => {
     const finalColumns = columns.map((column2) => {
       const cloneColumn = __spreadValues({}, column2);
@@ -73487,7 +74751,7 @@ html body {
     return finalColumns;
   };
   var useTitleColumns = (columnTitleProps) => {
-    const filledColumns = React363.useCallback((columns) => fillTitle(columns, columnTitleProps), [columnTitleProps]);
+    const filledColumns = React372.useCallback((columns) => fillTitle(columns, columnTitleProps), [columnTitleProps]);
     return [filledColumns];
   };
   var useTitleColumns_default = useTitleColumns;
@@ -74691,7 +75955,7 @@ html body {
       })
     };
   };
-  var prepareComponentToken16 = (token2) => {
+  var prepareComponentToken17 = (token2) => {
     const {
       colorFillAlter,
       colorBgContainer,
@@ -74764,7 +76028,7 @@ html body {
     };
   };
   var zIndexTableFixed = 2;
-  var style_default21 = genStyleHooks("Table", (token2) => {
+  var style_default22 = genStyleHooks("Table", (token2) => {
     const {
       colorTextHeading,
       colorSplit,
@@ -74842,7 +76106,7 @@ html body {
       tableScrollBg: colorSplit
     });
     return [genTableStyle(tableToken), pagination_default2(tableToken), summary_default(tableToken), sorter_default(tableToken), filter_default(tableToken), bordered_default2(tableToken), radius_default(tableToken), expand_default(tableToken), summary_default(tableToken), empty_default3(tableToken), selection_default(tableToken), fixed_default(tableToken), sticky_default(tableToken), ellipsis_default(tableToken), size_default(tableToken), rtl_default2(tableToken), virtual_default(tableToken)];
-  }, prepareComponentToken16, {
+  }, prepareComponentToken17, {
     resetFont: false,
     unitless: {
       expandIconScale: true
@@ -74889,10 +76153,10 @@ html body {
       virtual
     } = props;
     const warning6 = devUseWarning("Table");
-    const baseColumns = React364.useMemo(() => columns || convertChildrenToColumns(children), [columns, children]);
-    const needResponsive = React364.useMemo(() => baseColumns.some((col) => col.responsive), [baseColumns]);
+    const baseColumns = React373.useMemo(() => columns || convertChildrenToColumns(children), [columns, children]);
+    const needResponsive = React373.useMemo(() => baseColumns.some((col) => col.responsive), [baseColumns]);
     const screens = useBreakpoint_default(needResponsive);
-    const mergedColumns = React364.useMemo(() => {
+    const mergedColumns = React373.useMemo(() => {
       const matched = new Set(Object.keys(screens).filter((m) => screens[m]));
       return baseColumns.filter((c) => !c.responsive || c.responsive.some((r3) => matched.has(r3)));
     }, [baseColumns, screens]);
@@ -74900,7 +76164,7 @@ html body {
     const {
       locale: contextLocale = en_US_default6,
       table
-    } = React364.useContext(ConfigContext);
+    } = React373.useContext(ConfigContext);
     const {
       getPrefixCls,
       direction,
@@ -74936,7 +76200,7 @@ html body {
     const dropdownPrefixCls = getPrefixCls("dropdown", customizeDropdownPrefixCls);
     const [, token2] = useToken();
     const rootCls = useCSSVarCls_default(prefixCls);
-    const [hashId, cssVarCls] = style_default21(prefixCls, rootCls);
+    const [hashId, cssVarCls] = style_default22(prefixCls, rootCls);
     const mergedExpandable = __spreadProps(__spreadValues({
       childrenColumnName: legacyChildrenColumnName,
       expandIconColumnIndex
@@ -74946,7 +76210,7 @@ html body {
     const {
       childrenColumnName = "children"
     } = mergedExpandable;
-    const expandType = React364.useMemo(() => {
+    const expandType = React373.useMemo(() => {
       if (rawData.some((item) => item == null ? void 0 : item[childrenColumnName])) {
         return "nest";
       }
@@ -74956,11 +76220,11 @@ html body {
       return null;
     }, [childrenColumnName, rawData]);
     const internalRef = {
-      body: React364.useRef(null)
+      body: React373.useRef(null)
     };
     const getContainerWidth = useContainerWidth(prefixCls);
-    const rootRef = React364.useRef(null);
-    const tblRef = React364.useRef(null);
+    const rootRef = React373.useRef(null);
+    const tblRef = React373.useRef(null);
     useProxyImperativeHandle(ref, () => __spreadProps(__spreadValues({}, tblRef.current), {
       nativeElement: rootRef.current
     }));
@@ -74969,7 +76233,7 @@ html body {
     if (true) {
       true ? warning6(!(typeof rowKey === "function" && rowKey.length > 1), "usage", "`index` parameter of `rowKey` function is deprecated. There is no guarantee that it will work as expected.") : void 0;
     }
-    const getRowKey = React364.useMemo(() => {
+    const getRowKey = React373.useMemo(() => {
       if (typeof rowKey === "function") {
         return rowKey;
       }
@@ -75014,7 +76278,7 @@ html body {
       showSorterTooltip,
       globalLocale
     });
-    const sortedData = React364.useMemo(() => getSortData(rawData, sortStates, childrenColumnName), [childrenColumnName, rawData, sortStates]);
+    const sortedData = React373.useMemo(() => getSortData(rawData, sortStates, childrenColumnName), [childrenColumnName, rawData, sortStates]);
     changeEventInfo.sorter = getSorters();
     changeEventInfo.sorterStates = sortStates;
     const onFilterChange = (filters2, filterStates2) => {
@@ -75035,7 +76299,7 @@ html body {
     const mergedData = getFilterData(sortedData, filterStates, childrenColumnName);
     changeEventInfo.filters = filters;
     changeEventInfo.filterStates = filterStates;
-    const columnTitleProps = React364.useMemo(() => {
+    const columnTitleProps = React373.useMemo(() => {
       const mergedFilters = {};
       Object.keys(filters).forEach((filterKey) => {
         if (filters[filterKey] !== null) {
@@ -75058,7 +76322,7 @@ html body {
     const [mergedPagination, resetPagination] = usePagination_default(mergedData.length, onPaginationChange, pagination);
     changeEventInfo.pagination = pagination === false ? {} : getPaginationParam(mergedPagination, pagination);
     changeEventInfo.resetPagination = resetPagination;
-    const pageData = React364.useMemo(() => {
+    const pageData = React373.useMemo(() => {
       if (pagination === false || !mergedPagination.pageSize) {
         return mergedData;
       }
@@ -75088,10 +76352,10 @@ html body {
       locale: tableLocale,
       getPopupContainer: getPopupContainer || getContextPopupContainer
     }, rowSelection);
-    const internalRowClassName = (record, index, indent) => {
-      const resolvedRowClassName = typeof rowClassName === "function" ? rowClassName(record, index, indent) : rowClassName;
+    const internalRowClassName = (record, index2, indent) => {
+      const resolvedRowClassName = typeof rowClassName === "function" ? rowClassName(record, index2, indent) : rowClassName;
       return clsx({
-        [`${prefixCls}-row-selected`]: selectedKeySet.has(getRowKey(record, index))
+        [`${prefixCls}-row-selected`]: selectedKeySet.has(getRowKey(record, index2))
       }, resolvedRowClassName);
     };
     mergedExpandable.__PARENT_RENDER_ICON__ = mergedExpandable.expandIcon;
@@ -75104,7 +76368,7 @@ html body {
     if (typeof mergedExpandable.indentSize !== "number") {
       mergedExpandable.indentSize = typeof indentSize === "number" ? indentSize : 15;
     }
-    const transformColumns = React364.useCallback((innerColumns) => transformTitleColumns(transformSelectionColumns(transformFilterColumns(transformSorterColumns(innerColumns)))), [transformSorterColumns, transformFilterColumns, transformSelectionColumns]);
+    const transformColumns = React373.useCallback((innerColumns) => transformTitleColumns(transformSelectionColumns(transformFilterColumns(transformSorterColumns(innerColumns)))), [transformSorterColumns, transformFilterColumns, transformSelectionColumns]);
     let topPaginationNode;
     let bottomPaginationNode;
     if (pagination !== false && (mergedPagination == null ? void 0 : mergedPagination.total)) {
@@ -75114,7 +76378,7 @@ html body {
       } else {
         paginationSize = mergedSize === "small" || mergedSize === "medium" ? "small" : void 0;
       }
-      const renderPagination = (placement2 = "end") => /* @__PURE__ */ React364.createElement(pagination_default, __spreadProps(__spreadValues({}, mergedPagination), {
+      const renderPagination = (placement2 = "end") => /* @__PURE__ */ React373.createElement(pagination_default, __spreadProps(__spreadValues({}, mergedPagination), {
         classNames: mergedClassNames.pagination,
         styles: mergedStyles.pagination,
         className: clsx(`${prefixCls}-pagination ${prefixCls}-pagination-${placement2}`, mergedPagination.className),
@@ -75151,7 +76415,7 @@ html body {
         warning6.deprecated(!position3, "pagination.position", "pagination.placement");
       }
     }
-    const spinProps = React364.useMemo(() => {
+    const spinProps = React373.useMemo(() => {
       if (typeof loading === "boolean") {
         return {
           spinning: loading
@@ -75168,20 +76432,20 @@ html body {
       [`${prefixCls}-wrapper-rtl`]: direction === "rtl"
     }, className, rootClassName, mergedClassNames.root, hashId);
     const mergedStyle = __spreadValues(__spreadValues(__spreadValues({}, mergedStyles.root), contextStyle), style2);
-    const mergedEmptyNode = React364.useMemo(() => {
+    const mergedEmptyNode = React373.useMemo(() => {
       if ((spinProps == null ? void 0 : spinProps.spinning) && rawData === EMPTY_LIST5) {
         return null;
       }
       if (typeof (locale6 == null ? void 0 : locale6.emptyText) !== "undefined") {
         return locale6.emptyText;
       }
-      return (renderEmpty == null ? void 0 : renderEmpty("Table")) || /* @__PURE__ */ React364.createElement(defaultRenderEmpty_default, {
+      return (renderEmpty == null ? void 0 : renderEmpty("Table")) || /* @__PURE__ */ React373.createElement(defaultRenderEmpty_default, {
         componentName: "Table"
       });
     }, [spinProps == null ? void 0 : spinProps.spinning, rawData, locale6 == null ? void 0 : locale6.emptyText, renderEmpty]);
     const TableComponent = virtual ? VirtualTable_default2 : RcTable_default;
     const virtualProps = {};
-    const listItemHeight = React364.useMemo(() => {
+    const listItemHeight = React373.useMemo(() => {
       const {
         fontSize,
         lineHeight,
@@ -75203,13 +76467,13 @@ html body {
     if (virtual) {
       virtualProps.listItemHeight = listItemHeight;
     }
-    return /* @__PURE__ */ React364.createElement("div", {
+    return /* @__PURE__ */ React373.createElement("div", {
       ref: rootRef,
       className: wrappercls,
       style: mergedStyle
-    }, /* @__PURE__ */ React364.createElement(spin_default, __spreadValues({
+    }, /* @__PURE__ */ React373.createElement(spin_default, __spreadValues({
       spinning: false
-    }, spinProps), topPaginationNode, /* @__PURE__ */ React364.createElement(TableComponent, __spreadProps(__spreadValues(__spreadValues({}, virtualProps), tableProps), {
+    }, spinProps), topPaginationNode, /* @__PURE__ */ React373.createElement(TableComponent, __spreadProps(__spreadValues(__spreadValues({}, virtualProps), tableProps), {
       scroll: mergedScroll,
       classNames: mergedClassNames,
       styles: mergedStyles,
@@ -75232,26 +76496,26 @@ html body {
       internalRefs: internalRef,
       transformColumns,
       getContainerWidth,
-      measureRowRender: (measureRow) => /* @__PURE__ */ React364.createElement(TableMeasureRowContext_default.Provider, {
+      measureRowRender: (measureRow) => /* @__PURE__ */ React373.createElement(TableMeasureRowContext_default.Provider, {
         value: true
-      }, /* @__PURE__ */ React364.createElement(config_provider_default, {
+      }, /* @__PURE__ */ React373.createElement(config_provider_default, {
         getPopupContainer: (node2) => node2
       }, measureRow))
     })), bottomPaginationNode));
   };
-  var InternalTable_default = /* @__PURE__ */ React364.forwardRef(InternalTable);
+  var InternalTable_default = /* @__PURE__ */ React373.forwardRef(InternalTable);
 
   // ../custom_dashboard/node_modules/antd/es/table/Table.js
   "use client";
   var Table2 = (props, ref) => {
-    const renderTimesRef = React365.useRef(0);
+    const renderTimesRef = React374.useRef(0);
     renderTimesRef.current += 1;
-    return /* @__PURE__ */ React365.createElement(InternalTable_default, __spreadProps(__spreadValues({}, props), {
+    return /* @__PURE__ */ React374.createElement(InternalTable_default, __spreadProps(__spreadValues({}, props), {
       ref,
       _renderTimes: renderTimesRef.current
     }));
   };
-  var ForwardTable = /* @__PURE__ */ React365.forwardRef(Table2);
+  var ForwardTable = /* @__PURE__ */ React374.forwardRef(Table2);
   ForwardTable.SELECTION_COLUMN = SELECTION_COLUMN;
   ForwardTable.EXPAND_COLUMN = EXPAND_COLUMN;
   ForwardTable.SELECTION_ALL = SELECTION_ALL;
@@ -75269,6 +76533,2217 @@ html body {
   "use client";
   var table_default = Table_default2;
 
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/DeleteOutlined.js
+  var React375 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/DeleteOutlined.js
+  var DeleteOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M360 184h-8c4.4 0 8-3.6 8-8v8h304v-8c0 4.4 3.6 8 8 8h-8v72h72v-80c0-35.3-28.7-64-64-64H352c-35.3 0-64 28.7-64 64v80h72v-72zm504 72H160c-17.7 0-32 14.3-32 32v32c0 4.4 3.6 8 8 8h60.4l24.7 523c1.6 34.1 29.8 61 63.9 61h454c34.2 0 62.3-26.8 63.9-61l24.7-523H888c4.4 0 8-3.6 8-8v-32c0-17.7-14.3-32-32-32zM731.3 840H292.7l-24.2-512h487l-24.2 512z" } }] }, "name": "delete", "theme": "outlined" };
+  var DeleteOutlined_default = DeleteOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/DeleteOutlined.js
+  function _extends84() {
+    _extends84 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends84.apply(this, arguments);
+  }
+  var DeleteOutlined2 = (props, ref) => /* @__PURE__ */ React375.createElement(AntdIcon_default, _extends84({}, props, {
+    ref,
+    icon: DeleteOutlined_default
+  }));
+  var RefIcon29 = /* @__PURE__ */ React375.forwardRef(DeleteOutlined2);
+  if (true) {
+    RefIcon29.displayName = "DeleteOutlined";
+  }
+  var DeleteOutlined_default2 = RefIcon29;
+
+  // ../custom_dashboard/node_modules/antd/es/upload/Dragger.js
+  var React385 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/antd/es/upload/Upload.js
+  var React384 = __toESM(require_react());
+  var import_react_dom8 = __toESM(require_react_dom());
+
+  // ../custom_dashboard/node_modules/@rc-component/upload/es/Upload.js
+  var import_react134 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@rc-component/upload/es/AjaxUploader.js
+  var import_react133 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@rc-component/upload/es/attr-accept.js
+  var attr_accept_default = (file, acceptedFiles) => {
+    if (file && acceptedFiles) {
+      const acceptedFilesArray = Array.isArray(acceptedFiles) ? acceptedFiles : acceptedFiles.split(",");
+      const fileName = file.name || "";
+      const mimeType = file.type || "";
+      const baseMimeType = mimeType.replace(/\/.*$/, "");
+      return acceptedFilesArray.some((type5) => {
+        const validType = type5.trim();
+        if (/^\*(\/\*)?$/.test(type5)) {
+          return true;
+        }
+        if (validType.charAt(0) === ".") {
+          const lowerFileName = fileName.toLowerCase();
+          const lowerType = validType.toLowerCase();
+          let affixList = [lowerType];
+          if (lowerType === ".jpg" || lowerType === ".jpeg") {
+            affixList = [".jpg", ".jpeg"];
+          }
+          return affixList.some((affix) => lowerFileName.endsWith(affix));
+        }
+        if (/\/\*$/.test(validType)) {
+          return baseMimeType === validType.replace(/\/.*$/, "");
+        }
+        if (mimeType === validType) {
+          return true;
+        }
+        if (/^\w+$/.test(validType)) {
+          warning_default(false, `Upload takes an invalidate 'accept' type '${validType}'.Skip for check.`);
+          return true;
+        }
+        return false;
+      });
+    }
+    return true;
+  };
+
+  // ../custom_dashboard/node_modules/@rc-component/upload/es/request.js
+  function getError(option, xhr) {
+    const msg = `cannot ${option.method} ${option.action} ${xhr.status}'`;
+    const err = new Error(msg);
+    err.status = xhr.status;
+    err.method = option.method;
+    err.url = option.action;
+    return err;
+  }
+  function getBody(xhr) {
+    const text = xhr.responseText || xhr.response;
+    if (!text) {
+      return text;
+    }
+    try {
+      return JSON.parse(text);
+    } catch (e3) {
+      return text;
+    }
+  }
+  function upload(option) {
+    const xhr = new XMLHttpRequest();
+    if (option.onProgress && xhr.upload) {
+      xhr.upload.onprogress = function progress(e3) {
+        if (e3.total > 0) {
+          e3.percent = e3.loaded / e3.total * 100;
+        }
+        option.onProgress(e3);
+      };
+    }
+    const formData = new FormData();
+    if (option.data) {
+      Object.keys(option.data).forEach((key) => {
+        const value = option.data[key];
+        if (Array.isArray(value)) {
+          value.forEach((item) => {
+            formData.append(`${key}[]`, item);
+          });
+          return;
+        }
+        formData.append(key, value);
+      });
+    }
+    if (option.file instanceof Blob) {
+      formData.append(option.filename, option.file, option.file.name);
+    } else {
+      formData.append(option.filename, option.file);
+    }
+    xhr.onerror = function error(e3) {
+      option.onError(e3);
+    };
+    xhr.onload = function onload() {
+      if (xhr.status < 200 || xhr.status >= 300) {
+        return option.onError(getError(option, xhr), getBody(xhr));
+      }
+      return option.onSuccess(getBody(xhr), xhr);
+    };
+    xhr.open(option.method, option.action, true);
+    if (option.withCredentials && "withCredentials" in xhr) {
+      xhr.withCredentials = true;
+    }
+    const headers = option.headers || {};
+    if (headers["X-Requested-With"] !== null) {
+      xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+    }
+    Object.keys(headers).forEach((h) => {
+      if (headers[h] !== null) {
+        xhr.setRequestHeader(h, headers[h]);
+      }
+    });
+    xhr.send(formData);
+    return {
+      abort() {
+        xhr.abort();
+      }
+    };
+  }
+
+  // ../custom_dashboard/node_modules/@rc-component/upload/es/traverseFileTree.js
+  var traverseFileTree = async (files, isAccepted) => {
+    const flattenFileList = [];
+    const progressFileList = [];
+    files.forEach((file) => progressFileList.push(file.webkitGetAsEntry()));
+    async function readDirectory(directory) {
+      const dirReader = directory.createReader();
+      const entries = [];
+      while (true) {
+        const results = await new Promise((resolve) => {
+          dirReader.readEntries(resolve, () => resolve([]));
+        });
+        const n2 = results.length;
+        if (!n2) {
+          break;
+        }
+        for (let i = 0; i < n2; i++) {
+          entries.push(results[i]);
+        }
+      }
+      return entries;
+    }
+    async function readFile(item) {
+      return new Promise((reslove) => {
+        item.file((file) => {
+          if (isAccepted(file)) {
+            if (item.fullPath && !file.webkitRelativePath) {
+              Object.defineProperties(file, {
+                webkitRelativePath: {
+                  writable: true
+                }
+              });
+              file.webkitRelativePath = item.fullPath.replace(/^\//, "");
+              Object.defineProperties(file, {
+                webkitRelativePath: {
+                  writable: false
+                }
+              });
+            }
+            reslove(file);
+          } else {
+            reslove(null);
+          }
+        });
+      });
+    }
+    const _traverseFileTree = async (item, path) => {
+      if (!item) {
+        return;
+      }
+      item.path = path || "";
+      if (item.isFile) {
+        const file = await readFile(item);
+        if (file) {
+          flattenFileList.push(file);
+        }
+      } else if (item.isDirectory) {
+        const entries = await readDirectory(item);
+        progressFileList.push(...entries);
+      }
+    };
+    let wipIndex = 0;
+    while (wipIndex < progressFileList.length) {
+      await _traverseFileTree(progressFileList[wipIndex]);
+      wipIndex++;
+    }
+    return flattenFileList;
+  };
+  var traverseFileTree_default = traverseFileTree;
+
+  // ../custom_dashboard/node_modules/@rc-component/upload/es/uid.js
+  var now = +new Date();
+  var index = 0;
+  function uid() {
+    return `rc-upload-${now}-${++index}`;
+  }
+
+  // ../custom_dashboard/node_modules/@rc-component/upload/es/AjaxUploader.js
+  function _extends85() {
+    _extends85 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends85.apply(this, arguments);
+  }
+  var AjaxUploader = class extends import_react133.Component {
+    constructor() {
+      super(...arguments);
+      __publicField(this, "state", {
+        uid: uid()
+      });
+      __publicField(this, "reqs", {});
+      __publicField(this, "fileInput");
+      __publicField(this, "_isMounted");
+      __publicField(this, "filterFile", (file, force = false) => {
+        const {
+          accept,
+          directory
+        } = this.props;
+        let filterFn;
+        let acceptFormat;
+        if (typeof accept === "string") {
+          acceptFormat = accept;
+        } else {
+          const {
+            filter: filter2,
+            format: format2
+          } = accept || {};
+          acceptFormat = format2;
+          if (filter2 === "native") {
+            filterFn = () => true;
+          } else {
+            filterFn = filter2;
+          }
+        }
+        const mergedFilter = filterFn || (directory || force ? (currentFile) => attr_accept_default(currentFile, acceptFormat) : () => true);
+        return mergedFilter(file);
+      });
+      __publicField(this, "onChange", (e3) => {
+        const {
+          files
+        } = e3.target;
+        const acceptedFiles = [...files].filter((file) => this.filterFile(file));
+        this.uploadFiles(acceptedFiles);
+        this.reset();
+      });
+      __publicField(this, "onClick", (event) => {
+        const el = this.fileInput;
+        if (!el) {
+          return;
+        }
+        const target = event.target;
+        const {
+          onClick
+        } = this.props;
+        if (target && target.tagName === "BUTTON") {
+          const parent = el.parentNode;
+          parent.focus();
+          target.blur();
+        }
+        el.click();
+        if (onClick) {
+          onClick(event);
+        }
+      });
+      __publicField(this, "onKeyDown", (e3) => {
+        if (e3.key === "Enter") {
+          this.onClick(e3);
+        }
+      });
+      __publicField(this, "onDataTransferFiles", async (dataTransfer, existFileCallback) => {
+        const {
+          multiple,
+          directory
+        } = this.props;
+        const items = [...dataTransfer.items || []];
+        let files = [...dataTransfer.files || []];
+        if (files.length > 0 || items.some((item) => item.kind === "file")) {
+          existFileCallback == null ? void 0 : existFileCallback();
+        }
+        if (directory) {
+          files = await traverseFileTree_default(Array.prototype.slice.call(items), this.filterFile);
+          this.uploadFiles(files);
+        } else {
+          let acceptFiles = [...files].filter((file) => this.filterFile(file, true));
+          if (multiple === false) {
+            acceptFiles = files.slice(0, 1);
+          }
+          this.uploadFiles(acceptFiles);
+        }
+      });
+      __publicField(this, "onFilePaste", async (e3) => {
+        const {
+          pastable
+        } = this.props;
+        if (!pastable) {
+          return;
+        }
+        if (e3.type === "paste") {
+          const clipboardData = e3.clipboardData;
+          return this.onDataTransferFiles(clipboardData, () => {
+            e3.preventDefault();
+          });
+        }
+      });
+      __publicField(this, "onFileDragOver", (e3) => {
+        e3.preventDefault();
+      });
+      __publicField(this, "onFileDrop", async (e3) => {
+        e3.preventDefault();
+        if (e3.type === "drop") {
+          const dataTransfer = e3.dataTransfer;
+          return this.onDataTransferFiles(dataTransfer);
+        }
+      });
+      __publicField(this, "uploadFiles", (files) => {
+        const originFiles = [...files];
+        const postFiles = originFiles.map((file) => {
+          file.uid = uid();
+          return this.processFile(file, originFiles);
+        });
+        Promise.all(postFiles).then((fileList) => {
+          const {
+            onBatchStart
+          } = this.props;
+          onBatchStart == null ? void 0 : onBatchStart(fileList.map(({
+            origin,
+            parsedFile
+          }) => ({
+            file: origin,
+            parsedFile
+          })));
+          fileList.filter((file) => file.parsedFile !== null).forEach((file) => {
+            this.post(file);
+          });
+        });
+      });
+      __publicField(this, "processFile", async (file, fileList) => {
+        const {
+          beforeUpload
+        } = this.props;
+        let transformedFile = file;
+        if (beforeUpload) {
+          try {
+            transformedFile = await beforeUpload(file, fileList);
+          } catch (e3) {
+            transformedFile = false;
+          }
+          if (transformedFile === false) {
+            return {
+              origin: file,
+              parsedFile: null,
+              action: null,
+              data: null
+            };
+          }
+        }
+        const {
+          action
+        } = this.props;
+        let mergedAction;
+        if (typeof action === "function") {
+          mergedAction = await action(file);
+        } else {
+          mergedAction = action;
+        }
+        const {
+          data
+        } = this.props;
+        let mergedData;
+        if (typeof data === "function") {
+          mergedData = await data(file);
+        } else {
+          mergedData = data;
+        }
+        const parsedData = (typeof transformedFile === "object" || typeof transformedFile === "string") && transformedFile ? transformedFile : file;
+        let parsedFile;
+        if (parsedData instanceof File) {
+          parsedFile = parsedData;
+        } else {
+          parsedFile = new File([parsedData], file.name, {
+            type: file.type
+          });
+        }
+        const mergedParsedFile = parsedFile;
+        mergedParsedFile.uid = file.uid;
+        return {
+          origin: file,
+          data: mergedData,
+          parsedFile: mergedParsedFile,
+          action: mergedAction
+        };
+      });
+      __publicField(this, "saveFileInput", (node2) => {
+        this.fileInput = node2;
+      });
+    }
+    componentDidMount() {
+      this._isMounted = true;
+      const {
+        pastable
+      } = this.props;
+      if (pastable) {
+        document.addEventListener("paste", this.onFilePaste);
+      }
+    }
+    componentWillUnmount() {
+      this._isMounted = false;
+      this.abort();
+      document.removeEventListener("paste", this.onFilePaste);
+    }
+    componentDidUpdate(prevProps) {
+      const {
+        pastable
+      } = this.props;
+      if (pastable && !prevProps.pastable) {
+        document.addEventListener("paste", this.onFilePaste);
+      } else if (!pastable && prevProps.pastable) {
+        document.removeEventListener("paste", this.onFilePaste);
+      }
+    }
+    post({
+      data,
+      origin,
+      action,
+      parsedFile
+    }) {
+      if (!this._isMounted) {
+        return;
+      }
+      const {
+        onStart,
+        customRequest,
+        name,
+        headers,
+        withCredentials,
+        method: method4
+      } = this.props;
+      const {
+        uid: uid2
+      } = origin;
+      const request = customRequest || upload;
+      const requestOption = {
+        action,
+        filename: name,
+        data,
+        file: parsedFile,
+        headers,
+        withCredentials,
+        method: method4 || "post",
+        onProgress: (e3) => {
+          const {
+            onProgress
+          } = this.props;
+          onProgress == null ? void 0 : onProgress(e3, parsedFile);
+        },
+        onSuccess: (ret, xhr) => {
+          const {
+            onSuccess
+          } = this.props;
+          onSuccess == null ? void 0 : onSuccess(ret, parsedFile, xhr);
+          delete this.reqs[uid2];
+        },
+        onError: (err, ret) => {
+          const {
+            onError
+          } = this.props;
+          onError == null ? void 0 : onError(err, ret, parsedFile);
+          delete this.reqs[uid2];
+        }
+      };
+      onStart(origin);
+      this.reqs[uid2] = request(requestOption, {
+        defaultRequest: upload
+      });
+    }
+    reset() {
+      this.setState({
+        uid: uid()
+      });
+    }
+    abort(file) {
+      const {
+        reqs
+      } = this;
+      if (file) {
+        const uid2 = file.uid ? file.uid : file;
+        if (reqs[uid2] && reqs[uid2].abort) {
+          reqs[uid2].abort();
+        }
+        delete reqs[uid2];
+      } else {
+        Object.keys(reqs).forEach((uid2) => {
+          if (reqs[uid2] && reqs[uid2].abort) {
+            reqs[uid2].abort();
+          }
+          delete reqs[uid2];
+        });
+      }
+    }
+    render() {
+      const _a = this.props, {
+        component: Tag,
+        prefixCls,
+        className,
+        classNames = {},
+        disabled,
+        id,
+        name,
+        style: style2,
+        styles: styles2 = {},
+        multiple,
+        accept,
+        capture,
+        children,
+        directory,
+        openFileDialogOnClick,
+        onMouseEnter,
+        onMouseLeave,
+        hasControlInside
+      } = _a, otherProps = __objRest(_a, [
+        "component",
+        "prefixCls",
+        "className",
+        "classNames",
+        "disabled",
+        "id",
+        "name",
+        "style",
+        "styles",
+        "multiple",
+        "accept",
+        "capture",
+        "children",
+        "directory",
+        "openFileDialogOnClick",
+        "onMouseEnter",
+        "onMouseLeave",
+        "hasControlInside"
+      ]);
+      const acceptFormat = typeof accept === "string" ? accept : accept == null ? void 0 : accept.format;
+      const cls = clsx(prefixCls, {
+        [`${prefixCls}-disabled`]: disabled,
+        [className]: className
+      });
+      const dirProps = directory ? {
+        directory: "directory",
+        webkitdirectory: "webkitdirectory"
+      } : {};
+      const events = disabled ? {} : {
+        onClick: openFileDialogOnClick ? this.onClick : () => {
+        },
+        onKeyDown: openFileDialogOnClick ? this.onKeyDown : () => {
+        },
+        onMouseEnter,
+        onMouseLeave,
+        onDrop: this.onFileDrop,
+        onDragOver: this.onFileDragOver,
+        tabIndex: hasControlInside ? void 0 : "0"
+      };
+      return /* @__PURE__ */ import_react133.default.createElement(Tag, _extends85({}, events, {
+        className: cls,
+        role: hasControlInside ? void 0 : "button",
+        style: style2
+      }), /* @__PURE__ */ import_react133.default.createElement("input", _extends85({}, pickAttrs(otherProps, {
+        aria: true,
+        data: true
+      }), {
+        id,
+        name,
+        disabled,
+        type: "file",
+        ref: this.saveFileInput,
+        onClick: (e3) => e3.stopPropagation(),
+        key: this.state.uid,
+        style: __spreadValues({
+          display: "none"
+        }, styles2.input),
+        className: classNames.input,
+        accept: acceptFormat
+      }, dirProps, {
+        multiple,
+        onChange: this.onChange
+      }, capture != null ? {
+        capture
+      } : {})), children);
+    }
+  };
+  var AjaxUploader_default = AjaxUploader;
+
+  // ../custom_dashboard/node_modules/@rc-component/upload/es/Upload.js
+  function _extends86() {
+    _extends86 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends86.apply(this, arguments);
+  }
+  function empty() {
+  }
+  var Upload = class extends import_react134.Component {
+    constructor() {
+      super(...arguments);
+      __publicField(this, "uploader");
+      __publicField(this, "saveUploader", (node2) => {
+        this.uploader = node2;
+      });
+    }
+    abort(file) {
+      this.uploader.abort(file);
+    }
+    render() {
+      return /* @__PURE__ */ import_react134.default.createElement(AjaxUploader_default, _extends86({}, this.props, {
+        ref: this.saveUploader
+      }));
+    }
+  };
+  __publicField(Upload, "defaultProps", {
+    component: "span",
+    prefixCls: "rc-upload",
+    data: {},
+    headers: {},
+    name: "file",
+    multipart: false,
+    onStart: empty,
+    onError: empty,
+    onSuccess: empty,
+    multiple: false,
+    beforeUpload: null,
+    customRequest: null,
+    withCredentials: false,
+    openFileDialogOnClick: true,
+    hasControlInside: false
+  });
+  var Upload_default = Upload;
+
+  // ../custom_dashboard/node_modules/@rc-component/upload/es/index.js
+  var es_default18 = Upload_default;
+
+  // ../custom_dashboard/node_modules/antd/es/upload/style/dragger.js
+  var genDraggerStyle = (token2) => {
+    const {
+      componentCls,
+      iconCls
+    } = token2;
+    return {
+      [`${componentCls}-wrapper`]: {
+        [`${componentCls}-drag`]: {
+          position: "relative",
+          width: "100%",
+          height: "100%",
+          textAlign: "center",
+          background: token2.colorFillAlter,
+          border: `${unit(token2.lineWidth)} dashed ${token2.colorBorder}`,
+          borderRadius: token2.borderRadiusLG,
+          cursor: "pointer",
+          transition: `border-color ${token2.motionDurationSlow}`,
+          [componentCls]: {
+            padding: token2.padding
+          },
+          [`${componentCls}-btn`]: {
+            display: "table",
+            width: "100%",
+            height: "100%",
+            outline: "none",
+            borderRadius: token2.borderRadiusLG,
+            "&:focus-visible": {
+              outline: `${unit(token2.lineWidthFocus)} solid ${token2.colorPrimaryBorder}`
+            }
+          },
+          [`${componentCls}-drag-container`]: {
+            display: "table-cell",
+            verticalAlign: "middle"
+          },
+          [`
+          &:not(${componentCls}-disabled):hover,
+          &-hover:not(${componentCls}-disabled)
+        `]: {
+            borderColor: token2.colorPrimaryHover
+          },
+          [`p${componentCls}-drag-icon`]: {
+            marginBottom: token2.margin,
+            [iconCls]: {
+              color: token2.colorPrimary,
+              fontSize: token2.uploadThumbnailSize
+            }
+          },
+          [`p${componentCls}-text`]: {
+            margin: `0 0 ${unit(token2.marginXXS)}`,
+            color: token2.colorTextHeading,
+            fontSize: token2.fontSizeLG
+          },
+          [`p${componentCls}-hint`]: {
+            color: token2.colorTextDescription,
+            fontSize: token2.fontSize
+          },
+          [`&${componentCls}-disabled`]: {
+            [`p${componentCls}-drag-icon ${iconCls},
+            p${componentCls}-text,
+            p${componentCls}-hint
+          `]: {
+              color: token2.colorTextDisabled
+            }
+          }
+        }
+      }
+    };
+  };
+  var dragger_default = genDraggerStyle;
+
+  // ../custom_dashboard/node_modules/antd/es/upload/style/list.js
+  var genListStyle = (token2) => {
+    const {
+      componentCls,
+      iconCls,
+      fontSize,
+      lineHeight,
+      motionDurationSlow,
+      calc
+    } = token2;
+    const itemCls = `${componentCls}-list-item`;
+    const actionsCls = `${itemCls}-actions`;
+    const actionCls = `${itemCls}-action`;
+    return {
+      [`${componentCls}-wrapper`]: {
+        [`${componentCls}-list`]: __spreadProps(__spreadValues({}, clearFix()), {
+          lineHeight: token2.lineHeight,
+          [itemCls]: {
+            position: "relative",
+            height: calc(token2.lineHeight).mul(fontSize).equal(),
+            marginTop: token2.marginXS,
+            fontSize,
+            display: "flex",
+            alignItems: "center",
+            transition: `background-color ${motionDurationSlow}`,
+            borderRadius: token2.borderRadiusSM,
+            "&:hover": {
+              backgroundColor: token2.controlItemBgHover
+            },
+            [`${itemCls}-name`]: __spreadProps(__spreadValues({}, textEllipsis), {
+              padding: `0 ${unit(token2.paddingXS)}`,
+              lineHeight,
+              flex: "auto",
+              transition: `all ${motionDurationSlow}`
+            }),
+            [actionsCls]: {
+              whiteSpace: "nowrap",
+              [actionCls]: {
+                opacity: 0
+              },
+              "@media (hover: none), (pointer: coarse)": {
+                [actionCls]: {
+                  opacity: 1
+                }
+              },
+              [iconCls]: {
+                color: token2.actionsColor,
+                transition: `all ${motionDurationSlow}`
+              },
+              [`
+              ${actionCls}:focus-visible,
+              &.picture ${actionCls}
+            `]: {
+                opacity: 1
+              }
+            },
+            [`${componentCls}-icon ${iconCls}`]: {
+              color: token2.colorIcon,
+              fontSize
+            },
+            [`${itemCls}-progress`]: {
+              position: "absolute",
+              bottom: token2.calc(token2.uploadProgressOffset).mul(-1).equal(),
+              width: "100%",
+              paddingInlineStart: calc(fontSize).add(token2.paddingXS).equal(),
+              fontSize,
+              lineHeight: 0,
+              pointerEvents: "none",
+              "> div": {
+                margin: 0
+              }
+            }
+          },
+          [`${itemCls}:hover ${actionCls}`]: {
+            opacity: 1
+          },
+          [`${itemCls}-error`]: {
+            color: token2.colorError,
+            [`${itemCls}-name, ${componentCls}-icon ${iconCls}`]: {
+              color: token2.colorError
+            },
+            [actionsCls]: {
+              [`${iconCls}, ${iconCls}:hover`]: {
+                color: token2.colorError
+              },
+              [actionCls]: {
+                opacity: 1
+              }
+            }
+          },
+          [`${componentCls}-list-item-container`]: {
+            transition: ["opacity", "height"].map((prop) => `${prop} ${motionDurationSlow}`).join(", "),
+            "&::before": {
+              display: "table",
+              width: 0,
+              height: 0,
+              content: '""'
+            }
+          }
+        })
+      }
+    };
+  };
+  var list_default = genListStyle;
+
+  // ../custom_dashboard/node_modules/antd/es/upload/style/motion.js
+  var genMotionStyle = (token2) => {
+    const {
+      componentCls
+    } = token2;
+    const uploadAnimateInlineIn = new Keyframes_default("uploadAnimateInlineIn", {
+      from: {
+        width: 0,
+        height: 0,
+        padding: 0,
+        opacity: 0,
+        margin: token2.calc(token2.marginXS).div(-2).equal()
+      }
+    });
+    const uploadAnimateInlineOut = new Keyframes_default("uploadAnimateInlineOut", {
+      to: {
+        width: 0,
+        height: 0,
+        padding: 0,
+        opacity: 0,
+        margin: token2.calc(token2.marginXS).div(-2).equal()
+      }
+    });
+    const inlineCls = `${componentCls}-animate-inline`;
+    return [{
+      [`${componentCls}-wrapper`]: {
+        [`${inlineCls}-appear, ${inlineCls}-enter, ${inlineCls}-leave`]: {
+          animationDuration: token2.motionDurationSlow,
+          animationTimingFunction: token2.motionEaseInOutCirc,
+          animationFillMode: "forwards"
+        },
+        [`${inlineCls}-appear, ${inlineCls}-enter`]: {
+          animationName: uploadAnimateInlineIn
+        },
+        [`${inlineCls}-leave`]: {
+          animationName: uploadAnimateInlineOut
+        }
+      }
+    }, {
+      [`${componentCls}-wrapper`]: initFadeMotion(token2)
+    }, uploadAnimateInlineIn, uploadAnimateInlineOut];
+  };
+  var motion_default2 = genMotionStyle;
+
+  // ../custom_dashboard/node_modules/antd/es/upload/style/picture.js
+  var genPictureStyle = (token2) => {
+    const {
+      componentCls,
+      iconCls,
+      uploadThumbnailSize,
+      uploadProgressOffset,
+      calc
+    } = token2;
+    const listCls = `${componentCls}-list`;
+    const itemCls = `${listCls}-item`;
+    return {
+      [`${componentCls}-wrapper`]: {
+        [`
+        ${listCls}${listCls}-picture,
+        ${listCls}${listCls}-picture-card,
+        ${listCls}${listCls}-picture-circle
+      `]: {
+          [itemCls]: {
+            position: "relative",
+            height: calc(uploadThumbnailSize).add(calc(token2.lineWidth).mul(2)).add(calc(token2.paddingXS).mul(2)).equal(),
+            padding: token2.paddingXS,
+            border: `${unit(token2.lineWidth)} ${token2.lineType} ${token2.colorBorder}`,
+            borderRadius: token2.borderRadiusLG,
+            "&:hover": {
+              background: "transparent"
+            },
+            [`${itemCls}-thumbnail`]: __spreadProps(__spreadValues({}, textEllipsis), {
+              width: uploadThumbnailSize,
+              height: uploadThumbnailSize,
+              lineHeight: unit(calc(uploadThumbnailSize).add(token2.paddingSM).equal()),
+              textAlign: "center",
+              flex: "none",
+              [iconCls]: {
+                fontSize: token2.fontSizeHeading2,
+                color: token2.colorPrimary
+              },
+              img: {
+                display: "block",
+                width: "100%",
+                height: "100%",
+                overflow: "hidden"
+              }
+            }),
+            [`${itemCls}-progress`]: {
+              bottom: calc(token2.fontSize).mul(token2.lineHeight).div(2).add(uploadProgressOffset).equal(),
+              width: `calc(100% - ${unit(calc(token2.paddingSM).mul(2).equal())})`,
+              marginTop: 0,
+              paddingInlineStart: calc(uploadThumbnailSize).add(token2.paddingXS).equal()
+            }
+          },
+          [`${itemCls}-error`]: {
+            borderColor: token2.colorError,
+            [`${itemCls}-thumbnail ${iconCls}`]: {
+              [`svg path[fill='${blue[0]}']`]: {
+                fill: token2.colorErrorBg
+              },
+              [`svg path[fill='${blue.primary}']`]: {
+                fill: token2.colorError
+              }
+            }
+          },
+          [`${itemCls}-uploading`]: {
+            borderStyle: "dashed",
+            [`${itemCls}-name`]: {
+              marginBottom: uploadProgressOffset
+            }
+          }
+        },
+        [`${listCls}${listCls}-picture-circle ${itemCls}`]: {
+          [`&, &::before, ${itemCls}-thumbnail`]: {
+            borderRadius: "50%"
+          }
+        }
+      }
+    };
+  };
+  var genPictureCardStyle = (token2) => {
+    const {
+      componentCls,
+      iconCls,
+      fontSizeLG,
+      colorTextLightSolid,
+      calc
+    } = token2;
+    const listCls = `${componentCls}-list`;
+    const itemCls = `${listCls}-item`;
+    const uploadPictureCardSize = token2.uploadPicCardSize;
+    return {
+      [`
+      ${componentCls}-wrapper${componentCls}-picture-card-wrapper,
+      ${componentCls}-wrapper${componentCls}-picture-circle-wrapper
+    `]: __spreadProps(__spreadValues({}, clearFix()), {
+        display: "block",
+        [`${componentCls}${componentCls}-select`]: {
+          width: uploadPictureCardSize,
+          height: uploadPictureCardSize,
+          textAlign: "center",
+          verticalAlign: "top",
+          backgroundColor: token2.colorFillAlter,
+          border: `${unit(token2.lineWidth)} dashed ${token2.colorBorder}`,
+          borderRadius: token2.borderRadiusLG,
+          cursor: "pointer",
+          transition: `border-color ${token2.motionDurationSlow}`,
+          [`> ${componentCls}`]: {
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "100%",
+            textAlign: "center"
+          },
+          [`&:not(${componentCls}-disabled):hover`]: {
+            borderColor: token2.colorPrimary
+          }
+        },
+        [`${listCls}${listCls}-picture-card, ${listCls}${listCls}-picture-circle`]: {
+          display: "flex",
+          flexWrap: "wrap",
+          "&:not(:empty)": {
+            minHeight: uploadPictureCardSize
+          },
+          "@supports not (gap: 1px)": {
+            "& > *": {
+              marginBlockEnd: token2.marginXS,
+              marginInlineEnd: token2.marginXS
+            }
+          },
+          "@supports (gap: 1px)": {
+            gap: token2.marginXS
+          },
+          [`${listCls}-item-container`]: {
+            display: "inline-block",
+            width: uploadPictureCardSize,
+            height: uploadPictureCardSize,
+            verticalAlign: "top"
+          },
+          "&::after": {
+            display: "none"
+          },
+          "&::before": {
+            display: "none"
+          },
+          [itemCls]: {
+            height: "100%",
+            margin: 0,
+            "&::before": {
+              position: "absolute",
+              zIndex: 1,
+              width: `calc(100% - ${unit(calc(token2.paddingXS).mul(2).equal())})`,
+              height: `calc(100% - ${unit(calc(token2.paddingXS).mul(2).equal())})`,
+              backgroundColor: token2.colorBgMask,
+              opacity: 0,
+              transition: `all ${token2.motionDurationSlow}`,
+              content: '" "'
+            }
+          },
+          [`${itemCls}:hover`]: {
+            [`&::before, ${itemCls}-actions`]: {
+              opacity: 1
+            }
+          },
+          [`${itemCls}-actions`]: {
+            position: "absolute",
+            insetInlineStart: 0,
+            zIndex: 10,
+            width: "100%",
+            whiteSpace: "nowrap",
+            textAlign: "center",
+            opacity: 0,
+            transition: `all ${token2.motionDurationSlow}`,
+            [`
+            ${iconCls}-eye,
+            ${iconCls}-download,
+            ${iconCls}-delete
+          `]: {
+              zIndex: 10,
+              width: fontSizeLG,
+              margin: `0 ${unit(token2.marginXXS)}`,
+              fontSize: fontSizeLG,
+              cursor: "pointer",
+              transition: `all ${token2.motionDurationSlow}`,
+              color: colorTextLightSolid,
+              "&:hover": {
+                color: colorTextLightSolid
+              },
+              svg: {
+                verticalAlign: "baseline"
+              }
+            }
+          },
+          [`${itemCls}-thumbnail, ${itemCls}-thumbnail img`]: {
+            position: "static",
+            display: "block",
+            width: "100%",
+            height: "100%",
+            objectFit: "contain"
+          },
+          [`${itemCls}-name`]: {
+            display: "none",
+            textAlign: "center"
+          },
+          [`${itemCls}-file + ${itemCls}-name`]: {
+            position: "absolute",
+            bottom: token2.margin,
+            display: "block",
+            width: `calc(100% - ${unit(calc(token2.paddingXS).mul(2).equal())})`
+          },
+          [`${itemCls}-uploading`]: {
+            [`&${itemCls}`]: {
+              backgroundColor: token2.colorFillAlter
+            },
+            [`&::before, ${iconCls}-eye, ${iconCls}-download, ${iconCls}-delete`]: {
+              display: "none"
+            }
+          },
+          [`${itemCls}-progress`]: {
+            bottom: token2.marginXL,
+            width: `calc(100% - ${unit(calc(token2.paddingXS).mul(2).equal())})`,
+            paddingInlineStart: 0
+          }
+        }
+      }),
+      [`${componentCls}-wrapper${componentCls}-picture-circle-wrapper`]: {
+        [`${componentCls}${componentCls}-select`]: {
+          borderRadius: "50%"
+        }
+      }
+    };
+  };
+
+  // ../custom_dashboard/node_modules/antd/es/upload/style/rtl.js
+  var genRtlStyle = (token2) => {
+    const {
+      componentCls
+    } = token2;
+    return {
+      [`${componentCls}-rtl`]: {
+        direction: "rtl"
+      }
+    };
+  };
+  var rtl_default3 = genRtlStyle;
+
+  // ../custom_dashboard/node_modules/antd/es/upload/style/index.js
+  var genBaseStyle7 = (token2) => {
+    const {
+      componentCls,
+      colorTextDisabled
+    } = token2;
+    return {
+      [`${componentCls}-wrapper`]: __spreadProps(__spreadValues({}, resetComponent(token2)), {
+        [componentCls]: {
+          outline: 0,
+          "input[type='file']": {
+            cursor: "pointer"
+          }
+        },
+        [`${componentCls}-select`]: {
+          display: "inline-block"
+        },
+        [`${componentCls}-hidden`]: {
+          display: "none"
+        },
+        [`${componentCls}-disabled`]: {
+          color: colorTextDisabled,
+          cursor: "not-allowed"
+        }
+      })
+    };
+  };
+  var prepareComponentToken18 = (token2) => ({
+    actionsColor: token2.colorIcon,
+    pictureCardSize: token2.controlHeightLG * 2.55
+  });
+  var style_default23 = genStyleHooks("Upload", (token2) => {
+    const {
+      fontSizeHeading3,
+      marginXS,
+      lineWidth,
+      pictureCardSize,
+      calc
+    } = token2;
+    const uploadToken = merge2(token2, {
+      uploadThumbnailSize: calc(fontSizeHeading3).mul(2).equal(),
+      uploadProgressOffset: calc(calc(marginXS).div(2)).add(lineWidth).equal(),
+      uploadPicCardSize: pictureCardSize
+    });
+    return [genBaseStyle7(uploadToken), dragger_default(uploadToken), genPictureStyle(uploadToken), genPictureCardStyle(uploadToken), list_default(uploadToken), motion_default2(uploadToken), rtl_default3(uploadToken), collapse_default(uploadToken)];
+  }, prepareComponentToken18);
+
+  // ../custom_dashboard/node_modules/antd/es/upload/UploadList/index.js
+  var React383 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FileTwoTone.js
+  var React378 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/FileTwoTone.js
+  var FileTwoTone = { "icon": function render2(primaryColor, secondaryColor) {
+    return { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M534 352V136H232v752h560V394H576a42 42 0 01-42-42z", "fill": secondaryColor } }, { "tag": "path", "attrs": { "d": "M854.6 288.6L639.4 73.4c-6-6-14.1-9.4-22.6-9.4H192c-17.7 0-32 14.3-32 32v832c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V311.3c0-8.5-3.4-16.7-9.4-22.7zM602 137.8L790.2 326H602V137.8zM792 888H232V136h302v216a42 42 0 0042 42h216v494z", "fill": primaryColor } }] };
+  }, "name": "file", "theme": "twotone" };
+  var FileTwoTone_default = FileTwoTone;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FileTwoTone.js
+  function _extends87() {
+    _extends87 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends87.apply(this, arguments);
+  }
+  var FileTwoTone2 = (props, ref) => /* @__PURE__ */ React378.createElement(AntdIcon_default, _extends87({}, props, {
+    ref,
+    icon: FileTwoTone_default
+  }));
+  var RefIcon30 = /* @__PURE__ */ React378.forwardRef(FileTwoTone2);
+  if (true) {
+    RefIcon30.displayName = "FileTwoTone";
+  }
+  var FileTwoTone_default2 = RefIcon30;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/PaperClipOutlined.js
+  var React379 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/PaperClipOutlined.js
+  var PaperClipOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M779.3 196.6c-94.2-94.2-247.6-94.2-341.7 0l-261 260.8c-1.7 1.7-2.6 4-2.6 6.4s.9 4.7 2.6 6.4l36.9 36.9a9 9 0 0012.7 0l261-260.8c32.4-32.4 75.5-50.2 121.3-50.2s88.9 17.8 121.2 50.2c32.4 32.4 50.2 75.5 50.2 121.2 0 45.8-17.8 88.8-50.2 121.2l-266 265.9-43.1 43.1c-40.3 40.3-105.8 40.3-146.1 0-19.5-19.5-30.2-45.4-30.2-73s10.7-53.5 30.2-73l263.9-263.8c6.7-6.6 15.5-10.3 24.9-10.3h.1c9.4 0 18.1 3.7 24.7 10.3 6.7 6.7 10.3 15.5 10.3 24.9 0 9.3-3.7 18.1-10.3 24.7L372.4 653c-1.7 1.7-2.6 4-2.6 6.4s.9 4.7 2.6 6.4l36.9 36.9a9 9 0 0012.7 0l215.6-215.6c19.9-19.9 30.8-46.3 30.8-74.4s-11-54.6-30.8-74.4c-41.1-41.1-107.9-41-149 0L463 364 224.8 602.1A172.22 172.22 0 00174 724.8c0 46.3 18.1 89.8 50.8 122.5 33.9 33.8 78.3 50.7 122.7 50.7 44.4 0 88.8-16.9 122.6-50.7l309.2-309C824.8 492.7 850 432 850 367.5c.1-64.6-25.1-125.3-70.7-170.9z" } }] }, "name": "paper-clip", "theme": "outlined" };
+  var PaperClipOutlined_default = PaperClipOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/PaperClipOutlined.js
+  function _extends88() {
+    _extends88 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends88.apply(this, arguments);
+  }
+  var PaperClipOutlined2 = (props, ref) => /* @__PURE__ */ React379.createElement(AntdIcon_default, _extends88({}, props, {
+    ref,
+    icon: PaperClipOutlined_default
+  }));
+  var RefIcon31 = /* @__PURE__ */ React379.forwardRef(PaperClipOutlined2);
+  if (true) {
+    RefIcon31.displayName = "PaperClipOutlined";
+  }
+  var PaperClipOutlined_default2 = RefIcon31;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/PictureTwoTone.js
+  var React380 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/PictureTwoTone.js
+  var PictureTwoTone = { "icon": function render3(primaryColor, secondaryColor) {
+    return { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M928 160H96c-17.7 0-32 14.3-32 32v640c0 17.7 14.3 32 32 32h832c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32zm-40 632H136v-39.9l138.5-164.3 150.1 178L658.1 489 888 761.6V792zm0-129.8L664.2 396.8c-3.2-3.8-9-3.8-12.2 0L424.6 666.4l-144-170.7c-3.2-3.8-9-3.8-12.2 0L136 652.7V232h752v430.2z", "fill": primaryColor } }, { "tag": "path", "attrs": { "d": "M424.6 765.8l-150.1-178L136 752.1V792h752v-30.4L658.1 489z", "fill": secondaryColor } }, { "tag": "path", "attrs": { "d": "M136 652.7l132.4-157c3.2-3.8 9-3.8 12.2 0l144 170.7L652 396.8c3.2-3.8 9-3.8 12.2 0L888 662.2V232H136v420.7zM304 280a88 88 0 110 176 88 88 0 010-176z", "fill": secondaryColor } }, { "tag": "path", "attrs": { "d": "M276 368a28 28 0 1056 0 28 28 0 10-56 0z", "fill": secondaryColor } }, { "tag": "path", "attrs": { "d": "M304 456a88 88 0 100-176 88 88 0 000 176zm0-116c15.5 0 28 12.5 28 28s-12.5 28-28 28-28-12.5-28-28 12.5-28 28-28z", "fill": primaryColor } }] };
+  }, "name": "picture", "theme": "twotone" };
+  var PictureTwoTone_default = PictureTwoTone;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/PictureTwoTone.js
+  function _extends89() {
+    _extends89 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends89.apply(this, arguments);
+  }
+  var PictureTwoTone2 = (props, ref) => /* @__PURE__ */ React380.createElement(AntdIcon_default, _extends89({}, props, {
+    ref,
+    icon: PictureTwoTone_default
+  }));
+  var RefIcon32 = /* @__PURE__ */ React380.forwardRef(PictureTwoTone2);
+  if (true) {
+    RefIcon32.displayName = "PictureTwoTone";
+  }
+  var PictureTwoTone_default2 = RefIcon32;
+
+  // ../custom_dashboard/node_modules/antd/es/upload/utils.js
+  function file2Obj(file) {
+    return __spreadProps(__spreadValues({}, file), {
+      lastModified: file.lastModified,
+      lastModifiedDate: file.lastModifiedDate,
+      name: file.name,
+      size: file.size,
+      type: file.type,
+      uid: file.uid,
+      percent: 0,
+      originFileObj: file
+    });
+  }
+  function updateFileList(file, fileList) {
+    const nextFileList = _toConsumableArray(fileList);
+    const fileIndex = nextFileList.findIndex(({
+      uid: uid2
+    }) => uid2 === file.uid);
+    if (fileIndex === -1) {
+      nextFileList.push(file);
+    } else {
+      nextFileList[fileIndex] = file;
+    }
+    return nextFileList;
+  }
+  function getFileItem(file, fileList) {
+    const matchKey = file.uid !== void 0 ? "uid" : "name";
+    return fileList.filter((item) => item[matchKey] === file[matchKey])[0];
+  }
+  function removeFileItem(file, fileList) {
+    const matchKey = file.uid !== void 0 ? "uid" : "name";
+    const removed = fileList.filter((item) => item[matchKey] !== file[matchKey]);
+    if (removed.length === fileList.length) {
+      return null;
+    }
+    return removed;
+  }
+  var extname = (url2 = "") => {
+    const temp = url2.split("/");
+    const filename = temp[temp.length - 1];
+    const filenameWithoutSuffix = filename.split(/#|\?/)[0];
+    return (/\.[^./\\]*$/.exec(filenameWithoutSuffix) || [""])[0];
+  };
+  var isImageFileType = (type5) => type5.indexOf("image/") === 0;
+  var isImageUrl = (file) => {
+    if (file.type && !file.thumbUrl) {
+      return isImageFileType(file.type);
+    }
+    const url2 = file.thumbUrl || file.url || "";
+    const extension = extname(url2);
+    if (/^data:image\//.test(url2) || /(webp|svg|png|gif|jpg|jpeg|jfif|bmp|dpg|ico|heic|heif)$/i.test(extension)) {
+      return true;
+    }
+    if (/^data:/.test(url2)) {
+      return false;
+    }
+    if (extension) {
+      return false;
+    }
+    return true;
+  };
+  var MEASURE_SIZE = 200;
+  function previewImage(file) {
+    return new Promise((resolve) => {
+      if (!file.type || !isImageFileType(file.type)) {
+        resolve("");
+        return;
+      }
+      const canvas = document.createElement("canvas");
+      canvas.width = MEASURE_SIZE;
+      canvas.height = MEASURE_SIZE;
+      canvas.style.cssText = `position: fixed; left: 0; top: 0; width: ${MEASURE_SIZE}px; height: ${MEASURE_SIZE}px; z-index: 9999; display: none;`;
+      document.body.appendChild(canvas);
+      const ctx = canvas.getContext("2d");
+      const img = new Image();
+      img.onload = () => {
+        const {
+          width,
+          height
+        } = img;
+        let drawWidth = MEASURE_SIZE;
+        let drawHeight = MEASURE_SIZE;
+        let offsetX = 0;
+        let offsetY = 0;
+        if (width > height) {
+          drawHeight = height * (MEASURE_SIZE / width);
+          offsetY = -(drawHeight - drawWidth) / 2;
+        } else {
+          drawWidth = width * (MEASURE_SIZE / height);
+          offsetX = -(drawWidth - drawHeight) / 2;
+        }
+        ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
+        const dataURL = canvas.toDataURL();
+        document.body.removeChild(canvas);
+        window.URL.revokeObjectURL(img.src);
+        resolve(dataURL);
+      };
+      img.crossOrigin = "anonymous";
+      if (file.type.startsWith("image/svg+xml")) {
+        const reader = new FileReader();
+        reader.onload = () => {
+          if (reader.result && typeof reader.result === "string") {
+            img.src = reader.result;
+          }
+        };
+        reader.readAsDataURL(file);
+      } else if (file.type.startsWith("image/gif")) {
+        const reader = new FileReader();
+        reader.onload = () => {
+          if (reader.result) {
+            resolve(reader.result);
+          }
+        };
+        reader.readAsDataURL(file);
+      } else {
+        img.src = window.URL.createObjectURL(file);
+      }
+    });
+  }
+
+  // ../custom_dashboard/node_modules/antd/es/upload/UploadList/ListItem.js
+  var React382 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/DownloadOutlined.js
+  var React381 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/DownloadOutlined.js
+  var DownloadOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M505.7 661a8 8 0 0012.6 0l112-141.7c4.1-5.2.4-12.9-6.3-12.9h-74.1V168c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v338.3H400c-6.7 0-10.4 7.7-6.3 12.9l112 141.8zM878 626h-60c-4.4 0-8 3.6-8 8v154H214V634c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v198c0 17.7 14.3 32 32 32h684c17.7 0 32-14.3 32-32V634c0-4.4-3.6-8-8-8z" } }] }, "name": "download", "theme": "outlined" };
+  var DownloadOutlined_default = DownloadOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/DownloadOutlined.js
+  function _extends90() {
+    _extends90 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends90.apply(this, arguments);
+  }
+  var DownloadOutlined2 = (props, ref) => /* @__PURE__ */ React381.createElement(AntdIcon_default, _extends90({}, props, {
+    ref,
+    icon: DownloadOutlined_default
+  }));
+  var RefIcon33 = /* @__PURE__ */ React381.forwardRef(DownloadOutlined2);
+  if (true) {
+    RefIcon33.displayName = "DownloadOutlined";
+  }
+  var DownloadOutlined_default2 = RefIcon33;
+
+  // ../custom_dashboard/node_modules/antd/es/upload/UploadList/ListItem.js
+  "use client";
+  var ListItem = /* @__PURE__ */ React382.forwardRef(({
+    prefixCls,
+    className,
+    style: style2,
+    classNames: itemClassNames,
+    styles: styles2,
+    locale: locale6,
+    listType,
+    file,
+    items,
+    progress: progressProps,
+    iconRender,
+    actionIconRender,
+    itemRender,
+    isImgUrl,
+    showPreviewIcon,
+    showRemoveIcon,
+    showDownloadIcon,
+    previewIcon: customPreviewIcon,
+    removeIcon: customRemoveIcon,
+    downloadIcon: customDownloadIcon,
+    extra: customExtra,
+    onPreview,
+    onDownload,
+    onClose
+  }, ref) => {
+    var _a, _b;
+    const {
+      status
+    } = file;
+    const [mergedStatus, setMergedStatus] = React382.useState(status);
+    React382.useEffect(() => {
+      if (status !== "removed") {
+        setMergedStatus(status);
+      }
+    }, [status]);
+    const [showProgress, setShowProgress] = React382.useState(false);
+    React382.useEffect(() => {
+      const timer = setTimeout(() => {
+        setShowProgress(true);
+      }, 300);
+      return () => {
+        clearTimeout(timer);
+      };
+    }, []);
+    const iconNode = iconRender(file);
+    let icon = /* @__PURE__ */ React382.createElement("div", {
+      className: `${prefixCls}-icon`
+    }, iconNode);
+    if (listType === "picture" || listType === "picture-card" || listType === "picture-circle") {
+      if (mergedStatus === "uploading" || !file.thumbUrl && !file.url) {
+        const uploadingClassName = clsx(`${prefixCls}-list-item-thumbnail`, {
+          [`${prefixCls}-list-item-file`]: mergedStatus !== "uploading"
+        });
+        icon = /* @__PURE__ */ React382.createElement("div", {
+          className: uploadingClassName
+        }, iconNode);
+      } else {
+        const thumbnail = (isImgUrl == null ? void 0 : isImgUrl(file)) ? /* @__PURE__ */ React382.createElement("img", {
+          src: file.thumbUrl || file.url,
+          alt: file.name,
+          className: `${prefixCls}-list-item-image`,
+          crossOrigin: file.crossOrigin
+        }) : iconNode;
+        const aClassName = clsx(`${prefixCls}-list-item-thumbnail`, {
+          [`${prefixCls}-list-item-file`]: isImgUrl && !isImgUrl(file)
+        });
+        icon = /* @__PURE__ */ React382.createElement("a", {
+          className: aClassName,
+          onClick: (e3) => onPreview(file, e3),
+          href: file.url || file.thumbUrl,
+          target: "_blank",
+          rel: "noopener noreferrer"
+        }, thumbnail);
+      }
+    }
+    const listItemClassName = clsx(`${prefixCls}-list-item`, `${prefixCls}-list-item-${mergedStatus}`, itemClassNames == null ? void 0 : itemClassNames.item);
+    const linkProps = typeof file.linkProps === "string" ? JSON.parse(file.linkProps) : file.linkProps;
+    const removeIcon = (typeof showRemoveIcon === "function" ? showRemoveIcon(file) : showRemoveIcon) ? actionIconRender(
+      (typeof customRemoveIcon === "function" ? customRemoveIcon(file) : customRemoveIcon) || /* @__PURE__ */ React382.createElement(DeleteOutlined_default2, null),
+      () => onClose(file),
+      prefixCls,
+      locale6.removeFile,
+      true
+    ) : null;
+    const downloadIcon = (typeof showDownloadIcon === "function" ? showDownloadIcon(file) : showDownloadIcon) && mergedStatus === "done" ? actionIconRender((typeof customDownloadIcon === "function" ? customDownloadIcon(file) : customDownloadIcon) || /* @__PURE__ */ React382.createElement(DownloadOutlined_default2, null), () => onDownload(file), prefixCls, locale6.downloadFile) : null;
+    const downloadOrDelete = listType !== "picture-card" && listType !== "picture-circle" && /* @__PURE__ */ React382.createElement("span", {
+      key: "download-delete",
+      className: clsx(`${prefixCls}-list-item-actions`, {
+        picture: listType === "picture"
+      })
+    }, downloadIcon, removeIcon);
+    const extraContent = typeof customExtra === "function" ? customExtra(file) : customExtra;
+    const extra = extraContent && /* @__PURE__ */ React382.createElement("span", {
+      className: `${prefixCls}-list-item-extra`
+    }, extraContent);
+    const listItemNameClass = clsx(`${prefixCls}-list-item-name`);
+    const fileName = file.url ? /* @__PURE__ */ React382.createElement("a", __spreadProps(__spreadValues({
+      key: "view",
+      target: "_blank",
+      rel: "noopener noreferrer",
+      className: listItemNameClass,
+      title: file.name
+    }, linkProps), {
+      href: file.url,
+      onClick: (e3) => onPreview(file, e3)
+    }), file.name, extra) : /* @__PURE__ */ React382.createElement("span", {
+      key: "view",
+      className: listItemNameClass,
+      onClick: (e3) => onPreview(file, e3),
+      title: file.name
+    }, file.name, extra);
+    const previewIcon = (typeof showPreviewIcon === "function" ? showPreviewIcon(file) : showPreviewIcon) && (file.url || file.thumbUrl) ? /* @__PURE__ */ React382.createElement("a", {
+      href: file.url || file.thumbUrl,
+      target: "_blank",
+      rel: "noopener noreferrer",
+      onClick: (e3) => onPreview(file, e3),
+      title: locale6.previewFile
+    }, typeof customPreviewIcon === "function" ? customPreviewIcon(file) : customPreviewIcon || /* @__PURE__ */ React382.createElement(EyeOutlined_default2, null)) : null;
+    const pictureCardActions = (listType === "picture-card" || listType === "picture-circle") && mergedStatus !== "uploading" && /* @__PURE__ */ React382.createElement("span", {
+      className: `${prefixCls}-list-item-actions`
+    }, previewIcon, mergedStatus === "done" && downloadIcon, removeIcon);
+    const {
+      getPrefixCls
+    } = React382.useContext(ConfigContext);
+    const rootPrefixCls = getPrefixCls();
+    const dom = /* @__PURE__ */ React382.createElement("div", {
+      className: listItemClassName,
+      style: styles2 == null ? void 0 : styles2.item
+    }, icon, fileName, downloadOrDelete, pictureCardActions, showProgress && /* @__PURE__ */ React382.createElement(es_default2, {
+      motionName: `${rootPrefixCls}-fade`,
+      visible: mergedStatus === "uploading",
+      motionDeadline: 2e3
+    }, ({
+      className: motionClassName
+    }) => {
+      const loadingProgress = "percent" in file ? /* @__PURE__ */ React382.createElement(progress_default2, __spreadValues({
+        type: "line",
+        percent: file.percent,
+        "aria-label": file["aria-label"],
+        "aria-labelledby": file["aria-labelledby"]
+      }, progressProps)) : null;
+      return /* @__PURE__ */ React382.createElement("div", {
+        className: clsx(`${prefixCls}-list-item-progress`, motionClassName)
+      }, loadingProgress);
+    }));
+    const message2 = file.response && typeof file.response === "string" ? file.response : ((_a = file.error) == null ? void 0 : _a.statusText) || ((_b = file.error) == null ? void 0 : _b.message) || locale6.uploadError;
+    const item = mergedStatus === "error" ? /* @__PURE__ */ React382.createElement(tooltip_default, {
+      title: message2,
+      getPopupContainer: (node2) => node2.parentNode
+    }, dom) : dom;
+    return /* @__PURE__ */ React382.createElement("div", {
+      className: clsx(`${prefixCls}-list-item-container`, className),
+      style: style2,
+      ref
+    }, itemRender ? itemRender(item, file, items, {
+      download: onDownload.bind(null, file),
+      preview: onPreview.bind(null, file),
+      remove: onClose.bind(null, file)
+    }) : item);
+  });
+  var ListItem_default = ListItem;
+
+  // ../custom_dashboard/node_modules/antd/es/upload/UploadList/index.js
+  "use client";
+  var InternalUploadList = (props, ref) => {
+    const {
+      listType = "text",
+      previewFile = previewImage,
+      onPreview,
+      onDownload,
+      onRemove,
+      locale: locale6,
+      iconRender,
+      isImageUrl: isImgUrl = isImageUrl,
+      prefixCls: customizePrefixCls,
+      items = [],
+      showPreviewIcon = true,
+      showRemoveIcon = true,
+      showDownloadIcon = false,
+      removeIcon,
+      previewIcon,
+      downloadIcon,
+      extra,
+      progress = {
+        size: [-1, 2],
+        showInfo: false
+      },
+      appendAction,
+      appendActionVisible = true,
+      itemRender,
+      disabled,
+      classNames: uploadListClassNames,
+      styles: styles2
+    } = props;
+    const [, forceUpdate] = useForceUpdate();
+    const [motionAppear, setMotionAppear] = React383.useState(false);
+    const isPictureCardOrCirle = ["picture-card", "picture-circle"].includes(listType);
+    React383.useEffect(() => {
+      if (!listType.startsWith("picture")) {
+        return;
+      }
+      (items || []).forEach((file) => {
+        if (!(file.originFileObj instanceof File || file.originFileObj instanceof Blob) || file.thumbUrl !== void 0) {
+          return;
+        }
+        file.thumbUrl = "";
+        previewFile == null ? void 0 : previewFile(file.originFileObj).then((previewDataUrl) => {
+          file.thumbUrl = previewDataUrl || "";
+          forceUpdate();
+        });
+      });
+    }, [listType, items, previewFile]);
+    React383.useEffect(() => {
+      setMotionAppear(true);
+    }, []);
+    const onInternalPreview = (file, e3) => {
+      if (!onPreview) {
+        return;
+      }
+      e3 == null ? void 0 : e3.preventDefault();
+      return onPreview(file);
+    };
+    const onInternalDownload = (file) => {
+      if (typeof onDownload === "function") {
+        onDownload(file);
+      } else if (file.url) {
+        window.open(file.url);
+      }
+    };
+    const onInternalClose = (file) => {
+      onRemove == null ? void 0 : onRemove(file);
+    };
+    const internalIconRender = (file) => {
+      if (iconRender) {
+        return iconRender(file, listType);
+      }
+      const isLoading = file.status === "uploading";
+      if (listType.startsWith("picture")) {
+        const loadingIcon = listType === "picture" ? /* @__PURE__ */ React383.createElement(LoadingOutlined_default2, null) : locale6.uploading;
+        const fileIcon = (isImgUrl == null ? void 0 : isImgUrl(file)) ? /* @__PURE__ */ React383.createElement(PictureTwoTone_default2, null) : /* @__PURE__ */ React383.createElement(FileTwoTone_default2, null);
+        return isLoading ? loadingIcon : fileIcon;
+      }
+      return isLoading ? /* @__PURE__ */ React383.createElement(LoadingOutlined_default2, null) : /* @__PURE__ */ React383.createElement(PaperClipOutlined_default2, null);
+    };
+    const actionIconRender = (customIcon, callback, prefixCls2, title, acceptUploadDisabled) => {
+      const btnProps = {
+        type: "text",
+        size: "small",
+        title,
+        onClick: (e3) => {
+          var _a, _b;
+          callback();
+          if (/* @__PURE__ */ React383.isValidElement(customIcon)) {
+            (_b = (_a = customIcon.props).onClick) == null ? void 0 : _b.call(_a, e3);
+          }
+        },
+        className: `${prefixCls2}-list-item-action`,
+        disabled: acceptUploadDisabled ? disabled : false
+      };
+      return /* @__PURE__ */ React383.isValidElement(customIcon) ? /* @__PURE__ */ React383.createElement(Button_default, __spreadProps(__spreadValues({}, btnProps), {
+        icon: cloneElement5(customIcon, __spreadProps(__spreadValues({}, customIcon.props), {
+          onClick: () => {
+          }
+        }))
+      })) : /* @__PURE__ */ React383.createElement(Button_default, __spreadValues({}, btnProps), /* @__PURE__ */ React383.createElement("span", null, customIcon));
+    };
+    React383.useImperativeHandle(ref, () => ({
+      handlePreview: onInternalPreview,
+      handleDownload: onInternalDownload
+    }));
+    const {
+      getPrefixCls
+    } = React383.useContext(ConfigContext);
+    const prefixCls = getPrefixCls("upload", customizePrefixCls);
+    const rootPrefixCls = getPrefixCls();
+    const listClassNames = clsx(`${prefixCls}-list`, `${prefixCls}-list-${listType}`, uploadListClassNames == null ? void 0 : uploadListClassNames.list);
+    const listItemMotion = React383.useMemo(() => omit(motion_default(rootPrefixCls), ["onAppearEnd", "onEnterEnd", "onLeaveEnd"]), [rootPrefixCls]);
+    const motionConfig = __spreadProps(__spreadValues({}, isPictureCardOrCirle ? {} : listItemMotion), {
+      motionDeadline: 2e3,
+      motionName: `${prefixCls}-${isPictureCardOrCirle ? "animate-inline" : "animate"}`,
+      keys: _toConsumableArray(items.map((file) => ({
+        key: file.uid,
+        file
+      }))),
+      motionAppear
+    });
+    return /* @__PURE__ */ React383.createElement("div", {
+      className: listClassNames,
+      style: styles2 == null ? void 0 : styles2.list
+    }, /* @__PURE__ */ React383.createElement(CSSMotionList_default, __spreadProps(__spreadValues({}, motionConfig), {
+      component: false
+    }), ({
+      key,
+      file,
+      className: motionClassName,
+      style: motionStyle
+    }) => /* @__PURE__ */ React383.createElement(ListItem_default, {
+      key,
+      locale: locale6,
+      prefixCls,
+      className: motionClassName,
+      style: motionStyle,
+      classNames: uploadListClassNames,
+      styles: styles2,
+      file,
+      items,
+      progress,
+      listType,
+      isImgUrl,
+      showPreviewIcon,
+      showRemoveIcon,
+      showDownloadIcon,
+      removeIcon,
+      previewIcon,
+      downloadIcon,
+      extra,
+      iconRender: internalIconRender,
+      actionIconRender,
+      itemRender,
+      onPreview: onInternalPreview,
+      onDownload: onInternalDownload,
+      onClose: onInternalClose
+    })), appendAction && /* @__PURE__ */ React383.createElement(es_default2, __spreadProps(__spreadValues({}, motionConfig), {
+      visible: appendActionVisible,
+      forceRender: true
+    }), ({
+      className: motionClassName,
+      style: motionStyle
+    }) => cloneElement5(appendAction, (oriProps) => ({
+      className: clsx(oriProps.className, motionClassName),
+      style: __spreadValues(__spreadProps(__spreadValues({}, motionStyle), {
+        pointerEvents: motionClassName ? "none" : void 0
+      }), oriProps.style)
+    }))));
+  };
+  var UploadList = /* @__PURE__ */ React383.forwardRef(InternalUploadList);
+  if (true) {
+    UploadList.displayName = "UploadList";
+  }
+  var UploadList_default = UploadList;
+
+  // ../custom_dashboard/node_modules/antd/es/upload/Upload.js
+  "use client";
+  var LIST_IGNORE = `__LIST_IGNORE_${Date.now()}__`;
+  var InternalUpload = (props, ref) => {
+    const config = useComponentConfig("upload");
+    const {
+      fileList,
+      defaultFileList,
+      onRemove,
+      showUploadList = true,
+      listType = "text",
+      onPreview,
+      onDownload,
+      onChange,
+      onDrop,
+      previewFile,
+      disabled: customDisabled,
+      locale: propLocale,
+      iconRender,
+      isImageUrl: isImageUrl2,
+      progress,
+      prefixCls: customizePrefixCls,
+      className,
+      type: type5 = "select",
+      children,
+      style: style2,
+      itemRender,
+      maxCount,
+      data = {},
+      multiple = false,
+      hasControlInside = true,
+      action = "",
+      accept = "",
+      supportServerRender = true,
+      rootClassName,
+      styles: styles2,
+      classNames
+    } = props;
+    const disabled = React384.useContext(DisabledContext_default);
+    const mergedDisabled = customDisabled != null ? customDisabled : disabled;
+    const customRequest = props.customRequest || config.customRequest;
+    const [internalFileList, setMergedFileList] = useControlledState(defaultFileList, fileList);
+    const mergedFileList = internalFileList || [];
+    const [dragState, setDragState] = React384.useState("drop");
+    const uploadRef = React384.useRef(null);
+    const wrapRef = React384.useRef(null);
+    if (true) {
+      const warning6 = devUseWarning("Upload");
+      true ? warning6("fileList" in props || !("value" in props), "usage", "`value` is not a valid prop, do you mean `fileList`?") : void 0;
+    }
+    React384.useMemo(() => {
+      const timestamp = Date.now();
+      (fileList || []).forEach((file, index2) => {
+        if (!file.uid && !Object.isFrozen(file)) {
+          file.uid = `__AUTO__${timestamp}_${index2}__`;
+        }
+      });
+    }, [fileList]);
+    const onInternalChange = (file, changedFileList, event) => {
+      let cloneList = _toConsumableArray(changedFileList);
+      let exceedMaxCount = false;
+      if (maxCount === 1) {
+        cloneList = cloneList.slice(-1);
+      } else if (maxCount) {
+        exceedMaxCount = cloneList.length > maxCount;
+        cloneList = cloneList.slice(0, maxCount);
+      }
+      (0, import_react_dom8.flushSync)(() => {
+        setMergedFileList(cloneList);
+      });
+      const changeInfo = {
+        file,
+        fileList: cloneList
+      };
+      if (event) {
+        changeInfo.event = event;
+      }
+      if (!exceedMaxCount || file.status === "removed" || cloneList.some((f) => f.uid === file.uid)) {
+        (0, import_react_dom8.flushSync)(() => {
+          onChange == null ? void 0 : onChange(changeInfo);
+        });
+      }
+    };
+    const mergedBeforeUpload = async (file, fileListArgs) => {
+      const {
+        beforeUpload
+      } = props;
+      let parsedFile = file;
+      if (beforeUpload) {
+        const result = await beforeUpload(file, fileListArgs);
+        if (result === false) {
+          return false;
+        }
+        delete file[LIST_IGNORE];
+        if (result === LIST_IGNORE) {
+          Object.defineProperty(file, LIST_IGNORE, {
+            value: true,
+            configurable: true
+          });
+          return false;
+        }
+        if (typeof result === "object" && result) {
+          parsedFile = result;
+        }
+      }
+      return parsedFile;
+    };
+    const onBatchStart = (batchFileInfoList) => {
+      const filteredFileInfoList = batchFileInfoList.filter((info) => !info.file[LIST_IGNORE]);
+      if (!filteredFileInfoList.length) {
+        return;
+      }
+      const objectFileList = filteredFileInfoList.map((info) => file2Obj(info.file));
+      let newFileList = _toConsumableArray(mergedFileList);
+      objectFileList.forEach((fileObj) => {
+        newFileList = updateFileList(fileObj, newFileList);
+      });
+      objectFileList.forEach((fileObj, index2) => {
+        let triggerFileObj = fileObj;
+        if (!filteredFileInfoList[index2].parsedFile) {
+          const {
+            originFileObj
+          } = fileObj;
+          let clone;
+          try {
+            clone = new File([originFileObj], originFileObj.name, {
+              type: originFileObj.type
+            });
+          } catch (e3) {
+            clone = new Blob([originFileObj], {
+              type: originFileObj.type
+            });
+            clone.name = originFileObj.name;
+            clone.lastModifiedDate = new Date();
+            clone.lastModified = new Date().getTime();
+          }
+          clone.uid = fileObj.uid;
+          triggerFileObj = clone;
+        } else {
+          fileObj.status = "uploading";
+        }
+        onInternalChange(triggerFileObj, newFileList);
+      });
+    };
+    const onSuccess = (response, file, xhr) => {
+      try {
+        if (typeof response === "string") {
+          response = JSON.parse(response);
+        }
+      } catch (e3) {
+      }
+      if (!getFileItem(file, mergedFileList)) {
+        return;
+      }
+      const targetItem = file2Obj(file);
+      targetItem.status = "done";
+      targetItem.percent = 100;
+      targetItem.response = response;
+      targetItem.xhr = xhr;
+      const nextFileList = updateFileList(targetItem, mergedFileList);
+      onInternalChange(targetItem, nextFileList);
+    };
+    const onProgress = (e3, file) => {
+      if (!getFileItem(file, mergedFileList)) {
+        return;
+      }
+      const targetItem = file2Obj(file);
+      targetItem.status = "uploading";
+      targetItem.percent = e3.percent;
+      const nextFileList = updateFileList(targetItem, mergedFileList);
+      onInternalChange(targetItem, nextFileList, e3);
+    };
+    const onError = (error, response, file) => {
+      if (!getFileItem(file, mergedFileList)) {
+        return;
+      }
+      const targetItem = file2Obj(file);
+      targetItem.error = error;
+      targetItem.response = response;
+      targetItem.status = "error";
+      const nextFileList = updateFileList(targetItem, mergedFileList);
+      onInternalChange(targetItem, nextFileList);
+    };
+    const handleRemove = (file) => {
+      let currentFile;
+      Promise.resolve(typeof onRemove === "function" ? onRemove(file) : onRemove).then((ret) => {
+        var _a;
+        if (ret === false) {
+          return;
+        }
+        const removedFileList = removeFileItem(file, mergedFileList);
+        if (removedFileList) {
+          currentFile = __spreadProps(__spreadValues({}, file), {
+            status: "removed"
+          });
+          mergedFileList == null ? void 0 : mergedFileList.forEach((item) => {
+            const matchKey = currentFile.uid !== void 0 ? "uid" : "name";
+            if (item[matchKey] === currentFile[matchKey] && !Object.isFrozen(item)) {
+              item.status = "removed";
+            }
+          });
+          (_a = uploadRef.current) == null ? void 0 : _a.abort(currentFile);
+          onInternalChange(currentFile, removedFileList);
+        }
+      });
+    };
+    const onFileDrop = (e3) => {
+      setDragState(e3.type);
+      if (e3.type === "drop") {
+        onDrop == null ? void 0 : onDrop(e3);
+      }
+    };
+    React384.useImperativeHandle(ref, () => ({
+      onBatchStart,
+      onSuccess,
+      onProgress,
+      onError,
+      fileList: mergedFileList,
+      upload: uploadRef.current,
+      nativeElement: wrapRef.current
+    }));
+    const {
+      getPrefixCls,
+      direction,
+      className: contextClassName,
+      style: contextStyle,
+      classNames: contextClassNames,
+      styles: contextStyles
+    } = useComponentConfig("upload");
+    const prefixCls = getPrefixCls("upload", customizePrefixCls);
+    const mergedProps = __spreadProps(__spreadValues({}, props), {
+      listType,
+      showUploadList,
+      type: type5,
+      multiple,
+      hasControlInside,
+      supportServerRender,
+      disabled: mergedDisabled
+    });
+    const [mergedClassNames, mergedStyles] = useMergeSemantic([contextClassNames, classNames], [contextStyles, styles2], {
+      props: mergedProps
+    });
+    const rcUploadProps = __spreadProps(__spreadValues({
+      onBatchStart,
+      onError,
+      onProgress,
+      onSuccess
+    }, props), {
+      customRequest,
+      data,
+      multiple,
+      action,
+      accept,
+      supportServerRender,
+      prefixCls,
+      disabled: mergedDisabled,
+      beforeUpload: mergedBeforeUpload,
+      onChange: void 0,
+      hasControlInside
+    });
+    delete rcUploadProps.className;
+    delete rcUploadProps.style;
+    if (!children || mergedDisabled) {
+      delete rcUploadProps.id;
+    }
+    const wrapperCls = `${prefixCls}-wrapper`;
+    const [hashId, cssVarCls] = style_default23(prefixCls, wrapperCls);
+    const [contextLocale] = useLocale_default("Upload", en_US_default6.Upload);
+    const {
+      showRemoveIcon,
+      showPreviewIcon,
+      showDownloadIcon,
+      removeIcon,
+      previewIcon,
+      downloadIcon,
+      extra
+    } = typeof showUploadList === "boolean" ? {} : showUploadList;
+    const realShowRemoveIcon = typeof showRemoveIcon === "undefined" ? !mergedDisabled : showRemoveIcon;
+    const renderUploadList = (button, buttonVisible) => {
+      if (!showUploadList) {
+        return button;
+      }
+      return /* @__PURE__ */ React384.createElement(UploadList_default, {
+        classNames: mergedClassNames,
+        styles: mergedStyles,
+        prefixCls,
+        listType,
+        items: mergedFileList,
+        previewFile,
+        onPreview,
+        onDownload,
+        onRemove: handleRemove,
+        showRemoveIcon: realShowRemoveIcon,
+        showPreviewIcon,
+        showDownloadIcon,
+        removeIcon,
+        previewIcon,
+        downloadIcon,
+        iconRender,
+        extra,
+        locale: __spreadValues(__spreadValues({}, contextLocale), propLocale),
+        isImageUrl: isImageUrl2,
+        progress,
+        appendAction: button,
+        appendActionVisible: buttonVisible,
+        itemRender,
+        disabled: mergedDisabled
+      });
+    };
+    const mergedRootCls = clsx(wrapperCls, className, rootClassName, hashId, cssVarCls, contextClassName, mergedClassNames.root, {
+      [`${prefixCls}-rtl`]: direction === "rtl",
+      [`${prefixCls}-picture-card-wrapper`]: listType === "picture-card",
+      [`${prefixCls}-picture-circle-wrapper`]: listType === "picture-circle"
+    });
+    const mergedRootStyle = __spreadValues({}, mergedStyles.root);
+    const mergedStyle = __spreadValues(__spreadValues({}, contextStyle), style2);
+    if (type5 === "drag") {
+      const dragCls = clsx(hashId, prefixCls, `${prefixCls}-drag`, {
+        [`${prefixCls}-drag-uploading`]: mergedFileList.some((file) => file.status === "uploading"),
+        [`${prefixCls}-drag-hover`]: dragState === "dragover",
+        [`${prefixCls}-disabled`]: mergedDisabled,
+        [`${prefixCls}-rtl`]: direction === "rtl"
+      }, mergedClassNames.trigger);
+      return /* @__PURE__ */ React384.createElement("span", {
+        className: mergedRootCls,
+        ref: wrapRef,
+        style: mergedRootStyle
+      }, /* @__PURE__ */ React384.createElement("div", {
+        className: dragCls,
+        style: __spreadValues(__spreadValues({}, mergedStyle), mergedStyles.trigger),
+        onDrop: onFileDrop,
+        onDragOver: onFileDrop,
+        onDragLeave: onFileDrop
+      }, /* @__PURE__ */ React384.createElement(es_default18, __spreadProps(__spreadValues({}, rcUploadProps), {
+        ref: uploadRef,
+        className: `${prefixCls}-btn`
+      }), /* @__PURE__ */ React384.createElement("div", {
+        className: `${prefixCls}-drag-container`
+      }, children))), renderUploadList());
+    }
+    const uploadBtnCls = clsx(prefixCls, `${prefixCls}-select`, {
+      [`${prefixCls}-disabled`]: mergedDisabled,
+      [`${prefixCls}-hidden`]: !children
+    }, mergedClassNames.trigger);
+    const uploadButton = /* @__PURE__ */ React384.createElement("div", {
+      className: uploadBtnCls,
+      style: __spreadValues(__spreadValues({}, mergedStyle), mergedStyles.trigger)
+    }, /* @__PURE__ */ React384.createElement(es_default18, __spreadProps(__spreadValues({}, rcUploadProps), {
+      ref: uploadRef
+    })));
+    if (listType === "picture-card" || listType === "picture-circle") {
+      return /* @__PURE__ */ React384.createElement("span", {
+        className: mergedRootCls,
+        ref: wrapRef,
+        style: mergedRootStyle
+      }, renderUploadList(uploadButton, !!children));
+    }
+    return /* @__PURE__ */ React384.createElement("span", {
+      className: mergedRootCls,
+      ref: wrapRef,
+      style: mergedRootStyle
+    }, uploadButton, renderUploadList());
+  };
+  var Upload2 = /* @__PURE__ */ React384.forwardRef(InternalUpload);
+  if (true) {
+    Upload2.displayName = "Upload";
+  }
+  var Upload_default2 = Upload2;
+
+  // ../custom_dashboard/node_modules/antd/es/upload/Dragger.js
+  "use client";
+  var Dragger = /* @__PURE__ */ React385.forwardRef((props, ref) => {
+    const _a = props, {
+      style: style2,
+      height,
+      hasControlInside = false,
+      children
+    } = _a, restProps = __objRest(_a, [
+      "style",
+      "height",
+      "hasControlInside",
+      "children"
+    ]);
+    const mergedStyle = __spreadProps(__spreadValues({}, style2), {
+      height
+    });
+    return /* @__PURE__ */ React385.createElement(Upload_default2, __spreadProps(__spreadValues({
+      ref,
+      hasControlInside
+    }, restProps), {
+      style: mergedStyle,
+      type: "drag"
+    }), children);
+  });
+  if (true) {
+    Dragger.displayName = "Dragger";
+  }
+  var Dragger_default = Dragger;
+
+  // ../custom_dashboard/node_modules/antd/es/upload/index.js
+  "use client";
+  var Upload3 = Upload_default2;
+  Upload3.Dragger = Dragger_default;
+  Upload3.LIST_IGNORE = LIST_IGNORE;
+  var upload_default = Upload3;
+
   // ../custom_dashboard/node_modules/antd/es/index.js
   "use client";
   if (true) {
@@ -75277,11 +78752,11 @@ html body {
   }
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/hooks/useFrappe.js
-  var import_react130 = __toESM(require_react());
+  var import_react135 = __toESM(require_react());
   var useFrappeGetDocList = (doctype, options = {}) => {
-    const [data, setData] = (0, import_react130.useState)([]);
-    const [loading, setLoading] = (0, import_react130.useState)(true);
-    const [error, setError] = (0, import_react130.useState)(null);
+    const [data, setData] = (0, import_react135.useState)([]);
+    const [loading, setLoading] = (0, import_react135.useState)(true);
+    const [error, setError] = (0, import_react135.useState)(null);
     const fetchData = () => {
       if (typeof frappe === "undefined") {
         setLoading(false);
@@ -75307,20 +78782,22 @@ html body {
         }
       });
     };
-    (0, import_react130.useEffect)(() => {
+    (0, import_react135.useEffect)(() => {
       fetchData();
     }, []);
     return { data, loading, error, mutate: fetchData };
   };
   var useFrappeCreateDoc = () => {
-    const [loading, setLoading] = (0, import_react130.useState)(false);
-    const [error, setError] = (0, import_react130.useState)(null);
+    const [loading, setLoading] = (0, import_react135.useState)(false);
+    const [error, setError] = (0, import_react135.useState)(null);
     const createDoc = (doctype, data) => {
       setLoading(true);
       return new Promise((resolve, reject) => {
         frappe.call({
           method: "frappe.client.insert",
-          args: { doc: __spreadValues({ doctype }, data) },
+          args: {
+            doc: __spreadValues({ doctype }, data)
+          },
           callback: (r3) => {
             setLoading(false);
             if (r3.message)
@@ -75338,20 +78815,185 @@ html body {
     };
     return { createDoc, loading, error };
   };
+  var useFrappeUpdateDoc = () => {
+    const [loading, setLoading] = (0, import_react135.useState)(false);
+    const [error, setError] = (0, import_react135.useState)(null);
+    const updateDoc = (doctype, name, data) => {
+      setLoading(true);
+      return new Promise((resolve, reject) => {
+        frappe.call({
+          method: "frappe.client.set_value",
+          args: {
+            doctype,
+            name,
+            fieldname: data
+          },
+          callback: (r3) => {
+            setLoading(false);
+            if (r3.message)
+              resolve(r3.message);
+            else
+              reject(r3);
+          },
+          error: (err) => {
+            setLoading(false);
+            setError(err.message || "Failed to update.");
+            reject(err);
+          }
+        });
+      });
+    };
+    return { updateDoc, loading, error };
+  };
+  var useFrappeFileUpload = () => {
+    const [loading, setLoading] = (0, import_react135.useState)(false);
+    const [error, setError] = (0, import_react135.useState)(null);
+    const upload2 = (file, args) => {
+      setLoading(true);
+      return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("is_private", args.is_private || 0);
+        formData.append("doctype", args.doctype);
+        formData.append("docname", args.docname);
+        formData.append("fieldname", args.fieldname);
+        xhr.open("POST", "/api/method/upload_file", true);
+        if (typeof frappe !== "undefined" && frappe.csrf_token) {
+          xhr.setRequestHeader("X-Frappe-CSRF-Token", frappe.csrf_token);
+        }
+        xhr.onload = function() {
+          setLoading(false);
+          if (xhr.status === 200) {
+            const response = JSON.parse(xhr.responseText);
+            resolve(response.message || response);
+          } else {
+            setError("Upload failed.");
+            reject("Upload failed");
+          }
+        };
+        xhr.onerror = () => {
+          setLoading(false);
+          setError("Network Error");
+          reject("Network Error");
+        };
+        xhr.send(formData);
+      });
+    };
+    return { upload: upload2, loading, error };
+  };
+  var useFrappeDeleteDoc = () => {
+    const [loading, setLoading] = (0, import_react135.useState)(false);
+    const [error, setError] = (0, import_react135.useState)(null);
+    const deleteDoc = (doctype, name) => {
+      setLoading(true);
+      return new Promise((resolve, reject) => {
+        frappe.call({
+          method: "frappe.client.delete",
+          args: { doctype, name },
+          callback: (r3) => {
+            setLoading(false);
+            resolve(r3.message || true);
+          },
+          error: (err) => {
+            setLoading(false);
+            setError(err.message || "Failed to delete.");
+            reject(err);
+          }
+        });
+      });
+    };
+    return { deleteDoc, loading, error };
+  };
+
+  // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/components/FileUpload.jsx
+  var import_react136 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/UploadOutlined.js
+  var React386 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/UploadOutlined.js
+  var UploadOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M400 317.7h73.9V656c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V317.7H624c6.7 0 10.4-7.7 6.3-12.9L518.3 163a8 8 0 00-12.6 0l-112 141.7c-4.1 5.3-.4 13 6.3 13zM878 626h-60c-4.4 0-8 3.6-8 8v154H214V634c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v198c0 17.7 14.3 32 32 32h684c17.7 0 32-14.3 32-32V634c0-4.4-3.6-8-8-8z" } }] }, "name": "upload", "theme": "outlined" };
+  var UploadOutlined_default = UploadOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/UploadOutlined.js
+  function _extends91() {
+    _extends91 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends91.apply(this, arguments);
+  }
+  var UploadOutlined2 = (props, ref) => /* @__PURE__ */ React386.createElement(AntdIcon_default, _extends91({}, props, {
+    ref,
+    icon: UploadOutlined_default
+  }));
+  var RefIcon34 = /* @__PURE__ */ React386.forwardRef(UploadOutlined2);
+  if (true) {
+    RefIcon34.displayName = "UploadOutlined";
+  }
+  var UploadOutlined_default2 = RefIcon34;
+
+  // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/components/FileUpload.jsx
+  var FileUpload = ({ value, onChange, accept = "image/*,application/pdf,.csv" }) => {
+    const [fileList, setFileList] = (0, import_react136.useState)([]);
+    const handleBeforeUpload = (file) => {
+      return false;
+    };
+    const handleChange = ({ fileList: newFileList }) => {
+      setFileList(newFileList);
+      if (onChange) {
+        onChange(newFileList.length > 0 ? newFileList[0].originFileObj : null);
+      }
+    };
+    return /* @__PURE__ */ import_react136.default.createElement(upload_default, {
+      beforeUpload: handleBeforeUpload,
+      fileList,
+      onChange: handleChange,
+      accept,
+      maxCount: 1
+    }, /* @__PURE__ */ import_react136.default.createElement(button_default, {
+      icon: /* @__PURE__ */ import_react136.default.createElement(UploadOutlined_default2, null)
+    }, "Select File"));
+  };
+  var FileUpload_default = FileUpload;
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/pages/Customers.jsx
   var Customers = () => {
     const { data: customers, loading, error, mutate } = useFrappeGetDocList("Customer", {
-      fields: ["name", "customer_name", "phone"]
+      fields: ["name", "customer_name", "phone", "image"]
     });
     const { createDoc, loading: creating } = useFrappeCreateDoc();
-    const [isModalOpen, setIsModalOpen] = (0, import_react131.useState)(false);
+    const { updateDoc, loading: updating } = useFrappeUpdateDoc();
+    const { deleteDoc } = useFrappeDeleteDoc();
+    const { upload: upload2, loading: uploading } = useFrappeFileUpload();
+    const [isModalOpen, setIsModalOpen] = (0, import_react137.useState)(false);
+    const [editingCustomer, setEditingCustomer] = (0, import_react137.useState)(null);
     const [form] = form_default.useForm();
     const columns = [
       {
         title: "ID",
         dataIndex: "name",
         key: "name"
+      },
+      {
+        title: "Image",
+        dataIndex: "image",
+        key: "image",
+        render: (text) => text ? /* @__PURE__ */ import_react137.default.createElement("img", {
+          src: text,
+          alt: "Customer",
+          style: { width: 40, height: 40, borderRadius: "50%", objectFit: "cover" }
+        }) : /* @__PURE__ */ import_react137.default.createElement("div", {
+          style: { width: 40, height: 40, borderRadius: "50%", background: "#eaeaea", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "12px", color: "#888" }
+        }, "N/A")
       },
       {
         title: "Customer Name",
@@ -75362,92 +79004,159 @@ html body {
         title: "Phone",
         dataIndex: "phone",
         key: "phone"
+      },
+      {
+        title: "Manage",
+        key: "actions",
+        render: (_, record) => /* @__PURE__ */ import_react137.default.createElement(space_default, {
+          size: "middle"
+        }, /* @__PURE__ */ import_react137.default.createElement(button_default, {
+          type: "link",
+          onClick: () => handleEdit(record)
+        }, "Edit"), /* @__PURE__ */ import_react137.default.createElement(button_default, {
+          type: "link",
+          danger: true,
+          onClick: () => handleDelete(record.name)
+        }, "Delete"))
       }
     ];
     const showModal = () => {
+      setEditingCustomer(null);
+      form.resetFields();
       setIsModalOpen(true);
+    };
+    const handleEdit = (customer) => {
+      setEditingCustomer(customer);
+      form.setFieldsValue(customer);
+      setIsModalOpen(true);
+    };
+    const handleDelete = (name) => {
+      modal_default.confirm({
+        title: "Are you sure you want to delete this customer?",
+        okText: "Yes",
+        okType: "danger",
+        cancelText: "No",
+        onOk() {
+          return deleteDoc("Customer", name).then(() => {
+            message_default.success("Customer deleted successfully!");
+            mutate();
+          }).catch((err) => {
+            message_default.error(err.message || "Failed to delete.");
+          });
+        }
+      });
     };
     const handleCancel = () => {
       setIsModalOpen(false);
+      setEditingCustomer(null);
       form.resetFields();
     };
-    const handleCreate = (values) => {
-      createDoc("Customer", {
-        customer_name: values.customer_name,
-        customer_type: "Individual",
-        customer_group: "All Customer Groups",
-        territory: "All Territories"
-      }).then(() => {
-        message_default.success("Customer created successfully!");
-        setIsModalOpen(false);
-        form.resetFields();
-        mutate();
-      }).catch((err) => {
-        message_default.error(err.message || "Failed to create customer.");
-      });
+    const handleSave = async (values) => {
+      try {
+        const file = values.attachment;
+        const uploadFile = async (docname) => {
+          if (file) {
+            await upload2(file, {
+              doctype: "Customer",
+              docname,
+              fieldname: "image",
+              is_private: 0
+            });
+          }
+        };
+        if (editingCustomer) {
+          await updateDoc("Customer", editingCustomer.name, {
+            customer_name: values.customer_name,
+            phone: values.phone
+          });
+          await uploadFile(editingCustomer.name);
+          message_default.success("Customer updated successfully!");
+        } else {
+          const doc = await createDoc("Customer", {
+            customer_name: values.customer_name,
+            phone: values.phone
+          });
+          await uploadFile(doc.name);
+          message_default.success("Customer created successfully!");
+        }
+        handleCancel();
+        await mutate();
+      } catch (err) {
+        message_default.error(err.message || "Something went wrong");
+      }
     };
-    return /* @__PURE__ */ import_react131.default.createElement("div", {
+    return /* @__PURE__ */ import_react137.default.createElement("div", {
       style: { padding: "20px", background: "#f5f7fa", minHeight: "100vh" }
-    }, /* @__PURE__ */ import_react131.default.createElement("div", {
+    }, /* @__PURE__ */ import_react137.default.createElement("div", {
       style: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }
-    }, /* @__PURE__ */ import_react131.default.createElement("h2", {
+    }, /* @__PURE__ */ import_react137.default.createElement("h2", {
       style: { margin: 0 }
-    }, "Customers List"), /* @__PURE__ */ import_react131.default.createElement(button_default, {
+    }, "Customers List"), /* @__PURE__ */ import_react137.default.createElement(button_default, {
       type: "primary",
       onClick: showModal
-    }, "+ Create Customer")), loading ? /* @__PURE__ */ import_react131.default.createElement("div", {
+    }, "+ Create Customer")), loading ? /* @__PURE__ */ import_react137.default.createElement("div", {
       style: { textAlign: "center", padding: "50px" }
-    }, /* @__PURE__ */ import_react131.default.createElement(spin_default, {
+    }, /* @__PURE__ */ import_react137.default.createElement(spin_default, {
       size: "large"
-    })) : error ? /* @__PURE__ */ import_react131.default.createElement(alert_default, {
+    })) : error ? /* @__PURE__ */ import_react137.default.createElement(alert_default, {
       message: "Error",
       description: error.message || "Something went wrong",
       type: "error",
       showIcon: true
-    }) : /* @__PURE__ */ import_react131.default.createElement(table_default, {
+    }) : /* @__PURE__ */ import_react137.default.createElement(table_default, {
       dataSource: customers,
       columns,
       rowKey: "name",
       pagination: { pageSize: 10 }
-    }), /* @__PURE__ */ import_react131.default.createElement(modal_default, {
-      title: "Create New Customer",
+    }), /* @__PURE__ */ import_react137.default.createElement(modal_default, {
+      title: editingCustomer ? "Edit Customer" : "Create New Customer",
       open: isModalOpen,
       onCancel: handleCancel,
       footer: null
-    }, /* @__PURE__ */ import_react131.default.createElement(form_default, {
+    }, /* @__PURE__ */ import_react137.default.createElement(form_default, {
       form,
       layout: "vertical",
-      onFinish: handleCreate
-    }, /* @__PURE__ */ import_react131.default.createElement(form_default.Item, {
+      onFinish: handleSave
+    }, /* @__PURE__ */ import_react137.default.createElement(form_default.Item, {
       name: "customer_name",
       label: "Customer Name",
       rules: [{ required: true, message: "Please enter customer name!" }]
-    }, /* @__PURE__ */ import_react131.default.createElement(input_default, {
+    }, /* @__PURE__ */ import_react137.default.createElement(input_default, {
       placeholder: "Enter Customer Name"
-    })), /* @__PURE__ */ import_react131.default.createElement(form_default.Item, {
+    })), /* @__PURE__ */ import_react137.default.createElement(form_default.Item, {
+      name: "phone",
+      label: "Phone"
+    }, /* @__PURE__ */ import_react137.default.createElement(input_default, {
+      placeholder: "Enter Phone Number"
+    })), /* @__PURE__ */ import_react137.default.createElement(form_default.Item, {
+      name: "attachment",
+      label: "Attachment (PDF, CSV, Image)"
+    }, /* @__PURE__ */ import_react137.default.createElement(FileUpload_default, {
+      accept: "image/*,application/pdf,.csv,.xlsx"
+    })), /* @__PURE__ */ import_react137.default.createElement(form_default.Item, {
       style: { marginTop: "20px", textAlign: "right" }
-    }, /* @__PURE__ */ import_react131.default.createElement(button_default, {
+    }, /* @__PURE__ */ import_react137.default.createElement(button_default, {
       style: { marginRight: "10px" },
       onClick: handleCancel
-    }, "Cancel"), /* @__PURE__ */ import_react131.default.createElement(button_default, {
+    }, "Cancel"), /* @__PURE__ */ import_react137.default.createElement(button_default, {
       type: "primary",
       htmlType: "submit",
-      loading: creating
-    }, "Create")))));
+      loading: creating || updating || uploading
+    }, editingCustomer ? "Update" : "Create")))));
   };
   var Customers_default = Customers;
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/pages/Orders.jsx
-  var import_react132 = __toESM(require_react());
+  var import_react138 = __toESM(require_react());
   var Orders = () => {
-    return /* @__PURE__ */ import_react132.default.createElement("div", null, /* @__PURE__ */ import_react132.default.createElement("h2", null, "Orders"), /* @__PURE__ */ import_react132.default.createElement("p", null, "Welcome to your custom dashboard!"));
+    return /* @__PURE__ */ import_react138.default.createElement("div", null, /* @__PURE__ */ import_react138.default.createElement("h2", null, "Orders"), /* @__PURE__ */ import_react138.default.createElement("p", null, "Welcome to your custom dashboard!"));
   };
   var Orders_default = Orders;
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/App.jsx
   var App = () => {
-    const [currentRoute, setCurrentRoute] = (0, import_react133.useState)("");
-    (0, import_react133.useEffect)(() => {
+    const [currentRoute, setCurrentRoute] = (0, import_react139.useState)("");
+    (0, import_react139.useEffect)(() => {
       const handleRoute = () => {
         if (typeof frappe !== "undefined" && frappe.get_route) {
           const route = frappe.get_route();
@@ -75469,18 +79178,18 @@ html body {
       switch (currentRoute) {
         case "dashboard":
         case "":
-          return /* @__PURE__ */ import_react133.default.createElement(Dashboard_default, null);
+          return /* @__PURE__ */ import_react139.default.createElement(Dashboard_default, null);
         case "customers":
-          return /* @__PURE__ */ import_react133.default.createElement(Customers_default, null);
+          return /* @__PURE__ */ import_react139.default.createElement(Customers_default, null);
         case "orders":
-          return /* @__PURE__ */ import_react133.default.createElement(Orders_default, null);
+          return /* @__PURE__ */ import_react139.default.createElement(Orders_default, null);
         default:
-          return /* @__PURE__ */ import_react133.default.createElement(Dashboard_default, null);
+          return /* @__PURE__ */ import_react139.default.createElement(Dashboard_default, null);
       }
     };
-    return /* @__PURE__ */ import_react133.default.createElement("div", {
+    return /* @__PURE__ */ import_react139.default.createElement("div", {
       style: { paddingTop: "20px" }
-    }, /* @__PURE__ */ import_react133.default.createElement(Navbar_default, null), /* @__PURE__ */ import_react133.default.createElement("div", {
+    }, /* @__PURE__ */ import_react139.default.createElement(Navbar_default, null), /* @__PURE__ */ import_react139.default.createElement("div", {
       style: { padding: "20px 0px" }
     }, renderPage()));
   };
@@ -75510,7 +79219,7 @@ html body {
     setup_app() {
       const root = (0, import_client2.createRoot)(this.$wrapper.get(0));
       root.render(
-        /* @__PURE__ */ import_react134.default.createElement(App, null)
+        /* @__PURE__ */ import_react140.default.createElement(App, null)
       );
       this.$aavatto_test = root;
     }
@@ -75564,4 +79273,4 @@ html body {
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-//# sourceMappingURL=aavatto_test.bundle.4PC4Y3D4.js.map
+//# sourceMappingURL=aavatto_test.bundle.FINU7PED.js.map

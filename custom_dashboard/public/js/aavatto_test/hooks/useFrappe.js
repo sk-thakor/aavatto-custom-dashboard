@@ -46,7 +46,9 @@ export const useFrappeCreateDoc = () => {
         return new Promise((resolve, reject) => {
             frappe.call({
                 method: "frappe.client.insert",
-                args: { doc: { doctype, ...data } },
+                args: { 
+                    doc: { doctype, ...data } 
+                },
                 callback: (r) => {
                     setLoading(false);
                     if (r.message) resolve(r.message);
@@ -73,7 +75,11 @@ export const useFrappeUpdateDoc = () => {
         return new Promise((resolve, reject) => {
             frappe.call({
                 method: "frappe.client.set_value",
-                args: { doctype, name, ...data },
+                args: { 
+                    doctype: doctype, 
+                    name: name, 
+                    fieldname: data 
+                },
                 callback: (r) => {
                     setLoading(false);
                     if (r.message) resolve(r.message);
@@ -134,4 +140,30 @@ export const useFrappeFileUpload = () => {
     };
 
     return { upload, loading, error };
+};
+
+export const useFrappeDeleteDoc = () => {
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
+
+    const deleteDoc = (doctype, name) => {
+        setLoading(true);
+        return new Promise((resolve, reject) => {
+            frappe.call({
+                method: "frappe.client.delete",
+                args: { doctype, name },
+                callback: (r) => {
+                    setLoading(false);
+                    resolve(r.message || true);
+                },
+                error: (err) => {
+                    setLoading(false);
+                    setError(err.message || "Failed to delete.");
+                    reject(err);
+                }
+            });
+        });
+    };
+
+    return { deleteDoc, loading, error };
 };
