@@ -119,8 +119,9 @@ body {
 }
 
 .layout-main-section {
-  padding: 30px !important;
+  padding: 0 !important;
   background-color: var(--bg-color) !important;
+  height: 100vh;
 }
 
 .page-head {

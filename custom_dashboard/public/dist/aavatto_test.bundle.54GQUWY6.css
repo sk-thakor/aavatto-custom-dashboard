@@ -102,8 +102,9 @@ body {
   padding: 0 !important;
 }
 .layout-main-section {
-  padding: 30px !important;
+  padding: 0 !important;
   background-color: var(--bg-color) !important;
+  height: 100vh;
 }
 .page-head {
   display: none !important;
@@ -142,7 +143,6 @@ body {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 var(--container-padding);
 }
 @media (max-width: 1200px) {
   .container {
@@ -160,4 +160,4 @@ body {
     padding: 0 15px;
   }
 }
-/*# sourceMappingURL=aavatto_test.bundle.BDH2TSKZ.css.map */
+/*# sourceMappingURL=aavatto_test.bundle.54GQUWY6.css.map */

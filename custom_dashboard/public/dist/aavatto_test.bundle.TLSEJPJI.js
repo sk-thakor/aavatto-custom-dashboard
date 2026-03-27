@@ -1291,7 +1291,7 @@
           return dispatcher;
         }
         "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-        var React391 = require_react(), Internals = {
+        var React398 = require_react(), Internals = {
           d: {
             f: noop4,
             r: function() {
@@ -1309,7 +1309,7 @@
           },
           p: 0,
           findDOMNode: null
-        }, REACT_PORTAL_TYPE = Symbol.for("react.portal"), ReactSharedInternals = React391.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
+        }, REACT_PORTAL_TYPE = Symbol.for("react.portal"), ReactSharedInternals = React398.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
         "function" === typeof Map && null != Map.prototype && "function" === typeof Map.prototype.forEach && "function" === typeof Set && null != Set.prototype && "function" === typeof Set.prototype.clear && "function" === typeof Set.prototype.forEach || console.error(
           "React depends on Map and Set built-in types. Make sure that you load a polyfill in older browsers. https://reactjs.org/link/react-polyfills"
         );
@@ -3161,7 +3161,7 @@
           "number" === type5 && getActiveElement(node2.ownerDocument) === node2 || node2.defaultValue === "" + value || (node2.defaultValue = "" + value);
         }
         function validateOptionProps(element, props) {
-          null == props.value && ("object" === typeof props.children && null !== props.children ? React391.Children.forEach(props.children, function(child) {
+          null == props.value && ("object" === typeof props.children && null !== props.children ? React398.Children.forEach(props.children, function(child) {
             null == child || "string" === typeof child || "number" === typeof child || "bigint" === typeof child || didWarnInvalidChild || (didWarnInvalidChild = true, console.error(
               "Cannot infer the option value of complex children. Pass a `value` prop or use a plain string as children to <option>."
             ));
@@ -8074,7 +8074,7 @@
         function mountLayoutEffect(create, deps) {
           var fiberFlags = 4194308;
           (currentlyRenderingFiber.mode & StrictEffectsMode) !== NoMode && (fiberFlags |= 134217728);
-          return mountEffectImpl(fiberFlags, Layout, create, deps);
+          return mountEffectImpl(fiberFlags, Layout3, create, deps);
         }
         function imperativeHandleEffect(create, ref) {
           if ("function" === typeof ref) {
@@ -8102,7 +8102,7 @@
           (currentlyRenderingFiber.mode & StrictEffectsMode) !== NoMode && (fiberFlags |= 134217728);
           mountEffectImpl(
             fiberFlags,
-            Layout,
+            Layout3,
             imperativeHandleEffect.bind(null, create, ref),
             deps
           );
@@ -8115,7 +8115,7 @@
           deps = null !== deps && void 0 !== deps ? deps.concat([ref]) : null;
           updateEffectImpl(
             4,
-            Layout,
+            Layout3,
             imperativeHandleEffect.bind(null, create, ref),
             deps
           );
@@ -11054,7 +11054,7 @@
                   updateQueue
                 ), (flags & Insertion) !== NoFlags && (isRunningInsertionEffect = false), void 0 !== lastEffect && "function" !== typeof lastEffect)) {
                   var hookName = void 0;
-                  hookName = 0 !== (updateQueue.tag & Layout) ? "useLayoutEffect" : 0 !== (updateQueue.tag & Insertion) ? "useInsertionEffect" : "useEffect";
+                  hookName = 0 !== (updateQueue.tag & Layout3) ? "useLayoutEffect" : 0 !== (updateQueue.tag & Insertion) ? "useInsertionEffect" : "useEffect";
                   var addendum = void 0;
                   addendum = null === lastEffect ? " You returned null. If your effect does not require clean up, return undefined (or nothing)." : "function" === typeof lastEffect.then ? "\n\nIt looks like you wrote " + hookName + "(async () => ...) or returned a Promise. Instead, write the async function inside your effect and call it immediately:\n\n" + hookName + "(() => {\n  async function fetchData() {\n    // You can await here\n    const response = await MyAPI.getData(someId);\n    // ...\n  }\n  fetchData();\n}, [someId]); // Or [] if effect doesn't need props or state\n\nLearn more about data fetching with Hooks: https://react.dev/link/hooks-data-fetching" : " You returned: " + lastEffect;
                   runWithFiberInDEV(
@@ -11558,7 +11558,7 @@
             case 11:
             case 15:
               recursivelyTraverseLayoutEffects(finishedRoot, finishedWork);
-              flags & 4 && commitHookLayoutEffects(finishedWork, Layout | HasEffect);
+              flags & 4 && commitHookLayoutEffects(finishedWork, Layout3 | HasEffect);
               break;
             case 1:
               recursivelyTraverseLayoutEffects(finishedRoot, finishedWork);
@@ -11891,7 +11891,7 @@
               offscreenSubtreeWasHidden || commitHookLayoutUnmountEffects(
                 deletedFiber,
                 nearestMountedAncestor,
-                Layout
+                Layout3
               );
               recursivelyTraverseDeletionEffects(
                 finishedRoot,
@@ -12071,7 +12071,7 @@
               ), commitHookEffectListMount(Insertion | HasEffect, finishedWork), commitHookLayoutUnmountEffects(
                 finishedWork,
                 finishedWork.return,
-                Layout | HasEffect
+                Layout3 | HasEffect
               ));
               break;
             case 1:
@@ -12464,7 +12464,7 @@
               commitHookLayoutUnmountEffects(
                 finishedWork,
                 finishedWork.return,
-                Layout
+                Layout3
               );
               recursivelyTraverseDisappearLayoutEffects(finishedWork);
               break;
@@ -12525,7 +12525,7 @@
                 finishedWork,
                 includeWorkInProgressEffects
               );
-              commitHookLayoutEffects(finishedWork, Layout);
+              commitHookLayoutEffects(finishedWork, Layout3);
               break;
             case 1:
               recursivelyTraverseReappearLayoutEffects(
@@ -18999,14 +18999,14 @@
           ));
         }
         "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-        var Scheduler = require_scheduler(), React391 = require_react(), ReactDOM = require_react_dom(), assign2 = Object.assign, REACT_LEGACY_ELEMENT_TYPE = Symbol.for("react.element"), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE2 = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy");
+        var Scheduler = require_scheduler(), React398 = require_react(), ReactDOM = require_react_dom(), assign2 = Object.assign, REACT_LEGACY_ELEMENT_TYPE = Symbol.for("react.element"), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE2 = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy");
         Symbol.for("react.scope");
         var REACT_ACTIVITY_TYPE = Symbol.for("react.activity");
         Symbol.for("react.legacy_hidden");
         Symbol.for("react.tracing_marker");
         var REACT_MEMO_CACHE_SENTINEL = Symbol.for("react.memo_cache_sentinel");
         Symbol.for("react.view_transition");
-        var MAYBE_ITERATOR_SYMBOL = Symbol.iterator, REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), isArrayImpl = Array.isArray, ReactSharedInternals = React391.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, ReactDOMSharedInternals = ReactDOM.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, NotPending = Object.freeze({
+        var MAYBE_ITERATOR_SYMBOL = Symbol.iterator, REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), isArrayImpl = Array.isArray, ReactSharedInternals = React398.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, ReactDOMSharedInternals = ReactDOM.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, NotPending = Object.freeze({
           pending: false,
           data: null,
           method: null,
@@ -20373,7 +20373,7 @@
         var reconcileChildFibers = createChildReconciler(true), mountChildFibers = createChildReconciler(false), UpdateState = 0, ReplaceState = 1, ForceUpdate = 2, CaptureUpdate = 3, hasForceUpdate = false;
         var didWarnUpdateInsideUpdate = false;
         var currentlyProcessingQueue = null;
-        var didReadFromEntangledAsyncAction = false, currentTreeHiddenStackCursor = createCursor(null), prevEntangledRenderLanesCursor = createCursor(0), suspenseHandlerStackCursor = createCursor(null), shellBoundary = null, SubtreeSuspenseContextMask = 1, ForceSuspenseFallback = 2, suspenseStackCursor = createCursor(0), NoFlags = 0, HasEffect = 1, Insertion = 2, Layout = 4, Passive = 8, didWarnUncachedGetSnapshot;
+        var didReadFromEntangledAsyncAction = false, currentTreeHiddenStackCursor = createCursor(null), prevEntangledRenderLanesCursor = createCursor(0), suspenseHandlerStackCursor = createCursor(null), shellBoundary = null, SubtreeSuspenseContextMask = 1, ForceSuspenseFallback = 2, suspenseStackCursor = createCursor(0), NoFlags = 0, HasEffect = 1, Insertion = 2, Layout3 = 4, Passive = 8, didWarnUncachedGetSnapshot;
         var didWarnAboutMismatchedHooksForComponent = /* @__PURE__ */ new Set();
         var didWarnAboutUseWrappedInTryCatch = /* @__PURE__ */ new Set();
         var didWarnAboutAsyncClientComponent = /* @__PURE__ */ new Set();
@@ -20704,7 +20704,7 @@
           useLayoutEffect: function(create, deps) {
             currentHookNameInDev = "useLayoutEffect";
             updateHookTypesDev();
-            return updateEffectImpl(4, Layout, create, deps);
+            return updateEffectImpl(4, Layout3, create, deps);
           },
           useMemo: function(create, deps) {
             currentHookNameInDev = "useMemo";
@@ -20834,7 +20834,7 @@
           useLayoutEffect: function(create, deps) {
             currentHookNameInDev = "useLayoutEffect";
             updateHookTypesDev();
-            return updateEffectImpl(4, Layout, create, deps);
+            return updateEffectImpl(4, Layout3, create, deps);
           },
           useMemo: function(create, deps) {
             currentHookNameInDev = "useMemo";
@@ -21129,7 +21129,7 @@
             currentHookNameInDev = "useLayoutEffect";
             warnInvalidHookAccess();
             updateHookTypesDev();
-            return updateEffectImpl(4, Layout, create, deps);
+            return updateEffectImpl(4, Layout3, create, deps);
           },
           useMemo: function(create, deps) {
             currentHookNameInDev = "useMemo";
@@ -21284,7 +21284,7 @@
             currentHookNameInDev = "useLayoutEffect";
             warnInvalidHookAccess();
             updateHookTypesDev();
-            return updateEffectImpl(4, Layout, create, deps);
+            return updateEffectImpl(4, Layout3, create, deps);
           },
           useMemo: function(create, deps) {
             currentHookNameInDev = "useMemo";
@@ -21799,7 +21799,7 @@
           }
         };
         (function() {
-          var isomorphicReactPackageVersion = React391.version;
+          var isomorphicReactPackageVersion = React398.version;
           if ("19.2.4" !== isomorphicReactPackageVersion)
             throw Error(
               'Incompatible React versions: The "react" and "react-dom" packages must have the exact same version. Instead got:\n  - react:      ' + (isomorphicReactPackageVersion + "\n  - react-dom:  19.2.4\nLearn more: https://react.dev/warnings/version-mismatch")
@@ -21945,32 +21945,22 @@
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/App.jsx
   var import_react138 = __toESM(require_react());
 
-  // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/pages/Dashboard.jsx
-  var import_react = __toESM(require_react());
-  var Dashboard = () => {
-    return /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("h2", null, "Dashboard"), /* @__PURE__ */ import_react.default.createElement("p", null, "Welcome to your custom dashboard!"));
-  };
-  var Dashboard_default = Dashboard;
-
-  // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/pages/Customers.jsx
-  var import_react136 = __toESM(require_react());
-
   // ../custom_dashboard/node_modules/antd/es/_util/getReactMajorVersionCanDelMe.js
-  var import_react2 = __toESM(require_react());
+  var import_react = __toESM(require_react());
   function getReactMajorVersion() {
-    const majorVersion = Number.parseInt(import_react2.version.split(".")[0], 10);
+    const majorVersion = Number.parseInt(import_react.version.split(".")[0], 10);
     return majorVersion;
   }
 
   // ../custom_dashboard/node_modules/antd/es/_util/warning.js
-  var React7 = __toESM(require_react());
+  var React6 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/util/es/hooks/useEvent.js
-  var React2 = __toESM(require_react());
+  var React = __toESM(require_react());
   var useEvent = (callback) => {
-    const fnRef = React2.useRef(callback);
+    const fnRef = React.useRef(callback);
     fnRef.current = callback;
-    const memoFn = React2.useCallback((...args) => {
+    const memoFn = React.useCallback((...args) => {
       var _a;
       return (_a = fnRef.current) == null ? void 0 : _a.call(fnRef, ...args);
     }, []);
@@ -21979,7 +21969,7 @@
   var useEvent_default = useEvent;
 
   // ../custom_dashboard/node_modules/@rc-component/util/es/hooks/useLayoutEffect.js
-  var React3 = __toESM(require_react());
+  var React2 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/util/es/Dom/canUseDom.js
   function canUseDom() {
@@ -21987,9 +21977,9 @@
   }
 
   // ../custom_dashboard/node_modules/@rc-component/util/es/hooks/useLayoutEffect.js
-  var useInternalLayoutEffect = canUseDom() ? React3.useLayoutEffect : React3.useEffect;
+  var useInternalLayoutEffect = canUseDom() ? React2.useLayoutEffect : React2.useEffect;
   var useLayoutEffect2 = (callback, deps) => {
-    const firstMountRef = React3.useRef(true);
+    const firstMountRef = React2.useRef(true);
     useInternalLayoutEffect(() => {
       return callback(firstMountRef.current);
     }, deps);
@@ -22003,11 +21993,11 @@
   var useLayoutEffect_default = useLayoutEffect2;
 
   // ../custom_dashboard/node_modules/@rc-component/util/es/hooks/useState.js
-  var React4 = __toESM(require_react());
+  var React3 = __toESM(require_react());
   var useSafeState = (defaultValue) => {
-    const destroyRef = React4.useRef(false);
-    const [value, setValue] = React4.useState(defaultValue);
-    React4.useEffect(() => {
+    const destroyRef = React3.useRef(false);
+    const [value, setValue] = React3.useState(defaultValue);
+    React3.useEffect(() => {
       destroyRef.current = false;
       return () => {
         destroyRef.current = true;
@@ -22024,9 +22014,9 @@
   var useState_default = useSafeState;
 
   // ../custom_dashboard/node_modules/@rc-component/util/es/hooks/useControlledState.js
-  var import_react3 = __toESM(require_react());
+  var import_react2 = __toESM(require_react());
   function useControlledState(defaultStateValue, value) {
-    const [innerValue, setInnerValue] = (0, import_react3.useState)(defaultStateValue);
+    const [innerValue, setInnerValue] = (0, import_react2.useState)(defaultStateValue);
     const mergedValue = value !== void 0 ? value : innerValue;
     useLayoutEffect_default((mount) => {
       if (!mount) {
@@ -22040,13 +22030,13 @@
   }
 
   // ../custom_dashboard/node_modules/@rc-component/util/es/ref.js
-  var import_react4 = __toESM(require_react());
+  var import_react3 = __toESM(require_react());
   var import_react_is = __toESM(require_react_is());
 
   // ../custom_dashboard/node_modules/@rc-component/util/es/hooks/useMemo.js
-  var React5 = __toESM(require_react());
+  var React4 = __toESM(require_react());
   function useMemo(getValue3, condition, shouldUpdate) {
-    const cacheRef = React5.useRef({});
+    const cacheRef = React4.useRef({});
     if (!("value" in cacheRef.current) || shouldUpdate(cacheRef.current.condition, condition)) {
       cacheRef.current.value = getValue3();
       cacheRef.current.condition = condition;
@@ -22063,7 +22053,7 @@
   }
 
   // ../custom_dashboard/node_modules/@rc-component/util/es/ref.js
-  var ReactMajorVersion = Number(import_react4.version.split(".")[0]);
+  var ReactMajorVersion = Number(import_react3.version.split(".")[0]);
   var fillRef = (ref, node2) => {
     if (typeof ref === "function") {
       ref(node2);
@@ -22107,7 +22097,7 @@
     return true;
   };
   function isReactElement(node2) {
-    return /* @__PURE__ */ (0, import_react4.isValidElement)(node2) && !isFragment(node2);
+    return /* @__PURE__ */ (0, import_react3.isValidElement)(node2) && !isFragment(node2);
   }
   var supportNodeRef = (node2) => {
     return isReactElement(node2) && supportRef(node2);
@@ -22258,10 +22248,10 @@
   }
 
   // ../custom_dashboard/node_modules/@rc-component/util/es/Children/toArray.js
-  var import_react5 = __toESM(require_react());
+  var import_react4 = __toESM(require_react());
   function toArray(children, option = {}) {
     let ret = [];
-    import_react5.default.Children.forEach(children, (child) => {
+    import_react4.default.Children.forEach(children, (child) => {
       if ((child === void 0 || child === null) && !option.keepEmpty) {
         return;
       }
@@ -22293,11 +22283,11 @@
     };
   }
   var warning2 = _warning;
-  var WarningContext = /* @__PURE__ */ React7.createContext({});
+  var WarningContext = /* @__PURE__ */ React6.createContext({});
   var devUseWarning = true ? (component) => {
     const {
       strict
-    } = React7.useContext(WarningContext);
+    } = React6.useContext(WarningContext);
     const typeWarning = (valid, type5, message2) => {
       if (!valid) {
         if (strict === false && type5 === "deprecated") {
@@ -22330,7 +22320,7 @@
   var warning_default2 = warning2;
 
   // ../custom_dashboard/node_modules/@rc-component/resize-observer/es/index.js
-  var React11 = __toESM(require_react());
+  var React10 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/util/es/Dom/findDOMNode.js
   function isDOM(node2) {
@@ -22347,19 +22337,19 @@
   }
 
   // ../custom_dashboard/node_modules/@rc-component/resize-observer/es/SingleObserver/index.js
-  var React10 = __toESM(require_react());
+  var React9 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/resize-observer/es/Collection.js
-  var React8 = __toESM(require_react());
-  var CollectionContext = /* @__PURE__ */ React8.createContext(null);
+  var React7 = __toESM(require_react());
+  var CollectionContext = /* @__PURE__ */ React7.createContext(null);
   function Collection({
     children,
     onBatchResize
   }) {
-    const resizeIdRef = React8.useRef(0);
-    const resizeInfosRef = React8.useRef([]);
-    const onCollectionResize = React8.useContext(CollectionContext);
-    const onResize2 = React8.useCallback((size, element, data) => {
+    const resizeIdRef = React7.useRef(0);
+    const resizeInfosRef = React7.useRef([]);
+    const onCollectionResize = React7.useContext(CollectionContext);
+    const onResize2 = React7.useCallback((size, element, data) => {
       resizeIdRef.current += 1;
       const currentId = resizeIdRef.current;
       resizeInfosRef.current.push({
@@ -22375,13 +22365,13 @@
       });
       onCollectionResize == null ? void 0 : onCollectionResize(size, element, data);
     }, [onBatchResize, onCollectionResize]);
-    return /* @__PURE__ */ React8.createElement(CollectionContext.Provider, {
+    return /* @__PURE__ */ React7.createElement(CollectionContext.Provider, {
       value: onResize2
     }, children);
   }
 
   // ../custom_dashboard/node_modules/@rc-component/resize-observer/es/useResizeObserver.js
-  var React9 = __toESM(require_react());
+  var React8 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/resize-observer/es/utils/observerUtil.js
   var elementListeners = /* @__PURE__ */ new Map();
@@ -22420,7 +22410,7 @@
 
   // ../custom_dashboard/node_modules/@rc-component/resize-observer/es/useResizeObserver.js
   function useResizeObserver(enabled, getTarget, onDelayResize, onSyncResize) {
-    const sizeRef = React9.useRef({
+    const sizeRef = React8.useRef({
       width: -1,
       height: -1,
       offsetWidth: -1,
@@ -22458,8 +22448,8 @@
       }
     });
     const isFuncTarget = typeof getTarget === "function";
-    const funcTargetIdRef = React9.useRef(0);
-    React9.useEffect(() => {
+    const funcTargetIdRef = React8.useRef(0);
+    React8.useEffect(() => {
       const target = isFuncTarget ? getTarget() : getTarget;
       if (target && enabled) {
         observe(target, onInternalResize);
@@ -22485,25 +22475,25 @@
       onResize: onResize2,
       data
     } = props;
-    const elementRef = React10.useRef(null);
-    const onCollectionResize = React10.useContext(CollectionContext);
+    const elementRef = React9.useRef(null);
+    const onCollectionResize = React9.useContext(CollectionContext);
     const isRenderProps = typeof children === "function";
     const mergedChildren = isRenderProps ? children(elementRef) : children;
-    const canRef = !isRenderProps && /* @__PURE__ */ React10.isValidElement(mergedChildren) && supportRef(mergedChildren);
+    const canRef = !isRenderProps && /* @__PURE__ */ React9.isValidElement(mergedChildren) && supportRef(mergedChildren);
     const originRef = canRef ? getNodeRef(mergedChildren) : null;
     const mergedRef = useComposeRef(originRef, elementRef);
     const getDomElement = () => {
       return getDOM(elementRef.current);
     };
-    React10.useImperativeHandle(ref, () => getDomElement());
+    React9.useImperativeHandle(ref, () => getDomElement());
     useResizeObserver(!disabled, getDomElement, onResize2, (sizeInfo, target) => {
       onCollectionResize == null ? void 0 : onCollectionResize(sizeInfo, target, data);
     });
-    return canRef ? /* @__PURE__ */ React10.cloneElement(mergedChildren, {
+    return canRef ? /* @__PURE__ */ React9.cloneElement(mergedChildren, {
       ref: mergedRef
     }) : mergedChildren;
   }
-  var RefSingleObserver = /* @__PURE__ */ React10.forwardRef(SingleObserver);
+  var RefSingleObserver = /* @__PURE__ */ React9.forwardRef(SingleObserver);
   if (true) {
     RefSingleObserver.displayName = "SingleObserver";
   }
@@ -22539,13 +22529,13 @@
     }
     return childNodes.map((child, index2) => {
       const key = (child == null ? void 0 : child.key) || `${INTERNAL_PREFIX_KEY}-${index2}`;
-      return /* @__PURE__ */ React11.createElement(SingleObserver_default, _extends({}, props, {
+      return /* @__PURE__ */ React10.createElement(SingleObserver_default, _extends({}, props, {
         key,
         ref: index2 === 0 ? ref : void 0
       }), child);
     });
   }
-  var RefResizeObserver = /* @__PURE__ */ React11.forwardRef(ResizeObserver2);
+  var RefResizeObserver = /* @__PURE__ */ React10.forwardRef(ResizeObserver2);
   if (true) {
     RefResizeObserver.displayName = "ResizeObserver";
   }
@@ -22653,7 +22643,7 @@
   var raf_default = wrapperRaf;
 
   // ../custom_dashboard/node_modules/antd/es/config-provider/context.js
-  var React12 = __toESM(require_react());
+  var React11 = __toESM(require_react());
   var defaultPrefixCls = "ant";
   var defaultIconPrefixCls = "anticon";
   var Variants = ["outlined", "borderless", "filled", "underlined"];
@@ -22663,7 +22653,7 @@
     }
     return suffixCls ? `${defaultPrefixCls}-${suffixCls}` : defaultPrefixCls;
   };
-  var ConfigContext = /* @__PURE__ */ React12.createContext({
+  var ConfigContext = /* @__PURE__ */ React11.createContext({
     getPrefixCls: defaultGetPrefixCls,
     iconPrefixCls: defaultIconPrefixCls
   });
@@ -22672,7 +22662,7 @@
   } = ConfigContext;
   var EMPTY_OBJECT = {};
   function useComponentConfig(propName) {
-    const context = React12.useContext(ConfigContext);
+    const context = React11.useContext(ConfigContext);
     const {
       getPrefixCls,
       direction,
@@ -22856,7 +22846,7 @@
   }
 
   // ../custom_dashboard/node_modules/@ant-design/cssinjs/es/hooks/useCacheToken.js
-  var import_react7 = __toESM(require_react());
+  var import_react6 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/util/es/isEqual.js
   function isEqual(obj1, obj2, shallow = false) {
@@ -22900,7 +22890,7 @@
   var isEqual_default = isEqual;
 
   // ../custom_dashboard/node_modules/@ant-design/cssinjs/es/StyleContext.js
-  var React13 = __toESM(require_react());
+  var React12 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/cssinjs/es/Cache.js
   var SPLIT = "%";
@@ -22973,7 +22963,7 @@
     }
     return new Cache_default(cssinjsInstanceId);
   }
-  var StyleContext = /* @__PURE__ */ React13.createContext({
+  var StyleContext = /* @__PURE__ */ React12.createContext({
     hashPriority: "low",
     cache: createCache(),
     defaultCache: true,
@@ -23262,8 +23252,8 @@
   };
 
   // ../custom_dashboard/node_modules/@ant-design/cssinjs/es/hooks/useGlobalCache.js
-  var React14 = __toESM(require_react());
-  var import_react6 = __toESM(require_react());
+  var React13 = __toESM(require_react());
+  var import_react5 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/cssinjs/es/hooks/useHMR.js
   var webpackHMR = false;
@@ -23290,7 +23280,7 @@
   function useGlobalCache(prefix2, keyPath, cacheFn, onCacheRemove, onCacheEffect) {
     const {
       cache: globalCache
-    } = React14.useContext(StyleContext_default);
+    } = React13.useContext(StyleContext_default);
     const fullPath = [prefix2, ...keyPath];
     const fullPathStr = pathKey(fullPath);
     const HMRUpdate = useHMR_default();
@@ -23307,7 +23297,7 @@
         return updater ? updater(data) : data;
       });
     };
-    React14.useMemo(
+    React13.useMemo(
       () => {
         buildCache();
       },
@@ -23319,7 +23309,7 @@
       cacheEntity = globalCache.opGet(fullPathStr);
     }
     const cacheContent = cacheEntity[1];
-    (0, import_react6.useInsertionEffect)(() => {
+    (0, import_react5.useInsertionEffect)(() => {
       buildCache(([times, cache]) => [times + 1, cache]);
       if (!effectMap.has(fullPathStr)) {
         onCacheEffect == null ? void 0 : onCacheEffect(cacheContent);
@@ -23393,7 +23383,7 @@
       },
       container,
       hashPriority
-    } = (0, import_react7.useContext)(StyleContext_default);
+    } = (0, import_react6.useContext)(StyleContext_default);
     const {
       salt = "",
       override = EMPTY_OVERRIDE,
@@ -23462,10 +23452,10 @@
   };
 
   // ../custom_dashboard/node_modules/@ant-design/cssinjs/es/hooks/useCSSVarRegister.js
-  var import_react8 = __toESM(require_react());
+  var import_react7 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/cssinjs/es/hooks/useStyleRegister.js
-  var React15 = __toESM(require_react());
+  var React14 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@emotion/unitless/dist/unitless.browser.esm.js
   var unitlessKeys = {
@@ -24324,7 +24314,7 @@
       cache,
       layer: enableLayer,
       autoPrefix
-    } = React15.useContext(StyleContext_default);
+    } = React14.useContext(StyleContext_default);
     const fullPath = [hashId || ""];
     if (enableLayer) {
       fullPath.push("layer");
@@ -24454,7 +24444,7 @@
       },
       container,
       hashPriority
-    } = (0, import_react8.useContext)(StyleContext_default);
+    } = (0, import_react7.useContext)(StyleContext_default);
     const {
       _tokenKey: tokenKey
     } = token2;
@@ -24699,7 +24689,7 @@
   }
 
   // ../custom_dashboard/node_modules/@ant-design/cssinjs-utils/es/util/genStyleUtils.js
-  var import_react10 = __toESM(require_react());
+  var import_react9 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@babel/runtime/helpers/esm/classCallCheck.js
   function _classCallCheck(a, n2) {
@@ -25116,7 +25106,7 @@
   var maxmin_default = genMaxMin;
 
   // ../custom_dashboard/node_modules/@ant-design/cssinjs-utils/es/_util/hooks/useUniqueMemo.js
-  var import_react9 = __toESM(require_react());
+  var import_react8 = __toESM(require_react());
   var BEAT_LIMIT = 1e3 * 60 * 10;
   var ArrayKeyMap = /* @__PURE__ */ function() {
     function ArrayKeyMap2() {
@@ -25187,7 +25177,7 @@
   }();
   var uniqueMap = new ArrayKeyMap();
   function useUniqueMemo(memoFn, deps) {
-    return import_react9.default.useMemo(function() {
+    return import_react8.default.useMemo(function() {
       var cachedValue = uniqueMap.get(deps);
       if (cachedValue) {
         return cachedValue;
@@ -25280,7 +25270,7 @@
       return function(prefixCls) {
         var rootCls = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : prefixCls;
         var _useToken2 = useToken2(), theme = _useToken2.theme, realToken = _useToken2.realToken, hashId = _useToken2.hashId, token2 = _useToken2.token, cssVar = _useToken2.cssVar, zeroRuntime = _useToken2.zeroRuntime;
-        var memoizedZeroRuntime = (0, import_react10.useMemo)(function() {
+        var memoizedZeroRuntime = (0, import_react9.useMemo)(function() {
           return zeroRuntime;
         }, []);
         if (memoizedZeroRuntime) {
@@ -25410,7 +25400,7 @@
   }
 
   // ../custom_dashboard/node_modules/antd/es/theme/useToken.js
-  var import_react12 = __toESM(require_react());
+  var import_react11 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/version/version.js
   var version_default = "6.3.3";
@@ -25420,7 +25410,7 @@
   var version_default2 = version_default;
 
   // ../custom_dashboard/node_modules/antd/es/theme/context.js
-  var import_react11 = __toESM(require_react());
+  var import_react10 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/theme/themes/seed.js
   var defaultPresetColors = {
@@ -26601,7 +26591,7 @@
     },
     hashed: true
   };
-  var DesignTokenContext = /* @__PURE__ */ import_react11.default.createContext(defaultConfig);
+  var DesignTokenContext = /* @__PURE__ */ import_react10.default.createContext(defaultConfig);
 
   // ../custom_dashboard/node_modules/antd/es/theme/util/getAlphaColor.js
   function isStableColor(color) {
@@ -26879,10 +26869,10 @@
       override,
       cssVar: ctxCssVar,
       zeroRuntime
-    } = import_react12.default.useContext(DesignTokenContext);
+    } = import_react11.default.useContext(DesignTokenContext);
     const {
       csp
-    } = import_react12.default.useContext(ConfigContext);
+    } = import_react11.default.useContext(ConfigContext);
     const cssVar = {
       prefix: (_a = ctxCssVar == null ? void 0 : ctxCssVar.prefix) != null ? _a : "ant",
       key: (_b = ctxCssVar == null ? void 0 : ctxCssVar.key) != null ? _b : "css-var-root"
@@ -26904,7 +26894,7 @@
   }
 
   // ../custom_dashboard/node_modules/antd/es/theme/util/genStyleUtils.js
-  var import_react13 = __toESM(require_react());
+  var import_react12 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/style/index.js
   "use client";
@@ -27055,7 +27045,7 @@
       const {
         getPrefixCls,
         iconPrefixCls
-      } = (0, import_react13.useContext)(ConfigContext);
+      } = (0, import_react12.useContext)(ConfigContext);
       const rootPrefixCls = getPrefixCls();
       return {
         rootPrefixCls,
@@ -27076,7 +27066,7 @@
     useCSP: () => {
       const {
         csp
-      } = (0, import_react13.useContext)(ConfigContext);
+      } = (0, import_react12.useContext)(ConfigContext);
       return csp != null ? csp : {};
     },
     getResetStyles: (token2, config) => {
@@ -27133,25 +27123,25 @@
   var useResetIconStyle_default = useResetIconStyle;
 
   // ../custom_dashboard/node_modules/antd/es/alert/Alert.js
-  var React44 = __toESM(require_react());
+  var React43 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CheckCircleFilled.js
-  var React22 = __toESM(require_react());
+  var React21 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/CheckCircleFilled.js
   var CheckCircleFilled = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm193.5 301.7l-210.6 292a31.8 31.8 0 01-51.7 0L318.5 484.9c-3.8-5.3 0-12.7 6.5-12.7h46.9c10.2 0 19.9 4.9 25.9 13.3l71.2 98.8 157.2-218c6-8.3 15.6-13.3 25.9-13.3H699c6.5 0 10.3 7.4 6.5 12.7z" } }] }, "name": "check-circle", "theme": "filled" };
   var CheckCircleFilled_default = CheckCircleFilled;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/components/AntdIcon.js
-  var React21 = __toESM(require_react());
+  var React20 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/components/Context.js
-  var import_react14 = __toESM(require_react());
-  var IconContext = /* @__PURE__ */ (0, import_react14.createContext)({});
+  var import_react13 = __toESM(require_react());
+  var IconContext = /* @__PURE__ */ (0, import_react13.createContext)({});
   var Context_default = IconContext;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/components/IconBase.js
-  var React20 = __toESM(require_react());
+  var React19 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/util/es/Dom/shadow.js
   function getRoot(ele) {
@@ -27166,7 +27156,7 @@
   }
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/utils.js
-  var import_react15 = __toESM(require_react());
+  var import_react14 = __toESM(require_react());
   function camelCase(input) {
     return input.replace(/-(.)/g, (match3, g) => g.toUpperCase());
   }
@@ -27193,11 +27183,11 @@
   }
   function generate2(node2, key, rootProps) {
     if (!rootProps) {
-      return /* @__PURE__ */ import_react15.default.createElement(node2.tag, __spreadValues({
+      return /* @__PURE__ */ import_react14.default.createElement(node2.tag, __spreadValues({
         key
       }, normalizeAttrs(node2.attrs)), (node2.children || []).map((child, index2) => generate2(child, `${key}-${node2.tag}-${index2}`)));
     }
-    return /* @__PURE__ */ import_react15.default.createElement(node2.tag, __spreadValues(__spreadValues({
+    return /* @__PURE__ */ import_react14.default.createElement(node2.tag, __spreadValues(__spreadValues({
       key
     }, normalizeAttrs(node2.attrs)), rootProps), (node2.children || []).map((child, index2) => generate2(child, `${key}-${node2.tag}-${index2}`)));
   }
@@ -27272,7 +27262,7 @@
       csp,
       prefixCls,
       layer
-    } = (0, import_react15.useContext)(Context_default);
+    } = (0, import_react14.useContext)(Context_default);
     let mergedStyleStr = iconStyles;
     if (prefixCls) {
       mergedStyleStr = mergedStyleStr.replace(/anticon/g, prefixCls);
@@ -27282,7 +27272,7 @@
 ${mergedStyleStr}
 }`;
     }
-    (0, import_react15.useEffect)(() => {
+    (0, import_react14.useEffect)(() => {
       const ele = eleRef.current;
       const shadowRoot = getShadowRoot(ele);
       updateCSS(mergedStyleStr, "@ant-design-icons", {
@@ -27326,7 +27316,7 @@ ${mergedStyleStr}
       "primaryColor",
       "secondaryColor"
     ]);
-    const svgRef = React20.useRef(null);
+    const svgRef = React19.useRef(null);
     let colors = twoToneColorPalette;
     if (primaryColor) {
       colors = {
@@ -27396,7 +27386,7 @@ ${mergedStyleStr}
     return _extends2.apply(this, arguments);
   }
   setTwoToneColor(blue.primary);
-  var Icon = /* @__PURE__ */ React21.forwardRef((props, ref) => {
+  var Icon = /* @__PURE__ */ React20.forwardRef((props, ref) => {
     const _a = props, {
       className,
       icon,
@@ -27417,7 +27407,7 @@ ${mergedStyleStr}
     const {
       prefixCls = "anticon",
       rootClassName
-    } = React21.useContext(Context_default);
+    } = React20.useContext(Context_default);
     const classString = clsx(rootClassName, prefixCls, {
       [`${prefixCls}-${icon.name}`]: !!icon.name,
       [`${prefixCls}-spin`]: !!spin || icon.name === "loading"
@@ -27431,7 +27421,7 @@ ${mergedStyleStr}
       transform: `rotate(${rotate}deg)`
     } : void 0;
     const [primaryColor, secondaryColor] = normalizeTwoToneColors(twoToneColor);
-    return /* @__PURE__ */ React21.createElement("span", _extends2({
+    return /* @__PURE__ */ React20.createElement("span", _extends2({
       role: "img",
       "aria-label": icon.name
     }, restProps, {
@@ -27439,7 +27429,7 @@ ${mergedStyleStr}
       tabIndex: iconTabIndex,
       onClick,
       className: classString
-    }), /* @__PURE__ */ React21.createElement(IconBase_default, {
+    }), /* @__PURE__ */ React20.createElement(IconBase_default, {
       icon,
       primaryColor,
       secondaryColor,
@@ -27468,18 +27458,18 @@ ${mergedStyleStr}
     };
     return _extends3.apply(this, arguments);
   }
-  var CheckCircleFilled2 = (props, ref) => /* @__PURE__ */ React22.createElement(AntdIcon_default, _extends3({}, props, {
+  var CheckCircleFilled2 = (props, ref) => /* @__PURE__ */ React21.createElement(AntdIcon_default, _extends3({}, props, {
     ref,
     icon: CheckCircleFilled_default
   }));
-  var RefIcon = /* @__PURE__ */ React22.forwardRef(CheckCircleFilled2);
+  var RefIcon = /* @__PURE__ */ React21.forwardRef(CheckCircleFilled2);
   if (true) {
     RefIcon.displayName = "CheckCircleFilled";
   }
   var CheckCircleFilled_default2 = RefIcon;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CloseCircleFilled.js
-  var React23 = __toESM(require_react());
+  var React22 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/CloseCircleFilled.js
   var CloseCircleFilled = { "icon": { "tag": "svg", "attrs": { "fill-rule": "evenodd", "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M512 64c247.4 0 448 200.6 448 448S759.4 960 512 960 64 759.4 64 512 264.6 64 512 64zm127.98 274.82h-.04l-.08.06L512 466.75 384.14 338.88c-.04-.05-.06-.06-.08-.06a.12.12 0 00-.07 0c-.03 0-.05.01-.09.05l-45.02 45.02a.2.2 0 00-.05.09.12.12 0 000 .07v.02a.27.27 0 00.06.06L466.75 512 338.88 639.86c-.05.04-.06.06-.06.08a.12.12 0 000 .07c0 .03.01.05.05.09l45.02 45.02a.2.2 0 00.09.05.12.12 0 00.07 0c.02 0 .04-.01.08-.05L512 557.25l127.86 127.87c.04.04.06.05.08.05a.12.12 0 00.07 0c.03 0 .05-.01.09-.05l45.02-45.02a.2.2 0 00.05-.09.12.12 0 000-.07v-.02a.27.27 0 00-.05-.06L557.25 512l127.87-127.86c.04-.04.05-.06.05-.08a.12.12 0 000-.07c0-.03-.01-.05-.05-.09l-45.02-45.02a.2.2 0 00-.09-.05.12.12 0 00-.07 0z" } }] }, "name": "close-circle", "theme": "filled" };
@@ -27500,18 +27490,18 @@ ${mergedStyleStr}
     };
     return _extends4.apply(this, arguments);
   }
-  var CloseCircleFilled2 = (props, ref) => /* @__PURE__ */ React23.createElement(AntdIcon_default, _extends4({}, props, {
+  var CloseCircleFilled2 = (props, ref) => /* @__PURE__ */ React22.createElement(AntdIcon_default, _extends4({}, props, {
     ref,
     icon: CloseCircleFilled_default
   }));
-  var RefIcon2 = /* @__PURE__ */ React23.forwardRef(CloseCircleFilled2);
+  var RefIcon2 = /* @__PURE__ */ React22.forwardRef(CloseCircleFilled2);
   if (true) {
     RefIcon2.displayName = "CloseCircleFilled";
   }
   var CloseCircleFilled_default2 = RefIcon2;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CloseOutlined.js
-  var React24 = __toESM(require_react());
+  var React23 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/CloseOutlined.js
   var CloseOutlined = { "icon": { "tag": "svg", "attrs": { "fill-rule": "evenodd", "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z" } }] }, "name": "close", "theme": "outlined" };
@@ -27532,18 +27522,18 @@ ${mergedStyleStr}
     };
     return _extends5.apply(this, arguments);
   }
-  var CloseOutlined2 = (props, ref) => /* @__PURE__ */ React24.createElement(AntdIcon_default, _extends5({}, props, {
+  var CloseOutlined2 = (props, ref) => /* @__PURE__ */ React23.createElement(AntdIcon_default, _extends5({}, props, {
     ref,
     icon: CloseOutlined_default
   }));
-  var RefIcon3 = /* @__PURE__ */ React24.forwardRef(CloseOutlined2);
+  var RefIcon3 = /* @__PURE__ */ React23.forwardRef(CloseOutlined2);
   if (true) {
     RefIcon3.displayName = "CloseOutlined";
   }
   var CloseOutlined_default2 = RefIcon3;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/ExclamationCircleFilled.js
-  var React25 = __toESM(require_react());
+  var React24 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/ExclamationCircleFilled.js
   var ExclamationCircleFilled = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm-32 232c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v272c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V296zm32 440a48.01 48.01 0 010-96 48.01 48.01 0 010 96z" } }] }, "name": "exclamation-circle", "theme": "filled" };
@@ -27564,18 +27554,18 @@ ${mergedStyleStr}
     };
     return _extends6.apply(this, arguments);
   }
-  var ExclamationCircleFilled2 = (props, ref) => /* @__PURE__ */ React25.createElement(AntdIcon_default, _extends6({}, props, {
+  var ExclamationCircleFilled2 = (props, ref) => /* @__PURE__ */ React24.createElement(AntdIcon_default, _extends6({}, props, {
     ref,
     icon: ExclamationCircleFilled_default
   }));
-  var RefIcon4 = /* @__PURE__ */ React25.forwardRef(ExclamationCircleFilled2);
+  var RefIcon4 = /* @__PURE__ */ React24.forwardRef(ExclamationCircleFilled2);
   if (true) {
     RefIcon4.displayName = "ExclamationCircleFilled";
   }
   var ExclamationCircleFilled_default2 = RefIcon4;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/InfoCircleFilled.js
-  var React26 = __toESM(require_react());
+  var React25 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/InfoCircleFilled.js
   var InfoCircleFilled = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm32 664c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V456c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v272zm-32-344a48.01 48.01 0 010-96 48.01 48.01 0 010 96z" } }] }, "name": "info-circle", "theme": "filled" };
@@ -27596,45 +27586,45 @@ ${mergedStyleStr}
     };
     return _extends7.apply(this, arguments);
   }
-  var InfoCircleFilled2 = (props, ref) => /* @__PURE__ */ React26.createElement(AntdIcon_default, _extends7({}, props, {
+  var InfoCircleFilled2 = (props, ref) => /* @__PURE__ */ React25.createElement(AntdIcon_default, _extends7({}, props, {
     ref,
     icon: InfoCircleFilled_default
   }));
-  var RefIcon5 = /* @__PURE__ */ React26.forwardRef(InfoCircleFilled2);
+  var RefIcon5 = /* @__PURE__ */ React25.forwardRef(InfoCircleFilled2);
   if (true) {
     RefIcon5.displayName = "InfoCircleFilled";
   }
   var InfoCircleFilled_default2 = RefIcon5;
 
   // ../custom_dashboard/node_modules/@rc-component/motion/es/CSSMotion.js
-  var React33 = __toESM(require_react());
-  var import_react19 = __toESM(require_react());
+  var React32 = __toESM(require_react());
+  var import_react18 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/motion/es/context.js
-  var React27 = __toESM(require_react());
-  var Context = /* @__PURE__ */ React27.createContext({});
+  var React26 = __toESM(require_react());
+  var Context = /* @__PURE__ */ React26.createContext({});
   var MotionProvider = (props) => {
     const _a = props, {
       children
     } = _a, rest = __objRest(_a, [
       "children"
     ]);
-    const memoizedValue = React27.useMemo(() => {
+    const memoizedValue = React26.useMemo(() => {
       return {
         motion: rest.motion
       };
     }, [rest.motion]);
-    return /* @__PURE__ */ React27.createElement(Context.Provider, {
+    return /* @__PURE__ */ React26.createElement(Context.Provider, {
       value: memoizedValue
     }, children);
   };
   var context_default = MotionProvider;
 
   // ../custom_dashboard/node_modules/@rc-component/util/es/hooks/useSyncState.js
-  var React28 = __toESM(require_react());
+  var React27 = __toESM(require_react());
   function useSyncState(defaultValue) {
-    const [, forceUpdate] = React28.useReducer((x) => x + 1, 0);
-    const currentValueRef = React28.useRef(defaultValue);
+    const [, forceUpdate] = React27.useReducer((x) => x + 1, 0);
+    const currentValueRef = React27.useRef(defaultValue);
     const getValue3 = useEvent_default(() => {
       return currentValueRef.current;
     });
@@ -27647,8 +27637,8 @@ ${mergedStyleStr}
   var useSyncState_default = useSyncState;
 
   // ../custom_dashboard/node_modules/@rc-component/motion/es/hooks/useStatus.js
-  var React32 = __toESM(require_react());
-  var import_react18 = __toESM(require_react());
+  var React31 = __toESM(require_react());
+  var import_react17 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/motion/es/interface.js
   var STATUS_NONE = "none";
@@ -27663,8 +27653,8 @@ ${mergedStyleStr}
   var STEP_PREPARED = "prepared";
 
   // ../custom_dashboard/node_modules/@rc-component/motion/es/hooks/useDomMotionEvents.js
-  var React29 = __toESM(require_react());
-  var import_react16 = __toESM(require_react());
+  var React28 = __toESM(require_react());
+  var import_react15 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/motion/es/util/motion.js
   function makePrefixMap(styleProp, eventName) {
@@ -27734,7 +27724,7 @@ ${mergedStyleStr}
 
   // ../custom_dashboard/node_modules/@rc-component/motion/es/hooks/useDomMotionEvents.js
   var useDomMotionEvents_default = (onInternalMotionEnd) => {
-    const cacheElementRef = (0, import_react16.useRef)();
+    const cacheElementRef = (0, import_react15.useRef)();
     function removeMotionEvents(element) {
       if (element) {
         element.removeEventListener(transitionEndName, onInternalMotionEnd);
@@ -27751,7 +27741,7 @@ ${mergedStyleStr}
         cacheElementRef.current = element;
       }
     }
-    React29.useEffect(() => () => {
+    React28.useEffect(() => () => {
       removeMotionEvents(cacheElementRef.current);
       cacheElementRef.current = null;
     }, []);
@@ -27759,17 +27749,17 @@ ${mergedStyleStr}
   };
 
   // ../custom_dashboard/node_modules/@rc-component/motion/es/hooks/useIsomorphicLayoutEffect.js
-  var import_react17 = __toESM(require_react());
-  var useIsomorphicLayoutEffect = canUseDom() ? import_react17.useLayoutEffect : import_react17.useEffect;
+  var import_react16 = __toESM(require_react());
+  var useIsomorphicLayoutEffect = canUseDom() ? import_react16.useLayoutEffect : import_react16.useEffect;
   var useIsomorphicLayoutEffect_default = useIsomorphicLayoutEffect;
 
   // ../custom_dashboard/node_modules/@rc-component/motion/es/hooks/useStepQueue.js
-  var React31 = __toESM(require_react());
+  var React30 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/motion/es/hooks/useNextFrame.js
-  var React30 = __toESM(require_react());
+  var React29 = __toESM(require_react());
   var useNextFrame_default = () => {
-    const nextFrameRef = React30.useRef(null);
+    const nextFrameRef = React29.useRef(null);
     function cancelNextFrame() {
       raf_default.cancel(nextFrameRef.current);
     }
@@ -27786,7 +27776,7 @@ ${mergedStyleStr}
       });
       nextFrameRef.current = nextFrameId;
     }
-    React30.useEffect(() => () => {
+    React29.useEffect(() => () => {
       cancelNextFrame();
     }, []);
     return [nextFrame, cancelNextFrame];
@@ -27830,7 +27820,7 @@ ${mergedStyleStr}
         }
       }
     }, [status, step]);
-    React31.useEffect(() => () => {
+    React30.useEffect(() => () => {
       cancelNextFrame();
     }, []);
     return [startQueue, step];
@@ -27857,16 +27847,16 @@ ${mergedStyleStr}
     onLeaveEnd,
     onVisibleChanged
   }) {
-    const [asyncVisible, setAsyncVisible] = React32.useState();
+    const [asyncVisible, setAsyncVisible] = React31.useState();
     const [getStatus2, setStatus] = useSyncState_default(STATUS_NONE);
-    const [style2, setStyle] = React32.useState([null, null]);
+    const [style2, setStyle] = React31.useState([null, null]);
     const currentStatus = getStatus2();
-    const mountedRef = (0, import_react18.useRef)(false);
-    const deadlineRef = (0, import_react18.useRef)(null);
+    const mountedRef = (0, import_react17.useRef)(false);
+    const deadlineRef = (0, import_react17.useRef)(null);
     function getDomElement() {
       return getElement();
     }
-    const activeRef = (0, import_react18.useRef)(false);
+    const activeRef = (0, import_react17.useRef)(false);
     function updateMotionEndStatus() {
       setStatus(STATUS_NONE);
       setStyle([null, null]);
@@ -27918,7 +27908,7 @@ ${mergedStyleStr}
           return {};
       }
     };
-    const eventHandlers = React32.useMemo(() => getEventHandlers(currentStatus), [currentStatus]);
+    const eventHandlers = React31.useMemo(() => getEventHandlers(currentStatus), [currentStatus]);
     const [startStep, step] = useStepQueue_default(currentStatus, !supportMotion, (newStep) => {
       var _a;
       if (newStep === STEP_PREPARE) {
@@ -27949,7 +27939,7 @@ ${mergedStyleStr}
     });
     const active = isActive(step);
     activeRef.current = active;
-    const visibleRef = (0, import_react18.useRef)(null);
+    const visibleRef = (0, import_react17.useRef)(null);
     useIsomorphicLayoutEffect_default(() => {
       if (mountedRef.current && visibleRef.current === visible) {
         return;
@@ -27976,17 +27966,17 @@ ${mergedStyleStr}
       }
       visibleRef.current = visible;
     }, [visible]);
-    (0, import_react18.useEffect)(() => {
+    (0, import_react17.useEffect)(() => {
       if (currentStatus === STATUS_APPEAR && !motionAppear || currentStatus === STATUS_ENTER && !motionEnter || currentStatus === STATUS_LEAVE && !motionLeave) {
         setStatus(STATUS_NONE);
       }
     }, [motionAppear, motionEnter, motionLeave]);
-    (0, import_react18.useEffect)(() => () => {
+    (0, import_react17.useEffect)(() => () => {
       mountedRef.current = false;
       clearTimeout(deadlineRef.current);
     }, []);
-    const firstMountChangeRef = React32.useRef(false);
-    (0, import_react18.useEffect)(() => {
+    const firstMountChangeRef = React31.useRef(false);
+    (0, import_react17.useEffect)(() => {
       if (asyncVisible) {
         firstMountChangeRef.current = true;
       }
@@ -28024,7 +28014,7 @@ ${mergedStyleStr}
     function isSupportTransition(props, contextMotion) {
       return !!(props.motionName && transitionSupport && contextMotion !== false);
     }
-    const CSSMotion = /* @__PURE__ */ React33.forwardRef((props, ref) => {
+    const CSSMotion = /* @__PURE__ */ React32.forwardRef((props, ref) => {
       const {
         visible = true,
         removeOnLeave = true,
@@ -28036,19 +28026,19 @@ ${mergedStyleStr}
       } = props;
       const {
         motion: contextMotion
-      } = React33.useContext(Context);
+      } = React32.useContext(Context);
       const supportMotion = isSupportTransition(props, contextMotion);
-      const nodeRef = (0, import_react19.useRef)();
+      const nodeRef = (0, import_react18.useRef)();
       function getDomElement() {
         return getDOM(nodeRef.current);
       }
       const [getStatus2, statusStep, statusStyle, mergedVisible, styleReady] = useStatus(supportMotion, visible, getDomElement, props);
       const status = getStatus2();
-      const renderedRef = React33.useRef(mergedVisible);
+      const renderedRef = React32.useRef(mergedVisible);
       if (mergedVisible) {
         renderedRef.current = true;
       }
-      const refObj = React33.useMemo(() => {
+      const refObj = React32.useMemo(() => {
         const obj = {};
         Object.defineProperties(obj, {
           nativeElement: {
@@ -28066,12 +28056,12 @@ ${mergedStyleStr}
         });
         return obj;
       }, []);
-      React33.useImperativeHandle(ref, () => refObj, []);
-      const idRef = React33.useRef(0);
+      React32.useImperativeHandle(ref, () => refObj, []);
+      const idRef = React32.useRef(0);
       if (styleReady) {
         idRef.current += 1;
       }
-      return React33.useMemo(() => {
+      return React32.useMemo(() => {
         if (styleReady === "NONE") {
           return null;
         }
@@ -28115,10 +28105,10 @@ ${mergedStyleStr}
             style: statusStyle
           }), nodeRef);
         }
-        if (/* @__PURE__ */ React33.isValidElement(motionChildren) && supportRef(motionChildren)) {
+        if (/* @__PURE__ */ React32.isValidElement(motionChildren) && supportRef(motionChildren)) {
           const originNodeRef = getNodeRef(motionChildren);
           if (!originNodeRef) {
-            motionChildren = /* @__PURE__ */ React33.cloneElement(motionChildren, {
+            motionChildren = /* @__PURE__ */ React32.cloneElement(motionChildren, {
               ref: nodeRef
             });
           }
@@ -28132,7 +28122,7 @@ ${mergedStyleStr}
   var CSSMotion_default = genCSSMotion(supportTransition);
 
   // ../custom_dashboard/node_modules/@rc-component/motion/es/CSSMotionList.js
-  var React34 = __toESM(require_react());
+  var React33 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/motion/es/util/diff.js
   var STATUS_ADD = "add";
@@ -28229,7 +28219,7 @@ ${mergedStyleStr}
   }
   var MOTION_PROP_NAMES = ["eventProps", "visible", "children", "motionName", "motionAppear", "motionEnter", "motionLeave", "motionLeaveImmediately", "motionDeadline", "removeOnLeave", "leavedClassName", "onAppearPrepare", "onAppearStart", "onAppearActive", "onAppearEnd", "onEnterStart", "onEnterActive", "onEnterEnd", "onLeaveStart", "onLeaveActive", "onLeaveEnd"];
   function genCSSMotionList(transitionSupport, CSSMotion = CSSMotion_default) {
-    class CSSMotionList extends React34.Component {
+    class CSSMotionList extends React33.Component {
       constructor() {
         super(...arguments);
         __publicField(this, "state", {
@@ -28294,21 +28284,21 @@ ${mergedStyleStr}
           "onVisibleChanged",
           "onAllRemoved"
         ]);
-        const Component7 = component || React34.Fragment;
+        const Component7 = component || React33.Fragment;
         const motionProps = {};
         MOTION_PROP_NAMES.forEach((prop) => {
           motionProps[prop] = restProps[prop];
           delete restProps[prop];
         });
         delete restProps.keys;
-        return /* @__PURE__ */ React34.createElement(Component7, restProps, keyEntities.map((_b, index2) => {
+        return /* @__PURE__ */ React33.createElement(Component7, restProps, keyEntities.map((_b, index2) => {
           var _c = _b, {
             status
           } = _c, eventProps = __objRest(_c, [
             "status"
           ]);
           const visible = status === STATUS_ADD || status === STATUS_KEEP;
-          return /* @__PURE__ */ React34.createElement(CSSMotion, _extends8({}, motionProps, {
+          return /* @__PURE__ */ React33.createElement(CSSMotion, _extends8({}, motionProps, {
             key: eventProps.key,
             visible,
             eventProps,
@@ -28387,10 +28377,10 @@ ${mergedStyleStr}
   }
 
   // ../custom_dashboard/node_modules/antd/es/_util/hooks/useClosable.js
-  var import_react21 = __toESM(require_react());
+  var import_react20 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/locale/index.js
-  var React36 = __toESM(require_react());
+  var React35 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/pagination/es/locale/en_US.js
   var locale = {
@@ -28690,21 +28680,21 @@ ${mergedStyleStr}
   }
 
   // ../custom_dashboard/node_modules/antd/es/locale/context.js
-  var import_react20 = __toESM(require_react());
-  var LocaleContext = /* @__PURE__ */ (0, import_react20.createContext)(void 0);
+  var import_react19 = __toESM(require_react());
+  var LocaleContext = /* @__PURE__ */ (0, import_react19.createContext)(void 0);
   var context_default2 = LocaleContext;
 
   // ../custom_dashboard/node_modules/antd/es/locale/useLocale.js
-  var React35 = __toESM(require_react());
+  var React34 = __toESM(require_react());
   var useLocale = (componentName, defaultLocale) => {
-    const fullLocale = React35.useContext(context_default2);
-    const getLocale = React35.useMemo(() => {
+    const fullLocale = React34.useContext(context_default2);
+    const getLocale = React34.useMemo(() => {
       var _a;
       const locale6 = defaultLocale || en_US_default6[componentName];
       const localeFromContext = (_a = fullLocale == null ? void 0 : fullLocale[componentName]) != null ? _a : {};
       return __spreadValues(__spreadValues({}, typeof locale6 === "function" ? locale6() : locale6), localeFromContext || {});
     }, [componentName, defaultLocale, fullLocale]);
-    const getLocaleCode = React35.useMemo(() => {
+    const getLocaleCode = React34.useMemo(() => {
       const localeCode = fullLocale == null ? void 0 : fullLocale.locale;
       if ((fullLocale == null ? void 0 : fullLocale.exist) && !localeCode) {
         return en_US_default6.locale;
@@ -28728,14 +28718,14 @@ ${mergedStyleStr}
       const warning6 = devUseWarning("LocaleProvider");
       true ? warning6(_ANT_MARK__ === ANT_MARK, "deprecated", "`LocaleProvider` is deprecated. Please use `locale` with `ConfigProvider` instead: http://u.ant.design/locale") : void 0;
     }
-    React36.useEffect(() => {
+    React35.useEffect(() => {
       const clearLocale = changeConfirmLocale(locale6 == null ? void 0 : locale6.Modal);
       return clearLocale;
     }, [locale6]);
-    const getMemoizedContextValue = React36.useMemo(() => __spreadProps(__spreadValues({}, locale6), {
+    const getMemoizedContextValue = React35.useMemo(() => __spreadProps(__spreadValues({}, locale6), {
       exist: true
     }), [locale6]);
-    return /* @__PURE__ */ React36.createElement(context_default2.Provider, {
+    return /* @__PURE__ */ React35.createElement(context_default2.Provider, {
       value: getMemoizedContextValue
     }, children);
   };
@@ -28827,9 +28817,9 @@ ${mergedStyleStr}
       if (closeIconRender) {
         finalCloseIcon = closeIconRender(finalCloseIcon);
       }
-      finalCloseIcon = /* @__PURE__ */ import_react21.default.isValidElement(finalCloseIcon) ? /* @__PURE__ */ import_react21.default.cloneElement(finalCloseIcon, __spreadValues(__spreadValues({
+      finalCloseIcon = /* @__PURE__ */ import_react20.default.isValidElement(finalCloseIcon) ? /* @__PURE__ */ import_react20.default.cloneElement(finalCloseIcon, __spreadValues(__spreadValues({
         "aria-label": closeLabel
-      }, finalCloseIcon.props), ariaOrDataProps)) : /* @__PURE__ */ import_react21.default.createElement("span", __spreadValues({
+      }, finalCloseIcon.props), ariaOrDataProps)) : /* @__PURE__ */ import_react20.default.createElement("span", __spreadValues({
         "aria-label": closeLabel
       }, ariaOrDataProps), finalCloseIcon);
     }
@@ -28839,7 +28829,7 @@ ${mergedStyleStr}
     const propConfig = computeClosableConfig(propCloseCollection == null ? void 0 : propCloseCollection.closable, propCloseCollection == null ? void 0 : propCloseCollection.closeIcon);
     const contextConfig = computeClosableConfig(contextCloseCollection == null ? void 0 : contextCloseCollection.closable, contextCloseCollection == null ? void 0 : contextCloseCollection.closeIcon);
     const mergedFallback = __spreadValues({
-      closeIcon: /* @__PURE__ */ import_react21.default.createElement(CloseOutlined_default2, null)
+      closeIcon: /* @__PURE__ */ import_react20.default.createElement(CloseOutlined_default2, null)
     }, fallbackCloseCollection);
     const mergedConfig = mergeClosableConfigs(propConfig, contextConfig, mergedFallback);
     const closeBtnIsDisabled = typeof mergedConfig !== "boolean" ? !!(mergedConfig == null ? void 0 : mergedConfig.disabled) : false;
@@ -28851,21 +28841,21 @@ ${mergedStyleStr}
   };
   var useClosable = (propCloseCollection, contextCloseCollection, fallbackCloseCollection = EmptyFallbackCloseCollection) => {
     const [contextLocale] = useLocale_default("global", en_US_default6.global);
-    return import_react21.default.useMemo(() => {
+    return import_react20.default.useMemo(() => {
       return computeClosable(propCloseCollection, contextCloseCollection, __spreadValues({
-        closeIcon: /* @__PURE__ */ import_react21.default.createElement(CloseOutlined_default2, null)
+        closeIcon: /* @__PURE__ */ import_react20.default.createElement(CloseOutlined_default2, null)
       }, fallbackCloseCollection), contextLocale.close);
     }, [propCloseCollection, contextCloseCollection, fallbackCloseCollection, contextLocale.close]);
   };
 
   // ../custom_dashboard/node_modules/antd/es/_util/hooks/useForceUpdate.js
-  var import_react22 = __toESM(require_react());
+  var import_react21 = __toESM(require_react());
   var useForceUpdate = () => {
-    return import_react22.default.useReducer((ori) => ori + 1, 0);
+    return import_react21.default.useReducer((ori) => ori + 1, 0);
   };
 
   // ../custom_dashboard/node_modules/antd/es/_util/hooks/useMergedMask.js
-  var import_react23 = __toESM(require_react());
+  var import_react22 = __toESM(require_react());
   var normalizeMaskConfig = (mask, maskClosable) => {
     let maskConfig = {};
     if (mask && typeof mask === "object") {
@@ -28882,7 +28872,7 @@ ${mergedStyleStr}
     return maskConfig;
   };
   var useMergedMask = (mask, contextMask, prefixCls, maskClosable) => {
-    return (0, import_react23.useMemo)(() => {
+    return (0, import_react22.useMemo)(() => {
       var _a, _b, _c;
       const maskConfig = normalizeMaskConfig(mask, maskClosable);
       const contextMaskConfig = normalizeMaskConfig(contextMask);
@@ -28899,7 +28889,7 @@ ${mergedStyleStr}
   };
 
   // ../custom_dashboard/node_modules/antd/es/_util/hooks/useMergeSemantic.js
-  var React39 = __toESM(require_react());
+  var React38 = __toESM(require_react());
   var mergeClassNames = (schema, ...classNames) => {
     const mergedSchema = schema || {};
     return classNames.filter(Boolean).reduce((acc, cur) => {
@@ -28926,7 +28916,7 @@ ${mergedStyleStr}
     }, {});
   };
   var useSemanticClassNames = (schema, ...classNames) => {
-    return React39.useMemo(() => mergeClassNames.apply(void 0, [schema].concat(classNames)), [schema].concat(classNames));
+    return React38.useMemo(() => mergeClassNames.apply(void 0, [schema].concat(classNames)), [schema].concat(classNames));
   };
   var mergeStyles = (...styles) => {
     return styles.filter(Boolean).reduce((acc, cur = {}) => {
@@ -28937,7 +28927,7 @@ ${mergedStyleStr}
     }, {});
   };
   var useSemanticStyles = (...styles) => {
-    return React39.useMemo(() => mergeStyles.apply(void 0, styles), [].concat(styles));
+    return React38.useMemo(() => mergeStyles.apply(void 0, styles), [].concat(styles));
   };
   var fillObjectBySchema = (obj, schema) => {
     const newObj = __spreadValues({}, obj);
@@ -28958,7 +28948,7 @@ ${mergedStyleStr}
     const resolvedStylesList = stylesList.map((styles) => styles ? resolveStyleOrClass(styles, info) : void 0);
     const mergedClassNames = useSemanticClassNames.apply(void 0, [schema].concat(_toConsumableArray(resolvedClassNamesList)));
     const mergedStyles = useSemanticStyles.apply(void 0, _toConsumableArray(resolvedStylesList));
-    return React39.useMemo(() => {
+    return React38.useMemo(() => {
       if (!schema) {
         return [mergedClassNames, mergedStyles];
       }
@@ -28967,10 +28957,10 @@ ${mergedStyleStr}
   };
 
   // ../custom_dashboard/node_modules/antd/es/_util/hooks/useMultipleSelect.js
-  var import_react24 = __toESM(require_react());
+  var import_react23 = __toESM(require_react());
   var useMultipleSelect = (getKey3) => {
-    const [prevSelectedIndex, setPrevSelectedIndex] = (0, import_react24.useState)(null);
-    const multipleSelect = (0, import_react24.useCallback)((currentSelectedIndex, data, selectedKeys) => {
+    const [prevSelectedIndex, setPrevSelectedIndex] = (0, import_react23.useState)(null);
+    const multipleSelect = (0, import_react23.useCallback)((currentSelectedIndex, data, selectedKeys) => {
       const configPrevSelectedIndex = prevSelectedIndex != null ? prevSelectedIndex : currentSelectedIndex;
       const startIndex = Math.min(configPrevSelectedIndex || 0, currentSelectedIndex);
       const endIndex = Math.max(configPrevSelectedIndex || 0, currentSelectedIndex);
@@ -28995,12 +28985,12 @@ ${mergedStyleStr}
   };
 
   // ../custom_dashboard/node_modules/antd/es/_util/hooks/useOrientation.js
-  var import_react25 = __toESM(require_react());
+  var import_react24 = __toESM(require_react());
   var isValidOrientation = (orientation) => {
     return orientation === "horizontal" || orientation === "vertical";
   };
   var useOrientation = (orientation, vertical, legacyDirection) => {
-    return (0, import_react25.useMemo)(() => {
+    return (0, import_react24.useMemo)(() => {
       const validOrientation = isValidOrientation(orientation);
       let mergedOrientation;
       if (validOrientation) {
@@ -29016,10 +29006,10 @@ ${mergedStyleStr}
   };
 
   // ../custom_dashboard/node_modules/antd/es/_util/hooks/usePatchElement.js
-  var React40 = __toESM(require_react());
+  var React39 = __toESM(require_react());
   var usePatchElement = () => {
-    const [elements, setElements] = React40.useState([]);
-    const patchElement = React40.useCallback((element) => {
+    const [elements, setElements] = React39.useState([]);
+    const patchElement = React39.useCallback((element) => {
       setElements((originElements) => [].concat(_toConsumableArray(originElements), [element]));
       return () => {
         setElements((originElements) => originElements.filter((ele) => ele !== element));
@@ -29029,7 +29019,7 @@ ${mergedStyleStr}
   };
 
   // ../custom_dashboard/node_modules/antd/es/_util/hooks/useProxyImperativeHandle.js
-  var import_react26 = __toESM(require_react());
+  var import_react25 = __toESM(require_react());
   var fillProxy = (element, handler) => {
     element._antProxy = element._antProxy || {};
     Object.keys(handler).forEach((key) => {
@@ -29042,7 +29032,7 @@ ${mergedStyleStr}
     return element;
   };
   var useProxyImperativeHandle = (ref, init) => {
-    return (0, import_react26.useImperativeHandle)(ref, () => {
+    return (0, import_react25.useImperativeHandle)(ref, () => {
       const refObj = init();
       const {
         nativeElement
@@ -29062,9 +29052,9 @@ ${mergedStyleStr}
   };
 
   // ../custom_dashboard/node_modules/antd/es/_util/hooks/useSyncState.js
-  var React41 = __toESM(require_react());
+  var React40 = __toESM(require_react());
   var useSyncState2 = (initialValue) => {
-    const ref = React41.useRef(initialValue);
+    const ref = React40.useRef(initialValue);
     const [, forceUpdate] = useForceUpdate();
     return [() => ref.current, (newValue) => {
       ref.current = newValue;
@@ -29073,11 +29063,11 @@ ${mergedStyleStr}
   };
 
   // ../custom_dashboard/node_modules/antd/es/_util/hooks/useZIndex.js
-  var import_react28 = __toESM(require_react());
+  var import_react27 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/_util/zindexContext.js
-  var import_react27 = __toESM(require_react());
-  var ZIndexContext = /* @__PURE__ */ import_react27.default.createContext(void 0);
+  var import_react26 = __toESM(require_react());
+  var ZIndexContext = /* @__PURE__ */ import_react26.default.createContext(void 0);
   if (true) {
     ZIndexContext.displayName = "ZIndexContext";
   }
@@ -29109,7 +29099,7 @@ ${mergedStyleStr}
   };
   var useZIndex = (componentType, customZIndex) => {
     const [, token2] = useToken();
-    const parentZIndex = import_react28.default.useContext(zindexContext_default);
+    const parentZIndex = import_react27.default.useContext(zindexContext_default);
     const isContainer = isContainerType(componentType);
     let result;
     if (customZIndex !== void 0) {
@@ -29320,12 +29310,12 @@ ${mergedStyleStr}
       errorIcon
     } = props;
     const iconMapFilled = {
-      success: successIcon != null ? successIcon : /* @__PURE__ */ React44.createElement(CheckCircleFilled_default2, null),
-      info: infoIcon != null ? infoIcon : /* @__PURE__ */ React44.createElement(InfoCircleFilled_default2, null),
-      error: errorIcon != null ? errorIcon : /* @__PURE__ */ React44.createElement(CloseCircleFilled_default2, null),
-      warning: warningIcon != null ? warningIcon : /* @__PURE__ */ React44.createElement(ExclamationCircleFilled_default2, null)
+      success: successIcon != null ? successIcon : /* @__PURE__ */ React43.createElement(CheckCircleFilled_default2, null),
+      info: infoIcon != null ? infoIcon : /* @__PURE__ */ React43.createElement(InfoCircleFilled_default2, null),
+      error: errorIcon != null ? errorIcon : /* @__PURE__ */ React43.createElement(CloseCircleFilled_default2, null),
+      warning: warningIcon != null ? warningIcon : /* @__PURE__ */ React43.createElement(ExclamationCircleFilled_default2, null)
     };
-    return /* @__PURE__ */ React44.createElement("span", {
+    return /* @__PURE__ */ React43.createElement("span", {
       className,
       style: style2
     }, icon != null ? icon : iconMapFilled[type5]);
@@ -29340,8 +29330,8 @@ ${mergedStyleStr}
       className,
       style: style2
     } = props;
-    const mergedCloseIcon = closeIcon === true || closeIcon === void 0 ? /* @__PURE__ */ React44.createElement(CloseOutlined_default2, null) : closeIcon;
-    return isClosable ? /* @__PURE__ */ React44.createElement("button", __spreadValues({
+    const mergedCloseIcon = closeIcon === true || closeIcon === void 0 ? /* @__PURE__ */ React43.createElement(CloseOutlined_default2, null) : closeIcon;
+    return isClosable ? /* @__PURE__ */ React43.createElement("button", __spreadValues({
       type: "button",
       onClick: handleClose,
       className: clsx(`${prefixCls}-close-icon`, className),
@@ -29349,7 +29339,7 @@ ${mergedStyleStr}
       style: style2
     }, ariaProps), mergedCloseIcon) : null;
   };
-  var Alert = /* @__PURE__ */ React44.forwardRef((props, ref) => {
+  var Alert = /* @__PURE__ */ React43.forwardRef((props, ref) => {
     const _a = props, {
       description,
       prefixCls: customizePrefixCls,
@@ -29394,15 +29384,15 @@ ${mergedStyleStr}
       "classNames"
     ]);
     const mergedTitle = title != null ? title : message2;
-    const [closed, setClosed] = React44.useState(false);
+    const [closed, setClosed] = React43.useState(false);
     if (true) {
       const warning6 = devUseWarning("Alert");
       [["closeText", "closable.closeIcon"], ["message", "title"]].forEach(([deprecatedName, newName]) => {
         warning6.deprecated(!(deprecatedName in props), deprecatedName, newName);
       });
     }
-    const internalRef = React44.useRef(null);
-    React44.useImperativeHandle(ref, () => ({
+    const internalRef = React43.useRef(null);
+    React43.useImperativeHandle(ref, () => ({
       nativeElement: internalRef.current
     }));
     const {
@@ -29430,13 +29420,13 @@ ${mergedStyleStr}
       setClosed(true);
       (_a2 = closableOnClose != null ? closableOnClose : props.onClose) == null ? void 0 : _a2(e3);
     };
-    const type5 = React44.useMemo(() => {
+    const type5 = React43.useMemo(() => {
       if (props.type !== void 0) {
         return props.type;
       }
       return banner ? "warning" : "info";
     }, [props.type, banner]);
-    const isClosable = React44.useMemo(() => {
+    const isClosable = React43.useMemo(() => {
       if (typeof closable === "object" && closable.closeIcon) {
         return true;
       }
@@ -29471,7 +29461,7 @@ ${mergedStyleStr}
       aria: true,
       data: true
     });
-    const mergedCloseIcon = React44.useMemo(() => {
+    const mergedCloseIcon = React43.useMemo(() => {
       if (typeof closable === "object" && closable.closeIcon) {
         return closable.closeIcon;
       }
@@ -29486,7 +29476,7 @@ ${mergedStyleStr}
       }
       return contextCloseIcon;
     }, [closeIcon, closable, contextClosable, closeText, contextCloseIcon]);
-    const mergedAriaProps = React44.useMemo(() => {
+    const mergedAriaProps = React43.useMemo(() => {
       const merged = closable != null ? closable : contextClosable;
       if (typeof merged === "object") {
         return pickAttrs(merged, {
@@ -29496,7 +29486,7 @@ ${mergedStyleStr}
       }
       return {};
     }, [closable, contextClosable]);
-    return /* @__PURE__ */ React44.createElement(es_default2, {
+    return /* @__PURE__ */ React43.createElement(es_default2, {
       visible: !closed,
       motionName: `${prefixCls}-motion`,
       motionAppear: false,
@@ -29508,7 +29498,7 @@ ${mergedStyleStr}
     }, ({
       className: motionClassName,
       style: motionStyle
-    }, setRef) => /* @__PURE__ */ React44.createElement("div", __spreadValues({
+    }, setRef) => /* @__PURE__ */ React43.createElement("div", __spreadValues({
       id,
       ref: composeRef(internalRef, setRef),
       "data-show": !closed,
@@ -29518,7 +29508,7 @@ ${mergedStyleStr}
       onMouseLeave,
       onClick,
       role: "alert"
-    }, restProps), isShowIcon ? /* @__PURE__ */ React44.createElement(IconNode, {
+    }, restProps), isShowIcon ? /* @__PURE__ */ React43.createElement(IconNode, {
       className: clsx(`${prefixCls}-icon`, mergedClassNames.icon),
       style: mergedStyles.icon,
       description,
@@ -29529,19 +29519,19 @@ ${mergedStyleStr}
       infoIcon,
       warningIcon,
       errorIcon
-    }) : null, /* @__PURE__ */ React44.createElement("div", {
+    }) : null, /* @__PURE__ */ React43.createElement("div", {
       className: clsx(`${prefixCls}-section`, mergedClassNames.section),
       style: mergedStyles.section
-    }, mergedTitle ? /* @__PURE__ */ React44.createElement("div", {
+    }, mergedTitle ? /* @__PURE__ */ React43.createElement("div", {
       className: clsx(`${prefixCls}-title`, mergedClassNames.title),
       style: mergedStyles.title
-    }, mergedTitle) : null, description ? /* @__PURE__ */ React44.createElement("div", {
+    }, mergedTitle) : null, description ? /* @__PURE__ */ React43.createElement("div", {
       className: clsx(`${prefixCls}-description`, mergedClassNames.description),
       style: mergedStyles.description
-    }, description) : null), action ? /* @__PURE__ */ React44.createElement("div", {
+    }, description) : null), action ? /* @__PURE__ */ React43.createElement("div", {
       className: clsx(`${prefixCls}-actions`, mergedClassNames.actions),
       style: mergedStyles.actions
-    }, action) : null, /* @__PURE__ */ React44.createElement(CloseIconNode, {
+    }, action) : null, /* @__PURE__ */ React43.createElement(CloseIconNode, {
       className: mergedClassNames.close,
       style: mergedStyles.close,
       isClosable,
@@ -29562,7 +29552,7 @@ ${mergedStyleStr}
   }
 
   // ../custom_dashboard/node_modules/antd/es/alert/ErrorBoundary.js
-  var React45 = __toESM(require_react());
+  var React44 = __toESM(require_react());
   "use client";
   var ErrorBoundary = /* @__PURE__ */ function(_React$PureComponent) {
     function ErrorBoundary2() {
@@ -29603,11 +29593,11 @@ ${mergedStyleStr}
         const errorMessage = isNonNullable_default(mergedTitle) ? mergedTitle : error == null ? void 0 : error.toString();
         const errorDescription = isNonNullable_default(description) ? description : componentStack;
         if (error) {
-          return /* @__PURE__ */ React45.createElement(Alert_default, {
+          return /* @__PURE__ */ React44.createElement(Alert_default, {
             id,
             type: "error",
             title: errorMessage,
-            description: /* @__PURE__ */ React45.createElement("pre", {
+            description: /* @__PURE__ */ React44.createElement("pre", {
               style: {
                 fontSize: "0.9em",
                 overflowX: "auto"
@@ -29618,7 +29608,7 @@ ${mergedStyleStr}
         return children;
       }
     }]);
-  }(React45.PureComponent);
+  }(React44.PureComponent);
   var ErrorBoundary_default = ErrorBoundary;
 
   // ../custom_dashboard/node_modules/antd/es/alert/index.js
@@ -29795,23 +29785,23 @@ ${mergedStyleStr}
   var useCSSVarCls_default = useCSSVarCls;
 
   // ../custom_dashboard/node_modules/antd/es/config-provider/index.js
-  var React71 = __toESM(require_react());
+  var React70 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/form/validateMessagesContext.js
-  var import_react29 = __toESM(require_react());
+  var import_react28 = __toESM(require_react());
   "use client";
-  var validateMessagesContext_default = /* @__PURE__ */ (0, import_react29.createContext)(void 0);
+  var validateMessagesContext_default = /* @__PURE__ */ (0, import_react28.createContext)(void 0);
 
   // ../custom_dashboard/node_modules/antd/es/tooltip/UniqueProvider/index.js
-  var import_react35 = __toESM(require_react());
+  var import_react34 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/portal/es/Portal.js
-  var React50 = __toESM(require_react());
+  var React49 = __toESM(require_react());
   var import_react_dom = __toESM(require_react_dom());
 
   // ../custom_dashboard/node_modules/@rc-component/portal/es/Context.js
-  var React46 = __toESM(require_react());
-  var OrderContext = /* @__PURE__ */ React46.createContext(null);
+  var React45 = __toESM(require_react());
+  var OrderContext = /* @__PURE__ */ React45.createContext(null);
   var Context_default2 = OrderContext;
 
   // ../custom_dashboard/node_modules/@rc-component/portal/es/mock.js
@@ -29824,10 +29814,10 @@ ${mergedStyleStr}
   }
 
   // ../custom_dashboard/node_modules/@rc-component/portal/es/useDom.js
-  var React47 = __toESM(require_react());
+  var React46 = __toESM(require_react());
   var EMPTY_LIST = [];
   function useDom(render4, debug) {
-    const [ele] = React47.useState(() => {
+    const [ele] = React46.useState(() => {
       if (!canUseDom()) {
         return null;
       }
@@ -29837,9 +29827,9 @@ ${mergedStyleStr}
       }
       return defaultEle;
     });
-    const appendedRef = React47.useRef(false);
-    const queueCreate = React47.useContext(Context_default2);
-    const [queue, setQueue] = React47.useState(EMPTY_LIST);
+    const appendedRef = React46.useRef(false);
+    const queueCreate = React46.useContext(Context_default2);
+    const [queue, setQueue] = React46.useState(EMPTY_LIST);
     const mergedQueueCreate = queueCreate || (appendedRef.current ? void 0 : (appendFn) => {
       setQueue((origin) => {
         const newQueue = [appendFn, ...origin];
@@ -29879,7 +29869,7 @@ ${mergedStyleStr}
   }
 
   // ../custom_dashboard/node_modules/@rc-component/portal/es/useScrollLocker.js
-  var React48 = __toESM(require_react());
+  var React47 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/util/es/getScrollBarSize.js
   var cached;
@@ -29956,7 +29946,7 @@ ${heightStyle}
   var uuid2 = 0;
   function useScrollLocker(lock) {
     const mergedLock = !!lock;
-    const [id] = React48.useState(() => {
+    const [id] = React47.useState(() => {
       uuid2 += 1;
       return `${UNIQUE_ID}_${uuid2}`;
     });
@@ -29979,9 +29969,9 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/util/es/hooks/useId.js
-  var React49 = __toESM(require_react());
+  var React48 = __toESM(require_react());
   function getUseId() {
-    const fullClone = __spreadValues({}, React49);
+    const fullClone = __spreadValues({}, React48);
     return fullClone.useId;
   }
   var uuid3 = 0;
@@ -30001,8 +29991,8 @@ html body {
     }
     return reactId;
   } : function useCompatId(id) {
-    const [innerId, setInnerId] = React49.useState("ssr-id");
-    React49.useEffect(() => {
+    const [innerId, setInnerId] = React48.useState("ssr-id");
+    React48.useEffect(() => {
       const nextId = uuid3;
       uuid3 += 1;
       setInnerId(`rc_unique_${nextId}`);
@@ -30017,7 +30007,7 @@ html body {
   };
 
   // ../custom_dashboard/node_modules/@rc-component/portal/es/useEscKeyDown.js
-  var import_react30 = __toESM(require_react());
+  var import_react29 = __toESM(require_react());
   var stack = [];
   var IME_LOCK_DURATION = 200;
   var lastCompositionEndTime = 0;
@@ -30063,14 +30053,14 @@ html body {
     const clear = () => {
       stack = stack.filter((item) => item.id !== id);
     };
-    (0, import_react30.useMemo)(() => {
+    (0, import_react29.useMemo)(() => {
       if (open2) {
         ensure();
       } else if (!open2) {
         clear();
       }
     }, [open2]);
-    (0, import_react30.useEffect)(() => {
+    (0, import_react29.useEffect)(() => {
       if (open2) {
         ensure();
         attachGlobalEventListeners();
@@ -30098,7 +30088,7 @@ html body {
     }
     return getContainer2;
   };
-  var Portal = /* @__PURE__ */ React50.forwardRef((props, ref) => {
+  var Portal = /* @__PURE__ */ React49.forwardRef((props, ref) => {
     const {
       open: open2,
       autoLock,
@@ -30108,18 +30098,18 @@ html body {
       children,
       onEsc
     } = props;
-    const [shouldRender, setShouldRender] = React50.useState(open2);
+    const [shouldRender, setShouldRender] = React49.useState(open2);
     const mergedRender = shouldRender || open2;
     if (true) {
       warning_default(canUseDom() || !open2, `Portal only work in client side. Please call 'useEffect' to show Portal instead default render in SSR.`);
     }
-    React50.useEffect(() => {
+    React49.useEffect(() => {
       if (autoDestroy || open2) {
         setShouldRender(open2);
       }
     }, [open2, autoDestroy]);
-    const [innerContainer, setInnerContainer] = React50.useState(() => getPortalContainer(getContainer2));
-    React50.useEffect(() => {
+    const [innerContainer, setInnerContainer] = React49.useState(() => getPortalContainer(getContainer2));
+    React49.useEffect(() => {
       const customizeContainer = getPortalContainer(getContainer2);
       setInnerContainer(() => customizeContainer != null ? customizeContainer : null);
     });
@@ -30138,11 +30128,11 @@ html body {
     const renderInline = mergedContainer === false || inlineMock();
     let reffedChildren = children;
     if (ref) {
-      reffedChildren = /* @__PURE__ */ React50.cloneElement(children, {
+      reffedChildren = /* @__PURE__ */ React49.cloneElement(children, {
         ref: mergedRef
       });
     }
-    return /* @__PURE__ */ React50.createElement(Context_default2.Provider, {
+    return /* @__PURE__ */ React49.createElement(Context_default2.Provider, {
       value: queueCreate
     }, renderInline ? reffedChildren : /* @__PURE__ */ (0, import_react_dom.createPortal)(reffedChildren, mergedContainer));
   });
@@ -30155,13 +30145,13 @@ html body {
   var es_default3 = Portal_default;
 
   // ../custom_dashboard/node_modules/@rc-component/trigger/es/index.js
-  var React63 = __toESM(require_react());
+  var React62 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/trigger/es/Popup/index.js
-  var React54 = __toESM(require_react());
+  var React53 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/trigger/es/Popup/Arrow.js
-  var React51 = __toESM(require_react());
+  var React50 = __toESM(require_react());
   function Arrow(props) {
     const {
       prefixCls,
@@ -30178,7 +30168,7 @@ html body {
       x = 0,
       y = 0
     } = arrowPos;
-    const arrowRef = React51.useRef(null);
+    const arrowRef = React50.useRef(null);
     if (!align || !align.points) {
       return null;
     }
@@ -30207,7 +30197,7 @@ html body {
         alignStyle.right = 0;
       }
     }
-    return /* @__PURE__ */ React51.createElement("div", {
+    return /* @__PURE__ */ React50.createElement("div", {
       ref: arrowRef,
       className: clsx(`${prefixCls}-arrow`, className),
       style: __spreadValues(__spreadValues({}, alignStyle), style2)
@@ -30215,7 +30205,7 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/trigger/es/Popup/Mask.js
-  var React52 = __toESM(require_react());
+  var React51 = __toESM(require_react());
   function _extends9() {
     _extends9 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -30242,13 +30232,13 @@ html body {
     if (!mask) {
       return null;
     }
-    return /* @__PURE__ */ React52.createElement(es_default2, _extends9({}, motion, {
+    return /* @__PURE__ */ React51.createElement(es_default2, _extends9({}, motion, {
       motionAppear: true,
       visible: open2,
       removeOnLeave: true
     }), ({
       className
-    }) => /* @__PURE__ */ React52.createElement("div", {
+    }) => /* @__PURE__ */ React51.createElement("div", {
       style: {
         zIndex
       },
@@ -30257,8 +30247,8 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/trigger/es/Popup/PopupContent.js
-  var React53 = __toESM(require_react());
-  var PopupContent = /* @__PURE__ */ React53.memo(({
+  var React52 = __toESM(require_react());
+  var PopupContent = /* @__PURE__ */ React52.memo(({
     children
   }) => children, (_, next2) => next2.cache);
   if (true) {
@@ -30316,7 +30306,7 @@ html body {
     };
     return _extends10.apply(this, arguments);
   }
-  var Popup = /* @__PURE__ */ React54.forwardRef((props, ref) => {
+  var Popup = /* @__PURE__ */ React53.forwardRef((props, ref) => {
     const {
       onEsc,
       popup,
@@ -30361,14 +30351,14 @@ html body {
     const popupContent = typeof popup === "function" ? popup() : popup;
     const isNodeVisible = open2 || keepDom;
     const isMobile = !!mobile;
-    const [mergedMask, mergedMaskMotion, mergedPopupMotion] = React54.useMemo(() => {
+    const [mergedMask, mergedMaskMotion, mergedPopupMotion] = React53.useMemo(() => {
       if (mobile) {
         return [mobile.mask, mobile.maskMotion, mobile.motion];
       }
       return [mask, maskMotion, motion];
     }, [mobile, mask, maskMotion, motion]);
     const getPopupContainerNeedParams = (getPopupContainer == null ? void 0 : getPopupContainer.length) > 0;
-    const [show, setShow] = React54.useState(!getPopupContainer || !getPopupContainerNeedParams);
+    const [show, setShow] = React53.useState(!getPopupContainer || !getPopupContainerNeedParams);
     useLayoutEffect_default(() => {
       if (!show && getPopupContainerNeedParams && target) {
         setShow(true);
@@ -30398,23 +30388,23 @@ html body {
     if (!open2) {
       miscStyle.pointerEvents = "none";
     }
-    return /* @__PURE__ */ React54.createElement(Portal2, {
+    return /* @__PURE__ */ React53.createElement(Portal2, {
       open: forceRender || isNodeVisible,
       getContainer: getPopupContainer && (() => getPopupContainer(target)),
       autoDestroy,
       onEsc
-    }, /* @__PURE__ */ React54.createElement(Mask, {
+    }, /* @__PURE__ */ React53.createElement(Mask, {
       prefixCls,
       open: open2,
       zIndex,
       mask: mergedMask,
       motion: mergedMaskMotion,
       mobile: isMobile
-    }), /* @__PURE__ */ React54.createElement(es_default, {
+    }), /* @__PURE__ */ React53.createElement(es_default, {
       onResize: onInternalResize,
       disabled: !open2
     }, (resizeObserverRef) => {
-      return /* @__PURE__ */ React54.createElement(es_default2, _extends10({
+      return /* @__PURE__ */ React53.createElement(es_default2, _extends10({
         motionAppear: true,
         motionEnter: true,
         motionLeave: true,
@@ -30437,7 +30427,7 @@ html body {
         const cls = clsx(prefixCls, motionClassName, className, {
           [`${prefixCls}-mobile`]: isMobile
         });
-        return /* @__PURE__ */ React54.createElement("div", {
+        return /* @__PURE__ */ React53.createElement("div", {
           ref: composeRef(resizeObserverRef, ref, motionRef),
           className: cls,
           style: __spreadValues(__spreadProps(__spreadValues(__spreadValues(__spreadValues({
@@ -30452,12 +30442,12 @@ html body {
           onPointerEnter,
           onClick,
           onPointerDownCapture
-        }, arrow && /* @__PURE__ */ React54.createElement(Arrow, {
+        }, arrow && /* @__PURE__ */ React53.createElement(Arrow, {
           prefixCls,
           arrow,
           arrowPos,
           align
-        }), /* @__PURE__ */ React54.createElement(PopupContent_default, {
+        }), /* @__PURE__ */ React53.createElement(PopupContent_default, {
           cache: !open2 && !fresh
         }, popupContent));
       });
@@ -30469,18 +30459,18 @@ html body {
   var Popup_default = Popup;
 
   // ../custom_dashboard/node_modules/@rc-component/trigger/es/context.js
-  var React55 = __toESM(require_react());
-  var TriggerContext = /* @__PURE__ */ React55.createContext(null);
+  var React54 = __toESM(require_react());
+  var TriggerContext = /* @__PURE__ */ React54.createContext(null);
   var context_default3 = TriggerContext;
-  var UniqueContext = /* @__PURE__ */ React55.createContext(null);
+  var UniqueContext = /* @__PURE__ */ React54.createContext(null);
 
   // ../custom_dashboard/node_modules/@rc-component/trigger/es/hooks/useAction.js
-  var React56 = __toESM(require_react());
+  var React55 = __toESM(require_react());
   function toArray2(val) {
     return val ? Array.isArray(val) ? val : [val] : [];
   }
   function useAction(action, showAction, hideAction) {
-    return React56.useMemo(() => {
+    return React55.useMemo(() => {
       const mergedShowAction = toArray2(showAction != null ? showAction : action);
       const mergedHideAction = toArray2(hideAction != null ? hideAction : action);
       const showActionSet = new Set(mergedShowAction);
@@ -30527,7 +30517,7 @@ html body {
   };
 
   // ../custom_dashboard/node_modules/@rc-component/trigger/es/hooks/useAlign.js
-  var React57 = __toESM(require_react());
+  var React56 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/trigger/es/util.js
   function isPointsEq(a1 = [], a2 = [], isAlignPoint) {
@@ -30684,7 +30674,7 @@ html body {
     return points.join("");
   }
   function useAlign(open2, popupEle, target, placement, builtinPlacements, popupAlign, onPopupAlign, mobile) {
-    const [offsetInfo, setOffsetInfo] = React57.useState({
+    const [offsetInfo, setOffsetInfo] = React56.useState({
       ready: false,
       offsetX: 0,
       offsetY: 0,
@@ -30696,14 +30686,14 @@ html body {
       scaleY: 1,
       align: builtinPlacements[placement] || {}
     });
-    const alignCountRef = React57.useRef(0);
-    const scrollerList = React57.useMemo(() => {
+    const alignCountRef = React56.useRef(0);
+    const scrollerList = React56.useMemo(() => {
       if (!popupEle || mobile) {
         return [];
       }
       return collectScroller(popupEle);
     }, [popupEle]);
-    const prevFlipRef = React57.useRef({});
+    const prevFlipRef = React56.useRef({});
     const resetFlipCache = () => {
       prevFlipRef.current = {};
     };
@@ -31047,9 +31037,9 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/trigger/es/hooks/useDelay.js
-  var React58 = __toESM(require_react());
+  var React57 = __toESM(require_react());
   function useDelay() {
-    const delayRef = React58.useRef(null);
+    const delayRef = React57.useRef(null);
     const clearDelay = () => {
       if (delayRef.current) {
         clearTimeout(delayRef.current);
@@ -31066,7 +31056,7 @@ html body {
         }, delay * 1e3);
       }
     };
-    React58.useEffect(() => {
+    React57.useEffect(() => {
       return () => {
         clearDelay();
       };
@@ -31108,12 +31098,12 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/trigger/es/hooks/useWinClick.js
-  var React59 = __toESM(require_react());
+  var React58 = __toESM(require_react());
   function useWinClick(open2, clickToHide, targetEle, popupEle, mask, maskClosable, inPopupOrChild, triggerOpen) {
-    const openRef = React59.useRef(open2);
+    const openRef = React58.useRef(open2);
     openRef.current = open2;
-    const popupPointerDownRef = React59.useRef(false);
-    React59.useEffect(() => {
+    const popupPointerDownRef = React58.useRef(false);
+    React58.useEffect(() => {
       var _a, _b;
       if (clickToHide && popupEle && (!mask || maskClosable)) {
         const onPointerDown = () => {
@@ -31157,15 +31147,15 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/trigger/es/UniqueProvider/index.js
-  var React62 = __toESM(require_react());
+  var React61 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/trigger/es/UniqueProvider/useTargetState.js
-  var import_react31 = __toESM(require_react());
+  var import_react30 = __toESM(require_react());
   function useTargetState() {
-    const [options, setOptions] = import_react31.default.useState(null);
-    const [open2, setOpen] = import_react31.default.useState(false);
-    const [isAnimating, setIsAnimating] = import_react31.default.useState(false);
-    const pendingOptionsRef = import_react31.default.useRef(null);
+    const [options, setOptions] = import_react30.default.useState(null);
+    const [open2, setOpen] = import_react30.default.useState(false);
+    const [isAnimating, setIsAnimating] = import_react30.default.useState(false);
+    const pendingOptionsRef = import_react30.default.useRef(null);
     const trigger = useEvent_default((nextOptions) => {
       if (nextOptions === false) {
         pendingOptionsRef.current = null;
@@ -31199,7 +31189,7 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/trigger/es/UniqueProvider/UniqueContainer.js
-  var import_react32 = __toESM(require_react());
+  var import_react31 = __toESM(require_react());
   function _extends11() {
     _extends11 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -31232,9 +31222,9 @@ html body {
       uniqueContainerStyle
     } = props;
     const containerCls = `${prefixCls}-unique-container`;
-    const [motionVisible, setMotionVisible] = import_react32.default.useState(false);
+    const [motionVisible, setMotionVisible] = import_react31.default.useState(false);
     const offsetStyle = useOffsetStyle(isMobile, ready, open2, align, offsetR, offsetB, offsetX, offsetY);
-    const cachedOffsetStyleRef = import_react32.default.useRef(offsetStyle);
+    const cachedOffsetStyleRef = import_react31.default.useRef(offsetStyle);
     if (ready) {
       cachedOffsetStyleRef.current = offsetStyle;
     }
@@ -31243,7 +31233,7 @@ html body {
       sizeStyle.width = popupSize.width;
       sizeStyle.height = popupSize.height;
     }
-    return /* @__PURE__ */ import_react32.default.createElement(es_default2, _extends11({
+    return /* @__PURE__ */ import_react31.default.createElement(es_default2, _extends11({
       motionAppear: true,
       motionEnter: true,
       motionLeave: true,
@@ -31261,7 +31251,7 @@ html body {
       const cls = clsx(containerCls, motionClassName, uniqueContainerClassName, {
         [`${containerCls}-visible`]: motionVisible
       });
-      return /* @__PURE__ */ import_react32.default.createElement("div", {
+      return /* @__PURE__ */ import_react31.default.createElement("div", {
         className: cls,
         style: __spreadValues(__spreadValues(__spreadValues(__spreadValues({
           "--arrow-x": `${(arrowPos == null ? void 0 : arrowPos.x) || 0}px`,
@@ -31278,22 +31268,22 @@ html body {
     postTriggerProps
   }) => {
     const [trigger, open2, options, onTargetVisibleChanged] = useTargetState();
-    const mergedOptions = React62.useMemo(() => {
+    const mergedOptions = React61.useMemo(() => {
       if (!options || !postTriggerProps) {
         return options;
       }
       return postTriggerProps(options);
     }, [options, postTriggerProps]);
-    const [popupEle, setPopupEle] = React62.useState(null);
-    const [popupSize, setPopupSize] = React62.useState(null);
-    const externalPopupRef = React62.useRef(null);
+    const [popupEle, setPopupEle] = React61.useState(null);
+    const [popupSize, setPopupSize] = React61.useState(null);
+    const externalPopupRef = React61.useRef(null);
     const setPopupRef = useEvent_default((node2) => {
       externalPopupRef.current = node2;
       if (isDOM(node2) && popupEle !== node2) {
         setPopupEle(node2);
       }
     });
-    const isOpenRef = React62.useRef(null);
+    const isOpenRef = React61.useRef(null);
     const delayInvoke = useDelay();
     const show = useEvent_default((showOptions, isOpen) => {
       isOpenRef.current = isOpen;
@@ -31335,7 +31325,7 @@ html body {
       void 0,
       false
     );
-    const alignedClassName = React62.useMemo(() => {
+    const alignedClassName = React61.useMemo(() => {
       var _a;
       if (!mergedOptions) {
         return "";
@@ -31348,31 +31338,31 @@ html body {
       );
       return clsx(baseClassName, (_a = mergedOptions.getPopupClassNameFromAlign) == null ? void 0 : _a.call(mergedOptions, alignInfo));
     }, [alignInfo, mergedOptions == null ? void 0 : mergedOptions.getPopupClassNameFromAlign, mergedOptions == null ? void 0 : mergedOptions.builtinPlacements, mergedOptions == null ? void 0 : mergedOptions.prefixCls]);
-    const contextValue = React62.useMemo(() => ({
+    const contextValue = React61.useMemo(() => ({
       show,
       hide
     }), []);
-    React62.useEffect(() => {
+    React61.useEffect(() => {
       onAlign();
     }, [mergedOptions == null ? void 0 : mergedOptions.target]);
     const onPrepare = useEvent_default(() => {
       onAlign();
       return Promise.resolve();
     });
-    const subPopupElements = React62.useRef({});
-    const parentContext = React62.useContext(context_default3);
-    const triggerContextValue = React62.useMemo(() => ({
+    const subPopupElements = React61.useRef({});
+    const parentContext = React61.useContext(context_default3);
+    const triggerContextValue = React61.useMemo(() => ({
       registerSubPopup: (id, subPopupEle) => {
         subPopupElements.current[id] = subPopupEle;
         parentContext == null ? void 0 : parentContext.registerSubPopup(id, subPopupEle);
       }
     }), [parentContext]);
     const prefixCls = mergedOptions == null ? void 0 : mergedOptions.prefixCls;
-    return /* @__PURE__ */ React62.createElement(UniqueContext.Provider, {
+    return /* @__PURE__ */ React61.createElement(UniqueContext.Provider, {
       value: contextValue
-    }, children, mergedOptions && /* @__PURE__ */ React62.createElement(context_default3.Provider, {
+    }, children, mergedOptions && /* @__PURE__ */ React61.createElement(context_default3.Provider, {
       value: triggerContextValue
-    }, /* @__PURE__ */ React62.createElement(Popup_default, {
+    }, /* @__PURE__ */ React61.createElement(Popup_default, {
       ref: setPopupRef,
       portal: es_default3,
       onEsc: mergedOptions.onEsc,
@@ -31408,7 +31398,7 @@ html body {
       motion: mergedOptions.popupMotion,
       maskMotion: mergedOptions.maskMotion,
       getPopupContainer: mergedOptions.getPopupContainer
-    }, /* @__PURE__ */ React62.createElement(UniqueContainer_default, {
+    }, /* @__PURE__ */ React61.createElement(UniqueContainer_default, {
       prefixCls,
       isMobile: false,
       ready,
@@ -31433,7 +31423,7 @@ html body {
   // ../custom_dashboard/node_modules/@rc-component/trigger/es/index.js
   var import_react_dom2 = __toESM(require_react_dom());
   function generateTrigger(PortalComponent = es_default3) {
-    const Trigger = /* @__PURE__ */ React63.forwardRef((props, ref) => {
+    const Trigger = /* @__PURE__ */ React62.forwardRef((props, ref) => {
       const _a = props, {
         prefixCls = "rc-trigger-popup",
         children,
@@ -31520,9 +31510,9 @@ html body {
       const mergedAutoDestroy = autoDestroy || false;
       const openUncontrolled = popupVisible === void 0;
       const isMobile = !!mobile;
-      const subPopupElements = React63.useRef({});
-      const parentContext = React63.useContext(context_default3);
-      const context = React63.useMemo(() => {
+      const subPopupElements = React62.useRef({});
+      const parentContext = React62.useContext(context_default3);
+      const context = React62.useMemo(() => {
         return {
           registerSubPopup: (id2, subPopupEle) => {
             subPopupElements.current[id2] = subPopupEle;
@@ -31530,10 +31520,10 @@ html body {
           }
         };
       }, [parentContext]);
-      const uniqueContext = React63.useContext(UniqueContext);
+      const uniqueContext = React62.useContext(UniqueContext);
       const id = useId_default();
-      const [popupEle, setPopupEle] = React63.useState(null);
-      const externalPopupRef = React63.useRef(null);
+      const [popupEle, setPopupEle] = React62.useState(null);
+      const externalPopupRef = React62.useRef(null);
       const setPopupRef = useEvent_default((node2) => {
         externalPopupRef.current = node2;
         if (isDOM(node2) && popupEle !== node2) {
@@ -31541,8 +31531,8 @@ html body {
         }
         parentContext == null ? void 0 : parentContext.registerSubPopup(id, node2);
       });
-      const [targetEle, setTargetEle] = React63.useState(null);
-      const externalForwardRef = React63.useRef(null);
+      const [targetEle, setTargetEle] = React62.useState(null);
+      const externalForwardRef = React62.useRef(null);
       const setTargetRef = useEvent_default((node2) => {
         const domNode = getDOM(node2);
         if (isDOM(domNode) && targetEle !== domNode) {
@@ -31559,11 +31549,11 @@ html body {
       const innerArrow = arrow ? __spreadValues({}, arrow !== true ? arrow : {}) : null;
       const [internalOpen, setInternalOpen] = useControlledState(defaultPopupVisible || false, popupVisible);
       const mergedOpen = internalOpen || false;
-      const child = React63.useMemo(() => {
+      const child = React62.useMemo(() => {
         const nextChild = typeof children === "function" ? children({
           open: mergedOpen
         }) : children;
-        return React63.Children.only(nextChild);
+        return React62.Children.only(nextChild);
       }, [children, mergedOpen]);
       const originChildProps = (child == null ? void 0 : child.props) || {};
       const isOpen = useEvent_default(() => mergedOpen);
@@ -31599,7 +31589,7 @@ html body {
           }
         }
       }, [mergedOpen, targetEle]);
-      const openRef = React63.useRef(mergedOpen);
+      const openRef = React62.useRef(mergedOpen);
       openRef.current = mergedOpen;
       const internalTriggerOpen = useEvent_default((nextOpen) => {
         (0, import_react_dom2.flushSync)(() => {
@@ -31637,14 +31627,14 @@ html body {
           triggerOpen(false);
         }
       }
-      const [inMotion, setInMotion] = React63.useState(false);
+      const [inMotion, setInMotion] = React62.useState(false);
       useLayoutEffect_default((firstMount) => {
         if (!firstMount || mergedOpen) {
           setInMotion(true);
         }
       }, [mergedOpen]);
-      const [motionPrepareResolve, setMotionPrepareResolve] = React63.useState(null);
-      const [mousePos, setMousePos] = React63.useState(null);
+      const [motionPrepareResolve, setMotionPrepareResolve] = React62.useState(null);
+      const [mousePos, setMousePos] = React62.useState(null);
       const setMousePosByEvent = (event) => {
         setMousePos([event.clientX, event.clientY]);
       };
@@ -31671,17 +31661,17 @@ html body {
           triggerAlign();
         }
       }, [JSON.stringify(popupAlign)]);
-      const alignedClassName = React63.useMemo(() => {
+      const alignedClassName = React62.useMemo(() => {
         const baseClassName = getAlignPopupClassName(builtinPlacements, prefixCls, alignInfo, alignPoint);
         return clsx(baseClassName, getPopupClassNameFromAlign == null ? void 0 : getPopupClassNameFromAlign(alignInfo));
       }, [alignInfo, getPopupClassNameFromAlign, builtinPlacements, prefixCls, alignPoint]);
-      React63.useImperativeHandle(ref, () => ({
+      React62.useImperativeHandle(ref, () => ({
         nativeElement: externalForwardRef.current,
         popupElement: externalPopupRef.current,
         forceAlign: triggerAlign
       }));
-      const [targetWidth, setTargetWidth] = React63.useState(0);
-      const [targetHeight, setTargetHeight] = React63.useState(0);
+      const [targetWidth, setTargetWidth] = React62.useState(0);
+      const [targetHeight, setTargetHeight] = React62.useState(0);
       const syncTargetSize = () => {
         if (stretch && targetEle) {
           const rect = targetEle.getBoundingClientRect();
@@ -31722,7 +31712,7 @@ html body {
       }
       const touchToShow = showActions.has("touch");
       const touchToHide = hideActions.has("touch");
-      const touchedRef = React63.useRef(false);
+      const touchedRef = React62.useRef(false);
       if (touchToShow || touchToHide) {
         cloneProps.onTouchStart = (...args) => {
           var _a2;
@@ -31800,7 +31790,7 @@ html body {
           (_a2 = originChildProps.onContextMenu) == null ? void 0 : _a2.call(originChildProps, event, ...args);
         };
       }
-      const rendedRef = React63.useRef(false);
+      const rendedRef = React62.useRef(false);
       rendedRef.current || (rendedRef.current = forceRender || mergedOpen || inMotion);
       const mergedChildrenProps = __spreadValues(__spreadValues({}, originChildProps), cloneProps);
       const passedProps = {};
@@ -31820,12 +31810,12 @@ html body {
       };
       useResizeObserver(mergedOpen, targetEle, onTargetResize);
       const mergedRef = useComposeRef(setTargetRef, getNodeRef(child));
-      const triggerNode = /* @__PURE__ */ React63.cloneElement(child, __spreadProps(__spreadValues(__spreadValues({}, mergedChildrenProps), passedProps), {
+      const triggerNode = /* @__PURE__ */ React62.cloneElement(child, __spreadProps(__spreadValues(__spreadValues({}, mergedChildrenProps), passedProps), {
         ref: mergedRef
       }));
-      return /* @__PURE__ */ React63.createElement(React63.Fragment, null, triggerNode, rendedRef.current && (!uniqueContext || !unique) && /* @__PURE__ */ React63.createElement(context_default3.Provider, {
+      return /* @__PURE__ */ React62.createElement(React62.Fragment, null, triggerNode, rendedRef.current && (!uniqueContext || !unique) && /* @__PURE__ */ React62.createElement(context_default3.Provider, {
         value: context
-      }, /* @__PURE__ */ React63.createElement(Popup_default, {
+      }, /* @__PURE__ */ React62.createElement(Popup_default, {
         portal: PortalComponent,
         ref: setPopupRef,
         prefixCls,
@@ -31874,18 +31864,18 @@ html body {
   var es_default4 = generateTrigger(es_default3);
 
   // ../custom_dashboard/node_modules/antd/es/tooltip/UniqueProvider/MotionContent.js
-  var import_react34 = __toESM(require_react());
+  var import_react33 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/_util/reactNode.js
-  var import_react33 = __toESM(require_react());
+  var import_react32 = __toESM(require_react());
   function isFragment2(child) {
-    return child && /* @__PURE__ */ import_react33.default.isValidElement(child) && child.type === import_react33.default.Fragment;
+    return child && /* @__PURE__ */ import_react32.default.isValidElement(child) && child.type === import_react32.default.Fragment;
   }
   var replaceElement = (element, replacement, props) => {
-    if (!/* @__PURE__ */ import_react33.default.isValidElement(element)) {
+    if (!/* @__PURE__ */ import_react32.default.isValidElement(element)) {
       return replacement;
     }
-    return /* @__PURE__ */ import_react33.default.cloneElement(element, typeof props === "function" ? props(element.props || {}) : props);
+    return /* @__PURE__ */ import_react32.default.cloneElement(element, typeof props === "function" ? props(element.props || {}) : props);
   };
   function cloneElement5(element, props) {
     return replaceElement(element, element, props);
@@ -31898,12 +31888,12 @@ html body {
   }) => {
     const {
       getPrefixCls
-    } = import_react34.default.useContext(ConfigContext);
+    } = import_react33.default.useContext(ConfigContext);
     const rootPrefixCls = getPrefixCls();
-    if (!/* @__PURE__ */ import_react34.default.isValidElement(children)) {
+    if (!/* @__PURE__ */ import_react33.default.isValidElement(children)) {
       return children;
     }
-    return /* @__PURE__ */ import_react34.default.createElement(es_default2, {
+    return /* @__PURE__ */ import_react33.default.createElement(es_default2, {
       visible: true,
       motionName: `${rootPrefixCls}-fade`,
       motionAppear: true,
@@ -31952,46 +31942,46 @@ html body {
       return __spreadProps(__spreadValues({}, options), {
         getPopupContainer: null,
         arrow: false,
-        popup: /* @__PURE__ */ import_react35.default.createElement(MotionContent_default, {
+        popup: /* @__PURE__ */ import_react34.default.createElement(MotionContent_default, {
           key: id
         }, popupEle),
         builtinPlacements: parsedPlacements
       });
     };
-    return /* @__PURE__ */ import_react35.default.createElement(UniqueProvider_default, {
+    return /* @__PURE__ */ import_react34.default.createElement(UniqueProvider_default, {
       postTriggerProps: renderPopup
     }, children);
   };
   var UniqueProvider_default2 = UniqueProvider2;
 
   // ../custom_dashboard/node_modules/antd/es/config-provider/DisabledContext.js
-  var React67 = __toESM(require_react());
+  var React66 = __toESM(require_react());
   "use client";
-  var DisabledContext = /* @__PURE__ */ React67.createContext(false);
+  var DisabledContext = /* @__PURE__ */ React66.createContext(false);
   var DisabledContextProvider = ({
     children,
     disabled
   }) => {
-    const originDisabled = React67.useContext(DisabledContext);
-    return /* @__PURE__ */ React67.createElement(DisabledContext.Provider, {
+    const originDisabled = React66.useContext(DisabledContext);
+    return /* @__PURE__ */ React66.createElement(DisabledContext.Provider, {
       value: disabled != null ? disabled : originDisabled
     }, children);
   };
   var DisabledContext_default = DisabledContext;
 
   // ../custom_dashboard/node_modules/antd/es/config-provider/hooks/useConfig.js
-  var import_react36 = __toESM(require_react());
+  var import_react35 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/config-provider/SizeContext.js
-  var React68 = __toESM(require_react());
+  var React67 = __toESM(require_react());
   "use client";
-  var SizeContext = /* @__PURE__ */ React68.createContext(void 0);
+  var SizeContext = /* @__PURE__ */ React67.createContext(void 0);
   var SizeContextProvider = ({
     children,
     size
   }) => {
-    const originSize = React68.useContext(SizeContext);
-    return /* @__PURE__ */ React68.createElement(SizeContext.Provider, {
+    const originSize = React67.useContext(SizeContext);
+    return /* @__PURE__ */ React67.createElement(SizeContext.Provider, {
       value: size || originSize
     }, children);
   };
@@ -31999,8 +31989,8 @@ html body {
 
   // ../custom_dashboard/node_modules/antd/es/config-provider/hooks/useConfig.js
   function useConfig() {
-    const componentDisabled = (0, import_react36.useContext)(DisabledContext_default);
-    const componentSize = (0, import_react36.useContext)(SizeContext_default);
+    const componentDisabled = (0, import_react35.useContext)(DisabledContext_default);
+    const componentSize = (0, import_react35.useContext)(SizeContext_default);
     return {
       componentDisabled,
       componentSize
@@ -32009,7 +31999,7 @@ html body {
   var useConfig_default = useConfig;
 
   // ../custom_dashboard/node_modules/antd/es/config-provider/hooks/useTheme.js
-  var import_react37 = __toESM(require_react());
+  var import_react36 = __toESM(require_react());
   function useTheme(theme, parentTheme, config) {
     var _a, _b;
     const warning6 = devUseWarning("ConfigProvider");
@@ -32018,7 +32008,7 @@ html body {
       hashed: (_a = parentTheme == null ? void 0 : parentTheme.hashed) != null ? _a : defaultConfig.hashed,
       cssVar: parentTheme == null ? void 0 : parentTheme.cssVar
     }) : parentTheme;
-    const themeKey = (0, import_react37.useId)();
+    const themeKey = (0, import_react36.useId)();
     if (true) {
       const cssVarEnabled = themeConfig.cssVar || parentThemeConfig.cssVar;
       const validKey = !!(typeof themeConfig.cssVar === "object" && ((_b = themeConfig.cssVar) == null ? void 0 : _b.key) || themeKey);
@@ -32051,14 +32041,14 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/antd/es/config-provider/MotionWrapper.js
-  var React69 = __toESM(require_react());
+  var React68 = __toESM(require_react());
   "use client";
-  var MotionCacheContext = /* @__PURE__ */ React69.createContext(true);
+  var MotionCacheContext = /* @__PURE__ */ React68.createContext(true);
   if (true) {
     MotionCacheContext.displayName = "MotionCacheContext";
   }
   function MotionWrapper(props) {
-    const parentMotion = React69.useContext(MotionCacheContext);
+    const parentMotion = React68.useContext(MotionCacheContext);
     const {
       children
     } = props;
@@ -32066,12 +32056,12 @@ html body {
     const {
       motion
     } = token2;
-    const needWrapMotionProviderRef = React69.useRef(false);
+    const needWrapMotionProviderRef = React68.useRef(false);
     needWrapMotionProviderRef.current || (needWrapMotionProviderRef.current = parentMotion !== motion);
     if (needWrapMotionProviderRef.current) {
-      return /* @__PURE__ */ React69.createElement(MotionCacheContext.Provider, {
+      return /* @__PURE__ */ React68.createElement(MotionCacheContext.Provider, {
         value: motion
-      }, /* @__PURE__ */ React69.createElement(context_default, {
+      }, /* @__PURE__ */ React68.createElement(context_default, {
         motion
       }, children));
     }
@@ -32079,9 +32069,9 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/antd/es/config-provider/PropWarning.js
-  var React70 = __toESM(require_react());
+  var React69 = __toESM(require_react());
   "use client";
-  var PropWarning = /* @__PURE__ */ React70.memo(({
+  var PropWarning = /* @__PURE__ */ React69.memo(({
     dropdownMatchSelectWidth
   }) => {
     const warning6 = devUseWarning("ConfigProvider");
@@ -32245,7 +32235,7 @@ html body {
       treeSelect,
       watermark
     } = props;
-    const getPrefixCls = React71.useCallback((suffixCls, customizePrefixCls) => {
+    const getPrefixCls = React70.useCallback((suffixCls, customizePrefixCls) => {
       const {
         prefixCls
       } = props;
@@ -32375,48 +32365,48 @@ html body {
     });
     const {
       layer
-    } = React71.useContext(StyleContext_default);
-    const memoIconContextValue = React71.useMemo(() => ({
+    } = React70.useContext(StyleContext_default);
+    const memoIconContextValue = React70.useMemo(() => ({
       prefixCls: iconPrefixCls,
       csp,
       layer: layer ? "antd" : void 0
     }), [iconPrefixCls, csp, layer]);
-    let childNode = /* @__PURE__ */ React71.createElement(React71.Fragment, null, /* @__PURE__ */ React71.createElement(IconStyle, {
+    let childNode = /* @__PURE__ */ React70.createElement(React70.Fragment, null, /* @__PURE__ */ React70.createElement(IconStyle, {
       iconPrefixCls,
       csp
-    }), /* @__PURE__ */ React71.createElement(PropWarning_default, {
+    }), /* @__PURE__ */ React70.createElement(PropWarning_default, {
       dropdownMatchSelectWidth
     }), children);
-    const validateMessages = React71.useMemo(() => {
+    const validateMessages = React70.useMemo(() => {
       var _a, _b, _c, _d;
       return merge(((_a = en_US_default6.Form) == null ? void 0 : _a.defaultValidateMessages) || {}, ((_c = (_b = memoedConfig.locale) == null ? void 0 : _b.Form) == null ? void 0 : _c.defaultValidateMessages) || {}, ((_d = memoedConfig.form) == null ? void 0 : _d.validateMessages) || {}, (form == null ? void 0 : form.validateMessages) || {});
     }, [memoedConfig, form == null ? void 0 : form.validateMessages]);
     if (Object.keys(validateMessages).length > 0) {
-      childNode = /* @__PURE__ */ React71.createElement(validateMessagesContext_default.Provider, {
+      childNode = /* @__PURE__ */ React70.createElement(validateMessagesContext_default.Provider, {
         value: validateMessages
       }, childNode);
     }
     if (locale6) {
-      childNode = /* @__PURE__ */ React71.createElement(locale_default, {
+      childNode = /* @__PURE__ */ React70.createElement(locale_default, {
         locale: locale6,
         _ANT_MARK__: ANT_MARK
       }, childNode);
     }
     if (iconPrefixCls || csp) {
-      childNode = /* @__PURE__ */ React71.createElement(Context_default.Provider, {
+      childNode = /* @__PURE__ */ React70.createElement(Context_default.Provider, {
         value: memoIconContextValue
       }, childNode);
     }
     if (componentSize) {
-      childNode = /* @__PURE__ */ React71.createElement(SizeContextProvider, {
+      childNode = /* @__PURE__ */ React70.createElement(SizeContextProvider, {
         size: componentSize
       }, childNode);
     }
-    childNode = /* @__PURE__ */ React71.createElement(MotionWrapper, null, childNode);
+    childNode = /* @__PURE__ */ React70.createElement(MotionWrapper, null, childNode);
     if (tooltip == null ? void 0 : tooltip.unique) {
-      childNode = /* @__PURE__ */ React71.createElement(UniqueProvider_default2, null, childNode);
+      childNode = /* @__PURE__ */ React70.createElement(UniqueProvider_default2, null, childNode);
     }
-    const memoTheme = React71.useMemo(() => {
+    const memoTheme = React70.useMemo(() => {
       const _a = mergedTheme || {}, {
         algorithm,
         token: token2,
@@ -32454,28 +32444,28 @@ html body {
       });
     }, [mergedTheme]);
     if (theme) {
-      childNode = /* @__PURE__ */ React71.createElement(DesignTokenContext.Provider, {
+      childNode = /* @__PURE__ */ React70.createElement(DesignTokenContext.Provider, {
         value: memoTheme
       }, childNode);
     }
     if (memoedConfig.warning) {
-      childNode = /* @__PURE__ */ React71.createElement(WarningContext.Provider, {
+      childNode = /* @__PURE__ */ React70.createElement(WarningContext.Provider, {
         value: memoedConfig.warning
       }, childNode);
     }
     if (componentDisabled !== void 0) {
-      childNode = /* @__PURE__ */ React71.createElement(DisabledContextProvider, {
+      childNode = /* @__PURE__ */ React70.createElement(DisabledContextProvider, {
         disabled: componentDisabled
       }, childNode);
     }
-    return /* @__PURE__ */ React71.createElement(ConfigContext.Provider, {
+    return /* @__PURE__ */ React70.createElement(ConfigContext.Provider, {
       value: memoedConfig
     }, childNode);
   };
   var ConfigProvider = (props) => {
-    const context = React71.useContext(ConfigContext);
-    const antLocale = React71.useContext(context_default2);
-    return /* @__PURE__ */ React71.createElement(ProviderChildren, __spreadValues({
+    const context = React70.useContext(ConfigContext);
+    const antLocale = React70.useContext(context_default2);
+    return /* @__PURE__ */ React70.createElement(ProviderChildren, __spreadValues({
       parentContext: context,
       legacyLocale: antLocale
     }, props));
@@ -32496,17 +32486,17 @@ html body {
   var config_provider_default = ConfigProvider;
 
   // ../custom_dashboard/node_modules/antd/es/message/useMessage.js
-  var React79 = __toESM(require_react());
+  var React78 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/notification/es/hooks/useNotification.js
-  var React76 = __toESM(require_react());
+  var React75 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/notification/es/Notifications.js
-  var React75 = __toESM(require_react());
+  var React74 = __toESM(require_react());
   var import_react_dom3 = __toESM(require_react_dom());
 
   // ../custom_dashboard/node_modules/@rc-component/notification/es/NoticeList.js
-  var import_react39 = __toESM(require_react());
+  var import_react38 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/util/es/KeyCode.js
   var KeyCode = {
@@ -32702,7 +32692,7 @@ html body {
   var KeyCode_default = KeyCode;
 
   // ../custom_dashboard/node_modules/@rc-component/notification/es/Notice.js
-  var React72 = __toESM(require_react());
+  var React71 = __toESM(require_react());
   function _extends12() {
     _extends12 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -32717,7 +32707,7 @@ html body {
     };
     return _extends12.apply(this, arguments);
   }
-  var Notify = /* @__PURE__ */ React72.forwardRef((props, ref) => {
+  var Notify = /* @__PURE__ */ React71.forwardRef((props, ref) => {
     var _a;
     const {
       prefixCls,
@@ -32735,9 +32725,9 @@ html body {
       times,
       hovering: forcedHovering
     } = props;
-    const [hovering, setHovering] = React72.useState(false);
-    const [percent, setPercent] = React72.useState(0);
-    const [spentTime, setSpentTime] = React72.useState(0);
+    const [hovering, setHovering] = React71.useState(false);
+    const [percent, setPercent] = React71.useState(0);
+    const [spentTime, setSpentTime] = React71.useState(0);
     const mergedHovering = forcedHovering || hovering;
     const mergedDuration = typeof duration === "number" ? duration : 0;
     const mergedShowProgress = mergedDuration > 0 && showProgress;
@@ -32749,7 +32739,7 @@ html body {
         onInternalClose();
       }
     };
-    React72.useEffect(() => {
+    React71.useEffect(() => {
       if (!mergedHovering && mergedDuration > 0) {
         const start = Date.now() - spentTime;
         const timeout = setTimeout(() => {
@@ -32763,7 +32753,7 @@ html body {
         };
       }
     }, [mergedDuration, mergedHovering, times]);
-    React72.useEffect(() => {
+    React71.useEffect(() => {
       if (!mergedHovering && mergedShowProgress && (pauseOnHover || spentTime === 0)) {
         const start = performance.now();
         let animationFrame;
@@ -32786,7 +32776,7 @@ html body {
         };
       }
     }, [mergedDuration, spentTime, mergedHovering, mergedShowProgress, times]);
-    const closableObj = React72.useMemo(() => {
+    const closableObj = React71.useMemo(() => {
       if (typeof closable === "object" && closable !== null) {
         return closable;
       }
@@ -32795,7 +32785,7 @@ html body {
     const ariaProps = pickAttrs(closableObj, true);
     const validPercent = 100 - (!percent || percent < 0 ? 0 : percent > 100 ? 100 : percent);
     const noticePrefixCls = `${prefixCls}-notice`;
-    return /* @__PURE__ */ React72.createElement("div", _extends12({}, divProps, {
+    return /* @__PURE__ */ React71.createElement("div", _extends12({}, divProps, {
       ref,
       className: clsx(noticePrefixCls, className, {
         [`${noticePrefixCls}-closable`]: closable
@@ -32812,9 +32802,9 @@ html body {
         (_a2 = divProps == null ? void 0 : divProps.onMouseLeave) == null ? void 0 : _a2.call(divProps, e3);
       },
       onClick
-    }), /* @__PURE__ */ React72.createElement("div", {
+    }), /* @__PURE__ */ React71.createElement("div", {
       className: `${noticePrefixCls}-content`
-    }, content), closable && /* @__PURE__ */ React72.createElement("button", _extends12({
+    }, content), closable && /* @__PURE__ */ React71.createElement("button", _extends12({
       className: `${noticePrefixCls}-close`,
       onKeyDown: onCloseKeyDown,
       "aria-label": "Close"
@@ -32824,7 +32814,7 @@ html body {
         e3.stopPropagation();
         onInternalClose();
       }
-    }), (_a = closableObj.closeIcon) != null ? _a : "x"), mergedShowProgress && /* @__PURE__ */ React72.createElement("progress", {
+    }), (_a = closableObj.closeIcon) != null ? _a : "x"), mergedShowProgress && /* @__PURE__ */ React71.createElement("progress", {
       className: `${noticePrefixCls}-progress`,
       max: "100",
       value: validPercent
@@ -32833,13 +32823,13 @@ html body {
   var Notice_default = Notify;
 
   // ../custom_dashboard/node_modules/@rc-component/notification/es/NotificationProvider.js
-  var import_react38 = __toESM(require_react());
-  var NotificationContext = /* @__PURE__ */ import_react38.default.createContext({});
+  var import_react37 = __toESM(require_react());
+  var NotificationContext = /* @__PURE__ */ import_react37.default.createContext({});
   var NotificationProvider = ({
     children,
     classNames
   }) => {
-    return /* @__PURE__ */ import_react38.default.createElement(NotificationContext.Provider, {
+    return /* @__PURE__ */ import_react37.default.createElement(NotificationContext.Provider, {
       value: {
         classNames
       }
@@ -32896,10 +32886,10 @@ html body {
     } = props;
     const {
       classNames: ctxCls
-    } = (0, import_react39.useContext)(NotificationContext);
-    const dictRef = (0, import_react39.useRef)({});
-    const [latestNotice, setLatestNotice] = (0, import_react39.useState)(null);
-    const [hoverKeys, setHoverKeys] = (0, import_react39.useState)([]);
+    } = (0, import_react38.useContext)(NotificationContext);
+    const dictRef = (0, import_react38.useRef)({});
+    const [latestNotice, setLatestNotice] = (0, import_react38.useState)(null);
+    const [hoverKeys, setHoverKeys] = (0, import_react38.useState)([]);
     const keys2 = configList.map((config) => ({
       config,
       key: String(config.key)
@@ -32911,20 +32901,20 @@ html body {
     }] = useStack_default(stackConfig);
     const expanded = stack2 && (hoverKeys.length > 0 || keys2.length <= threshold);
     const placementMotion = typeof motion === "function" ? motion(placement) : motion;
-    (0, import_react39.useEffect)(() => {
+    (0, import_react38.useEffect)(() => {
       if (stack2 && hoverKeys.length > 1) {
         setHoverKeys((prev2) => prev2.filter((key) => keys2.some(({
           key: dataKey
         }) => key === dataKey)));
       }
     }, [hoverKeys, keys2, stack2]);
-    (0, import_react39.useEffect)(() => {
+    (0, import_react38.useEffect)(() => {
       var _a, _b;
       if (stack2 && dictRef.current[(_a = keys2[keys2.length - 1]) == null ? void 0 : _a.key]) {
         setLatestNotice(dictRef.current[(_b = keys2[keys2.length - 1]) == null ? void 0 : _b.key]);
       }
     }, [keys2, stack2]);
-    return /* @__PURE__ */ import_react39.default.createElement(CSSMotionList_default, _extends13({
+    return /* @__PURE__ */ import_react38.default.createElement(CSSMotionList_default, _extends13({
       key: placement,
       className: clsx(prefixCls, `${prefixCls}-${placement}`, ctxCls == null ? void 0 : ctxCls.list, className, {
         [`${prefixCls}-stack`]: !!stack2,
@@ -32978,13 +32968,13 @@ html body {
           stackStyle.transform = `translate3d(${transformX}, 0, 0)`;
         }
       }
-      return /* @__PURE__ */ import_react39.default.createElement("div", {
+      return /* @__PURE__ */ import_react38.default.createElement("div", {
         ref: nodeRef,
         className: clsx(`${prefixCls}-notice-wrapper`, motionClassName, configClassNames == null ? void 0 : configClassNames.wrapper),
         style: __spreadValues(__spreadValues(__spreadValues({}, motionStyle), stackStyle), configStyles == null ? void 0 : configStyles.wrapper),
         onMouseEnter: () => setHoverKeys((prev2) => prev2.includes(strKey) ? prev2 : [...prev2, strKey]),
         onMouseLeave: () => setHoverKeys((prev2) => prev2.filter((k) => k !== strKey))
-      }, /* @__PURE__ */ import_react39.default.createElement(Notice_default, _extends13({}, restConfig, {
+      }, /* @__PURE__ */ import_react38.default.createElement(Notice_default, _extends13({}, restConfig, {
         ref: (node2) => {
           if (dataIndex > -1) {
             dictRef.current[strKey] = node2;
@@ -33011,7 +33001,7 @@ html body {
   var NoticeList_default = NoticeList;
 
   // ../custom_dashboard/node_modules/@rc-component/notification/es/Notifications.js
-  var Notifications = /* @__PURE__ */ React75.forwardRef((props, ref) => {
+  var Notifications = /* @__PURE__ */ React74.forwardRef((props, ref) => {
     const {
       prefixCls = "rc-notification",
       container,
@@ -33023,7 +33013,7 @@ html body {
       stack: stack2,
       renderNotifications: renderNotifications2
     } = props;
-    const [configList, setConfigList] = React75.useState([]);
+    const [configList, setConfigList] = React74.useState([]);
     const onNoticeClose = (key) => {
       var _a;
       const config = configList.find((item) => item.key === key);
@@ -33036,7 +33026,7 @@ html body {
       (_a = config == null ? void 0 : config.onClose) == null ? void 0 : _a.call(config);
       setConfigList((list) => list.filter((item) => item.key !== key));
     };
-    React75.useImperativeHandle(ref, () => ({
+    React74.useImperativeHandle(ref, () => ({
       open: (config) => {
         setConfigList((list) => {
           var _a;
@@ -33063,8 +33053,8 @@ html body {
         setConfigList([]);
       }
     }));
-    const [placements4, setPlacements] = React75.useState({});
-    React75.useEffect(() => {
+    const [placements4, setPlacements] = React74.useState({});
+    React74.useEffect(() => {
       const nextPlacements = {};
       configList.forEach((config) => {
         const {
@@ -33090,8 +33080,8 @@ html body {
         return clone;
       });
     };
-    const emptyRef = React75.useRef(false);
-    React75.useEffect(() => {
+    const emptyRef = React74.useRef(false);
+    React74.useEffect(() => {
       if (Object.keys(placements4).length > 0) {
         emptyRef.current = true;
       } else if (emptyRef.current) {
@@ -33103,9 +33093,9 @@ html body {
       return null;
     }
     const placementList = Object.keys(placements4);
-    return /* @__PURE__ */ (0, import_react_dom3.createPortal)(/* @__PURE__ */ React75.createElement(React75.Fragment, null, placementList.map((placement) => {
+    return /* @__PURE__ */ (0, import_react_dom3.createPortal)(/* @__PURE__ */ React74.createElement(React74.Fragment, null, placementList.map((placement) => {
       const placementConfigList = placements4[placement];
-      const list = /* @__PURE__ */ React75.createElement(NoticeList_default, {
+      const list = /* @__PURE__ */ React74.createElement(NoticeList_default, {
         key: placement,
         configList: placementConfigList,
         placement,
@@ -33167,9 +33157,9 @@ html body {
       "stack",
       "renderNotifications"
     ]);
-    const [container, setContainer] = React76.useState();
-    const notificationsRef = React76.useRef();
-    const contextHolder = /* @__PURE__ */ React76.createElement(Notifications_default, {
+    const [container, setContainer] = React75.useState();
+    const notificationsRef = React75.useRef();
+    const contextHolder = /* @__PURE__ */ React75.createElement(Notifications_default, {
       container,
       ref: notificationsRef,
       prefixCls,
@@ -33181,7 +33171,7 @@ html body {
       stack: stack2,
       renderNotifications: renderNotifications2
     });
-    const [taskQueue2, setTaskQueue] = React76.useState([]);
+    const [taskQueue2, setTaskQueue] = React75.useState([]);
     const open2 = useEvent_default((config) => {
       const mergedConfig = mergeConfig(shareConfig, config);
       if (mergedConfig.key === null || mergedConfig.key === void 0) {
@@ -33193,7 +33183,7 @@ html body {
         config: mergedConfig
       }]);
     });
-    const api = React76.useMemo(() => ({
+    const api = React75.useMemo(() => ({
       open: open2,
       close: (key) => {
         setTaskQueue((queue) => [...queue, {
@@ -33207,10 +33197,10 @@ html body {
         }]);
       }
     }), []);
-    React76.useEffect(() => {
+    React75.useEffect(() => {
       setContainer(getContainer2());
     });
-    React76.useEffect(() => {
+    React75.useEffect(() => {
       if (notificationsRef.current && taskQueue2.length) {
         taskQueue2.forEach((task) => {
           switch (task.type) {
@@ -33240,10 +33230,10 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/antd/es/message/PurePanel.js
-  var React78 = __toESM(require_react());
+  var React77 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/LoadingOutlined.js
-  var React77 = __toESM(require_react());
+  var React76 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/LoadingOutlined.js
   var LoadingOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "0 0 1024 1024", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z" } }] }, "name": "loading", "theme": "outlined" };
@@ -33264,11 +33254,11 @@ html body {
     };
     return _extends14.apply(this, arguments);
   }
-  var LoadingOutlined2 = (props, ref) => /* @__PURE__ */ React77.createElement(AntdIcon_default, _extends14({}, props, {
+  var LoadingOutlined2 = (props, ref) => /* @__PURE__ */ React76.createElement(AntdIcon_default, _extends14({}, props, {
     ref,
     icon: LoadingOutlined_default
   }));
-  var RefIcon6 = /* @__PURE__ */ React77.forwardRef(LoadingOutlined2);
+  var RefIcon6 = /* @__PURE__ */ React76.forwardRef(LoadingOutlined2);
   if (true) {
     RefIcon6.displayName = "LoadingOutlined";
   }
@@ -33425,11 +33415,11 @@ html body {
   // ../custom_dashboard/node_modules/antd/es/message/PurePanel.js
   "use client";
   var TypeIcon = {
-    info: /* @__PURE__ */ React78.createElement(InfoCircleFilled_default2, null),
-    success: /* @__PURE__ */ React78.createElement(CheckCircleFilled_default2, null),
-    error: /* @__PURE__ */ React78.createElement(CloseCircleFilled_default2, null),
-    warning: /* @__PURE__ */ React78.createElement(ExclamationCircleFilled_default2, null),
-    loading: /* @__PURE__ */ React78.createElement(LoadingOutlined_default2, null)
+    info: /* @__PURE__ */ React77.createElement(InfoCircleFilled_default2, null),
+    success: /* @__PURE__ */ React77.createElement(CheckCircleFilled_default2, null),
+    error: /* @__PURE__ */ React77.createElement(CloseCircleFilled_default2, null),
+    warning: /* @__PURE__ */ React77.createElement(ExclamationCircleFilled_default2, null),
+    loading: /* @__PURE__ */ React77.createElement(LoadingOutlined_default2, null)
   };
   var PureContent = (props) => {
     const {
@@ -33448,9 +33438,9 @@ html body {
         style: mergedStyle
       };
     });
-    return /* @__PURE__ */ React78.createElement("div", {
+    return /* @__PURE__ */ React77.createElement("div", {
       className: clsx(`${prefixCls}-custom-content`, `${prefixCls}-${type5}`)
-    }, iconNode, /* @__PURE__ */ React78.createElement("span", {
+    }, iconNode, /* @__PURE__ */ React77.createElement("span", {
       className: pureContentClassNames == null ? void 0 : pureContentClassNames.content,
       style: styles == null ? void 0 : styles.content
     }, children));
@@ -33488,13 +33478,13 @@ html body {
     const [mergedClassNames, mergedStyles] = useMergeSemantic([contextClassNames, messageClassNames], [contextStyles, styles], {
       props
     });
-    return /* @__PURE__ */ React78.createElement(Notice_default, __spreadProps(__spreadValues({}, restProps), {
+    return /* @__PURE__ */ React77.createElement(Notice_default, __spreadProps(__spreadValues({}, restProps), {
       prefixCls,
       className: clsx(contextClassName, mergedClassNames.root, className, hashId, `${prefixCls}-notice-pure-panel`, cssVarCls, rootCls),
       style: __spreadValues(__spreadValues(__spreadValues({}, mergedStyles.root), contextStyle), style2),
       eventKey: "pure",
       duration: null,
-      content: /* @__PURE__ */ React78.createElement(PureContent, {
+      content: /* @__PURE__ */ React77.createElement(PureContent, {
         prefixCls,
         type: type5,
         icon,
@@ -33536,7 +33526,7 @@ html body {
   }) => {
     const rootCls = useCSSVarCls_default(prefixCls);
     const [hashId, cssVarCls] = style_default2(prefixCls, rootCls);
-    return /* @__PURE__ */ React79.createElement(NotificationProvider_default, {
+    return /* @__PURE__ */ React78.createElement(NotificationProvider_default, {
       classNames: {
         list: clsx(hashId, cssVarCls, rootCls)
       }
@@ -33545,11 +33535,11 @@ html body {
   var renderNotifications = (node2, {
     prefixCls,
     key
-  }) => /* @__PURE__ */ React79.createElement(Wrapper, {
+  }) => /* @__PURE__ */ React78.createElement(Wrapper, {
     prefixCls,
     key
   }, node2);
-  var Holder = /* @__PURE__ */ React79.forwardRef((props, ref) => {
+  var Holder = /* @__PURE__ */ React78.forwardRef((props, ref) => {
     const {
       top,
       prefixCls: staticPrefixCls,
@@ -33568,7 +33558,7 @@ html body {
     } = useComponentConfig("message");
     const {
       message: message2
-    } = React79.useContext(ConfigContext);
+    } = React78.useContext(ConfigContext);
     const prefixCls = staticPrefixCls || getPrefixCls("message");
     const getStyle2 = () => ({
       left: "50%",
@@ -33595,7 +33585,7 @@ html body {
       renderNotifications,
       pauseOnHover
     });
-    React79.useImperativeHandle(ref, () => __spreadProps(__spreadValues({}, api), {
+    React78.useImperativeHandle(ref, () => __spreadProps(__spreadValues({}, api), {
       prefixCls,
       message: message2,
       classNames: mergedClassNames,
@@ -33605,9 +33595,9 @@ html body {
   });
   var keyIndex = 0;
   function useInternalMessage(messageConfig) {
-    const holderRef = React79.useRef(null);
+    const holderRef = React78.useRef(null);
     const warning6 = devUseWarning("Message");
-    const wrapAPI = React79.useMemo(() => {
+    const wrapAPI = React78.useMemo(() => {
       const close = (key) => {
         var _a;
         (_a = holderRef.current) == null ? void 0 : _a.close(key);
@@ -33677,7 +33667,7 @@ html body {
         return wrapPromiseFn((resolve) => {
           originOpen(__spreadProps(__spreadValues({}, restConfig), {
             key: mergedKey,
-            content: /* @__PURE__ */ React79.createElement(PureContent, {
+            content: /* @__PURE__ */ React78.createElement(PureContent, {
               prefixCls,
               type: type5,
               icon,
@@ -33742,7 +33732,7 @@ html body {
       });
       return clone;
     }, []);
-    return [wrapAPI, /* @__PURE__ */ React79.createElement(Holder, __spreadProps(__spreadValues({
+    return [wrapAPI, /* @__PURE__ */ React78.createElement(Holder, __spreadProps(__spreadValues({
       key: "message-holder"
     }, messageConfig), {
       ref: holderRef
@@ -33753,10 +33743,10 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/antd/es/modal/useModal/index.js
-  var React140 = __toESM(require_react());
+  var React139 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/modal/confirm.js
-  var import_react70 = __toESM(require_react());
+  var import_react69 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/util/es/React/render.js
   var import_client = __toESM(require_client());
@@ -33775,7 +33765,7 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/antd/es/modal/ConfirmDialog.js
-  var React137 = __toESM(require_react());
+  var React136 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/_util/motion.js
   var getCollapsedHeight = () => ({
@@ -33817,16 +33807,16 @@ html body {
   var motion_default = initCollapseMotion;
 
   // ../custom_dashboard/node_modules/antd/es/modal/components/ConfirmCancelBtn.js
-  var import_react58 = __toESM(require_react());
+  var import_react57 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/_util/ActionButton.js
-  var React101 = __toESM(require_react());
+  var React100 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/button/Button.js
-  var import_react56 = __toESM(require_react());
+  var import_react55 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/_util/wave/index.js
-  var import_react40 = __toESM(require_react());
+  var import_react39 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/_util/wave/style.js
   var genWaveStyle = (token2) => {
@@ -33864,13 +33854,13 @@ html body {
   var style_default3 = genComponentStyleHook("Wave", genWaveStyle);
 
   // ../custom_dashboard/node_modules/antd/es/_util/wave/useWave.js
-  var React81 = __toESM(require_react());
+  var React80 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/_util/wave/interface.js
   var TARGET_CLS = `${defaultPrefixCls}-wave-target`;
 
   // ../custom_dashboard/node_modules/antd/es/_util/wave/WaveEffect.js
-  var React80 = __toESM(require_react());
+  var React79 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/_util/wave/util.js
   function isValidWaveColor(color) {
@@ -33902,19 +33892,19 @@ html body {
       component,
       colorSource
     } = props;
-    const divRef = React80.useRef(null);
+    const divRef = React79.useRef(null);
     const {
       getPrefixCls
-    } = React80.useContext(ConfigContext);
+    } = React79.useContext(ConfigContext);
     const rootPrefixCls = getPrefixCls();
     const [varName] = genCssVar(rootPrefixCls, "wave");
-    const [waveColor, setWaveColor] = React80.useState(null);
-    const [borderRadius, setBorderRadius] = React80.useState([]);
-    const [left, setLeft] = React80.useState(0);
-    const [top, setTop] = React80.useState(0);
-    const [width, setWidth] = React80.useState(0);
-    const [height, setHeight] = React80.useState(0);
-    const [enabled, setEnabled] = React80.useState(false);
+    const [waveColor, setWaveColor] = React79.useState(null);
+    const [borderRadius, setBorderRadius] = React79.useState([]);
+    const [left, setLeft] = React79.useState(0);
+    const [top, setTop] = React79.useState(0);
+    const [width, setWidth] = React79.useState(0);
+    const [height, setHeight] = React79.useState(0);
+    const [enabled, setEnabled] = React79.useState(false);
     const waveStyle = {
       left,
       top,
@@ -33945,7 +33935,7 @@ html body {
       } = nodeStyle;
       setBorderRadius([borderTopLeftRadius, borderTopRightRadius, borderBottomRightRadius, borderBottomLeftRadius].map((radius2) => validateNum(Number.parseFloat(radius2))));
     }
-    React80.useEffect(() => {
+    React79.useEffect(() => {
       if (target) {
         const id = raf_default(() => {
           syncPos();
@@ -33966,7 +33956,7 @@ html body {
       return null;
     }
     const isSmallComponent = (component === "Checkbox" || component === "Radio") && (target == null ? void 0 : target.classList.contains(TARGET_CLS));
-    return /* @__PURE__ */ React80.createElement(es_default2, {
+    return /* @__PURE__ */ React79.createElement(es_default2, {
       visible: true,
       motionAppear: true,
       motionName: "wave-motion",
@@ -33983,7 +33973,7 @@ html body {
       }
     }, ({
       className: motionClassName
-    }, ref) => /* @__PURE__ */ React80.createElement("div", {
+    }, ref) => /* @__PURE__ */ React79.createElement("div", {
       ref: composeRef(divRef, ref),
       className: clsx(className, motionClassName, {
         "wave-quick": isSmallComponent
@@ -34004,7 +33994,7 @@ html body {
     holder.style.left = "0px";
     holder.style.top = "0px";
     target == null ? void 0 : target.insertBefore(holder, target == null ? void 0 : target.firstChild);
-    render(/* @__PURE__ */ React80.createElement(WaveEffect, __spreadProps(__spreadValues({}, info), {
+    render(/* @__PURE__ */ React79.createElement(WaveEffect, __spreadProps(__spreadValues({}, info), {
       target
     })), holder);
   };
@@ -34014,7 +34004,7 @@ html body {
   var useWave = (nodeRef, className, component, colorSource) => {
     const {
       wave
-    } = React81.useContext(ConfigContext);
+    } = React80.useContext(ConfigContext);
     const [, token2, hashId] = useToken();
     const showWave = useEvent_default((event) => {
       const node2 = nodeRef.current;
@@ -34034,8 +34024,8 @@ html body {
         colorSource
       });
     });
-    const rafIdRef = React81.useRef(null);
-    React81.useEffect(() => () => {
+    const rafIdRef = React80.useRef(null);
+    React80.useEffect(() => () => {
       raf_default.cancel(rafIdRef.current);
     }, []);
     const showDebounceWave = (event) => {
@@ -34058,12 +34048,12 @@ html body {
     } = props;
     const {
       getPrefixCls
-    } = (0, import_react40.useContext)(ConfigContext);
-    const containerRef = (0, import_react40.useRef)(null);
+    } = (0, import_react39.useContext)(ConfigContext);
+    const containerRef = (0, import_react39.useRef)(null);
     const prefixCls = getPrefixCls("wave");
     const hashId = style_default3(prefixCls);
     const showWave = useWave_default(containerRef, clsx(prefixCls, hashId), component, colorSource);
-    import_react40.default.useEffect(() => {
+    import_react39.default.useEffect(() => {
       const node2 = containerRef.current;
       if (!node2 || node2.nodeType !== window.Node.ELEMENT_NODE || disabled) {
         return;
@@ -34079,7 +34069,7 @@ html body {
         node2.removeEventListener("click", onClick, true);
       };
     }, [disabled]);
-    if (!/* @__PURE__ */ import_react40.default.isValidElement(children)) {
+    if (!/* @__PURE__ */ import_react39.default.isValidElement(children)) {
       return children != null ? children : null;
     }
     const ref = supportRef(children) ? composeRef(getNodeRef(children), containerRef) : containerRef;
@@ -34093,10 +34083,10 @@ html body {
   var wave_default = Wave;
 
   // ../custom_dashboard/node_modules/antd/es/config-provider/hooks/useSize.js
-  var import_react41 = __toESM(require_react());
+  var import_react40 = __toESM(require_react());
   var useSize = (customSize) => {
-    const size = import_react41.default.useContext(SizeContext_default);
-    const mergedSize = import_react41.default.useMemo(() => {
+    const size = import_react40.default.useContext(SizeContext_default);
+    const mergedSize = import_react40.default.useMemo(() => {
       if (!customSize) {
         return size;
       }
@@ -34113,7 +34103,7 @@ html body {
   var useSize_default = useSize;
 
   // ../custom_dashboard/node_modules/antd/es/space/Compact.js
-  var React84 = __toESM(require_react());
+  var React83 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/space/style/compact.js
   var genSpaceCompactStyle = (token2) => {
@@ -34142,10 +34132,10 @@ html body {
 
   // ../custom_dashboard/node_modules/antd/es/space/Compact.js
   "use client";
-  var SpaceCompactItemContext = /* @__PURE__ */ React84.createContext(null);
+  var SpaceCompactItemContext = /* @__PURE__ */ React83.createContext(null);
   var useCompactItemContext = (prefixCls, direction) => {
-    const compactItemContext = React84.useContext(SpaceCompactItemContext);
-    const compactItemClassnames = React84.useMemo(() => {
+    const compactItemContext = React83.useContext(SpaceCompactItemContext);
+    const compactItemClassnames = React83.useMemo(() => {
       if (!compactItemContext) {
         return "";
       }
@@ -34171,7 +34161,7 @@ html body {
     const {
       children
     } = props;
-    return /* @__PURE__ */ React84.createElement(SpaceCompactItemContext.Provider, {
+    return /* @__PURE__ */ React83.createElement(SpaceCompactItemContext.Provider, {
       value: null
     }, children);
   };
@@ -34181,15 +34171,15 @@ html body {
     } = _a, others = __objRest(_a, [
       "children"
     ]);
-    return /* @__PURE__ */ React84.createElement(SpaceCompactItemContext.Provider, {
-      value: React84.useMemo(() => others, [others])
+    return /* @__PURE__ */ React83.createElement(SpaceCompactItemContext.Provider, {
+      value: React83.useMemo(() => others, [others])
     }, children);
   };
   var Compact = (props) => {
     const {
       getPrefixCls,
       direction: directionConfig
-    } = React84.useContext(ConfigContext);
+    } = React83.useContext(ConfigContext);
     const _a = props, {
       size,
       direction,
@@ -34224,11 +34214,11 @@ html body {
       [`${prefixCls}-block`]: block,
       [`${prefixCls}-vertical`]: mergedVertical
     }, className, rootClassName);
-    const compactItemContext = React84.useContext(SpaceCompactItemContext);
+    const compactItemContext = React83.useContext(SpaceCompactItemContext);
     const childNodes = toArray(children);
-    const nodes = React84.useMemo(() => childNodes.map((child, i) => {
+    const nodes = React83.useMemo(() => childNodes.map((child, i) => {
       const key = (child == null ? void 0 : child.key) || `${prefixCls}-item-${i}`;
-      return /* @__PURE__ */ React84.createElement(CompactItem, {
+      return /* @__PURE__ */ React83.createElement(CompactItem, {
         key,
         compactSize: mergedSize,
         compactDirection: mergedOrientation,
@@ -34239,21 +34229,21 @@ html body {
     if (childNodes.length === 0) {
       return null;
     }
-    return /* @__PURE__ */ React84.createElement("div", __spreadValues({
+    return /* @__PURE__ */ React83.createElement("div", __spreadValues({
       className: clx
     }, restProps), nodes);
   };
   var Compact_default = Compact;
 
   // ../custom_dashboard/node_modules/antd/es/button/ButtonGroup.js
-  var React85 = __toESM(require_react());
+  var React84 = __toESM(require_react());
   "use client";
-  var GroupSizeContext = /* @__PURE__ */ React85.createContext(void 0);
+  var GroupSizeContext = /* @__PURE__ */ React84.createContext(void 0);
   var ButtonGroup = (props) => {
     const {
       getPrefixCls,
       direction
-    } = React85.useContext(ConfigContext);
+    } = React84.useContext(ConfigContext);
     const _a = props, {
       prefixCls: customizePrefixCls,
       size,
@@ -34265,7 +34255,7 @@ html body {
     ]);
     const prefixCls = getPrefixCls("btn-group", customizePrefixCls);
     const [, , hashId] = useToken();
-    const sizeCls = React85.useMemo(() => {
+    const sizeCls = React84.useMemo(() => {
       switch (size) {
         case "large":
           return "lg";
@@ -34284,16 +34274,16 @@ html body {
       [`${prefixCls}-${sizeCls}`]: sizeCls,
       [`${prefixCls}-rtl`]: direction === "rtl"
     }, className, hashId);
-    return /* @__PURE__ */ React85.createElement(GroupSizeContext.Provider, {
+    return /* @__PURE__ */ React84.createElement(GroupSizeContext.Provider, {
       value: size
-    }, /* @__PURE__ */ React85.createElement("div", __spreadProps(__spreadValues({}, others), {
+    }, /* @__PURE__ */ React84.createElement("div", __spreadProps(__spreadValues({}, others), {
       className: classes
     })));
   };
   var ButtonGroup_default = ButtonGroup;
 
   // ../custom_dashboard/node_modules/antd/es/button/buttonHelpers.js
-  var import_react42 = __toESM(require_react());
+  var import_react41 = __toESM(require_react());
   "use client";
   var rxTwoCNChar = /^[\u4E00-\u9FA5]{2}$/;
   var isTwoCNChar = rxTwoCNChar.test.bind(rxTwoCNChar);
@@ -34330,13 +34320,13 @@ html body {
       });
     }
     if (isString(child)) {
-      return /* @__PURE__ */ import_react42.default.createElement("span", {
+      return /* @__PURE__ */ import_react41.default.createElement("span", {
         className,
         style: style2
       }, isTwoCNChar(child) ? child.split("").join(SPACE) : child);
     }
     if (isFragment2(child)) {
-      return /* @__PURE__ */ import_react42.default.createElement("span", {
+      return /* @__PURE__ */ import_react41.default.createElement("span", {
         className,
         style: style2
       }, child);
@@ -34349,7 +34339,7 @@ html body {
   function spaceChildren(children, needInserted, style2, className) {
     let isPrevChildPure = false;
     const childList = [];
-    import_react42.default.Children.forEach(children, (child) => {
+    import_react41.default.Children.forEach(children, (child) => {
       const type5 = typeof child;
       const isCurrentChildPure = type5 === "string" || type5 === "number";
       if (isPrevChildPure && isCurrentChildPure) {
@@ -34361,17 +34351,17 @@ html body {
       }
       isPrevChildPure = isCurrentChildPure;
     });
-    return import_react42.default.Children.map(childList, (child) => splitCNCharsBySpace(child, needInserted, style2, className));
+    return import_react41.default.Children.map(childList, (child) => splitCNCharsBySpace(child, needInserted, style2, className));
   }
   var _ButtonColorTypes = ["default", "primary", "danger"].concat(_toConsumableArray(PresetColors));
 
   // ../custom_dashboard/node_modules/antd/es/button/DefaultLoadingIcon.js
-  var import_react44 = __toESM(require_react());
+  var import_react43 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/button/IconWrapper.js
-  var import_react43 = __toESM(require_react());
+  var import_react42 = __toESM(require_react());
   "use client";
-  var IconWrapper = /* @__PURE__ */ (0, import_react43.forwardRef)((props, ref) => {
+  var IconWrapper = /* @__PURE__ */ (0, import_react42.forwardRef)((props, ref) => {
     const {
       className,
       style: style2,
@@ -34379,7 +34369,7 @@ html body {
       prefixCls
     } = props;
     const iconWrapperCls = clsx(`${prefixCls}-icon`, className);
-    return /* @__PURE__ */ import_react43.default.createElement("span", {
+    return /* @__PURE__ */ import_react42.default.createElement("span", {
       ref,
       className: iconWrapperCls,
       style: style2
@@ -34389,7 +34379,7 @@ html body {
 
   // ../custom_dashboard/node_modules/antd/es/button/DefaultLoadingIcon.js
   "use client";
-  var InnerLoadingIcon = /* @__PURE__ */ (0, import_react44.forwardRef)((props, ref) => {
+  var InnerLoadingIcon = /* @__PURE__ */ (0, import_react43.forwardRef)((props, ref) => {
     const {
       prefixCls,
       className,
@@ -34397,12 +34387,12 @@ html body {
       iconClassName
     } = props;
     const mergedIconCls = clsx(`${prefixCls}-loading-icon`, className);
-    return /* @__PURE__ */ import_react44.default.createElement(IconWrapper_default, {
+    return /* @__PURE__ */ import_react43.default.createElement(IconWrapper_default, {
       prefixCls,
       className: mergedIconCls,
       style: style2,
       ref
-    }, /* @__PURE__ */ import_react44.default.createElement(LoadingOutlined_default2, {
+    }, /* @__PURE__ */ import_react43.default.createElement(LoadingOutlined_default2, {
       className: iconClassName
     }));
   });
@@ -34427,13 +34417,13 @@ html body {
     } = props;
     const visible = !!loading;
     if (existIcon) {
-      return /* @__PURE__ */ import_react44.default.createElement(InnerLoadingIcon, {
+      return /* @__PURE__ */ import_react43.default.createElement(InnerLoadingIcon, {
         prefixCls,
         className,
         style: style2
       });
     }
-    return /* @__PURE__ */ import_react44.default.createElement(es_default2, {
+    return /* @__PURE__ */ import_react43.default.createElement(es_default2, {
       visible,
       motionName: `${prefixCls}-loading-icon-motion`,
       motionAppear: !mount,
@@ -34451,7 +34441,7 @@ html body {
       style: motionStyle
     }, ref) => {
       const mergedStyle = __spreadValues(__spreadValues({}, style2), motionStyle);
-      return /* @__PURE__ */ import_react44.default.createElement(InnerLoadingIcon, {
+      return /* @__PURE__ */ import_react43.default.createElement(InnerLoadingIcon, {
         prefixCls,
         className: clsx(className, motionCls),
         style: mergedStyle,
@@ -35099,7 +35089,7 @@ html body {
   var group_default = genGroupStyle;
 
   // ../custom_dashboard/node_modules/@rc-component/color-picker/es/ColorPicker.js
-  var import_react54 = __toESM(require_react());
+  var import_react53 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/color-picker/es/color.js
   var getRoundNumber = (value) => Math.round(Number(value || 0));
@@ -35222,7 +35212,7 @@ html body {
   };
 
   // ../custom_dashboard/node_modules/@rc-component/color-picker/es/components/ColorBlock.js
-  var import_react45 = __toESM(require_react());
+  var import_react44 = __toESM(require_react());
   var ColorBlock = ({
     color,
     prefixCls,
@@ -35233,11 +35223,11 @@ html body {
     onClick
   }) => {
     const colorBlockCls = `${prefixCls}-color-block`;
-    return /* @__PURE__ */ import_react45.default.createElement("div", {
+    return /* @__PURE__ */ import_react44.default.createElement("div", {
       className: clsx(colorBlockCls, className),
       style: style2,
       onClick
-    }, /* @__PURE__ */ import_react45.default.createElement("div", {
+    }, /* @__PURE__ */ import_react44.default.createElement("div", {
       className: clsx(`${colorBlockCls}-inner`, innerClassName),
       style: __spreadValues({
         background: color
@@ -35247,10 +35237,10 @@ html body {
   var ColorBlock_default = ColorBlock;
 
   // ../custom_dashboard/node_modules/@rc-component/color-picker/es/components/Picker.js
-  var import_react50 = __toESM(require_react());
+  var import_react49 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/color-picker/es/hooks/useColorDrag.js
-  var import_react46 = __toESM(require_react());
+  var import_react45 = __toESM(require_react());
   function getPosition(e3) {
     const obj = "touches" in e3 ? e3.touches[0] : e3;
     const scrollXOffset = document.documentElement.scrollLeft || document.body.scrollLeft || window.pageXOffset;
@@ -35271,16 +35261,16 @@ html body {
       color,
       disabledDrag
     } = props;
-    const [offsetValue, setOffsetValue] = (0, import_react46.useState)({
+    const [offsetValue, setOffsetValue] = (0, import_react45.useState)({
       x: 0,
       y: 0
     });
-    const mouseMoveRef = (0, import_react46.useRef)(null);
-    const mouseUpRef = (0, import_react46.useRef)(null);
-    (0, import_react46.useEffect)(() => {
+    const mouseMoveRef = (0, import_react45.useRef)(null);
+    const mouseUpRef = (0, import_react45.useRef)(null);
+    (0, import_react45.useEffect)(() => {
       setOffsetValue(calculate());
     }, [color]);
-    (0, import_react46.useEffect)(() => () => {
+    (0, import_react45.useEffect)(() => () => {
       document.removeEventListener("mousemove", mouseMoveRef.current);
       document.removeEventListener("mouseup", mouseUpRef.current);
       document.removeEventListener("touchmove", mouseMoveRef.current);
@@ -35349,13 +35339,13 @@ html body {
   var useColorDrag_default = useColorDrag;
 
   // ../custom_dashboard/node_modules/@rc-component/color-picker/es/components/Handler.js
-  var import_react47 = __toESM(require_react());
+  var import_react46 = __toESM(require_react());
   var Handler = ({
     size = "default",
     color,
     prefixCls
   }) => {
-    return /* @__PURE__ */ import_react47.default.createElement("div", {
+    return /* @__PURE__ */ import_react46.default.createElement("div", {
       className: clsx(`${prefixCls}-handler`, {
         [`${prefixCls}-handler-sm`]: size === "small"
       }),
@@ -35367,13 +35357,13 @@ html body {
   var Handler_default = Handler;
 
   // ../custom_dashboard/node_modules/@rc-component/color-picker/es/components/Palette.js
-  var import_react48 = __toESM(require_react());
+  var import_react47 = __toESM(require_react());
   var Palette = ({
     children,
     style: style2,
     prefixCls
   }) => {
-    return /* @__PURE__ */ import_react48.default.createElement("div", {
+    return /* @__PURE__ */ import_react47.default.createElement("div", {
       className: `${prefixCls}-palette`,
       style: __spreadValues({
         position: "relative"
@@ -35383,14 +35373,14 @@ html body {
   var Palette_default = Palette;
 
   // ../custom_dashboard/node_modules/@rc-component/color-picker/es/components/Transform.js
-  var import_react49 = __toESM(require_react());
-  var Transform = /* @__PURE__ */ (0, import_react49.forwardRef)((props, ref) => {
+  var import_react48 = __toESM(require_react());
+  var Transform = /* @__PURE__ */ (0, import_react48.forwardRef)((props, ref) => {
     const {
       children,
       x,
       y
     } = props;
-    return /* @__PURE__ */ import_react49.default.createElement("div", {
+    return /* @__PURE__ */ import_react48.default.createElement("div", {
       ref,
       style: {
         position: "absolute",
@@ -35411,9 +35401,9 @@ html body {
     onChangeComplete,
     disabled
   }) => {
-    const pickerRef = (0, import_react50.useRef)();
-    const transformRef = (0, import_react50.useRef)();
-    const colorRef = (0, import_react50.useRef)(color);
+    const pickerRef = (0, import_react49.useRef)();
+    const transformRef = (0, import_react49.useRef)();
+    const colorRef = (0, import_react49.useRef)(color);
     const onDragChange = useEvent_default((offsetValue) => {
       const calcColor = calculateColor({
         offset: offsetValue,
@@ -35433,21 +35423,21 @@ html body {
       onDragChangeComplete: () => onChangeComplete == null ? void 0 : onChangeComplete(colorRef.current),
       disabledDrag: disabled
     });
-    return /* @__PURE__ */ import_react50.default.createElement("div", {
+    return /* @__PURE__ */ import_react49.default.createElement("div", {
       ref: pickerRef,
       className: `${prefixCls}-select`,
       onMouseDown: dragStartHandle,
       onTouchStart: dragStartHandle
-    }, /* @__PURE__ */ import_react50.default.createElement(Palette_default, {
+    }, /* @__PURE__ */ import_react49.default.createElement(Palette_default, {
       prefixCls
-    }, /* @__PURE__ */ import_react50.default.createElement(Transform_default, {
+    }, /* @__PURE__ */ import_react49.default.createElement(Transform_default, {
       x: offset3.x,
       y: offset3.y,
       ref: transformRef
-    }, /* @__PURE__ */ import_react50.default.createElement(Handler_default, {
+    }, /* @__PURE__ */ import_react49.default.createElement(Handler_default, {
       color: color.toRgbString(),
       prefixCls
-    })), /* @__PURE__ */ import_react50.default.createElement("div", {
+    })), /* @__PURE__ */ import_react49.default.createElement("div", {
       className: `${prefixCls}-saturation`,
       style: {
         backgroundColor: `hsl(${color.toHsb().h},100%, 50%)`,
@@ -35458,22 +35448,22 @@ html body {
   var Picker_default = Picker;
 
   // ../custom_dashboard/node_modules/@rc-component/color-picker/es/hooks/useColorState.js
-  var import_react51 = __toESM(require_react());
+  var import_react50 = __toESM(require_react());
   var useColorState = (defaultValue, value) => {
     const [mergedValue, setValue] = useControlledState(defaultValue, value);
-    const color = (0, import_react51.useMemo)(() => generateColor(mergedValue), [mergedValue]);
+    const color = (0, import_react50.useMemo)(() => generateColor(mergedValue), [mergedValue]);
     return [color, setValue];
   };
   var useColorState_default = useColorState;
 
   // ../custom_dashboard/node_modules/@rc-component/color-picker/es/hooks/useComponent.js
-  var React96 = __toESM(require_react());
+  var React95 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/color-picker/es/components/Slider.js
-  var import_react53 = __toESM(require_react());
+  var import_react52 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/color-picker/es/components/Gradient.js
-  var import_react52 = __toESM(require_react());
+  var import_react51 = __toESM(require_react());
   var Gradient = ({
     colors,
     children,
@@ -35481,14 +35471,14 @@ html body {
     type: type5,
     prefixCls
   }) => {
-    const gradientColors = (0, import_react52.useMemo)(() => colors.map((color, idx) => {
+    const gradientColors = (0, import_react51.useMemo)(() => colors.map((color, idx) => {
       let result = generateColor(color);
       if (type5 === "alpha" && idx === colors.length - 1) {
         result = new Color(result.setA(1));
       }
       return result.toRgbString();
     }).join(","), [colors, type5]);
-    return /* @__PURE__ */ import_react52.default.createElement("div", {
+    return /* @__PURE__ */ import_react51.default.createElement("div", {
       className: `${prefixCls}-gradient`,
       style: {
         position: "absolute",
@@ -35510,9 +35500,9 @@ html body {
       color,
       type: type5
     } = props;
-    const sliderRef = (0, import_react53.useRef)(null);
-    const transformRef = (0, import_react53.useRef)(null);
-    const colorRef = (0, import_react53.useRef)(color);
+    const sliderRef = (0, import_react52.useRef)(null);
+    const transformRef = (0, import_react52.useRef)(null);
+    const colorRef = (0, import_react52.useRef)(color);
     const getValue3 = (c) => {
       return type5 === "hue" ? c.getHue() : c.a * 100;
     };
@@ -35539,7 +35529,7 @@ html body {
       direction: "x",
       disabledDrag: disabled
     });
-    const handleColor = import_react53.default.useMemo(() => {
+    const handleColor = import_react52.default.useMemo(() => {
       if (type5 === "hue") {
         const hsb = color.toHsb();
         hsb.s = 1;
@@ -35550,23 +35540,23 @@ html body {
       }
       return color;
     }, [color, type5]);
-    const gradientList = import_react53.default.useMemo(() => colors.map((info) => `${info.color} ${info.percent}%`), [colors]);
-    return /* @__PURE__ */ import_react53.default.createElement("div", {
+    const gradientList = import_react52.default.useMemo(() => colors.map((info) => `${info.color} ${info.percent}%`), [colors]);
+    return /* @__PURE__ */ import_react52.default.createElement("div", {
       ref: sliderRef,
       className: clsx(`${prefixCls}-slider`, `${prefixCls}-slider-${type5}`),
       onMouseDown: dragStartHandle,
       onTouchStart: dragStartHandle
-    }, /* @__PURE__ */ import_react53.default.createElement(Palette_default, {
+    }, /* @__PURE__ */ import_react52.default.createElement(Palette_default, {
       prefixCls
-    }, /* @__PURE__ */ import_react53.default.createElement(Transform_default, {
+    }, /* @__PURE__ */ import_react52.default.createElement(Transform_default, {
       x: offset3.x,
       y: offset3.y,
       ref: transformRef
-    }, /* @__PURE__ */ import_react53.default.createElement(Handler_default, {
+    }, /* @__PURE__ */ import_react52.default.createElement(Handler_default, {
       size: "small",
       color: handleColor.toHexString(),
       prefixCls
-    })), /* @__PURE__ */ import_react53.default.createElement(Gradient_default, {
+    })), /* @__PURE__ */ import_react52.default.createElement(Gradient_default, {
       colors: gradientList,
       type: type5,
       prefixCls
@@ -35576,7 +35566,7 @@ html body {
 
   // ../custom_dashboard/node_modules/@rc-component/color-picker/es/hooks/useComponent.js
   function useComponent(components) {
-    return React96.useMemo(() => {
+    return React95.useMemo(() => {
       const {
         slider
       } = components || {};
@@ -35621,7 +35611,7 @@ html body {
     color: "rgb(255, 0, 0)",
     percent: 100
   }];
-  var ColorPicker = /* @__PURE__ */ (0, import_react54.forwardRef)((props, ref) => {
+  var ColorPicker = /* @__PURE__ */ (0, import_react53.forwardRef)((props, ref) => {
     const {
       value,
       defaultValue,
@@ -35637,7 +35627,7 @@ html body {
     } = props;
     const [Slider2] = useComponent(components);
     const [colorValue, setColorValue] = useColorState_default(defaultValue || defaultColor, value);
-    const alphaColor = (0, import_react54.useMemo)(() => colorValue.setA(1).toRgbString(), [colorValue]);
+    const alphaColor = (0, import_react53.useMemo)(() => colorValue.setA(1).toRgbString(), [colorValue]);
     const handleChange = (data, type5) => {
       if (!value) {
         setColorValue(data);
@@ -35676,17 +35666,17 @@ html body {
       disabled,
       color: colorValue
     };
-    const defaultPanel = /* @__PURE__ */ import_react54.default.createElement(import_react54.default.Fragment, null, /* @__PURE__ */ import_react54.default.createElement(Picker_default, _extends15({
+    const defaultPanel = /* @__PURE__ */ import_react53.default.createElement(import_react53.default.Fragment, null, /* @__PURE__ */ import_react53.default.createElement(Picker_default, _extends15({
       onChange: handleChange
     }, sharedSliderProps, {
       onChangeComplete
-    })), /* @__PURE__ */ import_react54.default.createElement("div", {
+    })), /* @__PURE__ */ import_react53.default.createElement("div", {
       className: `${prefixCls}-slider-container`
-    }, /* @__PURE__ */ import_react54.default.createElement("div", {
+    }, /* @__PURE__ */ import_react53.default.createElement("div", {
       className: clsx(`${prefixCls}-slider-group`, {
         [`${prefixCls}-slider-group-disabled-alpha`]: disabledAlpha
       })
-    }, /* @__PURE__ */ import_react54.default.createElement(Slider2, _extends15({}, sharedSliderProps, {
+    }, /* @__PURE__ */ import_react53.default.createElement(Slider2, _extends15({}, sharedSliderProps, {
       type: "hue",
       colors: HUE_COLORS,
       min: 0,
@@ -35694,7 +35684,7 @@ html body {
       value: colorValue.getHue(),
       onChange: onHueChange,
       onChangeComplete: onHueChangeComplete
-    })), !disabledAlpha && /* @__PURE__ */ import_react54.default.createElement(Slider2, _extends15({}, sharedSliderProps, {
+    })), !disabledAlpha && /* @__PURE__ */ import_react53.default.createElement(Slider2, _extends15({}, sharedSliderProps, {
       type: "alpha",
       colors: [{
         percent: 0,
@@ -35708,11 +35698,11 @@ html body {
       value: colorValue.a * 100,
       onChange: onAlphaChange,
       onChangeComplete: onAlphaChangeComplete
-    }))), /* @__PURE__ */ import_react54.default.createElement(ColorBlock_default, {
+    }))), /* @__PURE__ */ import_react53.default.createElement(ColorBlock_default, {
       color: colorValue.toRgbString(),
       prefixCls
     })));
-    return /* @__PURE__ */ import_react54.default.createElement("div", {
+    return /* @__PURE__ */ import_react53.default.createElement("div", {
       className: mergeCls,
       style: style2,
       ref
@@ -35830,10 +35820,10 @@ html body {
   }();
 
   // ../custom_dashboard/node_modules/antd/es/color-picker/components/ColorPresets.js
-  var import_react55 = __toESM(require_react());
+  var import_react54 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/RightOutlined.js
-  var React98 = __toESM(require_react());
+  var React97 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/RightOutlined.js
   var RightOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z" } }] }, "name": "right", "theme": "outlined" };
@@ -35854,11 +35844,11 @@ html body {
     };
     return _extends16.apply(this, arguments);
   }
-  var RightOutlined2 = (props, ref) => /* @__PURE__ */ React98.createElement(AntdIcon_default, _extends16({}, props, {
+  var RightOutlined2 = (props, ref) => /* @__PURE__ */ React97.createElement(AntdIcon_default, _extends16({}, props, {
     ref,
     icon: RightOutlined_default
   }));
-  var RefIcon7 = /* @__PURE__ */ React98.forwardRef(RightOutlined2);
+  var RefIcon7 = /* @__PURE__ */ React97.forwardRef(RightOutlined2);
   if (true) {
     RefIcon7.displayName = "RightOutlined";
   }
@@ -36593,7 +36583,7 @@ html body {
     link: ["link", "link"],
     text: ["default", "text"]
   };
-  var InternalCompoundedButton = /* @__PURE__ */ import_react56.default.forwardRef((props, ref) => {
+  var InternalCompoundedButton = /* @__PURE__ */ import_react55.default.forwardRef((props, ref) => {
     var _b, _c;
     const _a = props, {
       _skipSemantic,
@@ -36662,7 +36652,7 @@ html body {
       variant: contextVariant
     } = useComponentConfig("button");
     const mergedShape = customizeShape || contextShape || "default";
-    const [parsedColor, parsedVariant] = (0, import_react56.useMemo)(() => {
+    const [parsedColor, parsedVariant] = (0, import_react55.useMemo)(() => {
       if (color && variant) {
         return [color, variant];
       }
@@ -36678,7 +36668,7 @@ html body {
       }
       return ["default", "outlined"];
     }, [color, variant, type5, danger, contextColor, contextVariant, mergedType]);
-    const [mergedColor, mergedVariant] = (0, import_react56.useMemo)(() => {
+    const [mergedColor, mergedVariant] = (0, import_react55.useMemo)(() => {
       if (ghost && parsedVariant === "solid") {
         return [parsedColor, "outlined"];
       }
@@ -36689,17 +36679,17 @@ html body {
     const mergedInsertSpace = (_b = autoInsertSpace != null ? autoInsertSpace : contextAutoInsertSpace) != null ? _b : true;
     const prefixCls = getPrefixCls("btn", customizePrefixCls);
     const [hashId, cssVarCls] = style_default4(prefixCls);
-    const disabled = (0, import_react56.useContext)(DisabledContext_default);
+    const disabled = (0, import_react55.useContext)(DisabledContext_default);
     const mergedDisabled = customDisabled != null ? customDisabled : disabled;
-    const groupSize = (0, import_react56.useContext)(GroupSizeContext);
-    const loadingOrDelay = (0, import_react56.useMemo)(() => getLoadingConfig(loading), [loading]);
-    const [innerLoading, setInnerLoading] = (0, import_react56.useState)(loadingOrDelay.loading);
-    const [hasTwoCNChar, setHasTwoCNChar] = (0, import_react56.useState)(false);
-    const buttonRef = (0, import_react56.useRef)(null);
+    const groupSize = (0, import_react55.useContext)(GroupSizeContext);
+    const loadingOrDelay = (0, import_react55.useMemo)(() => getLoadingConfig(loading), [loading]);
+    const [innerLoading, setInnerLoading] = (0, import_react55.useState)(loadingOrDelay.loading);
+    const [hasTwoCNChar, setHasTwoCNChar] = (0, import_react55.useState)(false);
+    const buttonRef = (0, import_react55.useRef)(null);
     const mergedRef = useComposeRef(ref, buttonRef);
     const needInserted = childNodes.length === 1 && !icon && !isUnBorderedButtonVariant(mergedVariant);
-    const isMountRef = (0, import_react56.useRef)(true);
-    import_react56.default.useEffect(() => {
+    const isMountRef = (0, import_react55.useRef)(true);
+    import_react55.default.useEffect(() => {
       isMountRef.current = false;
       return () => {
         isMountRef.current = true;
@@ -36723,7 +36713,7 @@ html body {
       }
       return cleanupTimer;
     }, [loadingOrDelay.delay, loadingOrDelay.loading]);
-    (0, import_react56.useEffect)(() => {
+    (0, import_react55.useEffect)(() => {
       if (!buttonRef.current || !mergedInsertSpace) {
         return;
       }
@@ -36736,12 +36726,12 @@ html body {
         setHasTwoCNChar(false);
       }
     });
-    (0, import_react56.useEffect)(() => {
+    (0, import_react55.useEffect)(() => {
       if (autoFocus && buttonRef.current) {
         buttonRef.current.focus();
       }
     }, []);
-    const handleClick = import_react56.default.useCallback((e3) => {
+    const handleClick = import_react55.default.useCallback((e3) => {
       var _a2;
       if (innerLoading || mergedDisabled) {
         e3.preventDefault();
@@ -36801,10 +36791,10 @@ html body {
       className: mergedClassNames.icon,
       style: mergedStyles.icon
     };
-    const iconWrapperElement = (child) => /* @__PURE__ */ import_react56.default.createElement(IconWrapper_default, __spreadValues({
+    const iconWrapperElement = (child) => /* @__PURE__ */ import_react55.default.createElement(IconWrapper_default, __spreadValues({
       prefixCls
     }, iconSharedProps), child);
-    const defaultLoadingIconElement = /* @__PURE__ */ import_react56.default.createElement(DefaultLoadingIcon_default, __spreadValues({
+    const defaultLoadingIconElement = /* @__PURE__ */ import_react55.default.createElement(DefaultLoadingIcon_default, __spreadValues({
       existIcon: !!icon,
       prefixCls,
       loading: innerLoading,
@@ -36821,7 +36811,7 @@ html body {
     }
     const contentNode = isNonNullable_default(children) ? spaceChildren(children, needInserted && mergedInsertSpace, mergedStyles.content, mergedClassNames.content) : null;
     if (linkButtonRestProps.href !== void 0) {
-      return /* @__PURE__ */ import_react56.default.createElement("a", __spreadProps(__spreadValues({}, linkButtonRestProps), {
+      return /* @__PURE__ */ import_react55.default.createElement("a", __spreadProps(__spreadValues({}, linkButtonRestProps), {
         className: clsx(classes, {
           [`${prefixCls}-disabled`]: mergedDisabled
         }),
@@ -36833,18 +36823,18 @@ html body {
         "aria-disabled": mergedDisabled
       }), iconNode, contentNode);
     }
-    let buttonNode = /* @__PURE__ */ import_react56.default.createElement("button", __spreadProps(__spreadValues({}, rest), {
+    let buttonNode = /* @__PURE__ */ import_react55.default.createElement("button", __spreadProps(__spreadValues({}, rest), {
       type: htmlType,
       className: classes,
       style: fullStyle,
       onClick: handleClick,
       disabled: mergedDisabled,
       ref: mergedRef
-    }), iconNode, contentNode, compactItemClassnames && /* @__PURE__ */ import_react56.default.createElement(compact_default2, {
+    }), iconNode, contentNode, compactItemClassnames && /* @__PURE__ */ import_react55.default.createElement(compact_default2, {
       prefixCls
     }));
     if (!isUnBorderedButtonVariant(mergedVariant)) {
-      buttonNode = /* @__PURE__ */ import_react56.default.createElement(wave_default, {
+      buttonNode = /* @__PURE__ */ import_react55.default.createElement(wave_default, {
         component: "Button",
         disabled: innerLoading
       }, buttonNode);
@@ -36877,13 +36867,13 @@ html body {
       quitOnNullishReturnValue,
       actionFn
     } = props;
-    const clickedRef = React101.useRef(false);
-    const buttonRef = React101.useRef(null);
+    const clickedRef = React100.useRef(false);
+    const buttonRef = React100.useRef(null);
     const [loading, setLoading] = useState_default(false);
     const onInternalClose = (...args) => {
       close == null ? void 0 : close(...args);
     };
-    React101.useEffect(() => {
+    React100.useEffect(() => {
       let timeoutId = null;
       if (autoFocus) {
         timeoutId = setTimeout(() => {
@@ -36946,7 +36936,7 @@ html body {
       }
       handlePromiseOnOk(returnValueOfOnOk);
     };
-    return /* @__PURE__ */ React101.createElement(Button_default, __spreadProps(__spreadValues(__spreadProps(__spreadValues({}, convertLegacyProps(type5)), {
+    return /* @__PURE__ */ React100.createElement(Button_default, __spreadProps(__spreadValues(__spreadProps(__spreadValues({}, convertLegacyProps(type5)), {
       onClick,
       loading,
       prefixCls
@@ -36957,8 +36947,8 @@ html body {
   var ActionButton_default = ActionButton;
 
   // ../custom_dashboard/node_modules/antd/es/modal/context.js
-  var import_react57 = __toESM(require_react());
-  var ModalContext = /* @__PURE__ */ import_react57.default.createContext({});
+  var import_react56 = __toESM(require_react());
+  var ModalContext = /* @__PURE__ */ import_react56.default.createContext({});
   var {
     Provider: ModalContextProvider
   } = ModalContext;
@@ -36977,8 +36967,8 @@ html body {
       onCancel,
       onConfirm,
       onClose
-    } = (0, import_react58.useContext)(ModalContext);
-    return mergedOkCancel ? /* @__PURE__ */ import_react58.default.createElement(ActionButton_default, {
+    } = (0, import_react57.useContext)(ModalContext);
+    return mergedOkCancel ? /* @__PURE__ */ import_react57.default.createElement(ActionButton_default, {
       isSilent,
       actionFn: onCancel,
       close: (...args) => {
@@ -36994,7 +36984,7 @@ html body {
   var ConfirmCancelBtn_default = ConfirmCancelBtn;
 
   // ../custom_dashboard/node_modules/antd/es/modal/components/ConfirmOkBtn.js
-  var import_react59 = __toESM(require_react());
+  var import_react58 = __toESM(require_react());
   "use client";
   var ConfirmOkBtn = () => {
     const {
@@ -37008,8 +36998,8 @@ html body {
       onConfirm,
       onOk,
       onClose
-    } = (0, import_react59.useContext)(ModalContext);
-    return /* @__PURE__ */ import_react59.default.createElement(ActionButton_default, {
+    } = (0, import_react58.useContext)(ModalContext);
+    return /* @__PURE__ */ import_react58.default.createElement(ActionButton_default, {
       isSilent,
       type: okType || "primary",
       actionFn: onOk,
@@ -37026,18 +37016,18 @@ html body {
   var ConfirmOkBtn_default = ConfirmOkBtn;
 
   // ../custom_dashboard/node_modules/antd/es/modal/Modal.js
-  var React136 = __toESM(require_react());
+  var React135 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/dialog/es/DialogWrap.js
-  var React111 = __toESM(require_react());
+  var React110 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/dialog/es/context.js
-  var React105 = __toESM(require_react());
-  var RefContext = /* @__PURE__ */ React105.createContext({});
+  var React104 = __toESM(require_react());
+  var RefContext = /* @__PURE__ */ React104.createContext({});
 
   // ../custom_dashboard/node_modules/@rc-component/dialog/es/Dialog/index.js
-  var React110 = __toESM(require_react());
-  var import_react63 = __toESM(require_react());
+  var React109 = __toESM(require_react());
+  var import_react62 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/dialog/es/util.js
   function getMotionName(prefixCls, transitionName, animationName) {
@@ -37073,11 +37063,11 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/dialog/es/Dialog/Content/index.js
-  var React108 = __toESM(require_react());
-  var import_react62 = __toESM(require_react());
+  var React107 = __toESM(require_react());
+  var import_react61 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/util/es/Dom/focus.js
-  var import_react60 = __toESM(require_react());
+  var import_react59 = __toESM(require_react());
   function focusable(node2, includePositive = false) {
     if (isVisible_default(node2)) {
       const nodeName = node2.nodeName.toLowerCase();
@@ -37210,7 +37200,7 @@ html body {
   }
   function useLockFocus(lock, getElement) {
     const id = useId_default();
-    (0, import_react60.useEffect)(() => {
+    (0, import_react59.useEffect)(() => {
       if (lock) {
         const element = getElement();
         if (element) {
@@ -37227,11 +37217,11 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/dialog/es/Dialog/Content/Panel.js
-  var import_react61 = __toESM(require_react());
+  var import_react60 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/dialog/es/Dialog/Content/MemoChildren.js
-  var React106 = __toESM(require_react());
-  var MemoChildren_default = /* @__PURE__ */ React106.memo(({
+  var React105 = __toESM(require_react());
+  var MemoChildren_default = /* @__PURE__ */ React105.memo(({
     children
   }) => children, (_, {
     shouldUpdate
@@ -37252,7 +37242,7 @@ html body {
     };
     return _extends18.apply(this, arguments);
   }
-  var Panel = /* @__PURE__ */ import_react61.default.forwardRef((props, ref) => {
+  var Panel = /* @__PURE__ */ import_react60.default.forwardRef((props, ref) => {
     const {
       prefixCls,
       className,
@@ -37281,11 +37271,11 @@ html body {
     } = props;
     const {
       panel: panelRef
-    } = import_react61.default.useContext(RefContext);
-    const internalRef = (0, import_react61.useRef)(null);
+    } = import_react60.default.useContext(RefContext);
+    const internalRef = (0, import_react60.useRef)(null);
     const mergedRef = useComposeRef(holderRef, panelRef, internalRef);
     const [ignoreElement] = useLockFocus(visible && isFixedPos && focusTrap !== false, () => internalRef.current);
-    import_react61.default.useImperativeHandle(ref, () => ({
+    import_react60.default.useImperativeHandle(ref, () => ({
       focus: () => {
         var _a;
         (_a = internalRef.current) == null ? void 0 : _a.focus({
@@ -37300,25 +37290,25 @@ html body {
     if (height !== void 0) {
       contentStyle.height = height;
     }
-    const footerNode = footer ? /* @__PURE__ */ import_react61.default.createElement("div", {
+    const footerNode = footer ? /* @__PURE__ */ import_react60.default.createElement("div", {
       className: clsx(`${prefixCls}-footer`, modalClassNames == null ? void 0 : modalClassNames.footer),
       style: __spreadValues({}, modalStyles == null ? void 0 : modalStyles.footer)
     }, footer) : null;
-    const headerNode = title ? /* @__PURE__ */ import_react61.default.createElement("div", {
+    const headerNode = title ? /* @__PURE__ */ import_react60.default.createElement("div", {
       className: clsx(`${prefixCls}-header`, modalClassNames == null ? void 0 : modalClassNames.header),
       style: __spreadValues({}, modalStyles == null ? void 0 : modalStyles.header)
-    }, /* @__PURE__ */ import_react61.default.createElement("div", {
+    }, /* @__PURE__ */ import_react60.default.createElement("div", {
       className: clsx(`${prefixCls}-title`, modalClassNames == null ? void 0 : modalClassNames.title),
       id: ariaId,
       style: __spreadValues({}, modalStyles == null ? void 0 : modalStyles.title)
     }, title)) : null;
-    const closableObj = (0, import_react61.useMemo)(() => {
+    const closableObj = (0, import_react60.useMemo)(() => {
       if (typeof closable === "object" && closable !== null) {
         return closable;
       }
       if (closable) {
         return {
-          closeIcon: closeIcon != null ? closeIcon : /* @__PURE__ */ import_react61.default.createElement("span", {
+          closeIcon: closeIcon != null ? closeIcon : /* @__PURE__ */ import_react60.default.createElement("span", {
             className: `${prefixCls}-close-x`
           })
         };
@@ -37327,7 +37317,7 @@ html body {
     }, [closable, closeIcon, prefixCls]);
     const ariaProps = pickAttrs(closableObj, true);
     const closeBtnIsDisabled = typeof closable === "object" && closable.disabled;
-    const closerNode = closable ? /* @__PURE__ */ import_react61.default.createElement("button", _extends18({
+    const closerNode = closable ? /* @__PURE__ */ import_react60.default.createElement("button", _extends18({
       type: "button",
       onClick: onClose,
       "aria-label": "Close"
@@ -37335,14 +37325,14 @@ html body {
       className: `${prefixCls}-close`,
       disabled: closeBtnIsDisabled
     }), closableObj.closeIcon) : null;
-    const content = /* @__PURE__ */ import_react61.default.createElement("div", {
+    const content = /* @__PURE__ */ import_react60.default.createElement("div", {
       className: clsx(`${prefixCls}-container`, modalClassNames == null ? void 0 : modalClassNames.container),
       style: modalStyles == null ? void 0 : modalStyles.container
-    }, closerNode, headerNode, /* @__PURE__ */ import_react61.default.createElement("div", _extends18({
+    }, closerNode, headerNode, /* @__PURE__ */ import_react60.default.createElement("div", _extends18({
       className: clsx(`${prefixCls}-body`, modalClassNames == null ? void 0 : modalClassNames.body),
       style: __spreadValues(__spreadValues({}, bodyStyle), modalStyles == null ? void 0 : modalStyles.body)
     }, bodyProps), children), footerNode);
-    return /* @__PURE__ */ import_react61.default.createElement("div", {
+    return /* @__PURE__ */ import_react60.default.createElement("div", {
       key: "dialog-element",
       role: "dialog",
       "aria-labelledby": title ? ariaId : null,
@@ -37356,7 +37346,7 @@ html body {
       onFocus: (e3) => {
         ignoreElement(e3.target);
       }
-    }, /* @__PURE__ */ import_react61.default.createElement(MemoChildren_default, {
+    }, /* @__PURE__ */ import_react60.default.createElement(MemoChildren_default, {
       shouldUpdate: visible || forceRender
     }, modalRender ? modalRender(content) : content));
   });
@@ -37380,7 +37370,7 @@ html body {
     };
     return _extends19.apply(this, arguments);
   }
-  var Content = /* @__PURE__ */ React108.forwardRef((props, ref) => {
+  var Content = /* @__PURE__ */ React107.forwardRef((props, ref) => {
     const {
       prefixCls,
       title,
@@ -37394,13 +37384,13 @@ html body {
       onVisibleChanged,
       mousePosition: mousePosition2
     } = props;
-    const dialogRef = (0, import_react62.useRef)(null);
-    const panelRef = (0, import_react62.useRef)(null);
-    React108.useImperativeHandle(ref, () => __spreadProps(__spreadValues({}, panelRef.current), {
+    const dialogRef = (0, import_react61.useRef)(null);
+    const panelRef = (0, import_react61.useRef)(null);
+    React107.useImperativeHandle(ref, () => __spreadProps(__spreadValues({}, panelRef.current), {
       inMotion: dialogRef.current.inMotion,
       enableMotion: dialogRef.current.enableMotion
     }));
-    const [transformOrigin, setTransformOrigin] = React108.useState();
+    const [transformOrigin, setTransformOrigin] = React107.useState();
     const contentStyle = {};
     if (transformOrigin) {
       contentStyle.transformOrigin = transformOrigin;
@@ -37413,7 +37403,7 @@ html body {
       const elementOffset = offset(dialogRef.current.nativeElement);
       setTransformOrigin(mousePosition2 && (mousePosition2.x || mousePosition2.y) ? `${mousePosition2.x - elementOffset.left}px ${mousePosition2.y - elementOffset.top}px` : "");
     }
-    return /* @__PURE__ */ React108.createElement(es_default2, {
+    return /* @__PURE__ */ React107.createElement(es_default2, {
       visible,
       onVisibleChanged,
       onAppearPrepare: onPrepare,
@@ -37425,7 +37415,7 @@ html body {
     }, ({
       className: motionClassName,
       style: motionStyle
-    }, motionRef) => /* @__PURE__ */ React108.createElement(Panel_default, _extends19({}, props, {
+    }, motionRef) => /* @__PURE__ */ React107.createElement(Panel_default, _extends19({}, props, {
       ref: panelRef,
       title,
       ariaId,
@@ -37441,7 +37431,7 @@ html body {
   var Content_default = Content;
 
   // ../custom_dashboard/node_modules/@rc-component/dialog/es/Dialog/Mask.js
-  var React109 = __toESM(require_react());
+  var React108 = __toESM(require_react());
   function _extends20() {
     _extends20 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -37465,7 +37455,7 @@ html body {
       motionName,
       className
     } = props;
-    return /* @__PURE__ */ React109.createElement(es_default2, {
+    return /* @__PURE__ */ React108.createElement(es_default2, {
       key: "mask",
       visible,
       motionName,
@@ -37473,7 +37463,7 @@ html body {
     }, ({
       className: motionClassName,
       style: motionStyle
-    }, ref) => /* @__PURE__ */ React109.createElement("div", _extends20({
+    }, ref) => /* @__PURE__ */ React108.createElement("div", _extends20({
       ref,
       style: __spreadValues(__spreadValues({}, motionStyle), style2),
       className: clsx(`${prefixCls}-mask`, motionClassName, className)
@@ -37530,11 +37520,11 @@ html body {
         warning(false, `wrapClassName is deprecated, please use classNames instead.`);
       }
     }
-    const lastOutSideActiveElementRef = (0, import_react63.useRef)(null);
-    const wrapperRef = (0, import_react63.useRef)(null);
-    const contentRef = (0, import_react63.useRef)(null);
-    const [animatedVisible, setAnimatedVisible] = React110.useState(visible);
-    const [isFixedPos, setIsFixedPos] = React110.useState(false);
+    const lastOutSideActiveElementRef = (0, import_react62.useRef)(null);
+    const wrapperRef = (0, import_react62.useRef)(null);
+    const contentRef = (0, import_react62.useRef)(null);
+    const [animatedVisible, setAnimatedVisible] = React109.useState(visible);
+    const [isFixedPos, setIsFixedPos] = React109.useState(false);
     const ariaId = useId_default();
     function saveLastOutSideActiveElementRef() {
       if (!contains(wrapperRef.current, document.activeElement)) {
@@ -37573,7 +37563,7 @@ html body {
     function onInternalClose(e3) {
       onClose == null ? void 0 : onClose(e3);
     }
-    const mouseDownOnMaskRef = (0, import_react63.useRef)(false);
+    const mouseDownOnMaskRef = (0, import_react62.useRef)(false);
     let onWrapperClick = null;
     if (maskClosable) {
       onWrapperClick = (e3) => {
@@ -37585,7 +37575,7 @@ html body {
     function onWrapperMouseDown(e3) {
       mouseDownOnMaskRef.current = e3.target === wrapperRef.current;
     }
-    (0, import_react63.useEffect)(() => {
+    (0, import_react62.useEffect)(() => {
       if (visible) {
         mouseDownOnMaskRef.current = false;
         setAnimatedVisible(true);
@@ -37603,12 +37593,12 @@ html body {
     }, wrapStyle), modalStyles == null ? void 0 : modalStyles.wrapper), {
       display: !animatedVisible ? "none" : null
     });
-    return /* @__PURE__ */ React110.createElement("div", _extends21({
+    return /* @__PURE__ */ React109.createElement("div", _extends21({
       className: clsx(`${prefixCls}-root`, rootClassName),
       style: rootStyle
     }, pickAttrs(props, {
       data: true
-    })), /* @__PURE__ */ React110.createElement(Mask_default, {
+    })), /* @__PURE__ */ React109.createElement(Mask_default, {
       prefixCls,
       visible: mask && visible,
       motionName: getMotionName(prefixCls, maskTransitionName, maskAnimation),
@@ -37617,13 +37607,13 @@ html body {
       }, maskStyle), modalStyles == null ? void 0 : modalStyles.mask),
       maskProps,
       className: modalClassNames == null ? void 0 : modalClassNames.mask
-    }), /* @__PURE__ */ React110.createElement("div", _extends21({
+    }), /* @__PURE__ */ React109.createElement("div", _extends21({
       className: clsx(`${prefixCls}-wrap`, wrapClassName, modalClassNames == null ? void 0 : modalClassNames.wrapper),
       ref: wrapperRef,
       onClick: onWrapperClick,
       onMouseDown: onWrapperMouseDown,
       style: mergedStyle
-    }, wrapProps), /* @__PURE__ */ React110.createElement(Content_default, _extends21({}, props, {
+    }, wrapProps), /* @__PURE__ */ React109.createElement(Content_default, _extends21({}, props, {
       isFixedPos,
       ref: contentRef,
       closable,
@@ -37664,8 +37654,8 @@ html body {
       keyboard = true,
       onClose
     } = props;
-    const [animatedVisible, setAnimatedVisible] = React111.useState(visible);
-    const refContext = React111.useMemo(() => ({
+    const [animatedVisible, setAnimatedVisible] = React110.useState(visible);
+    const refContext = React110.useMemo(() => ({
       panel: panelRef
     }), [panelRef]);
     const onEsc = ({
@@ -37678,7 +37668,7 @@ html body {
         return;
       }
     };
-    React111.useEffect(() => {
+    React110.useEffect(() => {
       if (visible) {
         setAnimatedVisible(true);
       }
@@ -37686,15 +37676,15 @@ html body {
     if (!forceRender && destroyOnHidden && !animatedVisible) {
       return null;
     }
-    return /* @__PURE__ */ React111.createElement(RefContext.Provider, {
+    return /* @__PURE__ */ React110.createElement(RefContext.Provider, {
       value: refContext
-    }, /* @__PURE__ */ React111.createElement(es_default3, {
+    }, /* @__PURE__ */ React110.createElement(es_default3, {
       open: visible || forceRender || animatedVisible,
       onEsc,
       autoDestroy: false,
       getContainer: getContainer2,
       autoLock: visible || animatedVisible
-    }, /* @__PURE__ */ React111.createElement(Dialog_default, _extends22({}, props, {
+    }, /* @__PURE__ */ React110.createElement(Dialog_default, _extends22({}, props, {
       destroyOnHidden,
       afterClose: () => {
         const closableObj = closable && typeof closable === "object" ? closable : {};
@@ -37716,24 +37706,24 @@ html body {
   var es_default5 = DialogWrap_default;
 
   // ../custom_dashboard/node_modules/antd/es/_util/ContextIsolator.js
-  var import_react65 = __toESM(require_react());
+  var import_react64 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/form/context.js
-  var React121 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@rc-component/form/es/index.js
   var React120 = __toESM(require_react());
 
+  // ../custom_dashboard/node_modules/@rc-component/form/es/index.js
+  var React119 = __toESM(require_react());
+
   // ../custom_dashboard/node_modules/@rc-component/form/es/Field.js
-  var React115 = __toESM(require_react());
+  var React114 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/form/es/FieldContext.js
-  var React112 = __toESM(require_react());
+  var React111 = __toESM(require_react());
   var HOOK_MARK = "RC_FORM_INTERNAL_HOOKS";
   var warningFunc = () => {
     warning_default(false, "Can not find FormContext. Please make sure you wrap Field under Form.");
   };
-  var Context2 = /* @__PURE__ */ React112.createContext({
+  var Context2 = /* @__PURE__ */ React111.createContext({
     getFieldValue: warningFunc,
     getFieldsValue: warningFunc,
     getFieldError: warningFunc,
@@ -37770,8 +37760,8 @@ html body {
   var FieldContext_default = Context2;
 
   // ../custom_dashboard/node_modules/@rc-component/form/es/ListContext.js
-  var React113 = __toESM(require_react());
-  var ListContext = /* @__PURE__ */ React113.createContext(null);
+  var React112 = __toESM(require_react());
+  var ListContext = /* @__PURE__ */ React112.createContext(null);
   var ListContext_default = ListContext;
 
   // ../custom_dashboard/node_modules/@rc-component/form/es/utils/typeUtil.js
@@ -38892,7 +38882,7 @@ html body {
   var es_default6 = Schema;
 
   // ../custom_dashboard/node_modules/@rc-component/form/es/utils/validateUtil.js
-  var React114 = __toESM(require_react());
+  var React113 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/form/es/utils/messages.js
   var typeTemplate2 = "'${name}' is not a valid ${type}";
@@ -38993,7 +38983,7 @@ html body {
           message: message2
         }, index2) => {
           const mergedMessage = message2 === CODE_LOGIC_ERROR ? messages2.default : message2;
-          return /* @__PURE__ */ React114.isValidElement(mergedMessage) ? /* @__PURE__ */ React114.cloneElement(mergedMessage, {
+          return /* @__PURE__ */ React113.isValidElement(mergedMessage) ? /* @__PURE__ */ React113.cloneElement(mergedMessage, {
             key: `error_${index2}`
           }) : mergedMessage;
         });
@@ -39264,7 +39254,7 @@ html body {
     }
     return prevValue !== nextValue;
   }
-  var Field = class extends React115.Component {
+  var Field = class extends React114.Component {
     constructor(props) {
       super(props);
       __publicField(this, "state", {
@@ -39550,7 +39540,7 @@ html body {
           });
         }
         const childList = toArray(children);
-        if (childList.length !== 1 || !/* @__PURE__ */ React115.isValidElement(childList[0])) {
+        if (childList.length !== 1 || !/* @__PURE__ */ React114.isValidElement(childList[0])) {
           return {
             child: childList,
             isFunction: false
@@ -39698,13 +39688,13 @@ html body {
       let returnChildNode;
       if (isFunction) {
         returnChildNode = child;
-      } else if (/* @__PURE__ */ React115.isValidElement(child)) {
-        returnChildNode = /* @__PURE__ */ React115.cloneElement(child, this.getControlled(child.props));
+      } else if (/* @__PURE__ */ React114.isValidElement(child)) {
+        returnChildNode = /* @__PURE__ */ React114.cloneElement(child, this.getControlled(child.props));
       } else {
         warning_default(!child, "`children` of Field is not validate ReactElement.");
         returnChildNode = child;
       }
-      return /* @__PURE__ */ React115.createElement(React115.Fragment, {
+      return /* @__PURE__ */ React114.createElement(React114.Fragment, {
         key: resetCount
       }, returnChildNode);
     }
@@ -39717,8 +39707,8 @@ html body {
       "name"
     ]);
     var _a2;
-    const fieldContext = React115.useContext(FieldContext_default);
-    const listContext = React115.useContext(ListContext_default);
+    const fieldContext = React114.useContext(FieldContext_default);
+    const listContext = React114.useContext(ListContext_default);
     const namePath = name !== void 0 ? getNamePath(name) : void 0;
     const isMergedListField = (_a2 = restProps.isListField) != null ? _a2 : !!listContext;
     let key = "keep";
@@ -39728,7 +39718,7 @@ html body {
     if (restProps.preserve === false && isMergedListField && namePath.length <= 1) {
       warning_default(false, "`preserve` should not apply on Form.List fields.");
     }
-    return /* @__PURE__ */ React115.createElement(Field, _extends23({
+    return /* @__PURE__ */ React114.createElement(Field, _extends23({
       key,
       name: namePath,
       isListField: isMergedListField
@@ -39739,7 +39729,7 @@ html body {
   var Field_default = WrapperField;
 
   // ../custom_dashboard/node_modules/@rc-component/form/es/List.js
-  var React116 = __toESM(require_react());
+  var React115 = __toESM(require_react());
   function List({
     name,
     initialValue,
@@ -39748,21 +39738,21 @@ html body {
     validateTrigger,
     isListField
   }) {
-    const context = React116.useContext(FieldContext_default);
-    const wrapperListContext = React116.useContext(ListContext_default);
-    const keyRef = React116.useRef({
+    const context = React115.useContext(FieldContext_default);
+    const wrapperListContext = React115.useContext(ListContext_default);
+    const keyRef = React115.useRef({
       keys: [],
       id: 0
     });
     const keyManager = keyRef.current;
-    const prefixName = React116.useMemo(() => {
+    const prefixName = React115.useMemo(() => {
       const parentPrefixName = getNamePath(context.prefixName) || [];
       return [...parentPrefixName, ...getNamePath(name)];
     }, [context.prefixName, name]);
-    const fieldContext = React116.useMemo(() => __spreadProps(__spreadValues({}, context), {
+    const fieldContext = React115.useMemo(() => __spreadProps(__spreadValues({}, context), {
       prefixName
     }), [context, prefixName]);
-    const listContext = React116.useMemo(() => ({
+    const listContext = React115.useMemo(() => ({
       getKey: (namePath) => {
         const len = prefixName.length;
         const pathName = namePath[len];
@@ -39781,11 +39771,11 @@ html body {
       }
       return prevValue !== nextValue;
     };
-    return /* @__PURE__ */ React116.createElement(ListContext_default.Provider, {
+    return /* @__PURE__ */ React115.createElement(ListContext_default.Provider, {
       value: listContext
-    }, /* @__PURE__ */ React116.createElement(FieldContext_default.Provider, {
+    }, /* @__PURE__ */ React115.createElement(FieldContext_default.Provider, {
       value: fieldContext
-    }, /* @__PURE__ */ React116.createElement(Field_default, {
+    }, /* @__PURE__ */ React115.createElement(Field_default, {
       name: [],
       shouldUpdate,
       rules,
@@ -39865,7 +39855,7 @@ html body {
   var List_default = List;
 
   // ../custom_dashboard/node_modules/@rc-component/form/es/hooks/useForm.js
-  var React117 = __toESM(require_react());
+  var React116 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/form/es/utils/asyncUtil.js
   function allPromiseFinish(promiseList) {
@@ -40710,8 +40700,8 @@ html body {
     }
   };
   function useForm(form) {
-    const formRef = React117.useRef(null);
-    const [, forceUpdate] = React117.useState({});
+    const formRef = React116.useRef(null);
+    const [, forceUpdate] = React116.useState({});
     if (!formRef.current) {
       if (form) {
         formRef.current = form;
@@ -40728,11 +40718,11 @@ html body {
   var useForm_default = useForm;
 
   // ../custom_dashboard/node_modules/@rc-component/form/es/Form.js
-  var React119 = __toESM(require_react());
+  var React118 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/form/es/FormContext.js
-  var React118 = __toESM(require_react());
-  var FormContext = /* @__PURE__ */ React118.createContext({
+  var React117 = __toESM(require_react());
+  var FormContext = /* @__PURE__ */ React117.createContext({
     triggerFormChange: () => {
     },
     triggerFormFinish: () => {
@@ -40748,9 +40738,9 @@ html body {
     onFormFinish,
     children
   }) => {
-    const formContext = React118.useContext(FormContext);
-    const formsRef = React118.useRef({});
-    return /* @__PURE__ */ React118.createElement(FormContext.Provider, {
+    const formContext = React117.useContext(FormContext);
+    const formsRef = React117.useRef({});
+    return /* @__PURE__ */ React117.createElement(FormContext.Provider, {
       value: __spreadProps(__spreadValues({}, formContext), {
         validateMessages: __spreadValues(__spreadValues({}, formContext.validateMessages), validateMessages),
         triggerFormChange: (name, changedFields) => {
@@ -40837,8 +40827,8 @@ html body {
       "onFinishFailed",
       "clearOnDestroy"
     ]);
-    const nativeElementRef = React119.useRef(null);
-    const formContext = React119.useContext(FormContext_default);
+    const nativeElementRef = React118.useRef(null);
+    const formContext = React118.useContext(FormContext_default);
     const [formInstance] = useForm_default(form);
     const {
       useSubscribe,
@@ -40848,10 +40838,10 @@ html body {
       setPreserve,
       destroyForm
     } = formInstance.getInternalHooks(HOOK_MARK);
-    React119.useImperativeHandle(ref, () => __spreadProps(__spreadValues({}, formInstance), {
+    React118.useImperativeHandle(ref, () => __spreadProps(__spreadValues({}, formInstance), {
       nativeElement: nativeElementRef.current
     }));
-    React119.useEffect(() => {
+    React118.useEffect(() => {
       formContext.registerForm(name, formInstance);
       return () => {
         formContext.unregisterForm(name);
@@ -40875,12 +40865,12 @@ html body {
       onFinishFailed
     });
     setPreserve(preserve2);
-    const mountRef = React119.useRef(null);
+    const mountRef = React118.useRef(null);
     setInitialValues(initialValues, !mountRef.current);
     if (!mountRef.current) {
       mountRef.current = true;
     }
-    React119.useEffect(
+    React118.useEffect(
       () => () => destroyForm(clearOnDestroy),
       []
     );
@@ -40893,25 +40883,25 @@ html body {
       childrenNode = children;
     }
     useSubscribe(!childrenRenderProps);
-    const prevFieldsRef = React119.useRef(null);
-    React119.useEffect(() => {
+    const prevFieldsRef = React118.useRef(null);
+    React118.useEffect(() => {
       if (!isSimilar(prevFieldsRef.current || [], fields || [])) {
         formInstance.setFields(fields || []);
       }
       prevFieldsRef.current = fields;
     }, [fields, formInstance]);
-    const formContextValue = React119.useMemo(() => __spreadProps(__spreadValues({}, formInstance), {
+    const formContextValue = React118.useMemo(() => __spreadProps(__spreadValues({}, formInstance), {
       validateTrigger
     }), [formInstance, validateTrigger]);
-    const wrapperNode = /* @__PURE__ */ React119.createElement(ListContext_default.Provider, {
+    const wrapperNode = /* @__PURE__ */ React118.createElement(ListContext_default.Provider, {
       value: null
-    }, /* @__PURE__ */ React119.createElement(FieldContext_default.Provider, {
+    }, /* @__PURE__ */ React118.createElement(FieldContext_default.Provider, {
       value: formContextValue
     }, childrenNode));
     if (Component7 === false) {
       return wrapperNode;
     }
-    return /* @__PURE__ */ React119.createElement(Component7, _extends24({}, restProps, {
+    return /* @__PURE__ */ React118.createElement(Component7, _extends24({}, restProps, {
       ref: nativeElementRef,
       onSubmit: (event) => {
         event.preventDefault();
@@ -40929,7 +40919,7 @@ html body {
   var Form_default = Form;
 
   // ../custom_dashboard/node_modules/@rc-component/form/es/hooks/useWatch.js
-  var import_react64 = __toESM(require_react());
+  var import_react63 = __toESM(require_react());
   function stringify2(value) {
     try {
       return JSON.stringify(value);
@@ -40943,11 +40933,11 @@ html body {
       form: _form
     } : _form;
     const form = options.form;
-    const [value, setValue] = (0, import_react64.useState)(() => typeof dependencies === "function" ? dependencies({}) : void 0);
-    const valueStr = (0, import_react64.useMemo)(() => stringify2(value), [value]);
-    const valueStrRef = (0, import_react64.useRef)(valueStr);
+    const [value, setValue] = (0, import_react63.useState)(() => typeof dependencies === "function" ? dependencies({}) : void 0);
+    const valueStr = (0, import_react63.useMemo)(() => stringify2(value), [value]);
+    const valueStrRef = (0, import_react63.useRef)(valueStr);
     valueStrRef.current = valueStr;
-    const fieldContext = (0, import_react64.useContext)(FieldContext_default);
+    const fieldContext = (0, import_react63.useContext)(FieldContext_default);
     const formInstance = form || fieldContext;
     const isValidForm = formInstance && formInstance._init;
     if (true) {
@@ -40968,13 +40958,13 @@ html body {
       }
     });
     const flattenDeps = typeof dependencies === "function" ? dependencies : JSON.stringify(dependencies);
-    (0, import_react64.useEffect)(() => {
+    (0, import_react63.useEffect)(() => {
       if (!isValidForm) {
         return;
       }
       triggerUpdate();
     }, [isValidForm, flattenDeps]);
-    (0, import_react64.useEffect)(() => {
+    (0, import_react63.useEffect)(() => {
       if (!isValidForm) {
         return;
       }
@@ -40988,7 +40978,7 @@ html body {
   var useWatch_default = useWatch2;
 
   // ../custom_dashboard/node_modules/@rc-component/form/es/index.js
-  var InternalForm = /* @__PURE__ */ React120.forwardRef(Form_default);
+  var InternalForm = /* @__PURE__ */ React119.forwardRef(Form_default);
   var RefForm = InternalForm;
   RefForm.FormProvider = FormProvider;
   RefForm.Field = Field_default;
@@ -40999,21 +40989,21 @@ html body {
 
   // ../custom_dashboard/node_modules/antd/es/form/context.js
   "use client";
-  var FormContext2 = /* @__PURE__ */ React121.createContext({
+  var FormContext2 = /* @__PURE__ */ React120.createContext({
     labelAlign: "right",
     layout: "horizontal",
     itemRef: () => {
     }
   });
-  var NoStyleItemContext = /* @__PURE__ */ React121.createContext(null);
+  var NoStyleItemContext = /* @__PURE__ */ React120.createContext(null);
   var FormProvider2 = (props) => {
     const providerProps = omit(props, ["prefixCls"]);
-    return /* @__PURE__ */ React121.createElement(FormProvider, __spreadValues({}, providerProps));
+    return /* @__PURE__ */ React120.createElement(FormProvider, __spreadValues({}, providerProps));
   };
-  var FormItemPrefixContext = /* @__PURE__ */ React121.createContext({
+  var FormItemPrefixContext = /* @__PURE__ */ React120.createContext({
     prefixCls: ""
   });
-  var FormItemInputContext = /* @__PURE__ */ React121.createContext({});
+  var FormItemInputContext = /* @__PURE__ */ React120.createContext({});
   if (true) {
     FormItemInputContext.displayName = "FormItemInputContext";
   }
@@ -41022,8 +41012,8 @@ html body {
     status,
     override
   }) => {
-    const formItemInputContext = React121.useContext(FormItemInputContext);
-    const newFormItemInputContext = React121.useMemo(() => {
+    const formItemInputContext = React120.useContext(FormItemInputContext);
+    const newFormItemInputContext = React120.useMemo(() => {
       const newContext = __spreadValues({}, formItemInputContext);
       if (override) {
         delete newContext.isFormItemInput;
@@ -41035,11 +41025,11 @@ html body {
       }
       return newContext;
     }, [status, override, formItemInputContext]);
-    return /* @__PURE__ */ React121.createElement(FormItemInputContext.Provider, {
+    return /* @__PURE__ */ React120.createElement(FormItemInputContext.Provider, {
       value: newFormItemInputContext
     }, children);
   };
-  var VariantContext = /* @__PURE__ */ React121.createContext(void 0);
+  var VariantContext = /* @__PURE__ */ React120.createContext(void 0);
 
   // ../custom_dashboard/node_modules/antd/es/_util/ContextIsolator.js
   "use client";
@@ -41054,13 +41044,13 @@ html body {
     }
     let result = children;
     if (form) {
-      result = /* @__PURE__ */ import_react65.default.createElement(NoFormStyle, {
+      result = /* @__PURE__ */ import_react64.default.createElement(NoFormStyle, {
         override: true,
         status: true
       }, result);
     }
     if (space) {
-      result = /* @__PURE__ */ import_react65.default.createElement(NoCompactStyle, null, result);
+      result = /* @__PURE__ */ import_react64.default.createElement(NoCompactStyle, null, result);
     }
     return result;
   };
@@ -41070,9 +41060,9 @@ html body {
   var canUseDocElement = () => canUseDom() && window.document.documentElement;
 
   // ../custom_dashboard/node_modules/antd/es/drawer/useFocusable.js
-  var import_react66 = __toESM(require_react());
+  var import_react65 = __toESM(require_react());
   function useFocusable(focusable2, defaultTrap, legacyFocusTriggerAfterClose) {
-    return (0, import_react66.useMemo)(() => {
+    return (0, import_react65.useMemo)(() => {
       const ret = {
         trap: defaultTrap != null ? defaultTrap : true,
         focusTriggerAfterClose: legacyFocusTriggerAfterClose != null ? legacyFocusTriggerAfterClose : true
@@ -41082,13 +41072,13 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/antd/es/skeleton/Skeleton.js
-  var React131 = __toESM(require_react());
+  var React130 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/skeleton/Avatar.js
-  var React124 = __toESM(require_react());
+  var React123 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/skeleton/Element.js
-  var React123 = __toESM(require_react());
+  var React122 = __toESM(require_react());
   "use client";
   var Element2 = (props) => {
     const {
@@ -41111,12 +41101,12 @@ html body {
       [`${prefixCls}-square`]: shape === "square",
       [`${prefixCls}-round`]: shape === "round"
     });
-    const sizeStyle = React123.useMemo(() => typeof size === "number" ? {
+    const sizeStyle = React122.useMemo(() => typeof size === "number" ? {
       width: size,
       height: size,
       lineHeight: `${size}px`
     } : {}, [size]);
-    return /* @__PURE__ */ React123.createElement("span", {
+    return /* @__PURE__ */ React122.createElement("span", {
       className: clsx(prefixCls, sizeCls, shapeCls, className),
       style: __spreadValues(__spreadValues({}, sizeStyle), style2)
     });
@@ -41461,17 +41451,17 @@ html body {
     ]);
     const {
       getPrefixCls
-    } = React124.useContext(ConfigContext);
+    } = React123.useContext(ConfigContext);
     const prefixCls = getPrefixCls("skeleton", customizePrefixCls);
     const [hashId, cssVarCls] = style_default5(prefixCls);
     const mergedSize = useSize_default((ctx) => customSize != null ? customSize : ctx);
     const cls = clsx(prefixCls, `${prefixCls}-element`, {
       [`${prefixCls}-active`]: active
     }, classNames == null ? void 0 : classNames.root, className, rootClassName, hashId, cssVarCls);
-    return /* @__PURE__ */ React124.createElement("div", {
+    return /* @__PURE__ */ React123.createElement("div", {
       className: cls,
       style: styles == null ? void 0 : styles.root
-    }, /* @__PURE__ */ React124.createElement(Element_default, __spreadValues({
+    }, /* @__PURE__ */ React123.createElement(Element_default, __spreadValues({
       prefixCls: `${prefixCls}-avatar`,
       className: classNames == null ? void 0 : classNames.content,
       style: __spreadValues(__spreadValues({}, styles == null ? void 0 : styles.content), style2),
@@ -41482,7 +41472,7 @@ html body {
   var Avatar_default = SkeletonAvatar;
 
   // ../custom_dashboard/node_modules/antd/es/skeleton/Button.js
-  var React125 = __toESM(require_react());
+  var React124 = __toESM(require_react());
   "use client";
   var SkeletonButton = (props) => {
     const _a = props, {
@@ -41508,7 +41498,7 @@ html body {
     ]);
     const {
       getPrefixCls
-    } = React125.useContext(ConfigContext);
+    } = React124.useContext(ConfigContext);
     const prefixCls = getPrefixCls("skeleton", customizePrefixCls);
     const [hashId, cssVarCls] = style_default5(prefixCls);
     const mergedSize = useSize_default((ctx) => customSize != null ? customSize : ctx);
@@ -41516,10 +41506,10 @@ html body {
       [`${prefixCls}-active`]: active,
       [`${prefixCls}-block`]: block
     }, classNames == null ? void 0 : classNames.root, className, rootClassName, hashId, cssVarCls);
-    return /* @__PURE__ */ React125.createElement("div", {
+    return /* @__PURE__ */ React124.createElement("div", {
       className: cls,
       style: styles == null ? void 0 : styles.root
-    }, /* @__PURE__ */ React125.createElement(Element_default, __spreadValues({
+    }, /* @__PURE__ */ React124.createElement(Element_default, __spreadValues({
       prefixCls: `${prefixCls}-button`,
       className: classNames == null ? void 0 : classNames.content,
       style: __spreadValues(__spreadValues({}, styles == null ? void 0 : styles.content), style2),
@@ -41529,10 +41519,10 @@ html body {
   var Button_default2 = SkeletonButton;
 
   // ../custom_dashboard/node_modules/antd/es/skeleton/Image.js
-  var React127 = __toESM(require_react());
+  var React126 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/skeleton/Node.js
-  var React126 = __toESM(require_react());
+  var React125 = __toESM(require_react());
   "use client";
   var SkeletonNode = (props) => {
     const {
@@ -41548,16 +41538,16 @@ html body {
     } = props;
     const {
       getPrefixCls
-    } = React126.useContext(ConfigContext);
+    } = React125.useContext(ConfigContext);
     const prefixCls = getPrefixCls("skeleton", customizePrefixCls);
     const [hashId, cssVarCls] = style_default5(prefixCls);
     const cls = clsx(prefixCls, `${prefixCls}-element`, {
       [`${prefixCls}-active`]: active
     }, hashId, classNames == null ? void 0 : classNames.root, className, rootClassName, cssVarCls);
-    return /* @__PURE__ */ React126.createElement("div", {
+    return /* @__PURE__ */ React125.createElement("div", {
       className: cls,
       style: styles == null ? void 0 : styles.root
-    }, /* @__PURE__ */ React126.createElement("div", {
+    }, /* @__PURE__ */ React125.createElement("div", {
       className: clsx(classNames == null ? void 0 : classNames.content, internalClassName || `${prefixCls}-node`),
       style: __spreadValues(__spreadValues({}, styles == null ? void 0 : styles.content), style2)
     }, children));
@@ -41569,15 +41559,15 @@ html body {
   var SkeletonImage = (props) => {
     const {
       getPrefixCls
-    } = React127.useContext(ConfigContext);
+    } = React126.useContext(ConfigContext);
     const prefixCls = getPrefixCls("skeleton", props.prefixCls);
-    return /* @__PURE__ */ React127.createElement(Node_default, __spreadProps(__spreadValues({}, props), {
+    return /* @__PURE__ */ React126.createElement(Node_default, __spreadProps(__spreadValues({}, props), {
       internalClassName: `${prefixCls}-image`
-    }), /* @__PURE__ */ React127.createElement("svg", {
+    }), /* @__PURE__ */ React126.createElement("svg", {
       viewBox: "0 0 1098 1024",
       xmlns: "http://www.w3.org/2000/svg",
       className: `${prefixCls}-image-svg`
-    }, /* @__PURE__ */ React127.createElement("title", null, "Image placeholder"), /* @__PURE__ */ React127.createElement("path", {
+    }, /* @__PURE__ */ React126.createElement("title", null, "Image placeholder"), /* @__PURE__ */ React126.createElement("path", {
       d: "M365.7 329.1q0 45.8-32 77.7t-77.7 32-77.7-32-32-77.7 32-77.6 77.7-32 77.7 32 32 77.6M951 548.6v256H146.3V694.9L329 512l91.5 91.4L713 311zm54.8-402.3H91.4q-7.4 0-12.8 5.4T73 164.6v694.8q0 7.5 5.5 12.9t12.8 5.4h914.3q7.5 0 12.9-5.4t5.4-12.9V164.6q0-7.5-5.4-12.9t-12.9-5.4m91.4 18.3v694.8q0 37.8-26.8 64.6t-64.6 26.9H91.4q-37.7 0-64.6-26.9T0 859.4V164.6q0-37.8 26.8-64.6T91.4 73h914.3q37.8 0 64.6 26.9t26.8 64.6",
       className: `${prefixCls}-image-path`
     })));
@@ -41585,7 +41575,7 @@ html body {
   var Image_default = SkeletonImage;
 
   // ../custom_dashboard/node_modules/antd/es/skeleton/Input.js
-  var React128 = __toESM(require_react());
+  var React127 = __toESM(require_react());
   "use client";
   var SkeletonInput = (props) => {
     const _a = props, {
@@ -41611,7 +41601,7 @@ html body {
     ]);
     const {
       getPrefixCls
-    } = React128.useContext(ConfigContext);
+    } = React127.useContext(ConfigContext);
     const prefixCls = getPrefixCls("skeleton", customizePrefixCls);
     const [hashId, cssVarCls] = style_default5(prefixCls);
     const mergedSize = useSize_default((ctx) => customSize != null ? customSize : ctx);
@@ -41619,10 +41609,10 @@ html body {
       [`${prefixCls}-active`]: active,
       [`${prefixCls}-block`]: block
     }, classNames == null ? void 0 : classNames.root, className, rootClassName, hashId, cssVarCls);
-    return /* @__PURE__ */ React128.createElement("div", {
+    return /* @__PURE__ */ React127.createElement("div", {
       className: cls,
       style: styles == null ? void 0 : styles.root
-    }, /* @__PURE__ */ React128.createElement(Element_default, __spreadValues({
+    }, /* @__PURE__ */ React127.createElement(Element_default, __spreadValues({
       prefixCls: `${prefixCls}-input`,
       className: classNames == null ? void 0 : classNames.content,
       style: __spreadValues(__spreadValues({}, styles == null ? void 0 : styles.content), style2),
@@ -41632,7 +41622,7 @@ html body {
   var Input_default = SkeletonInput;
 
   // ../custom_dashboard/node_modules/antd/es/skeleton/Paragraph.js
-  var React129 = __toESM(require_react());
+  var React128 = __toESM(require_react());
   "use client";
   var getWidth = (index2, props) => {
     const {
@@ -41656,13 +41646,13 @@ html body {
     } = props;
     const rowList = Array.from({
       length: rows
-    }).map((_, index2) => /* @__PURE__ */ React129.createElement("li", {
+    }).map((_, index2) => /* @__PURE__ */ React128.createElement("li", {
       key: index2,
       style: {
         width: getWidth(index2, props)
       }
     }));
-    return /* @__PURE__ */ React129.createElement("ul", {
+    return /* @__PURE__ */ React128.createElement("ul", {
       className: clsx(prefixCls, className),
       style: style2
     }, rowList);
@@ -41670,14 +41660,14 @@ html body {
   var Paragraph_default = Paragraph;
 
   // ../custom_dashboard/node_modules/antd/es/skeleton/Title.js
-  var React130 = __toESM(require_react());
+  var React129 = __toESM(require_react());
   "use client";
   var Title = ({
     prefixCls,
     className,
     width,
     style: style2
-  }) => /* @__PURE__ */ React130.createElement("h3", {
+  }) => /* @__PURE__ */ React129.createElement("h3", {
     className: clsx(prefixCls, className),
     style: __spreadValues({
       width
@@ -41776,10 +41766,10 @@ html body {
         }, getAvatarBasicProps(hasTitle, hasParagraph)), getComponentProps(avatar)), {
           style: mergedStyles.avatar
         });
-        avatarNode = /* @__PURE__ */ React131.createElement("div", {
+        avatarNode = /* @__PURE__ */ React130.createElement("div", {
           className: clsx(mergedClassNames.header, `${prefixCls}-header`),
           style: mergedStyles.header
-        }, /* @__PURE__ */ React131.createElement(Element_default, __spreadValues({}, avatarProps)));
+        }, /* @__PURE__ */ React130.createElement(Element_default, __spreadValues({}, avatarProps)));
       }
       let contentNode;
       if (hasTitle || hasParagraph) {
@@ -41791,7 +41781,7 @@ html body {
           }, getTitleBasicProps(hasAvatar, hasParagraph)), getComponentProps(title)), {
             style: mergedStyles.title
           });
-          $title = /* @__PURE__ */ React131.createElement(Title_default, __spreadValues({}, titleProps));
+          $title = /* @__PURE__ */ React130.createElement(Title_default, __spreadValues({}, titleProps));
         }
         let paragraphNode;
         if (hasParagraph) {
@@ -41801,9 +41791,9 @@ html body {
           }, getParagraphBasicProps(hasAvatar, hasTitle)), getComponentProps(paragraph)), {
             style: mergedStyles.paragraph
           });
-          paragraphNode = /* @__PURE__ */ React131.createElement(Paragraph_default, __spreadValues({}, paragraphProps));
+          paragraphNode = /* @__PURE__ */ React130.createElement(Paragraph_default, __spreadValues({}, paragraphProps));
         }
-        contentNode = /* @__PURE__ */ React131.createElement("div", {
+        contentNode = /* @__PURE__ */ React130.createElement("div", {
           className: clsx(mergedClassNames.section, `${prefixCls}-section`),
           style: mergedStyles.section
         }, $title, paragraphNode);
@@ -41814,7 +41804,7 @@ html body {
         [`${prefixCls}-rtl`]: direction === "rtl",
         [`${prefixCls}-round`]: round2
       }, mergedClassNames.root, contextClassName, className, rootClassName, hashId, cssVarCls);
-      return /* @__PURE__ */ React131.createElement("div", {
+      return /* @__PURE__ */ React130.createElement("div", {
         className: cls,
         style: __spreadValues(__spreadValues(__spreadValues({}, mergedStyles.root), contextStyle), style2)
       }, avatarNode, contentNode);
@@ -41836,16 +41826,16 @@ html body {
   var skeleton_default = Skeleton_default;
 
   // ../custom_dashboard/node_modules/antd/es/watermark/context.js
-  var React132 = __toESM(require_react());
+  var React131 = __toESM(require_react());
   function voidFunc() {
   }
-  var WatermarkContext = /* @__PURE__ */ React132.createContext({
+  var WatermarkContext = /* @__PURE__ */ React131.createContext({
     add: voidFunc,
     remove: voidFunc
   });
   function usePanelRef(panelSelector) {
-    const watermark = React132.useContext(WatermarkContext);
-    const panelEleRef = React132.useRef(null);
+    const watermark = React131.useContext(WatermarkContext);
+    const panelEleRef = React131.useRef(null);
     const panelRef = useEvent_default((ele) => {
       if (ele) {
         const innerContentEle = panelSelector ? ele.querySelector(panelSelector) : ele;
@@ -41861,25 +41851,25 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/antd/es/modal/shared.js
-  var import_react69 = __toESM(require_react());
+  var import_react68 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/modal/components/NormalCancelBtn.js
-  var import_react67 = __toESM(require_react());
+  var import_react66 = __toESM(require_react());
   "use client";
   var NormalCancelBtn = () => {
     const {
       cancelButtonProps,
       cancelTextLocale,
       onCancel
-    } = (0, import_react67.useContext)(ModalContext);
-    return /* @__PURE__ */ import_react67.default.createElement(Button_default, __spreadValues({
+    } = (0, import_react66.useContext)(ModalContext);
+    return /* @__PURE__ */ import_react66.default.createElement(Button_default, __spreadValues({
       onClick: onCancel
     }, cancelButtonProps), cancelTextLocale);
   };
   var NormalCancelBtn_default = NormalCancelBtn;
 
   // ../custom_dashboard/node_modules/antd/es/modal/components/NormalOkBtn.js
-  var import_react68 = __toESM(require_react());
+  var import_react67 = __toESM(require_react());
   "use client";
   var NormalOkBtn = () => {
     const {
@@ -41888,8 +41878,8 @@ html body {
       okType,
       okTextLocale,
       onOk
-    } = (0, import_react68.useContext)(ModalContext);
-    return /* @__PURE__ */ import_react68.default.createElement(Button_default, __spreadValues(__spreadProps(__spreadValues({}, convertLegacyProps(okType)), {
+    } = (0, import_react67.useContext)(ModalContext);
+    return /* @__PURE__ */ import_react67.default.createElement(Button_default, __spreadValues(__spreadProps(__spreadValues({}, convertLegacyProps(okType)), {
       loading: confirmLoading,
       onClick: onOk
     }), okButtonProps), okTextLocale);
@@ -41899,9 +41889,9 @@ html body {
   // ../custom_dashboard/node_modules/antd/es/modal/shared.js
   "use client";
   function renderCloseIcon(prefixCls, closeIcon) {
-    return /* @__PURE__ */ import_react69.default.createElement("span", {
+    return /* @__PURE__ */ import_react68.default.createElement("span", {
       className: `${prefixCls}-close-x`
-    }, closeIcon || /* @__PURE__ */ import_react69.default.createElement(CloseOutlined_default2, {
+    }, closeIcon || /* @__PURE__ */ import_react68.default.createElement(CloseOutlined_default2, {
       className: `${prefixCls}-close-icon`
     }));
   }
@@ -41920,7 +41910,7 @@ html body {
     const [locale6] = useLocale_default("Modal", getConfirmLocale());
     const okTextLocale = okText || (locale6 == null ? void 0 : locale6.okText);
     const cancelTextLocale = cancelText || (locale6 == null ? void 0 : locale6.cancelText);
-    const memoizedValue = import_react69.default.useMemo(() => {
+    const memoizedValue = import_react68.default.useMemo(() => {
       return {
         confirmLoading,
         okButtonProps,
@@ -41934,20 +41924,20 @@ html body {
     }, [confirmLoading, okButtonProps, cancelButtonProps, okTextLocale, cancelTextLocale, okType, onOk, onCancel]);
     let footerNode;
     if (typeof footer === "function" || typeof footer === "undefined") {
-      footerNode = /* @__PURE__ */ import_react69.default.createElement(import_react69.default.Fragment, null, /* @__PURE__ */ import_react69.default.createElement(NormalCancelBtn_default, null), /* @__PURE__ */ import_react69.default.createElement(NormalOkBtn_default, null));
+      footerNode = /* @__PURE__ */ import_react68.default.createElement(import_react68.default.Fragment, null, /* @__PURE__ */ import_react68.default.createElement(NormalCancelBtn_default, null), /* @__PURE__ */ import_react68.default.createElement(NormalOkBtn_default, null));
       if (typeof footer === "function") {
         footerNode = footer(footerNode, {
           OkBtn: NormalOkBtn_default,
           CancelBtn: NormalCancelBtn_default
         });
       }
-      footerNode = /* @__PURE__ */ import_react69.default.createElement(ModalContextProvider, {
+      footerNode = /* @__PURE__ */ import_react68.default.createElement(ModalContextProvider, {
         value: memoizedValue
       }, footerNode);
     } else {
       footerNode = footer;
     }
-    return /* @__PURE__ */ import_react69.default.createElement(DisabledContextProvider, {
+    return /* @__PURE__ */ import_react68.default.createElement(DisabledContextProvider, {
       disabled: false
     }, footerNode);
   };
@@ -42496,8 +42486,8 @@ html body {
     } = useComponentConfig("modal");
     const {
       modal: modalContext
-    } = React136.useContext(ConfigContext);
-    const [closableAfterClose, onClose] = React136.useMemo(() => {
+    } = React135.useContext(ConfigContext);
+    const [closableAfterClose, onClose] = React135.useMemo(() => {
       if (typeof closable === "boolean") {
         return [void 0, void 0];
       }
@@ -42530,7 +42520,7 @@ html body {
       [`${prefixCls}-centered`]: centered != null ? centered : contextCentered,
       [`${prefixCls}-wrap-rtl`]: direction === "rtl"
     });
-    const dialogFooter = footer !== null && !loading ? /* @__PURE__ */ React136.createElement(Footer, __spreadProps(__spreadValues({}, props), {
+    const dialogFooter = footer !== null && !loading ? /* @__PURE__ */ React135.createElement(Footer, __spreadProps(__spreadValues({}, props), {
       okButtonProps: __spreadValues(__spreadValues({}, contextOkButtonProps), okButtonProps),
       onOk: handleOk,
       cancelButtonProps: __spreadValues(__spreadValues({}, contextCancelButtonProps), cancelButtonProps),
@@ -42538,7 +42528,7 @@ html body {
     })) : null;
     const [rawClosable, mergedCloseIcon, closeBtnIsDisabled, ariaProps] = useClosable(pickClosable(props), pickClosable(modalContext), {
       closable: true,
-      closeIcon: /* @__PURE__ */ React136.createElement(CloseOutlined_default2, {
+      closeIcon: /* @__PURE__ */ React135.createElement(CloseOutlined_default2, {
         className: `${prefixCls}-close-icon`
       }),
       closeIconRender: (icon) => renderCloseIcon(prefixCls, icon)
@@ -42548,7 +42538,7 @@ html body {
       closeIcon: mergedCloseIcon,
       afterClose: closableAfterClose
     }, ariaProps) : false;
-    const mergedModalRender = modalRender ? (node2) => /* @__PURE__ */ React136.createElement("div", {
+    const mergedModalRender = modalRender ? (node2) => /* @__PURE__ */ React135.createElement("div", {
       className: `${prefixCls}-render`
     }, modalRender(node2)) : void 0;
     const panelClassName = `.${prefixCls}-${modalRender ? "render" : "container"}`;
@@ -42567,13 +42557,13 @@ html body {
     const [mergedClassNames, mergedStyles] = useMergeSemantic([contextClassNames, classNames, maskBlurClassName], [contextStyles, styles], {
       props: mergedProps
     });
-    const [numWidth, responsiveWidth] = React136.useMemo(() => {
+    const [numWidth, responsiveWidth] = React135.useMemo(() => {
       if (width && typeof width === "object") {
         return [void 0, width];
       }
       return [width, void 0];
     }, [width]);
-    const responsiveWidthVars = React136.useMemo(() => {
+    const responsiveWidthVars = React135.useMemo(() => {
       const vars = {};
       if (responsiveWidth) {
         Object.keys(responsiveWidth).forEach((breakpoint) => {
@@ -42585,12 +42575,12 @@ html body {
       }
       return vars;
     }, [prefixCls, responsiveWidth]);
-    return /* @__PURE__ */ React136.createElement(ContextIsolator_default, {
+    return /* @__PURE__ */ React135.createElement(ContextIsolator_default, {
       form: true,
       space: true
-    }, /* @__PURE__ */ React136.createElement(zindexContext_default.Provider, {
+    }, /* @__PURE__ */ React135.createElement(zindexContext_default.Provider, {
       value: contextZIndex
-    }, /* @__PURE__ */ React136.createElement(es_default5, __spreadProps(__spreadValues({
+    }, /* @__PURE__ */ React135.createElement(es_default5, __spreadProps(__spreadValues({
       width: numWidth
     }, restProps), {
       zIndex,
@@ -42619,7 +42609,7 @@ html body {
       modalRender: mergedModalRender,
       focusTriggerAfterClose: mergedFocusable.focusTriggerAfterClose,
       focusTrap: mergedFocusable.trap
-    }), loading ? /* @__PURE__ */ React136.createElement(skeleton_default, {
+    }), loading ? /* @__PURE__ */ React135.createElement(skeleton_default, {
       active: true,
       title: false,
       paragraph: {
@@ -42761,20 +42751,20 @@ html body {
     if (!icon && icon !== null) {
       switch (type5) {
         case "info":
-          mergedIcon = /* @__PURE__ */ React137.createElement(InfoCircleFilled_default2, null);
+          mergedIcon = /* @__PURE__ */ React136.createElement(InfoCircleFilled_default2, null);
           break;
         case "success":
-          mergedIcon = /* @__PURE__ */ React137.createElement(CheckCircleFilled_default2, null);
+          mergedIcon = /* @__PURE__ */ React136.createElement(CheckCircleFilled_default2, null);
           break;
         case "error":
-          mergedIcon = /* @__PURE__ */ React137.createElement(CloseCircleFilled_default2, null);
+          mergedIcon = /* @__PURE__ */ React136.createElement(CloseCircleFilled_default2, null);
           break;
         default:
-          mergedIcon = /* @__PURE__ */ React137.createElement(ExclamationCircleFilled_default2, null);
+          mergedIcon = /* @__PURE__ */ React136.createElement(ExclamationCircleFilled_default2, null);
       }
     }
     const mergedOkCancel = okCancel != null ? okCancel : type5 === "confirm";
-    const mergedAutoFocusButton = React137.useMemo(() => {
+    const mergedAutoFocusButton = React136.useMemo(() => {
       const base = (focusable2 == null ? void 0 : focusable2.autoFocusButton) || autoFocusButton;
       return base || base === null ? base : "ok";
     }, [autoFocusButton, focusable2 == null ? void 0 : focusable2.autoFocusButton]);
@@ -42788,7 +42778,7 @@ html body {
     const {
       onClose
     } = closable && typeof closable === "object" ? closable : {};
-    const memoizedValue = React137.useMemo(() => {
+    const memoizedValue = React136.useMemo(() => {
       return __spreadValues({
         autoFocusButton: mergedAutoFocusButton,
         cancelTextLocale,
@@ -42797,31 +42787,31 @@ html body {
         onClose
       }, restProps);
     }, [mergedAutoFocusButton, cancelTextLocale, okTextLocale, mergedOkCancel, onClose, restProps]);
-    const footerOriginNode = /* @__PURE__ */ React137.createElement(React137.Fragment, null, /* @__PURE__ */ React137.createElement(ConfirmCancelBtn_default, null), /* @__PURE__ */ React137.createElement(ConfirmOkBtn_default, null));
+    const footerOriginNode = /* @__PURE__ */ React136.createElement(React136.Fragment, null, /* @__PURE__ */ React136.createElement(ConfirmCancelBtn_default, null), /* @__PURE__ */ React136.createElement(ConfirmOkBtn_default, null));
     const hasTitle = isNonNullable_default(props.title) && props.title !== "";
     const hasIcon = isNonNullable_default(mergedIcon);
     const bodyCls = `${confirmPrefixCls}-body`;
-    return /* @__PURE__ */ React137.createElement("div", {
+    return /* @__PURE__ */ React136.createElement("div", {
       className: `${confirmPrefixCls}-body-wrapper`
-    }, /* @__PURE__ */ React137.createElement("div", {
+    }, /* @__PURE__ */ React136.createElement("div", {
       className: clsx(bodyCls, {
         [`${bodyCls}-has-title`]: hasTitle,
         [`${bodyCls}-no-icon`]: !hasIcon
       })
-    }, mergedIcon, /* @__PURE__ */ React137.createElement("div", {
+    }, mergedIcon, /* @__PURE__ */ React136.createElement("div", {
       className: `${confirmPrefixCls}-paragraph`
-    }, hasTitle && /* @__PURE__ */ React137.createElement("span", {
+    }, hasTitle && /* @__PURE__ */ React136.createElement("span", {
       className: `${confirmPrefixCls}-title`
-    }, props.title), /* @__PURE__ */ React137.createElement("div", {
+    }, props.title), /* @__PURE__ */ React136.createElement("div", {
       className: `${confirmPrefixCls}-content`
-    }, props.content))), footer === void 0 || typeof footer === "function" ? /* @__PURE__ */ React137.createElement(ModalContextProvider, {
+    }, props.content))), footer === void 0 || typeof footer === "function" ? /* @__PURE__ */ React136.createElement(ModalContextProvider, {
       value: memoizedValue
-    }, /* @__PURE__ */ React137.createElement("div", {
+    }, /* @__PURE__ */ React136.createElement("div", {
       className: `${confirmPrefixCls}-btns`
     }, typeof footer === "function" ? footer(footerOriginNode, {
       OkBtn: ConfirmOkBtn_default,
       CancelBtn: ConfirmCancelBtn_default
-    }) : footerOriginNode)) : footer, /* @__PURE__ */ React137.createElement(confirm_default, {
+    }) : footerOriginNode)) : footer, /* @__PURE__ */ React136.createElement(confirm_default, {
       prefixCls
     }));
   };
@@ -42860,20 +42850,20 @@ html body {
     const classString = clsx(confirmPrefixCls, `${confirmPrefixCls}-${props.type}`, {
       [`${confirmPrefixCls}-rtl`]: direction === "rtl"
     }, props.className);
-    const mergedMask = React137.useMemo(() => {
+    const mergedMask = React136.useMemo(() => {
       var _a;
       const nextMaskConfig = normalizeMaskConfig(mask, maskClosable);
       (_a = nextMaskConfig.closable) != null ? _a : nextMaskConfig.closable = false;
       return nextMaskConfig;
     }, [mask, maskClosable]);
     const [, token2] = useToken();
-    const mergedZIndex = React137.useMemo(() => {
+    const mergedZIndex = React136.useMemo(() => {
       if (zIndex !== void 0) {
         return zIndex;
       }
       return token2.zIndexPopupBase + CONTAINER_MAX_OFFSET;
     }, [zIndex, token2]);
-    return /* @__PURE__ */ React137.createElement(Modal_default, __spreadProps(__spreadValues({}, props), {
+    return /* @__PURE__ */ React136.createElement(Modal_default, __spreadProps(__spreadValues({}, props), {
       className: classString,
       wrapClassName: clsx({
         [`${confirmPrefixCls}-centered`]: !!props.centered
@@ -42897,7 +42887,7 @@ html body {
       width,
       zIndex: mergedZIndex,
       closable
-    }), /* @__PURE__ */ React137.createElement(ConfirmContent, __spreadProps(__spreadValues({}, props), {
+    }), /* @__PURE__ */ React136.createElement(ConfirmContent, __spreadProps(__spreadValues({}, props), {
       confirmPrefixCls,
       okButtonProps: __spreadValues(__spreadValues({}, contextOkButtonProps), okButtonProps),
       cancelButtonProps: __spreadValues(__spreadValues({}, contextCancelButtonProps), cancelButtonProps)
@@ -42910,12 +42900,12 @@ html body {
       direction,
       theme
     } = props;
-    return /* @__PURE__ */ React137.createElement(config_provider_default, {
+    return /* @__PURE__ */ React136.createElement(config_provider_default, {
       prefixCls: rootPrefixCls,
       iconPrefixCls,
       direction,
       theme
-    }, /* @__PURE__ */ React137.createElement(ConfirmDialog, __spreadValues({}, props)));
+    }, /* @__PURE__ */ React136.createElement(ConfirmDialog, __spreadValues({}, props)));
   };
   if (true) {
     ConfirmDialog.displayName = "ConfirmDialog";
@@ -42941,7 +42931,7 @@ html body {
       direction
     } = props;
     const runtimeLocale2 = getConfirmLocale();
-    const config = (0, import_react70.useContext)(ConfigContext);
+    const config = (0, import_react69.useContext)(ConfigContext);
     const rootPrefixCls = getRootPrefixCls() || config.getPrefixCls();
     const prefixCls = customizePrefixCls || `${rootPrefixCls}-modal`;
     let mergedGetContainer = getContainer2;
@@ -42951,7 +42941,7 @@ html body {
         true ? warning_default2(false, "Modal", "Static method not support `getContainer` to be `false` since it do not have context env.") : void 0;
       }
     }
-    return /* @__PURE__ */ import_react70.default.createElement(ConfirmDialog_default, __spreadProps(__spreadValues({}, props), {
+    return /* @__PURE__ */ import_react69.default.createElement(ConfirmDialog_default, __spreadProps(__spreadValues({}, props), {
       rootPrefixCls,
       prefixCls,
       iconPrefixCls: config.iconPrefixCls,
@@ -42995,8 +42985,8 @@ html body {
         const rootPrefixCls = global.getPrefixCls(void 0, getRootPrefixCls());
         const iconPrefixCls = global.getIconPrefixCls();
         const theme = global.getTheme();
-        const dom = /* @__PURE__ */ import_react70.default.createElement(ConfirmDialogWrapper2, __spreadValues({}, props));
-        render(/* @__PURE__ */ import_react70.default.createElement(config_provider_default, {
+        const dom = /* @__PURE__ */ import_react69.default.createElement(ConfirmDialogWrapper2, __spreadValues({}, props));
+        render(/* @__PURE__ */ import_react69.default.createElement(config_provider_default, {
           prefixCls: rootPrefixCls,
           iconPrefixCls,
           theme
@@ -43063,9 +43053,9 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/antd/es/modal/useModal/HookModal.js
-  var React139 = __toESM(require_react());
+  var React138 = __toESM(require_react());
   "use client";
-  var HookModal = /* @__PURE__ */ React139.forwardRef((props, ref) => {
+  var HookModal = /* @__PURE__ */ React138.forwardRef((props, ref) => {
     var _b;
     const _a = props, {
       afterClose: hookAfterClose,
@@ -43074,12 +43064,12 @@ html body {
       "afterClose",
       "config"
     ]);
-    const [open2, setOpen] = React139.useState(true);
-    const [innerConfig, setInnerConfig] = React139.useState(config);
+    const [open2, setOpen] = React138.useState(true);
+    const [innerConfig, setInnerConfig] = React138.useState(config);
     const {
       direction,
       getPrefixCls
-    } = React139.useContext(ConfigContext);
+    } = React138.useContext(ConfigContext);
     const prefixCls = getPrefixCls("modal");
     const rootPrefixCls = getPrefixCls();
     const afterClose = () => {
@@ -43096,7 +43086,7 @@ html body {
         }, ...args.slice(1));
       }
     };
-    React139.useImperativeHandle(ref, () => ({
+    React138.useImperativeHandle(ref, () => ({
       destroy: close,
       update: (newConfig) => {
         setInnerConfig((originConfig) => {
@@ -43107,7 +43097,7 @@ html body {
     }));
     const mergedOkCancel = (_b = innerConfig.okCancel) != null ? _b : innerConfig.type === "confirm";
     const [contextLocale] = useLocale_default("Modal", en_US_default6.Modal);
-    return /* @__PURE__ */ React139.createElement(ConfirmDialog_default, __spreadValues(__spreadProps(__spreadValues({
+    return /* @__PURE__ */ React138.createElement(ConfirmDialog_default, __spreadValues(__spreadProps(__spreadValues({
       prefixCls,
       rootPrefixCls
     }, innerConfig), {
@@ -43124,17 +43114,17 @@ html body {
   // ../custom_dashboard/node_modules/antd/es/modal/useModal/index.js
   "use client";
   var uuid4 = 0;
-  var ElementsHolder = /* @__PURE__ */ React140.memo(/* @__PURE__ */ React140.forwardRef((_props, ref) => {
+  var ElementsHolder = /* @__PURE__ */ React139.memo(/* @__PURE__ */ React139.forwardRef((_props, ref) => {
     const [elements, patchElement] = usePatchElement();
-    React140.useImperativeHandle(ref, () => ({
+    React139.useImperativeHandle(ref, () => ({
       patchElement
     }), [patchElement]);
-    return /* @__PURE__ */ React140.createElement(React140.Fragment, null, elements);
+    return /* @__PURE__ */ React139.createElement(React139.Fragment, null, elements);
   }));
   function useModal() {
-    const holderRef = React140.useRef(null);
-    const [actionQueue, setActionQueue] = React140.useState([]);
-    React140.useEffect(() => {
+    const holderRef = React139.useRef(null);
+    const [actionQueue, setActionQueue] = React139.useState([]);
+    React139.useEffect(() => {
       if (actionQueue.length) {
         const cloneQueue = _toConsumableArray(actionQueue);
         cloneQueue.forEach((action) => {
@@ -43143,17 +43133,17 @@ html body {
         setActionQueue([]);
       }
     }, [actionQueue]);
-    const getConfirmFunc = React140.useCallback((withFunc) => function hookConfirm(config) {
+    const getConfirmFunc = React139.useCallback((withFunc) => function hookConfirm(config) {
       var _a;
       uuid4 += 1;
-      const modalRef = /* @__PURE__ */ React140.createRef();
+      const modalRef = /* @__PURE__ */ React139.createRef();
       let resolvePromise;
       const promise = new Promise((resolve) => {
         resolvePromise = resolve;
       });
       let silent = false;
       let closeFunc;
-      const modal = /* @__PURE__ */ React140.createElement(HookModal_default, {
+      const modal = /* @__PURE__ */ React139.createElement(HookModal_default, {
         key: `modal-${uuid4}`,
         config: withFunc(config),
         ref: modalRef,
@@ -43199,14 +43189,14 @@ html body {
       };
       return instance;
     }, []);
-    const fns = React140.useMemo(() => ({
+    const fns = React139.useMemo(() => ({
       info: getConfirmFunc(withInfo),
       success: getConfirmFunc(withSuccess),
       error: getConfirmFunc(withError),
       warning: getConfirmFunc(withWarn),
       confirm: getConfirmFunc(withConfirm)
     }), [getConfirmFunc]);
-    return [fns, /* @__PURE__ */ React140.createElement(ElementsHolder, {
+    return [fns, /* @__PURE__ */ React139.createElement(ElementsHolder, {
       key: "modal-holder",
       ref: holderRef
     })];
@@ -43214,21 +43204,21 @@ html body {
   var useModal_default = useModal;
 
   // ../custom_dashboard/node_modules/antd/es/app/context.js
-  var import_react71 = __toESM(require_react());
-  var AppConfigContext = /* @__PURE__ */ import_react71.default.createContext({});
+  var import_react70 = __toESM(require_react());
+  var AppConfigContext = /* @__PURE__ */ import_react70.default.createContext({});
 
   // ../custom_dashboard/node_modules/antd/es/_util/PurePanel.js
-  var React142 = __toESM(require_react());
+  var React141 = __toESM(require_react());
   "use client";
   function withPureRenderTheme(Component7) {
-    return (props) => /* @__PURE__ */ React142.createElement(config_provider_default, {
+    return (props) => /* @__PURE__ */ React141.createElement(config_provider_default, {
       theme: {
         token: {
           motion: false,
           zIndexPopupBase: 0
         }
       }
-    }, /* @__PURE__ */ React142.createElement(Component7, __spreadValues({}, props)));
+    }, /* @__PURE__ */ React141.createElement(Component7, __spreadValues({}, props)));
   }
   var genPurePanel = (Component7, alignPropName, postProps, defaultPrefixCls2, getDropdownCls) => {
     const PurePanel6 = (props) => {
@@ -43236,15 +43226,15 @@ html body {
         prefixCls: customizePrefixCls,
         style: style2
       } = props;
-      const holderRef = React142.useRef(null);
-      const [popupHeight, setPopupHeight] = React142.useState(0);
-      const [popupWidth, setPopupWidth] = React142.useState(0);
+      const holderRef = React141.useRef(null);
+      const [popupHeight, setPopupHeight] = React141.useState(0);
+      const [popupWidth, setPopupWidth] = React141.useState(0);
       const [open2, setOpen] = useControlledState(false, props.open);
       const {
         getPrefixCls
-      } = React142.useContext(ConfigContext);
+      } = React141.useContext(ConfigContext);
       const prefixCls = getPrefixCls(defaultPrefixCls2 || "select", customizePrefixCls);
-      React142.useEffect(() => {
+      React141.useEffect(() => {
         setOpen(true);
         if (typeof ResizeObserver !== "undefined") {
           const resizeObserver = new ResizeObserver((entries) => {
@@ -43292,28 +43282,28 @@ html body {
         position: "relative",
         minWidth: popupWidth
       };
-      return /* @__PURE__ */ React142.createElement("div", {
+      return /* @__PURE__ */ React141.createElement("div", {
         ref: holderRef,
         style: mergedStyle
-      }, /* @__PURE__ */ React142.createElement(Component7, __spreadValues({}, mergedProps)));
+      }, /* @__PURE__ */ React141.createElement(Component7, __spreadValues({}, mergedProps)));
     };
     return withPureRenderTheme(PurePanel6);
   };
   var PurePanel_default2 = genPurePanel;
 
   // ../custom_dashboard/node_modules/antd/es/select/index.js
-  var React194 = __toESM(require_react());
+  var React193 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/select/es/Select.js
-  var React183 = __toESM(require_react());
+  var React182 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/select/es/BaseSelect/index.js
-  var React164 = __toESM(require_react());
+  var React163 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/select/es/hooks/useAllowClear.js
-  var import_react72 = __toESM(require_react());
+  var import_react71 = __toESM(require_react());
   var useAllowClear = (prefixCls, displayValues, allowClear, clearIcon, disabled = false, mergedSearchValue, mode) => {
-    const allowClearConfig = (0, import_react72.useMemo)(() => {
+    const allowClearConfig = (0, import_react71.useMemo)(() => {
       if (typeof allowClear === "boolean") {
         return {
           allowClear
@@ -43326,7 +43316,7 @@ html body {
         allowClear: false
       };
     }, [allowClear]);
-    return (0, import_react72.useMemo)(() => {
+    return (0, import_react71.useMemo)(() => {
       const mergedAllowClear = !disabled && allowClearConfig.allowClear !== false && (displayValues.length || mergedSearchValue) && !(mode === "combobox" && mergedSearchValue === "");
       return {
         allowClear: mergedAllowClear,
@@ -43336,18 +43326,18 @@ html body {
   };
 
   // ../custom_dashboard/node_modules/@rc-component/select/es/hooks/useBaseProps.js
-  var React143 = __toESM(require_react());
-  var BaseSelectContext = /* @__PURE__ */ React143.createContext(null);
+  var React142 = __toESM(require_react());
+  var BaseSelectContext = /* @__PURE__ */ React142.createContext(null);
   function useBaseProps() {
-    return React143.useContext(BaseSelectContext);
+    return React142.useContext(BaseSelectContext);
   }
 
   // ../custom_dashboard/node_modules/@rc-component/select/es/hooks/useLock.js
-  var React144 = __toESM(require_react());
+  var React143 = __toESM(require_react());
   function useLock(duration = 250) {
-    const lockRef = React144.useRef(null);
-    const timeoutRef = React144.useRef(null);
-    React144.useEffect(() => () => {
+    const lockRef = React143.useRef(null);
+    const timeoutRef = React143.useRef(null);
+    React143.useEffect(() => () => {
       window.clearTimeout(timeoutRef.current);
     }, []);
     function doLock(locked) {
@@ -43363,7 +43353,7 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/select/es/hooks/useSelectTriggerControl.js
-  var React145 = __toESM(require_react());
+  var React144 = __toESM(require_react());
   function isInside(elements, target) {
     return elements.filter((element) => element).some((element) => element.contains(target) || element === target);
   }
@@ -43383,14 +43373,14 @@ html body {
         triggerOpen(false);
       }
     });
-    React145.useEffect(() => {
+    React144.useEffect(() => {
       window.addEventListener("mousedown", onGlobalMouseDown);
       return () => window.removeEventListener("mousedown", onGlobalMouseDown);
     }, [onGlobalMouseDown]);
   }
 
   // ../custom_dashboard/node_modules/@rc-component/select/es/SelectTrigger.js
-  var React146 = __toESM(require_react());
+  var React145 = __toESM(require_react());
   function _extends25() {
     _extends25 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -43497,10 +43487,10 @@ html body {
     if (popupRender) {
       popupNode = popupRender(popupElement);
     }
-    const mergedBuiltinPlacements2 = React146.useMemo(() => builtinPlacements || getBuiltInPlacements(popupMatchSelectWidth), [builtinPlacements, popupMatchSelectWidth]);
+    const mergedBuiltinPlacements2 = React145.useMemo(() => builtinPlacements || getBuiltInPlacements(popupMatchSelectWidth), [builtinPlacements, popupMatchSelectWidth]);
     const mergedTransitionName = animation ? `${popupPrefixCls}-${animation}` : transitionName;
     const isNumberPopupWidth = typeof popupMatchSelectWidth === "number";
-    const stretch = React146.useMemo(() => {
+    const stretch = React145.useMemo(() => {
       if (isNumberPopupWidth) {
         return null;
       }
@@ -43512,14 +43502,14 @@ html body {
         width: popupMatchSelectWidth
       });
     }
-    const triggerPopupRef = React146.useRef(null);
-    React146.useImperativeHandle(ref, () => ({
+    const triggerPopupRef = React145.useRef(null);
+    React145.useImperativeHandle(ref, () => ({
       getPopupElement: () => {
         var _a2;
         return (_a2 = triggerPopupRef.current) == null ? void 0 : _a2.popupElement;
       }
     }));
-    return /* @__PURE__ */ React146.createElement(es_default4, _extends25({}, restProps, {
+    return /* @__PURE__ */ React145.createElement(es_default4, _extends25({}, restProps, {
       showAction: onPopupVisibleChange ? ["click"] : [],
       hideAction: onPopupVisibleChange ? ["click"] : [],
       popupPlacement: placement || (direction === "rtl" ? "bottomRight" : "bottomLeft"),
@@ -43528,7 +43518,7 @@ html body {
       popupMotion: {
         motionName: mergedTransitionName
       },
-      popup: /* @__PURE__ */ React146.createElement("div", {
+      popup: /* @__PURE__ */ React145.createElement("div", {
         onMouseEnter: onPopupMouseEnter,
         onMouseDown: onPopupMouseDown,
         onBlur: onPopupBlur
@@ -43545,7 +43535,7 @@ html body {
       onPopupVisibleChange
     }), children);
   };
-  var RefSelectTrigger = /* @__PURE__ */ React146.forwardRef(SelectTrigger);
+  var RefSelectTrigger = /* @__PURE__ */ React145.forwardRef(SelectTrigger);
   if (true) {
     RefSelectTrigger.displayName = "SelectTrigger";
   }
@@ -43665,7 +43655,7 @@ html body {
   };
 
   // ../custom_dashboard/node_modules/@rc-component/select/es/BaseSelect/Polite.js
-  var React147 = __toESM(require_react());
+  var React146 = __toESM(require_react());
   function Polite(props) {
     const {
       visible,
@@ -43675,7 +43665,7 @@ html body {
       return null;
     }
     const MAX_COUNT = 50;
-    return /* @__PURE__ */ React147.createElement("span", {
+    return /* @__PURE__ */ React146.createElement("span", {
       "aria-live": "polite",
       style: {
         width: 0,
@@ -43691,7 +43681,7 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/select/es/hooks/useOpen.js
-  var import_react73 = __toESM(require_react());
+  var import_react72 = __toESM(require_react());
   var internalMacroTask = (fn) => {
     const channel = new MessageChannel();
     channel.port1.onmessage = fn;
@@ -43707,15 +43697,15 @@ html body {
     });
   };
   function useOpen(defaultOpen, propOpen, onOpen, postOpen) {
-    const [rendered, setRendered] = (0, import_react73.useState)(false);
-    (0, import_react73.useEffect)(() => {
+    const [rendered, setRendered] = (0, import_react72.useState)(false);
+    (0, import_react72.useEffect)(() => {
       setRendered(true);
     }, []);
     const [stateOpen, internalSetOpen] = useControlledState(defaultOpen, propOpen);
-    const [lock, setLock] = (0, import_react73.useState)(false);
+    const [lock, setLock] = (0, import_react72.useState)(false);
     const ssrSafeOpen = rendered ? stateOpen : false;
     const mergedOpen = postOpen(ssrSafeOpen);
-    const taskIdRef = (0, import_react73.useRef)(0);
+    const taskIdRef = (0, import_react72.useRef)(0);
     const triggerEvent = useEvent_default((nextOpen) => {
       if (onOpen && mergedOpen !== nextOpen) {
         onOpen(nextOpen);
@@ -43748,10 +43738,10 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/select/es/SelectInput/index.js
-  var React162 = __toESM(require_react());
+  var React161 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/select/es/SelectInput/Affix.js
-  var React148 = __toESM(require_react());
+  var React147 = __toESM(require_react());
   function Affix(props) {
     const _a = props, {
       children
@@ -43761,28 +43751,28 @@ html body {
     if (!children) {
       return null;
     }
-    return /* @__PURE__ */ React148.createElement("div", restProps, children);
+    return /* @__PURE__ */ React147.createElement("div", restProps, children);
   }
 
   // ../custom_dashboard/node_modules/@rc-component/select/es/SelectInput/Content/index.js
-  var React161 = __toESM(require_react());
+  var React160 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/select/es/SelectInput/Content/SingleContent.js
-  var React153 = __toESM(require_react());
+  var React152 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/select/es/SelectInput/Input.js
-  var React150 = __toESM(require_react());
+  var React149 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/select/es/SelectInput/context.js
-  var React149 = __toESM(require_react());
-  var SelectInputContext = /* @__PURE__ */ React149.createContext(null);
+  var React148 = __toESM(require_react());
+  var SelectInputContext = /* @__PURE__ */ React148.createContext(null);
   function useSelectInputContext() {
-    return React149.useContext(SelectInputContext);
+    return React148.useContext(SelectInputContext);
   }
   var context_default4 = SelectInputContext;
 
   // ../custom_dashboard/node_modules/@rc-component/select/es/SelectInput/Input.js
-  var Input = /* @__PURE__ */ React150.forwardRef((props, ref) => {
+  var Input = /* @__PURE__ */ React149.forwardRef((props, ref) => {
     const _a = props, {
       onChange,
       onKeyDown: onKeyDown2,
@@ -43825,10 +43815,10 @@ html body {
       disabled
     } = useBaseProps() || {};
     const inputCls = clsx(`${prefixCls}-input`, classNames == null ? void 0 : classNames.input, className);
-    const compositionStatusRef = React150.useRef(false);
-    const pastedTextRef = React150.useRef(null);
-    const inputRef = React150.useRef(null);
-    React150.useImperativeHandle(ref, () => inputRef.current);
+    const compositionStatusRef = React149.useRef(false);
+    const pastedTextRef = React149.useRef(null);
+    const inputRef = React149.useRef(null);
+    React149.useImperativeHandle(ref, () => inputRef.current);
     const handleChange = (event) => {
       let {
         value: nextVal
@@ -43878,7 +43868,7 @@ html body {
       const pastedValue = clipboardData == null ? void 0 : clipboardData.getData("text");
       pastedTextRef.current = pastedValue || "";
     };
-    const [widthCssVar, setWidthCssVar] = React150.useState(void 0);
+    const [widthCssVar, setWidthCssVar] = React149.useState(void 0);
     useLayoutEffect_default(() => {
       const input = inputRef.current;
       if (syncWidth && input) {
@@ -43915,7 +43905,7 @@ html body {
       "aria-controls": open2 ? `${id}_list` : void 0,
       "aria-activedescendant": open2 ? activeDescendantId : void 0
     });
-    if (/* @__PURE__ */ React150.isValidElement(InputComponent)) {
+    if (/* @__PURE__ */ React149.isValidElement(InputComponent)) {
       const existingProps = InputComponent.props || {};
       const mergedProps = __spreadValues(__spreadValues({
         placeholder: props.placeholder || placeholder
@@ -43931,15 +43921,15 @@ html body {
         }
       });
       mergedProps.ref = composeRef(InputComponent.ref, sharedInputProps.ref);
-      return /* @__PURE__ */ React150.cloneElement(InputComponent, mergedProps);
+      return /* @__PURE__ */ React149.cloneElement(InputComponent, mergedProps);
     }
     const Component7 = InputComponent;
-    return /* @__PURE__ */ React150.createElement(Component7, sharedInputProps);
+    return /* @__PURE__ */ React149.createElement(Component7, sharedInputProps);
   });
   var Input_default2 = Input;
 
   // ../custom_dashboard/node_modules/@rc-component/select/es/SelectInput/Content/Placeholder.js
-  var React151 = __toESM(require_react());
+  var React150 = __toESM(require_react());
   function Placeholder(props) {
     const {
       prefixCls,
@@ -43956,7 +43946,7 @@ html body {
     if (displayValues.length) {
       return null;
     }
-    return /* @__PURE__ */ React151.createElement("div", {
+    return /* @__PURE__ */ React150.createElement("div", {
       className: clsx(`${prefixCls}-placeholder`, classNames == null ? void 0 : classNames.placeholder),
       style: __spreadValues({
         visibility: show ? "visible" : "hidden"
@@ -43965,8 +43955,8 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/select/es/SelectContext.js
-  var React152 = __toESM(require_react());
-  var SelectContext = /* @__PURE__ */ React152.createContext(null);
+  var React151 = __toESM(require_react());
+  var SelectContext = /* @__PURE__ */ React151.createContext(null);
   var SelectContext_default = SelectContext;
 
   // ../custom_dashboard/node_modules/@rc-component/select/es/utils/commonUtil.js
@@ -44013,7 +44003,7 @@ html body {
     };
     return _extends26.apply(this, arguments);
   }
-  var SingleContent = /* @__PURE__ */ React153.forwardRef(({
+  var SingleContent = /* @__PURE__ */ React152.forwardRef(({
     inputProps
   }, ref) => {
     const {
@@ -44032,17 +44022,17 @@ html body {
       classNames,
       styles
     } = useBaseProps();
-    const selectContext = React153.useContext(SelectContext_default);
-    const [inputChanged, setInputChanged] = React153.useState(false);
+    const selectContext = React152.useContext(SelectContext_default);
+    const [inputChanged, setInputChanged] = React152.useState(false);
     const combobox = mode === "combobox";
     const displayValue = displayValues[0];
-    const mergedSearchValue = React153.useMemo(() => {
+    const mergedSearchValue = React152.useMemo(() => {
       if (combobox && activeValue && !inputChanged && triggerOpen) {
         return activeValue;
       }
       return showSearch ? searchValue : "";
     }, [combobox, activeValue, inputChanged, triggerOpen, searchValue, showSearch]);
-    const [optionClassName, optionStyle, optionTitle, hasOptionStyle] = React153.useMemo(() => {
+    const [optionClassName, optionStyle, optionTitle, hasOptionStyle] = React152.useMemo(() => {
       let className;
       let style2;
       let titleValue;
@@ -44063,27 +44053,27 @@ html body {
       const nextHasStyle = !!className || !!style2;
       return [className, style2, titleValue, nextHasStyle];
     }, [displayValue, selectContext == null ? void 0 : selectContext.flattenOptions, rootTitle]);
-    React153.useEffect(() => {
+    React152.useEffect(() => {
       if (combobox) {
         setInputChanged(false);
       }
     }, [combobox, activeValue]);
     const showHasValueCls = displayValue && displayValue.label !== null && displayValue.label !== void 0 && String(displayValue.label).trim() !== "";
     const shouldRenderValue = !(combobox && (components == null ? void 0 : components.input));
-    const renderValue = shouldRenderValue ? displayValue ? hasOptionStyle ? /* @__PURE__ */ React153.createElement("div", {
+    const renderValue = shouldRenderValue ? displayValue ? hasOptionStyle ? /* @__PURE__ */ React152.createElement("div", {
       className: clsx(`${prefixCls}-content-value`, optionClassName),
       style: __spreadValues(__spreadValues({}, mergedSearchValue ? {
         visibility: "hidden"
       } : {}), optionStyle),
       title: optionTitle
-    }, displayValue.label) : displayValue.label : /* @__PURE__ */ React153.createElement(Placeholder, {
+    }, displayValue.label) : displayValue.label : /* @__PURE__ */ React152.createElement(Placeholder, {
       show: !mergedSearchValue
     }) : null;
-    return /* @__PURE__ */ React153.createElement("div", {
+    return /* @__PURE__ */ React152.createElement("div", {
       className: clsx(`${prefixCls}-content`, showHasValueCls && `${prefixCls}-content-has-value`, mergedSearchValue && `${prefixCls}-content-has-search-value`, hasOptionStyle && `${prefixCls}-content-has-option-style`, classNames == null ? void 0 : classNames.content),
       style: styles == null ? void 0 : styles.content,
       title: hasOptionStyle ? void 0 : optionTitle
-    }, renderValue, /* @__PURE__ */ React153.createElement(Input_default2, _extends26({
+    }, renderValue, /* @__PURE__ */ React152.createElement(Input_default2, _extends26({
       ref
     }, inputProps, {
       value: mergedSearchValue,
@@ -44098,14 +44088,14 @@ html body {
   var SingleContent_default = SingleContent;
 
   // ../custom_dashboard/node_modules/@rc-component/select/es/SelectInput/Content/MultipleContent.js
-  var React160 = __toESM(require_react());
+  var React159 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/overflow/es/Overflow.js
-  var React158 = __toESM(require_react());
-  var import_react75 = __toESM(require_react());
+  var React157 = __toESM(require_react());
+  var import_react74 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/overflow/es/Item.js
-  var React154 = __toESM(require_react());
+  var React153 = __toESM(require_react());
   var UNDEFINED = void 0;
   function InternalItem(props, ref) {
     const _a = props, {
@@ -44143,7 +44133,7 @@ html body {
     function internalRegisterSize(width) {
       registerSize(itemKey3, width);
     }
-    React154.useEffect(() => () => {
+    React153.useEffect(() => () => {
       internalRegisterSize(null);
     }, []);
     const childNode = renderItem && item !== UNDEFINED ? renderItem(item, {
@@ -44164,14 +44154,14 @@ html body {
     if (mergedHidden) {
       overflowProps["aria-hidden"] = true;
     }
-    let itemNode = /* @__PURE__ */ React154.createElement(Component7, _extends17({
+    let itemNode = /* @__PURE__ */ React153.createElement(Component7, _extends17({
       className: clsx(!invalidate && prefixCls, className),
       style: __spreadValues(__spreadValues({}, overflowStyle), style2)
     }, overflowProps, restProps, {
       ref
     }), childNode);
     if (responsive) {
-      itemNode = /* @__PURE__ */ React154.createElement(es_default, {
+      itemNode = /* @__PURE__ */ React153.createElement(es_default, {
         onResize: ({
           offsetWidth
         }) => {
@@ -44182,14 +44172,14 @@ html body {
     }
     return itemNode;
   }
-  var Item = /* @__PURE__ */ React154.forwardRef(InternalItem);
+  var Item = /* @__PURE__ */ React153.forwardRef(InternalItem);
   if (true) {
     Item.displayName = "Item";
   }
   var Item_default = Item;
 
   // ../custom_dashboard/node_modules/@rc-component/overflow/es/hooks/useEffectState.js
-  var React155 = __toESM(require_react());
+  var React154 = __toESM(require_react());
   var import_react_dom4 = __toESM(require_react_dom());
 
   // ../custom_dashboard/node_modules/@rc-component/overflow/es/hooks/channelUpdate.js
@@ -44205,7 +44195,7 @@ html body {
 
   // ../custom_dashboard/node_modules/@rc-component/overflow/es/hooks/useEffectState.js
   function useBatcher() {
-    const updateFuncRef = React155.useRef(null);
+    const updateFuncRef = React154.useRef(null);
     const notifyEffectUpdate = (callback) => {
       if (!updateFuncRef.current) {
         updateFuncRef.current = [];
@@ -44223,7 +44213,7 @@ html body {
     return notifyEffectUpdate;
   }
   function useEffectState(notifyEffectUpdate, defaultValue) {
-    const [stateValue, setStateValue] = React155.useState(defaultValue);
+    const [stateValue, setStateValue] = React154.useState(defaultValue);
     const setEffectVal = useEvent_default((nextValue) => {
       notifyEffectUpdate(() => {
         setStateValue(nextValue);
@@ -44233,22 +44223,22 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/overflow/es/RawItem.js
-  var React157 = __toESM(require_react());
+  var React156 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/overflow/es/context.js
-  var import_react74 = __toESM(require_react());
-  var OverflowContext = /* @__PURE__ */ import_react74.default.createContext(null);
+  var import_react73 = __toESM(require_react());
+  var OverflowContext = /* @__PURE__ */ import_react73.default.createContext(null);
 
   // ../custom_dashboard/node_modules/@rc-component/overflow/es/RawItem.js
   var InternalRawItem = (props, ref) => {
-    const context = React157.useContext(OverflowContext);
+    const context = React156.useContext(OverflowContext);
     if (!context) {
       const _a = props, {
         component: Component7 = "div"
       } = _a, restProps2 = __objRest(_a, [
         "component"
       ]);
-      return /* @__PURE__ */ React157.createElement(Component7, _extends17({}, restProps2, {
+      return /* @__PURE__ */ React156.createElement(Component7, _extends17({}, restProps2, {
         ref
       }));
     }
@@ -44262,14 +44252,14 @@ html body {
     } = _c, restProps = __objRest(_c, [
       "className"
     ]);
-    return /* @__PURE__ */ React157.createElement(OverflowContext.Provider, {
+    return /* @__PURE__ */ React156.createElement(OverflowContext.Provider, {
       value: null
-    }, /* @__PURE__ */ React157.createElement(Item_default, _extends17({
+    }, /* @__PURE__ */ React156.createElement(Item_default, _extends17({
       ref,
       className: clsx(contextClassName, className)
     }, restContext, restProps)));
   };
-  var RawItem = /* @__PURE__ */ React157.forwardRef(InternalRawItem);
+  var RawItem = /* @__PURE__ */ React156.forwardRef(InternalRawItem);
   if (true) {
     RawItem.displayName = "RawItem";
   }
@@ -44328,22 +44318,22 @@ html body {
     const [restWidth, setRestWidth] = useEffectState(notifyEffectUpdate, 0);
     const [prefixWidth, setPrefixWidth] = useEffectState(notifyEffectUpdate, 0);
     const [suffixWidth, setSuffixWidth] = useEffectState(notifyEffectUpdate, 0);
-    const [suffixFixedStart, setSuffixFixedStart] = (0, import_react75.useState)(null);
-    const [displayCount, setDisplayCount] = (0, import_react75.useState)(null);
-    const mergedDisplayCount = React158.useMemo(() => {
+    const [suffixFixedStart, setSuffixFixedStart] = (0, import_react74.useState)(null);
+    const [displayCount, setDisplayCount] = (0, import_react74.useState)(null);
+    const mergedDisplayCount = React157.useMemo(() => {
       if (displayCount === null && fullySSR) {
         return Number.MAX_SAFE_INTEGER;
       }
       return displayCount || 0;
     }, [displayCount, containerWidth]);
-    const [restReady, setRestReady] = (0, import_react75.useState)(false);
+    const [restReady, setRestReady] = (0, import_react74.useState)(false);
     const itemPrefixCls = `${prefixCls}-item`;
     const mergedRestWidth = Math.max(prevRestWidth, restWidth);
     const isResponsive = maxCount === RESPONSIVE;
     const shouldResponsive = data.length && isResponsive;
     const invalidate = maxCount === INVALIDATE;
     const showRest = shouldResponsive || typeof maxCount === "number" && data.length > maxCount;
-    const mergedData = (0, import_react75.useMemo)(() => {
+    const mergedData = (0, import_react74.useMemo)(() => {
       let items = data;
       if (shouldResponsive) {
         if (containerWidth === null && fullySSR) {
@@ -44356,20 +44346,20 @@ html body {
       }
       return items;
     }, [data, itemWidth, containerWidth, maxCount, shouldResponsive]);
-    const omittedItems = (0, import_react75.useMemo)(() => {
+    const omittedItems = (0, import_react74.useMemo)(() => {
       if (shouldResponsive) {
         return data.slice(mergedDisplayCount + 1);
       }
       return data.slice(mergedData.length);
     }, [data, mergedData, shouldResponsive, mergedDisplayCount]);
-    const getKey3 = (0, import_react75.useCallback)((item, index2) => {
+    const getKey3 = (0, import_react74.useCallback)((item, index2) => {
       var _a2;
       if (typeof itemKey3 === "function") {
         return itemKey3(item);
       }
       return (_a2 = itemKey3 && (item == null ? void 0 : item[itemKey3])) != null ? _a2 : index2;
     }, [itemKey3]);
-    const mergedRenderItem = (0, import_react75.useCallback)(renderItem || ((item) => item), [renderItem]);
+    const mergedRenderItem = (0, import_react74.useCallback)(renderItem || ((item) => item), [renderItem]);
     function updateDisplayCount(count, suffixFixedStartVal, notReady) {
       if (displayCount === count && (suffixFixedStartVal === void 0 || suffixFixedStartVal === suffixFixedStart)) {
         return;
@@ -44459,7 +44449,7 @@ html body {
     };
     const internalRenderItemNode = renderRawItem ? (item, index2) => {
       const key = getKey3(item, index2);
-      return /* @__PURE__ */ React158.createElement(OverflowContext.Provider, {
+      return /* @__PURE__ */ React157.createElement(OverflowContext.Provider, {
         key,
         value: __spreadProps(__spreadValues({}, itemSharedProps), {
           order: index2,
@@ -44471,7 +44461,7 @@ html body {
       }, renderRawItem(item, index2));
     } : (item, index2) => {
       const key = getKey3(item, index2);
-      return /* @__PURE__ */ React158.createElement(Item_default, _extends17({}, itemSharedProps, {
+      return /* @__PURE__ */ React157.createElement(Item_default, _extends17({}, itemSharedProps, {
         order: index2,
         key,
         item,
@@ -44488,21 +44478,21 @@ html body {
       display: displayRest
     };
     const mergedRenderRest = renderRest || defaultRenderRest;
-    const restNode = renderRawRest ? /* @__PURE__ */ React158.createElement(OverflowContext.Provider, {
+    const restNode = renderRawRest ? /* @__PURE__ */ React157.createElement(OverflowContext.Provider, {
       value: __spreadValues(__spreadValues({}, itemSharedProps), restContextProps)
-    }, renderRawRest(omittedItems)) : /* @__PURE__ */ React158.createElement(Item_default, _extends17({}, itemSharedProps, restContextProps), typeof mergedRenderRest === "function" ? mergedRenderRest(omittedItems) : mergedRenderRest);
-    const overflowNode = /* @__PURE__ */ React158.createElement(Component7, _extends17({
+    }, renderRawRest(omittedItems)) : /* @__PURE__ */ React157.createElement(Item_default, _extends17({}, itemSharedProps, restContextProps), typeof mergedRenderRest === "function" ? mergedRenderRest(omittedItems) : mergedRenderRest);
+    const overflowNode = /* @__PURE__ */ React157.createElement(Component7, _extends17({
       className: clsx(!invalidate && prefixCls, className),
       style: style2,
       ref
-    }, restProps), prefix2 && /* @__PURE__ */ React158.createElement(Item_default, _extends17({}, itemSharedProps, {
+    }, restProps), prefix2 && /* @__PURE__ */ React157.createElement(Item_default, _extends17({}, itemSharedProps, {
       responsive: isResponsive,
       responsiveDisabled: !shouldResponsive,
       order: -1,
       className: `${itemPrefixCls}-prefix`,
       registerSize: registerPrefixSize,
       display: true
-    }), prefix2), mergedData.map(internalRenderItemNode), showRest ? restNode : null, suffix && /* @__PURE__ */ React158.createElement(Item_default, _extends17({}, itemSharedProps, {
+    }), prefix2), mergedData.map(internalRenderItemNode), showRest ? restNode : null, suffix && /* @__PURE__ */ React157.createElement(Item_default, _extends17({}, itemSharedProps, {
       responsive: isResponsive,
       responsiveDisabled: !shouldResponsive,
       order: mergedDisplayCount,
@@ -44511,12 +44501,12 @@ html body {
       display: true,
       style: suffixStyle
     }), suffix));
-    return isResponsive ? /* @__PURE__ */ React158.createElement(es_default, {
+    return isResponsive ? /* @__PURE__ */ React157.createElement(es_default, {
       onResize: onOverflowResize,
       disabled: !shouldResponsive
     }, overflowNode) : overflowNode;
   }
-  var ForwardOverflow = /* @__PURE__ */ React158.forwardRef(Overflow);
+  var ForwardOverflow = /* @__PURE__ */ React157.forwardRef(Overflow);
   ForwardOverflow.Item = RawItem_default;
   ForwardOverflow.RESPONSIVE = RESPONSIVE;
   ForwardOverflow.INVALIDATE = INVALIDATE;
@@ -44529,7 +44519,7 @@ html body {
   var es_default8 = Overflow_default;
 
   // ../custom_dashboard/node_modules/@rc-component/select/es/TransBtn.js
-  var React159 = __toESM(require_react());
+  var React158 = __toESM(require_react());
   var TransBtn = (props) => {
     const {
       className,
@@ -44541,7 +44531,7 @@ html body {
       onClick
     } = props;
     const icon = typeof customizeIcon === "function" ? customizeIcon(customizeIconProps) : customizeIcon;
-    return /* @__PURE__ */ React159.createElement("span", {
+    return /* @__PURE__ */ React158.createElement("span", {
       className,
       onMouseDown: (event) => {
         event.preventDefault();
@@ -44554,7 +44544,7 @@ html body {
       unselectable: "on",
       onClick,
       "aria-hidden": true
-    }, icon !== void 0 ? icon : /* @__PURE__ */ React159.createElement("span", {
+    }, icon !== void 0 ? icon : /* @__PURE__ */ React158.createElement("span", {
       className: clsx(className.split(/\s+/).map((cls) => `${cls}-icon`))
     }, children));
   };
@@ -44583,7 +44573,7 @@ html body {
     event.preventDefault();
     event.stopPropagation();
   };
-  var MultipleContent_default = /* @__PURE__ */ React160.forwardRef(function MultipleContent({
+  var MultipleContent_default = /* @__PURE__ */ React159.forwardRef(function MultipleContent({
     inputProps
   }, ref) {
     const {
@@ -44624,16 +44614,16 @@ html body {
     const onRemove = (value) => {
       onSelectorRemove == null ? void 0 : onSelectorRemove(value);
     };
-    const defaultRenderSelector = (item, content, itemDisabled, closable, onClose) => /* @__PURE__ */ React160.createElement("span", {
+    const defaultRenderSelector = (item, content, itemDisabled, closable, onClose) => /* @__PURE__ */ React159.createElement("span", {
       title: getTitle(item),
       className: clsx(selectionItemPrefixCls, {
         [`${selectionItemPrefixCls}-disabled`]: itemDisabled
       }, classNames == null ? void 0 : classNames.item),
       style: styles == null ? void 0 : styles.item
-    }, /* @__PURE__ */ React160.createElement("span", {
+    }, /* @__PURE__ */ React159.createElement("span", {
       className: clsx(`${selectionItemPrefixCls}-content`, classNames == null ? void 0 : classNames.itemContent),
       style: styles == null ? void 0 : styles.itemContent
-    }, content), closable && /* @__PURE__ */ React160.createElement(TransBtn_default, {
+    }, content), closable && /* @__PURE__ */ React159.createElement(TransBtn_default, {
       className: clsx(`${selectionItemPrefixCls}-remove`, classNames == null ? void 0 : classNames.itemRemove),
       style: styles == null ? void 0 : styles.itemRemove,
       onMouseDown: onPreventMouseDown,
@@ -44645,7 +44635,7 @@ html body {
         onPreventMouseDown(e3);
         onToggleOpen(!triggerOpen);
       };
-      return /* @__PURE__ */ React160.createElement("span", {
+      return /* @__PURE__ */ React159.createElement("span", {
         onMouseDown
       }, tagRender({
         label: content,
@@ -44690,15 +44680,15 @@ html body {
         title: content
       }, content, false);
     };
-    return /* @__PURE__ */ React160.createElement(es_default8, {
+    return /* @__PURE__ */ React159.createElement(es_default8, {
       prefixCls: `${prefixCls}-content`,
       className: classNames == null ? void 0 : classNames.content,
       style: styles == null ? void 0 : styles.content,
-      prefix: !displayValues.length && !inputValue && /* @__PURE__ */ React160.createElement(Placeholder, null),
+      prefix: !displayValues.length && !inputValue && /* @__PURE__ */ React159.createElement(Placeholder, null),
       data: displayValues,
       renderItem,
       renderRest,
-      suffix: /* @__PURE__ */ React160.createElement(Input_default2, _extends27({
+      suffix: /* @__PURE__ */ React159.createElement(Input_default2, _extends27({
         ref,
         disabled,
         readOnly: !inputEditable
@@ -44712,7 +44702,7 @@ html body {
   });
 
   // ../custom_dashboard/node_modules/@rc-component/select/es/SelectInput/Content/index.js
-  var SelectContent = /* @__PURE__ */ React161.forwardRef(function SelectContent2(_, ref) {
+  var SelectContent = /* @__PURE__ */ React160.forwardRef(function SelectContent2(_, ref) {
     const {
       multiple,
       onInputKeyDown,
@@ -44731,12 +44721,12 @@ html body {
       tabIndex
     });
     if (multiple) {
-      return /* @__PURE__ */ React161.createElement(MultipleContent_default, {
+      return /* @__PURE__ */ React160.createElement(MultipleContent_default, {
         ref,
         inputProps: sharedInputProps
       });
     }
-    return /* @__PURE__ */ React161.createElement(SingleContent_default, {
+    return /* @__PURE__ */ React160.createElement(SingleContent_default, {
       ref,
       inputProps: sharedInputProps
     });
@@ -44793,7 +44783,7 @@ html body {
     return _extends28.apply(this, arguments);
   }
   var DEFAULT_OMIT_PROPS = ["value", "onChange", "removeIcon", "placeholder", "maxTagCount", "maxTagTextLength", "maxTagPlaceholder", "choiceTransitionName", "onInputKeyDown", "onPopupScroll", "tabIndex", "activeValue", "onSelectorRemove", "focused"];
-  var SelectInput_default = /* @__PURE__ */ React162.forwardRef(function SelectInput(props, ref) {
+  var SelectInput_default = /* @__PURE__ */ React161.forwardRef(function SelectInput(props, ref) {
     const _a = props, {
       prefixCls,
       className,
@@ -44852,8 +44842,8 @@ html body {
       classNames,
       styles
     } = useBaseProps();
-    const rootRef = React162.useRef(null);
-    const inputRef = React162.useRef(null);
+    const rootRef = React161.useRef(null);
+    const inputRef = React161.useRef(null);
     const onInternalInputKeyDown = useEvent_default((event) => {
       const {
         which
@@ -44873,7 +44863,7 @@ html body {
         toggleOpen(true);
       }
     });
-    React162.useImperativeHandle(ref, () => {
+    React161.useImperativeHandle(ref, () => {
       return {
         focus: (options) => {
           var _a2, _b;
@@ -44933,33 +44923,33 @@ html body {
           };
         }
       });
-      if (/* @__PURE__ */ React162.isValidElement(RootComponent)) {
-        return /* @__PURE__ */ React162.cloneElement(RootComponent, __spreadProps(__spreadValues({}, mergedProps), {
+      if (/* @__PURE__ */ React161.isValidElement(RootComponent)) {
+        return /* @__PURE__ */ React161.cloneElement(RootComponent, __spreadProps(__spreadValues({}, mergedProps), {
           ref: composeRef(RootComponent.ref, rootRef)
         }));
       }
-      return /* @__PURE__ */ React162.createElement(RootComponent, _extends28({}, mergedProps, {
+      return /* @__PURE__ */ React161.createElement(RootComponent, _extends28({}, mergedProps, {
         ref: rootRef
       }));
     }
-    return /* @__PURE__ */ React162.createElement(context_default4.Provider, {
+    return /* @__PURE__ */ React161.createElement(context_default4.Provider, {
       value: contextValue
-    }, /* @__PURE__ */ React162.createElement("div", _extends28({}, omit(domProps, ariaKeys), {
+    }, /* @__PURE__ */ React161.createElement("div", _extends28({}, omit(domProps, ariaKeys), {
       ref: rootRef,
       className,
       style: style2,
       onMouseDown: onInternalMouseDown
-    }), /* @__PURE__ */ React162.createElement(Affix, {
+    }), /* @__PURE__ */ React161.createElement(Affix, {
       className: clsx(`${prefixCls}-prefix`, classNames == null ? void 0 : classNames.prefix),
       style: styles == null ? void 0 : styles.prefix
-    }, prefix2), /* @__PURE__ */ React162.createElement(Content_default2, {
+    }, prefix2), /* @__PURE__ */ React161.createElement(Content_default2, {
       ref: inputRef
-    }), /* @__PURE__ */ React162.createElement(Affix, {
+    }), /* @__PURE__ */ React161.createElement(Affix, {
       className: clsx(`${prefixCls}-suffix`, {
         [`${prefixCls}-suffix-loading`]: loading
       }, classNames == null ? void 0 : classNames.suffix),
       style: styles == null ? void 0 : styles.suffix
-    }, suffix), clearIcon && /* @__PURE__ */ React162.createElement(Affix, {
+    }, suffix), clearIcon && /* @__PURE__ */ React161.createElement(Affix, {
       className: clsx(`${prefixCls}-clear`, classNames == null ? void 0 : classNames.clear),
       style: styles == null ? void 0 : styles.clear,
       onMouseDown: (e3) => {
@@ -44970,9 +44960,9 @@ html body {
   });
 
   // ../custom_dashboard/node_modules/@rc-component/select/es/hooks/useComponents.js
-  var React163 = __toESM(require_react());
+  var React162 = __toESM(require_react());
   function useComponents(components, getInputElement, getRawInputElement) {
-    return React163.useMemo(() => {
+    return React162.useMemo(() => {
       let {
         root,
         input
@@ -45006,7 +44996,7 @@ html body {
     return _extends29.apply(this, arguments);
   }
   var isMultiple = (mode) => mode === "tags" || mode === "multiple";
-  var BaseSelect = /* @__PURE__ */ React164.forwardRef((props, ref) => {
+  var BaseSelect = /* @__PURE__ */ React163.forwardRef((props, ref) => {
     const _a = props, {
       id,
       prefixCls,
@@ -45123,11 +45113,11 @@ html body {
       "components"
     ]);
     const multiple = isMultiple(mode);
-    const containerRef = React164.useRef(null);
-    const triggerRef = React164.useRef(null);
-    const listRef = React164.useRef(null);
-    const [focused, setFocused] = React164.useState(false);
-    React164.useImperativeHandle(ref, () => {
+    const containerRef = React163.useRef(null);
+    const triggerRef = React163.useRef(null);
+    const listRef = React163.useRef(null);
+    const [focused, setFocused] = React163.useState(false);
+    React163.useImperativeHandle(ref, () => {
       var _a2, _b;
       return {
         focus: (_a2 = containerRef.current) == null ? void 0 : _a2.focus,
@@ -45140,7 +45130,7 @@ html body {
       };
     });
     const mergedComponents = useComponents(components, getInputElement, getRawInputElement);
-    const mergedSearchValue = React164.useMemo(() => {
+    const mergedSearchValue = React163.useMemo(() => {
       var _a2;
       if (mode !== "combobox") {
         return searchValue;
@@ -45151,7 +45141,7 @@ html body {
     const customizeInputElement = mode === "combobox" && typeof getInputElement === "function" && getInputElement() || null;
     const emptyListContent = !notFoundContent && emptyOptions;
     const [rawOpen, mergedOpen, triggerOpen, lockOptions] = useOpen(defaultOpen || false, open2, onPopupVisibleChange, (nextOpen) => disabled || emptyListContent ? false : nextOpen);
-    const tokenWithEnter = React164.useMemo(() => (tokenSeparators || []).some((tokenSeparator) => ["\n", "\r\n"].includes(tokenSeparator)), [tokenSeparators]);
+    const tokenWithEnter = React163.useMemo(() => (tokenSeparators || []).some((tokenSeparator) => ["\n", "\r\n"].includes(tokenSeparator)), [tokenSeparators]);
     const onInternalSearch = (searchText, fromTyping, isCompositing) => {
       if (multiple && isValidCount(maxCount) && displayValues.length >= maxCount) {
         return;
@@ -45185,19 +45175,19 @@ html body {
         source: "submit"
       });
     };
-    React164.useEffect(() => {
+    React163.useEffect(() => {
       if (!rawOpen && !multiple && mode !== "combobox") {
         onInternalSearch("", false, false);
       }
     }, [rawOpen]);
-    React164.useEffect(() => {
+    React163.useEffect(() => {
       if (disabled) {
         triggerOpen(false);
         setFocused(false);
       }
     }, [disabled, mergedOpen]);
     const [getClearLock, setClearLock] = useLock();
-    const keyLockRef = React164.useRef(false);
+    const keyLockRef = React163.useRef(false);
     const onInternalKeyDown = (event) => {
       var _a2;
       const clearLock = getClearLock();
@@ -45268,7 +45258,7 @@ html body {
       return [getDOM(containerRef.current), (_a2 = triggerRef.current) == null ? void 0 : _a2.getPopupElement()];
     };
     useSelectTriggerControl(getSelectElements, mergedOpen, triggerOpen, !!mergedComponents.root);
-    const internalMouseDownRef = React164.useRef(false);
+    const internalMouseDownRef = React163.useRef(false);
     const onInternalFocus = (event) => {
       setFocused(true);
       if (!disabled) {
@@ -45318,7 +45308,7 @@ html body {
         internalMouseDownRef.current = false;
       });
     };
-    const [, forceUpdate] = React164.useState({});
+    const [, forceUpdate] = React163.useState({});
     function onPopupMouseEnter() {
       forceUpdate({});
     }
@@ -45328,7 +45318,7 @@ html body {
         triggerOpen(newOpen);
       };
     }
-    const baseSelectContext = React164.useMemo(() => __spreadProps(__spreadValues({}, props), {
+    const baseSelectContext = React163.useMemo(() => __spreadProps(__spreadValues({}, props), {
       notFoundContent,
       open: mergedOpen,
       triggerOpen: mergedOpen,
@@ -45342,7 +45332,7 @@ html body {
       classNames,
       lockOptions
     }), [props, notFoundContent, triggerOpen, id, showSearch, multiple, mergedOpen, rawOpen, showScrollBar, styles, classNames, lockOptions]);
-    const mergedSuffixIcon = React164.useMemo(() => {
+    const mergedSuffixIcon = React163.useMemo(() => {
       const nextSuffix = suffix != null ? suffix : suffixIcon;
       if (typeof nextSuffix === "function") {
         return nextSuffix({
@@ -45369,7 +45359,7 @@ html body {
       allowClear: mergedAllowClear,
       clearIcon: clearNode
     } = useAllowClear(prefixCls, displayValues, allowClear, clearIcon, disabled, mergedSearchValue, mode);
-    const optionList = /* @__PURE__ */ React164.createElement(OptionList2, {
+    const optionList = /* @__PURE__ */ React163.createElement(OptionList2, {
       ref: listRef
     });
     const mergedClassName = clsx(prefixCls, className, {
@@ -45384,7 +45374,7 @@ html body {
       [`${prefixCls}-customize-input`]: customizeInputElement,
       [`${prefixCls}-show-search`]: showSearch
     });
-    let renderNode = /* @__PURE__ */ React164.createElement(SelectInput_default, _extends29({}, restProps, {
+    let renderNode = /* @__PURE__ */ React163.createElement(SelectInput_default, _extends29({}, restProps, {
       ref: containerRef,
       prefixCls,
       className: mergedClassName,
@@ -45411,7 +45401,7 @@ html body {
       onMouseDown: onRootMouseDown,
       components: mergedComponents
     }));
-    renderNode = /* @__PURE__ */ React164.createElement(SelectTrigger_default, {
+    renderNode = /* @__PURE__ */ React163.createElement(SelectTrigger_default, {
       ref: triggerRef,
       disabled,
       prefixCls,
@@ -45434,9 +45424,9 @@ html body {
       onPopupMouseDown: onRootMouseDown,
       onPopupBlur: onRootBlur
     }, renderNode);
-    return /* @__PURE__ */ React164.createElement(BaseSelectContext.Provider, {
+    return /* @__PURE__ */ React163.createElement(BaseSelectContext.Provider, {
       value: baseSelectContext
-    }, /* @__PURE__ */ React164.createElement(Polite, {
+    }, /* @__PURE__ */ React163.createElement(Polite, {
       visible: focused && !mergedOpen,
       values: displayValues
     }), renderNode);
@@ -45457,13 +45447,13 @@ html body {
   var Option_default = Option;
 
   // ../custom_dashboard/node_modules/@rc-component/virtual-list/es/List.js
-  var React174 = __toESM(require_react());
-  var import_react80 = __toESM(require_react());
+  var React173 = __toESM(require_react());
+  var import_react79 = __toESM(require_react());
   var import_react_dom5 = __toESM(require_react_dom());
 
   // ../custom_dashboard/node_modules/@rc-component/virtual-list/es/Filler.js
-  var React165 = __toESM(require_react());
-  var Filler = /* @__PURE__ */ React165.forwardRef(({
+  var React164 = __toESM(require_react());
+  var Filler = /* @__PURE__ */ React164.forwardRef(({
     height,
     offsetY,
     offsetX,
@@ -45494,9 +45484,9 @@ html body {
         top: 0
       });
     }
-    return /* @__PURE__ */ React165.createElement("div", {
+    return /* @__PURE__ */ React164.createElement("div", {
       style: outerStyle
-    }, /* @__PURE__ */ React165.createElement(es_default, {
+    }, /* @__PURE__ */ React164.createElement(es_default, {
       onResize: ({
         offsetHeight
       }) => {
@@ -45504,7 +45494,7 @@ html body {
           onInnerResize();
         }
       }
-    }, /* @__PURE__ */ React165.createElement("div", _extends17({
+    }, /* @__PURE__ */ React164.createElement("div", _extends17({
       style: innerStyle,
       className: clsx({
         [`${prefixCls}-holder-inner`]: prefixCls
@@ -45516,18 +45506,18 @@ html body {
   var Filler_default = Filler;
 
   // ../custom_dashboard/node_modules/@rc-component/virtual-list/es/hooks/useChildren.js
-  var React167 = __toESM(require_react());
+  var React166 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/virtual-list/es/Item.js
-  var React166 = __toESM(require_react());
+  var React165 = __toESM(require_react());
   function Item2({
     children,
     setRef
   }) {
-    const refFunc = React166.useCallback((node2) => {
+    const refFunc = React165.useCallback((node2) => {
       setRef(node2);
     }, []);
-    return /* @__PURE__ */ React166.cloneElement(children, {
+    return /* @__PURE__ */ React165.cloneElement(children, {
       ref: refFunc
     });
   }
@@ -45545,7 +45535,7 @@ html body {
         offsetX
       });
       const key = getKey3(item);
-      return /* @__PURE__ */ React167.createElement(Item2, {
+      return /* @__PURE__ */ React166.createElement(Item2, {
         key,
         setRef: (ele) => setNodeRef(item, ele)
       }, node2);
@@ -45553,7 +45543,7 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/virtual-list/es/hooks/useDiffItem.js
-  var React168 = __toESM(require_react());
+  var React167 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/virtual-list/es/utils/algorithmUtil.js
   function findListDiffIndex(originList, targetList, getKey3) {
@@ -45599,9 +45589,9 @@ html body {
 
   // ../custom_dashboard/node_modules/@rc-component/virtual-list/es/hooks/useDiffItem.js
   function useDiffItem(data, getKey3, onDiff) {
-    const [prevData, setPrevData] = React168.useState(data);
-    const [diffItem, setDiffItem] = React168.useState(null);
-    React168.useEffect(() => {
+    const [prevData, setPrevData] = React167.useState(data);
+    const [diffItem, setDiffItem] = React167.useState(null);
+    React167.useEffect(() => {
       const diff = findListDiffIndex(prevData || [], data || [], getKey3);
       if ((diff == null ? void 0 : diff.index) !== void 0) {
         onDiff == null ? void 0 : onDiff(diff.index);
@@ -45613,17 +45603,17 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/virtual-list/es/hooks/useFrameWheel.js
-  var import_react77 = __toESM(require_react());
+  var import_react76 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/virtual-list/es/utils/isFirefox.js
   var isFF = typeof navigator === "object" && /Firefox/i.test(navigator.userAgent);
   var isFirefox_default = isFF;
 
   // ../custom_dashboard/node_modules/@rc-component/virtual-list/es/hooks/useOriginScroll.js
-  var import_react76 = __toESM(require_react());
+  var import_react75 = __toESM(require_react());
   var useOriginScroll_default = (isScrollAtTop, isScrollAtBottom, isScrollAtLeft, isScrollAtRight) => {
-    const lockRef = (0, import_react76.useRef)(false);
-    const lockTimeoutRef = (0, import_react76.useRef)(null);
+    const lockRef = (0, import_react75.useRef)(false);
+    const lockTimeoutRef = (0, import_react75.useRef)(null);
     function lockScroll() {
       clearTimeout(lockTimeoutRef.current);
       lockRef.current = true;
@@ -45631,7 +45621,7 @@ html body {
         lockRef.current = false;
       }, 50);
     }
-    const scrollPingRef = (0, import_react76.useRef)({
+    const scrollPingRef = (0, import_react75.useRef)({
       top: isScrollAtTop,
       bottom: isScrollAtBottom,
       left: isScrollAtLeft,
@@ -45655,10 +45645,10 @@ html body {
 
   // ../custom_dashboard/node_modules/@rc-component/virtual-list/es/hooks/useFrameWheel.js
   function useFrameWheel(inVirtual, isScrollAtTop, isScrollAtBottom, isScrollAtLeft, isScrollAtRight, horizontalScroll, onWheelDelta) {
-    const offsetRef = (0, import_react77.useRef)(0);
-    const nextFrameRef = (0, import_react77.useRef)(null);
-    const wheelValueRef = (0, import_react77.useRef)(null);
-    const isMouseScrollRef = (0, import_react77.useRef)(false);
+    const offsetRef = (0, import_react76.useRef)(0);
+    const nextFrameRef = (0, import_react76.useRef)(null);
+    const wheelValueRef = (0, import_react76.useRef)(null);
+    const isMouseScrollRef = (0, import_react76.useRef)(false);
     const originScroll = useOriginScroll_default(isScrollAtTop, isScrollAtBottom, isScrollAtLeft, isScrollAtRight);
     function onWheelY(e3, deltaY) {
       raf_default.cancel(nextFrameRef.current);
@@ -45687,8 +45677,8 @@ html body {
         event.preventDefault();
       }
     }
-    const wheelDirectionRef = (0, import_react77.useRef)(null);
-    const wheelDirectionCleanRef = (0, import_react77.useRef)(null);
+    const wheelDirectionRef = (0, import_react76.useRef)(null);
+    const wheelDirectionCleanRef = (0, import_react76.useRef)(null);
     function onWheel(event) {
       if (!inVirtual)
         return;
@@ -45728,9 +45718,9 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/virtual-list/es/hooks/useGetSize.js
-  var React169 = __toESM(require_react());
+  var React168 = __toESM(require_react());
   function useGetSize(mergedData, getKey3, heights, itemHeight) {
-    const [key2Index, bottomList] = React169.useMemo(() => [/* @__PURE__ */ new Map(), []], [mergedData, heights.id, itemHeight]);
+    const [key2Index, bottomList] = React168.useMemo(() => [/* @__PURE__ */ new Map(), []], [mergedData, heights.id, itemHeight]);
     const getSize2 = (startKey, endKey = startKey) => {
       var _a;
       let startIndex = key2Index.get(startKey);
@@ -45763,8 +45753,8 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/virtual-list/es/hooks/useHeights.js
-  var React170 = __toESM(require_react());
-  var import_react78 = __toESM(require_react());
+  var React169 = __toESM(require_react());
+  var import_react77 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/virtual-list/es/utils/CacheMap.js
   var CacheMap = class {
@@ -45797,10 +45787,10 @@ html body {
     return isNaN(num) ? 0 : num;
   }
   function useHeights(getKey3, onItemAdd, onItemRemove) {
-    const [updatedMark, setUpdatedMark] = React170.useState(0);
-    const instanceRef = (0, import_react78.useRef)(/* @__PURE__ */ new Map());
-    const heightsRef = (0, import_react78.useRef)(new CacheMap_default());
-    const promiseIdRef = (0, import_react78.useRef)(0);
+    const [updatedMark, setUpdatedMark] = React169.useState(0);
+    const instanceRef = (0, import_react77.useRef)(/* @__PURE__ */ new Map());
+    const heightsRef = (0, import_react77.useRef)(new CacheMap_default());
+    const promiseIdRef = (0, import_react77.useRef)(0);
     function cancelRaf() {
       promiseIdRef.current += 1;
     }
@@ -45859,21 +45849,21 @@ html body {
         }
       }
     }
-    (0, import_react78.useEffect)(() => {
+    (0, import_react77.useEffect)(() => {
       return cancelRaf;
     }, []);
     return [setInstanceRef, collectHeight, heightsRef.current, updatedMark];
   }
 
   // ../custom_dashboard/node_modules/@rc-component/virtual-list/es/hooks/useMobileTouchMove.js
-  var import_react79 = __toESM(require_react());
+  var import_react78 = __toESM(require_react());
   var SMOOTH_PTG = 14 / 15;
   function useMobileTouchMove(inVirtual, listRef, callback) {
-    const touchedRef = (0, import_react79.useRef)(false);
-    const touchXRef = (0, import_react79.useRef)(0);
-    const touchYRef = (0, import_react79.useRef)(0);
-    const elementRef = (0, import_react79.useRef)(null);
-    const intervalRef = (0, import_react79.useRef)(null);
+    const touchedRef = (0, import_react78.useRef)(false);
+    const touchXRef = (0, import_react78.useRef)(0);
+    const touchYRef = (0, import_react78.useRef)(0);
+    const elementRef = (0, import_react78.useRef)(null);
+    const intervalRef = (0, import_react78.useRef)(null);
     let cleanUpEvents;
     const onTouchMove = (e3) => {
       if (touchedRef.current) {
@@ -45948,7 +45938,7 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/virtual-list/es/hooks/useScrollDrag.js
-  var React171 = __toESM(require_react());
+  var React170 = __toESM(require_react());
   function smoothScrollOffset(offset3) {
     return Math.floor(offset3 ** 0.5);
   }
@@ -45957,7 +45947,7 @@ html body {
     return obj[horizontal ? "pageX" : "pageY"] - window[horizontal ? "scrollX" : "scrollY"];
   }
   function useScrollDrag(inVirtual, componentRef, onScrollOffset) {
-    React171.useEffect(() => {
+    React170.useEffect(() => {
       const ele = componentRef.current;
       if (inVirtual && ele) {
         let mouseDownLock = false;
@@ -46023,11 +46013,11 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/virtual-list/es/hooks/useScrollTo.js
-  var React172 = __toESM(require_react());
+  var React171 = __toESM(require_react());
   var MAX_TIMES = 10;
   function useScrollTo(containerRef, data, heights, itemHeight, getKey3, collectHeight, syncScrollTop, triggerFlash) {
-    const scrollRef = React172.useRef();
-    const [syncState, setSyncState] = React172.useState(null);
+    const scrollRef = React171.useRef();
+    const [syncState, setSyncState] = React171.useState(null);
     useLayoutEffect_default(() => {
       if (syncState && syncState.times < MAX_TIMES) {
         if (!containerRef.current) {
@@ -46142,8 +46132,8 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/virtual-list/es/ScrollBar.js
-  var React173 = __toESM(require_react());
-  var ScrollBar = /* @__PURE__ */ React173.forwardRef((props, ref) => {
+  var React172 = __toESM(require_react());
+  var ScrollBar = /* @__PURE__ */ React172.forwardRef((props, ref) => {
     const {
       prefixCls,
       rtl,
@@ -46159,14 +46149,14 @@ html body {
       thumbStyle: propsThumbStyle,
       showScrollBar
     } = props;
-    const [dragging, setDragging] = React173.useState(false);
-    const [pageXY, setPageXY] = React173.useState(null);
-    const [startTop, setStartTop] = React173.useState(null);
+    const [dragging, setDragging] = React172.useState(false);
+    const [pageXY, setPageXY] = React172.useState(null);
+    const [startTop, setStartTop] = React172.useState(null);
     const isLTR = !rtl;
-    const scrollbarRef = React173.useRef();
-    const thumbRef = React173.useRef();
-    const [visible, setVisible] = React173.useState(showScrollBar);
-    const visibleTimeoutRef = React173.useRef();
+    const scrollbarRef = React172.useRef();
+    const thumbRef = React172.useRef();
+    const [visible, setVisible] = React172.useState(showScrollBar);
+    const visibleTimeoutRef = React172.useRef();
     const delayHidden = () => {
       if (showScrollBar === true || showScrollBar === false)
         return;
@@ -46178,7 +46168,7 @@ html body {
     };
     const enableScrollRange = scrollRange - containerSize || 0;
     const enableOffsetRange = containerSize - spinSize || 0;
-    const top = React173.useMemo(() => {
+    const top = React172.useMemo(() => {
       if (scrollOffset === 0 || enableScrollRange === 0) {
         return 0;
       }
@@ -46189,7 +46179,7 @@ html body {
       e3.stopPropagation();
       e3.preventDefault();
     };
-    const stateRef = React173.useRef({
+    const stateRef = React172.useRef({
       top,
       dragging,
       pageY: pageXY,
@@ -46209,7 +46199,7 @@ html body {
       e3.stopPropagation();
       e3.preventDefault();
     };
-    React173.useEffect(() => {
+    React172.useEffect(() => {
       const onScrollbarTouchStart = (e3) => {
         e3.preventDefault();
       };
@@ -46226,11 +46216,11 @@ html body {
         thumbEle.removeEventListener("touchstart", onThumbMouseDown);
       };
     }, []);
-    const enableScrollRangeRef = React173.useRef();
+    const enableScrollRangeRef = React172.useRef();
     enableScrollRangeRef.current = enableScrollRange;
-    const enableOffsetRangeRef = React173.useRef();
+    const enableOffsetRangeRef = React172.useRef();
     enableOffsetRangeRef.current = enableOffsetRange;
-    React173.useEffect(() => {
+    React172.useEffect(() => {
       if (dragging) {
         let moveRafId;
         const onMouseMove = (e3) => {
@@ -46286,13 +46276,13 @@ html body {
         };
       }
     }, [dragging]);
-    React173.useEffect(() => {
+    React172.useEffect(() => {
       delayHidden();
       return () => {
         clearTimeout(visibleTimeoutRef.current);
       };
     }, [scrollOffset]);
-    React173.useImperativeHandle(ref, () => ({
+    React172.useImperativeHandle(ref, () => ({
       delayHidden
     }));
     const scrollbarPrefixCls = `${prefixCls}-scrollbar`;
@@ -46332,7 +46322,7 @@ html body {
         top
       });
     }
-    return /* @__PURE__ */ React173.createElement("div", {
+    return /* @__PURE__ */ React172.createElement("div", {
       ref: scrollbarRef,
       className: clsx(scrollbarPrefixCls, {
         [`${scrollbarPrefixCls}-horizontal`]: horizontal,
@@ -46342,7 +46332,7 @@ html body {
       style: __spreadValues(__spreadValues({}, containerStyle), style2),
       onMouseDown: onContainerMouseDown,
       onMouseMove: delayHidden
-    }, /* @__PURE__ */ React173.createElement("div", {
+    }, /* @__PURE__ */ React172.createElement("div", {
       ref: thumbRef,
       className: clsx(`${scrollbarPrefixCls}-thumb`, {
         [`${scrollbarPrefixCls}-thumb-moving`]: dragging
@@ -46417,7 +46407,7 @@ html body {
       "styles",
       "showScrollBar"
     ]);
-    const getKey3 = React174.useCallback((item) => {
+    const getKey3 = React173.useCallback((item) => {
       if (typeof itemKey3 === "function") {
         return itemKey3(item);
       }
@@ -46425,19 +46415,19 @@ html body {
     }, [itemKey3]);
     const [setInstanceRef, collectHeight, heights, heightUpdatedMark] = useHeights(getKey3, null, null);
     const useVirtual = !!(virtual !== false && height && itemHeight);
-    const containerHeight = React174.useMemo(() => Object.values(heights.maps).reduce((total, curr) => total + curr, 0), [heights.id, heights.maps]);
+    const containerHeight = React173.useMemo(() => Object.values(heights.maps).reduce((total, curr) => total + curr, 0), [heights.id, heights.maps]);
     const inVirtual = useVirtual && data && (Math.max(itemHeight * data.length, containerHeight) > height || !!scrollWidth);
     const isRTL = direction === "rtl";
     const mergedClassName = clsx(prefixCls, {
       [`${prefixCls}-rtl`]: isRTL
     }, className);
     const mergedData = data || EMPTY_DATA;
-    const componentRef = (0, import_react80.useRef)();
-    const fillerInnerRef = (0, import_react80.useRef)();
-    const containerRef = (0, import_react80.useRef)();
-    const [offsetTop, setOffsetTop] = (0, import_react80.useState)(0);
-    const [offsetLeft, setOffsetLeft] = (0, import_react80.useState)(0);
-    const [scrollMoving, setScrollMoving] = (0, import_react80.useState)(false);
+    const componentRef = (0, import_react79.useRef)();
+    const fillerInnerRef = (0, import_react79.useRef)();
+    const containerRef = (0, import_react79.useRef)();
+    const [offsetTop, setOffsetTop] = (0, import_react79.useState)(0);
+    const [offsetLeft, setOffsetLeft] = (0, import_react79.useState)(0);
+    const [scrollMoving, setScrollMoving] = (0, import_react79.useState)(false);
     const onScrollbarStartMove = () => {
       setScrollMoving(true);
     };
@@ -46460,11 +46450,11 @@ html body {
         return alignedTop;
       });
     }
-    const rangeRef = (0, import_react80.useRef)({
+    const rangeRef = (0, import_react79.useRef)({
       start: 0,
       end: mergedData.length
     });
-    const diffItemRef = (0, import_react80.useRef)();
+    const diffItemRef = (0, import_react79.useRef)();
     const [diffItem] = useDiffItem(mergedData, getKey3);
     diffItemRef.current = diffItem;
     const {
@@ -46472,7 +46462,7 @@ html body {
       start,
       end,
       offset: fillerOffset
-    } = React174.useMemo(() => {
+    } = React173.useMemo(() => {
       var _a2;
       if (!useVirtual) {
         return {
@@ -46527,7 +46517,7 @@ html body {
     }, [inVirtual, useVirtual, offsetTop, mergedData, heightUpdatedMark, height]);
     rangeRef.current.start = start;
     rangeRef.current.end = end;
-    React174.useLayoutEffect(() => {
+    React173.useLayoutEffect(() => {
       const changedRecord = heights.getRecord();
       if (changedRecord.size === 1) {
         const recordKey = Array.from(changedRecord.keys())[0];
@@ -46546,7 +46536,7 @@ html body {
       }
       heights.resetRecord();
     }, [scrollHeight]);
-    const [size, setSize] = React174.useState({
+    const [size, setSize] = React173.useState({
       width: 0,
       height
     });
@@ -46556,12 +46546,12 @@ html body {
         height: sizeInfo.offsetHeight
       });
     };
-    const verticalScrollBarRef = (0, import_react80.useRef)();
-    const horizontalScrollBarRef = (0, import_react80.useRef)();
-    const horizontalScrollBarSpinSize = React174.useMemo(() => getSpinSize(size.width, scrollWidth), [size.width, scrollWidth]);
-    const verticalScrollBarSpinSize = React174.useMemo(() => getSpinSize(size.height, scrollHeight), [size.height, scrollHeight]);
+    const verticalScrollBarRef = (0, import_react79.useRef)();
+    const horizontalScrollBarRef = (0, import_react79.useRef)();
+    const horizontalScrollBarSpinSize = React173.useMemo(() => getSpinSize(size.width, scrollWidth), [size.width, scrollWidth]);
+    const verticalScrollBarSpinSize = React173.useMemo(() => getSpinSize(size.height, scrollHeight), [size.height, scrollHeight]);
     const maxScrollHeight = scrollHeight - height;
-    const maxScrollHeightRef = (0, import_react80.useRef)(maxScrollHeight);
+    const maxScrollHeightRef = (0, import_react79.useRef)(maxScrollHeight);
     maxScrollHeightRef.current = maxScrollHeight;
     function keepInRange(newScrollTop) {
       let newTop = newScrollTop;
@@ -46580,7 +46570,7 @@ html body {
       x: isRTL ? -offsetLeft : offsetLeft,
       y: offsetTop
     });
-    const lastVirtualScrollInfoRef = (0, import_react80.useRef)(getVirtualScrollInfo());
+    const lastVirtualScrollInfoRef = (0, import_react79.useRef)(getVirtualScrollInfo());
     const triggerScroll = useEvent_default((params) => {
       if (onVirtualScroll) {
         const nextInfo = __spreadValues(__spreadValues({}, getVirtualScrollInfo()), params);
@@ -46696,7 +46686,7 @@ html body {
       (_b = horizontalScrollBarRef.current) == null ? void 0 : _b.delayHidden();
     };
     const scrollTo2 = useScrollTo(componentRef, mergedData, heights, itemHeight, getKey3, () => collectHeight(true), syncScrollTop, delayHideScrollBar);
-    React174.useImperativeHandle(ref, () => ({
+    React173.useImperativeHandle(ref, () => ({
       nativeElement: containerRef.current,
       getScrollInfo: getVirtualScrollInfo,
       scrollTo: (config) => {
@@ -46749,21 +46739,21 @@ html body {
     if (isRTL) {
       containerProps.dir = "rtl";
     }
-    return /* @__PURE__ */ React174.createElement("div", _extends17({
+    return /* @__PURE__ */ React173.createElement("div", _extends17({
       ref: containerRef,
       style: __spreadProps(__spreadValues({}, style2), {
         position: "relative"
       }),
       className: mergedClassName
-    }, containerProps, restProps), /* @__PURE__ */ React174.createElement(es_default, {
+    }, containerProps, restProps), /* @__PURE__ */ React173.createElement(es_default, {
       onResize: onHolderResize
-    }, /* @__PURE__ */ React174.createElement(Component7, {
+    }, /* @__PURE__ */ React173.createElement(Component7, {
       className: `${prefixCls}-holder`,
       style: componentStyle,
       ref: componentRef,
       onScroll: onFallbackScroll,
       onMouseEnter: delayHideScrollBar
-    }, /* @__PURE__ */ React174.createElement(Filler_default, {
+    }, /* @__PURE__ */ React173.createElement(Filler_default, {
       prefixCls,
       height: scrollHeight,
       offsetX: offsetLeft,
@@ -46774,7 +46764,7 @@ html body {
       innerProps,
       rtl: isRTL,
       extra: extraContent
-    }, listChildren))), inVirtual && scrollHeight > height && /* @__PURE__ */ React174.createElement(ScrollBar_default, {
+    }, listChildren))), inVirtual && scrollHeight > height && /* @__PURE__ */ React173.createElement(ScrollBar_default, {
       ref: verticalScrollBarRef,
       prefixCls,
       scrollOffset: offsetTop,
@@ -46788,7 +46778,7 @@ html body {
       style: styles == null ? void 0 : styles.verticalScrollBar,
       thumbStyle: styles == null ? void 0 : styles.verticalScrollBarThumb,
       showScrollBar
-    }), inVirtual && scrollWidth > size.width && /* @__PURE__ */ React174.createElement(ScrollBar_default, {
+    }), inVirtual && scrollWidth > size.width && /* @__PURE__ */ React173.createElement(ScrollBar_default, {
       ref: horizontalScrollBarRef,
       prefixCls,
       scrollOffset: offsetLeft,
@@ -46805,7 +46795,7 @@ html body {
       showScrollBar
     }));
   }
-  var List2 = /* @__PURE__ */ React174.forwardRef(RawList);
+  var List2 = /* @__PURE__ */ React173.forwardRef(RawList);
   List2.displayName = "List";
   var List_default2 = List2;
 
@@ -46813,8 +46803,8 @@ html body {
   var es_default9 = List_default2;
 
   // ../custom_dashboard/node_modules/@rc-component/select/es/OptionList.js
-  var React175 = __toESM(require_react());
-  var import_react81 = __toESM(require_react());
+  var React174 = __toESM(require_react());
+  var import_react80 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/select/es/utils/platformUtil.js
   function isPlatformMac() {
@@ -46870,11 +46860,11 @@ html body {
       optionRender,
       classNames: contextClassNames,
       styles: contextStyles
-    } = React175.useContext(SelectContext_default);
+    } = React174.useContext(SelectContext_default);
     const itemPrefixCls = `${prefixCls}-item`;
     const memoFlattenOptions = useMemo(() => flattenOptions2, [open2, lockOptions], (prev2, next2) => next2[0] && !next2[1]);
-    const listRef = React175.useRef(null);
-    const overMaxCount = React175.useMemo(() => multiple && isValidCount(maxCount) && (rawValues == null ? void 0 : rawValues.size) >= maxCount, [multiple, maxCount, rawValues == null ? void 0 : rawValues.size]);
+    const listRef = React174.useRef(null);
+    const overMaxCount = React174.useMemo(() => multiple && isValidCount(maxCount) && (rawValues == null ? void 0 : rawValues.size) >= maxCount, [multiple, maxCount, rawValues == null ? void 0 : rawValues.size]);
     const onListMouseDown = (event) => {
       event.preventDefault();
     };
@@ -46884,7 +46874,7 @@ html body {
         index: args
       } : args);
     };
-    const isSelected = React175.useCallback((value) => {
+    const isSelected = React174.useCallback((value) => {
       if (mode === "combobox") {
         return false;
       }
@@ -46904,7 +46894,7 @@ html body {
       }
       return -1;
     };
-    const [activeIndex, setActiveIndex] = React175.useState(() => getEnabledActiveIndex(0));
+    const [activeIndex, setActiveIndex] = React174.useState(() => getEnabledActiveIndex(0));
     const setActive = (index2, fromKeyboard = false) => {
       setActiveIndex(index2);
       const info = {
@@ -46917,16 +46907,16 @@ html body {
       }
       onActiveValue(flattenItem.value, index2, info);
     };
-    (0, import_react81.useEffect)(() => {
+    (0, import_react80.useEffect)(() => {
       setActive(defaultActiveFirstOption !== false ? getEnabledActiveIndex(0) : -1);
     }, [memoFlattenOptions.length, searchValue]);
-    const isAriaSelected = React175.useCallback((value) => {
+    const isAriaSelected = React174.useCallback((value) => {
       if (mode === "combobox") {
         return String(value).toLowerCase() === searchValue.toLowerCase();
       }
       return rawValues.has(value);
     }, [mode, searchValue, [...rawValues].toString(), rawValues.size]);
-    (0, import_react81.useEffect)(() => {
+    (0, import_react80.useEffect)(() => {
       var _a2;
       let timeoutId;
       if (!multiple && open2 && rawValues.size === 1) {
@@ -46956,7 +46946,7 @@ html body {
         toggleOpen(false);
       }
     };
-    React175.useImperativeHandle(ref, () => ({
+    React174.useImperativeHandle(ref, () => ({
       onKeyDown: (event) => {
         const {
           which,
@@ -47017,7 +47007,7 @@ html body {
       }
     }));
     if (memoFlattenOptions.length === 0) {
-      return /* @__PURE__ */ React175.createElement("div", {
+      return /* @__PURE__ */ React174.createElement("div", {
         role: "listbox",
         id: `${id}_list`,
         className: `${itemPrefixCls}-empty`,
@@ -47050,7 +47040,7 @@ html body {
       } = item;
       const attrs = pickAttrs(itemData, true);
       const mergedLabel = getLabel(item);
-      return item ? /* @__PURE__ */ React175.createElement("div", _extends30({
+      return item ? /* @__PURE__ */ React174.createElement("div", _extends30({
         "aria-label": typeof mergedLabel === "string" && !group ? mergedLabel : null
       }, attrs, {
         key: index2
@@ -47063,13 +47053,13 @@ html body {
       role: "listbox",
       id: `${id}_list`
     };
-    return /* @__PURE__ */ React175.createElement(React175.Fragment, null, virtual && /* @__PURE__ */ React175.createElement("div", _extends30({}, a11yProps, {
+    return /* @__PURE__ */ React174.createElement(React174.Fragment, null, virtual && /* @__PURE__ */ React174.createElement("div", _extends30({}, a11yProps, {
       style: {
         height: 0,
         width: 0,
         overflow: "hidden"
       }
-    }), renderItem(activeIndex - 1), renderItem(activeIndex), renderItem(activeIndex + 1)), /* @__PURE__ */ React175.createElement(es_default9, {
+    }), renderItem(activeIndex - 1), renderItem(activeIndex), renderItem(activeIndex + 1)), /* @__PURE__ */ React174.createElement(es_default9, {
       itemKey: "key",
       ref: listRef,
       data: memoFlattenOptions,
@@ -47098,7 +47088,7 @@ html body {
       } = data;
       if (group) {
         const groupTitle = (_a2 = data.title) != null ? _a2 : isTitleType2(label) ? label.toString() : void 0;
-        return /* @__PURE__ */ React175.createElement("div", {
+        return /* @__PURE__ */ React174.createElement("div", {
           className: clsx(itemPrefixCls, `${itemPrefixCls}-group`, data.className),
           title: groupTitle
         }, label !== void 0 ? label : key);
@@ -47133,7 +47123,7 @@ html body {
       if (title !== void 0) {
         optionTitle = title;
       }
-      return /* @__PURE__ */ React175.createElement("div", _extends30({}, pickAttrs(passedProps), !virtual ? getItemAriaProps(item, itemIndex) : {}, {
+      return /* @__PURE__ */ React174.createElement("div", _extends30({}, pickAttrs(passedProps), !virtual ? getItemAriaProps(item, itemIndex) : {}, {
         "aria-selected": virtual ? void 0 : isAriaSelected(value),
         "aria-disabled": mergedDisabled,
         className: optionClassName,
@@ -47150,11 +47140,11 @@ html body {
           }
         },
         style: __spreadValues(__spreadValues({}, (_d = contextStyles == null ? void 0 : contextStyles.popup) == null ? void 0 : _d.listItem), style2)
-      }), /* @__PURE__ */ React175.createElement("div", {
+      }), /* @__PURE__ */ React174.createElement("div", {
         className: `${optionPrefixCls}-content`
       }, typeof optionRender === "function" ? optionRender(item, {
         index: itemIndex
-      }) : content), /* @__PURE__ */ React175.isValidElement(menuItemSelectedIcon) || selected, iconVisible && /* @__PURE__ */ React175.createElement(TransBtn_default, {
+      }) : content), /* @__PURE__ */ React174.isValidElement(menuItemSelectedIcon) || selected, iconVisible && /* @__PURE__ */ React174.createElement(TransBtn_default, {
         className: `${itemPrefixCls}-option-state`,
         customizeIcon: menuItemSelectedIcon,
         customizeIconProps: {
@@ -47165,20 +47155,20 @@ html body {
       }, selected ? "\u2713" : null));
     }));
   };
-  var RefOptionList = /* @__PURE__ */ React175.forwardRef(OptionList);
+  var RefOptionList = /* @__PURE__ */ React174.forwardRef(OptionList);
   if (true) {
     RefOptionList.displayName = "OptionList";
   }
   var OptionList_default = RefOptionList;
 
   // ../custom_dashboard/node_modules/@rc-component/select/es/hooks/useCache.js
-  var React176 = __toESM(require_react());
+  var React175 = __toESM(require_react());
   var useCache_default = (labeledValues, valueOptions) => {
-    const cacheRef = React176.useRef({
+    const cacheRef = React175.useRef({
       values: /* @__PURE__ */ new Map(),
       options: /* @__PURE__ */ new Map()
     });
-    const filledLabeledValues = React176.useMemo(() => {
+    const filledLabeledValues = React175.useMemo(() => {
       const {
         values: prevValueCache,
         options: prevOptionCache
@@ -47202,17 +47192,17 @@ html body {
       cacheRef.current.options = optionCache;
       return patchedValues;
     }, [labeledValues, valueOptions]);
-    const getOption = React176.useCallback((val) => valueOptions.get(val) || cacheRef.current.options.get(val), [valueOptions]);
+    const getOption = React175.useCallback((val) => valueOptions.get(val) || cacheRef.current.options.get(val), [valueOptions]);
     return [filledLabeledValues, getOption];
   };
 
   // ../custom_dashboard/node_modules/@rc-component/select/es/hooks/useFilterOptions.js
-  var React177 = __toESM(require_react());
+  var React176 = __toESM(require_react());
   function includes(test, search) {
     return toArray4(test).join("").toUpperCase().includes(search);
   }
   var useFilterOptions_default = (options, fieldNames, searchValue, filterOption, optionFilterProp) => {
-    return React177.useMemo(() => {
+    return React176.useMemo(() => {
       if (!searchValue || filterOption === false) {
         return options;
       }
@@ -47258,10 +47248,10 @@ html body {
   };
 
   // ../custom_dashboard/node_modules/@rc-component/select/es/hooks/useOptions.js
-  var React179 = __toESM(require_react());
+  var React178 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/select/es/utils/legacyUtil.js
-  var React178 = __toESM(require_react());
+  var React177 = __toESM(require_react());
   function convertNodeToOption(node2) {
     const {
       key,
@@ -47281,7 +47271,7 @@ html body {
   }
   function convertChildrenToData(nodes, optionOnly = false) {
     return toArray(nodes).map((node2, index2) => {
-      if (!/* @__PURE__ */ React178.isValidElement(node2) || !node2.type) {
+      if (!/* @__PURE__ */ React177.isValidElement(node2) || !node2.type) {
         return null;
       }
       const {
@@ -47309,7 +47299,7 @@ html body {
 
   // ../custom_dashboard/node_modules/@rc-component/select/es/hooks/useOptions.js
   var useOptions = (options, children, fieldNames, optionFilterProp, optionLabelProp) => {
-    return React179.useMemo(() => {
+    return React178.useMemo(() => {
       let mergedOptions = options;
       const childrenAsData = !options;
       if (childrenAsData) {
@@ -47348,18 +47338,18 @@ html body {
   var useOptions_default = useOptions;
 
   // ../custom_dashboard/node_modules/@rc-component/select/es/hooks/useRefFunc.js
-  var React180 = __toESM(require_react());
+  var React179 = __toESM(require_react());
   function useRefFunc(callback) {
-    const funcRef = React180.useRef();
+    const funcRef = React179.useRef();
     funcRef.current = callback;
-    const cacheFn = React180.useCallback((...args) => {
+    const cacheFn = React179.useCallback((...args) => {
       return funcRef.current(...args);
     }, []);
     return cacheFn;
   }
 
   // ../custom_dashboard/node_modules/@rc-component/select/es/utils/warningPropsUtil.js
-  var React181 = __toESM(require_react());
+  var React180 = __toESM(require_react());
   function warningProps(props) {
     const {
       mode,
@@ -47406,7 +47396,7 @@ html body {
     if (children) {
       let invalidateChildType = null;
       toArray(children).some((node2) => {
-        if (!/* @__PURE__ */ React181.isValidElement(node2) || !node2.type) {
+        if (!/* @__PURE__ */ React180.isValidElement(node2) || !node2.type) {
           return false;
         }
         const {
@@ -47417,7 +47407,7 @@ html body {
         }
         if (type5.isSelectOptGroup) {
           const allChildrenValid = toArray(node2.props.children).every((subNode) => {
-            if (!/* @__PURE__ */ React181.isValidElement(subNode) || !node2.type || subNode.type.isSelectOption) {
+            if (!/* @__PURE__ */ React180.isValidElement(subNode) || !node2.type || subNode.type.isSelectOption) {
               return true;
             }
             invalidateChildType = subNode.type;
@@ -47456,7 +47446,7 @@ html body {
   var warningPropsUtil_default = warningProps;
 
   // ../custom_dashboard/node_modules/@rc-component/select/es/hooks/useSearchConfig.js
-  var React182 = __toESM(require_react());
+  var React181 = __toESM(require_react());
   function useSearchConfig(showSearch, props, mode) {
     const {
       filterOption,
@@ -47466,7 +47456,7 @@ html body {
       onSearch,
       autoClearSearchValue
     } = props;
-    return React182.useMemo(() => {
+    return React181.useMemo(() => {
       const isObject2 = typeof showSearch === "object";
       const searchConfig = __spreadValues({
         filterOption,
@@ -47499,7 +47489,7 @@ html body {
   function isRawValue(value) {
     return !value || typeof value !== "object";
   }
-  var Select = /* @__PURE__ */ React183.forwardRef((props, ref) => {
+  var Select = /* @__PURE__ */ React182.forwardRef((props, ref) => {
     const _a = props, {
       id,
       mode,
@@ -47588,7 +47578,7 @@ html body {
       onSearch,
       autoClearSearchValue = true
     } = searchConfig;
-    const normalizedOptionFilterProp = React183.useMemo(() => {
+    const normalizedOptionFilterProp = React182.useMemo(() => {
       if (!optionFilterProp)
         return [];
       return Array.isArray(optionFilterProp) ? optionFilterProp : [optionFilterProp];
@@ -47596,13 +47586,13 @@ html body {
     const mergedId = useId_default(id);
     const multiple = isMultiple(mode);
     const childrenAsData = !!(!options && children);
-    const mergedFilterOption = React183.useMemo(() => {
+    const mergedFilterOption = React182.useMemo(() => {
       if (filterOption === void 0 && mode === "combobox") {
         return false;
       }
       return filterOption;
     }, [filterOption, mode]);
-    const mergedFieldNames = React183.useMemo(
+    const mergedFieldNames = React182.useMemo(
       () => fillFieldNames(fieldNames, childrenAsData),
       [
         JSON.stringify(fieldNames),
@@ -47617,7 +47607,7 @@ html body {
       labelOptions,
       options: mergedOptions
     } = parsedOptions;
-    const convert2LabelValues = React183.useCallback((draftValues) => {
+    const convert2LabelValues = React182.useCallback((draftValues) => {
       const valueList = toArray4(draftValues);
       return valueList.map((val) => {
         let rawValue;
@@ -47638,7 +47628,7 @@ html body {
           rawTitle = option == null ? void 0 : option.title;
           if (!optionLabelProp) {
             const optionLabel = option == null ? void 0 : option[mergedFieldNames.label];
-            if (optionLabel !== void 0 && !/* @__PURE__ */ React183.isValidElement(optionLabel) && !/* @__PURE__ */ React183.isValidElement(rawLabel) && optionLabel !== rawLabel) {
+            if (optionLabel !== void 0 && !/* @__PURE__ */ React182.isValidElement(optionLabel) && !/* @__PURE__ */ React182.isValidElement(rawLabel) && optionLabel !== rawLabel) {
               warning_default(false, "`label` of `value` is not same as `label` in Select options.");
             }
           }
@@ -47653,7 +47643,7 @@ html body {
       });
     }, [mergedFieldNames, optionLabelProp, valueOptions]);
     const [internalValue, setInternalValue] = useControlledState(defaultValue, value);
-    const rawLabeledValues = React183.useMemo(() => {
+    const rawLabeledValues = React182.useMemo(() => {
       var _a2;
       const newInternalValue = multiple && internalValue === null ? [] : internalValue;
       const values = convert2LabelValues(newInternalValue);
@@ -47663,7 +47653,7 @@ html body {
       return values;
     }, [internalValue, convert2LabelValues, mode, multiple]);
     const [mergedValues, getMixedOption] = useCache_default(rawLabeledValues, valueOptions);
-    const displayValues = React183.useMemo(() => {
+    const displayValues = React182.useMemo(() => {
       if (!mode && mergedValues.length === 1) {
         const firstValue = mergedValues[0];
         if (firstValue.value === null && (firstValue.label === null || firstValue.label === void 0)) {
@@ -47677,8 +47667,8 @@ html body {
         });
       });
     }, [mode, mergedValues, labelRender]);
-    const rawValues = React183.useMemo(() => new Set(mergedValues.map((val) => val.value)), [mergedValues]);
-    React183.useEffect(() => {
+    const rawValues = React182.useMemo(() => new Set(mergedValues.map((val) => val.value)), [mergedValues]);
+    React182.useEffect(() => {
       var _a2;
       if (mode === "combobox") {
         const strValue = (_a2 = mergedValues[0]) == null ? void 0 : _a2.value;
@@ -47692,7 +47682,7 @@ html body {
         [mergedFieldNames.label]: mergedLabel
       };
     });
-    const filledTagOptions = React183.useMemo(() => {
+    const filledTagOptions = React182.useMemo(() => {
       if (mode !== "tags") {
         return mergedOptions;
       }
@@ -47707,7 +47697,7 @@ html body {
       return cloneOptions;
     }, [createTagOption, mergedOptions, valueOptions, mergedValues, mode]);
     const filteredOptions = useFilterOptions_default(filledTagOptions, mergedFieldNames, mergedSearchValue, mergedFilterOption, normalizedOptionFilterProp);
-    const filledSearchOptions = React183.useMemo(() => {
+    const filledSearchOptions = React182.useMemo(() => {
       const hasItemMatchingSearch = (item) => {
         if (normalizedOptionFilterProp.length) {
           return normalizedOptionFilterProp.some((prop) => (item == null ? void 0 : item[prop]) === mergedSearchValue);
@@ -47735,13 +47725,13 @@ html body {
         return item;
       });
     };
-    const orderedFilteredOptions = React183.useMemo(() => {
+    const orderedFilteredOptions = React182.useMemo(() => {
       if (!filterSort) {
         return filledSearchOptions;
       }
       return sorter(filledSearchOptions);
     }, [filledSearchOptions, filterSort, mergedSearchValue]);
-    const displayOptions = React183.useMemo(() => flattenOptions(orderedFilteredOptions, {
+    const displayOptions = React182.useMemo(() => flattenOptions(orderedFilteredOptions, {
       fieldNames: mergedFieldNames,
       childrenAsData
     }), [orderedFilteredOptions, mergedFieldNames, childrenAsData]);
@@ -47766,11 +47756,11 @@ html body {
         );
       }
     };
-    const [activeValue, setActiveValue] = React183.useState(null);
-    const [accessibilityIndex, setAccessibilityIndex] = React183.useState(0);
+    const [activeValue, setActiveValue] = React182.useState(null);
+    const [accessibilityIndex, setAccessibilityIndex] = React182.useState(0);
     const mergedDefaultActiveFirstOption = defaultActiveFirstOption !== void 0 ? defaultActiveFirstOption : mode !== "combobox";
-    const activeEventRef = React183.useRef();
-    const onActiveValue = React183.useCallback((active, index2, {
+    const activeEventRef = React182.useRef();
+    const onActiveValue = React182.useCallback((active, index2, {
       source = "keyboard"
     } = {}) => {
       setAccessibilityIndex(index2);
@@ -47863,7 +47853,7 @@ html body {
         triggerSelect(newRawValue, true);
       });
     };
-    const selectContext = React183.useMemo(() => {
+    const selectContext = React182.useMemo(() => {
       const realVirtual = virtual !== false && popupMatchSelectWidth !== false;
       return __spreadProps(__spreadValues({}, parsedOptions), {
         flattenOptions: displayOptions,
@@ -47888,9 +47878,9 @@ html body {
       warningPropsUtil_default(props);
       warningNullOptions(mergedOptions, mergedFieldNames);
     }
-    return /* @__PURE__ */ React183.createElement(SelectContext_default.Provider, {
+    return /* @__PURE__ */ React182.createElement(SelectContext_default.Provider, {
       value: selectContext
-    }, /* @__PURE__ */ React183.createElement(BaseSelect_default, _extends31({}, restProps, {
+    }, /* @__PURE__ */ React182.createElement(BaseSelect_default, _extends31({}, restProps, {
       id: mergedId,
       prefixCls,
       ref,
@@ -47938,13 +47928,13 @@ html body {
   var getMergedStatus = (contextStatus, customStatus) => customStatus || contextStatus;
 
   // ../custom_dashboard/node_modules/antd/es/config-provider/defaultRenderEmpty.js
-  var import_react83 = __toESM(require_react());
+  var import_react82 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/empty/index.js
-  var React186 = __toESM(require_react());
+  var React185 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/empty/empty.js
-  var React184 = __toESM(require_react());
+  var React183 = __toESM(require_react());
   "use client";
   var Empty = () => {
     const [, token2] = useToken();
@@ -47953,44 +47943,44 @@ html body {
     const themeStyle = bgColor.toHsl().l < 0.5 ? {
       opacity: 0.65
     } : {};
-    return /* @__PURE__ */ React184.createElement("svg", {
+    return /* @__PURE__ */ React183.createElement("svg", {
       style: themeStyle,
       width: "184",
       height: "152",
       viewBox: "0 0 184 152",
       xmlns: "http://www.w3.org/2000/svg"
-    }, /* @__PURE__ */ React184.createElement("title", null, (locale6 == null ? void 0 : locale6.description) || "Empty"), /* @__PURE__ */ React184.createElement("g", {
+    }, /* @__PURE__ */ React183.createElement("title", null, (locale6 == null ? void 0 : locale6.description) || "Empty"), /* @__PURE__ */ React183.createElement("g", {
       fill: "none",
       fillRule: "evenodd"
-    }, /* @__PURE__ */ React184.createElement("g", {
+    }, /* @__PURE__ */ React183.createElement("g", {
       transform: "translate(24 31.7)"
-    }, /* @__PURE__ */ React184.createElement("ellipse", {
+    }, /* @__PURE__ */ React183.createElement("ellipse", {
       fillOpacity: ".8",
       fill: "#F5F5F7",
       cx: "67.8",
       cy: "106.9",
       rx: "67.8",
       ry: "12.7"
-    }), /* @__PURE__ */ React184.createElement("path", {
+    }), /* @__PURE__ */ React183.createElement("path", {
       fill: "#aeb8c2",
       d: "M122 69.7 98.1 40.2a6 6 0 0 0-4.6-2.2H42.1a6 6 0 0 0-4.6 2.2l-24 29.5V85H122z"
-    }), /* @__PURE__ */ React184.createElement("path", {
+    }), /* @__PURE__ */ React183.createElement("path", {
       fill: "#f5f5f7",
       d: "M33.8 0h68a4 4 0 0 1 4 4v93.3a4 4 0 0 1-4 4h-68a4 4 0 0 1-4-4V4a4 4 0 0 1 4-4"
-    }), /* @__PURE__ */ React184.createElement("path", {
+    }), /* @__PURE__ */ React183.createElement("path", {
       fill: "#dce0e6",
       d: "M42.7 10h50.2a2 2 0 0 1 2 2v25a2 2 0 0 1-2 2H42.7a2 2 0 0 1-2-2V12a2 2 0 0 1 2-2m.2 39.8h49.8a2.3 2.3 0 1 1 0 4.5H42.9a2.3 2.3 0 0 1 0-4.5m0 11.7h49.8a2.3 2.3 0 1 1 0 4.6H42.9a2.3 2.3 0 0 1 0-4.6m79 43.5a7 7 0 0 1-6.8 5.4H20.5a7 7 0 0 1-6.7-5.4l-.2-1.8V69.7h26.3c2.9 0 5.2 2.4 5.2 5.4s2.4 5.4 5.3 5.4h34.8c2.9 0 5.3-2.4 5.3-5.4s2.3-5.4 5.2-5.4H122v33.5q0 1-.2 1.8"
-    })), /* @__PURE__ */ React184.createElement("path", {
+    })), /* @__PURE__ */ React183.createElement("path", {
       fill: "#dce0e6",
       d: "m149.1 33.3-6.8 2.6a1 1 0 0 1-1.3-1.2l2-6.2q-4.1-4.5-4.2-10.4c0-10 10.1-18.1 22.6-18.1S184 8.1 184 18.1s-10.1 18-22.6 18q-6.8 0-12.3-2.8"
-    }), /* @__PURE__ */ React184.createElement("g", {
+    }), /* @__PURE__ */ React183.createElement("g", {
       fill: "#fff",
       transform: "translate(149.7 15.4)"
-    }, /* @__PURE__ */ React184.createElement("circle", {
+    }, /* @__PURE__ */ React183.createElement("circle", {
       cx: "20.7",
       cy: "3.2",
       r: "2.8"
-    }), /* @__PURE__ */ React184.createElement("path", {
+    }), /* @__PURE__ */ React183.createElement("path", {
       d: "M5.7 5.6H0L2.9.7zM9.3.7h5v5h-5z"
     }))));
   };
@@ -48000,8 +47990,8 @@ html body {
   var empty_default = Empty;
 
   // ../custom_dashboard/node_modules/antd/es/empty/simple.js
-  var React185 = __toESM(require_react());
-  var import_react82 = __toESM(require_react());
+  var React184 = __toESM(require_react());
+  var import_react81 = __toESM(require_react());
   "use client";
   var Simple = () => {
     const [, token2] = useToken();
@@ -48016,32 +48006,32 @@ html body {
       borderColor,
       shadowColor,
       contentColor
-    } = (0, import_react82.useMemo)(() => ({
+    } = (0, import_react81.useMemo)(() => ({
       borderColor: new FastColor(colorFill).onBackground(colorBgContainer).toHexString(),
       shadowColor: new FastColor(colorFillTertiary).onBackground(colorBgContainer).toHexString(),
       contentColor: new FastColor(colorFillQuaternary).onBackground(colorBgContainer).toHexString()
     }), [colorFill, colorFillTertiary, colorFillQuaternary, colorBgContainer]);
-    return /* @__PURE__ */ React185.createElement("svg", {
+    return /* @__PURE__ */ React184.createElement("svg", {
       width: "64",
       height: "41",
       viewBox: "0 0 64 41",
       xmlns: "http://www.w3.org/2000/svg"
-    }, /* @__PURE__ */ React185.createElement("title", null, (locale6 == null ? void 0 : locale6.description) || "Empty"), /* @__PURE__ */ React185.createElement("g", {
+    }, /* @__PURE__ */ React184.createElement("title", null, (locale6 == null ? void 0 : locale6.description) || "Empty"), /* @__PURE__ */ React184.createElement("g", {
       transform: "translate(0 1)",
       fill: "none",
       fillRule: "evenodd"
-    }, /* @__PURE__ */ React185.createElement("ellipse", {
+    }, /* @__PURE__ */ React184.createElement("ellipse", {
       fill: shadowColor,
       cx: "32",
       cy: "33",
       rx: "32",
       ry: "7"
-    }), /* @__PURE__ */ React185.createElement("g", {
+    }), /* @__PURE__ */ React184.createElement("g", {
       fillRule: "nonzero",
       stroke: borderColor
-    }, /* @__PURE__ */ React185.createElement("path", {
+    }, /* @__PURE__ */ React184.createElement("path", {
       d: "M55 12.8 44.9 1.3Q44 0 42.9 0H21.1q-1.2 0-2 1.3L9 12.8V22h46z"
-    }), /* @__PURE__ */ React185.createElement("path", {
+    }), /* @__PURE__ */ React184.createElement("path", {
       d: "M41.6 16c0-1.7 1-3 2.2-3H55v18.1c0 2.2-1.3 3.9-3 3.9H12c-1.7 0-3-1.7-3-3.9V13h11.2c1.2 0 2.2 1.3 2.2 3s1 2.9 2.2 2.9h14.8c1.2 0 2.2-1.4 2.2-3",
       fill: contentColor
     }))));
@@ -48123,8 +48113,8 @@ html body {
 
   // ../custom_dashboard/node_modules/antd/es/empty/index.js
   "use client";
-  var defaultEmptyImg = /* @__PURE__ */ React186.createElement(empty_default, null);
-  var simpleEmptyImg = /* @__PURE__ */ React186.createElement(simple_default, null);
+  var defaultEmptyImg = /* @__PURE__ */ React185.createElement(empty_default, null);
+  var simpleEmptyImg = /* @__PURE__ */ React185.createElement(simple_default, null);
   var Empty2 = (props) => {
     var _b;
     const _a = props, {
@@ -48170,7 +48160,7 @@ html body {
     const mergedImage = (_b = image != null ? image : contextImage) != null ? _b : defaultEmptyImg;
     let imageNode = null;
     if (typeof mergedImage === "string") {
-      imageNode = /* @__PURE__ */ React186.createElement("img", {
+      imageNode = /* @__PURE__ */ React185.createElement("img", {
         draggable: false,
         alt,
         src: mergedImage
@@ -48184,19 +48174,19 @@ html body {
         warning6.deprecated(!(deprecatedName in props), deprecatedName, newName);
       });
     }
-    return /* @__PURE__ */ React186.createElement("div", __spreadValues({
+    return /* @__PURE__ */ React185.createElement("div", __spreadValues({
       className: clsx(hashId, cssVarCls, prefixCls, contextClassName, {
         [`${prefixCls}-normal`]: mergedImage === simpleEmptyImg,
         [`${prefixCls}-rtl`]: direction === "rtl"
       }, className, rootClassName, mergedClassNames.root),
       style: __spreadValues(__spreadValues(__spreadValues({}, mergedStyles.root), contextStyle), style2)
-    }, restProps), /* @__PURE__ */ React186.createElement("div", {
+    }, restProps), /* @__PURE__ */ React185.createElement("div", {
       className: clsx(`${prefixCls}-image`, mergedClassNames.image),
       style: __spreadValues(__spreadValues({}, imageStyle), mergedStyles.image)
-    }, imageNode), des && /* @__PURE__ */ React186.createElement("div", {
+    }, imageNode), des && /* @__PURE__ */ React185.createElement("div", {
       className: clsx(`${prefixCls}-description`, mergedClassNames.description),
       style: mergedStyles.description
-    }, des), children && /* @__PURE__ */ React186.createElement("div", {
+    }, des), children && /* @__PURE__ */ React185.createElement("div", {
       className: clsx(`${prefixCls}-footer`, mergedClassNames.footer),
       style: mergedStyles.footer
     }, children));
@@ -48216,12 +48206,12 @@ html body {
     } = props;
     const {
       getPrefixCls
-    } = (0, import_react83.useContext)(ConfigContext);
+    } = (0, import_react82.useContext)(ConfigContext);
     const prefix2 = getPrefixCls("empty");
     switch (componentName) {
       case "Table":
       case "List":
-        return /* @__PURE__ */ import_react83.default.createElement(empty_default2, {
+        return /* @__PURE__ */ import_react82.default.createElement(empty_default2, {
           image: empty_default2.PRESENTED_IMAGE_SIMPLE
         });
       case "Select":
@@ -48229,27 +48219,27 @@ html body {
       case "Cascader":
       case "Transfer":
       case "Mentions":
-        return /* @__PURE__ */ import_react83.default.createElement(empty_default2, {
+        return /* @__PURE__ */ import_react82.default.createElement(empty_default2, {
           image: empty_default2.PRESENTED_IMAGE_SIMPLE,
           className: `${prefix2}-small`
         });
       case "Table.filter":
         return null;
       default:
-        return /* @__PURE__ */ import_react83.default.createElement(empty_default2, null);
+        return /* @__PURE__ */ import_react82.default.createElement(empty_default2, null);
     }
   };
   var defaultRenderEmpty_default = DefaultRenderEmpty;
 
   // ../custom_dashboard/node_modules/antd/es/form/hooks/useVariants.js
-  var React188 = __toESM(require_react());
+  var React187 = __toESM(require_react());
   var useVariant = (component, variant, legacyBordered) => {
     var _a, _b;
     const {
       variant: configVariant,
       [component]: componentConfig
-    } = React188.useContext(ConfigContext);
-    const ctxVariant = React188.useContext(VariantContext);
+    } = React187.useContext(ConfigContext);
+    const ctxVariant = React187.useContext(VariantContext);
     const configComponentVariant = componentConfig == null ? void 0 : componentConfig.variant;
     let mergedVariant;
     if (typeof variant !== "undefined") {
@@ -49058,10 +49048,10 @@ html body {
   });
 
   // ../custom_dashboard/node_modules/antd/es/select/useIcons.js
-  var React192 = __toESM(require_react());
+  var React191 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CheckOutlined.js
-  var React189 = __toESM(require_react());
+  var React188 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/CheckOutlined.js
   var CheckOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 00-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z" } }] }, "name": "check", "theme": "outlined" };
@@ -49082,18 +49072,18 @@ html body {
     };
     return _extends32.apply(this, arguments);
   }
-  var CheckOutlined2 = (props, ref) => /* @__PURE__ */ React189.createElement(AntdIcon_default, _extends32({}, props, {
+  var CheckOutlined2 = (props, ref) => /* @__PURE__ */ React188.createElement(AntdIcon_default, _extends32({}, props, {
     ref,
     icon: CheckOutlined_default
   }));
-  var RefIcon8 = /* @__PURE__ */ React189.forwardRef(CheckOutlined2);
+  var RefIcon8 = /* @__PURE__ */ React188.forwardRef(CheckOutlined2);
   if (true) {
     RefIcon8.displayName = "CheckOutlined";
   }
   var CheckOutlined_default2 = RefIcon8;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/DownOutlined.js
-  var React190 = __toESM(require_react());
+  var React189 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/DownOutlined.js
   var DownOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z" } }] }, "name": "down", "theme": "outlined" };
@@ -49114,18 +49104,18 @@ html body {
     };
     return _extends33.apply(this, arguments);
   }
-  var DownOutlined2 = (props, ref) => /* @__PURE__ */ React190.createElement(AntdIcon_default, _extends33({}, props, {
+  var DownOutlined2 = (props, ref) => /* @__PURE__ */ React189.createElement(AntdIcon_default, _extends33({}, props, {
     ref,
     icon: DownOutlined_default
   }));
-  var RefIcon9 = /* @__PURE__ */ React190.forwardRef(DownOutlined2);
+  var RefIcon9 = /* @__PURE__ */ React189.forwardRef(DownOutlined2);
   if (true) {
     RefIcon9.displayName = "DownOutlined";
   }
   var DownOutlined_default2 = RefIcon9;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/SearchOutlined.js
-  var React191 = __toESM(require_react());
+  var React190 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/SearchOutlined.js
   var SearchOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0011.6 0l43.6-43.5a8.2 8.2 0 000-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z" } }] }, "name": "search", "theme": "outlined" };
@@ -49146,11 +49136,11 @@ html body {
     };
     return _extends34.apply(this, arguments);
   }
-  var SearchOutlined2 = (props, ref) => /* @__PURE__ */ React191.createElement(AntdIcon_default, _extends34({}, props, {
+  var SearchOutlined2 = (props, ref) => /* @__PURE__ */ React190.createElement(AntdIcon_default, _extends34({}, props, {
     ref,
     icon: SearchOutlined_default
   }));
-  var RefIcon10 = /* @__PURE__ */ React191.forwardRef(SearchOutlined2);
+  var RefIcon10 = /* @__PURE__ */ React190.forwardRef(SearchOutlined2);
   if (true) {
     RefIcon10.displayName = "SearchOutlined";
   }
@@ -49176,18 +49166,18 @@ html body {
       const warning6 = devUseWarning(componentName);
       warning6.deprecated(!clearIcon, "clearIcon", "allowClear={{ clearIcon: React.ReactNode }}");
     }
-    const mergedClearIcon = clearIcon != null ? clearIcon : /* @__PURE__ */ React192.createElement(CloseCircleFilled_default2, null);
+    const mergedClearIcon = clearIcon != null ? clearIcon : /* @__PURE__ */ React191.createElement(CloseCircleFilled_default2, null);
     const getSuffixIconNode = (arrowIcon) => {
       if (suffixIcon === null && !hasFeedback && !showArrow) {
         return null;
       }
-      return /* @__PURE__ */ React192.createElement(React192.Fragment, null, showSuffixIcon !== false && arrowIcon, hasFeedback && feedbackIcon);
+      return /* @__PURE__ */ React191.createElement(React191.Fragment, null, showSuffixIcon !== false && arrowIcon, hasFeedback && feedbackIcon);
     };
     let mergedSuffixIcon = null;
     if (suffixIcon !== void 0) {
       mergedSuffixIcon = getSuffixIconNode(suffixIcon);
     } else if (loading) {
-      mergedSuffixIcon = getSuffixIconNode(loadingIcon != null ? loadingIcon : /* @__PURE__ */ React192.createElement(LoadingOutlined_default2, {
+      mergedSuffixIcon = getSuffixIconNode(loadingIcon != null ? loadingIcon : /* @__PURE__ */ React191.createElement(LoadingOutlined_default2, {
         spin: true
       }));
     } else {
@@ -49196,16 +49186,16 @@ html body {
         showSearch
       }) => {
         if (open2 && showSearch) {
-          return getSuffixIconNode(/* @__PURE__ */ React192.createElement(SearchOutlined_default2, null));
+          return getSuffixIconNode(/* @__PURE__ */ React191.createElement(SearchOutlined_default2, null));
         }
-        return getSuffixIconNode(/* @__PURE__ */ React192.createElement(DownOutlined_default2, null));
+        return getSuffixIconNode(/* @__PURE__ */ React191.createElement(DownOutlined_default2, null));
       };
     }
     let mergedItemIcon = null;
     if (menuItemSelectedIcon !== void 0) {
       mergedItemIcon = menuItemSelectedIcon;
     } else if (multiple) {
-      mergedItemIcon = /* @__PURE__ */ React192.createElement(CheckOutlined_default2, null);
+      mergedItemIcon = /* @__PURE__ */ React191.createElement(CheckOutlined_default2, null);
     } else {
       mergedItemIcon = null;
     }
@@ -49213,7 +49203,7 @@ html body {
     if (removeIcon !== void 0) {
       mergedRemoveIcon = removeIcon;
     } else {
-      mergedRemoveIcon = /* @__PURE__ */ React192.createElement(CloseOutlined_default2, null);
+      mergedRemoveIcon = /* @__PURE__ */ React191.createElement(CloseOutlined_default2, null);
     }
     return {
       clearIcon: mergedClearIcon,
@@ -49224,14 +49214,14 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/antd/es/select/usePopupRender.js
-  var import_react84 = __toESM(require_react());
+  var import_react83 = __toESM(require_react());
   "use client";
   function usePopupRender(renderFn) {
-    return import_react84.default.useMemo(() => {
+    return import_react83.default.useMemo(() => {
       if (!renderFn) {
         return void 0;
       }
-      return (...args) => /* @__PURE__ */ import_react84.default.createElement(ContextIsolator_default, {
+      return (...args) => /* @__PURE__ */ import_react83.default.createElement(ContextIsolator_default, {
         space: true
       }, renderFn.apply(void 0, args));
     }, [renderFn]);
@@ -49325,7 +49315,7 @@ html body {
       virtual,
       popupMatchSelectWidth: contextPopupMatchSelectWidth,
       popupOverflow
-    } = React194.useContext(ConfigContext);
+    } = React193.useContext(ConfigContext);
     const {
       showSearch,
       style: contextStyle,
@@ -49345,7 +49335,7 @@ html body {
     const [variant, enableVariantCls] = useVariants_default("select", customizeVariant, bordered);
     const rootCls = useCSSVarCls_default(prefixCls);
     const [hashId, cssVarCls] = style_default8(prefixCls, rootCls);
-    const mode = React194.useMemo(() => {
+    const mode = React193.useMemo(() => {
       const {
         mode: m
       } = props;
@@ -49367,7 +49357,7 @@ html body {
       hasFeedback,
       isFormItemInput,
       feedbackIcon
-    } = React194.useContext(FormItemInputContext);
+    } = React193.useContext(FormItemInputContext);
     const mergedStatus = getMergedStatus(contextStatus, customStatus);
     let mergedNotFound;
     if (notFoundContent !== void 0) {
@@ -49375,7 +49365,7 @@ html body {
     } else if (mode === "combobox") {
       mergedNotFound = null;
     } else {
-      mergedNotFound = (renderEmpty == null ? void 0 : renderEmpty("Select")) || /* @__PURE__ */ React194.createElement(defaultRenderEmpty_default, {
+      mergedNotFound = (renderEmpty == null ? void 0 : renderEmpty("Select")) || /* @__PURE__ */ React193.createElement(defaultRenderEmpty_default, {
         componentName: "Select"
       });
     }
@@ -49400,7 +49390,7 @@ html body {
       var _a2;
       return (_a2 = customizeSize != null ? customizeSize : compactSize) != null ? _a2 : ctx;
     });
-    const disabled = React194.useContext(DisabledContext_default);
+    const disabled = React193.useContext(DisabledContext_default);
     const mergedDisabled = customDisabled != null ? customDisabled : disabled;
     const mergedProps = __spreadProps(__spreadValues({}, props), {
       variant,
@@ -49426,7 +49416,7 @@ html body {
       [`${prefixCls}-${variant}`]: enableVariantCls,
       [`${prefixCls}-in-form-item`]: isFormItemInput
     }, getStatusClassNames(prefixCls, mergedStatus, hasFeedback), compactItemClassnames, contextClassName, className, mergedClassNames.root, rootClassName, cssVarCls, rootCls, hashId);
-    const memoPlacement = React194.useMemo(() => {
+    const memoPlacement = React193.useMemo(() => {
       if (placement !== void 0) {
         return placement;
       }
@@ -49450,7 +49440,7 @@ html body {
       true ? warning6(!(typeof maxCount !== "undefined" && !isMultiple2), "usage", "`maxCount` only works with mode `multiple` or `tags`") : void 0;
     }
     const [zIndex] = useZIndex("SelectLike", (_g = (_f = (_e = mergedStyles.popup) == null ? void 0 : _e.root) == null ? void 0 : _f.zIndex) != null ? _g : mergedPopupStyle == null ? void 0 : mergedPopupStyle.zIndex);
-    return /* @__PURE__ */ React194.createElement(es_default10, __spreadProps(__spreadValues({
+    return /* @__PURE__ */ React193.createElement(es_default10, __spreadProps(__spreadValues({
       ref,
       virtual,
       classNames: mergedClassNames,
@@ -49489,7 +49479,7 @@ html body {
   if (true) {
     InternalSelect.displayName = "Select";
   }
-  var Select2 = /* @__PURE__ */ React194.forwardRef(InternalSelect);
+  var Select2 = /* @__PURE__ */ React193.forwardRef(InternalSelect);
   var PurePanel2 = PurePanel_default2(Select2, "popupAlign");
   Select2.SECRET_COMBOBOX_MODE_DO_NOT_USE = SECRET_COMBOBOX_MODE_DO_NOT_USE;
   Select2.Option = Option_default;
@@ -49501,7 +49491,7 @@ html body {
   var select_default = Select2;
 
   // ../custom_dashboard/node_modules/antd/es/_util/responsiveObserver.js
-  var import_react85 = __toESM(require_react());
+  var import_react84 = __toESM(require_react());
   var responsiveArray = ["xxxl", "xxl", "xl", "lg", "md", "sm", "xs"];
   var responsiveArrayReversed = [].concat(responsiveArray).reverse();
   var getResponsiveMap = (token2) => ({
@@ -49540,7 +49530,7 @@ html body {
   var useResponsiveObserver = () => {
     const [, token2] = useToken();
     const responsiveMap = getResponsiveMap(validateBreakpoints(token2));
-    return import_react85.default.useMemo(() => {
+    return import_react84.default.useMemo(() => {
       const subscribers = /* @__PURE__ */ new Map();
       let subUid = -1;
       let screens = {};
@@ -49603,10 +49593,10 @@ html body {
   var responsiveObserver_default = useResponsiveObserver;
 
   // ../custom_dashboard/node_modules/antd/es/grid/hooks/useBreakpoint.js
-  var import_react86 = __toESM(require_react());
+  var import_react85 = __toESM(require_react());
   "use client";
   function useBreakpoint(refreshOnChange = true, defaultScreens = {}) {
-    const screensRef = (0, import_react86.useRef)(defaultScreens);
+    const screensRef = (0, import_react85.useRef)(defaultScreens);
     const [, forceUpdate] = useForceUpdate();
     const responsiveObserver = responsiveObserver_default();
     useLayoutEffect_default(() => {
@@ -49623,10 +49613,10 @@ html body {
   var useBreakpoint_default = useBreakpoint;
 
   // ../custom_dashboard/node_modules/antd/es/tooltip/index.js
-  var React200 = __toESM(require_react());
+  var React199 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/tooltip/es/Popup.js
-  var React196 = __toESM(require_react());
+  var React195 = __toESM(require_react());
   var Popup2 = (props) => {
     const {
       children,
@@ -49637,7 +49627,7 @@ html body {
       className,
       style: style2
     } = props;
-    return /* @__PURE__ */ React196.createElement("div", {
+    return /* @__PURE__ */ React195.createElement("div", {
       id,
       className: clsx(`${prefixCls}-container`, classNames == null ? void 0 : classNames.container, className),
       style: __spreadValues(__spreadValues({}, styles == null ? void 0 : styles.container), style2),
@@ -49647,8 +49637,8 @@ html body {
   var Popup_default2 = Popup2;
 
   // ../custom_dashboard/node_modules/@rc-component/tooltip/es/Tooltip.js
-  var React197 = __toESM(require_react());
-  var import_react87 = __toESM(require_react());
+  var React196 = __toESM(require_react());
+  var import_react86 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/tooltip/es/placements.js
   var autoAdjustOverflowTopBottom = {
@@ -49750,7 +49740,7 @@ html body {
     };
     return _extends35.apply(this, arguments);
   }
-  var Tooltip = /* @__PURE__ */ React197.forwardRef((props, ref) => {
+  var Tooltip = /* @__PURE__ */ React196.forwardRef((props, ref) => {
     const _a = props, {
       trigger = ["hover"],
       mouseEnterDelay = 0,
@@ -49793,13 +49783,13 @@ html body {
       "styles"
     ]);
     const mergedId = useId_default(id);
-    const triggerRef = (0, import_react87.useRef)(null);
-    (0, import_react87.useImperativeHandle)(ref, () => triggerRef.current);
+    const triggerRef = (0, import_react86.useRef)(null);
+    (0, import_react86.useImperativeHandle)(ref, () => triggerRef.current);
     const extraProps = __spreadValues({}, restProps);
     if ("visible" in props) {
       extraProps.popupVisible = props.visible;
     }
-    const mergedArrow = React197.useMemo(() => {
+    const mergedArrow = React196.useMemo(() => {
       var _a2;
       if (!showArrow) {
         return false;
@@ -49814,16 +49804,16 @@ html body {
     const getChildren = ({
       open: open2
     }) => {
-      const child = React197.Children.only(children);
+      const child = React196.Children.only(children);
       const ariaProps = {
         "aria-describedby": overlay && open2 ? mergedId : void 0
       };
-      return /* @__PURE__ */ React197.cloneElement(child, ariaProps);
+      return /* @__PURE__ */ React196.cloneElement(child, ariaProps);
     };
-    return /* @__PURE__ */ React197.createElement(es_default4, _extends35({
+    return /* @__PURE__ */ React196.createElement(es_default4, _extends35({
       popupClassName: classNames == null ? void 0 : classNames.root,
       prefixCls,
-      popup: /* @__PURE__ */ React197.createElement(Popup_default2, {
+      popup: /* @__PURE__ */ React196.createElement(Popup_default2, {
         key: "content",
         prefixCls,
         id: mergedId,
@@ -50261,12 +50251,12 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/antd/es/tooltip/hook/useMergedArrow.js
-  var import_react88 = __toESM(require_react());
+  var import_react87 = __toESM(require_react());
   var useMergedArrow = (providedArrow, providedContextArrow) => {
     const toConfig = (arrow) => typeof arrow === "boolean" ? {
       show: arrow
     } : arrow || {};
-    return import_react88.default.useMemo(() => {
+    return import_react87.default.useMemo(() => {
       var _a, _b;
       const arrowConfig = toConfig(providedArrow);
       const contextArrowConfig = toConfig(providedContextArrow);
@@ -50278,7 +50268,7 @@ html body {
   var useMergedArrow_default = useMergedArrow;
 
   // ../custom_dashboard/node_modules/antd/es/tooltip/PurePanel.js
-  var React199 = __toESM(require_react());
+  var React198 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/tooltip/style/index.js
   var FALL_BACK_ORIGIN = "50%";
@@ -50470,14 +50460,14 @@ html body {
     } = props;
     const {
       getPrefixCls
-    } = React199.useContext(ConfigContext);
+    } = React198.useContext(ConfigContext);
     const prefixCls = getPrefixCls("tooltip", customizePrefixCls);
     const rootPrefixCls = getPrefixCls();
     const rootCls = useCSSVarCls_default(prefixCls);
     const [hashId, cssVarCls] = style_default9(prefixCls, rootCls);
     const colorInfo = parseColor(rootPrefixCls, prefixCls, color);
     const arrowContentStyle = colorInfo.arrowStyle;
-    const innerStyles = React199.useMemo(() => {
+    const innerStyles = React198.useMemo(() => {
       const mergedStyle = __spreadValues(__spreadValues({}, overlayInnerStyle), colorInfo.overlayStyle);
       return {
         container: mergedStyle
@@ -50490,12 +50480,12 @@ html body {
       props: mergedProps
     });
     const rootClassName = clsx(rootCls, hashId, cssVarCls, prefixCls, `${prefixCls}-pure`, `${prefixCls}-placement-${placement}`, className, colorInfo.className);
-    return /* @__PURE__ */ React199.createElement("div", {
+    return /* @__PURE__ */ React198.createElement("div", {
       className: rootClassName,
       style: arrowContentStyle
-    }, /* @__PURE__ */ React199.createElement("div", {
+    }, /* @__PURE__ */ React198.createElement("div", {
       className: `${prefixCls}-arrow`
-    }), /* @__PURE__ */ React199.createElement(Popup_default2, __spreadProps(__spreadValues({}, props), {
+    }), /* @__PURE__ */ React198.createElement(Popup_default2, __spreadProps(__spreadValues({}, props), {
       className: hashId,
       prefixCls,
       classNames: mergedClassNames,
@@ -50506,7 +50496,7 @@ html body {
 
   // ../custom_dashboard/node_modules/antd/es/tooltip/index.js
   "use client";
-  var InternalTooltip = /* @__PURE__ */ React200.forwardRef((props, ref) => {
+  var InternalTooltip = /* @__PURE__ */ React199.forwardRef((props, ref) => {
     var _b;
     const _a = props, {
       prefixCls: customizePrefixCls,
@@ -50581,12 +50571,12 @@ html body {
     const mergedGetPopupContainer = getPopupContainer || getContextPopupContainer;
     const mergedDestroyOnHidden = destroyOnHidden != null ? destroyOnHidden : !!destroyTooltipOnHide;
     const warning6 = devUseWarning("Tooltip");
-    const tooltipRef = React200.useRef(null);
+    const tooltipRef = React199.useRef(null);
     const forceAlign = () => {
       var _a2;
       (_a2 = tooltipRef.current) == null ? void 0 : _a2.forceAlign();
     };
-    React200.useImperativeHandle(ref, () => {
+    React199.useImperativeHandle(ref, () => {
       var _a2, _b2;
       return {
         forceAlign,
@@ -50608,7 +50598,7 @@ html body {
         onOpenChange(vis);
       }
     };
-    const tooltipPlacements = React200.useMemo(() => {
+    const tooltipPlacements = React199.useMemo(() => {
       var _a2;
       return builtinPlacements || getPlacements({
         arrowPointAtCenter: (_a2 = mergedArrow == null ? void 0 : mergedArrow.pointAtCenter) != null ? _a2 : false,
@@ -50619,13 +50609,13 @@ html body {
         visibleFirst: true
       });
     }, [mergedArrow, builtinPlacements, token2, mergedShowArrow, autoAdjustOverflow3]);
-    const memoOverlay = React200.useMemo(() => {
+    const memoOverlay = React199.useMemo(() => {
       if (title === 0) {
         return title;
       }
       return overlay || title || "";
     }, [overlay, title]);
-    const memoOverlayWrapper = /* @__PURE__ */ React200.createElement(ContextIsolator_default, {
+    const memoOverlayWrapper = /* @__PURE__ */ React199.createElement(ContextIsolator_default, {
       space: true,
       form: true
     }, typeof memoOverlay === "function" ? memoOverlay() : memoOverlay);
@@ -50645,7 +50635,7 @@ html body {
     if (!("open" in props) && noTitle) {
       tempOpen = false;
     }
-    const child = /* @__PURE__ */ React200.isValidElement(children) && !isFragment2(children) ? children : /* @__PURE__ */ React200.createElement("span", null, children);
+    const child = /* @__PURE__ */ React199.isValidElement(children) && !isFragment2(children) ? children : /* @__PURE__ */ React199.createElement("span", null, children);
     const childProps = child.props;
     const childCls = !childProps.className || typeof childProps.className === "string" ? clsx(childProps.className, openClassName || `${prefixCls}-open`) : childProps.className;
     const rootCls = useCSSVarCls_default(prefixCls);
@@ -50658,7 +50648,7 @@ html body {
     }, colorInfo.className, rootClassName, themeCls, contextClassName, mergedClassNames.root);
     const [zIndex, contextZIndex] = useZIndex("Tooltip", restProps.zIndex);
     const containerStyle = __spreadValues(__spreadValues(__spreadValues({}, mergedStyles.container), overlayInnerStyle), colorInfo.overlayStyle);
-    const content = /* @__PURE__ */ React200.createElement(es_default11, __spreadProps(__spreadValues({
+    const content = /* @__PURE__ */ React199.createElement(es_default11, __spreadProps(__spreadValues({
       unique: true
     }, restProps), {
       zIndex,
@@ -50684,7 +50674,7 @@ html body {
       visible: tempOpen,
       onVisibleChange: onInternalOpenChange,
       afterVisibleChange: afterOpenChange,
-      arrowContent: /* @__PURE__ */ React200.createElement("span", {
+      arrowContent: /* @__PURE__ */ React199.createElement("span", {
         className: `${prefixCls}-arrow-content`
       }),
       motion: {
@@ -50698,7 +50688,7 @@ html body {
     }), tempOpen ? cloneElement5(child, {
       className: childCls
     }) : child);
-    return /* @__PURE__ */ React200.createElement(zindexContext_default.Provider, {
+    return /* @__PURE__ */ React199.createElement(zindexContext_default.Provider, {
       value: contextZIndex
     }, content);
   });
@@ -50711,10 +50701,10 @@ html body {
   var tooltip_default = Tooltip2;
 
   // ../custom_dashboard/node_modules/antd/es/dropdown/dropdown.js
-  var React235 = __toESM(require_react());
+  var React234 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/LeftOutlined.js
-  var React201 = __toESM(require_react());
+  var React200 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/LeftOutlined.js
   var LeftOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 000 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z" } }] }, "name": "left", "theme": "outlined" };
@@ -50735,21 +50725,21 @@ html body {
     };
     return _extends36.apply(this, arguments);
   }
-  var LeftOutlined2 = (props, ref) => /* @__PURE__ */ React201.createElement(AntdIcon_default, _extends36({}, props, {
+  var LeftOutlined2 = (props, ref) => /* @__PURE__ */ React200.createElement(AntdIcon_default, _extends36({}, props, {
     ref,
     icon: LeftOutlined_default
   }));
-  var RefIcon11 = /* @__PURE__ */ React201.forwardRef(LeftOutlined2);
+  var RefIcon11 = /* @__PURE__ */ React200.forwardRef(LeftOutlined2);
   if (true) {
     RefIcon11.displayName = "LeftOutlined";
   }
   var LeftOutlined_default2 = RefIcon11;
 
   // ../custom_dashboard/node_modules/@rc-component/dropdown/es/Dropdown.js
-  var import_react90 = __toESM(require_react());
+  var import_react89 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/dropdown/es/hooks/useAccessibility.js
-  var React202 = __toESM(require_react());
+  var React201 = __toESM(require_react());
   var {
     ESC,
     TAB
@@ -50761,7 +50751,7 @@ html body {
     autoFocus,
     overlayRef
   }) {
-    const focusMenuRef = React202.useRef(false);
+    const focusMenuRef = React201.useRef(false);
     const handleCloseMenuAndReturnFocus = () => {
       var _a, _b;
       if (visible) {
@@ -50797,7 +50787,7 @@ html body {
         }
       }
     };
-    React202.useEffect(() => {
+    React201.useEffect(() => {
       if (visible) {
         window.addEventListener("keydown", handleKeyDown);
         if (autoFocus) {
@@ -50815,14 +50805,14 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/dropdown/es/Overlay.js
-  var import_react89 = __toESM(require_react());
-  var Overlay = /* @__PURE__ */ (0, import_react89.forwardRef)((props, ref) => {
+  var import_react88 = __toESM(require_react());
+  var Overlay = /* @__PURE__ */ (0, import_react88.forwardRef)((props, ref) => {
     const {
       overlay,
       arrow,
       prefixCls
     } = props;
-    const overlayNode = (0, import_react89.useMemo)(() => {
+    const overlayNode = (0, import_react88.useMemo)(() => {
       let overlayElement;
       if (typeof overlay === "function") {
         overlayElement = overlay();
@@ -50832,9 +50822,9 @@ html body {
       return overlayElement;
     }, [overlay]);
     const composedRef = composeRef(ref, getNodeRef(overlayNode));
-    return /* @__PURE__ */ import_react89.default.createElement(import_react89.default.Fragment, null, arrow && /* @__PURE__ */ import_react89.default.createElement("div", {
+    return /* @__PURE__ */ import_react88.default.createElement(import_react88.default.Fragment, null, arrow && /* @__PURE__ */ import_react88.default.createElement("div", {
       className: `${prefixCls}-arrow`
-    }), /* @__PURE__ */ import_react89.default.cloneElement(overlayNode, {
+    }), /* @__PURE__ */ import_react88.default.cloneElement(overlayNode, {
       ref: supportRef(overlayNode) ? composedRef : void 0
     }));
   });
@@ -50901,7 +50891,7 @@ html body {
     };
     return _extends37.apply(this, arguments);
   }
-  var Dropdown = /* @__PURE__ */ import_react90.default.forwardRef((props, ref) => {
+  var Dropdown = /* @__PURE__ */ import_react89.default.forwardRef((props, ref) => {
     var _b;
     const _a = props, {
       arrow = false,
@@ -50942,13 +50932,13 @@ html body {
       "children",
       "onVisibleChange"
     ]);
-    const [triggerVisible, setTriggerVisible] = import_react90.default.useState();
+    const [triggerVisible, setTriggerVisible] = import_react89.default.useState();
     const mergedVisible = "visible" in props ? visible : triggerVisible;
     const mergedMotionName = animation ? `${prefixCls}-${animation}` : transitionName;
-    const triggerRef = import_react90.default.useRef(null);
-    const overlayRef = import_react90.default.useRef(null);
-    const childRef = import_react90.default.useRef(null);
-    import_react90.default.useImperativeHandle(ref, () => triggerRef.current);
+    const triggerRef = import_react89.default.useRef(null);
+    const overlayRef = import_react89.default.useRef(null);
+    const childRef = import_react89.default.useRef(null);
+    import_react89.default.useImperativeHandle(ref, () => triggerRef.current);
     const handleVisibleChange = (newVisible) => {
       setTriggerVisible(newVisible);
       onVisibleChange == null ? void 0 : onVisibleChange(newVisible);
@@ -50969,7 +50959,7 @@ html body {
         onOverlayClick(e3);
       }
     };
-    const getMenuElement = () => /* @__PURE__ */ import_react90.default.createElement(Overlay_default, {
+    const getMenuElement = () => /* @__PURE__ */ import_react89.default.createElement(Overlay_default, {
       ref: overlayRef,
       overlay,
       prefixCls,
@@ -51000,7 +50990,7 @@ html body {
       }
       return `${prefixCls}-open`;
     };
-    const childrenNode = /* @__PURE__ */ import_react90.default.cloneElement(children, {
+    const childrenNode = /* @__PURE__ */ import_react89.default.cloneElement(children, {
       className: clsx((_b = children.props) == null ? void 0 : _b.className, mergedVisible && getOpenClassName()),
       ref: supportRef(children) ? composeRef(childRef, getNodeRef(children)) : void 0
     });
@@ -51008,7 +50998,7 @@ html body {
     if (!triggerHideAction && trigger.indexOf("contextMenu") !== -1) {
       triggerHideAction = ["click"];
     }
-    return /* @__PURE__ */ import_react90.default.createElement(es_default4, _extends37({
+    return /* @__PURE__ */ import_react89.default.createElement(es_default4, _extends37({
       builtinPlacements: placements4
     }, otherProps, {
       prefixCls,
@@ -51043,28 +51033,28 @@ html body {
   var isPrimitive_default = isPrimitive;
 
   // ../custom_dashboard/node_modules/antd/es/menu/index.js
-  var React234 = __toESM(require_react());
-  var import_react96 = __toESM(require_react());
+  var React233 = __toESM(require_react());
+  var import_react95 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/menu/es/Menu.js
-  var React224 = __toESM(require_react());
-  var import_react92 = __toESM(require_react());
+  var React223 = __toESM(require_react());
+  var import_react91 = __toESM(require_react());
   var import_react_dom6 = __toESM(require_react_dom());
 
   // ../custom_dashboard/node_modules/@rc-component/menu/es/context/IdContext.js
-  var React205 = __toESM(require_react());
-  var IdContext = /* @__PURE__ */ React205.createContext(null);
+  var React204 = __toESM(require_react());
+  var IdContext = /* @__PURE__ */ React204.createContext(null);
   function getMenuId(uuid5, eventKey) {
     return `${uuid5}-${eventKey}`;
   }
   function useMenuId(eventKey) {
-    const id = React205.useContext(IdContext);
+    const id = React204.useContext(IdContext);
     return getMenuId(id, eventKey);
   }
 
   // ../custom_dashboard/node_modules/@rc-component/menu/es/context/MenuContext.js
-  var React206 = __toESM(require_react());
-  var MenuContext = /* @__PURE__ */ React206.createContext(null);
+  var React205 = __toESM(require_react());
+  var MenuContext = /* @__PURE__ */ React205.createContext(null);
   function mergeProps2(origin, target) {
     const clone = __spreadValues({}, origin);
     Object.keys(target).forEach((key) => {
@@ -51083,34 +51073,34 @@ html body {
       "children",
       "locked"
     ]);
-    const context = React206.useContext(MenuContext);
+    const context = React205.useContext(MenuContext);
     const inheritableContext = useMemo(() => mergeProps2(context, restProps), [context, restProps], (prev2, next2) => !locked && (prev2[0] !== next2[0] || !isEqual_default(prev2[1], next2[1], true)));
-    return /* @__PURE__ */ React206.createElement(MenuContext.Provider, {
+    return /* @__PURE__ */ React205.createElement(MenuContext.Provider, {
       value: inheritableContext
     }, children);
   }
 
   // ../custom_dashboard/node_modules/@rc-component/menu/es/context/PathContext.js
-  var React207 = __toESM(require_react());
+  var React206 = __toESM(require_react());
   var EmptyList = [];
-  var PathRegisterContext = /* @__PURE__ */ React207.createContext(null);
+  var PathRegisterContext = /* @__PURE__ */ React206.createContext(null);
   function useMeasure() {
-    return React207.useContext(PathRegisterContext);
+    return React206.useContext(PathRegisterContext);
   }
-  var PathTrackerContext = /* @__PURE__ */ React207.createContext(EmptyList);
+  var PathTrackerContext = /* @__PURE__ */ React206.createContext(EmptyList);
   function useFullPath(eventKey) {
-    const parentKeyPath = React207.useContext(PathTrackerContext);
-    return React207.useMemo(() => eventKey !== void 0 ? [...parentKeyPath, eventKey] : parentKeyPath, [parentKeyPath, eventKey]);
+    const parentKeyPath = React206.useContext(PathTrackerContext);
+    return React206.useMemo(() => eventKey !== void 0 ? [...parentKeyPath, eventKey] : parentKeyPath, [parentKeyPath, eventKey]);
   }
-  var PathUserContext = /* @__PURE__ */ React207.createContext(null);
+  var PathUserContext = /* @__PURE__ */ React206.createContext(null);
 
   // ../custom_dashboard/node_modules/@rc-component/menu/es/context/PrivateContext.js
-  var React208 = __toESM(require_react());
-  var PrivateContext = /* @__PURE__ */ React208.createContext({});
+  var React207 = __toESM(require_react());
+  var PrivateContext = /* @__PURE__ */ React207.createContext({});
   var PrivateContext_default = PrivateContext;
 
   // ../custom_dashboard/node_modules/@rc-component/menu/es/hooks/useAccessibility.js
-  var React209 = __toESM(require_react());
+  var React208 = __toESM(require_react());
   var {
     LEFT,
     RIGHT,
@@ -51247,13 +51237,13 @@ html body {
     };
   };
   function useAccessibility2(mode, activeKey, isRtl, id, containerRef, getKeys, getKeyPath, triggerActiveKey, triggerAccessibilityOpen, originOnKeyDown) {
-    const rafRef = React209.useRef();
-    const activeRef = React209.useRef();
+    const rafRef = React208.useRef();
+    const activeRef = React208.useRef();
     activeRef.current = activeKey;
     const cleanRaf = () => {
       raf_default.cancel(rafRef.current);
     };
-    React209.useEffect(() => () => {
+    React208.useEffect(() => () => {
       cleanRaf();
     }, []);
     return (e3) => {
@@ -51337,8 +51327,8 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/menu/es/hooks/useKeyRecords.js
-  var React210 = __toESM(require_react());
-  var import_react91 = __toESM(require_react());
+  var React209 = __toESM(require_react());
+  var import_react90 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/menu/es/utils/timeUtil.js
   function nextSlice(callback) {
@@ -51351,18 +51341,18 @@ html body {
   var getPathKeys = (keyPathStr) => keyPathStr.split(PATH_SPLIT);
   var OVERFLOW_KEY = "rc-menu-more";
   function useKeyRecords() {
-    const [, internalForceUpdate] = React210.useState({});
-    const key2pathRef = (0, import_react91.useRef)(/* @__PURE__ */ new Map());
-    const path2keyRef = (0, import_react91.useRef)(/* @__PURE__ */ new Map());
-    const [overflowKeys, setOverflowKeys] = React210.useState([]);
-    const updateRef = (0, import_react91.useRef)(0);
-    const destroyRef = (0, import_react91.useRef)(false);
+    const [, internalForceUpdate] = React209.useState({});
+    const key2pathRef = (0, import_react90.useRef)(/* @__PURE__ */ new Map());
+    const path2keyRef = (0, import_react90.useRef)(/* @__PURE__ */ new Map());
+    const [overflowKeys, setOverflowKeys] = React209.useState([]);
+    const updateRef = (0, import_react90.useRef)(0);
+    const destroyRef = (0, import_react90.useRef)(false);
     const forceUpdate = () => {
       if (!destroyRef.current) {
         internalForceUpdate({});
       }
     };
-    const registerPath = (0, import_react91.useCallback)((key, keyPath) => {
+    const registerPath = (0, import_react90.useCallback)((key, keyPath) => {
       if (true) {
         warning_default(!key2pathRef.current.has(key), `Duplicated key '${key}' used in Menu by path [${keyPath.join(" > ")}]`);
       }
@@ -51377,15 +51367,15 @@ html body {
         }
       });
     }, []);
-    const unregisterPath = (0, import_react91.useCallback)((key, keyPath) => {
+    const unregisterPath = (0, import_react90.useCallback)((key, keyPath) => {
       const connectedPath = getPathStr(keyPath);
       path2keyRef.current.delete(connectedPath);
       key2pathRef.current.delete(key);
     }, []);
-    const refreshOverflowKeys = (0, import_react91.useCallback)((keys2) => {
+    const refreshOverflowKeys = (0, import_react90.useCallback)((keys2) => {
       setOverflowKeys(keys2);
     }, []);
-    const getKeyPath = (0, import_react91.useCallback)((eventKey, includeOverflow) => {
+    const getKeyPath = (0, import_react90.useCallback)((eventKey, includeOverflow) => {
       const fullPath = key2pathRef.current.get(eventKey) || "";
       const keys2 = getPathKeys(fullPath);
       if (includeOverflow && overflowKeys.includes(keys2[0])) {
@@ -51393,7 +51383,7 @@ html body {
       }
       return keys2;
     }, [overflowKeys]);
-    const isSubPathKey = (0, import_react91.useCallback)((pathKeys, eventKey) => pathKeys.filter((item) => item !== void 0).some((pathKey2) => {
+    const isSubPathKey = (0, import_react90.useCallback)((pathKeys, eventKey) => pathKeys.filter((item) => item !== void 0).some((pathKey2) => {
       const pathKeyList = getKeyPath(pathKey2, true);
       return pathKeyList.includes(eventKey);
     }), [getKeyPath]);
@@ -51404,7 +51394,7 @@ html body {
       }
       return keys2;
     };
-    const getSubPathKeys = (0, import_react91.useCallback)((key) => {
+    const getSubPathKeys = (0, import_react90.useCallback)((key) => {
       const connectedPath = `${key2pathRef.current.get(key)}${PATH_SPLIT}`;
       const pathKeys = /* @__PURE__ */ new Set();
       [...path2keyRef.current.keys()].forEach((pathKey2) => {
@@ -51414,7 +51404,7 @@ html body {
       });
       return pathKeys;
     }, []);
-    React210.useEffect(() => () => {
+    React209.useEffect(() => () => {
       destroyRef.current = true;
     }, []);
     return {
@@ -51429,11 +51419,11 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/menu/es/hooks/useMemoCallback.js
-  var React211 = __toESM(require_react());
+  var React210 = __toESM(require_react());
   function useMemoCallback(func) {
-    const funRef = React211.useRef(func);
+    const funRef = React210.useRef(func);
     funRef.current = func;
-    const callback = React211.useCallback((...args) => {
+    const callback = React210.useCallback((...args) => {
       var _a;
       return (_a = funRef.current) == null ? void 0 : _a.call(funRef, ...args);
     }, []);
@@ -51441,16 +51431,16 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/menu/es/MenuItem.js
-  var React215 = __toESM(require_react());
+  var React214 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/menu/es/hooks/useActive.js
-  var React212 = __toESM(require_react());
+  var React211 = __toESM(require_react());
   function useActive(eventKey, disabled, onMouseEnter, onMouseLeave) {
     const {
       activeKey,
       onActive,
       onInactive
-    } = React212.useContext(MenuContext);
+    } = React211.useContext(MenuContext);
     const ret = {
       active: activeKey === eventKey
     };
@@ -51474,13 +51464,13 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/menu/es/hooks/useDirectionStyle.js
-  var React213 = __toESM(require_react());
+  var React212 = __toESM(require_react());
   function useDirectionStyle(level) {
     const {
       mode,
       rtl,
       inlineIndent
-    } = React213.useContext(MenuContext);
+    } = React212.useContext(MenuContext);
     if (mode !== "inline") {
       return null;
     }
@@ -51493,7 +51483,7 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/menu/es/Icon.js
-  var React214 = __toESM(require_react());
+  var React213 = __toESM(require_react());
   function Icon2({
     icon,
     props,
@@ -51504,7 +51494,7 @@ html body {
       return null;
     }
     if (typeof icon === "function") {
-      iconNode = /* @__PURE__ */ React214.createElement(icon, __spreadValues({}, props));
+      iconNode = /* @__PURE__ */ React213.createElement(icon, __spreadValues({}, props));
     } else if (typeof icon !== "boolean") {
       iconNode = icon;
     }
@@ -51542,7 +51532,7 @@ html body {
     };
     return _extends38.apply(this, arguments);
   }
-  var LegacyMenuItem = class extends React215.Component {
+  var LegacyMenuItem = class extends React214.Component {
     render() {
       const _a = this.props, {
         title,
@@ -51555,14 +51545,14 @@ html body {
       ]);
       const passedProps = omit(restProps, ["eventKey", "popupClassName", "popupOffset", "onTitleClick"]);
       warning_default(!attribute, "`attribute` of Menu.Item is deprecated. Please pass attribute directly.");
-      return /* @__PURE__ */ React215.createElement(es_default8.Item, _extends38({}, attribute, {
+      return /* @__PURE__ */ React214.createElement(es_default8.Item, _extends38({}, attribute, {
         title: typeof title === "string" ? title : void 0
       }, passedProps, {
         ref: elementRef
       }));
     }
   };
-  var InternalMenuItem = /* @__PURE__ */ React215.forwardRef((props, ref) => {
+  var InternalMenuItem = /* @__PURE__ */ React214.forwardRef((props, ref) => {
     const _a = props, {
       style: style2,
       className,
@@ -51601,13 +51591,13 @@ html body {
       itemIcon: contextItemIcon,
       selectedKeys,
       onActive
-    } = React215.useContext(MenuContext);
+    } = React214.useContext(MenuContext);
     const {
       _internalRenderMenuItem
-    } = React215.useContext(PrivateContext_default);
+    } = React214.useContext(PrivateContext_default);
     const itemCls = `${prefixCls}-item`;
-    const legacyMenuItemRef = React215.useRef();
-    const elementRef = React215.useRef();
+    const legacyMenuItemRef = React214.useRef();
+    const elementRef = React214.useRef();
     const mergedDisabled = contextDisabled || disabled;
     const mergedEleRef = useComposeRef(ref, elementRef);
     const connectedKeys = useFullPath(eventKey);
@@ -51654,7 +51644,7 @@ html body {
     if (props.role === "option") {
       optionRoleProps["aria-selected"] = selected;
     }
-    let renderNode = /* @__PURE__ */ React215.createElement(LegacyMenuItem, _extends38({
+    let renderNode = /* @__PURE__ */ React214.createElement(LegacyMenuItem, _extends38({
       ref: legacyMenuItemRef,
       elementRef: mergedEleRef,
       role: role === null ? "none" : role || "menuitem",
@@ -51672,7 +51662,7 @@ html body {
       onClick: onInternalClick,
       onKeyDown: onInternalKeyDown,
       onFocus: onInternalFocus
-    }), children, /* @__PURE__ */ React215.createElement(Icon2, {
+    }), children, /* @__PURE__ */ React214.createElement(Icon2, {
       props: __spreadProps(__spreadValues({}, props), {
         isSelected: selected
       }),
@@ -51691,7 +51681,7 @@ html body {
     } = props;
     const measure = useMeasure();
     const connectedKeyPath = useFullPath(eventKey);
-    React215.useEffect(() => {
+    React214.useEffect(() => {
       if (measure) {
         measure.registerPath(eventKey, connectedKeyPath);
         return () => {
@@ -51702,17 +51692,17 @@ html body {
     if (measure) {
       return null;
     }
-    return /* @__PURE__ */ React215.createElement(InternalMenuItem, _extends38({}, props, {
+    return /* @__PURE__ */ React214.createElement(InternalMenuItem, _extends38({}, props, {
       ref
     }));
   }
-  var MenuItem_default = /* @__PURE__ */ React215.forwardRef(MenuItem);
+  var MenuItem_default = /* @__PURE__ */ React214.forwardRef(MenuItem);
 
   // ../custom_dashboard/node_modules/@rc-component/menu/es/SubMenu/index.js
-  var React220 = __toESM(require_react());
+  var React219 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/menu/es/SubMenu/SubMenuList.js
-  var React216 = __toESM(require_react());
+  var React215 = __toESM(require_react());
   function _extends39() {
     _extends39 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -51739,8 +51729,8 @@ html body {
       prefixCls,
       mode,
       rtl
-    } = React216.useContext(MenuContext);
-    return /* @__PURE__ */ React216.createElement("ul", _extends39({
+    } = React215.useContext(MenuContext);
+    return /* @__PURE__ */ React215.createElement("ul", _extends39({
       className: clsx(prefixCls, rtl && `${prefixCls}-rtl`, `${prefixCls}-sub`, `${prefixCls}-${mode === "inline" ? "inline" : "vertical"}`, className),
       role: "menu"
     }, restProps, {
@@ -51748,18 +51738,18 @@ html body {
       ref
     }), children);
   };
-  var SubMenuList = /* @__PURE__ */ React216.forwardRef(InternalSubMenuList);
+  var SubMenuList = /* @__PURE__ */ React215.forwardRef(InternalSubMenuList);
   if (true) {
     SubMenuList.displayName = "SubMenuList";
   }
   var SubMenuList_default = SubMenuList;
 
   // ../custom_dashboard/node_modules/@rc-component/menu/es/utils/commonUtil.js
-  var React217 = __toESM(require_react());
+  var React216 = __toESM(require_react());
   function parseChildren(children, keyPath) {
     return toArray(children).map((child, index2) => {
       var _a, _b;
-      if (/* @__PURE__ */ React217.isValidElement(child)) {
+      if (/* @__PURE__ */ React216.isValidElement(child)) {
         const {
           key
         } = child;
@@ -51775,14 +51765,14 @@ html body {
         if (emptyKey) {
           cloneProps.warnKey = true;
         }
-        return /* @__PURE__ */ React217.cloneElement(child, cloneProps);
+        return /* @__PURE__ */ React216.cloneElement(child, cloneProps);
       }
       return child;
     });
   }
 
   // ../custom_dashboard/node_modules/@rc-component/menu/es/SubMenu/PopupTrigger.js
-  var React218 = __toESM(require_react());
+  var React217 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/menu/es/placements.js
   var autoAdjustOverflow2 = {
@@ -51899,12 +51889,12 @@ html body {
       rootClassName,
       motion,
       defaultMotions
-    } = React218.useContext(MenuContext);
-    const [innerVisible, setInnerVisible] = React218.useState(false);
+    } = React217.useContext(MenuContext);
+    const [innerVisible, setInnerVisible] = React217.useState(false);
     const placement = rtl ? __spreadValues(__spreadValues({}, placementsRtl), builtinPlacements) : __spreadValues(__spreadValues({}, placements3), builtinPlacements);
     const popupPlacement = popupPlacementMap[mode];
     const targetMotion = getMotion2(mode, motion, defaultMotions);
-    const targetMotionRef = React218.useRef(targetMotion);
+    const targetMotionRef = React217.useRef(targetMotion);
     if (mode !== "inline") {
       targetMotionRef.current = targetMotion;
     }
@@ -51913,8 +51903,8 @@ html body {
       removeOnLeave: false,
       motionAppear: true
     });
-    const visibleRef = React218.useRef();
-    React218.useEffect(() => {
+    const visibleRef = React217.useRef();
+    React217.useEffect(() => {
       visibleRef.current = raf_default(() => {
         setInnerVisible(visible);
       });
@@ -51922,7 +51912,7 @@ html body {
         raf_default.cancel(visibleRef.current);
       };
     }, [visible]);
-    return /* @__PURE__ */ React218.createElement(es_default4, {
+    return /* @__PURE__ */ React217.createElement(es_default4, {
       prefixCls,
       popupClassName: clsx(`${prefixCls}-popup`, {
         [`${prefixCls}-rtl`]: rtl
@@ -51948,7 +51938,7 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/menu/es/SubMenu/InlineSubMenuList.js
-  var React219 = __toESM(require_react());
+  var React218 = __toESM(require_react());
   function _extends40() {
     _extends40 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -51976,12 +51966,12 @@ html body {
       motion,
       defaultMotions,
       mode
-    } = React219.useContext(MenuContext);
-    const sameModeRef = React219.useRef(false);
+    } = React218.useContext(MenuContext);
+    const sameModeRef = React218.useRef(false);
     sameModeRef.current = mode === fixedMode;
-    const [destroy2, setDestroy] = React219.useState(!sameModeRef.current);
+    const [destroy2, setDestroy] = React218.useState(!sameModeRef.current);
     const mergedOpen = sameModeRef.current ? open2 : false;
-    React219.useEffect(() => {
+    React218.useEffect(() => {
       if (sameModeRef.current) {
         setDestroy(false);
       }
@@ -52000,10 +51990,10 @@ html body {
     if (destroy2) {
       return null;
     }
-    return /* @__PURE__ */ React219.createElement(InheritableContextProvider, {
+    return /* @__PURE__ */ React218.createElement(InheritableContextProvider, {
       mode: fixedMode,
       locked: !sameModeRef.current
-    }, /* @__PURE__ */ React219.createElement(es_default2, _extends40({
+    }, /* @__PURE__ */ React218.createElement(es_default2, _extends40({
       visible: mergedOpen
     }, mergedMotion, {
       forceRender: forceSubMenuRender,
@@ -52013,7 +52003,7 @@ html body {
       className: motionClassName,
       style: motionStyle
     }) => {
-      return /* @__PURE__ */ React219.createElement(SubMenuList_default, {
+      return /* @__PURE__ */ React218.createElement(SubMenuList_default, {
         id,
         className: motionClassName,
         style: motionStyle
@@ -52036,7 +52026,7 @@ html body {
     };
     return _extends41.apply(this, arguments);
   }
-  var InternalSubMenu = /* @__PURE__ */ React220.forwardRef((props, ref) => {
+  var InternalSubMenu = /* @__PURE__ */ React219.forwardRef((props, ref) => {
     const _a = props, {
       style: style2,
       className,
@@ -52099,18 +52089,18 @@ html body {
       onOpenChange,
       onActive,
       popupRender: contextPopupRender
-    } = React220.useContext(MenuContext);
+    } = React219.useContext(MenuContext);
     const {
       _internalRenderSubMenuItem
-    } = React220.useContext(PrivateContext_default);
+    } = React219.useContext(PrivateContext_default);
     const {
       isSubPathKey
-    } = React220.useContext(PathUserContext);
+    } = React219.useContext(PathUserContext);
     const connectedPath = useFullPath();
     const subMenuPrefixCls = `${prefixCls}-submenu`;
     const mergedDisabled = contextDisabled || disabled;
-    const elementRef = React220.useRef();
-    const popupRef = React220.useRef();
+    const elementRef = React219.useRef();
+    const popupRef = React219.useRef();
     if (warnKey) {
       warning_default(false, "SubMenu should not leave undefined `key`.");
     }
@@ -52124,7 +52114,7 @@ html body {
     } = _b, activeProps = __objRest(_b, [
       "active"
     ]);
-    const [childrenActive, setChildrenActive] = React220.useState(false);
+    const [childrenActive, setChildrenActive] = React219.useState(false);
     const triggerChildrenActive = (newActive) => {
       if (!mergedDisabled) {
         setChildrenActive(newActive);
@@ -52144,7 +52134,7 @@ html body {
         domEvent
       });
     };
-    const mergedActive = React220.useMemo(() => {
+    const mergedActive = React219.useMemo(() => {
       if (active) {
         return active;
       }
@@ -52179,16 +52169,16 @@ html body {
       onActive(eventKey);
     };
     const popupId = domDataId && `${domDataId}-popup`;
-    const expandIconNode = React220.useMemo(() => /* @__PURE__ */ React220.createElement(Icon2, {
+    const expandIconNode = React219.useMemo(() => /* @__PURE__ */ React219.createElement(Icon2, {
       icon: mode !== "horizontal" ? mergedExpandIcon : void 0,
       props: __spreadProps(__spreadValues({}, props), {
         isOpen: open2,
         isSubMenu: true
       })
-    }, /* @__PURE__ */ React220.createElement("i", {
+    }, /* @__PURE__ */ React219.createElement("i", {
       className: `${subMenuPrefixCls}-arrow`
     })), [mode, mergedExpandIcon, props, open2, subMenuPrefixCls]);
-    let titleNode = /* @__PURE__ */ React220.createElement("div", _extends41({
+    let titleNode = /* @__PURE__ */ React219.createElement("div", _extends41({
       role: "menuitem",
       style: directionStyle,
       className: `${subMenuPrefixCls}-title`,
@@ -52203,19 +52193,19 @@ html body {
       onClick: onInternalTitleClick,
       onFocus: onInternalFocus
     }, activeProps), title, expandIconNode);
-    const triggerModeRef = React220.useRef(mode);
+    const triggerModeRef = React219.useRef(mode);
     if (mode !== "inline" && connectedPath.length > 1) {
       triggerModeRef.current = "vertical";
     } else {
       triggerModeRef.current = mode;
     }
     const popupContentTriggerMode = triggerModeRef.current;
-    const renderPopupContent = React220.useMemo(() => {
-      const originNode = /* @__PURE__ */ React220.createElement(InheritableContextProvider, {
+    const renderPopupContent = React219.useMemo(() => {
+      const originNode = /* @__PURE__ */ React219.createElement(InheritableContextProvider, {
         classNames: menuClassNames,
         styles,
         mode: popupContentTriggerMode === "horizontal" ? "vertical" : popupContentTriggerMode
-      }, /* @__PURE__ */ React220.createElement(SubMenuList_default, {
+      }, /* @__PURE__ */ React219.createElement(SubMenuList_default, {
         id: popupId,
         ref: popupRef
       }, children));
@@ -52231,7 +52221,7 @@ html body {
     }, [propsPopupRender, contextPopupRender, connectedPath, popupId, children, props, popupContentTriggerMode]);
     if (!overflowDisabled) {
       const triggerMode = triggerModeRef.current;
-      titleNode = /* @__PURE__ */ React220.createElement(PopupTrigger, {
+      titleNode = /* @__PURE__ */ React219.createElement(PopupTrigger, {
         mode: triggerMode,
         prefixCls: subMenuPrefixCls,
         visible: !internalPopupClose && open2 && mode !== "inline",
@@ -52243,7 +52233,7 @@ html body {
         onVisibleChange: onPopupVisibleChange
       }, titleNode);
     }
-    let listNode = /* @__PURE__ */ React220.createElement(es_default8.Item, _extends41({
+    let listNode = /* @__PURE__ */ React219.createElement(es_default8.Item, _extends41({
       ref,
       role: "none"
     }, restProps, {
@@ -52257,7 +52247,7 @@ html body {
       }),
       onMouseEnter: onInternalMouseEnter,
       onMouseLeave: onInternalMouseLeave
-    }), titleNode, !overflowDisabled && /* @__PURE__ */ React220.createElement(InlineSubMenuList, {
+    }), titleNode, !overflowDisabled && /* @__PURE__ */ React219.createElement(InlineSubMenuList, {
       id: popupId,
       open: open2,
       keyPath: connectedPath
@@ -52270,7 +52260,7 @@ html body {
         disabled: mergedDisabled
       });
     }
-    return /* @__PURE__ */ React220.createElement(InheritableContextProvider, {
+    return /* @__PURE__ */ React219.createElement(InheritableContextProvider, {
       classNames: menuClassNames,
       styles,
       onItemClick: onMergedItemClick,
@@ -52279,7 +52269,7 @@ html body {
       expandIcon: mergedExpandIcon
     }, listNode);
   });
-  var SubMenu = /* @__PURE__ */ React220.forwardRef((props, ref) => {
+  var SubMenu = /* @__PURE__ */ React219.forwardRef((props, ref) => {
     const {
       eventKey,
       children
@@ -52287,7 +52277,7 @@ html body {
     const connectedKeyPath = useFullPath(eventKey);
     const childList = parseChildren(children, connectedKeyPath);
     const measure = useMeasure();
-    React220.useEffect(() => {
+    React219.useEffect(() => {
       if (measure) {
         measure.registerPath(eventKey, connectedKeyPath);
         return () => {
@@ -52299,11 +52289,11 @@ html body {
     if (measure) {
       renderNode = childList;
     } else {
-      renderNode = /* @__PURE__ */ React220.createElement(InternalSubMenu, _extends41({
+      renderNode = /* @__PURE__ */ React219.createElement(InternalSubMenu, _extends41({
         ref
       }, props), childList);
     }
-    return /* @__PURE__ */ React220.createElement(PathTrackerContext.Provider, {
+    return /* @__PURE__ */ React219.createElement(PathTrackerContext.Provider, {
       value: connectedKeyPath
     }, renderNode);
   });
@@ -52313,22 +52303,22 @@ html body {
   var SubMenu_default = SubMenu;
 
   // ../custom_dashboard/node_modules/@rc-component/menu/es/utils/nodeUtil.js
-  var React223 = __toESM(require_react());
+  var React222 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/menu/es/Divider.js
-  var React221 = __toESM(require_react());
+  var React220 = __toESM(require_react());
   function Divider({
     className,
     style: style2
   }) {
     const {
       prefixCls
-    } = React221.useContext(MenuContext);
+    } = React220.useContext(MenuContext);
     const measure = useMeasure();
     if (measure) {
       return null;
     }
-    return /* @__PURE__ */ React221.createElement("li", {
+    return /* @__PURE__ */ React220.createElement("li", {
       role: "separator",
       className: clsx(`${prefixCls}-item-divider`, className),
       style: style2
@@ -52336,7 +52326,7 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/menu/es/MenuItemGroup.js
-  var React222 = __toESM(require_react());
+  var React221 = __toESM(require_react());
   function _extends42() {
     _extends42 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -52351,7 +52341,7 @@ html body {
     };
     return _extends42.apply(this, arguments);
   }
-  var InternalMenuItemGroup = /* @__PURE__ */ React222.forwardRef((props, ref) => {
+  var InternalMenuItemGroup = /* @__PURE__ */ React221.forwardRef((props, ref) => {
     const _a = props, {
       className,
       title,
@@ -52367,26 +52357,26 @@ html body {
       prefixCls,
       classNames: menuClassNames,
       styles
-    } = React222.useContext(MenuContext);
+    } = React221.useContext(MenuContext);
     const groupPrefixCls = `${prefixCls}-item-group`;
-    return /* @__PURE__ */ React222.createElement("li", _extends42({
+    return /* @__PURE__ */ React221.createElement("li", _extends42({
       ref,
       role: "presentation"
     }, restProps, {
       onClick: (e3) => e3.stopPropagation(),
       className: clsx(groupPrefixCls, className)
-    }), /* @__PURE__ */ React222.createElement("div", {
+    }), /* @__PURE__ */ React221.createElement("div", {
       role: "presentation",
       className: clsx(`${groupPrefixCls}-title`, menuClassNames == null ? void 0 : menuClassNames.listTitle),
       style: styles == null ? void 0 : styles.listTitle,
       title: typeof title === "string" ? title : void 0
-    }, title), /* @__PURE__ */ React222.createElement("ul", {
+    }, title), /* @__PURE__ */ React221.createElement("ul", {
       role: "group",
       className: clsx(`${groupPrefixCls}-list`, menuClassNames == null ? void 0 : menuClassNames.list),
       style: styles == null ? void 0 : styles.list
     }, children));
   });
-  var MenuItemGroup = /* @__PURE__ */ React222.forwardRef((props, ref) => {
+  var MenuItemGroup = /* @__PURE__ */ React221.forwardRef((props, ref) => {
     const {
       eventKey,
       children
@@ -52397,7 +52387,7 @@ html body {
     if (measure) {
       return childList;
     }
-    return /* @__PURE__ */ React222.createElement(InternalMenuItemGroup, _extends42({
+    return /* @__PURE__ */ React221.createElement(InternalMenuItemGroup, _extends42({
       ref
     }, omit(props, ["warnKey"])), childList);
   });
@@ -52446,28 +52436,28 @@ html body {
         const mergedKey = key != null ? key : `tmp-${index2}`;
         if (children || type5 === "group") {
           if (type5 === "group") {
-            return /* @__PURE__ */ React223.createElement(MergedMenuItemGroup, _extends43({
+            return /* @__PURE__ */ React222.createElement(MergedMenuItemGroup, _extends43({
               key: mergedKey
             }, restProps, {
               title: label
             }), convertItemsToNodes(children, components, prefixCls));
           }
-          return /* @__PURE__ */ React223.createElement(MergedSubMenu, _extends43({
+          return /* @__PURE__ */ React222.createElement(MergedSubMenu, _extends43({
             key: mergedKey
           }, restProps, {
             title: label
           }), convertItemsToNodes(children, components, prefixCls));
         }
         if (type5 === "divider") {
-          return /* @__PURE__ */ React223.createElement(MergedDivider, _extends43({
+          return /* @__PURE__ */ React222.createElement(MergedDivider, _extends43({
             key: mergedKey
           }, restProps));
         }
-        return /* @__PURE__ */ React223.createElement(MergedMenuItem, _extends43({
+        return /* @__PURE__ */ React222.createElement(MergedMenuItem, _extends43({
           key: mergedKey
         }, restProps, {
           extra
-        }), label, (!!extra || extra === 0) && /* @__PURE__ */ React223.createElement("span", {
+        }), label, (!!extra || extra === 0) && /* @__PURE__ */ React222.createElement("span", {
           className: `${prefixCls}-item-extra`
         }, extra));
       }
@@ -52504,7 +52494,7 @@ html body {
     return _extends44.apply(this, arguments);
   }
   var EMPTY_LIST2 = [];
-  var Menu = /* @__PURE__ */ React224.forwardRef((props, ref) => {
+  var Menu = /* @__PURE__ */ React223.forwardRef((props, ref) => {
     var _b;
     const _a = props, {
       prefixCls = "rc-menu",
@@ -52603,9 +52593,9 @@ html body {
       "_internalComponents",
       "popupRender"
     ]);
-    const [childList, measureChildList] = React224.useMemo(() => [parseItems(children, items, EMPTY_LIST2, _internalComponents, prefixCls), parseItems(children, items, EMPTY_LIST2, {}, prefixCls)], [children, items, _internalComponents]);
-    const [mounted, setMounted] = React224.useState(false);
-    const containerRef = React224.useRef();
+    const [childList, measureChildList] = React223.useMemo(() => [parseItems(children, items, EMPTY_LIST2, _internalComponents, prefixCls), parseItems(children, items, EMPTY_LIST2, {}, prefixCls)], [children, items, _internalComponents]);
+    const [mounted, setMounted] = React223.useState(false);
+    const containerRef = React223.useRef();
     const uuid5 = useId_default(id ? `rc-menu-uuid-${id}` : "rc-menu-uuid");
     const isRtl = direction === "rtl";
     if (true) {
@@ -52624,18 +52614,18 @@ html body {
         doUpdate();
       }
     };
-    const [inlineCacheOpenKeys, setInlineCacheOpenKeys] = React224.useState(mergedOpenKeys);
-    const mountRef = React224.useRef(false);
-    const [mergedMode, mergedInlineCollapsed] = React224.useMemo(() => {
+    const [inlineCacheOpenKeys, setInlineCacheOpenKeys] = React223.useState(mergedOpenKeys);
+    const mountRef = React223.useRef(false);
+    const [mergedMode, mergedInlineCollapsed] = React223.useMemo(() => {
       if ((mode === "inline" || mode === "vertical") && inlineCollapsed) {
         return ["vertical", inlineCollapsed];
       }
       return [mode, false];
     }, [mode, inlineCollapsed]);
     const isInlineMode = mergedMode === "inline";
-    const [internalMode, setInternalMode] = React224.useState(mergedMode);
-    const [internalInlineCollapsed, setInternalInlineCollapsed] = React224.useState(mergedInlineCollapsed);
-    React224.useEffect(() => {
+    const [internalMode, setInternalMode] = React223.useState(mergedMode);
+    const [internalInlineCollapsed, setInternalInlineCollapsed] = React223.useState(mergedInlineCollapsed);
+    React223.useEffect(() => {
       setInternalMode(mergedMode);
       setInternalInlineCollapsed(mergedInlineCollapsed);
       if (!mountRef.current) {
@@ -52647,14 +52637,14 @@ html body {
         triggerOpenKeys(EMPTY_LIST2);
       }
     }, [mergedMode, mergedInlineCollapsed]);
-    const [lastVisibleIndex, setLastVisibleIndex] = React224.useState(0);
+    const [lastVisibleIndex, setLastVisibleIndex] = React223.useState(0);
     const allVisible = lastVisibleIndex >= childList.length - 1 || internalMode !== "horizontal" || disabledOverflow;
-    React224.useEffect(() => {
+    React223.useEffect(() => {
       if (isInlineMode) {
         setInlineCacheOpenKeys(mergedOpenKeys);
       }
     }, [mergedOpenKeys]);
-    React224.useEffect(() => {
+    React223.useEffect(() => {
       mountRef.current = true;
       return () => {
         mountRef.current = false;
@@ -52669,14 +52659,14 @@ html body {
       getKeys,
       getSubPathKeys
     } = useKeyRecords();
-    const registerPathContext = React224.useMemo(() => ({
+    const registerPathContext = React223.useMemo(() => ({
       registerPath,
       unregisterPath
     }), [registerPath, unregisterPath]);
-    const pathUserContext = React224.useMemo(() => ({
+    const pathUserContext = React223.useMemo(() => ({
       isSubPathKey
     }), [isSubPathKey]);
-    React224.useEffect(() => {
+    React223.useEffect(() => {
       refreshOverflowKeys(allVisible ? EMPTY_LIST2 : childList.slice(lastVisibleIndex + 1).map((child) => child.key));
     }, [lastVisibleIndex, allVisible]);
     const [mergedActiveKey, setMergedActiveKey] = useControlledState(activeKey || defaultActiveFirst && ((_b = childList[0]) == null ? void 0 : _b.key), activeKey);
@@ -52686,7 +52676,7 @@ html body {
     const onInactive = useMemoCallback(() => {
       setMergedActiveKey(void 0);
     });
-    (0, import_react92.useImperativeHandle)(ref, () => {
+    (0, import_react91.useImperativeHandle)(ref, () => {
       return {
         list: containerRef.current,
         focus: (options) => {
@@ -52721,7 +52711,7 @@ html body {
       };
     });
     const [internalSelectKeys, setMergedSelectKeys] = useControlledState(defaultSelectedKeys || [], selectedKeys);
-    const mergedSelectKeys = React224.useMemo(() => {
+    const mergedSelectKeys = React223.useMemo(() => {
       if (Array.isArray(internalSelectKeys)) {
         return internalSelectKeys;
       }
@@ -52781,20 +52771,20 @@ html body {
       onInternalOpenChange(key, nextOpen);
     };
     const onInternalKeyDown = useAccessibility2(internalMode, mergedActiveKey, isRtl, uuid5, containerRef, getKeys, getKeyPath, setMergedActiveKey, triggerAccessibilityOpen, onKeyDown2);
-    React224.useEffect(() => {
+    React223.useEffect(() => {
       setMounted(true);
     }, []);
-    const privateContext = React224.useMemo(() => ({
+    const privateContext = React223.useMemo(() => ({
       _internalRenderMenuItem,
       _internalRenderSubMenuItem
     }), [_internalRenderMenuItem, _internalRenderSubMenuItem]);
-    const wrappedChildList = internalMode !== "horizontal" || disabledOverflow ? childList : childList.map((child, index2) => /* @__PURE__ */ React224.createElement(InheritableContextProvider, {
+    const wrappedChildList = internalMode !== "horizontal" || disabledOverflow ? childList : childList.map((child, index2) => /* @__PURE__ */ React223.createElement(InheritableContextProvider, {
       key: child.key,
       overflowDisabled: index2 > lastVisibleIndex,
       classNames: menuClassNames,
       styles
     }, child));
-    const container = /* @__PURE__ */ React224.createElement(es_default8, _extends44({
+    const container = /* @__PURE__ */ React223.createElement(es_default8, _extends44({
       id,
       ref: containerRef,
       prefixCls: `${prefixCls}-overflow`,
@@ -52813,7 +52803,7 @@ html body {
       renderRawRest: (omitItems) => {
         const len = omitItems.length;
         const originOmitItems = len ? childList.slice(-len) : null;
-        return /* @__PURE__ */ React224.createElement(SubMenu_default, {
+        return /* @__PURE__ */ React223.createElement(SubMenu_default, {
           eventKey: OVERFLOW_KEY,
           title: overflowedIndicator,
           disabled: allVisible,
@@ -52829,11 +52819,11 @@ html body {
       },
       onKeyDown: onInternalKeyDown
     }, restProps));
-    return /* @__PURE__ */ React224.createElement(PrivateContext_default.Provider, {
+    return /* @__PURE__ */ React223.createElement(PrivateContext_default.Provider, {
       value: privateContext
-    }, /* @__PURE__ */ React224.createElement(IdContext.Provider, {
+    }, /* @__PURE__ */ React223.createElement(IdContext.Provider, {
       value: uuid5
-    }, /* @__PURE__ */ React224.createElement(InheritableContextProvider, {
+    }, /* @__PURE__ */ React223.createElement(InheritableContextProvider, {
       prefixCls,
       rootClassName,
       classNames: menuClassNames,
@@ -52860,14 +52850,14 @@ html body {
       onItemClick: onInternalClick,
       onOpenChange: onInternalOpenChange,
       popupRender
-    }, /* @__PURE__ */ React224.createElement(PathUserContext.Provider, {
+    }, /* @__PURE__ */ React223.createElement(PathUserContext.Provider, {
       value: pathUserContext
-    }, container), /* @__PURE__ */ React224.createElement("div", {
+    }, container), /* @__PURE__ */ React223.createElement("div", {
       style: {
         display: "none"
       },
       "aria-hidden": true
-    }, /* @__PURE__ */ React224.createElement(PathRegisterContext.Provider, {
+    }, /* @__PURE__ */ React223.createElement(PathRegisterContext.Provider, {
       value: registerPathContext
     }, measureChildList)))));
   });
@@ -52882,11 +52872,11 @@ html body {
   var es_default13 = ExportMenu;
 
   // ../custom_dashboard/node_modules/antd/es/layout/Sider.js
-  var React227 = __toESM(require_react());
-  var import_react93 = __toESM(require_react());
+  var React226 = __toESM(require_react());
+  var import_react92 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/BarsOutlined.js
-  var React225 = __toESM(require_react());
+  var React224 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/BarsOutlined.js
   var BarsOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "0 0 1024 1024", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M912 192H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM104 228a56 56 0 10112 0 56 56 0 10-112 0zm0 284a56 56 0 10112 0 56 56 0 10-112 0zm0 284a56 56 0 10112 0 56 56 0 10-112 0z" } }] }, "name": "bars", "theme": "outlined" };
@@ -52907,19 +52897,19 @@ html body {
     };
     return _extends45.apply(this, arguments);
   }
-  var BarsOutlined2 = (props, ref) => /* @__PURE__ */ React225.createElement(AntdIcon_default, _extends45({}, props, {
+  var BarsOutlined2 = (props, ref) => /* @__PURE__ */ React224.createElement(AntdIcon_default, _extends45({}, props, {
     ref,
     icon: BarsOutlined_default
   }));
-  var RefIcon12 = /* @__PURE__ */ React225.forwardRef(BarsOutlined2);
+  var RefIcon12 = /* @__PURE__ */ React224.forwardRef(BarsOutlined2);
   if (true) {
     RefIcon12.displayName = "BarsOutlined";
   }
   var BarsOutlined_default2 = RefIcon12;
 
   // ../custom_dashboard/node_modules/antd/es/layout/context.js
-  var React226 = __toESM(require_react());
-  var LayoutContext = /* @__PURE__ */ React226.createContext({
+  var React225 = __toESM(require_react());
+  var LayoutContext = /* @__PURE__ */ React225.createContext({
     siderHook: {
       addSider: () => null,
       removeSider: () => null
@@ -53144,7 +53134,7 @@ html body {
     xxxl: `1839.98px`
   };
   var isNumeric = (val) => !Number.isNaN(Number.parseFloat(val)) && Number.isFinite(Number(val));
-  var SiderContext = /* @__PURE__ */ React227.createContext({});
+  var SiderContext = /* @__PURE__ */ React226.createContext({});
   var generateId = (() => {
     let i = 0;
     return (prefix2 = "") => {
@@ -53152,7 +53142,7 @@ html body {
       return `${prefix2}${i}`;
     };
   })();
-  var Sider = /* @__PURE__ */ React227.forwardRef((props, ref) => {
+  var Sider = /* @__PURE__ */ React226.forwardRef((props, ref) => {
     const _a = props, {
       prefixCls: customizePrefixCls,
       className,
@@ -53188,10 +53178,10 @@ html body {
     ]);
     const {
       siderHook
-    } = (0, import_react93.useContext)(LayoutContext);
-    const [collapsed, setCollapsed] = (0, import_react93.useState)("collapsed" in props ? props.collapsed : defaultCollapsed);
-    const [below, setBelow] = (0, import_react93.useState)(false);
-    (0, import_react93.useEffect)(() => {
+    } = (0, import_react92.useContext)(LayoutContext);
+    const [collapsed, setCollapsed] = (0, import_react92.useState)("collapsed" in props ? props.collapsed : defaultCollapsed);
+    const [below, setBelow] = (0, import_react92.useState)(false);
+    (0, import_react92.useEffect)(() => {
       if ("collapsed" in props) {
         setCollapsed(props.collapsed);
       }
@@ -53205,10 +53195,10 @@ html body {
     const {
       getPrefixCls,
       direction
-    } = (0, import_react93.useContext)(ConfigContext);
+    } = (0, import_react92.useContext)(ConfigContext);
     const prefixCls = getPrefixCls("layout-sider", customizePrefixCls);
     const [hashId, cssVarCls] = sider_default(prefixCls);
-    const responsiveHandlerRef = (0, import_react93.useRef)(null);
+    const responsiveHandlerRef = (0, import_react92.useRef)(null);
     responsiveHandlerRef.current = (mql) => {
       setBelow(mql.matches);
       onBreakpoint == null ? void 0 : onBreakpoint(mql.matches);
@@ -53216,7 +53206,7 @@ html body {
         handleSetCollapsed(mql.matches, "responsive");
       }
     };
-    (0, import_react93.useEffect)(() => {
+    (0, import_react92.useEffect)(() => {
       function responsiveHandler(mql2) {
         var _a2;
         return (_a2 = responsiveHandlerRef.current) == null ? void 0 : _a2.call(responsiveHandlerRef, mql2);
@@ -53235,7 +53225,7 @@ html body {
         }
       };
     }, [breakpoint]);
-    (0, import_react93.useEffect)(() => {
+    (0, import_react92.useEffect)(() => {
       const uniqueId = generateId("ant-sider-");
       siderHook.addSider(uniqueId);
       return () => siderHook.removeSider(uniqueId);
@@ -53246,19 +53236,19 @@ html body {
     const divProps = omit(otherProps, ["collapsed"]);
     const rawWidth = collapsed ? collapsedWidth : width;
     const siderWidth = isNumeric(rawWidth) ? `${rawWidth}px` : String(rawWidth);
-    const zeroWidthTrigger = Number.parseFloat(String(collapsedWidth || 0)) === 0 ? /* @__PURE__ */ React227.createElement("span", {
+    const zeroWidthTrigger = Number.parseFloat(String(collapsedWidth || 0)) === 0 ? /* @__PURE__ */ React226.createElement("span", {
       onClick: toggle,
       className: clsx(`${prefixCls}-zero-width-trigger`, `${prefixCls}-zero-width-trigger-${reverseArrow ? "right" : "left"}`),
       style: zeroWidthTriggerStyle
-    }, trigger || /* @__PURE__ */ React227.createElement(BarsOutlined_default2, null)) : null;
+    }, trigger || /* @__PURE__ */ React226.createElement(BarsOutlined_default2, null)) : null;
     const reverseIcon = direction === "rtl" === !reverseArrow;
     const iconObj = {
-      expanded: reverseIcon ? /* @__PURE__ */ React227.createElement(RightOutlined_default2, null) : /* @__PURE__ */ React227.createElement(LeftOutlined_default2, null),
-      collapsed: reverseIcon ? /* @__PURE__ */ React227.createElement(LeftOutlined_default2, null) : /* @__PURE__ */ React227.createElement(RightOutlined_default2, null)
+      expanded: reverseIcon ? /* @__PURE__ */ React226.createElement(RightOutlined_default2, null) : /* @__PURE__ */ React226.createElement(LeftOutlined_default2, null),
+      collapsed: reverseIcon ? /* @__PURE__ */ React226.createElement(LeftOutlined_default2, null) : /* @__PURE__ */ React226.createElement(RightOutlined_default2, null)
     };
     const status = collapsed ? "collapsed" : "expanded";
     const defaultTrigger = iconObj[status];
-    const triggerDom = trigger !== null ? zeroWidthTrigger || /* @__PURE__ */ React227.createElement("div", {
+    const triggerDom = trigger !== null ? zeroWidthTrigger || /* @__PURE__ */ React226.createElement("div", {
       className: `${prefixCls}-trigger`,
       onClick: toggle,
       style: {
@@ -53277,30 +53267,31 @@ html body {
       [`${prefixCls}-below`]: !!below,
       [`${prefixCls}-zero-width`]: Number.parseFloat(siderWidth) === 0
     }, className, hashId, cssVarCls);
-    const contextValue = React227.useMemo(() => ({
+    const contextValue = React226.useMemo(() => ({
       siderCollapsed: collapsed
     }), [collapsed]);
-    return /* @__PURE__ */ React227.createElement(SiderContext.Provider, {
+    return /* @__PURE__ */ React226.createElement(SiderContext.Provider, {
       value: contextValue
-    }, /* @__PURE__ */ React227.createElement("aside", __spreadProps(__spreadValues({
+    }, /* @__PURE__ */ React226.createElement("aside", __spreadProps(__spreadValues({
       className: siderCls
     }, divProps), {
       style: divStyle,
       ref
-    }), /* @__PURE__ */ React227.createElement("div", {
+    }), /* @__PURE__ */ React226.createElement("div", {
       className: `${prefixCls}-children`
     }, children), collapsible || below && zeroWidthTrigger ? triggerDom : null));
   });
   if (true) {
     Sider.displayName = "Sider";
   }
+  var Sider_default = Sider;
 
   // ../custom_dashboard/node_modules/antd/es/menu/menu.js
-  var React233 = __toESM(require_react());
-  var import_react95 = __toESM(require_react());
+  var React232 = __toESM(require_react());
+  var import_react94 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/EllipsisOutlined.js
-  var React228 = __toESM(require_react());
+  var React227 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/EllipsisOutlined.js
   var EllipsisOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M176 511a56 56 0 10112 0 56 56 0 10-112 0zm280 0a56 56 0 10112 0 56 56 0 10-112 0zm280 0a56 56 0 10112 0 56 56 0 10-112 0z" } }] }, "name": "ellipsis", "theme": "outlined" };
@@ -53321,20 +53312,20 @@ html body {
     };
     return _extends46.apply(this, arguments);
   }
-  var EllipsisOutlined2 = (props, ref) => /* @__PURE__ */ React228.createElement(AntdIcon_default, _extends46({}, props, {
+  var EllipsisOutlined2 = (props, ref) => /* @__PURE__ */ React227.createElement(AntdIcon_default, _extends46({}, props, {
     ref,
     icon: EllipsisOutlined_default
   }));
-  var RefIcon13 = /* @__PURE__ */ React228.forwardRef(EllipsisOutlined2);
+  var RefIcon13 = /* @__PURE__ */ React227.forwardRef(EllipsisOutlined2);
   if (true) {
     RefIcon13.displayName = "EllipsisOutlined";
   }
   var EllipsisOutlined_default2 = RefIcon13;
 
   // ../custom_dashboard/node_modules/antd/es/menu/MenuContext.js
-  var import_react94 = __toESM(require_react());
+  var import_react93 = __toESM(require_react());
   "use client";
-  var MenuContext2 = /* @__PURE__ */ (0, import_react94.createContext)({
+  var MenuContext2 = /* @__PURE__ */ (0, import_react93.createContext)({
     prefixCls: "",
     firstLevel: true,
     inlineCollapsed: false,
@@ -53344,7 +53335,7 @@ html body {
   var MenuContext_default = MenuContext2;
 
   // ../custom_dashboard/node_modules/antd/es/menu/MenuDivider.js
-  var React229 = __toESM(require_react());
+  var React228 = __toESM(require_react());
   "use client";
   var MenuDivider = (props) => {
     const _a = props, {
@@ -53358,19 +53349,19 @@ html body {
     ]);
     const {
       getPrefixCls
-    } = React229.useContext(ConfigContext);
+    } = React228.useContext(ConfigContext);
     const prefixCls = getPrefixCls("menu", customizePrefixCls);
     const classString = clsx({
       [`${prefixCls}-item-divider-dashed`]: !!dashed
     }, className);
-    return /* @__PURE__ */ React229.createElement(Divider, __spreadValues({
+    return /* @__PURE__ */ React228.createElement(Divider, __spreadValues({
       className: classString
     }, restProps));
   };
   var MenuDivider_default = MenuDivider;
 
   // ../custom_dashboard/node_modules/antd/es/menu/MenuItem.js
-  var React230 = __toESM(require_react());
+  var React229 = __toESM(require_react());
   "use client";
   var MenuItem2 = (props) => {
     var _a, _b;
@@ -53391,19 +53382,19 @@ html body {
       inlineCollapsed: isInlineCollapsed,
       styles,
       classNames
-    } = React230.useContext(MenuContext_default);
+    } = React229.useContext(MenuContext_default);
     const renderItemChildren = (inlineCollapsed) => {
       var _a2, _b2;
       const label = children == null ? void 0 : children[0];
-      const wrapNode = /* @__PURE__ */ React230.createElement("span", {
+      const wrapNode = /* @__PURE__ */ React229.createElement("span", {
         className: clsx(`${prefixCls}-title-content`, firstLevel ? classNames == null ? void 0 : classNames.itemContent : (_a2 = classNames == null ? void 0 : classNames.subMenu) == null ? void 0 : _a2.itemContent, {
           [`${prefixCls}-title-content-with-extra`]: !!extra || extra === 0
         }),
         style: firstLevel ? styles == null ? void 0 : styles.itemContent : (_b2 = styles == null ? void 0 : styles.subMenu) == null ? void 0 : _b2.itemContent
       }, children);
-      if (!icon || /* @__PURE__ */ React230.isValidElement(children) && children.type === "span") {
+      if (!icon || /* @__PURE__ */ React229.isValidElement(children) && children.type === "span") {
         if (children && inlineCollapsed && firstLevel && typeof label === "string") {
-          return /* @__PURE__ */ React230.createElement("div", {
+          return /* @__PURE__ */ React229.createElement("div", {
             className: `${prefixCls}-inline-collapsed-noicon`
           }, label.charAt(0));
         }
@@ -53412,7 +53403,7 @@ html body {
     };
     const {
       siderCollapsed
-    } = React230.useContext(SiderContext);
+    } = React229.useContext(SiderContext);
     let tooltipTitle = title;
     if (typeof title === "undefined") {
       tooltipTitle = firstLevel ? children : "";
@@ -53429,7 +53420,7 @@ html body {
       tooltipProps.open = false;
     }
     const childrenLength = toArray(children).length;
-    let returnNode = /* @__PURE__ */ React230.createElement(MenuItem_default, __spreadProps(__spreadValues({}, omit(props, ["title", "icon", "danger"])), {
+    let returnNode = /* @__PURE__ */ React229.createElement(MenuItem_default, __spreadProps(__spreadValues({}, omit(props, ["title", "icon", "danger"])), {
       className: clsx(firstLevel ? classNames == null ? void 0 : classNames.item : (_a = classNames == null ? void 0 : classNames.subMenu) == null ? void 0 : _a.item, {
         [`${prefixCls}-item-danger`]: danger,
         [`${prefixCls}-item-only-child`]: (icon ? childrenLength + 1 : childrenLength) === 1
@@ -53453,7 +53444,7 @@ html body {
         const resolvedClassNames = tooltipConfig.classNames(info);
         return mergeTooltipRootClassName(resolvedClassNames);
       } : mergeTooltipRootClassName(tooltipConfig == null ? void 0 : tooltipConfig.classNames);
-      returnNode = /* @__PURE__ */ React230.createElement(tooltip_default, __spreadProps(__spreadValues({}, tooltipProps), {
+      returnNode = /* @__PURE__ */ React229.createElement(tooltip_default, __spreadProps(__spreadValues({}, tooltipProps), {
         placement: mergedTooltipPlacement,
         classNames: mergedTooltipClassNames
       }), returnNode);
@@ -53463,17 +53454,17 @@ html body {
   var MenuItem_default2 = MenuItem2;
 
   // ../custom_dashboard/node_modules/antd/es/menu/OverrideContext.js
-  var React231 = __toESM(require_react());
+  var React230 = __toESM(require_react());
   "use client";
-  var OverrideContext = /* @__PURE__ */ React231.createContext(null);
-  var OverrideProvider = /* @__PURE__ */ React231.forwardRef((props, ref) => {
+  var OverrideContext = /* @__PURE__ */ React230.createContext(null);
+  var OverrideProvider = /* @__PURE__ */ React230.forwardRef((props, ref) => {
     const _a = props, {
       children
     } = _a, restProps = __objRest(_a, [
       "children"
     ]);
-    const override = React231.useContext(OverrideContext);
-    const context = React231.useMemo(() => __spreadValues(__spreadValues({}, override), restProps), [
+    const override = React230.useContext(OverrideContext);
+    const context = React230.useMemo(() => __spreadValues(__spreadValues({}, override), restProps), [
       override,
       restProps.prefixCls,
       restProps.mode,
@@ -53482,11 +53473,11 @@ html body {
     ]);
     const canRef = supportNodeRef(children);
     const mergedRef = useComposeRef(ref, canRef ? getNodeRef(children) : null);
-    return /* @__PURE__ */ React231.createElement(OverrideContext.Provider, {
+    return /* @__PURE__ */ React230.createElement(OverrideContext.Provider, {
       value: context
-    }, /* @__PURE__ */ React231.createElement(ContextIsolator_default, {
+    }, /* @__PURE__ */ React230.createElement(ContextIsolator_default, {
       space: true
-    }, canRef ? /* @__PURE__ */ React231.cloneElement(children, {
+    }, canRef ? /* @__PURE__ */ React230.cloneElement(children, {
       ref: mergedRef
     }) : children));
   });
@@ -54456,7 +54447,7 @@ html body {
   };
 
   // ../custom_dashboard/node_modules/antd/es/menu/SubMenu.js
-  var React232 = __toESM(require_react());
+  var React231 = __toESM(require_react());
   "use client";
   var SubMenu2 = (props) => {
     var _a, _b, _c, _d, _e, _f;
@@ -54466,7 +54457,7 @@ html body {
       title,
       theme: customTheme
     } = props;
-    const context = React232.useContext(MenuContext_default);
+    const context = React231.useContext(MenuContext_default);
     const {
       prefixCls,
       inlineCollapsed,
@@ -54477,27 +54468,27 @@ html body {
     const parentPath = useFullPath();
     let titleNode;
     if (!icon) {
-      titleNode = inlineCollapsed && !parentPath.length && title && typeof title === "string" ? /* @__PURE__ */ React232.createElement("div", {
+      titleNode = inlineCollapsed && !parentPath.length && title && typeof title === "string" ? /* @__PURE__ */ React231.createElement("div", {
         className: `${prefixCls}-inline-collapsed-noicon`
-      }, title.charAt(0)) : /* @__PURE__ */ React232.createElement("span", {
+      }, title.charAt(0)) : /* @__PURE__ */ React231.createElement("span", {
         className: `${prefixCls}-title-content`
       }, title);
     } else {
-      const titleIsSpan = /* @__PURE__ */ React232.isValidElement(title) && title.type === "span";
-      titleNode = /* @__PURE__ */ React232.createElement(React232.Fragment, null, cloneElement5(icon, (oriProps) => ({
+      const titleIsSpan = /* @__PURE__ */ React231.isValidElement(title) && title.type === "span";
+      titleNode = /* @__PURE__ */ React231.createElement(React231.Fragment, null, cloneElement5(icon, (oriProps) => ({
         className: clsx(oriProps.className, `${prefixCls}-item-icon`, classNames == null ? void 0 : classNames.itemIcon),
         style: __spreadValues(__spreadValues({}, oriProps.style), styles == null ? void 0 : styles.itemIcon)
-      })), titleIsSpan ? title : /* @__PURE__ */ React232.createElement("span", {
+      })), titleIsSpan ? title : /* @__PURE__ */ React231.createElement("span", {
         className: `${prefixCls}-title-content`
       }, title));
     }
-    const contextValue = React232.useMemo(() => __spreadProps(__spreadValues({}, context), {
+    const contextValue = React231.useMemo(() => __spreadProps(__spreadValues({}, context), {
       firstLevel: false
     }), [context]);
     const [zIndex] = useZIndex("Menu");
-    return /* @__PURE__ */ React232.createElement(MenuContext_default.Provider, {
+    return /* @__PURE__ */ React231.createElement(MenuContext_default.Provider, {
       value: contextValue
-    }, /* @__PURE__ */ React232.createElement(SubMenu_default, __spreadProps(__spreadValues({}, omit(props, ["icon"])), {
+    }, /* @__PURE__ */ React231.createElement(SubMenu_default, __spreadProps(__spreadValues({}, omit(props, ["icon"])), {
       title: titleNode,
       classNames: {
         list: (_a = classNames == null ? void 0 : classNames.subMenu) == null ? void 0 : _a.list,
@@ -54525,9 +54516,9 @@ html body {
     submenu: SubMenu_default2,
     divider: MenuDivider_default
   };
-  var InternalMenu = /* @__PURE__ */ (0, import_react95.forwardRef)((props, ref) => {
+  var InternalMenu = /* @__PURE__ */ (0, import_react94.forwardRef)((props, ref) => {
     var _b;
-    const override = React233.useContext(OverrideContext_default);
+    const override = React232.useContext(OverrideContext_default);
     const overrideObj = override || {};
     const _a = props, {
       prefixCls: customizePrefixCls,
@@ -54566,7 +54557,7 @@ html body {
     ]);
     const {
       menu
-    } = React233.useContext(ConfigContext);
+    } = React232.useContext(ConfigContext);
     const {
       getPrefixCls,
       getPopupContainer,
@@ -54623,7 +54614,7 @@ html body {
     const rootCls = useCSSVarCls_default(prefixCls);
     const [hashId, cssVarCls] = style_default11(prefixCls, rootCls, !override);
     const menuClassName = clsx(`${prefixCls}-${theme}`, contextClassName, className);
-    const mergedExpandIcon = React233.useMemo(() => {
+    const mergedExpandIcon = React232.useMemo(() => {
       var _a2, _b2;
       if (typeof expandIcon === "function" || isEmptyIcon(expandIcon)) {
         return expandIcon || null;
@@ -54636,10 +54627,10 @@ html body {
       }
       const mergedIcon = (_a2 = expandIcon != null ? expandIcon : overrideObj == null ? void 0 : overrideObj.expandIcon) != null ? _a2 : menu == null ? void 0 : menu.expandIcon;
       return cloneElement5(mergedIcon, {
-        className: clsx(`${prefixCls}-submenu-expand-icon`, /* @__PURE__ */ React233.isValidElement(mergedIcon) ? (_b2 = mergedIcon.props) == null ? void 0 : _b2.className : void 0)
+        className: clsx(`${prefixCls}-submenu-expand-icon`, /* @__PURE__ */ React232.isValidElement(mergedIcon) ? (_b2 = mergedIcon.props) == null ? void 0 : _b2.className : void 0)
       });
     }, [expandIcon, overrideObj == null ? void 0 : overrideObj.expandIcon, menu == null ? void 0 : menu.expandIcon, prefixCls]);
-    const contextValue = React233.useMemo(() => ({
+    const contextValue = React232.useMemo(() => ({
       prefixCls,
       inlineCollapsed: mergedInlineCollapsed || false,
       direction,
@@ -54651,13 +54642,13 @@ html body {
       classNames: mergedClassNames,
       styles: mergedStyles
     }), [prefixCls, mergedInlineCollapsed, direction, _internalDisableMenuItemTitleTooltip, theme, mergedMode, mergedClassNames, mergedStyles, tooltip]);
-    return /* @__PURE__ */ React233.createElement(OverrideContext_default.Provider, {
+    return /* @__PURE__ */ React232.createElement(OverrideContext_default.Provider, {
       value: null
-    }, /* @__PURE__ */ React233.createElement(MenuContext_default.Provider, {
+    }, /* @__PURE__ */ React232.createElement(MenuContext_default.Provider, {
       value: contextValue
-    }, /* @__PURE__ */ React233.createElement(es_default13, __spreadProps(__spreadValues({
+    }, /* @__PURE__ */ React232.createElement(es_default13, __spreadProps(__spreadValues({
       getPopupContainer,
-      overflowedIndicator: /* @__PURE__ */ React233.createElement(EllipsisOutlined_default2, null),
+      overflowedIndicator: /* @__PURE__ */ React232.createElement(EllipsisOutlined_default2, null),
       overflowedIndicatorPopupClassName: clsx(prefixCls, `${prefixCls}-${theme}`, overflowedIndicatorPopupClassName),
       classNames: {
         list: mergedClassNames.list,
@@ -54687,17 +54678,17 @@ html body {
 
   // ../custom_dashboard/node_modules/antd/es/menu/index.js
   "use client";
-  var Menu2 = /* @__PURE__ */ (0, import_react96.forwardRef)((props, ref) => {
-    const menuRef = (0, import_react96.useRef)(null);
-    const context = React234.useContext(SiderContext);
-    (0, import_react96.useImperativeHandle)(ref, () => ({
+  var Menu2 = /* @__PURE__ */ (0, import_react95.forwardRef)((props, ref) => {
+    const menuRef = (0, import_react95.useRef)(null);
+    const context = React233.useContext(SiderContext);
+    (0, import_react95.useImperativeHandle)(ref, () => ({
       menu: menuRef.current,
       focus: (options) => {
         var _a;
         (_a = menuRef.current) == null ? void 0 : _a.focus(options);
       }
     }));
-    return /* @__PURE__ */ React234.createElement(menu_default, __spreadValues(__spreadValues({
+    return /* @__PURE__ */ React233.createElement(menu_default, __spreadValues(__spreadValues({
       ref: menuRef
     }, props), context));
   });
@@ -55073,7 +55064,7 @@ html body {
         warning6.deprecated(!placement.includes("Center"), `placement: ${placement}`, `placement: ${placement.slice(0, placement.indexOf("Center"))}`);
       }
     }
-    const memoTransitionName = React235.useMemo(() => {
+    const memoTransitionName = React234.useMemo(() => {
       const rootPrefixCls = getPrefixCls();
       if (transitionName !== void 0) {
         return transitionName;
@@ -55083,7 +55074,7 @@ html body {
       }
       return `${rootPrefixCls}-slide-up`;
     }, [getPrefixCls, placement, transitionName]);
-    const memoPlacement = React235.useMemo(() => {
+    const memoPlacement = React234.useMemo(() => {
       if (!placement) {
         return direction === "rtl" ? "bottomRight" : "bottomLeft";
       }
@@ -55096,7 +55087,7 @@ html body {
     const rootCls = useCSSVarCls_default(prefixCls);
     const [hashId, cssVarCls] = style_default12(prefixCls, rootCls);
     const [, token2] = useToken();
-    const child = React235.Children.only(isPrimitive_default(children) ? /* @__PURE__ */ React235.createElement("span", null, children) : children);
+    const child = React234.Children.only(isPrimitive_default(children) ? /* @__PURE__ */ React234.createElement("span", null, children) : children);
     const popupTrigger = cloneElement5(child, {
       className: clsx(`${prefixCls}-trigger`, {
         [`${prefixCls}-rtl`]: direction === "rtl"
@@ -55136,7 +55127,7 @@ html body {
       const menuStyles = omit(mergedStyles, ["root"]);
       let overlayNode;
       if (menu == null ? void 0 : menu.items) {
-        overlayNode = /* @__PURE__ */ React235.createElement(menu_default2, __spreadProps(__spreadValues({}, menu), {
+        overlayNode = /* @__PURE__ */ React234.createElement(menu_default2, __spreadProps(__spreadValues({}, menu), {
           classNames: __spreadProps(__spreadValues({}, menuClassNames), {
             subMenu: __spreadValues({}, menuClassNames)
           }),
@@ -55148,15 +55139,15 @@ html body {
       if (mergedPopupRender) {
         overlayNode = mergedPopupRender(overlayNode);
       }
-      overlayNode = React235.Children.only(typeof overlayNode === "string" ? /* @__PURE__ */ React235.createElement("span", null, overlayNode) : overlayNode);
-      return /* @__PURE__ */ React235.createElement(OverrideProvider, {
+      overlayNode = React234.Children.only(typeof overlayNode === "string" ? /* @__PURE__ */ React234.createElement("span", null, overlayNode) : overlayNode);
+      return /* @__PURE__ */ React234.createElement(OverrideProvider, {
         prefixCls: `${prefixCls}-menu`,
         rootClassName: clsx(cssVarCls, rootCls),
-        expandIcon: /* @__PURE__ */ React235.createElement("span", {
+        expandIcon: /* @__PURE__ */ React234.createElement("span", {
           className: `${prefixCls}-menu-submenu-arrow`
-        }, direction === "rtl" ? /* @__PURE__ */ React235.createElement(LeftOutlined_default2, {
+        }, direction === "rtl" ? /* @__PURE__ */ React234.createElement(LeftOutlined_default2, {
           className: `${prefixCls}-menu-submenu-arrow-icon`
-        }) : /* @__PURE__ */ React235.createElement(RightOutlined_default2, {
+        }) : /* @__PURE__ */ React234.createElement(RightOutlined_default2, {
           className: `${prefixCls}-menu-submenu-arrow-icon`
         })),
         mode: "vertical",
@@ -55170,7 +55161,7 @@ html body {
       }, overlayNode);
     };
     const [zIndex, contextZIndex] = useZIndex("Dropdown", mergedRootStyles.zIndex);
-    let renderNode = /* @__PURE__ */ React235.createElement(es_default12, __spreadProps(__spreadValues({
+    let renderNode = /* @__PURE__ */ React234.createElement(es_default12, __spreadProps(__spreadValues({
       alignPoint
     }, omit(props, ["rootClassName", "onOpenChange"])), {
       mouseEnterDelay,
@@ -55192,14 +55183,14 @@ html body {
       autoDestroy: destroyOnHidden != null ? destroyOnHidden : destroyPopupOnHide
     }), popupTrigger);
     if (zIndex) {
-      renderNode = /* @__PURE__ */ React235.createElement(zindexContext_default.Provider, {
+      renderNode = /* @__PURE__ */ React234.createElement(zindexContext_default.Provider, {
         value: contextZIndex
       }, renderNode);
     }
     return renderNode;
   };
   var PurePanel4 = PurePanel_default2(Dropdown2, "align", void 0, "dropdown", (prefixCls) => prefixCls);
-  var WrapPurePanel = (props) => /* @__PURE__ */ React235.createElement(PurePanel4, __spreadValues({}, props), /* @__PURE__ */ React235.createElement("span", null));
+  var WrapPurePanel = (props) => /* @__PURE__ */ React234.createElement(PurePanel4, __spreadValues({}, props), /* @__PURE__ */ React234.createElement("span", null));
   Dropdown2._InternalPanelDoNotUseOrYouWillBeFired = WrapPurePanel;
   if (true) {
     Dropdown2.displayName = "Dropdown";
@@ -55211,10 +55202,10 @@ html body {
   var button_default = Button_default;
 
   // ../custom_dashboard/node_modules/antd/es/radio/group.js
-  var React241 = __toESM(require_react());
+  var React240 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/form/hooks/useForm.js
-  var React236 = __toESM(require_react());
+  var React235 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/form/util.js
   var formItemNameBlackList = ["parentNode"];
@@ -55270,8 +55261,8 @@ html body {
   }
   function useForm2(form) {
     const [rcForm] = useForm_default();
-    const itemsRef = React236.useRef({});
-    const wrapForm = React236.useMemo(() => form != null ? form : __spreadProps(__spreadValues({}, rcForm), {
+    const itemsRef = React235.useRef({});
+    const wrapForm = React235.useMemo(() => form != null ? form : __spreadProps(__spreadValues({}, rcForm), {
       __INTERNAL__: {
         itemRef: (name) => (node2) => {
           const namePathStr = toNamePathStr(name);
@@ -55317,19 +55308,19 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/antd/es/radio/context.js
-  var React237 = __toESM(require_react());
-  var RadioGroupContext = /* @__PURE__ */ React237.createContext(void 0);
+  var React236 = __toESM(require_react());
+  var RadioGroupContext = /* @__PURE__ */ React236.createContext(void 0);
   var RadioGroupContextProvider = RadioGroupContext.Provider;
   var context_default5 = RadioGroupContext;
-  var RadioOptionTypeContext = /* @__PURE__ */ React237.createContext(void 0);
+  var RadioOptionTypeContext = /* @__PURE__ */ React236.createContext(void 0);
   var RadioOptionTypeContextProvider = RadioOptionTypeContext.Provider;
 
   // ../custom_dashboard/node_modules/antd/es/radio/radio.js
-  var React240 = __toESM(require_react());
+  var React239 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/checkbox/es/index.js
-  var React238 = __toESM(require_react());
-  var import_react97 = __toESM(require_react());
+  var React237 = __toESM(require_react());
+  var import_react96 = __toESM(require_react());
   function _extends47() {
     _extends47 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -55344,7 +55335,7 @@ html body {
     };
     return _extends47.apply(this, arguments);
   }
-  var Checkbox = /* @__PURE__ */ (0, import_react97.forwardRef)((props, ref) => {
+  var Checkbox = /* @__PURE__ */ (0, import_react96.forwardRef)((props, ref) => {
     const _a = props, {
       prefixCls = "rc-checkbox",
       className,
@@ -55366,10 +55357,10 @@ html body {
       "title",
       "onChange"
     ]);
-    const inputRef = (0, import_react97.useRef)(null);
-    const holderRef = (0, import_react97.useRef)(null);
+    const inputRef = (0, import_react96.useRef)(null);
+    const holderRef = (0, import_react96.useRef)(null);
     const [rawValue, setRawValue] = useControlledState(defaultChecked, checked);
-    (0, import_react97.useImperativeHandle)(ref, () => ({
+    (0, import_react96.useImperativeHandle)(ref, () => ({
       focus: (options) => {
         var _a2;
         (_a2 = inputRef.current) == null ? void 0 : _a2.focus(options);
@@ -55406,12 +55397,12 @@ html body {
         nativeEvent: e3.nativeEvent
       });
     };
-    return /* @__PURE__ */ React238.createElement("span", {
+    return /* @__PURE__ */ React237.createElement("span", {
       className: classString,
       title,
       style: style2,
       ref: holderRef
-    }, /* @__PURE__ */ React238.createElement("input", _extends47({}, inputProps, {
+    }, /* @__PURE__ */ React237.createElement("input", _extends47({}, inputProps, {
       className: `${prefixCls}-input`,
       ref: inputRef,
       onChange: handleChange,
@@ -55423,9 +55414,9 @@ html body {
   var es_default14 = Checkbox;
 
   // ../custom_dashboard/node_modules/antd/es/checkbox/useBubbleLock.js
-  var import_react98 = __toESM(require_react());
+  var import_react97 = __toESM(require_react());
   function useBubbleLock(onOriginInputClick) {
-    const labelClickLockRef = import_react98.default.useRef(null);
+    const labelClickLockRef = import_react97.default.useRef(null);
     const clearLock = () => {
       raf_default.cancel(labelClickLockRef.current);
       labelClickLockRef.current = null;
@@ -55846,8 +55837,8 @@ html body {
   "use client";
   var InternalRadio = (props, ref) => {
     var _b, _c;
-    const groupContext = React240.useContext(context_default5);
-    const radioOptionTypeContext = React240.useContext(RadioOptionTypeContext);
+    const groupContext = React239.useContext(context_default5);
+    const radioOptionTypeContext = React239.useContext(RadioOptionTypeContext);
     const {
       getPrefixCls,
       direction,
@@ -55856,11 +55847,11 @@ html body {
       classNames: contextClassNames,
       styles: contextStyles
     } = useComponentConfig("radio");
-    const innerRef = React240.useRef(null);
+    const innerRef = React239.useRef(null);
     const mergedRef = composeRef(ref, innerRef);
     const {
       isFormItemInput
-    } = React240.useContext(FormItemInputContext);
+    } = React239.useContext(FormItemInputContext);
     if (true) {
       const warning6 = devUseWarning("Radio");
       true ? warning6(!("optionType" in props), "usage", "`optionType` is only support in Radio.Group.") : void 0;
@@ -55895,7 +55886,7 @@ html body {
     const rootCls = useCSSVarCls_default(radioPrefixCls);
     const [hashId, cssVarCls] = style_default13(radioPrefixCls, rootCls);
     const radioProps = __spreadValues({}, restProps);
-    const disabled = React240.useContext(DisabledContext_default);
+    const disabled = React239.useContext(DisabledContext_default);
     let mergedChecked = radioProps.checked;
     if (groupContext) {
       radioProps.name = groupContext.name;
@@ -55918,17 +55909,17 @@ html body {
       [`${prefixCls}-wrapper-block`]: !!(groupContext == null ? void 0 : groupContext.block)
     }, contextClassName, className, rootClassName, mergedClassNames.root, hashId, cssVarCls, rootCls);
     const [onLabelClick, onInputClick] = useBubbleLock(radioProps.onClick);
-    return /* @__PURE__ */ React240.createElement(wave_default, {
+    return /* @__PURE__ */ React239.createElement(wave_default, {
       component: "Radio",
       disabled: radioProps.disabled
-    }, /* @__PURE__ */ React240.createElement("label", {
+    }, /* @__PURE__ */ React239.createElement("label", {
       className: wrapperClassString,
       style: __spreadValues(__spreadValues(__spreadValues({}, mergedStyles.root), contextStyle), style2),
       onMouseEnter: props.onMouseEnter,
       onMouseLeave: props.onMouseLeave,
       title,
       onClick: onLabelClick
-    }, /* @__PURE__ */ React240.createElement(es_default14, __spreadProps(__spreadValues({}, radioProps), {
+    }, /* @__PURE__ */ React239.createElement(es_default14, __spreadProps(__spreadValues({}, radioProps), {
       checked: mergedChecked,
       className: clsx(mergedClassNames.icon, {
         [TARGET_CLS]: !isButtonType
@@ -55938,12 +55929,12 @@ html body {
       prefixCls,
       ref: mergedRef,
       onClick: onInputClick
-    })), children !== void 0 ? /* @__PURE__ */ React240.createElement("span", {
+    })), children !== void 0 ? /* @__PURE__ */ React239.createElement("span", {
       className: clsx(`${prefixCls}-label`, mergedClassNames.label),
       style: mergedStyles.label
     }, children) : null));
   };
-  var Radio = /* @__PURE__ */ React240.forwardRef(InternalRadio);
+  var Radio = /* @__PURE__ */ React239.forwardRef(InternalRadio);
   if (true) {
     Radio.displayName = "Radio";
   }
@@ -55951,14 +55942,14 @@ html body {
 
   // ../custom_dashboard/node_modules/antd/es/radio/group.js
   "use client";
-  var RadioGroup = /* @__PURE__ */ React241.forwardRef((props, ref) => {
+  var RadioGroup = /* @__PURE__ */ React240.forwardRef((props, ref) => {
     const {
       getPrefixCls,
       direction
-    } = React241.useContext(ConfigContext);
+    } = React240.useContext(ConfigContext);
     const {
       name: formItemName
-    } = React241.useContext(FormItemInputContext);
+    } = React240.useContext(FormItemInputContext);
     const defaultName = useId_default(toNamePathStr(formItemName));
     const {
       prefixCls: customizePrefixCls,
@@ -55986,7 +55977,7 @@ html body {
       role = "radiogroup"
     } = props;
     const [value, setValue] = useControlledState(defaultValue, customizedValue);
-    const onRadioChange = React241.useCallback((event) => {
+    const onRadioChange = React240.useCallback((event) => {
       const lastValue = value;
       const val = event.target.value;
       if (!("value" in props)) {
@@ -56004,7 +55995,7 @@ html body {
     if (options && options.length > 0) {
       childrenToRender = options.map((option) => {
         if (typeof option === "string" || typeof option === "number") {
-          return /* @__PURE__ */ React241.createElement(radio_default, {
+          return /* @__PURE__ */ React240.createElement(radio_default, {
             key: option.toString(),
             prefixCls,
             disabled,
@@ -56012,7 +56003,7 @@ html body {
             checked: value === option
           }, option);
         }
-        return /* @__PURE__ */ React241.createElement(radio_default, {
+        return /* @__PURE__ */ React240.createElement(radio_default, {
           key: `radio-group-value-options-${option.value}`,
           prefixCls,
           disabled: option.disabled || disabled,
@@ -56034,7 +56025,7 @@ html body {
       [`${groupPrefixCls}-rtl`]: direction === "rtl",
       [`${groupPrefixCls}-block`]: block
     }, className, rootClassName, hashId, cssVarCls, rootCls);
-    const memoizedValue = React241.useMemo(() => ({
+    const memoizedValue = React240.useMemo(() => ({
       onChange: onRadioChange,
       value,
       disabled,
@@ -56042,7 +56033,7 @@ html body {
       optionType,
       block
     }), [onRadioChange, value, disabled, name, optionType, block]);
-    return /* @__PURE__ */ React241.createElement("div", __spreadProps(__spreadValues({}, pickAttrs(props, {
+    return /* @__PURE__ */ React240.createElement("div", __spreadProps(__spreadValues({}, pickAttrs(props, {
       aria: true,
       data: true
     })), {
@@ -56057,35 +56048,35 @@ html body {
       onBlur,
       id,
       ref
-    }), /* @__PURE__ */ React241.createElement(RadioGroupContextProvider, {
+    }), /* @__PURE__ */ React240.createElement(RadioGroupContextProvider, {
       value: memoizedValue
     }, childrenToRender));
   });
-  var group_default2 = /* @__PURE__ */ React241.memo(RadioGroup);
+  var group_default2 = /* @__PURE__ */ React240.memo(RadioGroup);
 
   // ../custom_dashboard/node_modules/antd/es/radio/radioButton.js
-  var React242 = __toESM(require_react());
+  var React241 = __toESM(require_react());
   "use client";
   var RadioButton = (props, ref) => {
     const {
       getPrefixCls
-    } = React242.useContext(ConfigContext);
+    } = React241.useContext(ConfigContext);
     const _a = props, {
       prefixCls: customizePrefixCls
     } = _a, radioProps = __objRest(_a, [
       "prefixCls"
     ]);
     const prefixCls = getPrefixCls("radio", customizePrefixCls);
-    return /* @__PURE__ */ React242.createElement(RadioOptionTypeContextProvider, {
+    return /* @__PURE__ */ React241.createElement(RadioOptionTypeContextProvider, {
       value: "button"
-    }, /* @__PURE__ */ React242.createElement(radio_default, __spreadProps(__spreadValues({
+    }, /* @__PURE__ */ React241.createElement(radio_default, __spreadProps(__spreadValues({
       prefixCls
     }, radioProps), {
       type: "radio",
       ref
     })));
   };
-  var radioButton_default = /* @__PURE__ */ React242.forwardRef(RadioButton);
+  var radioButton_default = /* @__PURE__ */ React241.forwardRef(RadioButton);
 
   // ../custom_dashboard/node_modules/antd/es/radio/index.js
   "use client";
@@ -57662,11 +57653,11 @@ html body {
   }) => [getStyle(prefixCls, token2)]);
 
   // ../custom_dashboard/node_modules/antd/es/checkbox/Checkbox.js
-  var React244 = __toESM(require_react());
+  var React243 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/checkbox/GroupContext.js
-  var import_react99 = __toESM(require_react());
-  var GroupContext = /* @__PURE__ */ import_react99.default.createContext(null);
+  var import_react98 = __toESM(require_react());
+  var GroupContext = /* @__PURE__ */ import_react98.default.createContext(null);
   var GroupContext_default = GroupContext;
 
   // ../custom_dashboard/node_modules/antd/es/checkbox/Checkbox.js
@@ -57718,11 +57709,11 @@ html body {
       classNames: contextClassNames,
       styles: contextStyles
     } = useComponentConfig("checkbox");
-    const checkboxGroup = React244.useContext(GroupContext_default);
+    const checkboxGroup = React243.useContext(GroupContext_default);
     const {
       isFormItemInput
-    } = React244.useContext(FormItemInputContext);
-    const contextDisabled = React244.useContext(DisabledContext_default);
+    } = React243.useContext(FormItemInputContext);
+    const contextDisabled = React243.useContext(DisabledContext_default);
     const mergedDisabled = (_b = (checkboxGroup == null ? void 0 : checkboxGroup.disabled) || disabled) != null ? _b : contextDisabled;
     if (true) {
       const warning6 = devUseWarning("Checkbox");
@@ -57743,9 +57734,9 @@ html body {
     if (checkboxGroup && !skipGroup) {
       mergedChecked = checkboxGroup.value.includes(value);
     }
-    const checkboxRef = React244.useRef(null);
+    const checkboxRef = React243.useRef(null);
     const mergedRef = useComposeRef(ref, checkboxRef);
-    React244.useEffect(() => {
+    React243.useEffect(() => {
       if (skipGroup || !checkboxGroup) {
         return;
       }
@@ -57754,7 +57745,7 @@ html body {
         checkboxGroup.cancelValue(value);
       };
     }, [value, skipGroup]);
-    React244.useEffect(() => {
+    React243.useEffect(() => {
       var _a2;
       if ((_a2 = checkboxRef.current) == null ? void 0 : _a2.input) {
         checkboxRef.current.input.indeterminate = indeterminate;
@@ -57782,16 +57773,16 @@ html body {
       [`${prefixCls}-indeterminate`]: indeterminate
     }, TARGET_CLS, hashId);
     const [onLabelClick, onInputClick] = useBubbleLock(checkboxProps.onClick);
-    return /* @__PURE__ */ React244.createElement(wave_default, {
+    return /* @__PURE__ */ React243.createElement(wave_default, {
       component: "Checkbox",
       disabled: mergedDisabled
-    }, /* @__PURE__ */ React244.createElement("label", {
+    }, /* @__PURE__ */ React243.createElement("label", {
       className: classString,
       style: __spreadValues(__spreadValues(__spreadValues({}, mergedStyles.root), contextStyle), style2),
       onMouseEnter,
       onMouseLeave,
       onClick: onLabelClick
-    }, /* @__PURE__ */ React244.createElement(es_default14, __spreadProps(__spreadValues({}, checkboxProps), {
+    }, /* @__PURE__ */ React243.createElement(es_default14, __spreadProps(__spreadValues({}, checkboxProps), {
       name: !skipGroup && checkboxGroup ? checkboxGroup.name : name,
       checked: mergedChecked,
       onClick: onInputClick,
@@ -57802,21 +57793,21 @@ html body {
       disabled: mergedDisabled,
       ref: mergedRef,
       value
-    })), isNonNullable_default(children) && /* @__PURE__ */ React244.createElement("span", {
+    })), isNonNullable_default(children) && /* @__PURE__ */ React243.createElement("span", {
       className: clsx(`${prefixCls}-label`, mergedClassNames.label),
       style: mergedStyles.label
     }, children)));
   };
-  var Checkbox2 = /* @__PURE__ */ React244.forwardRef(InternalCheckbox);
+  var Checkbox2 = /* @__PURE__ */ React243.forwardRef(InternalCheckbox);
   if (true) {
     Checkbox2.displayName = "Checkbox";
   }
   var Checkbox_default = Checkbox2;
 
   // ../custom_dashboard/node_modules/antd/es/checkbox/Group.js
-  var React245 = __toESM(require_react());
+  var React244 = __toESM(require_react());
   "use client";
-  var CheckboxGroup = /* @__PURE__ */ React245.forwardRef((props, ref) => {
+  var CheckboxGroup = /* @__PURE__ */ React244.forwardRef((props, ref) => {
     const _a = props, {
       defaultValue,
       children,
@@ -57841,15 +57832,15 @@ html body {
     const {
       getPrefixCls,
       direction
-    } = React245.useContext(ConfigContext);
-    const [value, setValue] = React245.useState(restProps.value || defaultValue || []);
-    const [registeredValues, setRegisteredValues] = React245.useState([]);
-    React245.useEffect(() => {
+    } = React244.useContext(ConfigContext);
+    const [value, setValue] = React244.useState(restProps.value || defaultValue || []);
+    const [registeredValues, setRegisteredValues] = React244.useState([]);
+    React244.useEffect(() => {
       if ("value" in restProps) {
         setValue(restProps.value || []);
       }
     }, [restProps.value]);
-    const memoizedOptions = React245.useMemo(() => options.map((option) => {
+    const memoizedOptions = React244.useMemo(() => options.map((option) => {
       if (typeof option === "string" || typeof option === "number") {
         return {
           label: option,
@@ -57886,7 +57877,7 @@ html body {
     const rootCls = useCSSVarCls_default(prefixCls);
     const [hashId, cssVarCls] = style_default15(prefixCls, rootCls);
     const domProps = omit(restProps, ["value", "disabled"]);
-    const childrenNode = options.length ? memoizedOptions.map((option) => /* @__PURE__ */ React245.createElement(Checkbox_default, {
+    const childrenNode = options.length ? memoizedOptions.map((option) => /* @__PURE__ */ React244.createElement(Checkbox_default, {
       prefixCls,
       key: option.value.toString(),
       disabled: "disabled" in option ? option.disabled : restProps.disabled,
@@ -57899,7 +57890,7 @@ html body {
       id: option.id,
       required: option.required
     }, option.label)) : children;
-    const memoizedContext = React245.useMemo(() => ({
+    const memoizedContext = React244.useMemo(() => ({
       toggleOption,
       value,
       disabled: restProps.disabled,
@@ -57910,13 +57901,13 @@ html body {
     const classString = clsx(groupPrefixCls, {
       [`${groupPrefixCls}-rtl`]: direction === "rtl"
     }, className, rootClassName, cssVarCls, rootCls, hashId);
-    return /* @__PURE__ */ React245.createElement("div", __spreadProps(__spreadValues({
+    return /* @__PURE__ */ React244.createElement("div", __spreadProps(__spreadValues({
       className: classString,
       style: style2,
       role
     }, domProps), {
       ref
-    }), /* @__PURE__ */ React245.createElement(GroupContext_default.Provider, {
+    }), /* @__PURE__ */ React244.createElement(GroupContext_default.Provider, {
       value: memoizedContext
     }, childrenNode));
   });
@@ -57933,11 +57924,11 @@ html body {
   var checkbox_default = Checkbox3;
 
   // ../custom_dashboard/node_modules/antd/es/grid/col.js
-  var React246 = __toESM(require_react());
+  var React245 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/grid/RowContext.js
-  var import_react100 = __toESM(require_react());
-  var RowContext = /* @__PURE__ */ (0, import_react100.createContext)({});
+  var import_react99 = __toESM(require_react());
+  var RowContext = /* @__PURE__ */ (0, import_react99.createContext)({});
   var RowContext_default = RowContext;
 
   // ../custom_dashboard/node_modules/antd/es/grid/col.js
@@ -57957,15 +57948,15 @@ html body {
     }
     return flex;
   }
-  var Col = /* @__PURE__ */ React246.forwardRef((props, ref) => {
+  var Col = /* @__PURE__ */ React245.forwardRef((props, ref) => {
     const {
       getPrefixCls,
       direction
-    } = React246.useContext(ConfigContext);
+    } = React245.useContext(ConfigContext);
     const {
       gutter,
       wrap
-    } = React246.useContext(RowContext_default);
+    } = React245.useContext(RowContext_default);
     const _a = props, {
       prefixCls: customizePrefixCls,
       span,
@@ -58035,7 +58026,7 @@ html body {
         mergedStyle.minWidth = 0;
       }
     }
-    return /* @__PURE__ */ React246.createElement("div", __spreadProps(__spreadValues({}, others), {
+    return /* @__PURE__ */ React245.createElement("div", __spreadProps(__spreadValues({}, others), {
       style: __spreadValues(__spreadValues(__spreadValues({}, mergedStyle), style2), sizeStyle),
       className: classes,
       ref
@@ -58047,7 +58038,7 @@ html body {
   var col_default = Col;
 
   // ../custom_dashboard/node_modules/antd/es/grid/row.js
-  var React247 = __toESM(require_react());
+  var React246 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/grid/hooks/useGutter.js
   function useGutter(gutter, screens) {
@@ -58081,7 +58072,7 @@ html body {
   // ../custom_dashboard/node_modules/antd/es/grid/row.js
   "use client";
   function useMergedPropByScreen(oriProp, screen) {
-    const [prop, setProp] = React247.useState(typeof oriProp === "string" ? oriProp : "");
+    const [prop, setProp] = React246.useState(typeof oriProp === "string" ? oriProp : "");
     const calcMergedAlignOrJustify = () => {
       if (typeof oriProp === "string") {
         setProp(oriProp);
@@ -58101,12 +58092,12 @@ html body {
         }
       }
     };
-    React247.useEffect(() => {
+    React246.useEffect(() => {
       calcMergedAlignOrJustify();
     }, [JSON.stringify(oriProp), screen]);
     return prop;
   }
-  var Row = /* @__PURE__ */ React247.forwardRef((props, ref) => {
+  var Row = /* @__PURE__ */ React246.forwardRef((props, ref) => {
     const _a = props, {
       prefixCls: customizePrefixCls,
       justify,
@@ -58129,7 +58120,7 @@ html body {
     const {
       getPrefixCls,
       direction
-    } = React247.useContext(ConfigContext);
+    } = React246.useContext(ConfigContext);
     const screens = useBreakpoint_default(true, null);
     const mergedAlign = useMergedPropByScreen(align, screens);
     const mergedJustify = useMergedPropByScreen(justify, screens);
@@ -58149,13 +58140,13 @@ html body {
     }
     const [gutterH, gutterV] = gutters;
     rowStyle.rowGap = gutterV;
-    const rowContext = React247.useMemo(() => ({
+    const rowContext = React246.useMemo(() => ({
       gutter: [gutterH, gutterV],
       wrap
     }), [gutterH, gutterV, wrap]);
-    return /* @__PURE__ */ React247.createElement(RowContext_default.Provider, {
+    return /* @__PURE__ */ React246.createElement(RowContext_default.Provider, {
       value: rowContext
-    }, /* @__PURE__ */ React247.createElement("div", __spreadProps(__spreadValues({}, others), {
+    }, /* @__PURE__ */ React246.createElement("div", __spreadProps(__spreadValues({}, others), {
       className: classes,
       style: __spreadValues(__spreadValues({}, rowStyle), style2),
       ref
@@ -58170,7 +58161,7 @@ html body {
   "use client";
 
   // ../custom_dashboard/node_modules/antd/es/space/Addon.js
-  var import_react101 = __toESM(require_react());
+  var import_react100 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/space/style/addon.js
   var genSpaceAddonStyle = (token2) => {
@@ -58281,7 +58272,7 @@ html body {
 
   // ../custom_dashboard/node_modules/antd/es/space/Addon.js
   "use client";
-  var SpaceAddon = /* @__PURE__ */ import_react101.default.forwardRef((props, ref) => {
+  var SpaceAddon = /* @__PURE__ */ import_react100.default.forwardRef((props, ref) => {
     const _a = props, {
       className,
       children,
@@ -58302,7 +58293,7 @@ html body {
     const {
       getPrefixCls,
       direction: directionConfig
-    } = import_react101.default.useContext(ConfigContext);
+    } = import_react100.default.useContext(ConfigContext);
     const prefixCls = getPrefixCls("space-addon", customizePrefixCls);
     const [hashId, cssVarCls] = addon_default(prefixCls);
     const {
@@ -58314,7 +58305,7 @@ html body {
       [`${prefixCls}-${compactSize}`]: compactSize,
       [`${prefixCls}-disabled`]: disabled
     }, className);
-    return /* @__PURE__ */ import_react101.default.createElement("div", __spreadValues({
+    return /* @__PURE__ */ import_react100.default.createElement("div", __spreadValues({
       ref,
       className: classes,
       style: style2
@@ -58323,10 +58314,10 @@ html body {
   var Addon_default = SpaceAddon;
 
   // ../custom_dashboard/node_modules/antd/es/input/Input.js
-  var import_react106 = __toESM(require_react());
+  var import_react105 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/input/es/BaseInput.js
-  var import_react102 = __toESM(require_react());
+  var import_react101 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/input/es/utils/commonUtils.js
   function hasAddon(props) {
@@ -58388,7 +58379,7 @@ html body {
     };
     return _extends48.apply(this, arguments);
   }
-  var BaseInput = /* @__PURE__ */ import_react102.default.forwardRef((props, ref) => {
+  var BaseInput = /* @__PURE__ */ import_react101.default.forwardRef((props, ref) => {
     var _a, _b, _c;
     const {
       inputElement: inputEl,
@@ -58420,7 +58411,7 @@ html body {
     const GroupWrapperComponent = (components == null ? void 0 : components.groupWrapper) || "span";
     const WrapperComponent = (components == null ? void 0 : components.wrapper) || "span";
     const GroupAddonComponent = (components == null ? void 0 : components.groupAddon) || "span";
-    const containerRef = (0, import_react102.useRef)(null);
+    const containerRef = (0, import_react101.useRef)(null);
     const onInputClick = (e3) => {
       var _a2;
       if ((_a2 = containerRef.current) == null ? void 0 : _a2.contains(e3.target)) {
@@ -58428,12 +58419,12 @@ html body {
       }
     };
     const hasAffix = hasPrefixSuffix(props);
-    let element = /* @__PURE__ */ (0, import_react102.cloneElement)(inputElement, {
+    let element = /* @__PURE__ */ (0, import_react101.cloneElement)(inputElement, {
       value,
       className: clsx((_a = inputElement.props) == null ? void 0 : _a.className, !hasAffix && (classNames == null ? void 0 : classNames.variant)) || null
     });
-    const groupRef = (0, import_react102.useRef)(null);
-    import_react102.default.useImperativeHandle(ref, () => ({
+    const groupRef = (0, import_react101.useRef)(null);
+    import_react101.default.useImperativeHandle(ref, () => ({
       nativeElement: groupRef.current || containerRef.current
     }));
     if (hasAffix) {
@@ -58442,7 +58433,7 @@ html body {
         const needClear = !disabled && !readOnly && value;
         const clearIconCls = `${prefixCls}-clear-icon`;
         const iconNode = typeof allowClear === "object" && (allowClear == null ? void 0 : allowClear.clearIcon) ? allowClear.clearIcon : "\u2716";
-        clearIcon = /* @__PURE__ */ import_react102.default.createElement("button", {
+        clearIcon = /* @__PURE__ */ import_react101.default.createElement("button", {
           type: "button",
           tabIndex: -1,
           onClick: (event) => {
@@ -58464,17 +58455,17 @@ html body {
         [`${affixWrapperPrefixCls}-readonly`]: readOnly,
         [`${affixWrapperPrefixCls}-input-with-clear-btn`]: suffix && allowClear && value
       }, classes == null ? void 0 : classes.affixWrapper, classNames == null ? void 0 : classNames.affixWrapper, classNames == null ? void 0 : classNames.variant);
-      const suffixNode = (suffix || allowClear) && /* @__PURE__ */ import_react102.default.createElement("span", {
+      const suffixNode = (suffix || allowClear) && /* @__PURE__ */ import_react101.default.createElement("span", {
         className: clsx(`${prefixCls}-suffix`, classNames == null ? void 0 : classNames.suffix),
         style: styles == null ? void 0 : styles.suffix
       }, clearIcon, suffix);
-      element = /* @__PURE__ */ import_react102.default.createElement(AffixWrapperComponent, _extends48({
+      element = /* @__PURE__ */ import_react101.default.createElement(AffixWrapperComponent, _extends48({
         className: affixWrapperCls,
         style: styles == null ? void 0 : styles.affixWrapper,
         onClick: onInputClick
       }, dataAttrs == null ? void 0 : dataAttrs.affixWrapper, {
         ref: containerRef
-      }), prefix2 && /* @__PURE__ */ import_react102.default.createElement("span", {
+      }), prefix2 && /* @__PURE__ */ import_react101.default.createElement("span", {
         className: clsx(`${prefixCls}-prefix`, classNames == null ? void 0 : classNames.prefix),
         style: styles == null ? void 0 : styles.prefix
       }, prefix2), element, suffixNode);
@@ -58487,18 +58478,18 @@ html body {
       const mergedGroupClassName = clsx(groupWrapperCls, {
         [`${groupWrapperCls}-disabled`]: disabled
       }, classes == null ? void 0 : classes.group, classNames == null ? void 0 : classNames.groupWrapper);
-      element = /* @__PURE__ */ import_react102.default.createElement(GroupWrapperComponent, {
+      element = /* @__PURE__ */ import_react101.default.createElement(GroupWrapperComponent, {
         className: mergedGroupClassName,
         ref: groupRef
-      }, /* @__PURE__ */ import_react102.default.createElement(WrapperComponent, {
+      }, /* @__PURE__ */ import_react101.default.createElement(WrapperComponent, {
         className: mergedWrapperClassName
-      }, addonBefore && /* @__PURE__ */ import_react102.default.createElement(GroupAddonComponent, {
+      }, addonBefore && /* @__PURE__ */ import_react101.default.createElement(GroupAddonComponent, {
         className: addonCls
-      }, addonBefore), element, addonAfter && /* @__PURE__ */ import_react102.default.createElement(GroupAddonComponent, {
+      }, addonBefore), element, addonAfter && /* @__PURE__ */ import_react101.default.createElement(GroupAddonComponent, {
         className: addonCls
       }, addonAfter)));
     }
-    return /* @__PURE__ */ import_react102.default.cloneElement(element, {
+    return /* @__PURE__ */ import_react101.default.cloneElement(element, {
       className: clsx((_b = element.props) == null ? void 0 : _b.className, className) || null,
       style: __spreadValues(__spreadValues({}, (_c = element.props) == null ? void 0 : _c.style), style2),
       hidden
@@ -58507,12 +58498,12 @@ html body {
   var BaseInput_default = BaseInput;
 
   // ../custom_dashboard/node_modules/@rc-component/input/es/Input.js
-  var import_react103 = __toESM(require_react());
+  var import_react102 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/input/es/hooks/useCount.js
-  var React250 = __toESM(require_react());
+  var React249 = __toESM(require_react());
   function useCount(count, showCount) {
-    return React250.useMemo(() => {
+    return React249.useMemo(() => {
       let mergedConfig = {};
       if (showCount) {
         mergedConfig.show = typeof showCount === "object" && showCount.formatter ? showCount.formatter : !!showCount;
@@ -58546,7 +58537,7 @@ html body {
     };
     return _extends49.apply(this, arguments);
   }
-  var Input2 = /* @__PURE__ */ (0, import_react103.forwardRef)((props, ref) => {
+  var Input2 = /* @__PURE__ */ (0, import_react102.forwardRef)((props, ref) => {
     const _a = props, {
       autoComplete,
       onChange,
@@ -58592,11 +58583,11 @@ html body {
       "onCompositionStart",
       "onCompositionEnd"
     ]);
-    const [focused, setFocused] = (0, import_react103.useState)(false);
-    const compositionRef = (0, import_react103.useRef)(false);
-    const keyLockRef = (0, import_react103.useRef)(false);
-    const inputRef = (0, import_react103.useRef)(null);
-    const holderRef = (0, import_react103.useRef)(null);
+    const [focused, setFocused] = (0, import_react102.useState)(false);
+    const compositionRef = (0, import_react102.useRef)(false);
+    const keyLockRef = (0, import_react102.useRef)(false);
+    const inputRef = (0, import_react102.useRef)(null);
+    const holderRef = (0, import_react102.useRef)(null);
     const focus = (option) => {
       if (inputRef.current) {
         triggerFocus(inputRef.current, option);
@@ -58604,12 +58595,12 @@ html body {
     };
     const [value, setValue] = useControlledState(props.defaultValue, props.value);
     const formatValue = value === void 0 || value === null ? "" : String(value);
-    const [selection, setSelection] = (0, import_react103.useState)(null);
+    const [selection, setSelection] = (0, import_react102.useState)(null);
     const countConfig = useCount(count, showCount);
     const mergedMax = countConfig.max || maxLength;
     const valueLength = countConfig.strategy(formatValue);
     const isOutOfRange = !!mergedMax && valueLength > mergedMax;
-    (0, import_react103.useImperativeHandle)(ref, () => {
+    (0, import_react102.useImperativeHandle)(ref, () => {
       var _a2;
       return {
         focus,
@@ -58629,7 +58620,7 @@ html body {
         nativeElement: ((_a2 = holderRef.current) == null ? void 0 : _a2.nativeElement) || inputRef.current
       };
     });
-    (0, import_react103.useEffect)(() => {
+    (0, import_react102.useEffect)(() => {
       if (keyLockRef.current) {
         keyLockRef.current = false;
       }
@@ -58653,7 +58644,7 @@ html body {
         resolveOnChange(inputRef.current, e3, onChange, cutValue);
       }
     };
-    (0, import_react103.useEffect)(() => {
+    (0, import_react102.useEffect)(() => {
       var _a2;
       if (selection) {
         (_a2 = inputRef.current) == null ? void 0 : _a2.setSelectionRange(...selection);
@@ -58721,7 +58712,7 @@ html body {
         "classNames",
         "onClear"
       ]);
-      return /* @__PURE__ */ import_react103.default.createElement("input", _extends49({
+      return /* @__PURE__ */ import_react102.default.createElement("input", _extends49({
         autoComplete
       }, otherProps, {
         onChange: onInternalChange,
@@ -58751,7 +58742,7 @@ html body {
           count: valueLength,
           maxLength: mergedMax
         }) : `${valueLength}${hasMaxLength ? ` / ${mergedMax}` : ""}`;
-        return /* @__PURE__ */ import_react103.default.createElement(import_react103.default.Fragment, null, countConfig.show && /* @__PURE__ */ import_react103.default.createElement("span", {
+        return /* @__PURE__ */ import_react102.default.createElement(import_react102.default.Fragment, null, countConfig.show && /* @__PURE__ */ import_react102.default.createElement("span", {
           className: clsx(`${prefixCls}-show-count-suffix`, {
             [`${prefixCls}-show-count-has-suffix`]: !!suffix
           }, classNames == null ? void 0 : classNames.count),
@@ -58760,7 +58751,7 @@ html body {
       }
       return null;
     };
-    return /* @__PURE__ */ import_react103.default.createElement(BaseInput_default, _extends49({}, rest, {
+    return /* @__PURE__ */ import_react102.default.createElement(BaseInput_default, _extends49({}, rest, {
       prefixCls,
       className: clsx(className, outOfRangeCls),
       handleReset,
@@ -58781,7 +58772,7 @@ html body {
   var es_default15 = Input_default3;
 
   // ../custom_dashboard/node_modules/antd/es/_util/getAllowClear.js
-  var import_react104 = __toESM(require_react());
+  var import_react103 = __toESM(require_react());
   "use client";
   var getAllowClear = (allowClear) => {
     let mergedAllowClear;
@@ -58789,7 +58780,7 @@ html body {
       mergedAllowClear = allowClear;
     } else if (allowClear) {
       mergedAllowClear = {
-        clearIcon: /* @__PURE__ */ import_react104.default.createElement(CloseCircleFilled_default2, null)
+        clearIcon: /* @__PURE__ */ import_react103.default.createElement(CloseCircleFilled_default2, null)
       };
     }
     return mergedAllowClear;
@@ -58797,9 +58788,9 @@ html body {
   var getAllowClear_default = getAllowClear;
 
   // ../custom_dashboard/node_modules/antd/es/input/hooks/useRemovePasswordTimeout.js
-  var import_react105 = __toESM(require_react());
+  var import_react104 = __toESM(require_react());
   function useRemovePasswordTimeout(inputRef, triggerOnMount) {
-    const removePasswordTimeoutRef = (0, import_react105.useRef)([]);
+    const removePasswordTimeoutRef = (0, import_react104.useRef)([]);
     const removePasswordTimeout = () => {
       removePasswordTimeoutRef.current.push(setTimeout(() => {
         var _a, _b, _c, _d;
@@ -58808,7 +58799,7 @@ html body {
         }
       }));
     };
-    (0, import_react105.useEffect)(() => {
+    (0, import_react104.useEffect)(() => {
       if (triggerOnMount) {
         removePasswordTimeout();
       }
@@ -58828,7 +58819,7 @@ html body {
 
   // ../custom_dashboard/node_modules/antd/es/input/Input.js
   "use client";
-  var Input3 = /* @__PURE__ */ (0, import_react106.forwardRef)((props, ref) => {
+  var Input3 = /* @__PURE__ */ (0, import_react105.forwardRef)((props, ref) => {
     const _a = props, {
       prefixCls: customizePrefixCls,
       bordered = true,
@@ -58887,7 +58878,7 @@ html body {
       styles: contextStyles
     } = useComponentConfig("input");
     const prefixCls = getPrefixCls("input", customizePrefixCls);
-    const inputRef = (0, import_react106.useRef)(null);
+    const inputRef = (0, import_react105.useRef)(null);
     const rootCls = useCSSVarCls_default(prefixCls);
     const [hashId, cssVarCls] = useSharedStyle(prefixCls, rootClassName);
     style_default14(prefixCls, rootCls);
@@ -58899,7 +58890,7 @@ html body {
       var _a2;
       return (_a2 = customSize != null ? customSize : compactSize) != null ? _a2 : ctx;
     });
-    const disabled = import_react106.default.useContext(DisabledContext_default);
+    const disabled = import_react105.default.useContext(DisabledContext_default);
     const mergedDisabled = customDisabled != null ? customDisabled : disabled;
     const mergedProps = __spreadProps(__spreadValues({}, props), {
       size: mergedSize,
@@ -58912,13 +58903,13 @@ html body {
       status: contextStatus,
       hasFeedback,
       feedbackIcon
-    } = (0, import_react106.useContext)(FormItemInputContext);
+    } = (0, import_react105.useContext)(FormItemInputContext);
     const mergedStatus = getMergedStatus(contextStatus, customStatus);
     const inputHasPrefixSuffix = hasPrefixSuffix2(props) || !!hasFeedback;
-    const prevHasPrefixSuffixRef = (0, import_react106.useRef)(inputHasPrefixSuffix);
+    const prevHasPrefixSuffixRef = (0, import_react105.useRef)(inputHasPrefixSuffix);
     if (true) {
       const warning6 = devUseWarning("Input");
-      (0, import_react106.useEffect)(() => {
+      (0, import_react105.useEffect)(() => {
         var _a2;
         if (inputHasPrefixSuffix && !prevHasPrefixSuffixRef.current) {
           true ? warning6(document.activeElement === ((_a2 = inputRef.current) == null ? void 0 : _a2.input), "usage", `When Input is focused, dynamic add or remove prefix / suffix will make it lose focus caused by dom structure change. Read more: https://ant.design/components/input/#FAQ`) : void 0;
@@ -58939,10 +58930,10 @@ html body {
       removePasswordTimeout();
       onChange == null ? void 0 : onChange(e3);
     };
-    const suffixNode = (hasFeedback || suffix) && /* @__PURE__ */ import_react106.default.createElement(import_react106.default.Fragment, null, suffix, hasFeedback && feedbackIcon);
+    const suffixNode = (hasFeedback || suffix) && /* @__PURE__ */ import_react105.default.createElement(import_react105.default.Fragment, null, suffix, hasFeedback && feedbackIcon);
     const mergedAllowClear = getAllowClear_default(allowClear != null ? allowClear : contextAllowClear);
     const [variant, enableVariantCls] = useVariants_default("input", customVariant, bordered);
-    return /* @__PURE__ */ import_react106.default.createElement(es_default15, __spreadProps(__spreadValues({
+    return /* @__PURE__ */ import_react105.default.createElement(es_default15, __spreadProps(__spreadValues({
       ref: composeRef(ref, inputRef),
       prefixCls,
       autoComplete: contextAutoComplete
@@ -58956,11 +58947,11 @@ html body {
       allowClear: mergedAllowClear,
       className: clsx(className, rootClassName, cssVarCls, rootCls, compactItemClassnames, contextClassName, mergedClassNames.root),
       onChange: handleChange,
-      addonBefore: addonBefore && /* @__PURE__ */ import_react106.default.createElement(ContextIsolator_default, {
+      addonBefore: addonBefore && /* @__PURE__ */ import_react105.default.createElement(ContextIsolator_default, {
         form: true,
         space: true
       }, addonBefore),
-      addonAfter: addonAfter && /* @__PURE__ */ import_react106.default.createElement(ContextIsolator_default, {
+      addonAfter: addonAfter && /* @__PURE__ */ import_react105.default.createElement(ContextIsolator_default, {
         form: true,
         space: true
       }, addonAfter),
@@ -58996,10 +58987,10 @@ html body {
   var Input_default4 = Input3;
 
   // ../custom_dashboard/node_modules/antd/es/dropdown/dropdown-button.js
-  var React257 = __toESM(require_react());
+  var React256 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/space/index.js
-  var React256 = __toESM(require_react());
+  var React255 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/_util/gapSize.js
   function isPresetSize(size) {
@@ -59013,14 +59004,14 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/antd/es/space/context.js
-  var import_react107 = __toESM(require_react());
-  var SpaceContext = /* @__PURE__ */ import_react107.default.createContext({
+  var import_react106 = __toESM(require_react());
+  var SpaceContext = /* @__PURE__ */ import_react106.default.createContext({
     latestIndex: 0
   });
   var SpaceContextProvider = SpaceContext.Provider;
 
   // ../custom_dashboard/node_modules/antd/es/space/Item.js
-  var React255 = __toESM(require_react());
+  var React254 = __toESM(require_react());
   "use client";
   var Item3 = (props) => {
     const {
@@ -59035,14 +59026,14 @@ html body {
     } = props;
     const {
       latestIndex
-    } = React255.useContext(SpaceContext);
+    } = React254.useContext(SpaceContext);
     if (!isNonNullable_default(children)) {
       return null;
     }
-    return /* @__PURE__ */ React255.createElement(React255.Fragment, null, /* @__PURE__ */ React255.createElement("div", {
+    return /* @__PURE__ */ React254.createElement(React254.Fragment, null, /* @__PURE__ */ React254.createElement("div", {
       className,
       style: style2
-    }, children), index2 < latestIndex && separator && /* @__PURE__ */ React255.createElement("span", {
+    }, children), index2 < latestIndex && separator && /* @__PURE__ */ React254.createElement("span", {
       className: clsx(`${prefix2}-item-separator`, classNames == null ? void 0 : classNames.separator),
       style: styles == null ? void 0 : styles.separator
     }, separator));
@@ -59128,7 +59119,7 @@ html body {
 
   // ../custom_dashboard/node_modules/antd/es/space/index.js
   "use client";
-  var InternalSpace = /* @__PURE__ */ React256.forwardRef((props, ref) => {
+  var InternalSpace = /* @__PURE__ */ React255.forwardRef((props, ref) => {
     const {
       getPrefixCls,
       direction: directionConfig,
@@ -59201,7 +59192,7 @@ html body {
     const itemClassName = clsx(`${prefixCls}-item`, mergedClassNames.item);
     const renderedItems = childNodes.map((child, i) => {
       const key = (child == null ? void 0 : child.key) || `${itemClassName}-${i}`;
-      return /* @__PURE__ */ React256.createElement(Item_default2, {
+      return /* @__PURE__ */ React255.createElement(Item_default2, {
         prefix: prefixCls,
         classNames: mergedClassNames,
         styles: mergedStyles,
@@ -59218,7 +59209,7 @@ html body {
         warning6.deprecated(!(deprecatedName in props), deprecatedName, newName);
       });
     }
-    const memoizedSpaceContext = React256.useMemo(() => {
+    const memoizedSpaceContext = React255.useMemo(() => {
       const calcLatestIndex = childNodes.reduce((latest, child, i) => isNonNullable_default(child) ? i : latest, 0);
       return {
         latestIndex: calcLatestIndex
@@ -59237,11 +59228,11 @@ html body {
     if (!isPresetVerticalSize && isValidVerticalSize) {
       gapStyle.rowGap = verticalSize;
     }
-    return /* @__PURE__ */ React256.createElement("div", __spreadValues({
+    return /* @__PURE__ */ React255.createElement("div", __spreadValues({
       ref,
       className: rootClassNames,
       style: __spreadValues(__spreadValues(__spreadValues(__spreadValues({}, gapStyle), mergedStyles.root), contextStyle), style2)
-    }, restProps), /* @__PURE__ */ React256.createElement(SpaceContextProvider, {
+    }, restProps), /* @__PURE__ */ React255.createElement(SpaceContextProvider, {
       value: memoizedSpaceContext
     }, renderedItems));
   });
@@ -59260,7 +59251,7 @@ html body {
       getPopupContainer: getContextPopupContainer,
       getPrefixCls,
       direction
-    } = React257.useContext(ConfigContext);
+    } = React256.useContext(ConfigContext);
     const _a = props, {
       prefixCls: customizePrefixCls,
       type: type5 = "default",
@@ -59281,7 +59272,7 @@ html body {
       placement,
       getPopupContainer,
       href,
-      icon = /* @__PURE__ */ React257.createElement(EllipsisOutlined_default2, null),
+      icon = /* @__PURE__ */ React256.createElement(EllipsisOutlined_default2, null),
       title,
       buttonsRender = (buttons) => buttons,
       mouseEnterDelay,
@@ -59367,7 +59358,7 @@ html body {
       const warning6 = devUseWarning("Dropdown.Button");
       warning6.deprecated(false, "Dropdown.Button", "Space.Compact + Dropdown + Button");
     }
-    const leftButton = /* @__PURE__ */ React257.createElement(button_default, {
+    const leftButton = /* @__PURE__ */ React256.createElement(button_default, {
       type: type5,
       danger,
       disabled,
@@ -59377,17 +59368,17 @@ html body {
       href,
       title
     }, children);
-    const rightButton = /* @__PURE__ */ React257.createElement(button_default, {
+    const rightButton = /* @__PURE__ */ React256.createElement(button_default, {
       type: type5,
       danger,
       icon
     });
     const [leftButtonToRender, rightButtonToRender] = buttonsRender([leftButton, rightButton]);
-    return /* @__PURE__ */ React257.createElement(space_default.Compact, __spreadValues({
+    return /* @__PURE__ */ React256.createElement(space_default.Compact, __spreadValues({
       className: classes,
       size: compactSize,
       block: true
-    }, restProps), leftButtonToRender, /* @__PURE__ */ React257.createElement(dropdown_default2, __spreadValues({}, dropdownProps), rightButtonToRender));
+    }, restProps), leftButtonToRender, /* @__PURE__ */ React256.createElement(dropdown_default2, __spreadValues({}, dropdownProps), rightButtonToRender));
   };
   DropdownButton.__ANT_BUTTON = true;
   var dropdown_button_default = DropdownButton;
@@ -59399,12 +59390,12 @@ html body {
   var dropdown_default3 = Dropdown3;
 
   // ../custom_dashboard/node_modules/antd/es/_util/convertToTooltipProps.js
-  var import_react108 = __toESM(require_react());
+  var import_react107 = __toESM(require_react());
   var convertToTooltipProps = (tooltip, context) => {
     if (!isNonNullable_default(tooltip)) {
       return null;
     }
-    if (typeof tooltip === "object" && !/* @__PURE__ */ (0, import_react108.isValidElement)(tooltip)) {
+    if (typeof tooltip === "object" && !/* @__PURE__ */ (0, import_react107.isValidElement)(tooltip)) {
       return __spreadValues(__spreadValues({}, context), tooltip);
     }
     return __spreadProps(__spreadValues({}, context), {
@@ -59414,13 +59405,13 @@ html body {
   var convertToTooltipProps_default = convertToTooltipProps;
 
   // ../custom_dashboard/node_modules/antd/es/form/ErrorList.js
-  var React259 = __toESM(require_react());
+  var React258 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/form/hooks/useDebounce.js
-  var React258 = __toESM(require_react());
+  var React257 = __toESM(require_react());
   function useDebounce(value) {
-    const [cacheValue, setCacheValue] = React258.useState(value);
-    React258.useEffect(() => {
+    const [cacheValue, setCacheValue] = React257.useState(value);
+    React257.useEffect(() => {
       const timeout = setTimeout(() => {
         setCacheValue(value);
       }, value.length ? 0 : 10);
@@ -59925,20 +59916,20 @@ html body {
   }) => {
     const {
       prefixCls
-    } = React259.useContext(FormItemPrefixContext);
+    } = React258.useContext(FormItemPrefixContext);
     const baseClassName = `${prefixCls}-item-explain`;
     const rootCls = useCSSVarCls_default(prefixCls);
     const [hashId, cssVarCls] = style_default17(prefixCls, rootCls);
-    const collapseMotion = React259.useMemo(() => motion_default(prefixCls), [prefixCls]);
+    const collapseMotion = React258.useMemo(() => motion_default(prefixCls), [prefixCls]);
     const debounceErrors = useDebounce(errors);
     const debounceWarnings = useDebounce(warnings);
-    const fullKeyList = React259.useMemo(() => {
+    const fullKeyList = React258.useMemo(() => {
       if (isNonNullable_default(help)) {
         return [toErrorEntity(help, "help", helpStatus)];
       }
       return [].concat(_toConsumableArray(debounceErrors.map((error, index2) => toErrorEntity(error, "error", "error", index2))), _toConsumableArray(debounceWarnings.map((warning6, index2) => toErrorEntity(warning6, "warning", "warning", index2))));
     }, [help, helpStatus, debounceErrors, debounceWarnings]);
-    const filledKeyFullKeyList = React259.useMemo(() => {
+    const filledKeyFullKeyList = React258.useMemo(() => {
       const keysCount = {};
       fullKeyList.forEach(({
         key
@@ -59953,7 +59944,7 @@ html body {
     if (fieldId) {
       helpProps.id = `${fieldId}_help`;
     }
-    return /* @__PURE__ */ React259.createElement(es_default2, {
+    return /* @__PURE__ */ React258.createElement(es_default2, {
       motionDeadline: collapseMotion.motionDeadline,
       motionName: `${prefixCls}-show-help`,
       visible: !!filledKeyFullKeyList.length,
@@ -59963,10 +59954,10 @@ html body {
         className: holderClassName,
         style: holderStyle
       } = holderProps;
-      return /* @__PURE__ */ React259.createElement("div", __spreadProps(__spreadValues({}, helpProps), {
+      return /* @__PURE__ */ React258.createElement("div", __spreadProps(__spreadValues({}, helpProps), {
         className: clsx(baseClassName, holderClassName, cssVarCls, rootCls, rootClassName, hashId),
         style: holderStyle
-      }), /* @__PURE__ */ React259.createElement(CSSMotionList_default, __spreadProps(__spreadValues({
+      }), /* @__PURE__ */ React258.createElement(CSSMotionList_default, __spreadProps(__spreadValues({
         keys: filledKeyFullKeyList
       }, motion_default(prefixCls)), {
         motionName: `${prefixCls}-show-help-item`,
@@ -59979,7 +59970,7 @@ html body {
           className: itemClassName,
           style: itemStyle
         } = itemProps;
-        return /* @__PURE__ */ React259.createElement("div", {
+        return /* @__PURE__ */ React258.createElement("div", {
           key,
           className: clsx(itemClassName, {
             [`${baseClassName}-${errorStatus}`]: errorStatus
@@ -59992,16 +59983,16 @@ html body {
   var ErrorList_default = ErrorList;
 
   // ../custom_dashboard/node_modules/antd/es/form/Form.js
-  var React261 = __toESM(require_react());
+  var React260 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/form/hooks/useFormWarning.js
-  var React260 = __toESM(require_react());
+  var React259 = __toESM(require_react());
   var names = {};
   function useFormWarning({
     name
   }) {
     const warning6 = devUseWarning("Form");
-    React260.useEffect(() => {
+    React259.useEffect(() => {
       if (name) {
         names[name] = (names[name] || 0) + 1;
         true ? warning6(names[name] <= 1, "usage", "There exist multiple Form with same `name`.") : void 0;
@@ -60015,7 +60006,7 @@ html body {
   // ../custom_dashboard/node_modules/antd/es/form/Form.js
   "use client";
   var InternalForm2 = (props, ref) => {
-    const contextDisabled = React261.useContext(DisabledContext_default);
+    const contextDisabled = React260.useContext(DisabledContext_default);
     const {
       getPrefixCls,
       direction,
@@ -60076,11 +60067,11 @@ html body {
       "tooltip"
     ]);
     const mergedSize = useSize_default(size);
-    const contextValidateMessages = React261.useContext(validateMessagesContext_default);
+    const contextValidateMessages = React260.useContext(validateMessagesContext_default);
     if (true) {
       useFormWarning(props);
     }
-    const mergedRequiredMark = React261.useMemo(() => {
+    const mergedRequiredMark = React260.useMemo(() => {
       if (requiredMark !== void 0) {
         return requiredMark;
       }
@@ -60115,7 +60106,7 @@ html body {
       __INTERNAL__
     } = wrapForm;
     __INTERNAL__.name = name;
-    const formContextValue = React261.useMemo(() => ({
+    const formContextValue = React260.useMemo(() => ({
       name,
       labelAlign,
       labelCol,
@@ -60131,8 +60122,8 @@ html body {
       classNames: mergedClassNames,
       styles: mergedStyles
     }), [name, labelAlign, labelCol, wrapperCol, layout, mergedColon, mergedRequiredMark, wrapForm, feedbackIcons, mergedClassNames, mergedStyles, mergedTooltip]);
-    const nativeElementRef = React261.useRef(null);
-    React261.useImperativeHandle(ref, () => {
+    const nativeElementRef = React260.useRef(null);
+    React260.useImperativeHandle(ref, () => {
       var _a2;
       return __spreadProps(__spreadValues({}, wrapForm), {
         nativeElement: (_a2 = nativeElementRef.current) == null ? void 0 : _a2.nativeElement
@@ -60162,19 +60153,19 @@ html body {
         }
       }
     };
-    return /* @__PURE__ */ React261.createElement(VariantContext.Provider, {
+    return /* @__PURE__ */ React260.createElement(VariantContext.Provider, {
       value: variant
-    }, /* @__PURE__ */ React261.createElement(DisabledContextProvider, {
+    }, /* @__PURE__ */ React260.createElement(DisabledContextProvider, {
       disabled
-    }, /* @__PURE__ */ React261.createElement(SizeContext_default.Provider, {
+    }, /* @__PURE__ */ React260.createElement(SizeContext_default.Provider, {
       value: mergedSize
-    }, /* @__PURE__ */ React261.createElement(FormProvider2, {
+    }, /* @__PURE__ */ React260.createElement(FormProvider2, {
       validateMessages: contextValidateMessages
-    }, /* @__PURE__ */ React261.createElement(FormContext2.Provider, {
+    }, /* @__PURE__ */ React260.createElement(FormContext2.Provider, {
       value: formContextValue
-    }, /* @__PURE__ */ React261.createElement(NoFormStyle, {
+    }, /* @__PURE__ */ React260.createElement(NoFormStyle, {
       status: true
-    }, /* @__PURE__ */ React261.createElement(es_default7, __spreadProps(__spreadValues({
+    }, /* @__PURE__ */ React260.createElement(es_default7, __spreadProps(__spreadValues({
       id: name
     }, restFormProps), {
       name,
@@ -60185,14 +60176,14 @@ html body {
       className: formClassName
     }))))))));
   };
-  var Form2 = /* @__PURE__ */ React261.forwardRef(InternalForm2);
+  var Form2 = /* @__PURE__ */ React260.forwardRef(InternalForm2);
   if (true) {
     Form2.displayName = "Form";
   }
   var Form_default2 = Form2;
 
   // ../custom_dashboard/node_modules/antd/es/form/FormItem/index.js
-  var React270 = __toESM(require_react());
+  var React269 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/form/hooks/useChildren.js
   function useChildren2(children) {
@@ -60204,13 +60195,13 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/antd/es/form/hooks/useFormItemStatus.js
-  var React262 = __toESM(require_react());
+  var React261 = __toESM(require_react());
   var useFormItemStatus = () => {
     const {
       status,
       errors = [],
       warnings = []
-    } = React262.useContext(FormItemInputContext);
+    } = React261.useContext(FormItemInputContext);
     if (true) {
       const warning6 = devUseWarning("Form.Item");
       true ? warning6(status !== void 0, "usage", "Form.Item.useStatus should be used under Form.Item component. For more information: https://u.ant.design/form-item-usestatus") : void 0;
@@ -60225,13 +60216,13 @@ html body {
   var useFormItemStatus_default = useFormItemStatus;
 
   // ../custom_dashboard/node_modules/antd/es/form/hooks/useFrameState.js
-  var React263 = __toESM(require_react());
+  var React262 = __toESM(require_react());
   function useFrameState(defaultValue) {
-    const [value, setValue] = React263.useState(defaultValue);
-    const frameRef = React263.useRef(null);
-    const batchRef = React263.useRef([]);
-    const destroyRef = React263.useRef(false);
-    React263.useEffect(() => {
+    const [value, setValue] = React262.useState(defaultValue);
+    const frameRef = React262.useRef(null);
+    const batchRef = React262.useRef([]);
+    const destroyRef = React262.useRef(false);
+    React262.useEffect(() => {
       destroyRef.current = false;
       return () => {
         destroyRef.current = true;
@@ -60262,12 +60253,12 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/antd/es/form/hooks/useItemRef.js
-  var React264 = __toESM(require_react());
+  var React263 = __toESM(require_react());
   function useItemRef() {
     const {
       itemRef
-    } = React264.useContext(FormContext2);
-    const cacheRef = React264.useRef({});
+    } = React263.useContext(FormContext2);
+    const cacheRef = React263.useRef({});
     function getRef(name, children) {
       const childrenRef = children && typeof children === "object" && getNodeRef(children);
       const nameStr = name.join("_");
@@ -60282,10 +60273,10 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/antd/es/form/FormItem/ItemHolder.js
-  var React269 = __toESM(require_react());
+  var React268 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/form/FormItemInput.js
-  var React265 = __toESM(require_react());
+  var React264 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/form/style/fallbackCmp.js
   var genFallbackStyle = (token2) => {
@@ -60328,12 +60319,12 @@ html body {
       label
     } = props;
     const baseClassName = `${prefixCls}-item`;
-    const formContext = React265.useContext(FormContext2);
+    const formContext = React264.useContext(FormContext2);
     const {
       classNames: contextClassNames,
       styles: contextStyles
     } = formContext;
-    const mergedWrapperCol = React265.useMemo(() => {
+    const mergedWrapperCol = React264.useMemo(() => {
       let mergedWrapper = __spreadValues({}, wrapperCol || formContext.wrapperCol || {});
       if (label === null && !labelCol && !wrapperCol && formContext.labelCol) {
         const list = [void 0].concat(_toConsumableArray(responsiveArrayReversed));
@@ -60351,7 +60342,7 @@ html body {
       return mergedWrapper;
     }, [wrapperCol, formContext.wrapperCol, formContext.labelCol, label, labelCol]);
     const className = clsx(`${baseClassName}-control`, mergedWrapperCol.className);
-    const subFormContext = React265.useMemo(() => {
+    const subFormContext = React264.useMemo(() => {
       const _a = formContext, {
         labelCol: _labelCol,
         wrapperCol: _wrapperCol
@@ -60361,8 +60352,8 @@ html body {
       ]);
       return rest;
     }, [formContext]);
-    const extraRef = React265.useRef(null);
-    const [extraHeight, setExtraHeight] = React265.useState(0);
+    const extraRef = React264.useRef(null);
+    const [extraHeight, setExtraHeight] = React264.useState(0);
     useLayoutEffect_default(() => {
       if (extra && extraRef.current) {
         setExtraHeight(extraRef.current.clientHeight);
@@ -60370,19 +60361,19 @@ html body {
         setExtraHeight(0);
       }
     }, [extra]);
-    const inputDom = /* @__PURE__ */ React265.createElement("div", {
+    const inputDom = /* @__PURE__ */ React264.createElement("div", {
       className: `${baseClassName}-control-input`
-    }, /* @__PURE__ */ React265.createElement("div", {
+    }, /* @__PURE__ */ React264.createElement("div", {
       className: clsx(`${baseClassName}-control-input-content`, contextClassNames == null ? void 0 : contextClassNames.content),
       style: contextStyles == null ? void 0 : contextStyles.content
     }, children));
-    const formItemContext = React265.useMemo(() => ({
+    const formItemContext = React264.useMemo(() => ({
       prefixCls,
       status
     }), [prefixCls, status]);
-    const errorListDom = marginBottom !== null || errors.length || warnings.length ? /* @__PURE__ */ React265.createElement(FormItemPrefixContext.Provider, {
+    const errorListDom = marginBottom !== null || errors.length || warnings.length ? /* @__PURE__ */ React264.createElement(FormItemPrefixContext.Provider, {
       value: formItemContext
-    }, /* @__PURE__ */ React265.createElement(ErrorList_default, {
+    }, /* @__PURE__ */ React264.createElement(ErrorList_default, {
       fieldId,
       errors,
       warnings,
@@ -60395,11 +60386,11 @@ html body {
     if (fieldId) {
       extraProps.id = `${fieldId}_extra`;
     }
-    const extraDom = extra ? /* @__PURE__ */ React265.createElement("div", __spreadProps(__spreadValues({}, extraProps), {
+    const extraDom = extra ? /* @__PURE__ */ React264.createElement("div", __spreadProps(__spreadValues({}, extraProps), {
       className: `${baseClassName}-extra`,
       ref: extraRef
     }), extra) : null;
-    const additionalDom = errorListDom || extraDom ? /* @__PURE__ */ React265.createElement("div", {
+    const additionalDom = errorListDom || extraDom ? /* @__PURE__ */ React264.createElement("div", {
       className: `${baseClassName}-additional`,
       style: marginBottom ? {
         minHeight: marginBottom + extraHeight
@@ -60409,22 +60400,22 @@ html body {
       input: inputDom,
       errorList: errorListDom,
       extra: extraDom
-    }) : /* @__PURE__ */ React265.createElement(React265.Fragment, null, inputDom, additionalDom);
-    return /* @__PURE__ */ React265.createElement(FormContext2.Provider, {
+    }) : /* @__PURE__ */ React264.createElement(React264.Fragment, null, inputDom, additionalDom);
+    return /* @__PURE__ */ React264.createElement(FormContext2.Provider, {
       value: subFormContext
-    }, /* @__PURE__ */ React265.createElement(col_default, __spreadProps(__spreadValues({}, mergedWrapperCol), {
+    }, /* @__PURE__ */ React264.createElement(col_default, __spreadProps(__spreadValues({}, mergedWrapperCol), {
       className
-    }), dom), /* @__PURE__ */ React265.createElement(fallbackCmp_default, {
+    }), dom), /* @__PURE__ */ React264.createElement(fallbackCmp_default, {
       prefixCls
     }));
   };
   var FormItemInput_default = FormItemInput;
 
   // ../custom_dashboard/node_modules/antd/es/form/FormItemLabel.js
-  var React267 = __toESM(require_react());
+  var React266 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/QuestionCircleOutlined.js
-  var React266 = __toESM(require_react());
+  var React265 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/QuestionCircleOutlined.js
   var QuestionCircleOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z" } }, { "tag": "path", "attrs": { "d": "M623.6 316.7C593.6 290.4 554 276 512 276s-81.6 14.5-111.6 40.7C369.2 344 352 380.7 352 420v7.6c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V420c0-44.1 43.1-80 96-80s96 35.9 96 80c0 31.1-22 59.6-56.1 72.7-21.2 8.1-39.2 22.3-52.1 40.9-13.1 19-19.9 41.8-19.9 64.9V620c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8v-22.7a48.3 48.3 0 0130.9-44.8c59-22.7 97.1-74.7 97.1-132.5.1-39.3-17.1-76-48.3-103.3zM472 732a40 40 0 1080 0 40 40 0 10-80 0z" } }] }, "name": "question-circle", "theme": "outlined" };
@@ -60445,11 +60436,11 @@ html body {
     };
     return _extends50.apply(this, arguments);
   }
-  var QuestionCircleOutlined2 = (props, ref) => /* @__PURE__ */ React266.createElement(AntdIcon_default, _extends50({}, props, {
+  var QuestionCircleOutlined2 = (props, ref) => /* @__PURE__ */ React265.createElement(AntdIcon_default, _extends50({}, props, {
     ref,
     icon: QuestionCircleOutlined_default
   }));
-  var RefIcon14 = /* @__PURE__ */ React266.forwardRef(QuestionCircleOutlined2);
+  var RefIcon14 = /* @__PURE__ */ React265.forwardRef(QuestionCircleOutlined2);
   if (true) {
     RefIcon14.displayName = "QuestionCircleOutlined";
   }
@@ -60479,7 +60470,7 @@ html body {
       classNames: contextClassNames,
       styles: contextStyles,
       tooltip: contextTooltip
-    } = React267.useContext(FormContext2);
+    } = React266.useContext(FormContext2);
     if (!label) {
       return null;
     }
@@ -60497,14 +60488,14 @@ html body {
     }
     const tooltipProps = convertToTooltipProps_default(tooltip, contextTooltip);
     if (tooltipProps) {
-      const tooltipNode = /* @__PURE__ */ React267.createElement(tooltip_default, __spreadValues({}, tooltipProps), /* @__PURE__ */ React267.createElement("span", {
+      const tooltipNode = /* @__PURE__ */ React266.createElement(tooltip_default, __spreadValues({}, tooltipProps), /* @__PURE__ */ React266.createElement("span", {
         className: `${prefixCls}-item-tooltip`,
         onClick: (e3) => {
           e3.preventDefault();
         },
         tabIndex: -1
-      }, tooltipProps.icon || tooltipProps.children || /* @__PURE__ */ React267.createElement(QuestionCircleOutlined_default2, null)));
-      labelChildren = /* @__PURE__ */ React267.createElement(React267.Fragment, null, labelChildren, tooltipNode);
+      }, tooltipProps.icon || tooltipProps.children || /* @__PURE__ */ React266.createElement(QuestionCircleOutlined_default2, null)));
+      labelChildren = /* @__PURE__ */ React266.createElement(React266.Fragment, null, labelChildren, tooltipNode);
     }
     const isOptionalMark = requiredMark === "optional";
     const isRenderMark = typeof requiredMark === "function";
@@ -60514,7 +60505,7 @@ html body {
         required: !!required5
       });
     } else if (isOptionalMark && !required5) {
-      labelChildren = /* @__PURE__ */ React267.createElement(React267.Fragment, null, labelChildren, /* @__PURE__ */ React267.createElement("span", {
+      labelChildren = /* @__PURE__ */ React266.createElement(React266.Fragment, null, labelChildren, /* @__PURE__ */ React266.createElement("span", {
         className: `${prefixCls}-item-optional`,
         title: ""
       }, (formLocale == null ? void 0 : formLocale.optional) || ((_a = en_US_default6.Form) == null ? void 0 : _a.optional)));
@@ -60530,9 +60521,9 @@ html body {
       [`${prefixCls}-item-required-mark-${markType}`]: markType,
       [`${prefixCls}-item-no-colon`]: !computedColon
     });
-    return /* @__PURE__ */ React267.createElement(col_default, __spreadProps(__spreadValues({}, mergedLabelCol), {
+    return /* @__PURE__ */ React266.createElement(col_default, __spreadProps(__spreadValues({}, mergedLabelCol), {
       className: labelColClassName
-    }), /* @__PURE__ */ React267.createElement("label", {
+    }), /* @__PURE__ */ React266.createElement("label", {
       htmlFor,
       className: labelClassName,
       style: contextStyles == null ? void 0 : contextStyles.label,
@@ -60542,7 +60533,7 @@ html body {
   var FormItemLabel_default = FormItemLabel;
 
   // ../custom_dashboard/node_modules/antd/es/form/FormItem/StatusProvider.js
-  var React268 = __toESM(require_react());
+  var React267 = __toESM(require_react());
   "use client";
   var iconMap = {
     success: CheckCircleFilled_default2,
@@ -60564,7 +60555,7 @@ html body {
     const itemPrefixCls = `${prefixCls}-item`;
     const {
       feedbackIcons
-    } = React268.useContext(FormContext2);
+    } = React267.useContext(FormContext2);
     const mergedValidateStatus = getStatus(errors, warnings, meta, null, !!hasFeedback, validateStatus);
     const {
       isFormItemInput: parentIsFormItemInput,
@@ -60572,8 +60563,8 @@ html body {
       hasFeedback: parentHasFeedback,
       feedbackIcon: parentFeedbackIcon,
       name: parentName
-    } = React268.useContext(FormItemInputContext);
-    const formItemStatusContext = React268.useMemo(() => {
+    } = React267.useContext(FormItemInputContext);
+    const formItemStatusContext = React267.useMemo(() => {
       var _a;
       let feedbackIcon;
       if (hasFeedback) {
@@ -60584,9 +60575,9 @@ html body {
           warnings
         })) == null ? void 0 : _a[mergedValidateStatus]);
         const IconNode2 = mergedValidateStatus ? iconMap[mergedValidateStatus] : null;
-        feedbackIcon = customIconNode !== false && IconNode2 ? /* @__PURE__ */ React268.createElement("span", {
+        feedbackIcon = customIconNode !== false && IconNode2 ? /* @__PURE__ */ React267.createElement("span", {
           className: clsx(`${itemPrefixCls}-feedback-icon`, `${itemPrefixCls}-feedback-icon-${mergedValidateStatus}`)
-        }, customIconNode || /* @__PURE__ */ React268.createElement(IconNode2, null)) : null;
+        }, customIconNode || /* @__PURE__ */ React267.createElement(IconNode2, null)) : null;
       }
       const context = {
         status: mergedValidateStatus || "",
@@ -60606,7 +60597,7 @@ html body {
       }
       return context;
     }, [mergedValidateStatus, hasFeedback, noStyle, parentIsFormItemInput, parentStatus]);
-    return /* @__PURE__ */ React268.createElement(FormItemInputContext.Provider, {
+    return /* @__PURE__ */ React267.createElement(FormItemInputContext.Provider, {
       value: formItemStatusContext
     }, children);
   }
@@ -60658,16 +60649,16 @@ html body {
     const {
       requiredMark,
       layout: formLayout
-    } = React269.useContext(FormContext2);
+    } = React268.useContext(FormContext2);
     const layout = propsLayout || formLayout;
     const vertical = layout === "vertical";
-    const itemRef = React269.useRef(null);
+    const itemRef = React268.useRef(null);
     const debounceErrors = useDebounce(errors);
     const debounceWarnings = useDebounce(warnings);
     const hasHelp = isNonNullable_default(help);
     const hasError = !!(hasHelp || errors.length || warnings.length);
     const isOnScreen = !!itemRef.current && isVisible_default(itemRef.current);
-    const [marginBottom, setMarginBottom] = React269.useState(null);
+    const [marginBottom, setMarginBottom] = React268.useState(null);
     useLayoutEffect_default(() => {
       if (hasError && itemRef.current) {
         const itemStyle = getComputedStyle(itemRef.current);
@@ -60695,11 +60686,11 @@ html body {
       [`${itemPrefixCls}-hidden`]: hidden,
       [`${itemPrefixCls}-${layout}`]: layout
     });
-    return /* @__PURE__ */ React269.createElement("div", {
+    return /* @__PURE__ */ React268.createElement("div", {
       className: itemClassName,
       style: style2,
       ref: itemRef
-    }, /* @__PURE__ */ React269.createElement(row_default, __spreadValues({
+    }, /* @__PURE__ */ React268.createElement(row_default, __spreadValues({
       className: `${itemPrefixCls}-row`
     }, omit(restProps, [
       "_internalItemRender",
@@ -60732,14 +60723,14 @@ html body {
       "valuePropName",
       "wrapperCol",
       "validateDebounce"
-    ])), /* @__PURE__ */ React269.createElement(FormItemLabel_default, __spreadProps(__spreadValues({
+    ])), /* @__PURE__ */ React268.createElement(FormItemLabel_default, __spreadProps(__spreadValues({
       htmlFor: fieldId
     }, props), {
       requiredMark,
       required: required5 != null ? required5 : isRequired,
       prefixCls,
       vertical
-    })), /* @__PURE__ */ React269.createElement(FormItemInput_default, __spreadProps(__spreadValues(__spreadValues({}, props), meta), {
+    })), /* @__PURE__ */ React268.createElement(FormItemInput_default, __spreadProps(__spreadValues(__spreadValues({}, props), meta), {
       errors: debounceErrors,
       warnings: debounceWarnings,
       prefixCls,
@@ -60747,9 +60738,9 @@ html body {
       help,
       marginBottom,
       onErrorVisibleChanged
-    }), /* @__PURE__ */ React269.createElement(NoStyleItemContext.Provider, {
+    }), /* @__PURE__ */ React268.createElement(NoStyleItemContext.Provider, {
       value: onSubItemMetaChange
-    }, /* @__PURE__ */ React269.createElement(StatusProvider_default, {
+    }, /* @__PURE__ */ React268.createElement(StatusProvider_default, {
       prefixCls,
       meta,
       errors: meta.errors,
@@ -60757,7 +60748,7 @@ html body {
       hasFeedback,
       validateStatus: mergedValidateStatus,
       name
-    }, children)))), !!marginBottom && /* @__PURE__ */ React269.createElement("div", {
+    }, children)))), !!marginBottom && /* @__PURE__ */ React268.createElement("div", {
       className: `${itemPrefixCls}-margin-offset`,
       style: {
         marginBottom: -marginBottom
@@ -60777,7 +60768,7 @@ html body {
       return propValueA === propValueB || typeof propValueA === "function" || typeof propValueB === "function";
     });
   }
-  var MemoInput = /* @__PURE__ */ React270.memo((props) => props.children, (prev2, next2) => isSimilarControl(prev2.control, next2.control) && prev2.update === next2.update && prev2.childProps.length === next2.childProps.length && prev2.childProps.every((value, index2) => value === next2.childProps[index2]));
+  var MemoInput = /* @__PURE__ */ React269.memo((props) => props.children, (prev2, next2) => isSimilarControl(prev2.control, next2.control) && prev2.update === next2.update && prev2.childProps.length === next2.childProps.length && prev2.childProps.every((value, index2) => value === next2.childProps[index2]));
   function genEmptyMeta() {
     return {
       errors: [],
@@ -60809,16 +60800,16 @@ html body {
     } = props;
     const {
       getPrefixCls
-    } = React270.useContext(ConfigContext);
+    } = React269.useContext(ConfigContext);
     const {
       name: formName
-    } = React270.useContext(FormContext2);
+    } = React269.useContext(FormContext2);
     const mergedChildren = useChildren2(children);
     const isRenderProps = typeof mergedChildren === "function";
-    const notifyParentMetaChange = React270.useContext(NoStyleItemContext);
+    const notifyParentMetaChange = React269.useContext(NoStyleItemContext);
     const {
       validateTrigger: contextValidateTrigger
-    } = React270.useContext(FieldContext_default);
+    } = React269.useContext(FieldContext_default);
     const mergedValidateTrigger = isNonNullable_default(validateTrigger) ? validateTrigger : contextValidateTrigger;
     const hasName = isNonNullable_default(name);
     const prefixCls = getPrefixCls("form", customizePrefixCls);
@@ -60828,8 +60819,8 @@ html body {
     if (true) {
       true ? warning6(name !== null, "usage", "`null` is passed as `name` property") : void 0;
     }
-    const listContext = React270.useContext(ListContext_default);
-    const fieldKeyPathRef = React270.useRef(null);
+    const listContext = React269.useContext(ListContext_default);
+    const fieldKeyPathRef = React269.useRef(null);
     const [subFieldErrors, setSubFieldErrors] = useFrameState({});
     const [meta, setMeta] = useState_default(() => genEmptyMeta());
     const onMetaChange = (nextMeta) => {
@@ -60862,7 +60853,7 @@ html body {
         return clone;
       });
     };
-    const [mergedErrors, mergedWarnings] = React270.useMemo(() => {
+    const [mergedErrors, mergedWarnings] = React269.useMemo(() => {
       const errorList = _toConsumableArray(meta.errors);
       const warningList = _toConsumableArray(meta.warnings);
       Object.values(subFieldErrors).forEach((subFieldError) => {
@@ -60874,7 +60865,7 @@ html body {
     const getItemRef = useItemRef();
     function renderLayout(baseChildren, fieldId, isRequired) {
       if (noStyle && !hidden) {
-        return /* @__PURE__ */ React270.createElement(StatusProvider_default, {
+        return /* @__PURE__ */ React269.createElement(StatusProvider_default, {
           prefixCls,
           hasFeedback: props.hasFeedback,
           validateStatus: props.validateStatus,
@@ -60885,7 +60876,7 @@ html body {
           name
         }, baseChildren);
       }
-      return /* @__PURE__ */ React270.createElement(ItemHolder, __spreadProps(__spreadValues({
+      return /* @__PURE__ */ React269.createElement(ItemHolder, __spreadProps(__spreadValues({
         key: "row"
       }, props), {
         className: clsx(className, cssVarCls, rootCls, hashId),
@@ -60912,7 +60903,7 @@ html body {
     if (messageVariables) {
       variables = __spreadValues(__spreadValues({}, variables), messageVariables);
     }
-    return /* @__PURE__ */ React270.createElement(Field_default, __spreadProps(__spreadValues({}, props), {
+    return /* @__PURE__ */ React269.createElement(Field_default, __spreadProps(__spreadValues({}, props), {
       messageVariables: variables,
       trigger,
       validateTrigger: mergedValidateTrigger,
@@ -60941,7 +60932,7 @@ html body {
         true ? warning6(!hasName, "usage", "A `Form.Item` with a render function cannot be a field, and thus cannot have a `name` prop.") : void 0;
       } else if (dependencies && !isRenderProps && !hasName) {
         true ? warning6(false, "usage", "Must set `name` or use a render function when `dependencies` is set.") : void 0;
-      } else if (/* @__PURE__ */ React270.isValidElement(mergedChildren)) {
+      } else if (/* @__PURE__ */ React269.isValidElement(mergedChildren)) {
         true ? warning6(mergedChildren.props.defaultValue === void 0, "usage", "`defaultValue` will not work on controlled Field. You should use `initialValues` of Form instead.") : void 0;
         const childProps = __spreadValues(__spreadValues({}, mergedChildren.props), mergedControl);
         if (!childProps.id) {
@@ -60975,7 +60966,7 @@ html body {
           };
         });
         const watchingChildProps = [childProps["aria-required"], childProps["aria-invalid"], childProps["aria-describedby"]];
-        childNode = /* @__PURE__ */ React270.createElement(MemoInput, {
+        childNode = /* @__PURE__ */ React269.createElement(MemoInput, {
           control: mergedControl,
           update: mergedChildren,
           childProps: watchingChildProps
@@ -60994,7 +60985,7 @@ html body {
   var FormItem_default = FormItem;
 
   // ../custom_dashboard/node_modules/antd/es/form/FormList.js
-  var React271 = __toESM(require_react());
+  var React270 = __toESM(require_react());
   "use client";
   var FormList = (_a) => {
     var _b = _a, {
@@ -61010,13 +61001,13 @@ html body {
     }
     const {
       getPrefixCls
-    } = React271.useContext(ConfigContext);
+    } = React270.useContext(ConfigContext);
     const prefixCls = getPrefixCls("form", customizePrefixCls);
-    const contextValue = React271.useMemo(() => ({
+    const contextValue = React270.useMemo(() => ({
       prefixCls,
       status: "error"
     }), [prefixCls]);
-    return /* @__PURE__ */ React271.createElement(List_default, __spreadValues({}, props), (fields, operation, meta) => /* @__PURE__ */ React271.createElement(FormItemPrefixContext.Provider, {
+    return /* @__PURE__ */ React270.createElement(List_default, __spreadValues({}, props), (fields, operation, meta) => /* @__PURE__ */ React270.createElement(FormItemPrefixContext.Provider, {
       value: contextValue
     }, children(fields.map((field) => __spreadProps(__spreadValues({}, field), {
       fieldKey: field.key
@@ -61028,11 +61019,11 @@ html body {
   var FormList_default = FormList;
 
   // ../custom_dashboard/node_modules/antd/es/form/hooks/useFormInstance.js
-  var React272 = __toESM(require_react());
+  var React271 = __toESM(require_react());
   function useFormInstance() {
     const {
       form
-    } = React272.useContext(FormContext2);
+    } = React271.useContext(FormContext2);
     return form;
   }
 
@@ -61049,14 +61040,14 @@ html body {
   var form_default = Form3;
 
   // ../custom_dashboard/node_modules/antd/es/input/Group.js
-  var React273 = __toESM(require_react());
-  var import_react109 = __toESM(require_react());
+  var React272 = __toESM(require_react());
+  var import_react108 = __toESM(require_react());
   "use client";
   var Group = (props) => {
     const {
       getPrefixCls,
       direction
-    } = (0, import_react109.useContext)(ConfigContext);
+    } = (0, import_react108.useContext)(ConfigContext);
     const {
       prefixCls: customizePrefixCls,
       className
@@ -61070,17 +61061,17 @@ html body {
       [`${prefixCls}-compact`]: props.compact,
       [`${prefixCls}-rtl`]: direction === "rtl"
     }, hashId, className);
-    const formItemContext = (0, import_react109.useContext)(FormItemInputContext);
-    const groupFormItemContext = (0, import_react109.useMemo)(() => __spreadProps(__spreadValues({}, formItemContext), {
+    const formItemContext = (0, import_react108.useContext)(FormItemInputContext);
+    const groupFormItemContext = (0, import_react108.useMemo)(() => __spreadProps(__spreadValues({}, formItemContext), {
       isFormItemInput: false
     }), [formItemContext]);
     if (true) {
       const warning6 = devUseWarning("Input.Group");
       warning6.deprecated(false, "Input.Group", "Space.Compact");
     }
-    return /* @__PURE__ */ React273.createElement(FormItemInputContext.Provider, {
+    return /* @__PURE__ */ React272.createElement(FormItemInputContext.Provider, {
       value: groupFormItemContext
-    }, /* @__PURE__ */ React273.createElement(space_default.Compact, {
+    }, /* @__PURE__ */ React272.createElement(space_default.Compact, {
       className: cls,
       style: props.style,
       onMouseEnter: props.onMouseEnter,
@@ -61092,7 +61083,7 @@ html body {
   var Group_default2 = Group;
 
   // ../custom_dashboard/node_modules/antd/es/input/OTP/index.js
-  var React275 = __toESM(require_react());
+  var React274 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/input/style/otp.js
   var genOTPStyle = (token2) => {
@@ -61150,9 +61141,9 @@ html body {
   }, initComponentToken);
 
   // ../custom_dashboard/node_modules/antd/es/input/OTP/OTPInput.js
-  var React274 = __toESM(require_react());
+  var React273 = __toESM(require_react());
   "use client";
-  var OTPInput = /* @__PURE__ */ React274.forwardRef((props, ref) => {
+  var OTPInput = /* @__PURE__ */ React273.forwardRef((props, ref) => {
     const _a = props, {
       className,
       value,
@@ -61172,11 +61163,11 @@ html body {
     ]);
     const {
       getPrefixCls
-    } = React274.useContext(ConfigContext);
+    } = React273.useContext(ConfigContext);
     const prefixCls = getPrefixCls("otp");
     const maskValue = typeof mask === "string" ? mask : value;
-    const inputRef = React274.useRef(null);
-    React274.useImperativeHandle(ref, () => inputRef.current);
+    const inputRef = React273.useRef(null);
+    React273.useImperativeHandle(ref, () => inputRef.current);
     const onInternalChange = (e3) => {
       onChange(index2, e3.target.value);
     };
@@ -61210,13 +61201,13 @@ html body {
       }
       syncSelection();
     };
-    return /* @__PURE__ */ React274.createElement("span", {
+    return /* @__PURE__ */ React273.createElement("span", {
       className: `${prefixCls}-input-wrapper`,
       role: "presentation"
-    }, mask && value !== "" && value !== void 0 && /* @__PURE__ */ React274.createElement("span", {
+    }, mask && value !== "" && value !== void 0 && /* @__PURE__ */ React273.createElement("span", {
       className: `${prefixCls}-mask-icon`,
       "aria-hidden": "true"
-    }, maskValue), /* @__PURE__ */ React274.createElement(Input_default4, __spreadProps(__spreadValues({
+    }, maskValue), /* @__PURE__ */ React273.createElement(Input_default4, __spreadProps(__spreadValues({
       "aria-label": `OTP Input ${index2 + 1}`,
       type: mask === true ? "password" : "text"
     }, restProps), {
@@ -61251,12 +61242,12 @@ html body {
     if (!separatorNode) {
       return null;
     }
-    return /* @__PURE__ */ React275.createElement("span", {
+    return /* @__PURE__ */ React274.createElement("span", {
       className: clsx(`${prefixCls}-separator`, semanticClassName),
       style: semanticStyle
     }, separatorNode);
   };
-  var OTP = /* @__PURE__ */ React275.forwardRef((props, ref) => {
+  var OTP = /* @__PURE__ */ React274.forwardRef((props, ref) => {
     const _a = props, {
       prefixCls: customizePrefixCls,
       length: length2 = 6,
@@ -61330,16 +61321,16 @@ html body {
     });
     const [hashId, cssVarCls] = otp_default(prefixCls);
     const mergedSize = useSize_default((ctx) => customSize != null ? customSize : ctx);
-    const formContext = React275.useContext(FormItemInputContext);
+    const formContext = React274.useContext(FormItemInputContext);
     const mergedStatus = getMergedStatus(formContext.status, customStatus);
-    const proxyFormContext = React275.useMemo(() => __spreadProps(__spreadValues({}, formContext), {
+    const proxyFormContext = React274.useMemo(() => __spreadProps(__spreadValues({}, formContext), {
       status: mergedStatus,
       hasFeedback: false,
       feedbackIcon: null
     }), [formContext, mergedStatus]);
-    const containerRef = React275.useRef(null);
-    const inputsRef = React275.useRef({});
-    React275.useImperativeHandle(ref, () => ({
+    const containerRef = React274.useRef(null);
+    const inputsRef = React274.useRef({});
+    React274.useImperativeHandle(ref, () => ({
       focus: () => {
         var _a2;
         (_a2 = inputsRef.current[0]) == null ? void 0 : _a2.focus();
@@ -61353,8 +61344,8 @@ html body {
       nativeElement: containerRef.current
     }));
     const internalFormatter = (txt) => formatter ? formatter(txt) : txt;
-    const [valueCells, setValueCells] = React275.useState(() => strToArr(internalFormatter(defaultValue || "")));
-    React275.useEffect(() => {
+    const [valueCells, setValueCells] = React274.useState(() => strToArr(internalFormatter(defaultValue || "")));
+    React274.useEffect(() => {
       if (value !== void 0) {
         setValueCells(strToArr(value));
       }
@@ -61428,7 +61419,7 @@ html body {
       inputMode,
       autoComplete
     };
-    return /* @__PURE__ */ React275.createElement("div", __spreadProps(__spreadValues({}, domAttrs), {
+    return /* @__PURE__ */ React274.createElement("div", __spreadProps(__spreadValues({}, domAttrs), {
       ref: containerRef,
       className: clsx(className, prefixCls, {
         [`${prefixCls}-sm`]: mergedSize === "small",
@@ -61437,16 +61428,16 @@ html body {
       }, cssVarCls, hashId, contextClassName, mergedClassNames.root),
       style: __spreadValues(__spreadValues(__spreadValues({}, mergedStyles.root), contextStyle), style2),
       role: "group"
-    }), /* @__PURE__ */ React275.createElement(FormItemInputContext.Provider, {
+    }), /* @__PURE__ */ React274.createElement(FormItemInputContext.Provider, {
       value: proxyFormContext
     }, Array.from({
       length: length2
     }).map((_, index2) => {
       const key = `otp-${index2}`;
       const singleValue = valueCells[index2] || "";
-      return /* @__PURE__ */ React275.createElement(React275.Fragment, {
+      return /* @__PURE__ */ React274.createElement(React274.Fragment, {
         key
-      }, /* @__PURE__ */ React275.createElement(OTPInput_default, __spreadValues({
+      }, /* @__PURE__ */ React274.createElement(OTPInput_default, __spreadValues({
         ref: (inputEle) => {
           inputsRef.current[index2] = inputEle;
         },
@@ -61460,7 +61451,7 @@ html body {
         onActiveChange: onInputActiveChange,
         autoFocus: index2 === 0 && autoFocus,
         onFocus: (event) => onInputFocus(event, index2)
-      }, inputSharedProps)), index2 < length2 - 1 && /* @__PURE__ */ React275.createElement(Separator, {
+      }, inputSharedProps)), index2 < length2 - 1 && /* @__PURE__ */ React274.createElement(Separator, {
         separator,
         index: index2,
         prefixCls,
@@ -61472,11 +61463,11 @@ html body {
   var OTP_default = OTP;
 
   // ../custom_dashboard/node_modules/antd/es/input/Password.js
-  var React278 = __toESM(require_react());
-  var import_react110 = __toESM(require_react());
+  var React277 = __toESM(require_react());
+  var import_react109 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/EyeInvisibleOutlined.js
-  var React276 = __toESM(require_react());
+  var React275 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/EyeInvisibleOutlined.js
   var EyeInvisibleOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z" } }, { "tag": "path", "attrs": { "d": "M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z" } }] }, "name": "eye-invisible", "theme": "outlined" };
@@ -61497,18 +61488,18 @@ html body {
     };
     return _extends51.apply(this, arguments);
   }
-  var EyeInvisibleOutlined2 = (props, ref) => /* @__PURE__ */ React276.createElement(AntdIcon_default, _extends51({}, props, {
+  var EyeInvisibleOutlined2 = (props, ref) => /* @__PURE__ */ React275.createElement(AntdIcon_default, _extends51({}, props, {
     ref,
     icon: EyeInvisibleOutlined_default
   }));
-  var RefIcon15 = /* @__PURE__ */ React276.forwardRef(EyeInvisibleOutlined2);
+  var RefIcon15 = /* @__PURE__ */ React275.forwardRef(EyeInvisibleOutlined2);
   if (true) {
     RefIcon15.displayName = "EyeInvisibleOutlined";
   }
   var EyeInvisibleOutlined_default2 = RefIcon15;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/EyeOutlined.js
-  var React277 = __toESM(require_react());
+  var React276 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/EyeOutlined.js
   var EyeOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z" } }] }, "name": "eye", "theme": "outlined" };
@@ -61529,11 +61520,11 @@ html body {
     };
     return _extends52.apply(this, arguments);
   }
-  var EyeOutlined2 = (props, ref) => /* @__PURE__ */ React277.createElement(AntdIcon_default, _extends52({}, props, {
+  var EyeOutlined2 = (props, ref) => /* @__PURE__ */ React276.createElement(AntdIcon_default, _extends52({}, props, {
     ref,
     icon: EyeOutlined_default
   }));
-  var RefIcon16 = /* @__PURE__ */ React277.forwardRef(EyeOutlined2);
+  var RefIcon16 = /* @__PURE__ */ React276.forwardRef(EyeOutlined2);
   if (true) {
     RefIcon16.displayName = "EyeOutlined";
   }
@@ -61541,12 +61532,12 @@ html body {
 
   // ../custom_dashboard/node_modules/antd/es/input/Password.js
   "use client";
-  var defaultIconRender = (visible) => visible ? /* @__PURE__ */ React278.createElement(EyeOutlined_default2, null) : /* @__PURE__ */ React278.createElement(EyeInvisibleOutlined_default2, null);
+  var defaultIconRender = (visible) => visible ? /* @__PURE__ */ React277.createElement(EyeOutlined_default2, null) : /* @__PURE__ */ React277.createElement(EyeInvisibleOutlined_default2, null);
   var actionMap = {
     click: "onClick",
     hover: "onMouseOver"
   };
-  var Password = /* @__PURE__ */ React278.forwardRef((props, ref) => {
+  var Password = /* @__PURE__ */ React277.forwardRef((props, ref) => {
     const {
       disabled: customDisabled,
       action = "click",
@@ -61554,12 +61545,12 @@ html body {
       iconRender = defaultIconRender,
       suffix
     } = props;
-    const disabled = React278.useContext(DisabledContext_default);
+    const disabled = React277.useContext(DisabledContext_default);
     const mergedDisabled = customDisabled != null ? customDisabled : disabled;
     const visibilityControlled = typeof visibilityToggle === "object" && visibilityToggle.visible !== void 0;
-    const [visible, setVisible] = (0, import_react110.useState)(() => visibilityControlled ? visibilityToggle.visible : false);
-    const inputRef = (0, import_react110.useRef)(null);
-    React278.useEffect(() => {
+    const [visible, setVisible] = (0, import_react109.useState)(() => visibilityControlled ? visibilityToggle.visible : false);
+    const inputRef = (0, import_react109.useRef)(null);
+    React277.useEffect(() => {
       if (visibilityControlled) {
         setVisible(visibilityToggle.visible);
       }
@@ -61593,7 +61584,7 @@ html body {
           e3.preventDefault();
         }
       };
-      return /* @__PURE__ */ React278.cloneElement(/* @__PURE__ */ React278.isValidElement(icon) ? icon : /* @__PURE__ */ React278.createElement("span", null, icon), iconProps);
+      return /* @__PURE__ */ React277.cloneElement(/* @__PURE__ */ React277.isValidElement(icon) ? icon : /* @__PURE__ */ React277.createElement("span", null, icon), iconProps);
     };
     const _a = props, {
       className,
@@ -61608,7 +61599,7 @@ html body {
     ]);
     const {
       getPrefixCls
-    } = React278.useContext(ConfigContext);
+    } = React277.useContext(ConfigContext);
     const inputPrefixCls = getPrefixCls("input", customizeInputPrefixCls);
     const prefixCls = getPrefixCls("input-password", customizePrefixCls);
     const suffixIcon = visibilityToggle && getIcon2(prefixCls);
@@ -61619,12 +61610,12 @@ html body {
       type: visible ? "text" : "password",
       className: inputClassName,
       prefixCls: inputPrefixCls,
-      suffix: /* @__PURE__ */ React278.createElement(React278.Fragment, null, suffixIcon, suffix)
+      suffix: /* @__PURE__ */ React277.createElement(React277.Fragment, null, suffixIcon, suffix)
     });
     if (size) {
       omittedProps.size = size;
     }
-    return /* @__PURE__ */ React278.createElement(Input_default4, __spreadValues({
+    return /* @__PURE__ */ React277.createElement(Input_default4, __spreadValues({
       ref: composeRef(ref, inputRef)
     }, omittedProps));
   });
@@ -61634,7 +61625,7 @@ html body {
   var Password_default = Password;
 
   // ../custom_dashboard/node_modules/antd/es/input/Search.js
-  var React279 = __toESM(require_react());
+  var React278 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/input/style/search.js
   var genSearchStyle = (token2) => {
@@ -61665,7 +61656,7 @@ html body {
 
   // ../custom_dashboard/node_modules/antd/es/input/Search.js
   "use client";
-  var Search = /* @__PURE__ */ React279.forwardRef((props, ref) => {
+  var Search = /* @__PURE__ */ React278.forwardRef((props, ref) => {
     const _a = props, {
       prefixCls: customizePrefixCls,
       inputPrefixCls: customizeInputPrefixCls,
@@ -61721,7 +61712,7 @@ html body {
         _default: "root"
       }
     });
-    const composedRef = React279.useRef(false);
+    const composedRef = React278.useRef(false);
     const prefixCls = getPrefixCls("input-search", customizePrefixCls);
     const inputPrefixCls = getPrefixCls("input", customizeInputPrefixCls);
     const [hashId, cssVarCls] = search_default(prefixCls);
@@ -61732,7 +61723,7 @@ html body {
       var _a2;
       return (_a2 = customizeSize != null ? customizeSize : compactSize) != null ? _a2 : ctx;
     });
-    const inputRef = React279.useRef(null);
+    const inputRef = React278.useRef(null);
     const onChange = (e3) => {
       if ((e3 == null ? void 0 : e3.target) && e3.type === "click" && customOnSearch) {
         customOnSearch(e3.target.value, e3, {
@@ -61762,7 +61753,7 @@ html body {
       customOnPressEnter == null ? void 0 : customOnPressEnter(e3);
       onSearch(e3);
     };
-    const searchIcon = typeof enterButton === "boolean" ? /* @__PURE__ */ React279.createElement(SearchOutlined_default2, null) : null;
+    const searchIcon = typeof enterButton === "boolean" ? /* @__PURE__ */ React278.createElement(SearchOutlined_default2, null) : null;
     const btnPrefixCls = `${prefixCls}-btn`;
     const btnClassName = clsx(btnPrefixCls, {
       [`${btnPrefixCls}-${variant}`]: variant
@@ -61784,7 +61775,7 @@ html body {
         size
       } : {}));
     } else {
-      button = /* @__PURE__ */ React279.createElement(Button_default, {
+      button = /* @__PURE__ */ React278.createElement(Button_default, {
         classNames: mergedClassNames.button,
         styles: mergedStyles.button,
         className: btnClassName,
@@ -61833,12 +61824,12 @@ html body {
       onChange,
       disabled
     }), Object.keys(rootProps));
-    return /* @__PURE__ */ React279.createElement(Compact_default, __spreadProps(__spreadValues({
+    return /* @__PURE__ */ React278.createElement(Compact_default, __spreadProps(__spreadValues({
       className: mergedClassName,
       style: __spreadValues(__spreadValues({}, style2), mergedStyles.root)
     }, rootProps), {
       hidden
-    }), /* @__PURE__ */ React279.createElement(Input_default4, __spreadValues({
+    }), /* @__PURE__ */ React278.createElement(Input_default4, __spreadValues({
       ref: composeRef(inputRef, ref)
     }, inputProps)), button);
   });
@@ -61848,14 +61839,14 @@ html body {
   var Search_default = Search;
 
   // ../custom_dashboard/node_modules/antd/es/input/TextArea.js
-  var React282 = __toESM(require_react());
-  var import_react112 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@rc-component/textarea/es/TextArea.js
+  var React281 = __toESM(require_react());
   var import_react111 = __toESM(require_react());
 
+  // ../custom_dashboard/node_modules/@rc-component/textarea/es/TextArea.js
+  var import_react110 = __toESM(require_react());
+
   // ../custom_dashboard/node_modules/@rc-component/textarea/es/ResizableTextArea.js
-  var React280 = __toESM(require_react());
+  var React279 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/textarea/es/calculateNodeHeight.js
   var HIDDEN_TEXTAREA_STYLE = `
@@ -61975,7 +61966,7 @@ html body {
   var RESIZE_START = 0;
   var RESIZE_MEASURING = 1;
   var RESIZE_STABLE = 2;
-  var ResizableTextArea = /* @__PURE__ */ React280.forwardRef((props, ref) => {
+  var ResizableTextArea = /* @__PURE__ */ React279.forwardRef((props, ref) => {
     const _a = props, {
       prefixCls,
       defaultValue,
@@ -62005,19 +61996,19 @@ html body {
       setMergedValue(event.target.value);
       onChange == null ? void 0 : onChange(event);
     };
-    const textareaRef = React280.useRef();
-    React280.useImperativeHandle(ref, () => ({
+    const textareaRef = React279.useRef();
+    React279.useImperativeHandle(ref, () => ({
       textArea: textareaRef.current
     }));
-    const [minRows, maxRows] = React280.useMemo(() => {
+    const [minRows, maxRows] = React279.useMemo(() => {
       if (autoSize && typeof autoSize === "object") {
         return [autoSize.minRows, autoSize.maxRows];
       }
       return [];
     }, [autoSize]);
     const needAutoSize = !!autoSize;
-    const [resizeState, setResizeState] = React280.useState(RESIZE_STABLE);
-    const [autoSizeStyle, setAutoSizeStyle] = React280.useState();
+    const [resizeState, setResizeState] = React279.useState(RESIZE_STABLE);
+    const [autoSizeStyle, setAutoSizeStyle] = React279.useState();
     const startResize = () => {
       setResizeState(RESIZE_START);
       if (false) {
@@ -62039,7 +62030,7 @@ html body {
       } else {
       }
     }, [resizeState]);
-    const resizeRafRef = React280.useRef();
+    const resizeRafRef = React279.useRef();
     const cleanRaf = () => {
       raf_default.cancel(resizeRafRef.current);
     };
@@ -62054,17 +62045,17 @@ html body {
         }
       }
     };
-    React280.useEffect(() => cleanRaf, []);
+    React279.useEffect(() => cleanRaf, []);
     const mergedAutoSizeStyle = needAutoSize ? autoSizeStyle : null;
     const mergedStyle = __spreadValues(__spreadValues({}, style2), mergedAutoSizeStyle);
     if (resizeState === RESIZE_START || resizeState === RESIZE_MEASURING) {
       mergedStyle.overflowY = "hidden";
       mergedStyle.overflowX = "hidden";
     }
-    return /* @__PURE__ */ React280.createElement(es_default, {
+    return /* @__PURE__ */ React279.createElement(es_default, {
       onResize: onInternalResize,
       disabled: !(autoSize || onResize2)
-    }, /* @__PURE__ */ React280.createElement("textarea", _extends53({}, restProps, {
+    }, /* @__PURE__ */ React279.createElement("textarea", _extends53({}, restProps, {
       ref: textareaRef,
       style: mergedStyle,
       className: clsx(prefixCls, className, {
@@ -62092,7 +62083,7 @@ html body {
     };
     return _extends54.apply(this, arguments);
   }
-  var TextArea = /* @__PURE__ */ import_react111.default.forwardRef((_a, ref) => {
+  var TextArea = /* @__PURE__ */ import_react110.default.forwardRef((_a, ref) => {
     var _b = _a, {
       defaultValue,
       value: customValue,
@@ -62149,11 +62140,11 @@ html body {
     var _a2;
     const [value, setValue] = useControlledState(defaultValue, customValue);
     const formatValue = value === void 0 || value === null ? "" : String(value);
-    const [focused, setFocused] = import_react111.default.useState(false);
-    const compositionRef = import_react111.default.useRef(false);
-    const [textareaResized, setTextareaResized] = import_react111.default.useState(null);
-    const holderRef = (0, import_react111.useRef)(null);
-    const resizableTextAreaRef = (0, import_react111.useRef)(null);
+    const [focused, setFocused] = import_react110.default.useState(false);
+    const compositionRef = import_react110.default.useRef(false);
+    const [textareaResized, setTextareaResized] = import_react110.default.useState(null);
+    const holderRef = (0, import_react110.useRef)(null);
+    const resizableTextAreaRef = (0, import_react110.useRef)(null);
     const getTextArea = () => {
       var _a3;
       return (_a3 = resizableTextAreaRef.current) == null ? void 0 : _a3.textArea;
@@ -62161,7 +62152,7 @@ html body {
     const focus = () => {
       getTextArea().focus();
     };
-    (0, import_react111.useImperativeHandle)(ref, () => {
+    (0, import_react110.useImperativeHandle)(ref, () => {
       var _a3;
       return {
         resizableTextArea: resizableTextAreaRef.current,
@@ -62172,11 +62163,11 @@ html body {
         nativeElement: ((_a3 = holderRef.current) == null ? void 0 : _a3.nativeElement) || getTextArea()
       };
     });
-    (0, import_react111.useEffect)(() => {
+    (0, import_react110.useEffect)(() => {
       setFocused((prev2) => !disabled && prev2);
     }, [disabled]);
-    const [selection, setSelection] = import_react111.default.useState(null);
-    import_react111.default.useEffect(() => {
+    const [selection, setSelection] = import_react110.default.useState(null);
+    import_react110.default.useEffect(() => {
       if (selection) {
         getTextArea().setSelectionRange(...selection);
       }
@@ -62242,7 +62233,7 @@ html body {
       } else {
         dataCount = `${valueLength}${hasMaxLength ? ` / ${mergedMax}` : ""}`;
       }
-      suffixNode = /* @__PURE__ */ import_react111.default.createElement(import_react111.default.Fragment, null, suffixNode, /* @__PURE__ */ import_react111.default.createElement("span", {
+      suffixNode = /* @__PURE__ */ import_react110.default.createElement(import_react110.default.Fragment, null, suffixNode, /* @__PURE__ */ import_react110.default.createElement("span", {
         className: clsx(`${prefixCls}-data-count`, classNames == null ? void 0 : classNames.count),
         style: styles == null ? void 0 : styles.count
       }, dataCount));
@@ -62255,7 +62246,7 @@ html body {
       }
     };
     const isPureTextArea = !autoSize && !showCount && !allowClear;
-    return /* @__PURE__ */ import_react111.default.createElement(BaseInput_default, {
+    return /* @__PURE__ */ import_react110.default.createElement(BaseInput_default, {
       ref: holderRef,
       value: formatValue,
       allowClear,
@@ -62282,7 +62273,7 @@ html body {
       hidden,
       readOnly,
       onClear
-    }, /* @__PURE__ */ import_react111.default.createElement(ResizableTextArea_default, _extends54({}, rest, {
+    }, /* @__PURE__ */ import_react110.default.createElement(ResizableTextArea_default, _extends54({}, rest, {
       autoSize,
       maxLength,
       onKeyDown: handleKeyDown,
@@ -62410,7 +62401,7 @@ html body {
 
   // ../custom_dashboard/node_modules/antd/es/input/TextArea.js
   "use client";
-  var TextArea2 = /* @__PURE__ */ (0, import_react112.forwardRef)((props, ref) => {
+  var TextArea2 = /* @__PURE__ */ (0, import_react111.forwardRef)((props, ref) => {
     var _b;
     const _a = props, {
       prefixCls: customizePrefixCls,
@@ -62461,19 +62452,19 @@ html body {
       classNames: contextClassNames,
       styles: contextStyles
     } = useComponentConfig("textArea");
-    const disabled = React282.useContext(DisabledContext_default);
+    const disabled = React281.useContext(DisabledContext_default);
     const mergedDisabled = customDisabled != null ? customDisabled : disabled;
     const {
       status: contextStatus,
       hasFeedback,
       feedbackIcon
-    } = React282.useContext(FormItemInputContext);
+    } = React281.useContext(FormItemInputContext);
     const mergedStatus = getMergedStatus(contextStatus, customStatus);
     const [mergedClassNames, mergedStyles] = useMergeSemantic([contextClassNames, classNames], [contextStyles, styles], {
       props
     });
-    const innerRef = React282.useRef(null);
-    React282.useImperativeHandle(ref, () => {
+    const innerRef = React281.useRef(null);
+    React281.useImperativeHandle(ref, () => {
       var _a2, _b2;
       return {
         resizableTextArea: (_a2 = innerRef.current) == null ? void 0 : _a2.resizableTextArea,
@@ -62502,8 +62493,8 @@ html body {
     });
     const [variant, enableVariantCls] = useVariants_default("textArea", customVariant, bordered);
     const mergedAllowClear = getAllowClear_default(allowClear != null ? allowClear : contextAllowClear);
-    const [isMouseDown, setIsMouseDown] = React282.useState(false);
-    const [resizeDirty, setResizeDirty] = React282.useState(false);
+    const [isMouseDown, setIsMouseDown] = React281.useState(false);
+    const [resizeDirty, setResizeDirty] = React281.useState(false);
     const onInternalMouseDown = (e3) => {
       setIsMouseDown(true);
       onMouseDown == null ? void 0 : onMouseDown(e3);
@@ -62523,7 +62514,7 @@ html body {
         }
       }
     };
-    return /* @__PURE__ */ React282.createElement(es_default16, __spreadProps(__spreadValues({
+    return /* @__PURE__ */ React281.createElement(es_default16, __spreadProps(__spreadValues({
       autoComplete: contextAutoComplete
     }, rest), {
       style: __spreadValues(__spreadValues(__spreadValues({}, mergedStyles.root), contextStyle), style2),
@@ -62558,7 +62549,7 @@ html body {
         }, hashId)
       }),
       prefixCls,
-      suffix: hasFeedback && /* @__PURE__ */ React282.createElement("span", {
+      suffix: hasFeedback && /* @__PURE__ */ React281.createElement("span", {
         className: `${prefixCls}-textarea-suffix`
       }, feedbackIcon),
       showCount,
@@ -62578,6 +62569,147 @@ html body {
   Input4.Password = Password_default;
   Input4.OTP = OTP_default;
   var input_default = Input4;
+
+  // ../custom_dashboard/node_modules/antd/es/layout/layout.js
+  var React282 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/antd/es/layout/hooks/useHasSider.js
+  function useHasSider(siders, children, hasSider) {
+    if (typeof hasSider === "boolean") {
+      return hasSider;
+    }
+    if (siders.length) {
+      return true;
+    }
+    const childNodes = toArray(children);
+    return childNodes.some((node2) => node2.type === Sider_default);
+  }
+
+  // ../custom_dashboard/node_modules/antd/es/layout/layout.js
+  "use client";
+  var generator = ({
+    suffixCls,
+    tagName,
+    displayName
+  }) => {
+    return (Component7) => {
+      const Adapter = /* @__PURE__ */ React282.forwardRef((props, ref) => /* @__PURE__ */ React282.createElement(Component7, __spreadValues({
+        ref,
+        suffixCls,
+        tagName
+      }, props)));
+      if (true) {
+        Adapter.displayName = displayName;
+      }
+      return Adapter;
+    };
+  };
+  var Basic = /* @__PURE__ */ React282.forwardRef((props, ref) => {
+    const _a = props, {
+      prefixCls: customizePrefixCls,
+      suffixCls,
+      className,
+      tagName: TagName
+    } = _a, others = __objRest(_a, [
+      "prefixCls",
+      "suffixCls",
+      "className",
+      "tagName"
+    ]);
+    const {
+      getPrefixCls
+    } = React282.useContext(ConfigContext);
+    const prefixCls = getPrefixCls("layout", customizePrefixCls);
+    const [hashId] = style_default10(prefixCls);
+    const prefixWithSuffixCls = suffixCls ? `${prefixCls}-${suffixCls}` : prefixCls;
+    return /* @__PURE__ */ React282.createElement(TagName, __spreadValues({
+      className: clsx(customizePrefixCls || prefixWithSuffixCls, className, hashId),
+      ref
+    }, others));
+  });
+  var BasicLayout = /* @__PURE__ */ React282.forwardRef((props, ref) => {
+    const {
+      direction
+    } = React282.useContext(ConfigContext);
+    const [siders, setSiders] = React282.useState([]);
+    const _a = props, {
+      prefixCls: customizePrefixCls,
+      className,
+      rootClassName,
+      children,
+      hasSider,
+      tagName: Tag,
+      style: style2
+    } = _a, others = __objRest(_a, [
+      "prefixCls",
+      "className",
+      "rootClassName",
+      "children",
+      "hasSider",
+      "tagName",
+      "style"
+    ]);
+    const passedProps = omit(others, ["suffixCls"]);
+    const {
+      getPrefixCls,
+      className: contextClassName,
+      style: contextStyle
+    } = useComponentConfig("layout");
+    const prefixCls = getPrefixCls("layout", customizePrefixCls);
+    const mergedHasSider = useHasSider(siders, children, hasSider);
+    const [hashId, cssVarCls] = style_default10(prefixCls);
+    const classString = clsx(prefixCls, {
+      [`${prefixCls}-has-sider`]: mergedHasSider,
+      [`${prefixCls}-rtl`]: direction === "rtl"
+    }, contextClassName, className, rootClassName, hashId, cssVarCls);
+    const contextValue = React282.useMemo(() => ({
+      siderHook: {
+        addSider: (id) => {
+          setSiders((prev2) => [].concat(_toConsumableArray(prev2), [id]));
+        },
+        removeSider: (id) => {
+          setSiders((prev2) => prev2.filter((currentId) => currentId !== id));
+        }
+      }
+    }), []);
+    return /* @__PURE__ */ React282.createElement(LayoutContext.Provider, {
+      value: contextValue
+    }, /* @__PURE__ */ React282.createElement(Tag, __spreadValues({
+      ref,
+      className: classString,
+      style: __spreadValues(__spreadValues({}, contextStyle), style2)
+    }, passedProps), children));
+  });
+  var Layout = generator({
+    tagName: "div",
+    displayName: "Layout"
+  })(BasicLayout);
+  var Header = generator({
+    suffixCls: "header",
+    tagName: "header",
+    displayName: "Header"
+  })(Basic);
+  var Footer2 = generator({
+    suffixCls: "footer",
+    tagName: "footer",
+    displayName: "Footer"
+  })(Basic);
+  var Content2 = generator({
+    suffixCls: "content",
+    tagName: "main",
+    displayName: "Content"
+  })(Basic);
+  var layout_default = Layout;
+
+  // ../custom_dashboard/node_modules/antd/es/layout/index.js
+  "use client";
+  var Layout2 = layout_default;
+  Layout2.Header = Header;
+  Layout2.Footer = Footer2;
+  Layout2.Content = Content2;
+  Layout2.Sider = Sider_default;
+  Layout2._InternalSiderContext = SiderContext;
+  var layout_default2 = Layout2;
 
   // ../custom_dashboard/node_modules/antd/es/pagination/Pagination.js
   var React288 = __toESM(require_react());
@@ -62647,7 +62779,7 @@ html body {
   var DoubleRightOutlined_default2 = RefIcon18;
 
   // ../custom_dashboard/node_modules/@rc-component/pagination/es/Pagination.js
-  var import_react115 = __toESM(require_react());
+  var import_react114 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/pagination/es/locale/zh_CN.js
   var locale5 = {
@@ -62666,7 +62798,7 @@ html body {
   var zh_CN_default = locale5;
 
   // ../custom_dashboard/node_modules/@rc-component/pagination/es/Options.js
-  var import_react113 = __toESM(require_react());
+  var import_react112 = __toESM(require_react());
   var defaultPageSizeOptions = [10, 20, 50, 100];
   var Options = (props) => {
     const {
@@ -62682,8 +62814,8 @@ html body {
       showSizeChanger,
       sizeChangerRender
     } = props;
-    const [goInputText, setGoInputText] = import_react113.default.useState("");
-    const getValidValue = import_react113.default.useMemo(() => {
+    const [goInputText, setGoInputText] = import_react112.default.useState("");
+    const getValidValue = import_react112.default.useMemo(() => {
       return !goInputText || Number.isNaN(goInputText) ? void 0 : Number(goInputText);
     }, [goInputText]);
     const mergeBuildOptionText = typeof buildOptionText === "function" ? buildOptionText : (value) => `${value} ${locale6.items_per_page}`;
@@ -62746,20 +62878,20 @@ html body {
     }
     if (quickGo) {
       if (goButton) {
-        gotoButton = typeof goButton === "boolean" ? /* @__PURE__ */ import_react113.default.createElement("button", {
+        gotoButton = typeof goButton === "boolean" ? /* @__PURE__ */ import_react112.default.createElement("button", {
           type: "button",
           onClick: go,
           onKeyUp: go,
           disabled,
           className: `${prefixCls}-quick-jumper-button`
-        }, locale6.jump_to_confirm) : /* @__PURE__ */ import_react113.default.createElement("span", {
+        }, locale6.jump_to_confirm) : /* @__PURE__ */ import_react112.default.createElement("span", {
           onClick: go,
           onKeyUp: go
         }, goButton);
       }
-      goInput = /* @__PURE__ */ import_react113.default.createElement("div", {
+      goInput = /* @__PURE__ */ import_react112.default.createElement("div", {
         className: `${prefixCls}-quick-jumper`
-      }, locale6.jump_to, /* @__PURE__ */ import_react113.default.createElement("input", {
+      }, locale6.jump_to, /* @__PURE__ */ import_react112.default.createElement("input", {
         disabled,
         type: "text",
         value: goInputText,
@@ -62769,7 +62901,7 @@ html body {
         "aria-label": locale6.page
       }), locale6.page, gotoButton);
     }
-    return /* @__PURE__ */ import_react113.default.createElement("li", {
+    return /* @__PURE__ */ import_react112.default.createElement("li", {
       className: prefixCls
     }, changeSelect, goInput);
   };
@@ -62779,7 +62911,7 @@ html body {
   var Options_default = Options;
 
   // ../custom_dashboard/node_modules/@rc-component/pagination/es/Pager.js
-  var import_react114 = __toESM(require_react());
+  var import_react113 = __toESM(require_react());
   var Pager = (props) => {
     const {
       rootPrefixCls,
@@ -62803,10 +62935,10 @@ html body {
     const handleKeyPress = (e3) => {
       onKeyPress(e3, onClick, page);
     };
-    const pager = itemRender(page, "page", /* @__PURE__ */ import_react114.default.createElement("a", {
+    const pager = itemRender(page, "page", /* @__PURE__ */ import_react113.default.createElement("a", {
       rel: "nofollow"
     }, page));
-    return pager ? /* @__PURE__ */ import_react114.default.createElement("li", {
+    return pager ? /* @__PURE__ */ import_react113.default.createElement("li", {
       title: showTitle ? String(page) : null,
       className: cls,
       style: style2,
@@ -62881,12 +63013,12 @@ html body {
       prevIcon,
       nextIcon
     } = props;
-    const paginationRef = import_react115.default.useRef(null);
+    const paginationRef = import_react114.default.useRef(null);
     const [pageSize, setPageSize] = useControlledState(defaultPageSize, pageSizeProp);
     const [internalCurrent, setCurrent] = useControlledState(defaultCurrent, currentProp);
     const current = Math.max(1, Math.min(internalCurrent, calculatePage(void 0, pageSize, total)));
-    const [internalInputVal, setInternalInputVal] = import_react115.default.useState(current);
-    (0, import_react115.useEffect)(() => {
+    const [internalInputVal, setInternalInputVal] = import_react114.default.useState(current);
+    (0, import_react114.useEffect)(() => {
       setInternalInputVal(current);
     }, [current]);
     const hasOnChange = onChange !== noop3;
@@ -62897,13 +63029,13 @@ html body {
     const jumpPrevPage = Math.max(1, current - (showLessItems ? 3 : 5));
     const jumpNextPage = Math.min(calculatePage(void 0, pageSize, total), current + (showLessItems ? 3 : 5));
     function getItemIcon(icon, label) {
-      let iconNode = icon || /* @__PURE__ */ import_react115.default.createElement("button", {
+      let iconNode = icon || /* @__PURE__ */ import_react114.default.createElement("button", {
         type: "button",
         "aria-label": label,
         className: `${prefixCls}-item-link`
       });
       if (typeof icon === "function") {
-        iconNode = /* @__PURE__ */ import_react115.default.createElement(icon, props);
+        iconNode = /* @__PURE__ */ import_react114.default.createElement(icon, props);
       }
       return iconNode;
     }
@@ -63015,13 +63147,13 @@ html body {
     }
     function renderPrev(prevPage2) {
       const prevButton = itemRender(prevPage2, "prev", getItemIcon(prevIcon, "prev page"));
-      return /* @__PURE__ */ import_react115.default.isValidElement(prevButton) ? /* @__PURE__ */ import_react115.default.cloneElement(prevButton, {
+      return /* @__PURE__ */ import_react114.default.isValidElement(prevButton) ? /* @__PURE__ */ import_react114.default.cloneElement(prevButton, {
         disabled: !hasPrev
       }) : prevButton;
     }
     function renderNext(nextPage2) {
       const nextButton = itemRender(nextPage2, "next", getItemIcon(nextIcon, "next page"));
-      return /* @__PURE__ */ import_react115.default.isValidElement(nextButton) ? /* @__PURE__ */ import_react115.default.cloneElement(nextButton, {
+      return /* @__PURE__ */ import_react114.default.isValidElement(nextButton) ? /* @__PURE__ */ import_react114.default.cloneElement(nextButton, {
         disabled: !hasNext
       }) : nextButton;
     }
@@ -63035,7 +63167,7 @@ html body {
       aria: true,
       data: true
     });
-    const totalText = showTotal && /* @__PURE__ */ import_react115.default.createElement("li", {
+    const totalText = showTotal && /* @__PURE__ */ import_react114.default.createElement("li", {
       className: `${prefixCls}-total-text`
     }, showTotal(total, [total === 0 ? 0 : (current - 1) * pageSize + 1, current * pageSize > total ? total : current * pageSize]));
     let jumpNext = null;
@@ -63063,27 +63195,27 @@ html body {
     if (simple) {
       if (goButton) {
         if (typeof goButton === "boolean") {
-          gotoButton = /* @__PURE__ */ import_react115.default.createElement("button", {
+          gotoButton = /* @__PURE__ */ import_react114.default.createElement("button", {
             type: "button",
             onClick: handleGoTO,
             onKeyUp: handleGoTO
           }, locale6.jump_to_confirm);
         } else {
-          gotoButton = /* @__PURE__ */ import_react115.default.createElement("span", {
+          gotoButton = /* @__PURE__ */ import_react114.default.createElement("span", {
             onClick: handleGoTO,
             onKeyUp: handleGoTO
           }, goButton);
         }
-        gotoButton = /* @__PURE__ */ import_react115.default.createElement("li", {
+        gotoButton = /* @__PURE__ */ import_react114.default.createElement("li", {
           title: showTitle ? `${locale6.jump_to}${current}/${allPages}` : null,
           className: `${prefixCls}-simple-pager`
         }, gotoButton);
       }
-      simplePager = /* @__PURE__ */ import_react115.default.createElement("li", {
+      simplePager = /* @__PURE__ */ import_react114.default.createElement("li", {
         title: showTitle ? `${current}/${allPages}` : null,
         className: clsx(`${prefixCls}-simple-pager`, paginationClassNames == null ? void 0 : paginationClassNames.item),
         style: styles == null ? void 0 : styles.item
-      }, isReadOnly ? internalInputVal : /* @__PURE__ */ import_react115.default.createElement("input", {
+      }, isReadOnly ? internalInputVal : /* @__PURE__ */ import_react114.default.createElement("input", {
         type: "text",
         "aria-label": locale6.jump_to,
         value: internalInputVal,
@@ -63093,21 +63225,21 @@ html body {
         onChange: handleKeyUp,
         onBlur: handleBlur,
         size: 3
-      }), /* @__PURE__ */ import_react115.default.createElement("span", {
+      }), /* @__PURE__ */ import_react114.default.createElement("span", {
         className: `${prefixCls}-slash`
       }, "/"), allPages);
     }
     const pageBufferSize = showLessItems ? 1 : 2;
     if (allPages <= 3 + pageBufferSize * 2) {
       if (!allPages) {
-        pagerList.push(/* @__PURE__ */ import_react115.default.createElement(Pager_default, _extends57({}, pagerProps, {
+        pagerList.push(/* @__PURE__ */ import_react114.default.createElement(Pager_default, _extends57({}, pagerProps, {
           key: "noPager",
           page: 1,
           className: `${prefixCls}-item-disabled`
         })));
       }
       for (let i = 1; i <= allPages; i += 1) {
-        pagerList.push(/* @__PURE__ */ import_react115.default.createElement(Pager_default, _extends57({}, pagerProps, {
+        pagerList.push(/* @__PURE__ */ import_react114.default.createElement(Pager_default, _extends57({}, pagerProps, {
           key: i,
           page: i,
           active: current === i
@@ -63119,7 +63251,7 @@ html body {
       const jumpPrevContent = itemRender(jumpPrevPage, "jump-prev", getItemIcon(jumpPrevIcon, "prev page"));
       const jumpNextContent = itemRender(jumpNextPage, "jump-next", getItemIcon(jumpNextIcon, "next page"));
       if (showPrevNextJumpers) {
-        jumpPrev = jumpPrevContent ? /* @__PURE__ */ import_react115.default.createElement("li", {
+        jumpPrev = jumpPrevContent ? /* @__PURE__ */ import_react114.default.createElement("li", {
           title: showTitle ? prevItemTitle : null,
           key: "prev",
           onClick: jumpPrevHandle,
@@ -63129,7 +63261,7 @@ html body {
             [`${prefixCls}-jump-prev-custom-icon`]: !!jumpPrevIcon
           })
         }, jumpPrevContent) : null;
-        jumpNext = jumpNextContent ? /* @__PURE__ */ import_react115.default.createElement("li", {
+        jumpNext = jumpNextContent ? /* @__PURE__ */ import_react114.default.createElement("li", {
           title: showTitle ? nextItemTitle : null,
           key: "next",
           onClick: jumpNextHandle,
@@ -63149,33 +63281,33 @@ html body {
         left = allPages - pageBufferSize * 2;
       }
       for (let i = left; i <= right; i += 1) {
-        pagerList.push(/* @__PURE__ */ import_react115.default.createElement(Pager_default, _extends57({}, pagerProps, {
+        pagerList.push(/* @__PURE__ */ import_react114.default.createElement(Pager_default, _extends57({}, pagerProps, {
           key: i,
           page: i,
           active: current === i
         })));
       }
       if (current - 1 >= pageBufferSize * 2 && current !== 1 + 2) {
-        pagerList[0] = /* @__PURE__ */ import_react115.default.cloneElement(pagerList[0], {
+        pagerList[0] = /* @__PURE__ */ import_react114.default.cloneElement(pagerList[0], {
           className: clsx(`${prefixCls}-item-after-jump-prev`, pagerList[0].props.className)
         });
         pagerList.unshift(jumpPrev);
       }
       if (allPages - current >= pageBufferSize * 2 && current !== allPages - 2) {
         const lastOne = pagerList[pagerList.length - 1];
-        pagerList[pagerList.length - 1] = /* @__PURE__ */ import_react115.default.cloneElement(lastOne, {
+        pagerList[pagerList.length - 1] = /* @__PURE__ */ import_react114.default.cloneElement(lastOne, {
           className: clsx(`${prefixCls}-item-before-jump-next`, lastOne.props.className)
         });
         pagerList.push(jumpNext);
       }
       if (left !== 1) {
-        pagerList.unshift(/* @__PURE__ */ import_react115.default.createElement(Pager_default, _extends57({}, pagerProps, {
+        pagerList.unshift(/* @__PURE__ */ import_react114.default.createElement(Pager_default, _extends57({}, pagerProps, {
           key: 1,
           page: 1
         })));
       }
       if (right !== allPages) {
-        pagerList.push(/* @__PURE__ */ import_react115.default.createElement(Pager_default, _extends57({}, pagerProps, {
+        pagerList.push(/* @__PURE__ */ import_react114.default.createElement(Pager_default, _extends57({}, pagerProps, {
           key: allPages,
           page: allPages
         })));
@@ -63184,7 +63316,7 @@ html body {
     let prev2 = renderPrev(prevPage);
     if (prev2) {
       const prevDisabled = !hasPrev || !allPages;
-      prev2 = /* @__PURE__ */ import_react115.default.createElement("li", {
+      prev2 = /* @__PURE__ */ import_react114.default.createElement("li", {
         title: showTitle ? locale6.prev_page : null,
         onClick: prevHandle,
         tabIndex: prevDisabled ? null : 0,
@@ -63206,7 +63338,7 @@ html body {
         nextDisabled = !hasNext || !allPages;
         nextTabIndex = nextDisabled ? null : 0;
       }
-      next2 = /* @__PURE__ */ import_react115.default.createElement("li", {
+      next2 = /* @__PURE__ */ import_react114.default.createElement("li", {
         title: showTitle ? locale6.next_page : null,
         onClick: nextHandle,
         tabIndex: nextTabIndex,
@@ -63225,11 +63357,11 @@ html body {
       [`${prefixCls}-simple`]: simple,
       [`${prefixCls}-disabled`]: disabled
     });
-    return /* @__PURE__ */ import_react115.default.createElement("ul", _extends57({
+    return /* @__PURE__ */ import_react114.default.createElement("ul", _extends57({
       className: cls,
       style: style2,
       ref: paginationRef
-    }, dataOrAriaAttributeProps), totalText, prev2, simple ? simplePager : pagerList, next2, /* @__PURE__ */ import_react115.default.createElement(Options_default, {
+    }, dataOrAriaAttributeProps), totalText, prev2, simple ? simplePager : pagerList, next2, /* @__PURE__ */ import_react114.default.createElement(Options_default, {
       locale: locale6,
       rootPrefixCls: prefixCls,
       disabled,
@@ -63837,9 +63969,9 @@ html body {
   }, prepareComponentToken13);
 
   // ../custom_dashboard/node_modules/antd/es/pagination/useShowSizeChanger.js
-  var import_react116 = __toESM(require_react());
+  var import_react115 = __toESM(require_react());
   function useShowSizeChanger(showSizeChanger) {
-    return (0, import_react116.useMemo)(() => {
+    return (0, import_react115.useMemo)(() => {
       if (typeof showSizeChanger === "boolean") {
         return [showSizeChanger, {}];
       }
@@ -64551,7 +64683,7 @@ html body {
   var spin_default = Spin;
 
   // ../custom_dashboard/node_modules/antd/es/message/index.js
-  var import_react117 = __toESM(require_react());
+  var import_react116 = __toESM(require_react());
   "use client";
   var message = null;
   var act = (callback) => callback();
@@ -64574,20 +64706,20 @@ html body {
       top
     };
   }
-  var GlobalHolder = /* @__PURE__ */ import_react117.default.forwardRef((props, ref) => {
+  var GlobalHolder = /* @__PURE__ */ import_react116.default.forwardRef((props, ref) => {
     const {
       messageConfig,
       sync
     } = props;
     const {
       getPrefixCls
-    } = (0, import_react117.useContext)(ConfigContext);
+    } = (0, import_react116.useContext)(ConfigContext);
     const prefixCls = defaultGlobalConfig.prefixCls || getPrefixCls("message");
-    const appConfig = (0, import_react117.useContext)(AppConfigContext);
+    const appConfig = (0, import_react116.useContext)(AppConfigContext);
     const [api, holder] = useInternalMessage(__spreadValues(__spreadProps(__spreadValues({}, messageConfig), {
       prefixCls
     }), appConfig.message));
-    import_react117.default.useImperativeHandle(ref, () => {
+    import_react116.default.useImperativeHandle(ref, () => {
       const instance = __spreadValues({}, api);
       Object.keys(instance).forEach((method4) => {
         instance[method4] = (...args) => {
@@ -64602,22 +64734,22 @@ html body {
     });
     return holder;
   });
-  var GlobalHolderWrapper = /* @__PURE__ */ import_react117.default.forwardRef((_, ref) => {
-    const [messageConfig, setMessageConfig] = import_react117.default.useState(getGlobalContext);
+  var GlobalHolderWrapper = /* @__PURE__ */ import_react116.default.forwardRef((_, ref) => {
+    const [messageConfig, setMessageConfig] = import_react116.default.useState(getGlobalContext);
     const sync = () => {
       setMessageConfig(getGlobalContext);
     };
-    import_react117.default.useEffect(sync, []);
+    import_react116.default.useEffect(sync, []);
     const global = globalConfig();
     const rootPrefixCls = global.getRootPrefixCls();
     const rootIconPrefixCls = global.getIconPrefixCls();
     const theme = global.getTheme();
-    const dom = /* @__PURE__ */ import_react117.default.createElement(GlobalHolder, {
+    const dom = /* @__PURE__ */ import_react116.default.createElement(GlobalHolder, {
       ref,
       sync,
       messageConfig
     });
-    return /* @__PURE__ */ import_react117.default.createElement(config_provider_default, {
+    return /* @__PURE__ */ import_react116.default.createElement(config_provider_default, {
       prefixCls: rootPrefixCls,
       iconPrefixCls: rootIconPrefixCls,
       theme
@@ -64631,7 +64763,7 @@ html body {
       };
       message = newMessage;
       act(() => {
-        render(/* @__PURE__ */ import_react117.default.createElement(GlobalHolderWrapper, {
+        render(/* @__PURE__ */ import_react116.default.createElement(GlobalHolderWrapper, {
           ref: (node2) => {
             const {
               instance,
@@ -64901,7 +65033,7 @@ html body {
   var React297 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/progress/es/common.js
-  var import_react118 = __toESM(require_react());
+  var import_react117 = __toESM(require_react());
   var defaultProps = {
     percent: 0,
     prefixCls: "rc-progress",
@@ -64914,9 +65046,9 @@ html body {
     loading: false
   };
   var useTransitionDuration = () => {
-    const pathsRef = (0, import_react118.useRef)([]);
-    const prevTimeStamp = (0, import_react118.useRef)(null);
-    (0, import_react118.useEffect)(() => {
+    const pathsRef = (0, import_react117.useRef)([]);
+    const prevTimeStamp = (0, import_react117.useRef)(null);
+    (0, import_react117.useEffect)(() => {
       const now2 = Date.now();
       let updated = false;
       pathsRef.current.forEach((path) => {
@@ -64938,7 +65070,7 @@ html body {
   };
 
   // ../custom_dashboard/node_modules/@rc-component/progress/es/utils/getIndeterminateLine.js
-  var import_react119 = __toESM(require_react());
+  var import_react118 = __toESM(require_react());
   var getIndeterminateLine_default = (options) => {
     const {
       id,
@@ -64961,7 +65093,7 @@ html body {
         animation: `${animationName} .6s linear alternate infinite`,
         strokeDashoffset: 0
       },
-      indeterminateStyleAnimation: /* @__PURE__ */ import_react119.default.createElement("style", null, `@keyframes ${animationName} {
+      indeterminateStyleAnimation: /* @__PURE__ */ import_react118.default.createElement("style", null, `@keyframes ${animationName} {
             0% { stroke-dashoffset: 0; }
             100% { stroke-dashoffset: -${strokeDashOffset};
           }`)
@@ -65192,7 +65324,7 @@ html body {
   };
 
   // ../custom_dashboard/node_modules/@rc-component/progress/es/utils/getIndeterminateCircle.js
-  var import_react120 = __toESM(require_react());
+  var import_react119 = __toESM(require_react());
   var getIndeterminateCircle_default = ({
     id,
     loading
@@ -65209,7 +65341,7 @@ html body {
         transform: "rotate(0deg)",
         animation: `${animationName} 1s linear infinite`
       },
-      indeterminateStyleAnimation: /* @__PURE__ */ import_react120.default.createElement("style", null, `@keyframes ${animationName} {
+      indeterminateStyleAnimation: /* @__PURE__ */ import_react119.default.createElement("style", null, `@keyframes ${animationName} {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
           }`)
@@ -66194,7 +66326,7 @@ html body {
       defaultValue
     };
   }
-  function useContext108(holder, selector) {
+  function useContext109(holder, selector) {
     const eventSelector = useEvent_default(typeof selector === "function" ? selector : (ctx) => {
       if (selector === void 0) {
         return ctx;
@@ -66459,7 +66591,7 @@ html body {
     return cellStartRow <= endRow && cellEndRow >= startRow;
   }
   function useHoverState(rowIndex, rowSpan) {
-    return useContext108(TableContext_default, (ctx) => {
+    return useContext109(TableContext_default, (ctx) => {
       const hovering = inHoverRange(rowIndex, rowSpan || 1, ctx.hoverStartRow, ctx.hoverEndRow);
       return [hovering, ctx.onHover];
     });
@@ -66538,12 +66670,12 @@ html body {
     const {
       allColumnsFixedLeft,
       rowHoverable
-    } = useContext108(TableContext_default, ["allColumnsFixedLeft", "rowHoverable"]);
+    } = useContext109(TableContext_default, ["allColumnsFixedLeft", "rowHoverable"]);
     const [childNode, legacyCellProps] = useCellRender(record, dataIndex, renderIndex, children, render4, shouldCellUpdate);
     const fixedStyle = {};
     const isFixStart = typeof fixStart === "number" && !allColumnsFixedLeft;
     const isFixEnd = typeof fixEnd === "number" && !allColumnsFixedLeft;
-    const [showFixStartShadow, showFixEndShadow] = useContext108(TableContext_default, ({
+    const [showFixStartShadow, showFixEndShadow] = useContext109(TableContext_default, ({
       scrollInfo
     }) => {
       if (!isFixStart && !isFixEnd) {
@@ -66720,7 +66852,7 @@ html body {
     } = props;
     const {
       prefixCls
-    } = useContext108(TableContext_default, ["prefixCls"]);
+    } = useContext109(TableContext_default, ["prefixCls"]);
     const {
       scrollColumnIndex,
       stickyOffsets,
@@ -66768,7 +66900,7 @@ html body {
   var Summary_default = Summary;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Footer/index.js
-  var Footer2 = (props) => {
+  var Footer3 = (props) => {
     if (true) {
       useRenderTimes_default(props);
     }
@@ -66777,7 +66909,7 @@ html body {
       stickyOffsets,
       flattenColumns
     } = props;
-    const prefixCls = useContext108(TableContext_default, "prefixCls");
+    const prefixCls = useContext109(TableContext_default, "prefixCls");
     const lastColumnIndex = flattenColumns.length - 1;
     const scrollColumn = flattenColumns[lastColumnIndex];
     const summaryContext = React314.useMemo(() => ({
@@ -66791,7 +66923,7 @@ html body {
       className: `${prefixCls}-summary`
     }, children));
   };
-  var Footer_default = responseImmutable2(Footer2);
+  var Footer_default = responseImmutable2(Footer3);
   var FooterComponents = Summary_default;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/sugar/Column.js
@@ -66856,7 +66988,7 @@ html body {
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useRowInfo.js
   function useRowInfo(record, rowKey, recordIndex, indent) {
-    const context = useContext108(TableContext_default, ["prefixCls", "fixedInfoList", "flattenColumns", "expandableType", "expandRowByClick", "onTriggerExpand", "rowClassName", "expandedRowClassName", "indentSize", "expandIcon", "expandedRowRender", "expandIconColumnIndex", "expandedKeys", "childrenColumnName", "rowExpandable", "onRow"]);
+    const context = useContext109(TableContext_default, ["prefixCls", "fixedInfoList", "flattenColumns", "expandableType", "expandRowByClick", "onTriggerExpand", "rowClassName", "expandedRowClassName", "indentSize", "expandIcon", "expandedRowRender", "expandIconColumnIndex", "expandedKeys", "childrenColumnName", "rowExpandable", "onRow"]);
     const {
       flattenColumns,
       expandableType,
@@ -66928,7 +67060,7 @@ html body {
       fixColumn,
       componentWidth,
       horizonScroll
-    } = useContext108(TableContext_default, ["scrollbarSize", "fixHeader", "fixColumn", "componentWidth", "horizonScroll"]);
+    } = useContext109(TableContext_default, ["scrollbarSize", "fixHeader", "fixColumn", "componentWidth", "horizonScroll"]);
     let contentNode = children;
     if (isEmpty ? horizonScroll && componentWidth : fixColumn) {
       contentNode = /* @__PURE__ */ React316.createElement("div", {
@@ -67217,7 +67349,7 @@ html body {
     const ref = React320.useRef(null);
     const {
       measureRowRender
-    } = useContext108(TableContext_default, ["measureRowRender"]);
+    } = useContext109(TableContext_default, ["measureRowRender"]);
     const measureRow = /* @__PURE__ */ React320.createElement("tr", {
       "aria-hidden": "true",
       className: `${prefixCls}-measure-row`,
@@ -67275,7 +67407,7 @@ html body {
       styles,
       expandedRowOffset = 0,
       colWidths
-    } = useContext108(TableContext_default, ["prefixCls", "getComponent", "onColumnResize", "flattenColumns", "getRowKey", "expandedKeys", "childrenColumnName", "emptyNode", "classNames", "styles", "expandedRowOffset", "fixedInfoList", "colWidths"]);
+    } = useContext109(TableContext_default, ["prefixCls", "getComponent", "onColumnResize", "flattenColumns", "getRowKey", "expandedKeys", "childrenColumnName", "emptyNode", "classNames", "styles", "expandedRowOffset", "fixedInfoList", "colWidths"]);
     const {
       body: bodyCls = {}
     } = classNames || {};
@@ -67406,7 +67538,7 @@ html body {
     } = props;
     const {
       tableLayout
-    } = useContext108(TableContext_default, ["tableLayout"]);
+    } = useContext109(TableContext_default, ["tableLayout"]);
     const cols = [];
     const len = columCount || columns.length;
     let mustInsert = false;
@@ -67443,9 +67575,9 @@ html body {
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/FixedHolder/index.js
   var React323 = __toESM(require_react());
-  var import_react121 = __toESM(require_react());
+  var import_react120 = __toESM(require_react());
   function useColumnWidth(colWidths, columCount) {
-    return (0, import_react121.useMemo)(() => {
+    return (0, import_react120.useMemo)(() => {
       const cloneColumns = [];
       for (let i = 0; i < columCount; i += 1) {
         const val = colWidths[i];
@@ -67508,7 +67640,7 @@ html body {
       scrollbarSize,
       isSticky,
       getComponent
-    } = useContext108(TableContext_default, ["prefixCls", "scrollbarSize", "isSticky", "getComponent"]);
+    } = useContext109(TableContext_default, ["prefixCls", "scrollbarSize", "isSticky", "getComponent"]);
     const TableComponent = getComponent(["header", "table"], "table");
     const combinationScrollBarSize = isSticky && !fixHeader ? 0 : scrollbarSize;
     const scrollRef = React323.useRef(null);
@@ -67560,9 +67692,9 @@ html body {
         className: `${prefixCls}-cell-scrollbar`
       })
     };
-    const columnsWithScrollbar = (0, import_react121.useMemo)(() => combinationScrollBarSize ? [...columns, ScrollBarColumn] : columns, [combinationScrollBarSize, columns]);
-    const flattenColumnsWithScrollbar = (0, import_react121.useMemo)(() => combinationScrollBarSize ? [...flattenColumns, ScrollBarColumn] : flattenColumns, [combinationScrollBarSize, flattenColumns]);
-    const headerStickyOffsets = (0, import_react121.useMemo)(() => {
+    const columnsWithScrollbar = (0, import_react120.useMemo)(() => combinationScrollBarSize ? [...columns, ScrollBarColumn] : columns, [combinationScrollBarSize, columns]);
+    const flattenColumnsWithScrollbar = (0, import_react120.useMemo)(() => combinationScrollBarSize ? [...flattenColumns, ScrollBarColumn] : flattenColumns, [combinationScrollBarSize, flattenColumns]);
+    const headerStickyOffsets = (0, import_react120.useMemo)(() => {
       const {
         start,
         end
@@ -67574,7 +67706,7 @@ html body {
       });
     }, [combinationScrollBarSize, stickyOffsets, isSticky]);
     const mergedColumnWidth = useColumnWidth(colWidths, columCount);
-    const isColGroupEmpty = (0, import_react121.useMemo)(() => {
+    const isColGroupEmpty = (0, import_react120.useMemo)(() => {
       const noWidth = !mergedColumnWidth || !mergedColumnWidth.length || mergedColumnWidth.every((w) => !w);
       return noData || noWidth;
     }, [noData, mergedColumnWidth]);
@@ -67643,7 +67775,7 @@ html body {
     } = props;
     const {
       prefixCls
-    } = useContext108(TableContext_default, ["prefixCls"]);
+    } = useContext109(TableContext_default, ["prefixCls"]);
     let rowProps;
     if (onHeaderRow) {
       rowProps = onHeaderRow(cells.map((cell) => cell.column), index2);
@@ -67728,7 +67860,7 @@ html body {
     }
     return rows;
   }
-  var Header = (props) => {
+  var Header2 = (props) => {
     if (true) {
       useRenderTimes_default(props);
     }
@@ -67743,7 +67875,7 @@ html body {
       getComponent,
       classNames,
       styles
-    } = useContext108(TableContext_default, ["prefixCls", "getComponent", "classNames", "styles"]);
+    } = useContext109(TableContext_default, ["prefixCls", "getComponent", "classNames", "styles"]);
     const {
       header: headerCls = {}
     } = classNames || {};
@@ -67773,7 +67905,7 @@ html body {
       return rowNode;
     }));
   };
-  var Header_default = responseImmutable2(Header);
+  var Header_default = responseImmutable2(Header2);
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useColumns/index.js
   var React327 = __toESM(require_react());
@@ -68073,12 +68205,12 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useFrame.js
-  var import_react122 = __toESM(require_react());
+  var import_react121 = __toESM(require_react());
   function useLayoutState(defaultState) {
-    const stateRef = (0, import_react122.useRef)(defaultState);
-    const [, forceUpdate] = (0, import_react122.useState)({});
-    const lastPromiseRef = (0, import_react122.useRef)(null);
-    const updateBatchRef = (0, import_react122.useRef)([]);
+    const stateRef = (0, import_react121.useRef)(defaultState);
+    const [, forceUpdate] = (0, import_react121.useState)({});
+    const lastPromiseRef = (0, import_react121.useRef)(null);
+    const updateBatchRef = (0, import_react121.useRef)([]);
     function setFrameState(updater) {
       updateBatchRef.current.push(updater);
       const promise = Promise.resolve();
@@ -68098,14 +68230,14 @@ html body {
         }
       });
     }
-    (0, import_react122.useEffect)(() => () => {
+    (0, import_react121.useEffect)(() => () => {
       lastPromiseRef.current = null;
     }, []);
     return [stateRef.current, setFrameState];
   }
   function useTimeoutLock(defaultState) {
-    const frameRef = (0, import_react122.useRef)(defaultState || null);
-    const timeoutRef = (0, import_react122.useRef)(null);
+    const frameRef = (0, import_react121.useRef)(defaultState || null);
+    const timeoutRef = (0, import_react121.useRef)(null);
     function cleanUp() {
       clearTimeout(timeoutRef.current);
     }
@@ -68120,7 +68252,7 @@ html body {
     function getState() {
       return frameRef.current;
     }
-    (0, import_react122.useEffect)(() => cleanUp, []);
+    (0, import_react121.useEffect)(() => cleanUp, []);
     return [setState, getState];
   }
 
@@ -68161,9 +68293,9 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useStickyOffsets.js
-  var import_react123 = __toESM(require_react());
+  var import_react122 = __toESM(require_react());
   function useStickyOffsets(colWidths, flattenColumns) {
-    const stickyOffsets = (0, import_react123.useMemo)(() => {
+    const stickyOffsets = (0, import_react122.useMemo)(() => {
       const columnCount = flattenColumns.length;
       const getOffsets = (startIndex, endIndex, offset3) => {
         const offsets = [];
@@ -68231,7 +68363,7 @@ html body {
       container,
       direction
     } = props;
-    const prefixCls = useContext108(TableContext_default, "prefixCls");
+    const prefixCls = useContext109(TableContext_default, "prefixCls");
     const bodyScrollWidth = ((_a = scrollBodyRef.current) == null ? void 0 : _a.scrollWidth) || 0;
     const bodyWidth = ((_b = scrollBodyRef.current) == null ? void 0 : _b.clientWidth) || 0;
     const scrollBarWidth = bodyScrollWidth && bodyWidth * (bodyWidth / bodyScrollWidth);
@@ -69021,7 +69153,7 @@ html body {
     } = column2;
     const {
       columnsOffset
-    } = useContext108(GridContext, ["columnsOffset"]);
+    } = useContext109(GridContext, ["columnsOffset"]);
     const {
       key,
       fixedInfo,
@@ -69127,10 +69259,10 @@ html body {
       prefixCls,
       fixColumn,
       componentWidth
-    } = useContext108(TableContext_default, ["prefixCls", "flattenColumns", "fixColumn", "componentWidth", "scrollX"]);
+    } = useContext109(TableContext_default, ["prefixCls", "flattenColumns", "fixColumn", "componentWidth", "scrollX"]);
     const {
       getComponent
-    } = useContext108(StaticContext, ["getComponent"]);
+    } = useContext109(StaticContext, ["getComponent"]);
     const rowInfo = useRowInfo(record, rowKey, index2, indent);
     const RowComponent = getComponent(["body", "row"], "div");
     const cellComponent = getComponent(["body", "cell"], "div");
@@ -69222,14 +69354,14 @@ html body {
       childrenColumnName,
       scrollX,
       direction
-    } = useContext108(TableContext_default, ["flattenColumns", "onColumnResize", "getRowKey", "prefixCls", "expandedKeys", "childrenColumnName", "scrollX", "direction"]);
+    } = useContext109(TableContext_default, ["flattenColumns", "onColumnResize", "getRowKey", "prefixCls", "expandedKeys", "childrenColumnName", "scrollX", "direction"]);
     const {
       sticky,
       scrollY,
       listItemHeight,
       getComponent,
       onScroll: onTablePropScroll
-    } = useContext108(StaticContext);
+    } = useContext109(StaticContext);
     const listRef = React337.useRef(null);
     const flattenData2 = useFlattenRecords(data, childrenColumnName, expandedKeys, getRowKey);
     const columnsWidth = React337.useMemo(() => {
@@ -69538,13 +69670,13 @@ html body {
 
   // ../custom_dashboard/node_modules/antd/es/table/hooks/useSelection.js
   var React343 = __toESM(require_react());
-  var import_react126 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@rc-component/tree/es/util.js
   var import_react125 = __toESM(require_react());
 
-  // ../custom_dashboard/node_modules/@rc-component/tree/es/TreeNode.js
+  // ../custom_dashboard/node_modules/@rc-component/tree/es/util.js
   var import_react124 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@rc-component/tree/es/TreeNode.js
+  var import_react123 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/contextTypes.js
   var React339 = __toESM(require_react());
@@ -69641,16 +69773,16 @@ html body {
       "treeId"
     ]);
     const nodeId = getId(treeId, eventKey);
-    const context = import_react124.default.useContext(TreeContext);
+    const context = import_react123.default.useContext(TreeContext);
     const {
       classNames: treeClassNames,
       styles
     } = context || {};
-    const unstableContext = import_react124.default.useContext(UnstableContext);
-    const selectHandleRef = import_react124.default.useRef(null);
-    const [dragNodeHighlight, setDragNodeHighlight] = import_react124.default.useState(false);
+    const unstableContext = import_react123.default.useContext(UnstableContext);
+    const selectHandleRef = import_react123.default.useRef(null);
+    const [dragNodeHighlight, setDragNodeHighlight] = import_react123.default.useState(false);
     const isDisabled = !!(context.disabled || props.disabled || ((_b = unstableContext.nodeDisabled) == null ? void 0 : _b.call(unstableContext, data)));
-    const isCheckable = import_react124.default.useMemo(() => {
+    const isCheckable = import_react123.default.useMemo(() => {
       if (!context.checkable || props.checkable === false) {
         return false;
       }
@@ -69671,7 +69803,7 @@ html body {
       }
       context.onNodeCheck(e3, convertNodePropsToEventData(props), !checked);
     };
-    const isSelectable = import_react124.default.useMemo(() => {
+    const isSelectable = import_react123.default.useMemo(() => {
       if (typeof selectable === "boolean") {
         return selectable;
       }
@@ -69697,7 +69829,7 @@ html body {
     const onContextMenu = (e3) => {
       context.onNodeContextMenu(e3, convertNodePropsToEventData(props));
     };
-    const isDraggable = import_react124.default.useMemo(() => {
+    const isDraggable = import_react123.default.useMemo(() => {
       return !!(context.draggable && (!context.draggable.nodeDraggable || context.draggable.nodeDraggable(data)));
     }, [context.draggable, data]);
     const onDragStart = (e3) => {
@@ -69740,16 +69872,16 @@ html body {
       }
       context.onNodeExpand(e3, convertNodePropsToEventData(props));
     };
-    const hasChildren = import_react124.default.useMemo(() => {
+    const hasChildren = import_react123.default.useMemo(() => {
       const {
         children
       } = getEntity(context.keyEntities, eventKey) || {};
       return Boolean((children || []).length);
     }, [context.keyEntities, eventKey]);
-    const memoizedIsLeaf = import_react124.default.useMemo(() => {
+    const memoizedIsLeaf = import_react123.default.useMemo(() => {
       return isLeafNode(isLeaf, context.loadData, hasChildren, props.loaded);
     }, [isLeaf, context.loadData, hasChildren, props.loaded]);
-    import_react124.default.useEffect(() => {
+    import_react123.default.useEffect(() => {
       if (loading) {
         return;
       }
@@ -69757,12 +69889,12 @@ html body {
         context.onNodeLoad(convertNodePropsToEventData(props));
       }
     }, [loading, context.loadData, context.onNodeLoad, expanded, memoizedIsLeaf, props]);
-    const dragHandlerNode = import_react124.default.useMemo(() => {
+    const dragHandlerNode = import_react123.default.useMemo(() => {
       var _a2;
       if (!((_a2 = context.draggable) == null ? void 0 : _a2.icon)) {
         return null;
       }
-      return /* @__PURE__ */ import_react124.default.createElement("span", {
+      return /* @__PURE__ */ import_react123.default.createElement("span", {
         className: `${context.prefixCls}-draggable-icon`
       }, context.draggable.icon);
     }, [context.draggable]);
@@ -69778,22 +69910,22 @@ html body {
     const renderSwitcher = () => {
       if (memoizedIsLeaf) {
         const switcherIconDom2 = renderSwitcherIconDom(true);
-        return switcherIconDom2 !== false ? /* @__PURE__ */ import_react124.default.createElement("span", {
+        return switcherIconDom2 !== false ? /* @__PURE__ */ import_react123.default.createElement("span", {
           className: clsx(`${context.prefixCls}-switcher`, `${context.prefixCls}-switcher-noop`)
         }, switcherIconDom2) : null;
       }
       const switcherIconDom = renderSwitcherIconDom(false);
-      return switcherIconDom !== false ? /* @__PURE__ */ import_react124.default.createElement("span", {
+      return switcherIconDom !== false ? /* @__PURE__ */ import_react123.default.createElement("span", {
         onClick: onExpand,
         className: clsx(`${context.prefixCls}-switcher`, `${context.prefixCls}-switcher_${expanded ? ICON_OPEN : ICON_CLOSE}`)
       }, switcherIconDom) : null;
     };
-    const checkboxNode = import_react124.default.useMemo(() => {
+    const checkboxNode = import_react123.default.useMemo(() => {
       if (!isCheckable) {
         return null;
       }
       const $custom = typeof isCheckable !== "boolean" ? isCheckable : null;
-      return /* @__PURE__ */ import_react124.default.createElement("span", {
+      return /* @__PURE__ */ import_react123.default.createElement("span", {
         className: clsx(`${context.prefixCls}-checkbox`, {
           [`${context.prefixCls}-checkbox-checked`]: checked,
           [`${context.prefixCls}-checkbox-indeterminate`]: !checked && halfChecked,
@@ -69806,21 +69938,21 @@ html body {
         "aria-labelledby": nodeId
       }, $custom);
     }, [isCheckable, checked, halfChecked, isDisabled, props.disableCheckbox, nodeId]);
-    const nodeState = import_react124.default.useMemo(() => {
+    const nodeState = import_react123.default.useMemo(() => {
       if (memoizedIsLeaf) {
         return null;
       }
       return expanded ? ICON_OPEN : ICON_CLOSE;
     }, [memoizedIsLeaf, expanded]);
-    const iconNode = import_react124.default.useMemo(() => {
-      return /* @__PURE__ */ import_react124.default.createElement("span", {
+    const iconNode = import_react123.default.useMemo(() => {
+      return /* @__PURE__ */ import_react123.default.createElement("span", {
         className: clsx(treeClassNames == null ? void 0 : treeClassNames.itemIcon, `${context.prefixCls}-iconEle`, `${context.prefixCls}-icon__${nodeState || "docu"}`, {
           [`${context.prefixCls}-icon_loading`]: loading
         }),
         style: styles == null ? void 0 : styles.itemIcon
       });
     }, [context.prefixCls, nodeState, loading]);
-    const dropIndicatorNode = import_react124.default.useMemo(() => {
+    const dropIndicatorNode = import_react123.default.useMemo(() => {
       const rootDraggable = Boolean(context.draggable);
       const showIndicator = !props.disabled && rootDraggable && context.dragOverNodeKey === eventKey;
       if (!showIndicator) {
@@ -69834,7 +69966,7 @@ html body {
         direction: context.direction
       });
     }, [context.dropPosition, context.dropLevelOffset, context.indent, context.prefixCls, context.direction, context.draggable, context.dragOverNodeKey, context.dropIndicatorRender]);
-    const selectorNode = import_react124.default.useMemo(() => {
+    const selectorNode = import_react123.default.useMemo(() => {
       const {
         title = defaultTitle
       } = props;
@@ -69842,7 +69974,7 @@ html body {
       let $icon;
       if (context.showIcon) {
         const currentIcon = props.icon || context.icon;
-        $icon = currentIcon ? /* @__PURE__ */ import_react124.default.createElement("span", {
+        $icon = currentIcon ? /* @__PURE__ */ import_react123.default.createElement("span", {
           className: clsx(treeClassNames == null ? void 0 : treeClassNames.itemIcon, `${context.prefixCls}-iconEle`, `${context.prefixCls}-icon__customize`),
           style: styles == null ? void 0 : styles.itemIcon
         }, typeof currentIcon === "function" ? currentIcon(props) : currentIcon) : iconNode;
@@ -69857,7 +69989,7 @@ html body {
       } else {
         titleNode = title;
       }
-      return /* @__PURE__ */ import_react124.default.createElement("span", {
+      return /* @__PURE__ */ import_react123.default.createElement("span", {
         ref: selectHandleRef,
         title: typeof title === "string" ? title : "",
         className: clsx(wrapClass, `${wrapClass}-${nodeState || "normal"}`, {
@@ -69868,7 +70000,7 @@ html body {
         onContextMenu,
         onClick: onSelectorClick,
         onDoubleClick: onSelectorDoubleClick
-      }, $icon, /* @__PURE__ */ import_react124.default.createElement("span", {
+      }, $icon, /* @__PURE__ */ import_react123.default.createElement("span", {
         className: clsx(`${context.prefixCls}-title`, treeClassNames == null ? void 0 : treeClassNames.itemTitle),
         style: styles == null ? void 0 : styles.itemTitle
       }, titleNode), dropIndicatorNode);
@@ -69883,7 +70015,7 @@ html body {
     const isEndNode = isEnd[isEnd.length - 1];
     const draggableWithoutDisabled = !isDisabled && isDraggable;
     const dragging = context.draggingNodeKey === eventKey;
-    return /* @__PURE__ */ import_react124.default.createElement("div", _extends70({
+    return /* @__PURE__ */ import_react123.default.createElement("div", _extends70({
       ref: domRef,
       role: "treeitem",
       id: nodeId,
@@ -69919,7 +70051,7 @@ html body {
       onDrop: isDraggable ? onDrop : void 0,
       onDragEnd: isDraggable ? onDragEnd : void 0,
       onMouseMove
-    }, dataOrAriaAttributeProps), /* @__PURE__ */ import_react124.default.createElement(Indent_default, {
+    }, dataOrAriaAttributeProps), /* @__PURE__ */ import_react123.default.createElement(Indent_default, {
       prefixCls: context.prefixCls,
       level,
       isStart,
@@ -70197,7 +70329,7 @@ html body {
     const [multipleSelect, updatePrevSelectedIndex] = useMultipleSelect((item) => item);
     const [mergedSelectedKeys, setMergedSelectedKeys] = useControlledState(defaultSelectedRowKeys || EMPTY_LIST4, selectedRowKeys);
     const preserveRecordsRef = React343.useRef(/* @__PURE__ */ new Map());
-    const updatePreserveRecordsCache = (0, import_react126.useCallback)((keys2) => {
+    const updatePreserveRecordsCache = (0, import_react125.useCallback)((keys2) => {
       if (preserveSelectedRowKeys) {
         const newCache = /* @__PURE__ */ new Map();
         keys2.forEach((key) => {
@@ -70213,10 +70345,10 @@ html body {
     React343.useEffect(() => {
       updatePreserveRecordsCache(mergedSelectedKeys);
     }, [mergedSelectedKeys]);
-    const flattedData = (0, import_react126.useMemo)(() => flattenData(childrenColumnName, pageData), [childrenColumnName, pageData]);
+    const flattedData = (0, import_react125.useMemo)(() => flattenData(childrenColumnName, pageData), [childrenColumnName, pageData]);
     const {
       keyEntities
-    } = (0, import_react126.useMemo)(() => {
+    } = (0, import_react125.useMemo)(() => {
       if (checkStrictly) {
         return {
           keyEntities: null
@@ -70233,7 +70365,7 @@ html body {
         childrenPropName: childrenColumnName
       });
     }, [data, getRowKey, checkStrictly, childrenColumnName, preserveSelectedRowKeys, flattedData]);
-    const checkboxPropsMap = (0, import_react126.useMemo)(() => {
+    const checkboxPropsMap = (0, import_react125.useMemo)(() => {
       const map = /* @__PURE__ */ new Map();
       flattedData.forEach((record, index2) => {
         const key = getRowKey(record, index2);
@@ -70243,7 +70375,7 @@ html body {
       });
       return map;
     }, [flattedData, getRowKey, getCheckboxProps]);
-    const isCheckboxDisabled = (0, import_react126.useCallback)((r3) => {
+    const isCheckboxDisabled = (0, import_react125.useCallback)((r3) => {
       const rowKey = getRowKey(r3);
       let checkboxProps;
       if (checkboxPropsMap.has(rowKey)) {
@@ -70253,7 +70385,7 @@ html body {
       }
       return !!(checkboxProps == null ? void 0 : checkboxProps.disabled);
     }, [checkboxPropsMap, getRowKey]);
-    const [derivedSelectedKeys, derivedHalfSelectedKeys] = (0, import_react126.useMemo)(() => {
+    const [derivedSelectedKeys, derivedHalfSelectedKeys] = (0, import_react125.useMemo)(() => {
       if (checkStrictly) {
         return [mergedSelectedKeys || [], []];
       }
@@ -70263,17 +70395,17 @@ html body {
       } = conductCheck(mergedSelectedKeys, true, keyEntities, isCheckboxDisabled);
       return [checkedKeys || [], halfCheckedKeys];
     }, [mergedSelectedKeys, checkStrictly, keyEntities, isCheckboxDisabled]);
-    const derivedSelectedKeySet = (0, import_react126.useMemo)(() => {
+    const derivedSelectedKeySet = (0, import_react125.useMemo)(() => {
       const keys2 = selectionType === "radio" ? derivedSelectedKeys.slice(0, 1) : derivedSelectedKeys;
       return new Set(keys2);
     }, [derivedSelectedKeys, selectionType]);
-    const derivedHalfSelectedKeySet = (0, import_react126.useMemo)(() => selectionType === "radio" ? /* @__PURE__ */ new Set() : new Set(derivedHalfSelectedKeys), [derivedHalfSelectedKeys, selectionType]);
+    const derivedHalfSelectedKeySet = (0, import_react125.useMemo)(() => selectionType === "radio" ? /* @__PURE__ */ new Set() : new Set(derivedHalfSelectedKeys), [derivedHalfSelectedKeys, selectionType]);
     React343.useEffect(() => {
       if (!rowSelection) {
         setMergedSelectedKeys(EMPTY_LIST4);
       }
     }, [!!rowSelection]);
-    const setSelectedKeys = (0, import_react126.useCallback)((keys2, method4) => {
+    const setSelectedKeys = (0, import_react125.useCallback)((keys2, method4) => {
       let availableKeys;
       let records;
       updatePreserveRecordsCache(keys2);
@@ -70296,14 +70428,14 @@ html body {
         type: method4
       });
     }, [setMergedSelectedKeys, getRecordByKey, onSelectionChange, preserveSelectedRowKeys]);
-    const triggerSingleSelection = (0, import_react126.useCallback)((key, selected, keys2, event) => {
+    const triggerSingleSelection = (0, import_react125.useCallback)((key, selected, keys2, event) => {
       if (onSelect) {
         const rows = keys2.map(getRecordByKey);
         onSelect(getRecordByKey(key), selected, rows, event);
       }
       setSelectedKeys(keys2, "single");
     }, [onSelect, getRecordByKey, setSelectedKeys]);
-    const mergedSelections = (0, import_react126.useMemo)(() => {
+    const mergedSelections = (0, import_react125.useMemo)(() => {
       if (!selections || hideSelectAll) {
         return null;
       }
@@ -70369,7 +70501,7 @@ html body {
         }
       }));
     }, [selections, hideSelectAll, tableLocale.selectionAll, tableLocale.selectInvert, tableLocale.selectNone, checkboxPropsMap, derivedSelectedKeySet, data, pageData, getRowKey, onSelectInvert, setSelectedKeys]);
-    const transformColumns = (0, import_react126.useCallback)((columns) => {
+    const transformColumns = (0, import_react125.useCallback)((columns) => {
       var _a;
       if (!rowSelection) {
         true ? warning6(!columns.includes(SELECTION_COLUMN), "usage", "`rowSelection` is not config but `SELECTION_COLUMN` exists in the `columns`.") : void 0;
@@ -70751,7 +70883,7 @@ html body {
   var React350 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/DropIndicator.js
-  var import_react127 = __toESM(require_react());
+  var import_react126 = __toESM(require_react());
   var DropIndicator = (props) => {
     const {
       dropPosition,
@@ -70779,7 +70911,7 @@ html body {
         style2.left = indent;
         break;
     }
-    return /* @__PURE__ */ import_react127.default.createElement("div", {
+    return /* @__PURE__ */ import_react126.default.createElement("div", {
       style: style2
     });
   };
@@ -72512,7 +72644,7 @@ html body {
   var FolderOutlined_default2 = RefIcon22;
 
   // ../custom_dashboard/node_modules/antd/es/tree/Tree.js
-  var import_react129 = __toESM(require_react());
+  var import_react128 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/HolderOutlined.js
   var React354 = __toESM(require_react());
@@ -72944,7 +73076,7 @@ html body {
   }, genTreeStyle(prefixCls, token2), collapse_default(token2)], prepareComponentToken16);
 
   // ../custom_dashboard/node_modules/antd/es/tree/utils/dropIndicator.js
-  var import_react128 = __toESM(require_react());
+  var import_react127 = __toESM(require_react());
   "use client";
   var offset2 = 4;
   var dropIndicatorRender = (props) => {
@@ -72973,7 +73105,7 @@ html body {
         style2[startPosition] = indent + offset2;
         break;
     }
-    return /* @__PURE__ */ import_react128.default.createElement("div", {
+    return /* @__PURE__ */ import_react127.default.createElement("div", {
       style: style2,
       className: `${prefixCls}-drop-indicator`
     });
@@ -73152,7 +73284,7 @@ html body {
 
   // ../custom_dashboard/node_modules/antd/es/tree/Tree.js
   "use client";
-  var Tree2 = /* @__PURE__ */ import_react129.default.forwardRef((props, ref) => {
+  var Tree2 = /* @__PURE__ */ import_react128.default.forwardRef((props, ref) => {
     var _a;
     const {
       getPrefixCls,
@@ -73164,7 +73296,7 @@ html body {
     } = useComponentConfig("tree");
     const {
       virtual
-    } = import_react129.default.useContext(ConfigContext);
+    } = import_react128.default.useContext(ConfigContext);
     const {
       prefixCls: customizePrefixCls,
       className,
@@ -73185,7 +73317,7 @@ html body {
       styles,
       icon
     } = props;
-    const contextDisabled = import_react129.default.useContext(DisabledContext_default);
+    const contextDisabled = import_react128.default.useContext(DisabledContext_default);
     const mergedDisabled = disabled != null ? disabled : contextDisabled;
     const prefixCls = getPrefixCls("tree", customizePrefixCls);
     const rootPrefixCls = getPrefixCls();
@@ -73211,7 +73343,7 @@ html body {
     const [hashId, cssVarCls] = style_default21(prefixCls);
     const [, token2] = useToken();
     const itemHeight = token2.paddingXS / 2 + (((_a = token2.Tree) == null ? void 0 : _a.titleHeight) || token2.controlHeightSM);
-    const draggableConfig = import_react129.default.useMemo(() => {
+    const draggableConfig = import_react128.default.useMemo(() => {
       if (!draggable) {
         return false;
       }
@@ -73227,18 +73359,18 @@ html body {
           break;
       }
       if (mergedDraggable.icon !== false) {
-        mergedDraggable.icon = mergedDraggable.icon || /* @__PURE__ */ import_react129.default.createElement(HolderOutlined_default2, null);
+        mergedDraggable.icon = mergedDraggable.icon || /* @__PURE__ */ import_react128.default.createElement(HolderOutlined_default2, null);
       }
       return mergedDraggable;
     }, [draggable]);
-    const renderSwitcherIcon = (nodeProps) => /* @__PURE__ */ import_react129.default.createElement(iconUtil_default, {
+    const renderSwitcherIcon = (nodeProps) => /* @__PURE__ */ import_react128.default.createElement(iconUtil_default, {
       prefixCls,
       switcherIcon,
       switcherLoadingIcon,
       treeNodeProps: nodeProps,
       showLine
     });
-    return /* @__PURE__ */ import_react129.default.createElement(es_default17, __spreadProps(__spreadValues({
+    return /* @__PURE__ */ import_react128.default.createElement(es_default17, __spreadProps(__spreadValues({
       itemHeight,
       ref,
       virtual
@@ -73257,7 +73389,7 @@ html body {
       classNames: mergedClassNames,
       styles: mergedStyles,
       direction,
-      checkable: checkable ? /* @__PURE__ */ import_react129.default.createElement("span", {
+      checkable: checkable ? /* @__PURE__ */ import_react128.default.createElement("span", {
         className: `${prefixCls}-checkbox-inner`
       }) : checkable,
       selectable,
@@ -73497,8 +73629,8 @@ html body {
   var tree_default = Tree3;
 
   // ../custom_dashboard/node_modules/antd/es/table/TableMeasureRowContext.js
-  var import_react130 = __toESM(require_react());
-  var TableMeasureRowContext = /* @__PURE__ */ import_react130.default.createContext(false);
+  var import_react129 = __toESM(require_react());
+  var TableMeasureRowContext = /* @__PURE__ */ import_react129.default.createContext(false);
   var TableMeasureRowContext_default = TableMeasureRowContext;
 
   // ../custom_dashboard/node_modules/antd/es/table/hooks/useFilter/FilterSearch.js
@@ -74210,7 +74342,7 @@ html body {
   var useLazyKVMap_default = useLazyKVMap;
 
   // ../custom_dashboard/node_modules/antd/es/table/hooks/usePagination.js
-  var import_react131 = __toESM(require_react());
+  var import_react130 = __toESM(require_react());
   var DEFAULT_PAGE_SIZE = 10;
   function getPaginationParam(mergedPagination, pagination) {
     const param = {
@@ -74232,7 +74364,7 @@ html body {
     } = _a, paginationObj = __objRest(_a, [
       "total"
     ]);
-    const [innerPagination, setInnerPagination] = (0, import_react131.useState)(() => ({
+    const [innerPagination, setInnerPagination] = (0, import_react130.useState)(() => ({
       current: "defaultCurrent" in paginationObj ? paginationObj.defaultCurrent : 1,
       pageSize: "defaultPageSize" in paginationObj ? paginationObj.defaultPageSize : DEFAULT_PAGE_SIZE
     }));
@@ -76518,10 +76650,10 @@ html body {
   var import_react_dom8 = __toESM(require_react_dom());
 
   // ../custom_dashboard/node_modules/@rc-component/upload/es/Upload.js
-  var import_react133 = __toESM(require_react());
+  var import_react132 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/upload/es/AjaxUploader.js
-  var import_react132 = __toESM(require_react());
+  var import_react131 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/upload/es/attr-accept.js
   var attr_accept_default = (file, acceptedFiles) => {
@@ -76730,7 +76862,7 @@ html body {
     };
     return _extends85.apply(this, arguments);
   }
-  var AjaxUploader = class extends import_react132.Component {
+  var AjaxUploader = class extends import_react131.Component {
     constructor() {
       super(...arguments);
       __publicField(this, "state", {
@@ -77085,11 +77217,11 @@ html body {
         onDragOver: this.onFileDragOver,
         tabIndex: hasControlInside ? void 0 : "0"
       };
-      return /* @__PURE__ */ import_react132.default.createElement(Tag, _extends85({}, events, {
+      return /* @__PURE__ */ import_react131.default.createElement(Tag, _extends85({}, events, {
         className: cls,
         role: hasControlInside ? void 0 : "button",
         style: style2
-      }), /* @__PURE__ */ import_react132.default.createElement("input", _extends85({}, pickAttrs(otherProps, {
+      }), /* @__PURE__ */ import_react131.default.createElement("input", _extends85({}, pickAttrs(otherProps, {
         aria: true,
         data: true
       }), {
@@ -77132,7 +77264,7 @@ html body {
   }
   function empty() {
   }
-  var Upload = class extends import_react133.Component {
+  var Upload = class extends import_react132.Component {
     constructor() {
       super(...arguments);
       __publicField(this, "uploader");
@@ -77144,7 +77276,7 @@ html body {
       this.uploader.abort(file);
     }
     render() {
-      return /* @__PURE__ */ import_react133.default.createElement(AjaxUploader_default, _extends86({}, this.props, {
+      return /* @__PURE__ */ import_react132.default.createElement(AjaxUploader_default, _extends86({}, this.props, {
         ref: this.saveUploader
       }));
     }
@@ -78696,6 +78828,240 @@ html body {
     true ? warning_default2(majorVersion >= 18, "version", `antd v6 no longer supports React versions below 18. Please upgrade to React 18 or higher.`) : void 0;
   }
 
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/BarChartOutlined.js
+  var React385 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/BarChartOutlined.js
+  var BarChartOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M888 792H200V168c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v688c0 4.4 3.6 8 8 8h752c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm-600-80h56c4.4 0 8-3.6 8-8V560c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v144c0 4.4 3.6 8 8 8zm152 0h56c4.4 0 8-3.6 8-8V384c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v320c0 4.4 3.6 8 8 8zm152 0h56c4.4 0 8-3.6 8-8V462c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v242c0 4.4 3.6 8 8 8zm152 0h56c4.4 0 8-3.6 8-8V304c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v400c0 4.4 3.6 8 8 8z" } }] }, "name": "bar-chart", "theme": "outlined" };
+  var BarChartOutlined_default = BarChartOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/BarChartOutlined.js
+  function _extends91() {
+    _extends91 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends91.apply(this, arguments);
+  }
+  var BarChartOutlined2 = (props, ref) => /* @__PURE__ */ React385.createElement(AntdIcon_default, _extends91({}, props, {
+    ref,
+    icon: BarChartOutlined_default
+  }));
+  var RefIcon34 = /* @__PURE__ */ React385.forwardRef(BarChartOutlined2);
+  if (true) {
+    RefIcon34.displayName = "BarChartOutlined";
+  }
+  var BarChartOutlined_default2 = RefIcon34;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/DashboardOutlined.js
+  var React386 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/DashboardOutlined.js
+  var DashboardOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M924.8 385.6a446.7 446.7 0 00-96-142.4 446.7 446.7 0 00-142.4-96C631.1 123.8 572.5 112 512 112s-119.1 11.8-174.4 35.2a446.7 446.7 0 00-142.4 96 446.7 446.7 0 00-96 142.4C75.8 440.9 64 499.5 64 560c0 132.7 58.3 257.7 159.9 343.1l1.7 1.4c5.8 4.8 13.1 7.5 20.6 7.5h531.7c7.5 0 14.8-2.7 20.6-7.5l1.7-1.4C901.7 817.7 960 692.7 960 560c0-60.5-11.9-119.1-35.2-174.4zM761.4 836H262.6A371.12 371.12 0 01140 560c0-99.4 38.7-192.8 109-263 70.3-70.3 163.7-109 263-109 99.4 0 192.8 38.7 263 109 70.3 70.3 109 163.7 109 263 0 105.6-44.5 205.5-122.6 276zM623.5 421.5a8.03 8.03 0 00-11.3 0L527.7 506c-18.7-5-39.4-.2-54.1 14.5a55.95 55.95 0 000 79.2 55.95 55.95 0 0079.2 0 55.87 55.87 0 0014.5-54.1l84.5-84.5c3.1-3.1 3.1-8.2 0-11.3l-28.3-28.3zM490 320h44c4.4 0 8-3.6 8-8v-80c0-4.4-3.6-8-8-8h-44c-4.4 0-8 3.6-8 8v80c0 4.4 3.6 8 8 8zm260 218v44c0 4.4 3.6 8 8 8h80c4.4 0 8-3.6 8-8v-44c0-4.4-3.6-8-8-8h-80c-4.4 0-8 3.6-8 8zm12.7-197.2l-31.1-31.1a8.03 8.03 0 00-11.3 0l-56.6 56.6a8.03 8.03 0 000 11.3l31.1 31.1c3.1 3.1 8.2 3.1 11.3 0l56.6-56.6c3.1-3.1 3.1-8.2 0-11.3zm-458.6-31.1a8.03 8.03 0 00-11.3 0l-31.1 31.1a8.03 8.03 0 000 11.3l56.6 56.6c3.1 3.1 8.2 3.1 11.3 0l31.1-31.1c3.1-3.1 3.1-8.2 0-11.3l-56.6-56.6zM262 530h-80c-4.4 0-8 3.6-8 8v44c0 4.4 3.6 8 8 8h80c4.4 0 8-3.6 8-8v-44c0-4.4-3.6-8-8-8z" } }] }, "name": "dashboard", "theme": "outlined" };
+  var DashboardOutlined_default = DashboardOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/DashboardOutlined.js
+  function _extends92() {
+    _extends92 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends92.apply(this, arguments);
+  }
+  var DashboardOutlined2 = (props, ref) => /* @__PURE__ */ React386.createElement(AntdIcon_default, _extends92({}, props, {
+    ref,
+    icon: DashboardOutlined_default
+  }));
+  var RefIcon35 = /* @__PURE__ */ React386.forwardRef(DashboardOutlined2);
+  if (true) {
+    RefIcon35.displayName = "DashboardOutlined";
+  }
+  var DashboardOutlined_default2 = RefIcon35;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/DatabaseOutlined.js
+  var React387 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/DatabaseOutlined.js
+  var DatabaseOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M832 64H192c-17.7 0-32 14.3-32 32v832c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V96c0-17.7-14.3-32-32-32zm-600 72h560v208H232V136zm560 480H232V408h560v208zm0 272H232V680h560v208zM304 240a40 40 0 1080 0 40 40 0 10-80 0zm0 272a40 40 0 1080 0 40 40 0 10-80 0zm0 272a40 40 0 1080 0 40 40 0 10-80 0z" } }] }, "name": "database", "theme": "outlined" };
+  var DatabaseOutlined_default = DatabaseOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/DatabaseOutlined.js
+  function _extends93() {
+    _extends93 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends93.apply(this, arguments);
+  }
+  var DatabaseOutlined2 = (props, ref) => /* @__PURE__ */ React387.createElement(AntdIcon_default, _extends93({}, props, {
+    ref,
+    icon: DatabaseOutlined_default
+  }));
+  var RefIcon36 = /* @__PURE__ */ React387.forwardRef(DatabaseOutlined2);
+  if (true) {
+    RefIcon36.displayName = "DatabaseOutlined";
+  }
+  var DatabaseOutlined_default2 = RefIcon36;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/SettingOutlined.js
+  var React388 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/SettingOutlined.js
+  var SettingOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M924.8 625.7l-65.5-56c3.1-19 4.7-38.4 4.7-57.8s-1.6-38.8-4.7-57.8l65.5-56a32.03 32.03 0 009.3-35.2l-.9-2.6a443.74 443.74 0 00-79.7-137.9l-1.8-2.1a32.12 32.12 0 00-35.1-9.5l-81.3 28.9c-30-24.6-63.5-44-99.7-57.6l-15.7-85a32.05 32.05 0 00-25.8-25.7l-2.7-.5c-52.1-9.4-106.9-9.4-159 0l-2.7.5a32.05 32.05 0 00-25.8 25.7l-15.8 85.4a351.86 351.86 0 00-99 57.4l-81.9-29.1a32 32 0 00-35.1 9.5l-1.8 2.1a446.02 446.02 0 00-79.7 137.9l-.9 2.6c-4.5 12.5-.8 26.5 9.3 35.2l66.3 56.6c-3.1 18.8-4.6 38-4.6 57.1 0 19.2 1.5 38.4 4.6 57.1L99 625.5a32.03 32.03 0 00-9.3 35.2l.9 2.6c18.1 50.4 44.9 96.9 79.7 137.9l1.8 2.1a32.12 32.12 0 0035.1 9.5l81.9-29.1c29.8 24.5 63.1 43.9 99 57.4l15.8 85.4a32.05 32.05 0 0025.8 25.7l2.7.5a449.4 449.4 0 00159 0l2.7-.5a32.05 32.05 0 0025.8-25.7l15.7-85a350 350 0 0099.7-57.6l81.3 28.9a32 32 0 0035.1-9.5l1.8-2.1c34.8-41.1 61.6-87.5 79.7-137.9l.9-2.6c4.5-12.3.8-26.3-9.3-35zM788.3 465.9c2.5 15.1 3.8 30.6 3.8 46.1s-1.3 31-3.8 46.1l-6.6 40.1 74.7 63.9a370.03 370.03 0 01-42.6 73.6L721 702.8l-31.4 25.8c-23.9 19.6-50.5 35-79.3 45.8l-38.1 14.3-17.9 97a377.5 377.5 0 01-85 0l-17.9-97.2-37.8-14.5c-28.5-10.8-55-26.2-78.7-45.7l-31.4-25.9-93.4 33.2c-17-22.9-31.2-47.6-42.6-73.6l75.5-64.5-6.5-40c-2.4-14.9-3.7-30.3-3.7-45.5 0-15.3 1.2-30.6 3.7-45.5l6.5-40-75.5-64.5c11.3-26.1 25.6-50.7 42.6-73.6l93.4 33.2 31.4-25.9c23.7-19.5 50.2-34.9 78.7-45.7l37.9-14.3 17.9-97.2c28.1-3.2 56.8-3.2 85 0l17.9 97 38.1 14.3c28.7 10.8 55.4 26.2 79.3 45.8l31.4 25.8 92.8-32.9c17 22.9 31.2 47.6 42.6 73.6L781.8 426l6.5 39.9zM512 326c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm79.2 255.2A111.6 111.6 0 01512 614c-29.9 0-58-11.7-79.2-32.8A111.6 111.6 0 01400 502c0-29.9 11.7-58 32.8-79.2C454 401.6 482.1 390 512 390c29.9 0 58 11.6 79.2 32.8A111.6 111.6 0 01624 502c0 29.9-11.7 58-32.8 79.2z" } }] }, "name": "setting", "theme": "outlined" };
+  var SettingOutlined_default = SettingOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/SettingOutlined.js
+  function _extends94() {
+    _extends94 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends94.apply(this, arguments);
+  }
+  var SettingOutlined2 = (props, ref) => /* @__PURE__ */ React388.createElement(AntdIcon_default, _extends94({}, props, {
+    ref,
+    icon: SettingOutlined_default
+  }));
+  var RefIcon37 = /* @__PURE__ */ React388.forwardRef(SettingOutlined2);
+  if (true) {
+    RefIcon37.displayName = "SettingOutlined";
+  }
+  var SettingOutlined_default2 = RefIcon37;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/ShoppingCartOutlined.js
+  var React389 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/ShoppingCartOutlined.js
+  var ShoppingCartOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "0 0 1024 1024", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M922.9 701.9H327.4l29.9-60.9 496.8-.9c16.8 0 31.2-12 34.2-28.6l68.8-385.1c1.8-10.1-.9-20.5-7.5-28.4a34.99 34.99 0 00-26.6-12.5l-632-2.1-5.4-25.4c-3.4-16.2-18-28-34.6-28H96.5a35.3 35.3 0 100 70.6h125.9L246 312.8l58.1 281.3-74.8 122.1a34.96 34.96 0 00-3 36.8c6 11.9 18.1 19.4 31.5 19.4h62.8a102.43 102.43 0 00-20.6 61.7c0 56.6 46 102.6 102.6 102.6s102.6-46 102.6-102.6c0-22.3-7.4-44-20.6-61.7h161.1a102.43 102.43 0 00-20.6 61.7c0 56.6 46 102.6 102.6 102.6s102.6-46 102.6-102.6c0-22.3-7.4-44-20.6-61.7H923c19.4 0 35.3-15.8 35.3-35.3a35.42 35.42 0 00-35.4-35.2zM305.7 253l575.8 1.9-56.4 315.8-452.3.8L305.7 253zm96.9 612.7c-17.4 0-31.6-14.2-31.6-31.6 0-17.4 14.2-31.6 31.6-31.6s31.6 14.2 31.6 31.6a31.6 31.6 0 01-31.6 31.6zm325.1 0c-17.4 0-31.6-14.2-31.6-31.6 0-17.4 14.2-31.6 31.6-31.6s31.6 14.2 31.6 31.6a31.6 31.6 0 01-31.6 31.6z" } }] }, "name": "shopping-cart", "theme": "outlined" };
+  var ShoppingCartOutlined_default = ShoppingCartOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/ShoppingCartOutlined.js
+  function _extends95() {
+    _extends95 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends95.apply(this, arguments);
+  }
+  var ShoppingCartOutlined2 = (props, ref) => /* @__PURE__ */ React389.createElement(AntdIcon_default, _extends95({}, props, {
+    ref,
+    icon: ShoppingCartOutlined_default
+  }));
+  var RefIcon38 = /* @__PURE__ */ React389.forwardRef(ShoppingCartOutlined2);
+  if (true) {
+    RefIcon38.displayName = "ShoppingCartOutlined";
+  }
+  var ShoppingCartOutlined_default2 = RefIcon38;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/UploadOutlined.js
+  var React390 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/UploadOutlined.js
+  var UploadOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M400 317.7h73.9V656c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V317.7H624c6.7 0 10.4-7.7 6.3-12.9L518.3 163a8 8 0 00-12.6 0l-112 141.7c-4.1 5.3-.4 13 6.3 13zM878 626h-60c-4.4 0-8 3.6-8 8v154H214V634c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v198c0 17.7 14.3 32 32 32h684c17.7 0 32-14.3 32-32V634c0-4.4-3.6-8-8-8z" } }] }, "name": "upload", "theme": "outlined" };
+  var UploadOutlined_default = UploadOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/UploadOutlined.js
+  function _extends96() {
+    _extends96 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends96.apply(this, arguments);
+  }
+  var UploadOutlined2 = (props, ref) => /* @__PURE__ */ React390.createElement(AntdIcon_default, _extends96({}, props, {
+    ref,
+    icon: UploadOutlined_default
+  }));
+  var RefIcon39 = /* @__PURE__ */ React390.forwardRef(UploadOutlined2);
+  if (true) {
+    RefIcon39.displayName = "UploadOutlined";
+  }
+  var UploadOutlined_default2 = RefIcon39;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/UserOutlined.js
+  var React391 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/UserOutlined.js
+  var UserOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M858.5 763.6a374 374 0 00-80.6-119.5 375.63 375.63 0 00-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 00-80.6 119.5A371.7 371.7 0 00136 901.8a8 8 0 008 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 008-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z" } }] }, "name": "user", "theme": "outlined" };
+  var UserOutlined_default = UserOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/UserOutlined.js
+  function _extends97() {
+    _extends97 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends97.apply(this, arguments);
+  }
+  var UserOutlined2 = (props, ref) => /* @__PURE__ */ React391.createElement(AntdIcon_default, _extends97({}, props, {
+    ref,
+    icon: UserOutlined_default
+  }));
+  var RefIcon40 = /* @__PURE__ */ React391.forwardRef(UserOutlined2);
+  if (true) {
+    RefIcon40.displayName = "UserOutlined";
+  }
+  var UserOutlined_default2 = RefIcon40;
+
+  // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/pages/Dashboard.jsx
+  var import_react133 = __toESM(require_react());
+  var Dashboard = () => {
+    return /* @__PURE__ */ import_react133.default.createElement("div", null, /* @__PURE__ */ import_react133.default.createElement("h2", null, "Dashboard"), /* @__PURE__ */ import_react133.default.createElement("p", null, "Welcome to your custom dashboard!"));
+  };
+  var Dashboard_default = Dashboard;
+
+  // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/pages/Customers.jsx
+  var import_react136 = __toESM(require_react());
+
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/hooks/useFrappe.js
   var import_react134 = __toESM(require_react());
   var useFrappeGetDocList = (doctype, options = {}) => {
@@ -78853,40 +79219,6 @@ html body {
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/components/FileUpload.jsx
   var import_react135 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/UploadOutlined.js
-  var React385 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/UploadOutlined.js
-  var UploadOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M400 317.7h73.9V656c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V317.7H624c6.7 0 10.4-7.7 6.3-12.9L518.3 163a8 8 0 00-12.6 0l-112 141.7c-4.1 5.3-.4 13 6.3 13zM878 626h-60c-4.4 0-8 3.6-8 8v154H214V634c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v198c0 17.7 14.3 32 32 32h684c17.7 0 32-14.3 32-32V634c0-4.4-3.6-8-8-8z" } }] }, "name": "upload", "theme": "outlined" };
-  var UploadOutlined_default = UploadOutlined;
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/UploadOutlined.js
-  function _extends91() {
-    _extends91 = Object.assign ? Object.assign.bind() : function(target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
-      }
-      return target;
-    };
-    return _extends91.apply(this, arguments);
-  }
-  var UploadOutlined2 = (props, ref) => /* @__PURE__ */ React385.createElement(AntdIcon_default, _extends91({}, props, {
-    ref,
-    icon: UploadOutlined_default
-  }));
-  var RefIcon34 = /* @__PURE__ */ React385.forwardRef(UploadOutlined2);
-  if (true) {
-    RefIcon34.displayName = "UploadOutlined";
-  }
-  var UploadOutlined_default2 = RefIcon34;
-
-  // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/components/FileUpload.jsx
   var FileUpload = ({ value, onChange, accept = "image/*,application/pdf,.csv" }) => {
     const [fileList, setFileList] = (0, import_react135.useState)([]);
     const handleBeforeUpload = (file) => {
@@ -79099,8 +79431,9 @@ html body {
   var Orders_default = Orders;
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/App.jsx
+  var { Header: Header3, Sider: Sider2, Content: Content3 } = layout_default2;
   var App = () => {
-    const [currentRoute, setCurrentRoute] = (0, import_react138.useState)("");
+    const [currentRoute, setCurrentRoute] = (0, import_react138.useState)("dashboard");
     (0, import_react138.useEffect)(() => {
       const handleRoute = () => {
         if (typeof frappe !== "undefined" && frappe.get_route) {
@@ -79119,6 +79452,43 @@ html body {
         delete window.update_aavatto_react_route;
       };
     }, []);
+    const menuItems = [
+      {
+        key: "dashboard",
+        icon: /* @__PURE__ */ import_react138.default.createElement(DashboardOutlined_default2, null),
+        label: "Dashboard"
+      },
+      {
+        key: "customers",
+        icon: /* @__PURE__ */ import_react138.default.createElement(UserOutlined_default2, null),
+        label: "Customers"
+      },
+      {
+        key: "orders",
+        icon: /* @__PURE__ */ import_react138.default.createElement(ShoppingCartOutlined_default2, null),
+        label: "Orders"
+      },
+      {
+        key: "inventory",
+        icon: /* @__PURE__ */ import_react138.default.createElement(DatabaseOutlined_default2, null),
+        label: "Inventory"
+      },
+      {
+        key: "analytics",
+        icon: /* @__PURE__ */ import_react138.default.createElement(BarChartOutlined_default2, null),
+        label: "Analytics"
+      },
+      {
+        key: "settings",
+        icon: /* @__PURE__ */ import_react138.default.createElement(SettingOutlined_default2, null),
+        label: "Settings"
+      }
+    ];
+    const handleMenuClick = ({ key }) => {
+      if (typeof frappe !== "undefined") {
+        frappe.set_route("aavatto-test", key === "dashboard" ? "" : key);
+      }
+    };
     const renderPage = () => {
       switch (currentRoute) {
         case "dashboard":
@@ -79132,9 +79502,68 @@ html body {
           return /* @__PURE__ */ import_react138.default.createElement(Dashboard_default, null);
       }
     };
-    return /* @__PURE__ */ import_react138.default.createElement("div", {
+    return /* @__PURE__ */ import_react138.default.createElement(config_provider_default, {
+      theme: {
+        token: {
+          colorPrimary: "#4f46e5",
+          borderRadius: 12,
+          fontFamily: "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial"
+        },
+        components: {
+          Layout: {
+            siderBg: "#ffffff",
+            headerBg: "#ffffff"
+          },
+          Menu: {
+            itemSelectedBg: "#f3f4f6",
+            itemSelectedColor: "#4f46e5"
+          }
+        }
+      }
+    }, /* @__PURE__ */ import_react138.default.createElement(layout_default2, {
+      style: { minHeight: "100vh" }
+    }, /* @__PURE__ */ import_react138.default.createElement(Sider2, {
+      theme: "light",
+      breakpoint: "lg",
+      collapsedWidth: "80",
+      width: 260,
+      className: "aavatto-antd-sider",
+      style: {
+        borderRight: "1px solid #e5e7eb",
+        position: "fixed",
+        height: "100vh",
+        left: 0,
+        top: 0,
+        bottom: 0,
+        zIndex: 100
+      }
+    }, /* @__PURE__ */ import_react138.default.createElement("div", {
+      className: "aavatto-sidebar-header",
+      style: { padding: "24px 20px" }
+    }, /* @__PURE__ */ import_react138.default.createElement("div", {
+      className: "aavatto-sidebar-brand",
+      style: { display: "flex", alignItems: "center", gap: "12px", fontSize: "18px", fontWeight: "800", color: "#4f46e5" }
+    }, /* @__PURE__ */ import_react138.default.createElement(DashboardOutlined_default2, {
+      style: { fontSize: "24px" }
+    }), /* @__PURE__ */ import_react138.default.createElement("span", {
+      style: { letterSpacing: "-0.5px" }
+    }, "Aavatto Dashboard"))), /* @__PURE__ */ import_react138.default.createElement(menu_default2, {
+      mode: "inline",
+      selectedKeys: [currentRoute],
+      items: menuItems,
+      onClick: handleMenuClick,
+      style: { borderRight: 0, padding: "0 12px" }
+    }), /* @__PURE__ */ import_react138.default.createElement("div", {
+      style: { position: "absolute", bottom: 0, width: "100%", padding: "20px", borderTop: "1px solid #e5e7eb" }
+    }, /* @__PURE__ */ import_react138.default.createElement("small", {
+      style: { color: "#6b7280", textTransform: "uppercase", letterSpacing: "0.5px", fontSize: "11px" }
+    }, "v1.0.0"))), /* @__PURE__ */ import_react138.default.createElement(layout_default2, {
+      style: { marginLeft: 260 }
+    }, /* @__PURE__ */ import_react138.default.createElement(Content3, {
+      style: { padding: "24px", background: "#f9fafb", minHeight: "100%" }
+    }, /* @__PURE__ */ import_react138.default.createElement("div", {
       className: "aavatto-content-wrapper"
-    }, renderPage());
+    }, renderPage())))));
   };
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/aavatto_test.bundle.jsx
@@ -79205,4 +79634,4 @@ html body {
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-//# sourceMappingURL=aavatto_test.bundle.WCUA5IYJ.js.map
+//# sourceMappingURL=aavatto_test.bundle.TLSEJPJI.js.map
