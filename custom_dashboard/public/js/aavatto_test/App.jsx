@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-import Navbar from "./components/Navbar";
 import Dashboard from "./pages/Dashboard";
 import Customers from "./pages/Customers";
 import Orders from "./pages/Orders";
@@ -47,11 +46,8 @@ const App = () => {
     };
 
     return (
-        <div style={{paddingTop:"20px"}}>
-            <Navbar />
-            <div style={{ padding: "20px 0px" }}>
-                {renderPage()}
-            </div>
+        <div className="aavatto-content-wrapper">
+            {renderPage()}
         </div>
     );
 };

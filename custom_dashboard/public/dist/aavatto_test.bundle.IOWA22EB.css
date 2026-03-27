@@ -1,7 +1,8 @@
+/* ../custom_dashboard/custom_dashboard/public/js/aavatto_test/styles.css */
 :root {
   --sidebar-width: 260px;
-  --primary-color: #4f46e5; /* Indigo-600 */
-  --primary-hover: #4338ca; /* Indigo-700 */
+  --primary-color: #4f46e5;
+  --primary-hover: #4338ca;
   --bg-color: #f9fafb;
   --card-bg: #ffffff;
   --text-main: #111827;
@@ -10,29 +11,24 @@
   --sidebar-item-active-bg: #f3f4f6;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 body {
   margin: 0;
   background-color: var(--bg-color);
   font-family: var(--font-stack);
   color: var(--text-main);
 }
-
-/* Sidebar Styling for Custom Sidebar */
 .aavatto-sidebar {
   display: flex;
   flex-direction: column;
   height: 100%;
   background: var(--card-bg);
   padding: 10px 0;
-  min-height: calc(100vh - 80px); /* Adjust based on Frappe Workspace height */
+  min-height: calc(100vh - 80px);
 }
-
 .aavatto-sidebar-header {
   padding: 20px;
   margin-bottom: 20px;
 }
-
 .aavatto-sidebar-brand {
   font-size: 20px;
   font-weight: 800;
@@ -42,23 +38,19 @@ body {
   align-items: center;
   gap: 12px;
 }
-
 .aavatto-sidebar-brand i {
   color: var(--primary-color);
   font-size: 22px;
 }
-
 .aavatto-menu-list {
   list-style: none;
   padding: 0 12px;
   margin: 0;
   flex: 1;
 }
-
 .aavatto-menu-item {
   margin-bottom: 5px;
 }
-
 .aavatto-menu-link {
   display: flex;
   align-items: center;
@@ -71,24 +63,20 @@ body {
   transition: var(--transition);
   gap: 12px;
 }
-
 .aavatto-menu-link:hover {
   background-color: #f3f4f6;
   color: var(--text-main);
   transform: translateX(4px);
 }
-
 .aavatto-menu-link.active {
   background-color: var(--primary-color);
   color: #fff !important;
   font-weight: 600;
   box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2), 0 2px 4px -1px rgba(79, 70, 229, 0.1);
 }
-
 .aavatto-menu-link.active .menu-icon i {
   color: #fff !important;
 }
-
 .menu-icon {
   width: 20px;
   height: 20px;
@@ -97,41 +85,32 @@ body {
   justify-content: center;
   font-size: 16px;
 }
-
 .aavatto-sidebar-footer {
   padding: 15px 20px;
   border-top: 1px solid var(--border-color);
   margin-top: auto;
 }
-
 .aavatto-sidebar-footer small {
   color: var(--text-muted);
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
-
-/* Page Layout Overrides */
 .layout-side-section {
-    background: #fff !important;
-    border-right: 1px solid var(--border-color) !important;
-    padding: 0 !important;
+  background: #fff !important;
+  border-right: 1px solid var(--border-color) !important;
+  padding: 0 !important;
 }
-
 .layout-main-section {
   padding: 30px !important;
   background-color: var(--bg-color) !important;
 }
-
 .page-head {
-    display: none !important;
-    background: #fff !important;
-    border-bottom: 1px solid var(--border-color) !important;
-    padding: 15px 30px !important;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05) !important;
+  background: #fff !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  padding: 15px 30px !important;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
 }
-
-/* Card Styling */
 .aavatto-card {
   background: var(--card-bg);
   padding: 24px;
@@ -141,17 +120,21 @@ body {
   transition: var(--transition);
   margin-bottom: 24px;
 }
-
 .aavatto-card:hover {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   transform: translateY(-2px);
 }
-
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-
 #react-root {
   animation: fadeIn 0.4s ease-out;
 }
+/*# sourceMappingURL=aavatto_test.bundle.IOWA22EB.css.map */

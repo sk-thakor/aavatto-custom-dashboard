@@ -6,12 +6,12 @@ app_email = "shailesh.parmar@aavatto.com"
 app_license = "mit"
 
 app_include_js = [
+    "/assets/custom_dashboard/js/aavatto_common.js",
     "/assets/custom_dashboard/dist/aavatto_test.bundle.js"
 ]
 
 app_include_css = [
-    # "/assets/custom_dashboard/css/styles.css",
-    "/apps/custom_dashboard/custom_dashboard/public/css/styles.css"
+    "/assets/custom_dashboard/js/aavatto_test/styles.css"
 ]
 
 # Apps
