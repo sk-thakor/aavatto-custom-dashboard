@@ -106,6 +106,7 @@ body {
   background-color: var(--bg-color) !important;
 }
 .page-head {
+  display: none !important;
   background: #fff !important;
   border-bottom: 1px solid var(--border-color) !important;
   padding: 15px 30px !important;
@@ -137,4 +138,26 @@ body {
 #react-root {
   animation: fadeIn 0.4s ease-out;
 }
-/*# sourceMappingURL=aavatto_test.bundle.IOWA22EB.css.map */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+@media (max-width: 1200px) {
+  .container {
+    max-width: 1100px;
+  }
+}
+@media (max-width: 992px) {
+  .container {
+    max-width: 900px;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+}
+/*# sourceMappingURL=aavatto_test.bundle.BDH2TSKZ.css.map */
