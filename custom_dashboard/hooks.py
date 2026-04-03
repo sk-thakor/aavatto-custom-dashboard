@@ -5,14 +5,9 @@ app_description = "custom"
 app_email = "shailesh.parmar@aavatto.com"
 app_license = "mit"
 
-app_include_js = [
-    "/assets/custom_dashboard/dist/temple_dontation.bundle.js"
-    "/assets/custom_dashboard/js/aavatto_common.js",
-]
-
-app_include_css = [
-    "/assets/custom_dashboard/js/temple_dontation/styles.css"
-]
+# Temple Donation functionality has moved to the `temple_donation` app.
+# app_include_js = []
+# app_include_css = []
 
 # Apps
 # ------------------

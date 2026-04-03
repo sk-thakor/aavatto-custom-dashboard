@@ -83238,7 +83238,7 @@ html body {
     }), /* @__PURE__ */ import_react153.default.createElement("div", {
       className: "aavatto-topbar-version"
     }, "v1.0.0")), /* @__PURE__ */ import_react153.default.createElement(Content3, {
-      style: { padding: "24px", background: "#f9fafb", minHeight: "calc(100vh - 64px)" }
+      style: { padding: "24px 0px", background: "#f9fafb", minHeight: "calc(100vh - 64px)" }
     }, /* @__PURE__ */ import_react153.default.createElement("div", {
       className: "aavatto-content-wrapper"
     }, getComponentForRoute(currentRoute)))));
@@ -83312,4 +83312,4 @@ html body {
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-//# sourceMappingURL=temple_dontation.bundle.QD4S5NQ4.js.map
+//# sourceMappingURL=temple_dontation.bundle.TBJS6SGQ.js.map
