@@ -58,9 +58,9 @@
         
         // Define links
         const links = [
-            { label: "Aavatto Test", url: "/app/aavatto-test" },
-            { label: "Customers", url: "/app/aavatto-test/customers" },
-            { label: "Orders", url: "/app/aavatto-test/orders" },
+            { label: "Temple Donation", url: "/app/temple-donation" },
+            { label: "Customers", url: "/app/temple-donation/customers" },
+            { label: "Orders", url: "/app/temple-donation/orders" },
             { label: "Shop Dashboard", url: "/app/ordering-dashboard" }
         ];
 
@@ -127,7 +127,7 @@
 
         document.querySelectorAll(".global-sidebar-link").forEach(a => {
             const href = a.getAttribute("href");
-            if (currentPath === href || (href !== "/app/aavatto-test" && currentPath.includes(href))) {
+            if (currentPath === href || (href !== "/app/temple-donation" && currentPath.includes(href))) {
                 a.classList.add("active");
                 Object.assign(a.style, {
                     background: "#f0f4ff",

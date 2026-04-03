@@ -1,7 +1,7 @@
-frappe.pages["aavatto-test"].on_page_load = function (wrapper) {
+frappe.pages["temple-donation"].on_page_load = function (wrapper) {
   const page = frappe.ui.make_app_page({
     parent: wrapper,
-    title: __("Aavatto Test"),
+    title: __("Temple Donation"),
     single_column: true, // Changed to true to let React handle full-width layout including sidebar
   });
 
@@ -10,7 +10,7 @@ frappe.pages["aavatto-test"].on_page_load = function (wrapper) {
   frappe.require(premium_css);
 };
 
-frappe.pages["aavatto-test"].on_page_show = function (wrapper) {
+frappe.pages["temple-donation"].on_page_show = function (wrapper) {
   let $parent = $(wrapper).find(".layout-main-section");
   
   if ($parent.find("#react-root").length === 0) {

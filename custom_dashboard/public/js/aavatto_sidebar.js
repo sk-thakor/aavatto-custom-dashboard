@@ -37,9 +37,9 @@
 
         const container = sidebar.querySelector("#asb-links");
         const links = [
-            { label: "Dashboard", url: "/app/aavatto-test" },
-            { label: "Customers", url: "/app/aavatto-test/customers" },
-            { label: "Orders", url: "/app/aavatto-test/orders" }
+            { label: "Dashboard", url: "/app/temple-donation" },
+            { label: "Customers", url: "/app/temple-donation/customers" },
+            { label: "Orders", url: "/app/temple-donation/orders" }
         ];
 
         links.forEach(item => {
@@ -78,7 +78,7 @@
         // Highlight
         document.querySelectorAll(".asb-link").forEach(a => {
             const href = a.getAttribute("href");
-            if (path === href || (href !== "/app/aavatto-test" && path.includes(href))) {
+            if (path === href || (href !== "/app/temple-donation" && path.includes(href))) {
                 a.classList.add("active");
             } else {
                 a.classList.remove("active");

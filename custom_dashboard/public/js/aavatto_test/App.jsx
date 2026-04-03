@@ -17,7 +17,7 @@ const App = () => {
         const handleRoute = () => {
             if (typeof frappe !== "undefined" && frappe.get_route) {
                 const route = frappe.get_route();
-                if (route[0] === "aavatto-test") {
+                if (route[0] === "temple-donation") {
                     const subRoute = route.slice(1).join("/");
                     setCurrentRoute(subRoute || "dashboard");
                 }
@@ -36,7 +36,7 @@ const App = () => {
 
     const handleMenuClick = ({ key }) => {
         if (typeof frappe !== "undefined") {
-            frappe.set_route("aavatto-test", key === "dashboard" ? "" : key);
+            frappe.set_route("temple-donation", key === "dashboard" ? "" : key);
         }
     };
 
@@ -48,7 +48,7 @@ const App = () => {
                     {/* Brand / Logo */}
                     <div className="aavatto-topbar-brand">
                         <DashboardOutlined style={{ fontSize: "22px", color: "#4f46e5" }} />
-                        <span>Aavatto Dashboard</span>
+                        <span>Temple Donation</span>
                     </div>
 
                     {/* Horizontal Menu */}

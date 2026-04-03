@@ -149,7 +149,7 @@ const Donors = () => {
                             icon={<UserAddOutlined />}
                             onClick={() => {
                                 if (typeof frappe !== "undefined") {
-                                    frappe.set_route("aavatto-test", "donation");
+                                    frappe.set_route("temple-donation", "donation");
                                 }
                             }}
                             style={{ height: '48px', borderRadius: '8px', fontWeight: 600 }}

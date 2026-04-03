@@ -82509,7 +82509,7 @@ html body {
       icon: /* @__PURE__ */ import_react143.default.createElement(UserAddOutlined_default2, null),
       onClick: () => {
         if (typeof frappe !== "undefined") {
-          frappe.set_route("aavatto-test", "donation");
+          frappe.set_route("temple-donation", "donation");
         }
       },
       style: { height: "48px", borderRadius: "8px", fontWeight: 600 }
@@ -83199,7 +83199,7 @@ html body {
       const handleRoute = () => {
         if (typeof frappe !== "undefined" && frappe.get_route) {
           const route = frappe.get_route();
-          if (route[0] === "aavatto-test") {
+          if (route[0] === "temple-donation") {
             const subRoute = route.slice(1).join("/");
             setCurrentRoute(subRoute || "dashboard");
           }
@@ -83215,7 +83215,7 @@ html body {
     }, []);
     const handleMenuClick = ({ key }) => {
       if (typeof frappe !== "undefined") {
-        frappe.set_route("aavatto-test", key === "dashboard" ? "" : key);
+        frappe.set_route("temple-donation", key === "dashboard" ? "" : key);
       }
     };
     return /* @__PURE__ */ import_react153.default.createElement(config_provider_default, {
@@ -83228,7 +83228,7 @@ html body {
       className: "aavatto-topbar-brand"
     }, /* @__PURE__ */ import_react153.default.createElement(DashboardOutlined_default2, {
       style: { fontSize: "22px", color: "#4f46e5" }
-    }), /* @__PURE__ */ import_react153.default.createElement("span", null, "Aavatto Dashboard")), /* @__PURE__ */ import_react153.default.createElement(menu_default2, {
+    }), /* @__PURE__ */ import_react153.default.createElement("span", null, "Temple Donation")), /* @__PURE__ */ import_react153.default.createElement(menu_default2, {
       mode: "horizontal",
       selectedKeys: [currentRoute],
       items: menuItems,
@@ -83312,4 +83312,4 @@ html body {
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-//# sourceMappingURL=aavatto_test.bundle.SLZIGP7U.js.map
+//# sourceMappingURL=aavatto_test.bundle.HIIVUTNR.js.map

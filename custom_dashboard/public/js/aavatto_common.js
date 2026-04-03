@@ -25,7 +25,7 @@ Aavatto.renderSidebar = function(wrapper, items, brandName = "Aavatto App") {
       <ul class="aavatto-menu-list">
         ${items.map(item => `
           <li class="aavatto-menu-item">
-            <a href="/app/aavatto-test/${item.route === 'dashboard' ? '' : item.route}" 
+            <a href="/app/temple-donation/${item.route === 'dashboard' ? '' : item.route}" 
                class="aavatto-menu-link" 
                data-route="${item.route}">
                <div class="menu-icon"><i class="${item.icon}"></i></div>
