@@ -1132,7 +1132,7 @@
           var ContextProvider = REACT_PROVIDER_TYPE;
           var Element3 = REACT_ELEMENT_TYPE;
           var ForwardRef2 = REACT_FORWARD_REF_TYPE;
-          var Fragment27 = REACT_FRAGMENT_TYPE2;
+          var Fragment26 = REACT_FRAGMENT_TYPE2;
           var Lazy = REACT_LAZY_TYPE;
           var Memo = REACT_MEMO_TYPE;
           var Portal2 = REACT_PORTAL_TYPE;
@@ -1200,7 +1200,7 @@
           exports.ContextProvider = ContextProvider;
           exports.Element = Element3;
           exports.ForwardRef = ForwardRef2;
-          exports.Fragment = Fragment27;
+          exports.Fragment = Fragment26;
           exports.Lazy = Lazy;
           exports.Memo = Memo;
           exports.Portal = Portal2;
@@ -1291,7 +1291,7 @@
           return dispatcher;
         }
         "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-        var React437 = require_react(), Internals = {
+        var React428 = require_react(), Internals = {
           d: {
             f: noop4,
             r: function() {
@@ -1309,7 +1309,7 @@
           },
           p: 0,
           findDOMNode: null
-        }, REACT_PORTAL_TYPE = Symbol.for("react.portal"), ReactSharedInternals = React437.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
+        }, REACT_PORTAL_TYPE = Symbol.for("react.portal"), ReactSharedInternals = React428.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
         "function" === typeof Map && null != Map.prototype && "function" === typeof Map.prototype.forEach && "function" === typeof Set && null != Set.prototype && "function" === typeof Set.prototype.clear && "function" === typeof Set.prototype.forEach || console.error(
           "React depends on Map and Set built-in types. Make sure that you load a polyfill in older browsers. https://reactjs.org/link/react-polyfills"
         );
@@ -3161,7 +3161,7 @@
           "number" === type5 && getActiveElement(node2.ownerDocument) === node2 || node2.defaultValue === "" + value || (node2.defaultValue = "" + value);
         }
         function validateOptionProps(element, props) {
-          null == props.value && ("object" === typeof props.children && null !== props.children ? React437.Children.forEach(props.children, function(child) {
+          null == props.value && ("object" === typeof props.children && null !== props.children ? React428.Children.forEach(props.children, function(child) {
             null == child || "string" === typeof child || "number" === typeof child || "bigint" === typeof child || didWarnInvalidChild || (didWarnInvalidChild = true, console.error(
               "Cannot infer the option value of complex children. Pass a `value` prop or use a plain string as children to <option>."
             ));
@@ -18999,14 +18999,14 @@
           ));
         }
         "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-        var Scheduler = require_scheduler(), React437 = require_react(), ReactDOM = require_react_dom(), assign2 = Object.assign, REACT_LEGACY_ELEMENT_TYPE = Symbol.for("react.element"), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE2 = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy");
+        var Scheduler = require_scheduler(), React428 = require_react(), ReactDOM = require_react_dom(), assign2 = Object.assign, REACT_LEGACY_ELEMENT_TYPE = Symbol.for("react.element"), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE2 = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy");
         Symbol.for("react.scope");
         var REACT_ACTIVITY_TYPE = Symbol.for("react.activity");
         Symbol.for("react.legacy_hidden");
         Symbol.for("react.tracing_marker");
         var REACT_MEMO_CACHE_SENTINEL = Symbol.for("react.memo_cache_sentinel");
         Symbol.for("react.view_transition");
-        var MAYBE_ITERATOR_SYMBOL = Symbol.iterator, REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), isArrayImpl = Array.isArray, ReactSharedInternals = React437.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, ReactDOMSharedInternals = ReactDOM.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, NotPending = Object.freeze({
+        var MAYBE_ITERATOR_SYMBOL = Symbol.iterator, REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), isArrayImpl = Array.isArray, ReactSharedInternals = React428.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, ReactDOMSharedInternals = ReactDOM.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, NotPending = Object.freeze({
           pending: false,
           data: null,
           method: null,
@@ -21799,7 +21799,7 @@
           }
         };
         (function() {
-          var isomorphicReactPackageVersion = React437.version;
+          var isomorphicReactPackageVersion = React428.version;
           if ("19.2.4" !== isomorphicReactPackageVersion)
             throw Error(
               'Incompatible React versions: The "react" and "react-dom" packages must have the exact same version. Instead got:\n  - react:      ' + (isomorphicReactPackageVersion + "\n  - react-dom:  19.2.4\nLearn more: https://react.dev/warnings/version-mismatch")
@@ -21970,10 +21970,10 @@
   });
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/aavatto_test.bundle.jsx
-  var import_react155 = __toESM(require_react());
+  var import_react154 = __toESM(require_react());
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/App.jsx
-  var import_react154 = __toESM(require_react());
+  var import_react153 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/_util/getReactMajorVersionCanDelMe.js
   var import_react = __toESM(require_react());
@@ -43285,7 +43285,7 @@ html body {
     }, /* @__PURE__ */ React141.createElement(Component5, __spreadValues({}, props)));
   }
   var genPurePanel = (Component5, alignPropName, postProps, defaultPrefixCls2, getDropdownCls) => {
-    const PurePanel7 = (props) => {
+    const PurePanel6 = (props) => {
       const {
         prefixCls: customizePrefixCls,
         style: style2
@@ -43351,7 +43351,7 @@ html body {
         style: mergedStyle
       }, /* @__PURE__ */ React141.createElement(Component5, __spreadValues({}, mergedProps)));
     };
-    return withPureRenderTheme(PurePanel7);
+    return withPureRenderTheme(PurePanel6);
   };
   var PurePanel_default2 = genPurePanel;
 
@@ -64012,1190 +64012,11 @@ html body {
   }
   var Input_default4 = Input3;
 
-  // ../custom_dashboard/node_modules/antd/es/drawer/Drawer.js
-  var React283 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@rc-component/drawer/es/Drawer.js
-  var React281 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@rc-component/drawer/es/context.js
-  var React276 = __toESM(require_react());
-  var DrawerContext = /* @__PURE__ */ React276.createContext(null);
-  var RefContext2 = /* @__PURE__ */ React276.createContext({});
-  var context_default6 = DrawerContext;
-
-  // ../custom_dashboard/node_modules/@rc-component/drawer/es/DrawerPopup.js
-  var React280 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@rc-component/drawer/es/DrawerPanel.js
-  var React277 = __toESM(require_react());
-  function _extends58() {
-    _extends58 = Object.assign ? Object.assign.bind() : function(target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
-      }
-      return target;
-    };
-    return _extends58.apply(this, arguments);
-  }
-  var DrawerPanel = (props) => {
-    const _a = props, {
-      prefixCls,
-      className,
-      containerRef
-    } = _a, restProps = __objRest(_a, [
-      "prefixCls",
-      "className",
-      "containerRef"
-    ]);
-    const {
-      panel: panelRef
-    } = React277.useContext(RefContext2);
-    const mergedRef = useComposeRef(panelRef, containerRef);
-    return /* @__PURE__ */ React277.createElement("div", _extends58({
-      className: clsx(`${prefixCls}-section`, className),
-      role: "dialog",
-      ref: mergedRef
-    }, pickAttrs(props, {
-      aria: true
-    }), {
-      "aria-modal": "true"
-    }, restProps));
-  };
-  if (true) {
-    DrawerPanel.displayName = "DrawerPanel";
-  }
-  var DrawerPanel_default = DrawerPanel;
-
-  // ../custom_dashboard/node_modules/@rc-component/drawer/es/hooks/useDrag.js
-  var React278 = __toESM(require_react());
-  function useDrag(options) {
-    const {
-      prefixCls,
-      direction,
-      className,
-      style: style2,
-      maxSize,
-      containerRef,
-      currentSize,
-      onResize: onResize2,
-      onResizeEnd,
-      onResizeStart
-    } = options;
-    const [isDragging, setIsDragging] = React278.useState(false);
-    const [startPos, setStartPos] = React278.useState(0);
-    const [startSize, setStartSize] = React278.useState(0);
-    const isHorizontal = direction === "left" || direction === "right";
-    const handleMouseDown = useEvent_default((e3) => {
-      e3.preventDefault();
-      e3.stopPropagation();
-      setIsDragging(true);
-      if (isHorizontal) {
-        setStartPos(e3.clientX);
-      } else {
-        setStartPos(e3.clientY);
-      }
-      let startSize2;
-      if (typeof currentSize === "number") {
-        startSize2 = currentSize;
-      } else if (containerRef == null ? void 0 : containerRef.current) {
-        const rect = containerRef.current.getBoundingClientRect();
-        startSize2 = isHorizontal ? rect.width : rect.height;
-      }
-      setStartSize(startSize2);
-      onResizeStart == null ? void 0 : onResizeStart(startSize2);
-    });
-    const handleMouseMove = useEvent_default((e3) => {
-      if (!isDragging)
-        return;
-      const currentPos = isHorizontal ? e3.clientX : e3.clientY;
-      let delta = currentPos - startPos;
-      if (direction === "right" || direction === "bottom") {
-        delta = -delta;
-      }
-      let newSize = startSize + delta;
-      if (newSize < 0) {
-        newSize = 0;
-      }
-      if (maxSize && newSize > maxSize) {
-        newSize = maxSize;
-      }
-      onResize2 == null ? void 0 : onResize2(newSize);
-    });
-    const handleMouseUp = React278.useCallback(() => {
-      if (isDragging) {
-        setIsDragging(false);
-        if (containerRef == null ? void 0 : containerRef.current) {
-          const rect = containerRef.current.getBoundingClientRect();
-          const finalSize = isHorizontal ? rect.width : rect.height;
-          onResizeEnd == null ? void 0 : onResizeEnd(finalSize);
-        }
-      }
-    }, [isDragging, containerRef, onResizeEnd, isHorizontal]);
-    React278.useEffect(() => {
-      if (isDragging) {
-        document.addEventListener("mousemove", handleMouseMove);
-        document.addEventListener("mouseup", handleMouseUp);
-        return () => {
-          document.removeEventListener("mousemove", handleMouseMove);
-          document.removeEventListener("mouseup", handleMouseUp);
-        };
-      }
-    }, [isDragging, handleMouseMove, handleMouseUp]);
-    const dragElementClassName = clsx(`${prefixCls}-dragger`, `${prefixCls}-dragger-${direction}`, {
-      [`${prefixCls}-dragger-dragging`]: isDragging,
-      [`${prefixCls}-dragger-horizontal`]: isHorizontal,
-      [`${prefixCls}-dragger-vertical`]: !isHorizontal
-    }, className);
-    return {
-      dragElementProps: {
-        className: dragElementClassName,
-        style: style2,
-        onMouseDown: handleMouseDown
-      },
-      isDragging
-    };
-  }
-
-  // ../custom_dashboard/node_modules/@rc-component/drawer/es/util.js
-  function parseWidthHeight(value) {
-    if (typeof value === "string") {
-      const num = Number(value.replace(/px$/i, ""));
-      const floatNum = parseFloat(value);
-      if (floatNum === num) {
-        warning_default(false, "Invalid value type of `width` or `height` which should be number type instead.");
-      }
-      if (!Number.isNaN(num)) {
-        return num;
-      }
-    }
-    return value;
-  }
-  function warnCheck(props) {
-    warning_default(!("wrapperClassName" in props), `'wrapperClassName' is removed. Please use 'rootClassName' instead.`);
-    warning_default(canUseDom() || !props.open, `Drawer with 'open' in SSR is not work since no place to createPortal. Please move to 'useEffect' instead.`);
-  }
-
-  // ../custom_dashboard/node_modules/@rc-component/drawer/es/hooks/useFocusable.js
-  var import_react117 = __toESM(require_react());
-  function useFocusable2(getContainer2, open2, autoFocus, focusTrap, mask) {
-    const mergedFocusTrap = focusTrap != null ? focusTrap : mask !== false;
-    const [ignoreElement] = useLockFocus(open2 && mergedFocusTrap, getContainer2);
-    import_react117.default.useEffect(() => {
-      var _a;
-      if (open2 && autoFocus === true) {
-        (_a = getContainer2()) == null ? void 0 : _a.focus({
-          preventScroll: true
-        });
-      }
-    }, [open2]);
-    return ignoreElement;
-  }
-
-  // ../custom_dashboard/node_modules/@rc-component/drawer/es/DrawerPopup.js
-  function _extends59() {
-    _extends59 = Object.assign ? Object.assign.bind() : function(target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
-      }
-      return target;
-    };
-    return _extends59.apply(this, arguments);
-  }
-  var DrawerPopup = (props, ref) => {
-    var _a, _b;
-    const {
-      prefixCls,
-      open: open2,
-      placement,
-      inline: inline2,
-      push,
-      forceRender,
-      autoFocus,
-      focusTrap,
-      classNames: drawerClassNames,
-      rootClassName,
-      rootStyle,
-      zIndex,
-      className,
-      id,
-      style: style2,
-      motion: motion2,
-      width,
-      height,
-      size,
-      maxSize,
-      children,
-      mask,
-      maskClosable,
-      maskMotion,
-      maskClassName,
-      maskStyle,
-      afterOpenChange,
-      onClose,
-      onMouseEnter,
-      onMouseOver,
-      onMouseLeave,
-      onClick,
-      onKeyDown: onKeyDown2,
-      onKeyUp,
-      styles,
-      drawerRender,
-      resizable,
-      defaultSize
-    } = props;
-    const panelRef = React280.useRef(null);
-    React280.useImperativeHandle(ref, () => panelRef.current);
-    const ignoreElement = useFocusable2(() => panelRef.current, open2, autoFocus, focusTrap, mask);
-    const [pushed, setPushed] = React280.useState(false);
-    const parentContext = React280.useContext(context_default6);
-    let pushConfig;
-    if (typeof push === "boolean") {
-      pushConfig = push ? {} : {
-        distance: 0
-      };
-    } else {
-      pushConfig = push || {};
-    }
-    const pushDistance = (_b = (_a = pushConfig == null ? void 0 : pushConfig.distance) != null ? _a : parentContext == null ? void 0 : parentContext.pushDistance) != null ? _b : 180;
-    const mergedContext = React280.useMemo(() => ({
-      pushDistance,
-      push: () => {
-        setPushed(true);
-      },
-      pull: () => {
-        setPushed(false);
-      }
-    }), [pushDistance]);
-    React280.useEffect(() => {
-      var _a2, _b2;
-      if (open2) {
-        (_a2 = parentContext == null ? void 0 : parentContext.push) == null ? void 0 : _a2.call(parentContext);
-      } else {
-        (_b2 = parentContext == null ? void 0 : parentContext.pull) == null ? void 0 : _b2.call(parentContext);
-      }
-    }, [open2]);
-    React280.useEffect(() => () => {
-      var _a2;
-      (_a2 = parentContext == null ? void 0 : parentContext.pull) == null ? void 0 : _a2.call(parentContext);
-    }, []);
-    const maskNode = /* @__PURE__ */ React280.createElement(es_default2, _extends59({
-      key: "mask"
-    }, maskMotion, {
-      visible: mask && open2
-    }), ({
-      className: motionMaskClassName,
-      style: motionMaskStyle
-    }, maskRef) => /* @__PURE__ */ React280.createElement("div", {
-      className: clsx(`${prefixCls}-mask`, motionMaskClassName, drawerClassNames == null ? void 0 : drawerClassNames.mask, maskClassName),
-      style: __spreadValues(__spreadValues(__spreadValues({}, motionMaskStyle), maskStyle), styles == null ? void 0 : styles.mask),
-      onClick: maskClosable && open2 ? onClose : void 0,
-      ref: maskRef
-    }));
-    const motionProps = typeof motion2 === "function" ? motion2(placement) : motion2;
-    const [currentSize, setCurrentSize] = React280.useState();
-    const isHorizontal = placement === "left" || placement === "right";
-    const mergedSize = React280.useMemo(() => {
-      var _a2, _b2, _c;
-      const legacySize = isHorizontal ? width : height;
-      const nextMergedSize = (_c = (_b2 = (_a2 = size != null ? size : legacySize) != null ? _a2 : currentSize) != null ? _b2 : defaultSize) != null ? _c : isHorizontal ? 378 : void 0;
-      return parseWidthHeight(nextMergedSize);
-    }, [size, width, height, defaultSize, isHorizontal, currentSize]);
-    const wrapperStyle = React280.useMemo(() => {
-      const nextWrapperStyle = {};
-      if (pushed && pushDistance) {
-        switch (placement) {
-          case "top":
-            nextWrapperStyle.transform = `translateY(${pushDistance}px)`;
-            break;
-          case "bottom":
-            nextWrapperStyle.transform = `translateY(${-pushDistance}px)`;
-            break;
-          case "left":
-            nextWrapperStyle.transform = `translateX(${pushDistance}px)`;
-            break;
-          default:
-            nextWrapperStyle.transform = `translateX(${-pushDistance}px)`;
-            break;
-        }
-      }
-      if (isHorizontal) {
-        nextWrapperStyle.width = parseWidthHeight(mergedSize);
-      } else {
-        nextWrapperStyle.height = parseWidthHeight(mergedSize);
-      }
-      return nextWrapperStyle;
-    }, [pushed, pushDistance, placement, isHorizontal, mergedSize]);
-    const wrapperRef = React280.useRef(null);
-    const isResizable = !!resizable;
-    const resizeConfig = typeof resizable === "object" && resizable || {};
-    const onInternalResize = useEvent_default((size2) => {
-      var _a2;
-      setCurrentSize(size2);
-      (_a2 = resizeConfig.onResize) == null ? void 0 : _a2.call(resizeConfig, size2);
-    });
-    const {
-      dragElementProps,
-      isDragging
-    } = useDrag({
-      prefixCls: `${prefixCls}-resizable`,
-      direction: placement,
-      className: drawerClassNames == null ? void 0 : drawerClassNames.dragger,
-      style: styles == null ? void 0 : styles.dragger,
-      maxSize,
-      containerRef: wrapperRef,
-      currentSize: mergedSize,
-      onResize: onInternalResize,
-      onResizeStart: resizeConfig.onResizeStart,
-      onResizeEnd: resizeConfig.onResizeEnd
-    });
-    const eventHandlers = {
-      onMouseEnter,
-      onMouseOver,
-      onMouseLeave,
-      onClick,
-      onKeyDown: onKeyDown2,
-      onKeyUp,
-      onFocus: (e3) => {
-        ignoreElement(e3.target);
-      }
-    };
-    const panelNode = /* @__PURE__ */ React280.createElement(es_default2, _extends59({
-      key: "panel"
-    }, motionProps, {
-      visible: open2,
-      forceRender,
-      onVisibleChanged: afterOpenChange,
-      removeOnLeave: false,
-      leavedClassName: `${prefixCls}-content-wrapper-hidden`
-    }), ({
-      className: motionClassName,
-      style: motionStyle
-    }, motionRef) => {
-      const content = /* @__PURE__ */ React280.createElement(DrawerPanel_default, _extends59({
-        id,
-        containerRef: motionRef,
-        prefixCls,
-        className: clsx(className, drawerClassNames == null ? void 0 : drawerClassNames.section),
-        style: __spreadValues(__spreadValues({}, style2), styles == null ? void 0 : styles.section)
-      }, pickAttrs(props, {
-        aria: true
-      }), eventHandlers), children);
-      return /* @__PURE__ */ React280.createElement("div", _extends59({
-        ref: wrapperRef,
-        className: clsx(`${prefixCls}-content-wrapper`, isDragging && `${prefixCls}-content-wrapper-dragging`, drawerClassNames == null ? void 0 : drawerClassNames.wrapper, !isDragging && motionClassName),
-        style: __spreadValues(__spreadValues(__spreadValues({}, motionStyle), wrapperStyle), styles == null ? void 0 : styles.wrapper)
-      }, pickAttrs(props, {
-        data: true
-      })), isResizable && /* @__PURE__ */ React280.createElement("div", dragElementProps), drawerRender ? drawerRender(content) : content);
-    });
-    const containerStyle = __spreadValues({}, rootStyle);
-    if (zIndex) {
-      containerStyle.zIndex = zIndex;
-    }
-    return /* @__PURE__ */ React280.createElement(context_default6.Provider, {
-      value: mergedContext
-    }, /* @__PURE__ */ React280.createElement("div", {
-      className: clsx(prefixCls, `${prefixCls}-${placement}`, rootClassName, {
-        [`${prefixCls}-open`]: open2,
-        [`${prefixCls}-inline`]: inline2
-      }),
-      style: containerStyle,
-      tabIndex: -1,
-      ref: panelRef
-    }, maskNode, panelNode));
-  };
-  var RefDrawerPopup = /* @__PURE__ */ React280.forwardRef(DrawerPopup);
-  if (true) {
-    RefDrawerPopup.displayName = "DrawerPopup";
-  }
-  var DrawerPopup_default = RefDrawerPopup;
-
-  // ../custom_dashboard/node_modules/@rc-component/drawer/es/Drawer.js
-  var Drawer = (props) => {
-    const {
-      open: open2 = false,
-      prefixCls = "rc-drawer",
-      placement = "right",
-      autoFocus = true,
-      keyboard = true,
-      width,
-      height,
-      size,
-      maxSize,
-      mask = true,
-      maskClosable = true,
-      getContainer: getContainer2,
-      forceRender,
-      afterOpenChange,
-      destroyOnHidden,
-      onMouseEnter,
-      onMouseOver,
-      onMouseLeave,
-      onClick,
-      onKeyDown: onKeyDown2,
-      onKeyUp,
-      onClose,
-      resizable,
-      defaultSize,
-      focusTriggerAfterClose,
-      panelRef
-    } = props;
-    const [animatedVisible, setAnimatedVisible] = React281.useState(false);
-    if (true) {
-      warnCheck(props);
-    }
-    const [mounted, setMounted] = React281.useState(false);
-    useLayoutEffect_default(() => {
-      setMounted(true);
-    }, []);
-    const mergedOpen = mounted ? open2 : false;
-    const popupRef = React281.useRef(null);
-    const lastActiveRef = React281.useRef(null);
-    useLayoutEffect_default(() => {
-      if (mergedOpen) {
-        lastActiveRef.current = document.activeElement;
-      }
-    }, [mergedOpen]);
-    const internalAfterOpenChange = (nextVisible) => {
-      var _a, _b;
-      setAnimatedVisible(nextVisible);
-      afterOpenChange == null ? void 0 : afterOpenChange(nextVisible);
-      if (!nextVisible && focusTriggerAfterClose !== false && lastActiveRef.current && !((_a = popupRef.current) == null ? void 0 : _a.contains(lastActiveRef.current))) {
-        (_b = lastActiveRef.current) == null ? void 0 : _b.focus({
-          preventScroll: true
-        });
-      }
-    };
-    const refContext = React281.useMemo(() => ({
-      panel: panelRef
-    }), [panelRef]);
-    if (!forceRender && !animatedVisible && !mergedOpen && destroyOnHidden) {
-      return null;
-    }
-    const eventHandlers = {
-      onMouseEnter,
-      onMouseOver,
-      onMouseLeave,
-      onClick,
-      onKeyDown: onKeyDown2,
-      onKeyUp
-    };
-    const drawerPopupProps = __spreadValues(__spreadProps(__spreadValues({}, props), {
-      open: mergedOpen,
-      prefixCls,
-      placement,
-      autoFocus,
-      keyboard,
-      width,
-      height,
-      size,
-      maxSize,
-      defaultSize,
-      mask,
-      maskClosable,
-      inline: getContainer2 === false,
-      afterOpenChange: internalAfterOpenChange,
-      ref: popupRef,
-      resizable
-    }), eventHandlers);
-    const onEsc = ({
-      top,
-      event
-    }) => {
-      if (top && keyboard) {
-        event.stopPropagation();
-        onClose == null ? void 0 : onClose(event);
-      }
-    };
-    return /* @__PURE__ */ React281.createElement(RefContext2.Provider, {
-      value: refContext
-    }, /* @__PURE__ */ React281.createElement(es_default3, {
-      open: mergedOpen || forceRender || animatedVisible,
-      autoDestroy: false,
-      getContainer: getContainer2,
-      autoLock: mask && (mergedOpen || animatedVisible),
-      onEsc
-    }, /* @__PURE__ */ React281.createElement(DrawerPopup_default, drawerPopupProps)));
-  };
-  if (true) {
-    Drawer.displayName = "Drawer";
-  }
-  var Drawer_default = Drawer;
-
-  // ../custom_dashboard/node_modules/@rc-component/drawer/es/index.js
-  var es_default19 = Drawer_default;
-
-  // ../custom_dashboard/node_modules/antd/es/drawer/DrawerPanel.js
-  var React282 = __toESM(require_react());
-  "use client";
-  var DrawerPanel2 = (props) => {
-    const {
-      prefixCls,
-      ariaId,
-      title,
-      footer,
-      extra,
-      closable,
-      loading,
-      onClose,
-      headerStyle,
-      bodyStyle,
-      footerStyle,
-      children,
-      classNames: drawerClassNames,
-      styles: drawerStyles
-    } = props;
-    const drawerContext = useComponentConfig("drawer");
-    const {
-      classNames: contextClassNames,
-      styles: contextStyles,
-      closable: contextClosable
-    } = drawerContext;
-    const [mergedClassNames, mergedStyles] = useMergeSemantic([contextClassNames, drawerClassNames], [contextStyles, drawerStyles], {
-      props: __spreadProps(__spreadValues({}, props), {
-        closable: closable != null ? closable : contextClosable
-      })
-    });
-    const closablePlacement = React282.useMemo(() => {
-      const merged = closable != null ? closable : contextClosable;
-      if (merged === false) {
-        return void 0;
-      }
-      if (typeof merged === "object" && (merged == null ? void 0 : merged.placement) === "end") {
-        return "end";
-      }
-      return "start";
-    }, [closable, contextClosable]);
-    const customCloseIconRender = React282.useCallback((icon) => /* @__PURE__ */ React282.createElement("button", {
-      type: "button",
-      onClick: onClose,
-      className: clsx(`${prefixCls}-close`, {
-        [`${prefixCls}-close-${closablePlacement}`]: closablePlacement === "end"
-      }, mergedClassNames.close),
-      style: mergedStyles.close
-    }, icon), [onClose, prefixCls, closablePlacement, mergedClassNames.close, mergedStyles.close]);
-    const [mergedClosable, mergedCloseIcon] = useClosable(pickClosable(props), pickClosable(drawerContext), {
-      closable: true,
-      closeIconRender: customCloseIconRender
-    });
-    const renderHeader = () => {
-      if (!title && !mergedClosable) {
-        return null;
-      }
-      return /* @__PURE__ */ React282.createElement("div", {
-        style: __spreadValues(__spreadValues({}, mergedStyles.header), headerStyle),
-        className: clsx(`${prefixCls}-header`, mergedClassNames.header, {
-          [`${prefixCls}-header-close-only`]: mergedClosable && !title && !extra
-        })
-      }, /* @__PURE__ */ React282.createElement("div", {
-        className: `${prefixCls}-header-title`
-      }, closablePlacement === "start" && mergedCloseIcon, title && /* @__PURE__ */ React282.createElement("div", {
-        className: clsx(`${prefixCls}-title`, mergedClassNames.title),
-        style: mergedStyles.title,
-        id: ariaId
-      }, title)), extra && /* @__PURE__ */ React282.createElement("div", {
-        className: clsx(`${prefixCls}-extra`, mergedClassNames.extra),
-        style: mergedStyles.extra
-      }, extra), closablePlacement === "end" && mergedCloseIcon);
-    };
-    const renderFooter = () => {
-      if (!footer) {
-        return null;
-      }
-      return /* @__PURE__ */ React282.createElement("div", {
-        className: clsx(`${prefixCls}-footer`, mergedClassNames.footer),
-        style: __spreadValues(__spreadValues({}, mergedStyles.footer), footerStyle)
-      }, footer);
-    };
-    return /* @__PURE__ */ React282.createElement(React282.Fragment, null, renderHeader(), /* @__PURE__ */ React282.createElement("div", {
-      className: clsx(`${prefixCls}-body`, mergedClassNames.body),
-      style: __spreadValues(__spreadValues({}, mergedStyles.body), bodyStyle)
-    }, loading ? /* @__PURE__ */ React282.createElement(skeleton_default, {
-      active: true,
-      title: false,
-      paragraph: {
-        rows: 5
-      },
-      className: `${prefixCls}-body-skeleton`
-    }) : children), renderFooter());
-  };
-  var DrawerPanel_default2 = DrawerPanel2;
-
-  // ../custom_dashboard/node_modules/antd/es/drawer/style/motion.js
-  var getMoveTranslate = (direction) => {
-    const value = "100%";
-    return {
-      left: `translateX(-${value})`,
-      right: `translateX(${value})`,
-      top: `translateY(-${value})`,
-      bottom: `translateY(${value})`
-    }[direction];
-  };
-  var getEnterLeaveStyle = (startStyle, endStyle) => ({
-    "&-enter, &-appear": __spreadProps(__spreadValues({}, startStyle), {
-      "&-active": endStyle
-    }),
-    "&-leave": __spreadProps(__spreadValues({}, endStyle), {
-      "&-active": startStyle
-    })
-  });
-  var getFadeStyle = (from2, duration) => __spreadValues({
-    "&-enter, &-appear, &-leave": {
-      "&-start": {
-        transition: "none"
-      },
-      "&-active": {
-        transition: `all ${duration}`
-      }
-    }
-  }, getEnterLeaveStyle({
-    opacity: from2
-  }, {
-    opacity: 1
-  }));
-  var getPanelMotionStyles = (direction, duration) => [getFadeStyle(0.7, duration), getEnterLeaveStyle({
-    transform: getMoveTranslate(direction)
-  }, {
-    transform: "none"
-  })];
-  var genMotionStyle2 = (token2) => {
-    const {
-      componentCls,
-      motionDurationSlow
-    } = token2;
-    return {
-      [componentCls]: {
-        [`${componentCls}-mask-motion`]: getFadeStyle(0, motionDurationSlow),
-        [`${componentCls}-panel-motion`]: ["left", "right", "top", "bottom"].reduce((obj, direction) => {
-          return __spreadProps(__spreadValues({}, obj), {
-            [`&-${direction}`]: getPanelMotionStyles(direction, motionDurationSlow)
-          });
-        }, {})
-      }
-    };
-  };
-  var motion_default3 = genMotionStyle2;
-
-  // ../custom_dashboard/node_modules/antd/es/drawer/style/index.js
-  var genDrawerStyle = (token2) => {
-    const {
-      borderRadiusSM,
-      componentCls,
-      zIndexPopup,
-      colorBgMask,
-      colorBgElevated,
-      motionDurationSlow,
-      motionDurationMid,
-      paddingXS,
-      padding,
-      paddingLG,
-      fontSizeLG,
-      lineHeightLG,
-      lineWidth,
-      lineType,
-      colorSplit,
-      marginXS,
-      colorIcon,
-      colorIconHover,
-      colorBgTextHover,
-      colorBgTextActive,
-      colorText,
-      fontWeightStrong,
-      footerPaddingBlock,
-      footerPaddingInline,
-      draggerSize,
-      calc
-    } = token2;
-    const wrapperCls = `${componentCls}-content-wrapper`;
-    const draggerCls = `${componentCls}-resizable-dragger`;
-    return {
-      [componentCls]: {
-        position: "fixed",
-        inset: 0,
-        zIndex: zIndexPopup,
-        pointerEvents: "none",
-        color: colorText,
-        "&-pure": {
-          position: "relative",
-          background: colorBgElevated,
-          display: "flex",
-          flexDirection: "column",
-          pointerEvents: "auto",
-          [`&${componentCls}-left`]: {
-            boxShadow: token2.boxShadowDrawerLeft
-          },
-          [`&${componentCls}-right`]: {
-            boxShadow: token2.boxShadowDrawerRight
-          },
-          [`&${componentCls}-top`]: {
-            boxShadow: token2.boxShadowDrawerUp
-          },
-          [`&${componentCls}-bottom`]: {
-            boxShadow: token2.boxShadowDrawerDown
-          }
-        },
-        "&-inline": {
-          position: "absolute"
-        },
-        [`${componentCls}-mask`]: {
-          position: "absolute",
-          inset: 0,
-          zIndex: zIndexPopup,
-          background: colorBgMask,
-          pointerEvents: "auto",
-          [`&${componentCls}-mask-blur`]: {
-            backdropFilter: "blur(4px)"
-          }
-        },
-        [wrapperCls]: {
-          position: "absolute",
-          zIndex: zIndexPopup,
-          maxWidth: "100vw",
-          transition: `all ${motionDurationSlow}`,
-          "&-hidden": {
-            display: "none"
-          }
-        },
-        [`&-left > ${wrapperCls}`]: {
-          top: 0,
-          bottom: 0,
-          left: {
-            _skip_check_: true,
-            value: 0
-          },
-          boxShadow: token2.boxShadowDrawerLeft
-        },
-        [`&-right > ${wrapperCls}`]: {
-          top: 0,
-          right: {
-            _skip_check_: true,
-            value: 0
-          },
-          bottom: 0,
-          boxShadow: token2.boxShadowDrawerRight
-        },
-        [`&-top > ${wrapperCls}`]: {
-          top: 0,
-          insetInline: 0,
-          boxShadow: token2.boxShadowDrawerUp
-        },
-        [`&-bottom > ${wrapperCls}`]: {
-          bottom: 0,
-          insetInline: 0,
-          boxShadow: token2.boxShadowDrawerDown
-        },
-        [`${componentCls}-section`]: {
-          display: "flex",
-          flexDirection: "column",
-          width: "100%",
-          height: "100%",
-          overflow: "auto",
-          background: colorBgElevated,
-          pointerEvents: "auto"
-        },
-        [`${componentCls}-header`]: {
-          display: "flex",
-          flex: 0,
-          alignItems: "center",
-          padding: `${unit(padding)} ${unit(paddingLG)}`,
-          fontSize: fontSizeLG,
-          lineHeight: lineHeightLG,
-          borderBottom: `${unit(lineWidth)} ${lineType} ${colorSplit}`,
-          "&-title": {
-            display: "flex",
-            flex: 1,
-            alignItems: "center",
-            minWidth: 0,
-            minHeight: 0
-          }
-        },
-        [`${componentCls}-extra`]: {
-          flex: "none"
-        },
-        [`${componentCls}-close`]: __spreadValues({
-          display: "inline-flex",
-          width: calc(fontSizeLG).add(paddingXS).equal(),
-          height: calc(fontSizeLG).add(paddingXS).equal(),
-          borderRadius: borderRadiusSM,
-          justifyContent: "center",
-          alignItems: "center",
-          color: colorIcon,
-          fontWeight: fontWeightStrong,
-          fontSize: fontSizeLG,
-          fontStyle: "normal",
-          lineHeight: 1,
-          textAlign: "center",
-          textTransform: "none",
-          textDecoration: "none",
-          background: "transparent",
-          border: 0,
-          cursor: "pointer",
-          transition: `all ${motionDurationMid}`,
-          textRendering: "auto",
-          [`&${componentCls}-close-end`]: {
-            marginInlineStart: marginXS
-          },
-          [`&:not(${componentCls}-close-end)`]: {
-            marginInlineEnd: marginXS
-          },
-          "&:hover": {
-            color: colorIconHover,
-            backgroundColor: colorBgTextHover,
-            textDecoration: "none"
-          },
-          "&:active": {
-            backgroundColor: colorBgTextActive
-          }
-        }, genFocusStyle(token2)),
-        [`${componentCls}-title`]: {
-          flex: 1,
-          margin: 0,
-          fontWeight: token2.fontWeightStrong,
-          fontSize: fontSizeLG,
-          lineHeight: lineHeightLG
-        },
-        [`${componentCls}-body`]: {
-          flex: 1,
-          minWidth: 0,
-          minHeight: 0,
-          padding: paddingLG,
-          overflow: "auto",
-          [`${componentCls}-body-skeleton`]: {
-            width: "100%",
-            height: "100%",
-            display: "flex",
-            justifyContent: "center"
-          }
-        },
-        [`${componentCls}-footer`]: {
-          flexShrink: 0,
-          padding: `${unit(footerPaddingBlock)} ${unit(footerPaddingInline)}`,
-          borderTop: `${unit(lineWidth)} ${lineType} ${colorSplit}`
-        },
-        [draggerCls]: {
-          position: "absolute",
-          zIndex: 1,
-          backgroundColor: "transparent",
-          userSelect: "none",
-          pointerEvents: "auto",
-          "&:hover": {
-            backgroundColor: token2.colorPrimary,
-            opacity: 0.2
-          },
-          "&-dragging": {
-            backgroundColor: token2.colorPrimary,
-            opacity: 0.3
-          }
-        },
-        [`${draggerCls}-left`]: {
-          top: 0,
-          bottom: 0,
-          right: {
-            _skip_check_: true,
-            value: 0
-          },
-          width: draggerSize,
-          cursor: "col-resize"
-        },
-        [`${draggerCls}-right`]: {
-          top: 0,
-          bottom: 0,
-          left: {
-            _skip_check_: true,
-            value: 0
-          },
-          width: draggerSize,
-          cursor: "col-resize"
-        },
-        [`${draggerCls}-top`]: {
-          insetInline: 0,
-          bottom: 0,
-          height: draggerSize,
-          cursor: "row-resize"
-        },
-        [`${draggerCls}-bottom`]: {
-          insetInline: 0,
-          top: 0,
-          height: draggerSize,
-          cursor: "row-resize"
-        },
-        [`${wrapperCls}-dragging`]: {
-          userSelect: "none",
-          transition: "none",
-          willChange: "width, height",
-          [`${componentCls}-content`]: {
-            pointerEvents: "none"
-          },
-          [`${componentCls}-section`]: {
-            pointerEvents: "none"
-          }
-        },
-        "&-rtl": {
-          direction: "rtl"
-        }
-      }
-    };
-  };
-  var prepareComponentToken15 = (token2) => ({
-    zIndexPopup: token2.zIndexPopupBase,
-    footerPaddingBlock: token2.paddingXS,
-    footerPaddingInline: token2.padding,
-    draggerSize: 4
-  });
-  var style_default19 = genStyleHooks("Drawer", (token2) => {
-    const drawerToken = merge2(token2, {});
-    return [genDrawerStyle(drawerToken), motion_default3(drawerToken)];
-  }, prepareComponentToken15);
-
-  // ../custom_dashboard/node_modules/antd/es/drawer/Drawer.js
-  "use client";
-  var DEFAULT_PUSH_STATE = {
-    distance: 180
-  };
-  var DEFAULT_SIZE3 = 378;
-  var MOTION_CONFIG = {
-    motionAppear: true,
-    motionEnter: true,
-    motionLeave: true,
-    motionDeadline: 500
-  };
-  var Drawer2 = (props) => {
-    var _b;
-    const _a = props, {
-      rootClassName,
-      size,
-      defaultSize = DEFAULT_SIZE3,
-      height,
-      width,
-      mask: drawerMask,
-      push = DEFAULT_PUSH_STATE,
-      open: open2,
-      afterOpenChange,
-      onClose,
-      prefixCls: customizePrefixCls,
-      getContainer: customizeGetContainer,
-      panelRef = null,
-      style: style2,
-      className,
-      resizable,
-      "aria-labelledby": ariaLabelledby,
-      focusable: focusable2,
-      maskClosable,
-      maskStyle,
-      drawerStyle,
-      contentWrapperStyle,
-      destroyOnClose,
-      destroyOnHidden
-    } = _a, rest = __objRest(_a, [
-      "rootClassName",
-      "size",
-      "defaultSize",
-      "height",
-      "width",
-      "mask",
-      "push",
-      "open",
-      "afterOpenChange",
-      "onClose",
-      "prefixCls",
-      "getContainer",
-      "panelRef",
-      "style",
-      "className",
-      "resizable",
-      "aria-labelledby",
-      "focusable",
-      "maskClosable",
-      "maskStyle",
-      "drawerStyle",
-      "contentWrapperStyle",
-      "destroyOnClose",
-      "destroyOnHidden"
-    ]);
-    const {
-      placement
-    } = rest;
-    const id = useId_default();
-    const ariaId = rest.title ? id : void 0;
-    const {
-      getPopupContainer,
-      getPrefixCls,
-      direction,
-      className: contextClassName,
-      style: contextStyle,
-      classNames: contextClassNames,
-      styles: contextStyles,
-      mask: contextMask
-    } = useComponentConfig("drawer");
-    const prefixCls = getPrefixCls("drawer", customizePrefixCls);
-    const [hashId, cssVarCls] = style_default19(prefixCls);
-    const getContainer2 = customizeGetContainer === void 0 && getPopupContainer ? () => getPopupContainer(document.body) : customizeGetContainer;
-    const drawerSize = React283.useMemo(() => {
-      if (typeof size === "number") {
-        return size;
-      }
-      if (size === "large") {
-        return 736;
-      }
-      if (size === "default") {
-        return DEFAULT_SIZE3;
-      }
-      if (typeof size === "string") {
-        if (/^\d+(\.\d+)?$/.test(size)) {
-          return Number(size);
-        }
-        return size;
-      }
-      if (!placement || placement === "left" || placement === "right") {
-        return width;
-      }
-      return height;
-    }, [size, placement, width, height]);
-    const maskMotion = __spreadValues({
-      motionName: getTransitionName2(prefixCls, "mask-motion")
-    }, MOTION_CONFIG);
-    const panelMotion = (motionPlacement) => __spreadValues({
-      motionName: getTransitionName2(prefixCls, `panel-motion-${motionPlacement}`)
-    }, MOTION_CONFIG);
-    const innerPanelRef = usePanelRef();
-    const mergedPanelRef = composeRef(panelRef, innerPanelRef);
-    const [zIndex, contextZIndex] = useZIndex("Drawer", rest.zIndex);
-    const [mergedMask, maskBlurClassName, mergedMaskClosable] = useMergedMask(drawerMask, contextMask, prefixCls, maskClosable);
-    const mergedFocusable = useFocusable(focusable2, getContainer2 !== false && mergedMask);
-    const {
-      classNames,
-      styles,
-      rootStyle
-    } = rest;
-    const mergedProps = __spreadProps(__spreadValues({}, props), {
-      zIndex,
-      panelRef,
-      mask: mergedMask,
-      maskClosable: mergedMaskClosable,
-      defaultSize,
-      push,
-      focusable: mergedFocusable
-    });
-    const [mergedClassNames, mergedStyles] = useMergeSemantic([contextClassNames, classNames], [contextStyles, styles], {
-      props: mergedProps
-    });
-    const drawerClassName = clsx({
-      "no-mask": !mergedMask,
-      [`${prefixCls}-rtl`]: direction === "rtl"
-    }, rootClassName, hashId, cssVarCls, mergedClassNames.root);
-    if (true) {
-      const warning6 = devUseWarning("Drawer");
-      [["headerStyle", "styles.header"], ["bodyStyle", "styles.body"], ["footerStyle", "styles.footer"], ["contentWrapperStyle", "styles.wrapper"], ["maskStyle", "styles.mask"], ["drawerStyle", "styles.section"], ["destroyInactivePanel", "destroyOnHidden"], ["width", "size"], ["height", "size"]].forEach(([deprecatedName, newName]) => {
-        warning6.deprecated(!(deprecatedName in props), deprecatedName, newName);
-      });
-      if (getContainer2 !== void 0 && ((_b = props.style) == null ? void 0 : _b.position) === "absolute") {
-        true ? warning6(false, "breaking", "`style` is replaced by `rootStyle` in v5. Please check that `position: absolute` is necessary.") : void 0;
-      }
-      warning6.deprecated(!((mergedClassNames == null ? void 0 : mergedClassNames.content) || (mergedStyles == null ? void 0 : mergedStyles.content)), "classNames.content and styles.content", "classNames.section and styles.section");
-    }
-    return /* @__PURE__ */ React283.createElement(ContextIsolator_default, {
-      form: true,
-      space: true
-    }, /* @__PURE__ */ React283.createElement(zindexContext_default.Provider, {
-      value: contextZIndex
-    }, /* @__PURE__ */ React283.createElement(es_default19, __spreadProps(__spreadValues(__spreadProps(__spreadValues({
-      prefixCls,
-      onClose,
-      maskMotion,
-      motion: panelMotion
-    }, rest), {
-      classNames: {
-        mask: clsx(mergedClassNames.mask, maskBlurClassName.mask),
-        section: mergedClassNames.section,
-        wrapper: mergedClassNames.wrapper,
-        dragger: mergedClassNames.dragger
-      },
-      styles: {
-        mask: __spreadValues(__spreadValues({}, mergedStyles.mask), maskStyle),
-        section: __spreadValues(__spreadValues({}, mergedStyles.section), drawerStyle),
-        wrapper: __spreadValues(__spreadValues({}, mergedStyles.wrapper), contentWrapperStyle),
-        dragger: mergedStyles.dragger
-      },
-      open: open2,
-      mask: mergedMask,
-      maskClosable: mergedMaskClosable,
-      push,
-      size: drawerSize,
-      defaultSize,
-      style: __spreadValues(__spreadValues({}, contextStyle), style2),
-      rootStyle: __spreadValues(__spreadValues({}, rootStyle), mergedStyles.root),
-      className: clsx(contextClassName, className),
-      rootClassName: drawerClassName,
-      getContainer: getContainer2,
-      afterOpenChange,
-      panelRef: mergedPanelRef,
-      zIndex
-    }), resizable ? {
-      resizable
-    } : {}), {
-      "aria-labelledby": ariaLabelledby != null ? ariaLabelledby : ariaId,
-      destroyOnHidden: destroyOnHidden != null ? destroyOnHidden : destroyOnClose,
-      focusTriggerAfterClose: mergedFocusable.focusTriggerAfterClose,
-      focusTrap: mergedFocusable.trap
-    }), /* @__PURE__ */ React283.createElement(DrawerPanel_default2, __spreadProps(__spreadValues({
-      prefixCls,
-      size
-    }, rest), {
-      ariaId,
-      onClose
-    })))));
-  };
-  var PurePanel5 = (props) => {
-    const _a = props, {
-      prefixCls: customizePrefixCls,
-      style: style2,
-      className,
-      placement = "right"
-    } = _a, restProps = __objRest(_a, [
-      "prefixCls",
-      "style",
-      "className",
-      "placement"
-    ]);
-    const {
-      getPrefixCls
-    } = React283.useContext(ConfigContext);
-    const prefixCls = getPrefixCls("drawer", customizePrefixCls);
-    const [hashId, cssVarCls] = style_default19(prefixCls);
-    const cls = clsx(prefixCls, `${prefixCls}-pure`, `${prefixCls}-${placement}`, hashId, cssVarCls, className);
-    return /* @__PURE__ */ React283.createElement("div", {
-      className: cls,
-      style: style2
-    }, /* @__PURE__ */ React283.createElement(DrawerPanel_default2, __spreadValues({
-      prefixCls
-    }, restProps)));
-  };
-  Drawer2._InternalPanelDoNotUseOrYouWillBeFired = PurePanel5;
-  if (true) {
-    Drawer2.displayName = "Drawer";
-  }
-  var Drawer_default2 = Drawer2;
-
-  // ../custom_dashboard/node_modules/antd/es/drawer/index.js
-  "use client";
-  var drawer_default = Drawer_default2;
-
   // ../custom_dashboard/node_modules/antd/es/dropdown/dropdown-button.js
-  var React287 = __toESM(require_react());
+  var React279 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/space/index.js
-  var React286 = __toESM(require_react());
+  var React278 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/_util/gapSize.js
   function isPresetSize(size) {
@@ -65209,14 +64030,14 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/antd/es/space/context.js
-  var import_react118 = __toESM(require_react());
-  var SpaceContext = /* @__PURE__ */ import_react118.default.createContext({
+  var import_react117 = __toESM(require_react());
+  var SpaceContext = /* @__PURE__ */ import_react117.default.createContext({
     latestIndex: 0
   });
   var SpaceContextProvider = SpaceContext.Provider;
 
   // ../custom_dashboard/node_modules/antd/es/space/Item.js
-  var React285 = __toESM(require_react());
+  var React277 = __toESM(require_react());
   "use client";
   var Item3 = (props) => {
     const {
@@ -65231,14 +64052,14 @@ html body {
     } = props;
     const {
       latestIndex
-    } = React285.useContext(SpaceContext);
+    } = React277.useContext(SpaceContext);
     if (!isNonNullable_default(children)) {
       return null;
     }
-    return /* @__PURE__ */ React285.createElement(React285.Fragment, null, /* @__PURE__ */ React285.createElement("div", {
+    return /* @__PURE__ */ React277.createElement(React277.Fragment, null, /* @__PURE__ */ React277.createElement("div", {
       className,
       style: style2
-    }, children), index < latestIndex && separator && /* @__PURE__ */ React285.createElement("span", {
+    }, children), index < latestIndex && separator && /* @__PURE__ */ React277.createElement("span", {
       className: clsx(`${prefix2}-item-separator`, classNames == null ? void 0 : classNames.separator),
       style: styles == null ? void 0 : styles.separator
     }, separator));
@@ -65311,7 +64132,7 @@ html body {
       }
     };
   };
-  var style_default20 = genStyleHooks("Space", (token2) => {
+  var style_default19 = genStyleHooks("Space", (token2) => {
     const spaceToken = merge2(token2, {
       spaceGapSmallSize: token2.paddingXS,
       spaceGapMiddleSize: token2.padding,
@@ -65324,7 +64145,7 @@ html body {
 
   // ../custom_dashboard/node_modules/antd/es/space/index.js
   "use client";
-  var InternalSpace = /* @__PURE__ */ React286.forwardRef((props, ref) => {
+  var InternalSpace = /* @__PURE__ */ React278.forwardRef((props, ref) => {
     const {
       getPrefixCls,
       direction: directionConfig,
@@ -65379,7 +64200,7 @@ html body {
     const mergedAlign = align === void 0 && !mergedVertical ? "center" : align;
     const mergedSeparator = separator != null ? separator : split;
     const prefixCls = getPrefixCls("space", customizePrefixCls);
-    const [hashId, cssVarCls] = style_default20(prefixCls);
+    const [hashId, cssVarCls] = style_default19(prefixCls);
     const mergedProps = __spreadProps(__spreadValues({}, props), {
       size,
       orientation: mergedOrientation,
@@ -65397,7 +64218,7 @@ html body {
     const itemClassName = clsx(`${prefixCls}-item`, mergedClassNames.item);
     const renderedItems = childNodes.map((child, i) => {
       const key = (child == null ? void 0 : child.key) || `${itemClassName}-${i}`;
-      return /* @__PURE__ */ React286.createElement(Item_default2, {
+      return /* @__PURE__ */ React278.createElement(Item_default2, {
         prefix: prefixCls,
         classNames: mergedClassNames,
         styles: mergedStyles,
@@ -65414,7 +64235,7 @@ html body {
         warning6.deprecated(!(deprecatedName in props), deprecatedName, newName);
       });
     }
-    const memoizedSpaceContext = React286.useMemo(() => {
+    const memoizedSpaceContext = React278.useMemo(() => {
       const calcLatestIndex = childNodes.reduce((latest, child, i) => isNonNullable_default(child) ? i : latest, 0);
       return {
         latestIndex: calcLatestIndex
@@ -65433,11 +64254,11 @@ html body {
     if (!isPresetVerticalSize && isValidVerticalSize) {
       gapStyle.rowGap = verticalSize;
     }
-    return /* @__PURE__ */ React286.createElement("div", __spreadValues({
+    return /* @__PURE__ */ React278.createElement("div", __spreadValues({
       ref,
       className: rootClassNames,
       style: __spreadValues(__spreadValues(__spreadValues(__spreadValues({}, gapStyle), mergedStyles.root), contextStyle), style2)
-    }, restProps), /* @__PURE__ */ React286.createElement(SpaceContextProvider, {
+    }, restProps), /* @__PURE__ */ React278.createElement(SpaceContextProvider, {
       value: memoizedSpaceContext
     }, renderedItems));
   });
@@ -65456,7 +64277,7 @@ html body {
       getPopupContainer: getContextPopupContainer,
       getPrefixCls,
       direction
-    } = React287.useContext(ConfigContext);
+    } = React279.useContext(ConfigContext);
     const _a = props, {
       prefixCls: customizePrefixCls,
       type: type5 = "default",
@@ -65477,7 +64298,7 @@ html body {
       placement,
       getPopupContainer,
       href,
-      icon = /* @__PURE__ */ React287.createElement(EllipsisOutlined_default2, null),
+      icon = /* @__PURE__ */ React279.createElement(EllipsisOutlined_default2, null),
       title,
       buttonsRender = (buttons) => buttons,
       mouseEnterDelay,
@@ -65563,7 +64384,7 @@ html body {
       const warning6 = devUseWarning("Dropdown.Button");
       warning6.deprecated(false, "Dropdown.Button", "Space.Compact + Dropdown + Button");
     }
-    const leftButton = /* @__PURE__ */ React287.createElement(button_default, {
+    const leftButton = /* @__PURE__ */ React279.createElement(button_default, {
       type: type5,
       danger,
       disabled,
@@ -65573,17 +64394,17 @@ html body {
       href,
       title
     }, children);
-    const rightButton = /* @__PURE__ */ React287.createElement(button_default, {
+    const rightButton = /* @__PURE__ */ React279.createElement(button_default, {
       type: type5,
       danger,
       icon
     });
     const [leftButtonToRender, rightButtonToRender] = buttonsRender([leftButton, rightButton]);
-    return /* @__PURE__ */ React287.createElement(space_default.Compact, __spreadValues({
+    return /* @__PURE__ */ React279.createElement(space_default.Compact, __spreadValues({
       className: classes,
       size: compactSize,
       block: true
-    }, restProps), leftButtonToRender, /* @__PURE__ */ React287.createElement(dropdown_default2, __spreadValues({}, dropdownProps), rightButtonToRender));
+    }, restProps), leftButtonToRender, /* @__PURE__ */ React279.createElement(dropdown_default2, __spreadValues({}, dropdownProps), rightButtonToRender));
   };
   DropdownButton.__ANT_BUTTON = true;
   var dropdown_button_default = DropdownButton;
@@ -65595,12 +64416,12 @@ html body {
   var dropdown_default3 = Dropdown3;
 
   // ../custom_dashboard/node_modules/antd/es/_util/convertToTooltipProps.js
-  var import_react119 = __toESM(require_react());
+  var import_react118 = __toESM(require_react());
   var convertToTooltipProps = (tooltip, context) => {
     if (!isNonNullable_default(tooltip)) {
       return null;
     }
-    if (typeof tooltip === "object" && !/* @__PURE__ */ (0, import_react119.isValidElement)(tooltip)) {
+    if (typeof tooltip === "object" && !/* @__PURE__ */ (0, import_react118.isValidElement)(tooltip)) {
       return __spreadValues(__spreadValues({}, context), tooltip);
     }
     return __spreadProps(__spreadValues({}, context), {
@@ -65610,13 +64431,13 @@ html body {
   var convertToTooltipProps_default = convertToTooltipProps;
 
   // ../custom_dashboard/node_modules/antd/es/form/ErrorList.js
-  var React289 = __toESM(require_react());
+  var React281 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/form/hooks/useDebounce.js
-  var React288 = __toESM(require_react());
+  var React280 = __toESM(require_react());
   function useDebounce(value) {
-    const [cacheValue, setCacheValue] = React288.useState(value);
-    React288.useEffect(() => {
+    const [cacheValue, setCacheValue] = React280.useState(value);
+    React280.useEffect(() => {
       const timeout = setTimeout(() => {
         setCacheValue(value);
       }, value.length ? 0 : 10);
@@ -66072,7 +64893,7 @@ html body {
       }
     };
   };
-  var prepareComponentToken16 = (token2) => ({
+  var prepareComponentToken15 = (token2) => ({
     labelRequiredMarkColor: token2.colorError,
     labelColor: token2.colorTextHeading,
     labelFontSize: token2.fontSize,
@@ -66091,12 +64912,12 @@ html body {
     });
     return formToken;
   };
-  var style_default21 = genStyleHooks("Form", (token2, {
+  var style_default20 = genStyleHooks("Form", (token2, {
     rootPrefixCls
   }) => {
     const formToken = prepareToken3(token2, rootPrefixCls);
     return [genFormStyle(formToken), genFormItemStyle(formToken), explain_default(formToken), genHorizontalStyle(formToken), genInlineStyle(formToken), genVerticalStyle(formToken), collapse_default(formToken), zoomIn];
-  }, prepareComponentToken16, {
+  }, prepareComponentToken15, {
     order: -1e3
   });
 
@@ -66121,20 +64942,20 @@ html body {
   }) => {
     const {
       prefixCls
-    } = React289.useContext(FormItemPrefixContext);
+    } = React281.useContext(FormItemPrefixContext);
     const baseClassName = `${prefixCls}-item-explain`;
     const rootCls = useCSSVarCls_default(prefixCls);
-    const [hashId, cssVarCls] = style_default21(prefixCls, rootCls);
-    const collapseMotion = React289.useMemo(() => motion_default(prefixCls), [prefixCls]);
+    const [hashId, cssVarCls] = style_default20(prefixCls, rootCls);
+    const collapseMotion = React281.useMemo(() => motion_default(prefixCls), [prefixCls]);
     const debounceErrors = useDebounce(errors);
     const debounceWarnings = useDebounce(warnings);
-    const fullKeyList = React289.useMemo(() => {
+    const fullKeyList = React281.useMemo(() => {
       if (isNonNullable_default(help)) {
         return [toErrorEntity(help, "help", helpStatus)];
       }
       return [].concat(_toConsumableArray(debounceErrors.map((error, index) => toErrorEntity(error, "error", "error", index))), _toConsumableArray(debounceWarnings.map((warning6, index) => toErrorEntity(warning6, "warning", "warning", index))));
     }, [help, helpStatus, debounceErrors, debounceWarnings]);
-    const filledKeyFullKeyList = React289.useMemo(() => {
+    const filledKeyFullKeyList = React281.useMemo(() => {
       const keysCount = {};
       fullKeyList.forEach(({
         key
@@ -66149,7 +64970,7 @@ html body {
     if (fieldId) {
       helpProps.id = `${fieldId}_help`;
     }
-    return /* @__PURE__ */ React289.createElement(es_default2, {
+    return /* @__PURE__ */ React281.createElement(es_default2, {
       motionDeadline: collapseMotion.motionDeadline,
       motionName: `${prefixCls}-show-help`,
       visible: !!filledKeyFullKeyList.length,
@@ -66159,10 +64980,10 @@ html body {
         className: holderClassName,
         style: holderStyle
       } = holderProps;
-      return /* @__PURE__ */ React289.createElement("div", __spreadProps(__spreadValues({}, helpProps), {
+      return /* @__PURE__ */ React281.createElement("div", __spreadProps(__spreadValues({}, helpProps), {
         className: clsx(baseClassName, holderClassName, cssVarCls, rootCls, rootClassName, hashId),
         style: holderStyle
-      }), /* @__PURE__ */ React289.createElement(CSSMotionList_default, __spreadProps(__spreadValues({
+      }), /* @__PURE__ */ React281.createElement(CSSMotionList_default, __spreadProps(__spreadValues({
         keys: filledKeyFullKeyList
       }, motion_default(prefixCls)), {
         motionName: `${prefixCls}-show-help-item`,
@@ -66175,7 +64996,7 @@ html body {
           className: itemClassName,
           style: itemStyle
         } = itemProps;
-        return /* @__PURE__ */ React289.createElement("div", {
+        return /* @__PURE__ */ React281.createElement("div", {
           key,
           className: clsx(itemClassName, {
             [`${baseClassName}-${errorStatus}`]: errorStatus
@@ -66188,16 +65009,16 @@ html body {
   var ErrorList_default = ErrorList;
 
   // ../custom_dashboard/node_modules/antd/es/form/Form.js
-  var React291 = __toESM(require_react());
+  var React283 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/form/hooks/useFormWarning.js
-  var React290 = __toESM(require_react());
+  var React282 = __toESM(require_react());
   var names = {};
   function useFormWarning({
     name
   }) {
     const warning6 = devUseWarning("Form");
-    React290.useEffect(() => {
+    React282.useEffect(() => {
       if (name) {
         names[name] = (names[name] || 0) + 1;
         true ? warning6(names[name] <= 1, "usage", "There exist multiple Form with same `name`.") : void 0;
@@ -66211,7 +65032,7 @@ html body {
   // ../custom_dashboard/node_modules/antd/es/form/Form.js
   "use client";
   var InternalForm2 = (props, ref) => {
-    const contextDisabled = React291.useContext(DisabledContext_default);
+    const contextDisabled = React283.useContext(DisabledContext_default);
     const {
       getPrefixCls,
       direction,
@@ -66272,11 +65093,11 @@ html body {
       "tooltip"
     ]);
     const mergedSize = useSize_default(size);
-    const contextValidateMessages = React291.useContext(validateMessagesContext_default);
+    const contextValidateMessages = React283.useContext(validateMessagesContext_default);
     if (true) {
       useFormWarning(props);
     }
-    const mergedRequiredMark = React291.useMemo(() => {
+    const mergedRequiredMark = React283.useMemo(() => {
       if (requiredMark !== void 0) {
         return requiredMark;
       }
@@ -66289,7 +65110,7 @@ html body {
     const mergedTooltip = __spreadValues(__spreadValues({}, contextTooltip), tooltip);
     const prefixCls = getPrefixCls("form", customizePrefixCls);
     const rootCls = useCSSVarCls_default(prefixCls);
-    const [hashId, cssVarCls] = style_default21(prefixCls, rootCls);
+    const [hashId, cssVarCls] = style_default20(prefixCls, rootCls);
     const mergedProps = __spreadProps(__spreadValues({}, props), {
       size: mergedSize,
       disabled,
@@ -66311,7 +65132,7 @@ html body {
       __INTERNAL__
     } = wrapForm;
     __INTERNAL__.name = name;
-    const formContextValue = React291.useMemo(() => ({
+    const formContextValue = React283.useMemo(() => ({
       name,
       labelAlign,
       labelCol,
@@ -66327,8 +65148,8 @@ html body {
       classNames: mergedClassNames,
       styles: mergedStyles
     }), [name, labelAlign, labelCol, wrapperCol, layout, mergedColon, mergedRequiredMark, wrapForm, feedbackIcons, mergedClassNames, mergedStyles, mergedTooltip]);
-    const nativeElementRef = React291.useRef(null);
-    React291.useImperativeHandle(ref, () => {
+    const nativeElementRef = React283.useRef(null);
+    React283.useImperativeHandle(ref, () => {
       var _a2;
       return __spreadProps(__spreadValues({}, wrapForm), {
         nativeElement: (_a2 = nativeElementRef.current) == null ? void 0 : _a2.nativeElement
@@ -66358,19 +65179,19 @@ html body {
         }
       }
     };
-    return /* @__PURE__ */ React291.createElement(VariantContext.Provider, {
+    return /* @__PURE__ */ React283.createElement(VariantContext.Provider, {
       value: variant
-    }, /* @__PURE__ */ React291.createElement(DisabledContextProvider, {
+    }, /* @__PURE__ */ React283.createElement(DisabledContextProvider, {
       disabled
-    }, /* @__PURE__ */ React291.createElement(SizeContext_default.Provider, {
+    }, /* @__PURE__ */ React283.createElement(SizeContext_default.Provider, {
       value: mergedSize
-    }, /* @__PURE__ */ React291.createElement(FormProvider2, {
+    }, /* @__PURE__ */ React283.createElement(FormProvider2, {
       validateMessages: contextValidateMessages
-    }, /* @__PURE__ */ React291.createElement(FormContext2.Provider, {
+    }, /* @__PURE__ */ React283.createElement(FormContext2.Provider, {
       value: formContextValue
-    }, /* @__PURE__ */ React291.createElement(NoFormStyle, {
+    }, /* @__PURE__ */ React283.createElement(NoFormStyle, {
       status: true
-    }, /* @__PURE__ */ React291.createElement(es_default7, __spreadProps(__spreadValues({
+    }, /* @__PURE__ */ React283.createElement(es_default7, __spreadProps(__spreadValues({
       id: name
     }, restFormProps), {
       name,
@@ -66381,14 +65202,14 @@ html body {
       className: formClassName
     }))))))));
   };
-  var Form2 = /* @__PURE__ */ React291.forwardRef(InternalForm2);
+  var Form2 = /* @__PURE__ */ React283.forwardRef(InternalForm2);
   if (true) {
     Form2.displayName = "Form";
   }
   var Form_default2 = Form2;
 
   // ../custom_dashboard/node_modules/antd/es/form/FormItem/index.js
-  var React300 = __toESM(require_react());
+  var React292 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/form/hooks/useChildren.js
   function useChildren2(children) {
@@ -66400,13 +65221,13 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/antd/es/form/hooks/useFormItemStatus.js
-  var React292 = __toESM(require_react());
+  var React284 = __toESM(require_react());
   var useFormItemStatus = () => {
     const {
       status,
       errors = [],
       warnings = []
-    } = React292.useContext(FormItemInputContext);
+    } = React284.useContext(FormItemInputContext);
     if (true) {
       const warning6 = devUseWarning("Form.Item");
       true ? warning6(status !== void 0, "usage", "Form.Item.useStatus should be used under Form.Item component. For more information: https://u.ant.design/form-item-usestatus") : void 0;
@@ -66421,13 +65242,13 @@ html body {
   var useFormItemStatus_default = useFormItemStatus;
 
   // ../custom_dashboard/node_modules/antd/es/form/hooks/useFrameState.js
-  var React293 = __toESM(require_react());
+  var React285 = __toESM(require_react());
   function useFrameState(defaultValue) {
-    const [value, setValue] = React293.useState(defaultValue);
-    const frameRef = React293.useRef(null);
-    const batchRef = React293.useRef([]);
-    const destroyRef = React293.useRef(false);
-    React293.useEffect(() => {
+    const [value, setValue] = React285.useState(defaultValue);
+    const frameRef = React285.useRef(null);
+    const batchRef = React285.useRef([]);
+    const destroyRef = React285.useRef(false);
+    React285.useEffect(() => {
       destroyRef.current = false;
       return () => {
         destroyRef.current = true;
@@ -66458,12 +65279,12 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/antd/es/form/hooks/useItemRef.js
-  var React294 = __toESM(require_react());
+  var React286 = __toESM(require_react());
   function useItemRef() {
     const {
       itemRef
-    } = React294.useContext(FormContext2);
-    const cacheRef = React294.useRef({});
+    } = React286.useContext(FormContext2);
+    const cacheRef = React286.useRef({});
     function getRef(name, children) {
       const childrenRef = children && typeof children === "object" && getNodeRef(children);
       const nameStr = name.join("_");
@@ -66478,10 +65299,10 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/antd/es/form/FormItem/ItemHolder.js
-  var React299 = __toESM(require_react());
+  var React291 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/form/FormItemInput.js
-  var React295 = __toESM(require_react());
+  var React287 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/form/style/fallbackCmp.js
   var genFallbackStyle = (token2) => {
@@ -66524,12 +65345,12 @@ html body {
       label
     } = props;
     const baseClassName = `${prefixCls}-item`;
-    const formContext = React295.useContext(FormContext2);
+    const formContext = React287.useContext(FormContext2);
     const {
       classNames: contextClassNames,
       styles: contextStyles
     } = formContext;
-    const mergedWrapperCol = React295.useMemo(() => {
+    const mergedWrapperCol = React287.useMemo(() => {
       let mergedWrapper = __spreadValues({}, wrapperCol || formContext.wrapperCol || {});
       if (label === null && !labelCol && !wrapperCol && formContext.labelCol) {
         const list = [void 0].concat(_toConsumableArray(responsiveArrayReversed));
@@ -66547,7 +65368,7 @@ html body {
       return mergedWrapper;
     }, [wrapperCol, formContext.wrapperCol, formContext.labelCol, label, labelCol]);
     const className = clsx(`${baseClassName}-control`, mergedWrapperCol.className);
-    const subFormContext = React295.useMemo(() => {
+    const subFormContext = React287.useMemo(() => {
       const _a = formContext, {
         labelCol: _labelCol,
         wrapperCol: _wrapperCol
@@ -66557,8 +65378,8 @@ html body {
       ]);
       return rest;
     }, [formContext]);
-    const extraRef = React295.useRef(null);
-    const [extraHeight, setExtraHeight] = React295.useState(0);
+    const extraRef = React287.useRef(null);
+    const [extraHeight, setExtraHeight] = React287.useState(0);
     useLayoutEffect_default(() => {
       if (extra && extraRef.current) {
         setExtraHeight(extraRef.current.clientHeight);
@@ -66566,19 +65387,19 @@ html body {
         setExtraHeight(0);
       }
     }, [extra]);
-    const inputDom = /* @__PURE__ */ React295.createElement("div", {
+    const inputDom = /* @__PURE__ */ React287.createElement("div", {
       className: `${baseClassName}-control-input`
-    }, /* @__PURE__ */ React295.createElement("div", {
+    }, /* @__PURE__ */ React287.createElement("div", {
       className: clsx(`${baseClassName}-control-input-content`, contextClassNames == null ? void 0 : contextClassNames.content),
       style: contextStyles == null ? void 0 : contextStyles.content
     }, children));
-    const formItemContext = React295.useMemo(() => ({
+    const formItemContext = React287.useMemo(() => ({
       prefixCls,
       status
     }), [prefixCls, status]);
-    const errorListDom = marginBottom !== null || errors.length || warnings.length ? /* @__PURE__ */ React295.createElement(FormItemPrefixContext.Provider, {
+    const errorListDom = marginBottom !== null || errors.length || warnings.length ? /* @__PURE__ */ React287.createElement(FormItemPrefixContext.Provider, {
       value: formItemContext
-    }, /* @__PURE__ */ React295.createElement(ErrorList_default, {
+    }, /* @__PURE__ */ React287.createElement(ErrorList_default, {
       fieldId,
       errors,
       warnings,
@@ -66591,11 +65412,11 @@ html body {
     if (fieldId) {
       extraProps.id = `${fieldId}_extra`;
     }
-    const extraDom = extra ? /* @__PURE__ */ React295.createElement("div", __spreadProps(__spreadValues({}, extraProps), {
+    const extraDom = extra ? /* @__PURE__ */ React287.createElement("div", __spreadProps(__spreadValues({}, extraProps), {
       className: `${baseClassName}-extra`,
       ref: extraRef
     }), extra) : null;
-    const additionalDom = errorListDom || extraDom ? /* @__PURE__ */ React295.createElement("div", {
+    const additionalDom = errorListDom || extraDom ? /* @__PURE__ */ React287.createElement("div", {
       className: `${baseClassName}-additional`,
       style: marginBottom ? {
         minHeight: marginBottom + extraHeight
@@ -66605,30 +65426,30 @@ html body {
       input: inputDom,
       errorList: errorListDom,
       extra: extraDom
-    }) : /* @__PURE__ */ React295.createElement(React295.Fragment, null, inputDom, additionalDom);
-    return /* @__PURE__ */ React295.createElement(FormContext2.Provider, {
+    }) : /* @__PURE__ */ React287.createElement(React287.Fragment, null, inputDom, additionalDom);
+    return /* @__PURE__ */ React287.createElement(FormContext2.Provider, {
       value: subFormContext
-    }, /* @__PURE__ */ React295.createElement(col_default, __spreadProps(__spreadValues({}, mergedWrapperCol), {
+    }, /* @__PURE__ */ React287.createElement(col_default, __spreadProps(__spreadValues({}, mergedWrapperCol), {
       className
-    }), dom), /* @__PURE__ */ React295.createElement(fallbackCmp_default, {
+    }), dom), /* @__PURE__ */ React287.createElement(fallbackCmp_default, {
       prefixCls
     }));
   };
   var FormItemInput_default = FormItemInput;
 
   // ../custom_dashboard/node_modules/antd/es/form/FormItemLabel.js
-  var React297 = __toESM(require_react());
+  var React289 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/QuestionCircleOutlined.js
-  var React296 = __toESM(require_react());
+  var React288 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/QuestionCircleOutlined.js
   var QuestionCircleOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z" } }, { "tag": "path", "attrs": { "d": "M623.6 316.7C593.6 290.4 554 276 512 276s-81.6 14.5-111.6 40.7C369.2 344 352 380.7 352 420v7.6c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V420c0-44.1 43.1-80 96-80s96 35.9 96 80c0 31.1-22 59.6-56.1 72.7-21.2 8.1-39.2 22.3-52.1 40.9-13.1 19-19.9 41.8-19.9 64.9V620c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8v-22.7a48.3 48.3 0 0130.9-44.8c59-22.7 97.1-74.7 97.1-132.5.1-39.3-17.1-76-48.3-103.3zM472 732a40 40 0 1080 0 40 40 0 10-80 0z" } }] }, "name": "question-circle", "theme": "outlined" };
   var QuestionCircleOutlined_default = QuestionCircleOutlined;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/QuestionCircleOutlined.js
-  function _extends60() {
-    _extends60 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends58() {
+    _extends58 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -66639,13 +65460,13 @@ html body {
       }
       return target;
     };
-    return _extends60.apply(this, arguments);
+    return _extends58.apply(this, arguments);
   }
-  var QuestionCircleOutlined2 = (props, ref) => /* @__PURE__ */ React296.createElement(AntdIcon_default, _extends60({}, props, {
+  var QuestionCircleOutlined2 = (props, ref) => /* @__PURE__ */ React288.createElement(AntdIcon_default, _extends58({}, props, {
     ref,
     icon: QuestionCircleOutlined_default
   }));
-  var RefIcon17 = /* @__PURE__ */ React296.forwardRef(QuestionCircleOutlined2);
+  var RefIcon17 = /* @__PURE__ */ React288.forwardRef(QuestionCircleOutlined2);
   if (true) {
     RefIcon17.displayName = "QuestionCircleOutlined";
   }
@@ -66675,7 +65496,7 @@ html body {
       classNames: contextClassNames,
       styles: contextStyles,
       tooltip: contextTooltip
-    } = React297.useContext(FormContext2);
+    } = React289.useContext(FormContext2);
     if (!label) {
       return null;
     }
@@ -66693,14 +65514,14 @@ html body {
     }
     const tooltipProps = convertToTooltipProps_default(tooltip, contextTooltip);
     if (tooltipProps) {
-      const tooltipNode = /* @__PURE__ */ React297.createElement(tooltip_default, __spreadValues({}, tooltipProps), /* @__PURE__ */ React297.createElement("span", {
+      const tooltipNode = /* @__PURE__ */ React289.createElement(tooltip_default, __spreadValues({}, tooltipProps), /* @__PURE__ */ React289.createElement("span", {
         className: `${prefixCls}-item-tooltip`,
         onClick: (e3) => {
           e3.preventDefault();
         },
         tabIndex: -1
-      }, tooltipProps.icon || tooltipProps.children || /* @__PURE__ */ React297.createElement(QuestionCircleOutlined_default2, null)));
-      labelChildren = /* @__PURE__ */ React297.createElement(React297.Fragment, null, labelChildren, tooltipNode);
+      }, tooltipProps.icon || tooltipProps.children || /* @__PURE__ */ React289.createElement(QuestionCircleOutlined_default2, null)));
+      labelChildren = /* @__PURE__ */ React289.createElement(React289.Fragment, null, labelChildren, tooltipNode);
     }
     const isOptionalMark = requiredMark === "optional";
     const isRenderMark = typeof requiredMark === "function";
@@ -66710,7 +65531,7 @@ html body {
         required: !!required5
       });
     } else if (isOptionalMark && !required5) {
-      labelChildren = /* @__PURE__ */ React297.createElement(React297.Fragment, null, labelChildren, /* @__PURE__ */ React297.createElement("span", {
+      labelChildren = /* @__PURE__ */ React289.createElement(React289.Fragment, null, labelChildren, /* @__PURE__ */ React289.createElement("span", {
         className: `${prefixCls}-item-optional`,
         title: ""
       }, (formLocale == null ? void 0 : formLocale.optional) || ((_a = en_US_default6.Form) == null ? void 0 : _a.optional)));
@@ -66726,9 +65547,9 @@ html body {
       [`${prefixCls}-item-required-mark-${markType}`]: markType,
       [`${prefixCls}-item-no-colon`]: !computedColon
     });
-    return /* @__PURE__ */ React297.createElement(col_default, __spreadProps(__spreadValues({}, mergedLabelCol), {
+    return /* @__PURE__ */ React289.createElement(col_default, __spreadProps(__spreadValues({}, mergedLabelCol), {
       className: labelColClassName
-    }), /* @__PURE__ */ React297.createElement("label", {
+    }), /* @__PURE__ */ React289.createElement("label", {
       htmlFor,
       className: labelClassName,
       style: contextStyles == null ? void 0 : contextStyles.label,
@@ -66738,7 +65559,7 @@ html body {
   var FormItemLabel_default = FormItemLabel;
 
   // ../custom_dashboard/node_modules/antd/es/form/FormItem/StatusProvider.js
-  var React298 = __toESM(require_react());
+  var React290 = __toESM(require_react());
   "use client";
   var iconMap = {
     success: CheckCircleFilled_default2,
@@ -66760,7 +65581,7 @@ html body {
     const itemPrefixCls = `${prefixCls}-item`;
     const {
       feedbackIcons
-    } = React298.useContext(FormContext2);
+    } = React290.useContext(FormContext2);
     const mergedValidateStatus = getStatus(errors, warnings, meta, null, !!hasFeedback, validateStatus);
     const {
       isFormItemInput: parentIsFormItemInput,
@@ -66768,8 +65589,8 @@ html body {
       hasFeedback: parentHasFeedback,
       feedbackIcon: parentFeedbackIcon,
       name: parentName
-    } = React298.useContext(FormItemInputContext);
-    const formItemStatusContext = React298.useMemo(() => {
+    } = React290.useContext(FormItemInputContext);
+    const formItemStatusContext = React290.useMemo(() => {
       var _a;
       let feedbackIcon;
       if (hasFeedback) {
@@ -66780,9 +65601,9 @@ html body {
           warnings
         })) == null ? void 0 : _a[mergedValidateStatus]);
         const IconNode2 = mergedValidateStatus ? iconMap[mergedValidateStatus] : null;
-        feedbackIcon = customIconNode !== false && IconNode2 ? /* @__PURE__ */ React298.createElement("span", {
+        feedbackIcon = customIconNode !== false && IconNode2 ? /* @__PURE__ */ React290.createElement("span", {
           className: clsx(`${itemPrefixCls}-feedback-icon`, `${itemPrefixCls}-feedback-icon-${mergedValidateStatus}`)
-        }, customIconNode || /* @__PURE__ */ React298.createElement(IconNode2, null)) : null;
+        }, customIconNode || /* @__PURE__ */ React290.createElement(IconNode2, null)) : null;
       }
       const context = {
         status: mergedValidateStatus || "",
@@ -66802,7 +65623,7 @@ html body {
       }
       return context;
     }, [mergedValidateStatus, hasFeedback, noStyle, parentIsFormItemInput, parentStatus]);
-    return /* @__PURE__ */ React298.createElement(FormItemInputContext.Provider, {
+    return /* @__PURE__ */ React290.createElement(FormItemInputContext.Provider, {
       value: formItemStatusContext
     }, children);
   }
@@ -66854,16 +65675,16 @@ html body {
     const {
       requiredMark,
       layout: formLayout
-    } = React299.useContext(FormContext2);
+    } = React291.useContext(FormContext2);
     const layout = propsLayout || formLayout;
     const vertical = layout === "vertical";
-    const itemRef = React299.useRef(null);
+    const itemRef = React291.useRef(null);
     const debounceErrors = useDebounce(errors);
     const debounceWarnings = useDebounce(warnings);
     const hasHelp = isNonNullable_default(help);
     const hasError = !!(hasHelp || errors.length || warnings.length);
     const isOnScreen = !!itemRef.current && isVisible_default(itemRef.current);
-    const [marginBottom, setMarginBottom] = React299.useState(null);
+    const [marginBottom, setMarginBottom] = React291.useState(null);
     useLayoutEffect_default(() => {
       if (hasError && itemRef.current) {
         const itemStyle = getComputedStyle(itemRef.current);
@@ -66891,11 +65712,11 @@ html body {
       [`${itemPrefixCls}-hidden`]: hidden,
       [`${itemPrefixCls}-${layout}`]: layout
     });
-    return /* @__PURE__ */ React299.createElement("div", {
+    return /* @__PURE__ */ React291.createElement("div", {
       className: itemClassName,
       style: style2,
       ref: itemRef
-    }, /* @__PURE__ */ React299.createElement(row_default, __spreadValues({
+    }, /* @__PURE__ */ React291.createElement(row_default, __spreadValues({
       className: `${itemPrefixCls}-row`
     }, omit(restProps, [
       "_internalItemRender",
@@ -66928,14 +65749,14 @@ html body {
       "valuePropName",
       "wrapperCol",
       "validateDebounce"
-    ])), /* @__PURE__ */ React299.createElement(FormItemLabel_default, __spreadProps(__spreadValues({
+    ])), /* @__PURE__ */ React291.createElement(FormItemLabel_default, __spreadProps(__spreadValues({
       htmlFor: fieldId
     }, props), {
       requiredMark,
       required: required5 != null ? required5 : isRequired,
       prefixCls,
       vertical
-    })), /* @__PURE__ */ React299.createElement(FormItemInput_default, __spreadProps(__spreadValues(__spreadValues({}, props), meta), {
+    })), /* @__PURE__ */ React291.createElement(FormItemInput_default, __spreadProps(__spreadValues(__spreadValues({}, props), meta), {
       errors: debounceErrors,
       warnings: debounceWarnings,
       prefixCls,
@@ -66943,9 +65764,9 @@ html body {
       help,
       marginBottom,
       onErrorVisibleChanged
-    }), /* @__PURE__ */ React299.createElement(NoStyleItemContext.Provider, {
+    }), /* @__PURE__ */ React291.createElement(NoStyleItemContext.Provider, {
       value: onSubItemMetaChange
-    }, /* @__PURE__ */ React299.createElement(StatusProvider_default, {
+    }, /* @__PURE__ */ React291.createElement(StatusProvider_default, {
       prefixCls,
       meta,
       errors: meta.errors,
@@ -66953,7 +65774,7 @@ html body {
       hasFeedback,
       validateStatus: mergedValidateStatus,
       name
-    }, children)))), !!marginBottom && /* @__PURE__ */ React299.createElement("div", {
+    }, children)))), !!marginBottom && /* @__PURE__ */ React291.createElement("div", {
       className: `${itemPrefixCls}-margin-offset`,
       style: {
         marginBottom: -marginBottom
@@ -66973,7 +65794,7 @@ html body {
       return propValueA === propValueB || typeof propValueA === "function" || typeof propValueB === "function";
     });
   }
-  var MemoInput = /* @__PURE__ */ React300.memo((props) => props.children, (prev2, next2) => isSimilarControl(prev2.control, next2.control) && prev2.update === next2.update && prev2.childProps.length === next2.childProps.length && prev2.childProps.every((value, index) => value === next2.childProps[index]));
+  var MemoInput = /* @__PURE__ */ React292.memo((props) => props.children, (prev2, next2) => isSimilarControl(prev2.control, next2.control) && prev2.update === next2.update && prev2.childProps.length === next2.childProps.length && prev2.childProps.every((value, index) => value === next2.childProps[index]));
   function genEmptyMeta() {
     return {
       errors: [],
@@ -67005,27 +65826,27 @@ html body {
     } = props;
     const {
       getPrefixCls
-    } = React300.useContext(ConfigContext);
+    } = React292.useContext(ConfigContext);
     const {
       name: formName
-    } = React300.useContext(FormContext2);
+    } = React292.useContext(FormContext2);
     const mergedChildren = useChildren2(children);
     const isRenderProps = typeof mergedChildren === "function";
-    const notifyParentMetaChange = React300.useContext(NoStyleItemContext);
+    const notifyParentMetaChange = React292.useContext(NoStyleItemContext);
     const {
       validateTrigger: contextValidateTrigger
-    } = React300.useContext(FieldContext_default);
+    } = React292.useContext(FieldContext_default);
     const mergedValidateTrigger = isNonNullable_default(validateTrigger) ? validateTrigger : contextValidateTrigger;
     const hasName = isNonNullable_default(name);
     const prefixCls = getPrefixCls("form", customizePrefixCls);
     const rootCls = useCSSVarCls_default(prefixCls);
-    const [hashId, cssVarCls] = style_default21(prefixCls, rootCls);
+    const [hashId, cssVarCls] = style_default20(prefixCls, rootCls);
     const warning6 = devUseWarning("Form.Item");
     if (true) {
       true ? warning6(name !== null, "usage", "`null` is passed as `name` property") : void 0;
     }
-    const listContext = React300.useContext(ListContext_default);
-    const fieldKeyPathRef = React300.useRef(null);
+    const listContext = React292.useContext(ListContext_default);
+    const fieldKeyPathRef = React292.useRef(null);
     const [subFieldErrors, setSubFieldErrors] = useFrameState({});
     const [meta, setMeta] = useState_default(() => genEmptyMeta());
     const onMetaChange = (nextMeta) => {
@@ -67058,7 +65879,7 @@ html body {
         return clone;
       });
     };
-    const [mergedErrors, mergedWarnings] = React300.useMemo(() => {
+    const [mergedErrors, mergedWarnings] = React292.useMemo(() => {
       const errorList = _toConsumableArray(meta.errors);
       const warningList = _toConsumableArray(meta.warnings);
       Object.values(subFieldErrors).forEach((subFieldError) => {
@@ -67070,7 +65891,7 @@ html body {
     const getItemRef = useItemRef();
     function renderLayout(baseChildren, fieldId, isRequired) {
       if (noStyle && !hidden) {
-        return /* @__PURE__ */ React300.createElement(StatusProvider_default, {
+        return /* @__PURE__ */ React292.createElement(StatusProvider_default, {
           prefixCls,
           hasFeedback: props.hasFeedback,
           validateStatus: props.validateStatus,
@@ -67081,7 +65902,7 @@ html body {
           name
         }, baseChildren);
       }
-      return /* @__PURE__ */ React300.createElement(ItemHolder, __spreadProps(__spreadValues({
+      return /* @__PURE__ */ React292.createElement(ItemHolder, __spreadProps(__spreadValues({
         key: "row"
       }, props), {
         className: clsx(className, cssVarCls, rootCls, hashId),
@@ -67108,7 +65929,7 @@ html body {
     if (messageVariables) {
       variables = __spreadValues(__spreadValues({}, variables), messageVariables);
     }
-    return /* @__PURE__ */ React300.createElement(Field_default, __spreadProps(__spreadValues({}, props), {
+    return /* @__PURE__ */ React292.createElement(Field_default, __spreadProps(__spreadValues({}, props), {
       messageVariables: variables,
       trigger,
       validateTrigger: mergedValidateTrigger,
@@ -67137,7 +65958,7 @@ html body {
         true ? warning6(!hasName, "usage", "A `Form.Item` with a render function cannot be a field, and thus cannot have a `name` prop.") : void 0;
       } else if (dependencies && !isRenderProps && !hasName) {
         true ? warning6(false, "usage", "Must set `name` or use a render function when `dependencies` is set.") : void 0;
-      } else if (/* @__PURE__ */ React300.isValidElement(mergedChildren)) {
+      } else if (/* @__PURE__ */ React292.isValidElement(mergedChildren)) {
         true ? warning6(mergedChildren.props.defaultValue === void 0, "usage", "`defaultValue` will not work on controlled Field. You should use `initialValues` of Form instead.") : void 0;
         const childProps = __spreadValues(__spreadValues({}, mergedChildren.props), mergedControl);
         if (!childProps.id) {
@@ -67171,7 +65992,7 @@ html body {
           };
         });
         const watchingChildProps = [childProps["aria-required"], childProps["aria-invalid"], childProps["aria-describedby"]];
-        childNode = /* @__PURE__ */ React300.createElement(MemoInput, {
+        childNode = /* @__PURE__ */ React292.createElement(MemoInput, {
           control: mergedControl,
           update: mergedChildren,
           childProps: watchingChildProps
@@ -67190,7 +66011,7 @@ html body {
   var FormItem_default = FormItem;
 
   // ../custom_dashboard/node_modules/antd/es/form/FormList.js
-  var React301 = __toESM(require_react());
+  var React293 = __toESM(require_react());
   "use client";
   var FormList = (_a) => {
     var _b = _a, {
@@ -67206,13 +66027,13 @@ html body {
     }
     const {
       getPrefixCls
-    } = React301.useContext(ConfigContext);
+    } = React293.useContext(ConfigContext);
     const prefixCls = getPrefixCls("form", customizePrefixCls);
-    const contextValue = React301.useMemo(() => ({
+    const contextValue = React293.useMemo(() => ({
       prefixCls,
       status: "error"
     }), [prefixCls]);
-    return /* @__PURE__ */ React301.createElement(List_default, __spreadValues({}, props), (fields, operation, meta) => /* @__PURE__ */ React301.createElement(FormItemPrefixContext.Provider, {
+    return /* @__PURE__ */ React293.createElement(List_default, __spreadValues({}, props), (fields, operation, meta) => /* @__PURE__ */ React293.createElement(FormItemPrefixContext.Provider, {
       value: contextValue
     }, children(fields.map((field) => __spreadProps(__spreadValues({}, field), {
       fieldKey: field.key
@@ -67224,11 +66045,11 @@ html body {
   var FormList_default = FormList;
 
   // ../custom_dashboard/node_modules/antd/es/form/hooks/useFormInstance.js
-  var React302 = __toESM(require_react());
+  var React294 = __toESM(require_react());
   function useFormInstance() {
     const {
       form
-    } = React302.useContext(FormContext2);
+    } = React294.useContext(FormContext2);
     return form;
   }
 
@@ -67245,14 +66066,14 @@ html body {
   var form_default = Form3;
 
   // ../custom_dashboard/node_modules/antd/es/input/Group.js
-  var React303 = __toESM(require_react());
-  var import_react120 = __toESM(require_react());
+  var React295 = __toESM(require_react());
+  var import_react119 = __toESM(require_react());
   "use client";
   var Group = (props) => {
     const {
       getPrefixCls,
       direction
-    } = (0, import_react120.useContext)(ConfigContext);
+    } = (0, import_react119.useContext)(ConfigContext);
     const {
       prefixCls: customizePrefixCls,
       className
@@ -67266,17 +66087,17 @@ html body {
       [`${prefixCls}-compact`]: props.compact,
       [`${prefixCls}-rtl`]: direction === "rtl"
     }, hashId, className);
-    const formItemContext = (0, import_react120.useContext)(FormItemInputContext);
-    const groupFormItemContext = (0, import_react120.useMemo)(() => __spreadProps(__spreadValues({}, formItemContext), {
+    const formItemContext = (0, import_react119.useContext)(FormItemInputContext);
+    const groupFormItemContext = (0, import_react119.useMemo)(() => __spreadProps(__spreadValues({}, formItemContext), {
       isFormItemInput: false
     }), [formItemContext]);
     if (true) {
       const warning6 = devUseWarning("Input.Group");
       warning6.deprecated(false, "Input.Group", "Space.Compact");
     }
-    return /* @__PURE__ */ React303.createElement(FormItemInputContext.Provider, {
+    return /* @__PURE__ */ React295.createElement(FormItemInputContext.Provider, {
       value: groupFormItemContext
-    }, /* @__PURE__ */ React303.createElement(space_default.Compact, {
+    }, /* @__PURE__ */ React295.createElement(space_default.Compact, {
       className: cls,
       style: props.style,
       onMouseEnter: props.onMouseEnter,
@@ -67288,7 +66109,7 @@ html body {
   var Group_default2 = Group;
 
   // ../custom_dashboard/node_modules/antd/es/input/OTP/index.js
-  var React305 = __toESM(require_react());
+  var React297 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/input/style/otp.js
   var genOTPStyle = (token2) => {
@@ -67346,9 +66167,9 @@ html body {
   }, initComponentToken);
 
   // ../custom_dashboard/node_modules/antd/es/input/OTP/OTPInput.js
-  var React304 = __toESM(require_react());
+  var React296 = __toESM(require_react());
   "use client";
-  var OTPInput = /* @__PURE__ */ React304.forwardRef((props, ref) => {
+  var OTPInput = /* @__PURE__ */ React296.forwardRef((props, ref) => {
     const _a = props, {
       className,
       value,
@@ -67368,11 +66189,11 @@ html body {
     ]);
     const {
       getPrefixCls
-    } = React304.useContext(ConfigContext);
+    } = React296.useContext(ConfigContext);
     const prefixCls = getPrefixCls("otp");
     const maskValue = typeof mask === "string" ? mask : value;
-    const inputRef = React304.useRef(null);
-    React304.useImperativeHandle(ref, () => inputRef.current);
+    const inputRef = React296.useRef(null);
+    React296.useImperativeHandle(ref, () => inputRef.current);
     const onInternalChange = (e3) => {
       onChange(index, e3.target.value);
     };
@@ -67406,13 +66227,13 @@ html body {
       }
       syncSelection();
     };
-    return /* @__PURE__ */ React304.createElement("span", {
+    return /* @__PURE__ */ React296.createElement("span", {
       className: `${prefixCls}-input-wrapper`,
       role: "presentation"
-    }, mask && value !== "" && value !== void 0 && /* @__PURE__ */ React304.createElement("span", {
+    }, mask && value !== "" && value !== void 0 && /* @__PURE__ */ React296.createElement("span", {
       className: `${prefixCls}-mask-icon`,
       "aria-hidden": "true"
-    }, maskValue), /* @__PURE__ */ React304.createElement(Input_default4, __spreadProps(__spreadValues({
+    }, maskValue), /* @__PURE__ */ React296.createElement(Input_default4, __spreadProps(__spreadValues({
       "aria-label": `OTP Input ${index + 1}`,
       type: mask === true ? "password" : "text"
     }, restProps), {
@@ -67447,12 +66268,12 @@ html body {
     if (!separatorNode) {
       return null;
     }
-    return /* @__PURE__ */ React305.createElement("span", {
+    return /* @__PURE__ */ React297.createElement("span", {
       className: clsx(`${prefixCls}-separator`, semanticClassName),
       style: semanticStyle
     }, separatorNode);
   };
-  var OTP = /* @__PURE__ */ React305.forwardRef((props, ref) => {
+  var OTP = /* @__PURE__ */ React297.forwardRef((props, ref) => {
     const _a = props, {
       prefixCls: customizePrefixCls,
       length: length2 = 6,
@@ -67526,16 +66347,16 @@ html body {
     });
     const [hashId, cssVarCls] = otp_default(prefixCls);
     const mergedSize = useSize_default((ctx) => customSize != null ? customSize : ctx);
-    const formContext = React305.useContext(FormItemInputContext);
+    const formContext = React297.useContext(FormItemInputContext);
     const mergedStatus = getMergedStatus(formContext.status, customStatus);
-    const proxyFormContext = React305.useMemo(() => __spreadProps(__spreadValues({}, formContext), {
+    const proxyFormContext = React297.useMemo(() => __spreadProps(__spreadValues({}, formContext), {
       status: mergedStatus,
       hasFeedback: false,
       feedbackIcon: null
     }), [formContext, mergedStatus]);
-    const containerRef = React305.useRef(null);
-    const inputsRef = React305.useRef({});
-    React305.useImperativeHandle(ref, () => ({
+    const containerRef = React297.useRef(null);
+    const inputsRef = React297.useRef({});
+    React297.useImperativeHandle(ref, () => ({
       focus: () => {
         var _a2;
         (_a2 = inputsRef.current[0]) == null ? void 0 : _a2.focus();
@@ -67549,8 +66370,8 @@ html body {
       nativeElement: containerRef.current
     }));
     const internalFormatter = (txt) => formatter ? formatter(txt) : txt;
-    const [valueCells, setValueCells] = React305.useState(() => strToArr(internalFormatter(defaultValue || "")));
-    React305.useEffect(() => {
+    const [valueCells, setValueCells] = React297.useState(() => strToArr(internalFormatter(defaultValue || "")));
+    React297.useEffect(() => {
       if (value !== void 0) {
         setValueCells(strToArr(value));
       }
@@ -67624,7 +66445,7 @@ html body {
       inputMode,
       autoComplete
     };
-    return /* @__PURE__ */ React305.createElement("div", __spreadProps(__spreadValues({}, domAttrs), {
+    return /* @__PURE__ */ React297.createElement("div", __spreadProps(__spreadValues({}, domAttrs), {
       ref: containerRef,
       className: clsx(className, prefixCls, {
         [`${prefixCls}-sm`]: mergedSize === "small",
@@ -67633,16 +66454,16 @@ html body {
       }, cssVarCls, hashId, contextClassName, mergedClassNames.root),
       style: __spreadValues(__spreadValues(__spreadValues({}, mergedStyles.root), contextStyle), style2),
       role: "group"
-    }), /* @__PURE__ */ React305.createElement(FormItemInputContext.Provider, {
+    }), /* @__PURE__ */ React297.createElement(FormItemInputContext.Provider, {
       value: proxyFormContext
     }, Array.from({
       length: length2
     }).map((_, index) => {
       const key = `otp-${index}`;
       const singleValue = valueCells[index] || "";
-      return /* @__PURE__ */ React305.createElement(React305.Fragment, {
+      return /* @__PURE__ */ React297.createElement(React297.Fragment, {
         key
-      }, /* @__PURE__ */ React305.createElement(OTPInput_default, __spreadValues({
+      }, /* @__PURE__ */ React297.createElement(OTPInput_default, __spreadValues({
         ref: (inputEle) => {
           inputsRef.current[index] = inputEle;
         },
@@ -67656,7 +66477,7 @@ html body {
         onActiveChange: onInputActiveChange,
         autoFocus: index === 0 && autoFocus,
         onFocus: (event) => onInputFocus(event, index)
-      }, inputSharedProps)), index < length2 - 1 && /* @__PURE__ */ React305.createElement(Separator, {
+      }, inputSharedProps)), index < length2 - 1 && /* @__PURE__ */ React297.createElement(Separator, {
         separator,
         index,
         prefixCls,
@@ -67668,19 +66489,19 @@ html body {
   var OTP_default = OTP;
 
   // ../custom_dashboard/node_modules/antd/es/input/Password.js
-  var React308 = __toESM(require_react());
-  var import_react121 = __toESM(require_react());
+  var React300 = __toESM(require_react());
+  var import_react120 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/EyeInvisibleOutlined.js
-  var React306 = __toESM(require_react());
+  var React298 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/EyeInvisibleOutlined.js
   var EyeInvisibleOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z" } }, { "tag": "path", "attrs": { "d": "M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z" } }] }, "name": "eye-invisible", "theme": "outlined" };
   var EyeInvisibleOutlined_default = EyeInvisibleOutlined;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/EyeInvisibleOutlined.js
-  function _extends61() {
-    _extends61 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends59() {
+    _extends59 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -67691,28 +66512,28 @@ html body {
       }
       return target;
     };
-    return _extends61.apply(this, arguments);
+    return _extends59.apply(this, arguments);
   }
-  var EyeInvisibleOutlined2 = (props, ref) => /* @__PURE__ */ React306.createElement(AntdIcon_default, _extends61({}, props, {
+  var EyeInvisibleOutlined2 = (props, ref) => /* @__PURE__ */ React298.createElement(AntdIcon_default, _extends59({}, props, {
     ref,
     icon: EyeInvisibleOutlined_default
   }));
-  var RefIcon18 = /* @__PURE__ */ React306.forwardRef(EyeInvisibleOutlined2);
+  var RefIcon18 = /* @__PURE__ */ React298.forwardRef(EyeInvisibleOutlined2);
   if (true) {
     RefIcon18.displayName = "EyeInvisibleOutlined";
   }
   var EyeInvisibleOutlined_default2 = RefIcon18;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/EyeOutlined.js
-  var React307 = __toESM(require_react());
+  var React299 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/EyeOutlined.js
   var EyeOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z" } }] }, "name": "eye", "theme": "outlined" };
   var EyeOutlined_default = EyeOutlined;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/EyeOutlined.js
-  function _extends62() {
-    _extends62 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends60() {
+    _extends60 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -67723,13 +66544,13 @@ html body {
       }
       return target;
     };
-    return _extends62.apply(this, arguments);
+    return _extends60.apply(this, arguments);
   }
-  var EyeOutlined2 = (props, ref) => /* @__PURE__ */ React307.createElement(AntdIcon_default, _extends62({}, props, {
+  var EyeOutlined2 = (props, ref) => /* @__PURE__ */ React299.createElement(AntdIcon_default, _extends60({}, props, {
     ref,
     icon: EyeOutlined_default
   }));
-  var RefIcon19 = /* @__PURE__ */ React307.forwardRef(EyeOutlined2);
+  var RefIcon19 = /* @__PURE__ */ React299.forwardRef(EyeOutlined2);
   if (true) {
     RefIcon19.displayName = "EyeOutlined";
   }
@@ -67737,12 +66558,12 @@ html body {
 
   // ../custom_dashboard/node_modules/antd/es/input/Password.js
   "use client";
-  var defaultIconRender = (visible) => visible ? /* @__PURE__ */ React308.createElement(EyeOutlined_default2, null) : /* @__PURE__ */ React308.createElement(EyeInvisibleOutlined_default2, null);
+  var defaultIconRender = (visible) => visible ? /* @__PURE__ */ React300.createElement(EyeOutlined_default2, null) : /* @__PURE__ */ React300.createElement(EyeInvisibleOutlined_default2, null);
   var actionMap = {
     click: "onClick",
     hover: "onMouseOver"
   };
-  var Password = /* @__PURE__ */ React308.forwardRef((props, ref) => {
+  var Password = /* @__PURE__ */ React300.forwardRef((props, ref) => {
     const {
       disabled: customDisabled,
       action = "click",
@@ -67750,12 +66571,12 @@ html body {
       iconRender = defaultIconRender,
       suffix
     } = props;
-    const disabled = React308.useContext(DisabledContext_default);
+    const disabled = React300.useContext(DisabledContext_default);
     const mergedDisabled = customDisabled != null ? customDisabled : disabled;
     const visibilityControlled = typeof visibilityToggle === "object" && visibilityToggle.visible !== void 0;
-    const [visible, setVisible] = (0, import_react121.useState)(() => visibilityControlled ? visibilityToggle.visible : false);
-    const inputRef = (0, import_react121.useRef)(null);
-    React308.useEffect(() => {
+    const [visible, setVisible] = (0, import_react120.useState)(() => visibilityControlled ? visibilityToggle.visible : false);
+    const inputRef = (0, import_react120.useRef)(null);
+    React300.useEffect(() => {
       if (visibilityControlled) {
         setVisible(visibilityToggle.visible);
       }
@@ -67789,7 +66610,7 @@ html body {
           e3.preventDefault();
         }
       };
-      return /* @__PURE__ */ React308.cloneElement(/* @__PURE__ */ React308.isValidElement(icon) ? icon : /* @__PURE__ */ React308.createElement("span", null, icon), iconProps);
+      return /* @__PURE__ */ React300.cloneElement(/* @__PURE__ */ React300.isValidElement(icon) ? icon : /* @__PURE__ */ React300.createElement("span", null, icon), iconProps);
     };
     const _a = props, {
       className,
@@ -67804,7 +66625,7 @@ html body {
     ]);
     const {
       getPrefixCls
-    } = React308.useContext(ConfigContext);
+    } = React300.useContext(ConfigContext);
     const inputPrefixCls = getPrefixCls("input", customizeInputPrefixCls);
     const prefixCls = getPrefixCls("input-password", customizePrefixCls);
     const suffixIcon = visibilityToggle && getIcon2(prefixCls);
@@ -67815,12 +66636,12 @@ html body {
       type: visible ? "text" : "password",
       className: inputClassName,
       prefixCls: inputPrefixCls,
-      suffix: /* @__PURE__ */ React308.createElement(React308.Fragment, null, suffixIcon, suffix)
+      suffix: /* @__PURE__ */ React300.createElement(React300.Fragment, null, suffixIcon, suffix)
     });
     if (size) {
       omittedProps.size = size;
     }
-    return /* @__PURE__ */ React308.createElement(Input_default4, __spreadValues({
+    return /* @__PURE__ */ React300.createElement(Input_default4, __spreadValues({
       ref: composeRef(ref, inputRef)
     }, omittedProps));
   });
@@ -67830,7 +66651,7 @@ html body {
   var Password_default = Password;
 
   // ../custom_dashboard/node_modules/antd/es/input/Search.js
-  var React309 = __toESM(require_react());
+  var React301 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/input/style/search.js
   var genSearchStyle = (token2) => {
@@ -67861,7 +66682,7 @@ html body {
 
   // ../custom_dashboard/node_modules/antd/es/input/Search.js
   "use client";
-  var Search = /* @__PURE__ */ React309.forwardRef((props, ref) => {
+  var Search = /* @__PURE__ */ React301.forwardRef((props, ref) => {
     const _a = props, {
       prefixCls: customizePrefixCls,
       inputPrefixCls: customizeInputPrefixCls,
@@ -67917,7 +66738,7 @@ html body {
         _default: "root"
       }
     });
-    const composedRef = React309.useRef(false);
+    const composedRef = React301.useRef(false);
     const prefixCls = getPrefixCls("input-search", customizePrefixCls);
     const inputPrefixCls = getPrefixCls("input", customizeInputPrefixCls);
     const [hashId, cssVarCls] = search_default(prefixCls);
@@ -67928,7 +66749,7 @@ html body {
       var _a2;
       return (_a2 = customizeSize != null ? customizeSize : compactSize) != null ? _a2 : ctx;
     });
-    const inputRef = React309.useRef(null);
+    const inputRef = React301.useRef(null);
     const onChange = (e3) => {
       if ((e3 == null ? void 0 : e3.target) && e3.type === "click" && customOnSearch) {
         customOnSearch(e3.target.value, e3, {
@@ -67958,7 +66779,7 @@ html body {
       customOnPressEnter == null ? void 0 : customOnPressEnter(e3);
       onSearch(e3);
     };
-    const searchIcon = typeof enterButton === "boolean" ? /* @__PURE__ */ React309.createElement(SearchOutlined_default2, null) : null;
+    const searchIcon = typeof enterButton === "boolean" ? /* @__PURE__ */ React301.createElement(SearchOutlined_default2, null) : null;
     const btnPrefixCls = `${prefixCls}-btn`;
     const btnClassName = clsx(btnPrefixCls, {
       [`${btnPrefixCls}-${variant}`]: variant
@@ -67980,7 +66801,7 @@ html body {
         size
       } : {}));
     } else {
-      button = /* @__PURE__ */ React309.createElement(Button_default, {
+      button = /* @__PURE__ */ React301.createElement(Button_default, {
         classNames: mergedClassNames.button,
         styles: mergedStyles.button,
         className: btnClassName,
@@ -68029,12 +66850,12 @@ html body {
       onChange,
       disabled
     }), Object.keys(rootProps));
-    return /* @__PURE__ */ React309.createElement(Compact_default, __spreadProps(__spreadValues({
+    return /* @__PURE__ */ React301.createElement(Compact_default, __spreadProps(__spreadValues({
       className: mergedClassName,
       style: __spreadValues(__spreadValues({}, style2), mergedStyles.root)
     }, rootProps), {
       hidden
-    }), /* @__PURE__ */ React309.createElement(Input_default4, __spreadValues({
+    }), /* @__PURE__ */ React301.createElement(Input_default4, __spreadValues({
       ref: composeRef(inputRef, ref)
     }, inputProps)), button);
   });
@@ -68044,14 +66865,14 @@ html body {
   var Search_default = Search;
 
   // ../custom_dashboard/node_modules/antd/es/input/TextArea.js
-  var React312 = __toESM(require_react());
-  var import_react123 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@rc-component/textarea/es/TextArea.js
+  var React304 = __toESM(require_react());
   var import_react122 = __toESM(require_react());
 
+  // ../custom_dashboard/node_modules/@rc-component/textarea/es/TextArea.js
+  var import_react121 = __toESM(require_react());
+
   // ../custom_dashboard/node_modules/@rc-component/textarea/es/ResizableTextArea.js
-  var React310 = __toESM(require_react());
+  var React302 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/textarea/es/calculateNodeHeight.js
   var HIDDEN_TEXTAREA_STYLE = `
@@ -68154,8 +66975,8 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/textarea/es/ResizableTextArea.js
-  function _extends63() {
-    _extends63 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends61() {
+    _extends61 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -68166,12 +66987,12 @@ html body {
       }
       return target;
     };
-    return _extends63.apply(this, arguments);
+    return _extends61.apply(this, arguments);
   }
   var RESIZE_START = 0;
   var RESIZE_MEASURING = 1;
   var RESIZE_STABLE = 2;
-  var ResizableTextArea = /* @__PURE__ */ React310.forwardRef((props, ref) => {
+  var ResizableTextArea = /* @__PURE__ */ React302.forwardRef((props, ref) => {
     const _a = props, {
       prefixCls,
       defaultValue,
@@ -68201,19 +67022,19 @@ html body {
       setMergedValue(event.target.value);
       onChange == null ? void 0 : onChange(event);
     };
-    const textareaRef = React310.useRef();
-    React310.useImperativeHandle(ref, () => ({
+    const textareaRef = React302.useRef();
+    React302.useImperativeHandle(ref, () => ({
       textArea: textareaRef.current
     }));
-    const [minRows, maxRows] = React310.useMemo(() => {
+    const [minRows, maxRows] = React302.useMemo(() => {
       if (autoSize && typeof autoSize === "object") {
         return [autoSize.minRows, autoSize.maxRows];
       }
       return [];
     }, [autoSize]);
     const needAutoSize = !!autoSize;
-    const [resizeState, setResizeState] = React310.useState(RESIZE_STABLE);
-    const [autoSizeStyle, setAutoSizeStyle] = React310.useState();
+    const [resizeState, setResizeState] = React302.useState(RESIZE_STABLE);
+    const [autoSizeStyle, setAutoSizeStyle] = React302.useState();
     const startResize = () => {
       setResizeState(RESIZE_START);
       if (false) {
@@ -68235,7 +67056,7 @@ html body {
       } else {
       }
     }, [resizeState]);
-    const resizeRafRef = React310.useRef();
+    const resizeRafRef = React302.useRef();
     const cleanRaf = () => {
       raf_default.cancel(resizeRafRef.current);
     };
@@ -68250,17 +67071,17 @@ html body {
         }
       }
     };
-    React310.useEffect(() => cleanRaf, []);
+    React302.useEffect(() => cleanRaf, []);
     const mergedAutoSizeStyle = needAutoSize ? autoSizeStyle : null;
     const mergedStyle = __spreadValues(__spreadValues({}, style2), mergedAutoSizeStyle);
     if (resizeState === RESIZE_START || resizeState === RESIZE_MEASURING) {
       mergedStyle.overflowY = "hidden";
       mergedStyle.overflowX = "hidden";
     }
-    return /* @__PURE__ */ React310.createElement(es_default, {
+    return /* @__PURE__ */ React302.createElement(es_default, {
       onResize: onInternalResize,
       disabled: !(autoSize || onResize2)
-    }, /* @__PURE__ */ React310.createElement("textarea", _extends63({}, restProps, {
+    }, /* @__PURE__ */ React302.createElement("textarea", _extends61({}, restProps, {
       ref: textareaRef,
       style: mergedStyle,
       className: clsx(prefixCls, className, {
@@ -68274,8 +67095,8 @@ html body {
   var ResizableTextArea_default = ResizableTextArea;
 
   // ../custom_dashboard/node_modules/@rc-component/textarea/es/TextArea.js
-  function _extends64() {
-    _extends64 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends62() {
+    _extends62 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -68286,9 +67107,9 @@ html body {
       }
       return target;
     };
-    return _extends64.apply(this, arguments);
+    return _extends62.apply(this, arguments);
   }
-  var TextArea = /* @__PURE__ */ import_react122.default.forwardRef((_a, ref) => {
+  var TextArea = /* @__PURE__ */ import_react121.default.forwardRef((_a, ref) => {
     var _b = _a, {
       defaultValue,
       value: customValue,
@@ -68345,11 +67166,11 @@ html body {
     var _a2;
     const [value, setValue] = useControlledState(defaultValue, customValue);
     const formatValue = value === void 0 || value === null ? "" : String(value);
-    const [focused, setFocused] = import_react122.default.useState(false);
-    const compositionRef = import_react122.default.useRef(false);
-    const [textareaResized, setTextareaResized] = import_react122.default.useState(null);
-    const holderRef = (0, import_react122.useRef)(null);
-    const resizableTextAreaRef = (0, import_react122.useRef)(null);
+    const [focused, setFocused] = import_react121.default.useState(false);
+    const compositionRef = import_react121.default.useRef(false);
+    const [textareaResized, setTextareaResized] = import_react121.default.useState(null);
+    const holderRef = (0, import_react121.useRef)(null);
+    const resizableTextAreaRef = (0, import_react121.useRef)(null);
     const getTextArea = () => {
       var _a3;
       return (_a3 = resizableTextAreaRef.current) == null ? void 0 : _a3.textArea;
@@ -68357,7 +67178,7 @@ html body {
     const focus = () => {
       getTextArea().focus();
     };
-    (0, import_react122.useImperativeHandle)(ref, () => {
+    (0, import_react121.useImperativeHandle)(ref, () => {
       var _a3;
       return {
         resizableTextArea: resizableTextAreaRef.current,
@@ -68368,11 +67189,11 @@ html body {
         nativeElement: ((_a3 = holderRef.current) == null ? void 0 : _a3.nativeElement) || getTextArea()
       };
     });
-    (0, import_react122.useEffect)(() => {
+    (0, import_react121.useEffect)(() => {
       setFocused((prev2) => !disabled && prev2);
     }, [disabled]);
-    const [selection, setSelection] = import_react122.default.useState(null);
-    import_react122.default.useEffect(() => {
+    const [selection, setSelection] = import_react121.default.useState(null);
+    import_react121.default.useEffect(() => {
       if (selection) {
         getTextArea().setSelectionRange(...selection);
       }
@@ -68438,7 +67259,7 @@ html body {
       } else {
         dataCount = `${valueLength}${hasMaxLength ? ` / ${mergedMax}` : ""}`;
       }
-      suffixNode = /* @__PURE__ */ import_react122.default.createElement(import_react122.default.Fragment, null, suffixNode, /* @__PURE__ */ import_react122.default.createElement("span", {
+      suffixNode = /* @__PURE__ */ import_react121.default.createElement(import_react121.default.Fragment, null, suffixNode, /* @__PURE__ */ import_react121.default.createElement("span", {
         className: clsx(`${prefixCls}-data-count`, classNames == null ? void 0 : classNames.count),
         style: styles == null ? void 0 : styles.count
       }, dataCount));
@@ -68451,7 +67272,7 @@ html body {
       }
     };
     const isPureTextArea = !autoSize && !showCount && !allowClear;
-    return /* @__PURE__ */ import_react122.default.createElement(BaseInput_default, {
+    return /* @__PURE__ */ import_react121.default.createElement(BaseInput_default, {
       ref: holderRef,
       value: formatValue,
       allowClear,
@@ -68478,7 +67299,7 @@ html body {
       hidden,
       readOnly,
       onClear
-    }, /* @__PURE__ */ import_react122.default.createElement(ResizableTextArea_default, _extends64({}, rest, {
+    }, /* @__PURE__ */ import_react121.default.createElement(ResizableTextArea_default, _extends62({}, rest, {
       autoSize,
       maxLength,
       onKeyDown: handleKeyDown,
@@ -68501,7 +67322,7 @@ html body {
   var TextArea_default = TextArea;
 
   // ../custom_dashboard/node_modules/@rc-component/textarea/es/index.js
-  var es_default20 = TextArea_default;
+  var es_default19 = TextArea_default;
 
   // ../custom_dashboard/node_modules/antd/es/input/style/textarea.js
   var genTextAreaStyle = (token2) => {
@@ -68606,7 +67427,7 @@ html body {
 
   // ../custom_dashboard/node_modules/antd/es/input/TextArea.js
   "use client";
-  var TextArea2 = /* @__PURE__ */ (0, import_react123.forwardRef)((props, ref) => {
+  var TextArea2 = /* @__PURE__ */ (0, import_react122.forwardRef)((props, ref) => {
     var _b;
     const _a = props, {
       prefixCls: customizePrefixCls,
@@ -68657,19 +67478,19 @@ html body {
       classNames: contextClassNames,
       styles: contextStyles
     } = useComponentConfig("textArea");
-    const disabled = React312.useContext(DisabledContext_default);
+    const disabled = React304.useContext(DisabledContext_default);
     const mergedDisabled = customDisabled != null ? customDisabled : disabled;
     const {
       status: contextStatus,
       hasFeedback,
       feedbackIcon
-    } = React312.useContext(FormItemInputContext);
+    } = React304.useContext(FormItemInputContext);
     const mergedStatus = getMergedStatus(contextStatus, customStatus);
     const [mergedClassNames, mergedStyles] = useMergeSemantic([contextClassNames, classNames], [contextStyles, styles], {
       props
     });
-    const innerRef = React312.useRef(null);
-    React312.useImperativeHandle(ref, () => {
+    const innerRef = React304.useRef(null);
+    React304.useImperativeHandle(ref, () => {
       var _a2, _b2;
       return {
         resizableTextArea: (_a2 = innerRef.current) == null ? void 0 : _a2.resizableTextArea,
@@ -68698,8 +67519,8 @@ html body {
     });
     const [variant, enableVariantCls] = useVariants_default("textArea", customVariant, bordered);
     const mergedAllowClear = getAllowClear_default(allowClear != null ? allowClear : contextAllowClear);
-    const [isMouseDown, setIsMouseDown] = React312.useState(false);
-    const [resizeDirty, setResizeDirty] = React312.useState(false);
+    const [isMouseDown, setIsMouseDown] = React304.useState(false);
+    const [resizeDirty, setResizeDirty] = React304.useState(false);
     const onInternalMouseDown = (e3) => {
       setIsMouseDown(true);
       onMouseDown == null ? void 0 : onMouseDown(e3);
@@ -68719,7 +67540,7 @@ html body {
         }
       }
     };
-    return /* @__PURE__ */ React312.createElement(es_default20, __spreadProps(__spreadValues({
+    return /* @__PURE__ */ React304.createElement(es_default19, __spreadProps(__spreadValues({
       autoComplete: contextAutoComplete
     }, rest), {
       style: __spreadValues(__spreadValues(__spreadValues({}, mergedStyles.root), contextStyle), style2),
@@ -68754,7 +67575,7 @@ html body {
         }, hashId)
       }),
       prefixCls,
-      suffix: hasFeedback && /* @__PURE__ */ React312.createElement("span", {
+      suffix: hasFeedback && /* @__PURE__ */ React304.createElement("span", {
         className: `${prefixCls}-textarea-suffix`
       }, feedbackIcon),
       showCount,
@@ -68776,7 +67597,7 @@ html body {
   var input_default = Input4;
 
   // ../custom_dashboard/node_modules/antd/es/layout/layout.js
-  var React313 = __toESM(require_react());
+  var React305 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/layout/hooks/useHasSider.js
   function useHasSider(siders, children, hasSider) {
@@ -68798,7 +67619,7 @@ html body {
     displayName
   }) => {
     return (Component5) => {
-      const Adapter = /* @__PURE__ */ React313.forwardRef((props, ref) => /* @__PURE__ */ React313.createElement(Component5, __spreadValues({
+      const Adapter = /* @__PURE__ */ React305.forwardRef((props, ref) => /* @__PURE__ */ React305.createElement(Component5, __spreadValues({
         ref,
         suffixCls,
         tagName
@@ -68809,7 +67630,7 @@ html body {
       return Adapter;
     };
   };
-  var Basic = /* @__PURE__ */ React313.forwardRef((props, ref) => {
+  var Basic = /* @__PURE__ */ React305.forwardRef((props, ref) => {
     const _a = props, {
       prefixCls: customizePrefixCls,
       suffixCls,
@@ -68823,20 +67644,20 @@ html body {
     ]);
     const {
       getPrefixCls
-    } = React313.useContext(ConfigContext);
+    } = React305.useContext(ConfigContext);
     const prefixCls = getPrefixCls("layout", customizePrefixCls);
     const [hashId] = style_default10(prefixCls);
     const prefixWithSuffixCls = suffixCls ? `${prefixCls}-${suffixCls}` : prefixCls;
-    return /* @__PURE__ */ React313.createElement(TagName, __spreadValues({
+    return /* @__PURE__ */ React305.createElement(TagName, __spreadValues({
       className: clsx(customizePrefixCls || prefixWithSuffixCls, className, hashId),
       ref
     }, others));
   });
-  var BasicLayout = /* @__PURE__ */ React313.forwardRef((props, ref) => {
+  var BasicLayout = /* @__PURE__ */ React305.forwardRef((props, ref) => {
     const {
       direction
-    } = React313.useContext(ConfigContext);
-    const [siders, setSiders] = React313.useState([]);
+    } = React305.useContext(ConfigContext);
+    const [siders, setSiders] = React305.useState([]);
     const _a = props, {
       prefixCls: customizePrefixCls,
       className,
@@ -68867,7 +67688,7 @@ html body {
       [`${prefixCls}-has-sider`]: mergedHasSider,
       [`${prefixCls}-rtl`]: direction === "rtl"
     }, contextClassName, className, rootClassName, hashId, cssVarCls);
-    const contextValue = React313.useMemo(() => ({
+    const contextValue = React305.useMemo(() => ({
       siderHook: {
         addSider: (id) => {
           setSiders((prev2) => [].concat(_toConsumableArray(prev2), [id]));
@@ -68877,9 +67698,9 @@ html body {
         }
       }
     }), []);
-    return /* @__PURE__ */ React313.createElement(LayoutContext.Provider, {
+    return /* @__PURE__ */ React305.createElement(LayoutContext.Provider, {
       value: contextValue
-    }, /* @__PURE__ */ React313.createElement(Tag, __spreadValues({
+    }, /* @__PURE__ */ React305.createElement(Tag, __spreadValues({
       ref,
       className: classString,
       style: __spreadValues(__spreadValues({}, contextStyle), style2)
@@ -68917,18 +67738,18 @@ html body {
   var layout_default2 = Layout2;
 
   // ../custom_dashboard/node_modules/antd/es/pagination/Pagination.js
-  var React319 = __toESM(require_react());
+  var React311 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/DoubleLeftOutlined.js
-  var React314 = __toESM(require_react());
+  var React306 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/DoubleLeftOutlined.js
   var DoubleLeftOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M272.9 512l265.4-339.1c4.1-5.2.4-12.9-6.3-12.9h-77.3c-4.9 0-9.6 2.3-12.6 6.1L186.8 492.3a31.99 31.99 0 000 39.5l255.3 326.1c3 3.9 7.7 6.1 12.6 6.1H532c6.7 0 10.4-7.7 6.3-12.9L272.9 512zm304 0l265.4-339.1c4.1-5.2.4-12.9-6.3-12.9h-77.3c-4.9 0-9.6 2.3-12.6 6.1L490.8 492.3a31.99 31.99 0 000 39.5l255.3 326.1c3 3.9 7.7 6.1 12.6 6.1H836c6.7 0 10.4-7.7 6.3-12.9L576.9 512z" } }] }, "name": "double-left", "theme": "outlined" };
   var DoubleLeftOutlined_default = DoubleLeftOutlined;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/DoubleLeftOutlined.js
-  function _extends65() {
-    _extends65 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends63() {
+    _extends63 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -68939,28 +67760,28 @@ html body {
       }
       return target;
     };
-    return _extends65.apply(this, arguments);
+    return _extends63.apply(this, arguments);
   }
-  var DoubleLeftOutlined2 = (props, ref) => /* @__PURE__ */ React314.createElement(AntdIcon_default, _extends65({}, props, {
+  var DoubleLeftOutlined2 = (props, ref) => /* @__PURE__ */ React306.createElement(AntdIcon_default, _extends63({}, props, {
     ref,
     icon: DoubleLeftOutlined_default
   }));
-  var RefIcon20 = /* @__PURE__ */ React314.forwardRef(DoubleLeftOutlined2);
+  var RefIcon20 = /* @__PURE__ */ React306.forwardRef(DoubleLeftOutlined2);
   if (true) {
     RefIcon20.displayName = "DoubleLeftOutlined";
   }
   var DoubleLeftOutlined_default2 = RefIcon20;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/DoubleRightOutlined.js
-  var React315 = __toESM(require_react());
+  var React307 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/DoubleRightOutlined.js
   var DoubleRightOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M533.2 492.3L277.9 166.1c-3-3.9-7.7-6.1-12.6-6.1H188c-6.7 0-10.4 7.7-6.3 12.9L447.1 512 181.7 851.1A7.98 7.98 0 00188 864h77.3c4.9 0 9.6-2.3 12.6-6.1l255.3-326.1c9.1-11.7 9.1-27.9 0-39.5zm304 0L581.9 166.1c-3-3.9-7.7-6.1-12.6-6.1H492c-6.7 0-10.4 7.7-6.3 12.9L751.1 512 485.7 851.1A7.98 7.98 0 00492 864h77.3c4.9 0 9.6-2.3 12.6-6.1l255.3-326.1c9.1-11.7 9.1-27.9 0-39.5z" } }] }, "name": "double-right", "theme": "outlined" };
   var DoubleRightOutlined_default = DoubleRightOutlined;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/DoubleRightOutlined.js
-  function _extends66() {
-    _extends66 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends64() {
+    _extends64 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -68971,20 +67792,20 @@ html body {
       }
       return target;
     };
-    return _extends66.apply(this, arguments);
+    return _extends64.apply(this, arguments);
   }
-  var DoubleRightOutlined2 = (props, ref) => /* @__PURE__ */ React315.createElement(AntdIcon_default, _extends66({}, props, {
+  var DoubleRightOutlined2 = (props, ref) => /* @__PURE__ */ React307.createElement(AntdIcon_default, _extends64({}, props, {
     ref,
     icon: DoubleRightOutlined_default
   }));
-  var RefIcon21 = /* @__PURE__ */ React315.forwardRef(DoubleRightOutlined2);
+  var RefIcon21 = /* @__PURE__ */ React307.forwardRef(DoubleRightOutlined2);
   if (true) {
     RefIcon21.displayName = "DoubleRightOutlined";
   }
   var DoubleRightOutlined_default2 = RefIcon21;
 
   // ../custom_dashboard/node_modules/@rc-component/pagination/es/Pagination.js
-  var import_react126 = __toESM(require_react());
+  var import_react125 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/pagination/es/locale/zh_CN.js
   var locale5 = {
@@ -69003,7 +67824,7 @@ html body {
   var zh_CN_default = locale5;
 
   // ../custom_dashboard/node_modules/@rc-component/pagination/es/Options.js
-  var import_react124 = __toESM(require_react());
+  var import_react123 = __toESM(require_react());
   var defaultPageSizeOptions = [10, 20, 50, 100];
   var Options = (props) => {
     const {
@@ -69019,8 +67840,8 @@ html body {
       showSizeChanger,
       sizeChangerRender
     } = props;
-    const [goInputText, setGoInputText] = import_react124.default.useState("");
-    const getValidValue = import_react124.default.useMemo(() => {
+    const [goInputText, setGoInputText] = import_react123.default.useState("");
+    const getValidValue = import_react123.default.useMemo(() => {
       return !goInputText || Number.isNaN(goInputText) ? void 0 : Number(goInputText);
     }, [goInputText]);
     const mergeBuildOptionText = typeof buildOptionText === "function" ? buildOptionText : (value) => `${value} ${locale6.items_per_page}`;
@@ -69083,20 +67904,20 @@ html body {
     }
     if (quickGo) {
       if (goButton) {
-        gotoButton = typeof goButton === "boolean" ? /* @__PURE__ */ import_react124.default.createElement("button", {
+        gotoButton = typeof goButton === "boolean" ? /* @__PURE__ */ import_react123.default.createElement("button", {
           type: "button",
           onClick: go,
           onKeyUp: go,
           disabled,
           className: `${prefixCls}-quick-jumper-button`
-        }, locale6.jump_to_confirm) : /* @__PURE__ */ import_react124.default.createElement("span", {
+        }, locale6.jump_to_confirm) : /* @__PURE__ */ import_react123.default.createElement("span", {
           onClick: go,
           onKeyUp: go
         }, goButton);
       }
-      goInput = /* @__PURE__ */ import_react124.default.createElement("div", {
+      goInput = /* @__PURE__ */ import_react123.default.createElement("div", {
         className: `${prefixCls}-quick-jumper`
-      }, locale6.jump_to, /* @__PURE__ */ import_react124.default.createElement("input", {
+      }, locale6.jump_to, /* @__PURE__ */ import_react123.default.createElement("input", {
         disabled,
         type: "text",
         value: goInputText,
@@ -69106,7 +67927,7 @@ html body {
         "aria-label": locale6.page
       }), locale6.page, gotoButton);
     }
-    return /* @__PURE__ */ import_react124.default.createElement("li", {
+    return /* @__PURE__ */ import_react123.default.createElement("li", {
       className: prefixCls
     }, changeSelect, goInput);
   };
@@ -69116,7 +67937,7 @@ html body {
   var Options_default = Options;
 
   // ../custom_dashboard/node_modules/@rc-component/pagination/es/Pager.js
-  var import_react125 = __toESM(require_react());
+  var import_react124 = __toESM(require_react());
   var Pager = (props) => {
     const {
       rootPrefixCls,
@@ -69140,10 +67961,10 @@ html body {
     const handleKeyPress = (e3) => {
       onKeyPress(e3, onClick, page);
     };
-    const pager = itemRender(page, "page", /* @__PURE__ */ import_react125.default.createElement("a", {
+    const pager = itemRender(page, "page", /* @__PURE__ */ import_react124.default.createElement("a", {
       rel: "nofollow"
     }, page));
-    return pager ? /* @__PURE__ */ import_react125.default.createElement("li", {
+    return pager ? /* @__PURE__ */ import_react124.default.createElement("li", {
       title: showTitle ? String(page) : null,
       className: cls,
       style: style2,
@@ -69158,8 +67979,8 @@ html body {
   var Pager_default = Pager;
 
   // ../custom_dashboard/node_modules/@rc-component/pagination/es/Pagination.js
-  function _extends67() {
-    _extends67 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends65() {
+    _extends65 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -69170,7 +67991,7 @@ html body {
       }
       return target;
     };
-    return _extends67.apply(this, arguments);
+    return _extends65.apply(this, arguments);
   }
   var defaultItemRender = (_, __, element) => element;
   function noop3() {
@@ -69218,12 +68039,12 @@ html body {
       prevIcon,
       nextIcon
     } = props;
-    const paginationRef = import_react126.default.useRef(null);
+    const paginationRef = import_react125.default.useRef(null);
     const [pageSize, setPageSize] = useControlledState(defaultPageSize, pageSizeProp);
     const [internalCurrent, setCurrent] = useControlledState(defaultCurrent, currentProp);
     const current = Math.max(1, Math.min(internalCurrent, calculatePage(void 0, pageSize, total)));
-    const [internalInputVal, setInternalInputVal] = import_react126.default.useState(current);
-    (0, import_react126.useEffect)(() => {
+    const [internalInputVal, setInternalInputVal] = import_react125.default.useState(current);
+    (0, import_react125.useEffect)(() => {
       setInternalInputVal(current);
     }, [current]);
     const hasOnChange = onChange !== noop3;
@@ -69234,13 +68055,13 @@ html body {
     const jumpPrevPage = Math.max(1, current - (showLessItems ? 3 : 5));
     const jumpNextPage = Math.min(calculatePage(void 0, pageSize, total), current + (showLessItems ? 3 : 5));
     function getItemIcon(icon, label) {
-      let iconNode = icon || /* @__PURE__ */ import_react126.default.createElement("button", {
+      let iconNode = icon || /* @__PURE__ */ import_react125.default.createElement("button", {
         type: "button",
         "aria-label": label,
         className: `${prefixCls}-item-link`
       });
       if (typeof icon === "function") {
-        iconNode = /* @__PURE__ */ import_react126.default.createElement(icon, props);
+        iconNode = /* @__PURE__ */ import_react125.default.createElement(icon, props);
       }
       return iconNode;
     }
@@ -69352,13 +68173,13 @@ html body {
     }
     function renderPrev(prevPage2) {
       const prevButton = itemRender(prevPage2, "prev", getItemIcon(prevIcon, "prev page"));
-      return /* @__PURE__ */ import_react126.default.isValidElement(prevButton) ? /* @__PURE__ */ import_react126.default.cloneElement(prevButton, {
+      return /* @__PURE__ */ import_react125.default.isValidElement(prevButton) ? /* @__PURE__ */ import_react125.default.cloneElement(prevButton, {
         disabled: !hasPrev
       }) : prevButton;
     }
     function renderNext(nextPage2) {
       const nextButton = itemRender(nextPage2, "next", getItemIcon(nextIcon, "next page"));
-      return /* @__PURE__ */ import_react126.default.isValidElement(nextButton) ? /* @__PURE__ */ import_react126.default.cloneElement(nextButton, {
+      return /* @__PURE__ */ import_react125.default.isValidElement(nextButton) ? /* @__PURE__ */ import_react125.default.cloneElement(nextButton, {
         disabled: !hasNext
       }) : nextButton;
     }
@@ -69372,7 +68193,7 @@ html body {
       aria: true,
       data: true
     });
-    const totalText = showTotal && /* @__PURE__ */ import_react126.default.createElement("li", {
+    const totalText = showTotal && /* @__PURE__ */ import_react125.default.createElement("li", {
       className: `${prefixCls}-total-text`
     }, showTotal(total, [total === 0 ? 0 : (current - 1) * pageSize + 1, current * pageSize > total ? total : current * pageSize]));
     let jumpNext = null;
@@ -69400,27 +68221,27 @@ html body {
     if (simple) {
       if (goButton) {
         if (typeof goButton === "boolean") {
-          gotoButton = /* @__PURE__ */ import_react126.default.createElement("button", {
+          gotoButton = /* @__PURE__ */ import_react125.default.createElement("button", {
             type: "button",
             onClick: handleGoTO,
             onKeyUp: handleGoTO
           }, locale6.jump_to_confirm);
         } else {
-          gotoButton = /* @__PURE__ */ import_react126.default.createElement("span", {
+          gotoButton = /* @__PURE__ */ import_react125.default.createElement("span", {
             onClick: handleGoTO,
             onKeyUp: handleGoTO
           }, goButton);
         }
-        gotoButton = /* @__PURE__ */ import_react126.default.createElement("li", {
+        gotoButton = /* @__PURE__ */ import_react125.default.createElement("li", {
           title: showTitle ? `${locale6.jump_to}${current}/${allPages}` : null,
           className: `${prefixCls}-simple-pager`
         }, gotoButton);
       }
-      simplePager = /* @__PURE__ */ import_react126.default.createElement("li", {
+      simplePager = /* @__PURE__ */ import_react125.default.createElement("li", {
         title: showTitle ? `${current}/${allPages}` : null,
         className: clsx(`${prefixCls}-simple-pager`, paginationClassNames == null ? void 0 : paginationClassNames.item),
         style: styles == null ? void 0 : styles.item
-      }, isReadOnly ? internalInputVal : /* @__PURE__ */ import_react126.default.createElement("input", {
+      }, isReadOnly ? internalInputVal : /* @__PURE__ */ import_react125.default.createElement("input", {
         type: "text",
         "aria-label": locale6.jump_to,
         value: internalInputVal,
@@ -69430,21 +68251,21 @@ html body {
         onChange: handleKeyUp,
         onBlur: handleBlur,
         size: 3
-      }), /* @__PURE__ */ import_react126.default.createElement("span", {
+      }), /* @__PURE__ */ import_react125.default.createElement("span", {
         className: `${prefixCls}-slash`
       }, "/"), allPages);
     }
     const pageBufferSize = showLessItems ? 1 : 2;
     if (allPages <= 3 + pageBufferSize * 2) {
       if (!allPages) {
-        pagerList.push(/* @__PURE__ */ import_react126.default.createElement(Pager_default, _extends67({}, pagerProps, {
+        pagerList.push(/* @__PURE__ */ import_react125.default.createElement(Pager_default, _extends65({}, pagerProps, {
           key: "noPager",
           page: 1,
           className: `${prefixCls}-item-disabled`
         })));
       }
       for (let i = 1; i <= allPages; i += 1) {
-        pagerList.push(/* @__PURE__ */ import_react126.default.createElement(Pager_default, _extends67({}, pagerProps, {
+        pagerList.push(/* @__PURE__ */ import_react125.default.createElement(Pager_default, _extends65({}, pagerProps, {
           key: i,
           page: i,
           active: current === i
@@ -69456,7 +68277,7 @@ html body {
       const jumpPrevContent = itemRender(jumpPrevPage, "jump-prev", getItemIcon(jumpPrevIcon, "prev page"));
       const jumpNextContent = itemRender(jumpNextPage, "jump-next", getItemIcon(jumpNextIcon, "next page"));
       if (showPrevNextJumpers) {
-        jumpPrev = jumpPrevContent ? /* @__PURE__ */ import_react126.default.createElement("li", {
+        jumpPrev = jumpPrevContent ? /* @__PURE__ */ import_react125.default.createElement("li", {
           title: showTitle ? prevItemTitle : null,
           key: "prev",
           onClick: jumpPrevHandle,
@@ -69466,7 +68287,7 @@ html body {
             [`${prefixCls}-jump-prev-custom-icon`]: !!jumpPrevIcon
           })
         }, jumpPrevContent) : null;
-        jumpNext = jumpNextContent ? /* @__PURE__ */ import_react126.default.createElement("li", {
+        jumpNext = jumpNextContent ? /* @__PURE__ */ import_react125.default.createElement("li", {
           title: showTitle ? nextItemTitle : null,
           key: "next",
           onClick: jumpNextHandle,
@@ -69486,33 +68307,33 @@ html body {
         left = allPages - pageBufferSize * 2;
       }
       for (let i = left; i <= right; i += 1) {
-        pagerList.push(/* @__PURE__ */ import_react126.default.createElement(Pager_default, _extends67({}, pagerProps, {
+        pagerList.push(/* @__PURE__ */ import_react125.default.createElement(Pager_default, _extends65({}, pagerProps, {
           key: i,
           page: i,
           active: current === i
         })));
       }
       if (current - 1 >= pageBufferSize * 2 && current !== 1 + 2) {
-        pagerList[0] = /* @__PURE__ */ import_react126.default.cloneElement(pagerList[0], {
+        pagerList[0] = /* @__PURE__ */ import_react125.default.cloneElement(pagerList[0], {
           className: clsx(`${prefixCls}-item-after-jump-prev`, pagerList[0].props.className)
         });
         pagerList.unshift(jumpPrev);
       }
       if (allPages - current >= pageBufferSize * 2 && current !== allPages - 2) {
         const lastOne = pagerList[pagerList.length - 1];
-        pagerList[pagerList.length - 1] = /* @__PURE__ */ import_react126.default.cloneElement(lastOne, {
+        pagerList[pagerList.length - 1] = /* @__PURE__ */ import_react125.default.cloneElement(lastOne, {
           className: clsx(`${prefixCls}-item-before-jump-next`, lastOne.props.className)
         });
         pagerList.push(jumpNext);
       }
       if (left !== 1) {
-        pagerList.unshift(/* @__PURE__ */ import_react126.default.createElement(Pager_default, _extends67({}, pagerProps, {
+        pagerList.unshift(/* @__PURE__ */ import_react125.default.createElement(Pager_default, _extends65({}, pagerProps, {
           key: 1,
           page: 1
         })));
       }
       if (right !== allPages) {
-        pagerList.push(/* @__PURE__ */ import_react126.default.createElement(Pager_default, _extends67({}, pagerProps, {
+        pagerList.push(/* @__PURE__ */ import_react125.default.createElement(Pager_default, _extends65({}, pagerProps, {
           key: allPages,
           page: allPages
         })));
@@ -69521,7 +68342,7 @@ html body {
     let prev2 = renderPrev(prevPage);
     if (prev2) {
       const prevDisabled = !hasPrev || !allPages;
-      prev2 = /* @__PURE__ */ import_react126.default.createElement("li", {
+      prev2 = /* @__PURE__ */ import_react125.default.createElement("li", {
         title: showTitle ? locale6.prev_page : null,
         onClick: prevHandle,
         tabIndex: prevDisabled ? null : 0,
@@ -69543,7 +68364,7 @@ html body {
         nextDisabled = !hasNext || !allPages;
         nextTabIndex = nextDisabled ? null : 0;
       }
-      next2 = /* @__PURE__ */ import_react126.default.createElement("li", {
+      next2 = /* @__PURE__ */ import_react125.default.createElement("li", {
         title: showTitle ? locale6.next_page : null,
         onClick: nextHandle,
         tabIndex: nextTabIndex,
@@ -69562,11 +68383,11 @@ html body {
       [`${prefixCls}-simple`]: simple,
       [`${prefixCls}-disabled`]: disabled
     });
-    return /* @__PURE__ */ import_react126.default.createElement("ul", _extends67({
+    return /* @__PURE__ */ import_react125.default.createElement("ul", _extends65({
       className: cls,
       style: style2,
       ref: paginationRef
-    }, dataOrAriaAttributeProps), totalText, prev2, simple ? simplePager : pagerList, next2, /* @__PURE__ */ import_react126.default.createElement(Options_default, {
+    }, dataOrAriaAttributeProps), totalText, prev2, simple ? simplePager : pagerList, next2, /* @__PURE__ */ import_react125.default.createElement(Options_default, {
       locale: locale6,
       rootPrefixCls: prefixCls,
       disabled,
@@ -70056,7 +68877,7 @@ html body {
       }
     };
   };
-  var prepareComponentToken17 = (token2) => __spreadValues({
+  var prepareComponentToken16 = (token2) => __spreadValues({
     itemBg: token2.colorBgContainer,
     itemSize: token2.controlHeight,
     itemSizeSM: token2.controlHeightSM,
@@ -70081,10 +68902,10 @@ html body {
     paginationSlashMarginInlineEnd: token2.marginSM,
     paginationEllipsisTextIndent: "0.13em"
   }, initInputToken(token2));
-  var style_default22 = genStyleHooks("Pagination", (token2) => {
+  var style_default21 = genStyleHooks("Pagination", (token2) => {
     const paginationToken = prepareToken4(token2);
     return [genPaginationStyle(paginationToken), genPaginationFocusStyle(paginationToken)];
-  }, prepareComponentToken17);
+  }, prepareComponentToken16);
 
   // ../custom_dashboard/node_modules/antd/es/pagination/style/bordered.js
   var genBorderedStyle = (token2) => {
@@ -70171,12 +68992,12 @@ html body {
   var bordered_default = genSubStyleComponent(["Pagination", "bordered"], (token2) => {
     const paginationToken = prepareToken4(token2);
     return genBorderedStyle(paginationToken);
-  }, prepareComponentToken17);
+  }, prepareComponentToken16);
 
   // ../custom_dashboard/node_modules/antd/es/pagination/useShowSizeChanger.js
-  var import_react127 = __toESM(require_react());
+  var import_react126 = __toESM(require_react());
   function useShowSizeChanger(showSizeChanger) {
-    return (0, import_react127.useMemo)(() => {
+    return (0, import_react126.useMemo)(() => {
       if (typeof showSizeChanger === "boolean") {
         return [showSizeChanger, {}];
       }
@@ -70237,7 +69058,7 @@ html body {
       totalBoundaryShowSizeChanger: contextTotalBoundaryShowSizeChanger
     } = useComponentConfig("pagination");
     const prefixCls = getPrefixCls("pagination", customizePrefixCls);
-    const [hashId, cssVarCls] = style_default22(prefixCls);
+    const [hashId, cssVarCls] = style_default21(prefixCls);
     const mergedSize = useSize_default(customizeSize);
     const isSmall = mergedSize === "small" || !!(xs && !mergedSize && responsive);
     const mergedProps = __spreadProps(__spreadValues({}, props), {
@@ -70253,7 +69074,7 @@ html body {
     const mergedShowSizeChanger = propShowSizeChanger != null ? propShowSizeChanger : contextShowSizeChanger;
     const mergedShowSizeChangerSelectProps = propSizeChangerSelectProps != null ? propSizeChangerSelectProps : contextSizeChangerSelectProps;
     const SizeChanger = selectComponentClass || select_default;
-    const mergedPageSizeOptions = React319.useMemo(() => {
+    const mergedPageSizeOptions = React311.useMemo(() => {
       return pageSizeOptions ? pageSizeOptions.map(Number) : void 0;
     }, [pageSizeOptions]);
     const sizeChangerRender = (info) => {
@@ -70271,7 +69092,7 @@ html body {
         onChange: propSizeChangerOnChange
       } = mergedShowSizeChangerSelectProps || {};
       const selectedValue = (_a2 = options.find((option) => String(option.value) === String(pageSize))) == null ? void 0 : _a2.value;
-      return /* @__PURE__ */ React319.createElement(SizeChanger, __spreadProps(__spreadValues({
+      return /* @__PURE__ */ React311.createElement(SizeChanger, __spreadProps(__spreadValues({
         disabled,
         showSearch: true,
         popupMatchSelectWidth: false,
@@ -70292,36 +69113,36 @@ html body {
       const warning6 = devUseWarning("Pagination");
       true ? warning6(!selectComponentClass, "usage", "`selectComponentClass` is not official api which will be removed.") : void 0;
     }
-    const iconsProps = React319.useMemo(() => {
-      const ellipsis = /* @__PURE__ */ React319.createElement("span", {
+    const iconsProps = React311.useMemo(() => {
+      const ellipsis = /* @__PURE__ */ React311.createElement("span", {
         className: `${prefixCls}-item-ellipsis`
       }, "\u2022\u2022\u2022");
-      const prevIcon = /* @__PURE__ */ React319.createElement("button", {
+      const prevIcon = /* @__PURE__ */ React311.createElement("button", {
         className: `${prefixCls}-item-link`,
         type: "button",
         tabIndex: -1
-      }, direction === "rtl" ? /* @__PURE__ */ React319.createElement(RightOutlined_default2, null) : /* @__PURE__ */ React319.createElement(LeftOutlined_default2, null));
-      const nextIcon = /* @__PURE__ */ React319.createElement("button", {
+      }, direction === "rtl" ? /* @__PURE__ */ React311.createElement(RightOutlined_default2, null) : /* @__PURE__ */ React311.createElement(LeftOutlined_default2, null));
+      const nextIcon = /* @__PURE__ */ React311.createElement("button", {
         className: `${prefixCls}-item-link`,
         type: "button",
         tabIndex: -1
-      }, direction === "rtl" ? /* @__PURE__ */ React319.createElement(LeftOutlined_default2, null) : /* @__PURE__ */ React319.createElement(RightOutlined_default2, null));
-      const jumpPrevIcon = /* @__PURE__ */ React319.createElement("a", {
+      }, direction === "rtl" ? /* @__PURE__ */ React311.createElement(LeftOutlined_default2, null) : /* @__PURE__ */ React311.createElement(RightOutlined_default2, null));
+      const jumpPrevIcon = /* @__PURE__ */ React311.createElement("a", {
         className: `${prefixCls}-item-link`
-      }, /* @__PURE__ */ React319.createElement("div", {
+      }, /* @__PURE__ */ React311.createElement("div", {
         className: `${prefixCls}-item-container`
-      }, direction === "rtl" ? /* @__PURE__ */ React319.createElement(DoubleRightOutlined_default2, {
+      }, direction === "rtl" ? /* @__PURE__ */ React311.createElement(DoubleRightOutlined_default2, {
         className: `${prefixCls}-item-link-icon`
-      }) : /* @__PURE__ */ React319.createElement(DoubleLeftOutlined_default2, {
+      }) : /* @__PURE__ */ React311.createElement(DoubleLeftOutlined_default2, {
         className: `${prefixCls}-item-link-icon`
       }), ellipsis));
-      const jumpNextIcon = /* @__PURE__ */ React319.createElement("a", {
+      const jumpNextIcon = /* @__PURE__ */ React311.createElement("a", {
         className: `${prefixCls}-item-link`
-      }, /* @__PURE__ */ React319.createElement("div", {
+      }, /* @__PURE__ */ React311.createElement("div", {
         className: `${prefixCls}-item-container`
-      }, direction === "rtl" ? /* @__PURE__ */ React319.createElement(DoubleLeftOutlined_default2, {
+      }, direction === "rtl" ? /* @__PURE__ */ React311.createElement(DoubleLeftOutlined_default2, {
         className: `${prefixCls}-item-link-icon`
-      }) : /* @__PURE__ */ React319.createElement(DoubleRightOutlined_default2, {
+      }) : /* @__PURE__ */ React311.createElement(DoubleRightOutlined_default2, {
         className: `${prefixCls}-item-link-icon`
       }), ellipsis));
       return {
@@ -70340,9 +69161,9 @@ html body {
       [`${prefixCls}-bordered`]: token2.wireframe
     }, contextClassName, className, rootClassName, mergedClassNames.root, hashId, cssVarCls);
     const mergedStyle = __spreadValues(__spreadValues(__spreadValues({}, mergedStyles.root), contextStyle), style2);
-    return /* @__PURE__ */ React319.createElement(React319.Fragment, null, token2.wireframe && /* @__PURE__ */ React319.createElement(bordered_default, {
+    return /* @__PURE__ */ React311.createElement(React311.Fragment, null, token2.wireframe && /* @__PURE__ */ React311.createElement(bordered_default, {
       prefixCls
-    }), /* @__PURE__ */ React319.createElement(Pagination_default, __spreadProps(__spreadValues(__spreadValues({}, iconsProps), restProps), {
+    }), /* @__PURE__ */ React311.createElement(Pagination_default, __spreadProps(__spreadValues(__spreadValues({}, iconsProps), restProps), {
       styles: mergedStyles,
       classNames: mergedClassNames,
       style: mergedStyle,
@@ -70366,16 +69187,16 @@ html body {
   var pagination_default = Pagination_default2;
 
   // ../custom_dashboard/node_modules/antd/es/spin/index.js
-  var React324 = __toESM(require_react());
+  var React316 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/spin/Indicator/index.js
-  var React322 = __toESM(require_react());
+  var React314 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/spin/Indicator/Looper.js
-  var React321 = __toESM(require_react());
+  var React313 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/spin/Indicator/Progress.js
-  var React320 = __toESM(require_react());
+  var React312 = __toESM(require_react());
   "use client";
   var viewSize = 100;
   var borderWidth = viewSize / 5;
@@ -70388,7 +69209,7 @@ html body {
       style: style2,
       hasCircleCls
     } = props;
-    return /* @__PURE__ */ React320.createElement("circle", {
+    return /* @__PURE__ */ React312.createElement("circle", {
       className: clsx(`${dotClassName}-circle`, {
         [`${dotClassName}-circle-bg`]: hasCircleCls
       }),
@@ -70406,7 +69227,7 @@ html body {
     const dotClassName = `${prefixCls}-dot`;
     const holderClassName = `${dotClassName}-holder`;
     const hideClassName = `${holderClassName}-hidden`;
-    const [render2, setRender] = React320.useState(false);
+    const [render2, setRender] = React312.useState(false);
     useLayoutEffect_default(() => {
       if (percent !== 0) {
         setRender(true);
@@ -70420,18 +69241,18 @@ html body {
       strokeDashoffset: `${circumference / 4}`,
       strokeDasharray: `${circumference * safePtg / 100} ${circumference * (100 - safePtg) / 100}`
     };
-    return /* @__PURE__ */ React320.createElement("span", {
+    return /* @__PURE__ */ React312.createElement("span", {
       className: clsx(holderClassName, `${dotClassName}-progress`, safePtg <= 0 && hideClassName)
-    }, /* @__PURE__ */ React320.createElement("svg", {
+    }, /* @__PURE__ */ React312.createElement("svg", {
       viewBox: `0 0 ${viewSize} ${viewSize}`,
       role: "progressbar",
       "aria-valuemin": 0,
       "aria-valuemax": 100,
       "aria-valuenow": safePtg
-    }, /* @__PURE__ */ React320.createElement(CustomCircle, {
+    }, /* @__PURE__ */ React312.createElement(CustomCircle, {
       dotClassName,
       hasCircleCls: true
-    }), /* @__PURE__ */ React320.createElement(CustomCircle, {
+    }), /* @__PURE__ */ React312.createElement(CustomCircle, {
       dotClassName,
       style: circleStyle
     })));
@@ -70450,15 +69271,15 @@ html body {
     const dotClassName = `${prefixCls}-dot`;
     const holderClassName = `${dotClassName}-holder`;
     const hideClassName = `${holderClassName}-hidden`;
-    return /* @__PURE__ */ React321.createElement(React321.Fragment, null, /* @__PURE__ */ React321.createElement("span", {
+    return /* @__PURE__ */ React313.createElement(React313.Fragment, null, /* @__PURE__ */ React313.createElement("span", {
       className: clsx(holderClassName, className, percent > 0 && hideClassName),
       style: style2
-    }, /* @__PURE__ */ React321.createElement("span", {
+    }, /* @__PURE__ */ React313.createElement("span", {
       className: clsx(dotClassName, `${prefixCls}-dot-spin`)
-    }, [1, 2, 3, 4].map((i) => /* @__PURE__ */ React321.createElement("i", {
+    }, [1, 2, 3, 4].map((i) => /* @__PURE__ */ React313.createElement("i", {
       className: `${prefixCls}-dot-item`,
       key: i
-    })))), /* @__PURE__ */ React321.createElement(Progress_default, {
+    })))), /* @__PURE__ */ React313.createElement(Progress_default, {
       prefixCls,
       percent
     }));
@@ -70475,14 +69296,14 @@ html body {
       style: style2
     } = props;
     const dotClassName = `${prefixCls}-dot`;
-    if (indicator && /* @__PURE__ */ React322.isValidElement(indicator)) {
+    if (indicator && /* @__PURE__ */ React314.isValidElement(indicator)) {
       return cloneElement5(indicator, (currentProps) => ({
         className: clsx(currentProps.className, dotClassName, className),
         style: __spreadValues(__spreadValues({}, currentProps.style), style2),
         percent
       }));
     }
-    return /* @__PURE__ */ React322.createElement(Looper, {
+    return /* @__PURE__ */ React314.createElement(Looper, {
       prefixCls,
       percent,
       className,
@@ -70700,7 +69521,7 @@ html body {
       }
     };
   };
-  var prepareComponentToken18 = (token2) => {
+  var prepareComponentToken17 = (token2) => {
     const {
       controlHeightLG,
       controlHeight
@@ -70712,22 +69533,22 @@ html body {
       dotSizeLG: controlHeight
     };
   };
-  var style_default23 = genStyleHooks("Spin", (token2) => {
+  var style_default22 = genStyleHooks("Spin", (token2) => {
     const spinToken = merge2(token2, {
       spinDotDefault: token2.colorTextDescription
     });
     return [genSpinStyle(spinToken), genIndicatorStyle(spinToken), genSizeStyle2(spinToken)];
-  }, prepareComponentToken18);
+  }, prepareComponentToken17);
 
   // ../custom_dashboard/node_modules/antd/es/spin/usePercent.js
-  var React323 = __toESM(require_react());
+  var React315 = __toESM(require_react());
   var AUTO_INTERVAL = 200;
   var STEP_BUCKETS = [[30, 0.05], [70, 0.03], [96, 0.01]];
   function usePercent(spinning, percent) {
-    const [mockPercent, setMockPercent] = React323.useState(0);
-    const mockIntervalRef = React323.useRef(null);
+    const [mockPercent, setMockPercent] = React315.useState(0);
+    const mockIntervalRef = React315.useRef(null);
     const isAuto = percent === "auto";
-    React323.useEffect(() => {
+    React315.useEffect(() => {
       if (isAuto && spinning) {
         setMockPercent(0);
         mockIntervalRef.current = setInterval(() => {
@@ -70806,10 +69627,10 @@ html body {
       styles: contextStyles
     } = useComponentConfig("spin");
     const prefixCls = getPrefixCls("spin", customizePrefixCls);
-    const [hashId, cssVarCls] = style_default23(prefixCls);
-    const [spinning, setSpinning] = React324.useState(() => customSpinning && !shouldDelay(customSpinning, delay));
+    const [hashId, cssVarCls] = style_default22(prefixCls);
+    const [spinning, setSpinning] = React316.useState(() => customSpinning && !shouldDelay(customSpinning, delay));
     const mergedPercent = usePercent(spinning, percent);
-    React324.useEffect(() => {
+    React316.useEffect(() => {
       if (customSpinning) {
         const showSpinning = debounce(delay, () => {
           setSpinning(true);
@@ -70850,17 +69671,17 @@ html body {
     const mergedIndicator = (_b = indicator != null ? indicator : contextIndicator) != null ? _b : defaultIndicator;
     const hasChildren = typeof children !== "undefined";
     const isNested = hasChildren || fullscreen;
-    const indicatorNode = /* @__PURE__ */ React324.createElement(React324.Fragment, null, /* @__PURE__ */ React324.createElement(Indicator, {
+    const indicatorNode = /* @__PURE__ */ React316.createElement(React316.Fragment, null, /* @__PURE__ */ React316.createElement(Indicator, {
       className: clsx(mergedClassNames.indicator),
       style: mergedStyles.indicator,
       prefixCls,
       indicator: mergedIndicator,
       percent: mergedPercent
-    }), mergedDescription && /* @__PURE__ */ React324.createElement("div", {
+    }), mergedDescription && /* @__PURE__ */ React316.createElement("div", {
       className: clsx(`${prefixCls}-description`, mergedClassNames.tip, mergedClassNames.description),
       style: __spreadValues(__spreadValues({}, mergedStyles.tip), mergedStyles.description)
     }, mergedDescription));
-    return /* @__PURE__ */ React324.createElement("div", __spreadValues({
+    return /* @__PURE__ */ React316.createElement("div", __spreadValues({
       className: clsx(prefixCls, {
         [`${prefixCls}-sm`]: mergedSize === "small",
         [`${prefixCls}-lg`]: mergedSize === "large",
@@ -70871,10 +69692,10 @@ html body {
       style: __spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues({}, mergedStyles.root), !isNested ? mergedStyles.section : {}), fullscreen ? mergedStyles.mask : {}), contextStyle), style2),
       "aria-live": "polite",
       "aria-busy": spinning
-    }, restProps), spinning && (isNested ? /* @__PURE__ */ React324.createElement("div", {
+    }, restProps), spinning && (isNested ? /* @__PURE__ */ React316.createElement("div", {
       className: clsx(`${prefixCls}-section`, mergedClassNames.section),
       style: mergedStyles.section
-    }, indicatorNode) : indicatorNode), hasChildren && /* @__PURE__ */ React324.createElement("div", {
+    }, indicatorNode) : indicatorNode), hasChildren && /* @__PURE__ */ React316.createElement("div", {
       className: clsx(`${prefixCls}-container`, mergedClassNames.container),
       style: mergedStyles.container
     }, children));
@@ -70897,7 +69718,7 @@ html body {
   var toList_default = toList;
 
   // ../custom_dashboard/node_modules/antd/es/message/index.js
-  var import_react128 = __toESM(require_react());
+  var import_react127 = __toESM(require_react());
   "use client";
   var message = null;
   var act = (callback) => callback();
@@ -70920,20 +69741,20 @@ html body {
       top
     };
   }
-  var GlobalHolder = /* @__PURE__ */ import_react128.default.forwardRef((props, ref) => {
+  var GlobalHolder = /* @__PURE__ */ import_react127.default.forwardRef((props, ref) => {
     const {
       messageConfig,
       sync
     } = props;
     const {
       getPrefixCls
-    } = (0, import_react128.useContext)(ConfigContext);
+    } = (0, import_react127.useContext)(ConfigContext);
     const prefixCls = defaultGlobalConfig.prefixCls || getPrefixCls("message");
-    const appConfig = (0, import_react128.useContext)(AppConfigContext);
+    const appConfig = (0, import_react127.useContext)(AppConfigContext);
     const [api, holder] = useInternalMessage(__spreadValues(__spreadProps(__spreadValues({}, messageConfig), {
       prefixCls
     }), appConfig.message));
-    import_react128.default.useImperativeHandle(ref, () => {
+    import_react127.default.useImperativeHandle(ref, () => {
       const instance = __spreadValues({}, api);
       Object.keys(instance).forEach((method4) => {
         instance[method4] = (...args) => {
@@ -70948,22 +69769,22 @@ html body {
     });
     return holder;
   });
-  var GlobalHolderWrapper = /* @__PURE__ */ import_react128.default.forwardRef((_, ref) => {
-    const [messageConfig, setMessageConfig] = import_react128.default.useState(getGlobalContext);
+  var GlobalHolderWrapper = /* @__PURE__ */ import_react127.default.forwardRef((_, ref) => {
+    const [messageConfig, setMessageConfig] = import_react127.default.useState(getGlobalContext);
     const sync = () => {
       setMessageConfig(getGlobalContext);
     };
-    import_react128.default.useEffect(sync, []);
+    import_react127.default.useEffect(sync, []);
     const global = globalConfig();
     const rootPrefixCls = global.getRootPrefixCls();
     const rootIconPrefixCls = global.getIconPrefixCls();
     const theme = global.getTheme();
-    const dom = /* @__PURE__ */ import_react128.default.createElement(GlobalHolder, {
+    const dom = /* @__PURE__ */ import_react127.default.createElement(GlobalHolder, {
       ref,
       sync,
       messageConfig
     });
-    return /* @__PURE__ */ import_react128.default.createElement(config_provider_default, {
+    return /* @__PURE__ */ import_react127.default.createElement(config_provider_default, {
       prefixCls: rootPrefixCls,
       iconPrefixCls: rootIconPrefixCls,
       theme
@@ -70977,7 +69798,7 @@ html body {
       };
       message = newMessage;
       act(() => {
-        render(/* @__PURE__ */ import_react128.default.createElement(GlobalHolderWrapper, {
+        render(/* @__PURE__ */ import_react127.default.createElement(GlobalHolderWrapper, {
           ref: (node2) => {
             const {
               instance,
@@ -71124,9 +69945,9 @@ html body {
   var message_default = staticMethods;
 
   // ../custom_dashboard/node_modules/antd/es/modal/PurePanel.js
-  var React326 = __toESM(require_react());
+  var React318 = __toESM(require_react());
   "use client";
-  var PurePanel6 = (props) => {
+  var PurePanel5 = (props) => {
     const _a = props, {
       prefixCls: customizePrefixCls,
       className,
@@ -71152,7 +69973,7 @@ html body {
     ]);
     const {
       getPrefixCls
-    } = React326.useContext(ConfigContext);
+    } = React318.useContext(ConfigContext);
     const {
       className: contextClassName,
       style: contextStyle,
@@ -71173,7 +69994,7 @@ html body {
         closable: closable != null ? closable : false,
         title: "",
         footer: "",
-        children: /* @__PURE__ */ React326.createElement(ConfirmContent, __spreadProps(__spreadValues({}, props), {
+        children: /* @__PURE__ */ React318.createElement(ConfirmContent, __spreadProps(__spreadValues({}, props), {
           prefixCls,
           confirmPrefixCls,
           rootPrefixCls,
@@ -71184,11 +70005,11 @@ html body {
       additionalProps = {
         closable: closable != null ? closable : true,
         title,
-        footer: footer !== null && /* @__PURE__ */ React326.createElement(Footer, __spreadValues({}, props)),
+        footer: footer !== null && /* @__PURE__ */ React318.createElement(Footer, __spreadValues({}, props)),
         children
       };
     }
-    return /* @__PURE__ */ React326.createElement(Panel_default, __spreadValues(__spreadProps(__spreadValues({
+    return /* @__PURE__ */ React318.createElement(Panel_default, __spreadValues(__spreadProps(__spreadValues({
       prefixCls,
       className: clsx(hashId, `${prefixCls}-pure-panel`, type5 && confirmPrefixCls, type5 && `${confirmPrefixCls}-${type5}`, className, contextClassName, cssVarCls, rootCls, mergedClassNames.root),
       style: __spreadValues(__spreadValues({}, contextStyle), mergedStyles.root)
@@ -71199,7 +70020,7 @@ html body {
       styles: mergedStyles
     }), additionalProps));
   };
-  var PurePanel_default4 = withPureRenderTheme(PurePanel6);
+  var PurePanel_default4 = withPureRenderTheme(PurePanel5);
 
   // ../custom_dashboard/node_modules/antd/es/modal/index.js
   "use client";
@@ -71242,24 +70063,24 @@ html body {
   var row_default2 = row_default;
 
   // ../custom_dashboard/node_modules/antd/es/table/Table.js
-  var React395 = __toESM(require_react());
+  var React387 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/constant.js
   var EXPAND_COLUMN = {};
   var INTERNAL_HOOKS = "rc-table-internal-hook";
 
   // ../custom_dashboard/node_modules/@rc-component/context/es/context.js
-  var React327 = __toESM(require_react());
+  var React319 = __toESM(require_react());
   var import_react_dom7 = __toESM(require_react_dom());
-  function createContext38(defaultValue) {
-    const Context3 = /* @__PURE__ */ React327.createContext(void 0);
+  function createContext37(defaultValue) {
+    const Context3 = /* @__PURE__ */ React319.createContext(void 0);
     const Provider = ({
       value,
       children
     }) => {
-      const valueRef = React327.useRef(value);
+      const valueRef = React319.useRef(value);
       valueRef.current = value;
-      const [context] = React327.useState(() => ({
+      const [context] = React319.useState(() => ({
         getValue: () => valueRef.current,
         listeners: /* @__PURE__ */ new Set()
       }));
@@ -71270,7 +70091,7 @@ html body {
           });
         });
       }, [value]);
-      return /* @__PURE__ */ React327.createElement(Context3.Provider, {
+      return /* @__PURE__ */ React319.createElement(Context3.Provider, {
         value: context
       }, children);
     };
@@ -71280,7 +70101,7 @@ html body {
       defaultValue
     };
   }
-  function useContext117(holder, selector) {
+  function useContext114(holder, selector) {
     const eventSelector = useEvent_default(typeof selector === "function" ? selector : (ctx) => {
       if (selector === void 0) {
         return ctx;
@@ -71294,14 +70115,14 @@ html body {
       });
       return obj;
     });
-    const context = React327.useContext(holder == null ? void 0 : holder.Context);
+    const context = React319.useContext(holder == null ? void 0 : holder.Context);
     const {
       listeners,
       getValue: getValue3
     } = context || {};
-    const valueRef = React327.useRef();
+    const valueRef = React319.useRef();
     valueRef.current = eventSelector(context ? getValue3() : holder == null ? void 0 : holder.defaultValue);
-    const [, forceUpdate] = React327.useState({});
+    const [, forceUpdate] = React319.useState({});
     useLayoutEffect_default(() => {
       if (!context) {
         return;
@@ -71321,9 +70142,9 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/context/es/Immutable.js
-  var React328 = __toESM(require_react());
-  function _extends68() {
-    _extends68 = Object.assign ? Object.assign.bind() : function(target) {
+  var React320 = __toESM(require_react());
+  function _extends66() {
+    _extends66 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -71334,12 +70155,12 @@ html body {
       }
       return target;
     };
-    return _extends68.apply(this, arguments);
+    return _extends66.apply(this, arguments);
   }
   function createImmutable() {
-    const ImmutableContext = /* @__PURE__ */ React328.createContext(null);
+    const ImmutableContext = /* @__PURE__ */ React320.createContext(null);
     function useImmutableMark3() {
-      return React328.useContext(ImmutableContext);
+      return React320.useContext(ImmutableContext);
     }
     function makeImmutable3(Component5, shouldTriggerRender) {
       const refAble = supportRef(Component5);
@@ -71347,24 +70168,24 @@ html body {
         const refProps = refAble ? {
           ref
         } : {};
-        const renderTimesRef = React328.useRef(0);
-        const prevProps = React328.useRef(props);
+        const renderTimesRef = React320.useRef(0);
+        const prevProps = React320.useRef(props);
         const mark = useImmutableMark3();
         if (mark !== null) {
-          return /* @__PURE__ */ React328.createElement(Component5, _extends68({}, props, refProps));
+          return /* @__PURE__ */ React320.createElement(Component5, _extends66({}, props, refProps));
         }
         if (!shouldTriggerRender || shouldTriggerRender(prevProps.current, props)) {
           renderTimesRef.current += 1;
         }
         prevProps.current = props;
-        return /* @__PURE__ */ React328.createElement(ImmutableContext.Provider, {
+        return /* @__PURE__ */ React320.createElement(ImmutableContext.Provider, {
           value: renderTimesRef.current
-        }, /* @__PURE__ */ React328.createElement(Component5, _extends68({}, props, refProps)));
+        }, /* @__PURE__ */ React320.createElement(Component5, _extends66({}, props, refProps)));
       };
       if (true) {
         ImmutableComponent.displayName = `ImmutableRoot(${Component5.displayName || Component5.name})`;
       }
-      return refAble ? /* @__PURE__ */ React328.forwardRef(ImmutableComponent) : ImmutableComponent;
+      return refAble ? /* @__PURE__ */ React320.forwardRef(ImmutableComponent) : ImmutableComponent;
     }
     function responseImmutable3(Component5, propsAreEqual) {
       const refAble = supportRef(Component5);
@@ -71373,12 +70194,12 @@ html body {
           ref
         } : {};
         useImmutableMark3();
-        return /* @__PURE__ */ React328.createElement(Component5, _extends68({}, props, refProps));
+        return /* @__PURE__ */ React320.createElement(Component5, _extends66({}, props, refProps));
       };
       if (true) {
         ImmutableComponent.displayName = `ImmutableResponse(${Component5.displayName || Component5.name})`;
       }
-      return /* @__PURE__ */ React328.memo(refAble ? /* @__PURE__ */ React328.forwardRef(ImmutableComponent) : ImmutableComponent, propsAreEqual);
+      return /* @__PURE__ */ React320.memo(refAble ? /* @__PURE__ */ React320.forwardRef(ImmutableComponent) : ImmutableComponent, propsAreEqual);
     }
     return {
       makeImmutable: makeImmutable3,
@@ -71395,7 +70216,7 @@ html body {
   } = createImmutable();
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Footer/index.js
-  var React336 = __toESM(require_react());
+  var React328 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/context/TableContext.js
   var {
@@ -71403,15 +70224,15 @@ html body {
     responseImmutable: responseImmutable2,
     useImmutableMark: useImmutableMark2
   } = createImmutable();
-  var TableContext = createContext38();
+  var TableContext = createContext37();
   var TableContext_default = TableContext;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useRenderTimes.js
-  var React329 = __toESM(require_react());
+  var React321 = __toESM(require_react());
   function useRenderTimes(props, debug) {
-    const timesRef = React329.useRef(0);
+    const timesRef = React321.useRef(0);
     timesRef.current += 1;
-    const propsRef = React329.useRef(props);
+    const propsRef = React321.useRef(props);
     const keys2 = [];
     Object.keys(props || {}).map((key) => {
       var _a;
@@ -71420,12 +70241,12 @@ html body {
       }
     });
     propsRef.current = props;
-    const keysRef = React329.useRef([]);
+    const keysRef = React321.useRef([]);
     if (keys2.length) {
       keysRef.current = keys2;
     }
-    React329.useDebugValue(timesRef.current);
-    React329.useDebugValue(keysRef.current.join(", "));
+    React321.useDebugValue(timesRef.current);
+    React321.useDebugValue(keysRef.current.join(", "));
     if (debug) {
       console.log(`${debug}:`, timesRef.current, keysRef.current);
     }
@@ -71433,26 +70254,26 @@ html body {
   }
   var useRenderTimes_default = true ? useRenderTimes : () => {
   };
-  var RenderBlock = /* @__PURE__ */ React329.memo(() => {
+  var RenderBlock = /* @__PURE__ */ React321.memo(() => {
     const times = useRenderTimes();
-    return /* @__PURE__ */ React329.createElement("h1", null, "Render Times: ", times);
+    return /* @__PURE__ */ React321.createElement("h1", null, "Render Times: ", times);
   });
   if (true) {
     RenderBlock.displayName = "RenderBlock";
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Footer/Cell.js
-  var React334 = __toESM(require_react());
+  var React326 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Cell/index.js
-  var React332 = __toESM(require_react());
+  var React324 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Cell/useCellRender.js
-  var React331 = __toESM(require_react());
+  var React323 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/context/PerfContext.js
-  var React330 = __toESM(require_react());
-  var PerfContext = /* @__PURE__ */ React330.createContext({
+  var React322 = __toESM(require_react());
+  var PerfContext = /* @__PURE__ */ React322.createContext({
     renderWithProps: false
   });
   var PerfContext_default = PerfContext;
@@ -71491,10 +70312,10 @@ html body {
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Cell/useCellRender.js
   function isRenderCell(data) {
-    return data && typeof data === "object" && !Array.isArray(data) && !/* @__PURE__ */ React331.isValidElement(data);
+    return data && typeof data === "object" && !Array.isArray(data) && !/* @__PURE__ */ React323.isValidElement(data);
   }
   function useCellRender(record, dataIndex, renderIndex, children, render2, shouldCellUpdate) {
-    const perfRecord = React331.useContext(PerfContext_default);
+    const perfRecord = React323.useContext(PerfContext_default);
     const mark = useImmutableMark2();
     const retData = useMemo(() => {
       if (validateValue(children)) {
@@ -71545,15 +70366,15 @@ html body {
     return cellStartRow <= endRow && cellEndRow >= startRow;
   }
   function useHoverState(rowIndex, rowSpan) {
-    return useContext117(TableContext_default, (ctx) => {
+    return useContext114(TableContext_default, (ctx) => {
       const hovering = inHoverRange(rowIndex, rowSpan || 1, ctx.hoverStartRow, ctx.hoverEndRow);
       return [hovering, ctx.onHover];
     });
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Cell/index.js
-  function _extends69() {
-    _extends69 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends67() {
+    _extends67 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -71564,7 +70385,7 @@ html body {
       }
       return target;
     };
-    return _extends69.apply(this, arguments);
+    return _extends67.apply(this, arguments);
   }
   var getTitleFromCellRenderChildren = ({
     ellipsis,
@@ -71579,7 +70400,7 @@ html body {
     if (ellipsisConfig && (ellipsisConfig.showTitle || rowType === "header")) {
       if (typeof children === "string" || typeof children === "number") {
         title = children.toString();
-      } else if (/* @__PURE__ */ React332.isValidElement(children) && typeof ((_a = children.props) == null ? void 0 : _a.children) === "string") {
+      } else if (/* @__PURE__ */ React324.isValidElement(children) && typeof ((_a = children.props) == null ? void 0 : _a.children) === "string") {
         title = (_b = children.props) == null ? void 0 : _b.children;
       }
     }
@@ -71624,12 +70445,12 @@ html body {
     const {
       allColumnsFixedLeft,
       rowHoverable
-    } = useContext117(TableContext_default, ["allColumnsFixedLeft", "rowHoverable"]);
+    } = useContext114(TableContext_default, ["allColumnsFixedLeft", "rowHoverable"]);
     const [childNode, legacyCellProps] = useCellRender(record, dataIndex, renderIndex, children, render2, shouldCellUpdate);
     const fixedStyle = {};
     const isFixStart = typeof fixStart === "number" && !allColumnsFixedLeft;
     const isFixEnd = typeof fixEnd === "number" && !allColumnsFixedLeft;
-    const [showFixStartShadow, showFixEndShadow] = useContext117(TableContext_default, ({
+    const [showFixStartShadow, showFixEndShadow] = useContext114(TableContext_default, ({
       scrollInfo
     }) => {
       if (!isFixStart && !isFixEnd) {
@@ -71694,15 +70515,15 @@ html body {
     }
     const mergedStyle = __spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues({}, legacyCellProps == null ? void 0 : legacyCellProps.style), fixedStyle), alignStyle), additionalProps.style), style2);
     let mergedChildNode = childNode;
-    if (typeof mergedChildNode === "object" && !Array.isArray(mergedChildNode) && !/* @__PURE__ */ React332.isValidElement(mergedChildNode)) {
+    if (typeof mergedChildNode === "object" && !Array.isArray(mergedChildNode) && !/* @__PURE__ */ React324.isValidElement(mergedChildNode)) {
       mergedChildNode = null;
     }
     if (ellipsis && (fixedStartShadow || fixedEndShadow)) {
-      mergedChildNode = /* @__PURE__ */ React332.createElement("span", {
+      mergedChildNode = /* @__PURE__ */ React324.createElement("span", {
         className: `${cellPrefixCls}-content`
       }, mergedChildNode);
     }
-    return /* @__PURE__ */ React332.createElement(Component5, _extends69({}, legacyCellProps, additionalProps, {
+    return /* @__PURE__ */ React324.createElement(Component5, _extends67({}, legacyCellProps, additionalProps, {
       className: mergedClassName,
       style: mergedStyle,
       title,
@@ -71713,7 +70534,7 @@ html body {
       rowSpan: mergedRowSpan !== 1 ? mergedRowSpan : null
     }), appendNode, mergedChildNode);
   };
-  var Cell_default = /* @__PURE__ */ React332.memo(Cell);
+  var Cell_default = /* @__PURE__ */ React324.memo(Cell);
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/utils/fixUtil.js
   function isFixedStart(column2) {
@@ -71776,13 +70597,13 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Footer/SummaryContext.js
-  var React333 = __toESM(require_react());
-  var SummaryContext = /* @__PURE__ */ React333.createContext({});
+  var React325 = __toESM(require_react());
+  var SummaryContext = /* @__PURE__ */ React325.createContext({});
   var SummaryContext_default = SummaryContext;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Footer/Cell.js
-  function _extends70() {
-    _extends70 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends68() {
+    _extends68 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -71793,7 +70614,7 @@ html body {
       }
       return target;
     };
-    return _extends70.apply(this, arguments);
+    return _extends68.apply(this, arguments);
   }
   var SummaryCell = (props) => {
     const {
@@ -71806,16 +70627,16 @@ html body {
     } = props;
     const {
       prefixCls
-    } = useContext117(TableContext_default, ["prefixCls"]);
+    } = useContext114(TableContext_default, ["prefixCls"]);
     const {
       scrollColumnIndex,
       stickyOffsets,
       flattenColumns
-    } = React334.useContext(SummaryContext_default);
+    } = React326.useContext(SummaryContext_default);
     const lastIndex = index + colSpan - 1;
     const mergedColSpan = lastIndex + 1 === scrollColumnIndex ? colSpan + 1 : colSpan;
-    const fixedInfo = React334.useMemo(() => getCellFixedInfo(index, index + mergedColSpan - 1, flattenColumns, stickyOffsets), [index, mergedColSpan, flattenColumns, stickyOffsets]);
-    return /* @__PURE__ */ React334.createElement(Cell_default, _extends70({
+    const fixedInfo = React326.useMemo(() => getCellFixedInfo(index, index + mergedColSpan - 1, flattenColumns, stickyOffsets), [index, mergedColSpan, flattenColumns, stickyOffsets]);
+    return /* @__PURE__ */ React326.createElement(Cell_default, _extends68({
       className,
       index,
       component: "td",
@@ -71831,14 +70652,14 @@ html body {
   var Cell_default2 = SummaryCell;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Footer/Row.js
-  var React335 = __toESM(require_react());
+  var React327 = __toESM(require_react());
   var FooterRow = (props) => {
     const _a = props, {
       children
     } = _a, restProps = __objRest(_a, [
       "children"
     ]);
-    return /* @__PURE__ */ React335.createElement("tr", restProps, children);
+    return /* @__PURE__ */ React327.createElement("tr", restProps, children);
   };
   var Row_default = FooterRow;
 
@@ -71863,17 +70684,17 @@ html body {
       stickyOffsets,
       flattenColumns
     } = props;
-    const prefixCls = useContext117(TableContext_default, "prefixCls");
+    const prefixCls = useContext114(TableContext_default, "prefixCls");
     const lastColumnIndex = flattenColumns.length - 1;
     const scrollColumn = flattenColumns[lastColumnIndex];
-    const summaryContext = React336.useMemo(() => ({
+    const summaryContext = React328.useMemo(() => ({
       stickyOffsets,
       flattenColumns,
       scrollColumnIndex: (scrollColumn == null ? void 0 : scrollColumn.scrollbar) ? lastColumnIndex : null
     }), [scrollColumn, flattenColumns, lastColumnIndex, stickyOffsets]);
-    return /* @__PURE__ */ React336.createElement(SummaryContext_default.Provider, {
+    return /* @__PURE__ */ React328.createElement(SummaryContext_default.Provider, {
       value: summaryContext
-    }, /* @__PURE__ */ React336.createElement("tfoot", {
+    }, /* @__PURE__ */ React328.createElement("tfoot", {
       className: `${prefixCls}-summary`
     }, children));
   };
@@ -71893,13 +70714,13 @@ html body {
   var ColumnGroup_default = ColumnGroup;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Table.js
-  var React356 = __toESM(require_react());
+  var React348 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Body/index.js
-  var React343 = __toESM(require_react());
+  var React335 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useFlattenRecords.js
-  var React337 = __toESM(require_react());
+  var React329 = __toESM(require_react());
   function fillRecords(list, record, indent, childrenColumnName, expandedKeys, getRowKey, index) {
     const key = getRowKey(record, index);
     list.push({
@@ -71916,7 +70737,7 @@ html body {
     }
   }
   function useFlattenRecords(data, childrenColumnName, expandedKeys, getRowKey) {
-    const arr = React337.useMemo(() => {
+    const arr = React329.useMemo(() => {
       if (expandedKeys == null ? void 0 : expandedKeys.size) {
         const list = [];
         for (let i = 0; i < (data == null ? void 0 : data.length); i += 1) {
@@ -71938,11 +70759,11 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Body/BodyRow.js
-  var React340 = __toESM(require_react());
+  var React332 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useRowInfo.js
   function useRowInfo(record, rowKey, recordIndex, indent) {
-    const context = useContext117(TableContext_default, ["prefixCls", "fixedInfoList", "flattenColumns", "expandableType", "expandRowByClick", "onTriggerExpand", "rowClassName", "expandedRowClassName", "indentSize", "expandIcon", "expandedRowRender", "expandIconColumnIndex", "expandedKeys", "childrenColumnName", "rowExpandable", "onRow"]);
+    const context = useContext114(TableContext_default, ["prefixCls", "fixedInfoList", "flattenColumns", "expandableType", "expandRowByClick", "onTriggerExpand", "rowClassName", "expandedRowClassName", "indentSize", "expandIcon", "expandedRowRender", "expandIconColumnIndex", "expandedKeys", "childrenColumnName", "rowExpandable", "onRow"]);
     const {
       flattenColumns,
       expandableType,
@@ -71992,7 +70813,7 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Body/ExpandedRow.js
-  var React338 = __toESM(require_react());
+  var React330 = __toESM(require_react());
   var ExpandedRow = (props) => {
     if (true) {
       useRenderTimes_default(props);
@@ -72014,10 +70835,10 @@ html body {
       fixColumn,
       componentWidth,
       horizonScroll
-    } = useContext117(TableContext_default, ["scrollbarSize", "fixHeader", "fixColumn", "componentWidth", "horizonScroll"]);
+    } = useContext114(TableContext_default, ["scrollbarSize", "fixHeader", "fixColumn", "componentWidth", "horizonScroll"]);
     let contentNode = children;
     if (isEmpty2 ? horizonScroll && componentWidth : fixColumn) {
-      contentNode = /* @__PURE__ */ React338.createElement("div", {
+      contentNode = /* @__PURE__ */ React330.createElement("div", {
         style: {
           width: componentWidth - stickyOffset - (fixHeader && !isEmpty2 ? scrollbarSize : 0),
           position: "sticky",
@@ -72027,12 +70848,12 @@ html body {
         className: `${prefixCls}-expanded-row-fixed`
       }, contentNode);
     }
-    return /* @__PURE__ */ React338.createElement(Component5, {
+    return /* @__PURE__ */ React330.createElement(Component5, {
       className,
       style: {
         display: expanded ? null : "none"
       }
-    }, /* @__PURE__ */ React338.createElement(Cell_default, {
+    }, /* @__PURE__ */ React330.createElement(Cell_default, {
       component: cellComponent,
       prefixCls,
       colSpan
@@ -72041,7 +70862,7 @@ html body {
   var ExpandedRow_default = ExpandedRow;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/utils/expandUtil.js
-  var React339 = __toESM(require_react());
+  var React331 = __toESM(require_react());
   function renderExpandIcon({
     prefixCls,
     record,
@@ -72051,7 +70872,7 @@ html body {
   }) {
     const expandClassName = `${prefixCls}-row-expand-icon`;
     if (!expandable) {
-      return /* @__PURE__ */ React339.createElement("span", {
+      return /* @__PURE__ */ React331.createElement("span", {
         className: clsx(expandClassName, `${prefixCls}-row-spaced`)
       });
     }
@@ -72059,7 +70880,7 @@ html body {
       onExpand(record, event);
       event.stopPropagation();
     };
-    return /* @__PURE__ */ React339.createElement("span", {
+    return /* @__PURE__ */ React331.createElement("span", {
       className: clsx(expandClassName, {
         [`${prefixCls}-row-expanded`]: expanded,
         [`${prefixCls}-row-collapsed`]: !expanded
@@ -72089,8 +70910,8 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Body/BodyRow.js
-  function _extends71() {
-    _extends71 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends69() {
+    _extends69 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -72101,7 +70922,7 @@ html body {
       }
       return target;
     };
-    return _extends71.apply(this, arguments);
+    return _extends69.apply(this, arguments);
   }
   function getCellProps(rowInfo, column2, colIndex, indent, index, rowKeys = [], expandedRowOffset = 0) {
     var _a;
@@ -72124,7 +70945,7 @@ html body {
     const fixedInfo = fixedInfoList[colIndex];
     let appendCellNode;
     if (colIndex === (expandIconColumnIndex || 0) && nestExpandable) {
-      appendCellNode = /* @__PURE__ */ React340.createElement(React340.Fragment, null, /* @__PURE__ */ React340.createElement("span", {
+      appendCellNode = /* @__PURE__ */ React332.createElement(React332.Fragment, null, /* @__PURE__ */ React332.createElement("span", {
         style: {
           paddingLeft: `${indentSize * indent}px`
         },
@@ -72190,13 +71011,13 @@ html body {
       expanded,
       rowSupportExpand
     } = rowInfo;
-    const expandedRef = React340.useRef(false);
+    const expandedRef = React332.useRef(false);
     expandedRef.current || (expandedRef.current = expanded);
     if (true) {
       useRenderTimes_default(props);
     }
     const expandedClsName = computedExpandedClassName(expandedRowClassName, record, index, indent);
-    const baseRowNode = /* @__PURE__ */ React340.createElement(RowComponent, _extends71({}, rowProps, {
+    const baseRowNode = /* @__PURE__ */ React332.createElement(RowComponent, _extends69({}, rowProps, {
       "data-row-key": rowKey,
       className: clsx(className, `${prefixCls}-row`, `${prefixCls}-row-level-${indent}`, rowProps == null ? void 0 : rowProps.className, classNames.row, {
         [expandedClsName]: indent >= 1
@@ -72214,7 +71035,7 @@ html body {
         appendCellNode,
         additionalCellProps
       } = getCellProps(rowInfo, column2, colIndex, indent, index, rowKeys, expandedRowInfo == null ? void 0 : expandedRowInfo.offset);
-      return /* @__PURE__ */ React340.createElement(Cell_default, _extends71({
+      return /* @__PURE__ */ React332.createElement(Cell_default, _extends69({
         className: clsx(columnClassName, classNames.cell),
         style: styles.cell,
         ellipsis: column2.ellipsis,
@@ -72237,7 +71058,7 @@ html body {
     let expandRowNode;
     if (rowSupportExpand && (expandedRef.current || expanded)) {
       const expandContent = expandedRowRender(record, index, indent + 1, expanded);
-      expandRowNode = /* @__PURE__ */ React340.createElement(ExpandedRow_default, {
+      expandRowNode = /* @__PURE__ */ React332.createElement(ExpandedRow_default, {
         expanded,
         className: clsx(`${prefixCls}-expanded-row`, `${prefixCls}-expanded-row-level-${indent + 1}`, expandedClsName),
         prefixCls,
@@ -72248,7 +71069,7 @@ html body {
         stickyOffset: expandedRowInfo == null ? void 0 : expandedRowInfo.sticky
       }, expandContent);
     }
-    return /* @__PURE__ */ React340.createElement(React340.Fragment, null, baseRowNode, expandRowNode);
+    return /* @__PURE__ */ React332.createElement(React332.Fragment, null, baseRowNode, expandRowNode);
   };
   if (true) {
     BodyRow.displayName = "BodyRow";
@@ -72256,25 +71077,25 @@ html body {
   var BodyRow_default = responseImmutable2(BodyRow);
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Body/MeasureRow.js
-  var React342 = __toESM(require_react());
+  var React334 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Body/MeasureCell.js
-  var React341 = __toESM(require_react());
+  var React333 = __toESM(require_react());
   var MeasureCell = (props) => {
     const {
       columnKey,
       onColumnResize,
       title
     } = props;
-    const cellRef = React341.useRef(null);
+    const cellRef = React333.useRef(null);
     useLayoutEffect_default(() => {
       if (cellRef.current) {
         onColumnResize(columnKey, cellRef.current.offsetWidth);
       }
     }, []);
-    return /* @__PURE__ */ React341.createElement(es_default, {
+    return /* @__PURE__ */ React333.createElement(es_default, {
       data: columnKey
-    }, /* @__PURE__ */ React341.createElement("td", {
+    }, /* @__PURE__ */ React333.createElement("td", {
       ref: cellRef,
       style: {
         paddingTop: 0,
@@ -72283,7 +71104,7 @@ html body {
         borderBottom: 0,
         height: 0
       }
-    }, /* @__PURE__ */ React341.createElement("div", {
+    }, /* @__PURE__ */ React333.createElement("div", {
       style: {
         height: 0,
         overflow: "hidden",
@@ -72300,18 +71121,18 @@ html body {
     onColumnResize,
     columns
   }) => {
-    const ref = React342.useRef(null);
+    const ref = React334.useRef(null);
     const {
       measureRowRender
-    } = useContext117(TableContext_default, ["measureRowRender"]);
-    const measureRow = /* @__PURE__ */ React342.createElement("tr", {
+    } = useContext114(TableContext_default, ["measureRowRender"]);
+    const measureRow = /* @__PURE__ */ React334.createElement("tr", {
       "aria-hidden": "true",
       className: `${prefixCls}-measure-row`,
       style: {
         height: 0
       },
       ref
-    }, /* @__PURE__ */ React342.createElement(es_default.Collection, {
+    }, /* @__PURE__ */ React334.createElement(es_default.Collection, {
       onBatchResize: (infoList) => {
         if (isVisible_default(ref.current)) {
           infoList.forEach(({
@@ -72325,10 +71146,10 @@ html body {
     }, columnsKey.map((columnKey) => {
       const column2 = columns.find((col) => col.key === columnKey);
       const rawTitle = column2 == null ? void 0 : column2.title;
-      const titleForMeasure = /* @__PURE__ */ React342.isValidElement(rawTitle) ? /* @__PURE__ */ React342.cloneElement(rawTitle, {
+      const titleForMeasure = /* @__PURE__ */ React334.isValidElement(rawTitle) ? /* @__PURE__ */ React334.cloneElement(rawTitle, {
         ref: null
       }) : rawTitle;
-      return /* @__PURE__ */ React342.createElement(MeasureCell_default, {
+      return /* @__PURE__ */ React334.createElement(MeasureCell_default, {
         key: columnKey,
         columnKey,
         onColumnResize,
@@ -72361,7 +71182,7 @@ html body {
       styles,
       expandedRowOffset = 0,
       colWidths
-    } = useContext117(TableContext_default, ["prefixCls", "getComponent", "onColumnResize", "flattenColumns", "getRowKey", "expandedKeys", "childrenColumnName", "emptyNode", "classNames", "styles", "expandedRowOffset", "fixedInfoList", "colWidths"]);
+    } = useContext114(TableContext_default, ["prefixCls", "getComponent", "onColumnResize", "flattenColumns", "getRowKey", "expandedKeys", "childrenColumnName", "emptyNode", "classNames", "styles", "expandedRowOffset", "fixedInfoList", "colWidths"]);
     const {
       body: bodyCls = {}
     } = classNames || {};
@@ -72369,11 +71190,11 @@ html body {
       body: bodyStyles = {}
     } = styles || {};
     const flattenData2 = useFlattenRecords(data, childrenColumnName, expandedKeys, getRowKey);
-    const rowKeys = React343.useMemo(() => flattenData2.map((item) => item.rowKey), [flattenData2]);
-    const perfRef = React343.useRef({
+    const rowKeys = React335.useMemo(() => flattenData2.map((item) => item.rowKey), [flattenData2]);
+    const perfRef = React335.useRef({
       renderWithProps: false
     });
-    const expandedRowInfo = React343.useMemo(() => {
+    const expandedRowInfo = React335.useMemo(() => {
       const expandedColSpan = flattenColumns.length - expandedRowOffset;
       let expandedStickyStart = 0;
       for (let i = 0; i < expandedRowOffset; i += 1) {
@@ -72398,7 +71219,7 @@ html body {
           index: renderIndex,
           rowKey
         } = item;
-        return /* @__PURE__ */ React343.createElement(BodyRow_default, {
+        return /* @__PURE__ */ React335.createElement(BodyRow_default, {
           classNames: bodyCls,
           styles: bodyStyles,
           key: rowKey,
@@ -72415,7 +71236,7 @@ html body {
         });
       });
     } else {
-      rows = /* @__PURE__ */ React343.createElement(ExpandedRow_default, {
+      rows = /* @__PURE__ */ React335.createElement(ExpandedRow_default, {
         expanded: true,
         className: `${prefixCls}-placeholder`,
         prefixCls,
@@ -72426,12 +71247,12 @@ html body {
       }, emptyNode);
     }
     const columnsKey = getColumnsKey(flattenColumns);
-    return /* @__PURE__ */ React343.createElement(PerfContext_default.Provider, {
+    return /* @__PURE__ */ React335.createElement(PerfContext_default.Provider, {
       value: perfRef.current
-    }, /* @__PURE__ */ React343.createElement(WrapperComponent, {
+    }, /* @__PURE__ */ React335.createElement(WrapperComponent, {
       style: bodyStyles.wrapper,
       className: clsx(`${prefixCls}-tbody`, bodyCls.wrapper)
-    }, measureColumnWidth && /* @__PURE__ */ React343.createElement(MeasureRow_default, {
+    }, measureColumnWidth && /* @__PURE__ */ React335.createElement(MeasureRow_default, {
       prefixCls,
       columnsKey,
       onColumnResize,
@@ -72444,7 +71265,7 @@ html body {
   var Body_default = responseImmutable2(Body);
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/ColGroup.js
-  var React344 = __toESM(require_react());
+  var React336 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/utils/legacyUtil.js
   var INTERNAL_COL_DEFINE = "RC_TABLE_INTERNAL_COL_DEFINE";
@@ -72470,8 +71291,8 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/ColGroup.js
-  function _extends72() {
-    _extends72 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends70() {
+    _extends70 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -72482,7 +71303,7 @@ html body {
       }
       return target;
     };
-    return _extends72.apply(this, arguments);
+    return _extends70.apply(this, arguments);
   }
   var ColGroup = (props) => {
     const {
@@ -72492,7 +71313,7 @@ html body {
     } = props;
     const {
       tableLayout
-    } = useContext117(TableContext_default, ["tableLayout"]);
+    } = useContext114(TableContext_default, ["tableLayout"]);
     const cols = [];
     const len = columCount || columns.length;
     let mustInsert = false;
@@ -72513,7 +71334,7 @@ html body {
         } = _a, restAdditionalProps = __objRest(_a, [
           "columnType"
         ]);
-        cols.unshift(/* @__PURE__ */ React344.createElement("col", _extends72({
+        cols.unshift(/* @__PURE__ */ React336.createElement("col", _extends70({
           key: i,
           style: {
             width,
@@ -72523,15 +71344,15 @@ html body {
         mustInsert = true;
       }
     }
-    return cols.length > 0 ? /* @__PURE__ */ React344.createElement("colgroup", null, cols) : null;
+    return cols.length > 0 ? /* @__PURE__ */ React336.createElement("colgroup", null, cols) : null;
   };
   var ColGroup_default = ColGroup;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/FixedHolder/index.js
-  var React345 = __toESM(require_react());
-  var import_react129 = __toESM(require_react());
+  var React337 = __toESM(require_react());
+  var import_react128 = __toESM(require_react());
   function useColumnWidth(colWidths, columCount) {
-    return (0, import_react129.useMemo)(() => {
+    return (0, import_react128.useMemo)(() => {
       const cloneColumns = [];
       for (let i = 0; i < columCount; i += 1) {
         const val = colWidths[i];
@@ -72544,7 +71365,7 @@ html body {
       return cloneColumns;
     }, [colWidths.join("_"), columCount]);
   }
-  var FixedHolder = /* @__PURE__ */ React345.forwardRef((props, ref) => {
+  var FixedHolder = /* @__PURE__ */ React337.forwardRef((props, ref) => {
     if (true) {
       useRenderTimes_default(props);
     }
@@ -72594,15 +71415,15 @@ html body {
       scrollbarSize,
       isSticky,
       getComponent
-    } = useContext117(TableContext_default, ["prefixCls", "scrollbarSize", "isSticky", "getComponent"]);
+    } = useContext114(TableContext_default, ["prefixCls", "scrollbarSize", "isSticky", "getComponent"]);
     const TableComponent = getComponent(["header", "table"], "table");
     const combinationScrollBarSize = isSticky && !fixHeader ? 0 : scrollbarSize;
-    const scrollRef = React345.useRef(null);
-    const setScrollRef = React345.useCallback((element) => {
+    const scrollRef = React337.useRef(null);
+    const setScrollRef = React337.useCallback((element) => {
       fillRef(ref, element);
       fillRef(scrollRef, element);
     }, []);
-    React345.useEffect(() => {
+    React337.useEffect(() => {
       function onWheel(e3) {
         const {
           currentTarget,
@@ -72646,9 +71467,9 @@ html body {
         className: `${prefixCls}-cell-scrollbar`
       })
     };
-    const columnsWithScrollbar = (0, import_react129.useMemo)(() => combinationScrollBarSize ? [...columns, ScrollBarColumn] : columns, [combinationScrollBarSize, columns]);
-    const flattenColumnsWithScrollbar = (0, import_react129.useMemo)(() => combinationScrollBarSize ? [...flattenColumns, ScrollBarColumn] : flattenColumns, [combinationScrollBarSize, flattenColumns]);
-    const headerStickyOffsets = (0, import_react129.useMemo)(() => {
+    const columnsWithScrollbar = (0, import_react128.useMemo)(() => combinationScrollBarSize ? [...columns, ScrollBarColumn] : columns, [combinationScrollBarSize, columns]);
+    const flattenColumnsWithScrollbar = (0, import_react128.useMemo)(() => combinationScrollBarSize ? [...flattenColumns, ScrollBarColumn] : flattenColumns, [combinationScrollBarSize, flattenColumns]);
+    const headerStickyOffsets = (0, import_react128.useMemo)(() => {
       const {
         start,
         end
@@ -72660,11 +71481,11 @@ html body {
       });
     }, [combinationScrollBarSize, stickyOffsets, isSticky]);
     const mergedColumnWidth = useColumnWidth(colWidths, columCount);
-    const isColGroupEmpty = (0, import_react129.useMemo)(() => {
+    const isColGroupEmpty = (0, import_react128.useMemo)(() => {
       const noWidth = !mergedColumnWidth || !mergedColumnWidth.length || mergedColumnWidth.every((w) => !w);
       return noData || noWidth;
     }, [noData, mergedColumnWidth]);
-    return /* @__PURE__ */ React345.createElement("div", {
+    return /* @__PURE__ */ React337.createElement("div", {
       style: __spreadValues(__spreadValues({
         overflow: "hidden"
       }, isSticky ? {
@@ -72675,13 +71496,13 @@ html body {
       className: clsx(className, {
         [stickyClassName]: !!stickyClassName
       })
-    }, /* @__PURE__ */ React345.createElement(TableComponent, {
+    }, /* @__PURE__ */ React337.createElement(TableComponent, {
       style: {
         tableLayout,
         minWidth: "100%",
         width: scrollX
       }
-    }, isColGroupEmpty ? colGroup : /* @__PURE__ */ React345.createElement(ColGroup_default, {
+    }, isColGroupEmpty ? colGroup : /* @__PURE__ */ React337.createElement(ColGroup_default, {
       colWidths: [...mergedColumnWidth, combinationScrollBarSize],
       columCount: columCount + 1,
       columns: flattenColumnsWithScrollbar
@@ -72694,15 +71515,15 @@ html body {
   if (true) {
     FixedHolder.displayName = "FixedHolder";
   }
-  var FixedHolder_default = /* @__PURE__ */ React345.memo(FixedHolder);
+  var FixedHolder_default = /* @__PURE__ */ React337.memo(FixedHolder);
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Header/Header.js
-  var React347 = __toESM(require_react());
+  var React339 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Header/HeaderRow.js
-  var React346 = __toESM(require_react());
-  function _extends73() {
-    _extends73 = Object.assign ? Object.assign.bind() : function(target) {
+  var React338 = __toESM(require_react());
+  function _extends71() {
+    _extends71 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -72713,7 +71534,7 @@ html body {
       }
       return target;
     };
-    return _extends73.apply(this, arguments);
+    return _extends71.apply(this, arguments);
   }
   var HeaderRow = (props) => {
     const {
@@ -72729,13 +71550,13 @@ html body {
     } = props;
     const {
       prefixCls
-    } = useContext117(TableContext_default, ["prefixCls"]);
+    } = useContext114(TableContext_default, ["prefixCls"]);
     let rowProps;
     if (onHeaderRow) {
       rowProps = onHeaderRow(cells.map((cell) => cell.column), index);
     }
     const columnsKey = getColumnsKey(cells.map((cell) => cell.column));
-    return /* @__PURE__ */ React346.createElement(RowComponent, _extends73({}, rowProps, {
+    return /* @__PURE__ */ React338.createElement(RowComponent, _extends71({}, rowProps, {
       className: classNames.row,
       style: styles.row
     }), cells.map((cell, cellIndex) => {
@@ -72748,7 +71569,7 @@ html body {
       } = cell;
       const fixedInfo = getCellFixedInfo(colStart, colEnd, flattenColumns, stickyOffsets);
       const additionalProps = ((_a = column2 == null ? void 0 : column2.onHeaderCell) == null ? void 0 : _a.call(column2, column2)) || {};
-      return /* @__PURE__ */ React346.createElement(Cell_default, _extends73({}, cell, {
+      return /* @__PURE__ */ React338.createElement(Cell_default, _extends71({}, cell, {
         scope: column2.title ? colSpan > 1 ? "colgroup" : "col" : null,
         ellipsis: column2.ellipsis,
         align: column2.align,
@@ -72829,22 +71650,22 @@ html body {
       getComponent,
       classNames,
       styles
-    } = useContext117(TableContext_default, ["prefixCls", "getComponent", "classNames", "styles"]);
+    } = useContext114(TableContext_default, ["prefixCls", "getComponent", "classNames", "styles"]);
     const {
       header: headerCls = {}
     } = classNames || {};
     const {
       header: headerStyles = {}
     } = styles || {};
-    const rows = React347.useMemo(() => parseHeaderRows(columns, headerCls, headerStyles), [columns, headerCls, headerStyles]);
+    const rows = React339.useMemo(() => parseHeaderRows(columns, headerCls, headerStyles), [columns, headerCls, headerStyles]);
     const WrapperComponent = getComponent(["header", "wrapper"], "thead");
     const trComponent = getComponent(["header", "row"], "tr");
     const thComponent = getComponent(["header", "cell"], "th");
-    return /* @__PURE__ */ React347.createElement(WrapperComponent, {
+    return /* @__PURE__ */ React339.createElement(WrapperComponent, {
       className: clsx(`${prefixCls}-thead`, headerCls.wrapper),
       style: headerStyles.wrapper
     }, rows.map((row, rowIndex) => {
-      const rowNode = /* @__PURE__ */ React347.createElement(HeaderRow_default, {
+      const rowNode = /* @__PURE__ */ React339.createElement(HeaderRow_default, {
         classNames: headerCls,
         styles: headerStyles,
         key: rowIndex,
@@ -72862,10 +71683,10 @@ html body {
   var Header_default = responseImmutable2(Header2);
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useColumns/index.js
-  var React349 = __toESM(require_react());
+  var React341 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useColumns/useWidthColumns.js
-  var React348 = __toESM(require_react());
+  var React340 = __toESM(require_react());
   function parseColWidth(totalWidth, width = "") {
     if (typeof width === "number") {
       return width;
@@ -72876,7 +71697,7 @@ html body {
     return null;
   }
   function useWidthColumns(flattenColumns, scrollWidth, clientWidth) {
-    return React348.useMemo(() => {
+    return React340.useMemo(() => {
       if (scrollWidth && scrollWidth > 0) {
         let totalWidth = 0;
         let missWidthCount = 0;
@@ -72924,7 +71745,7 @@ html body {
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useColumns/index.js
   function convertChildrenToColumns(children) {
-    return toArray(children).filter((node2) => /* @__PURE__ */ React349.isValidElement(node2)).map((node2) => {
+    return toArray(children).filter((node2) => /* @__PURE__ */ React341.isValidElement(node2)).map((node2) => {
       const {
         key,
         props
@@ -72997,11 +71818,11 @@ html body {
     scrollWidth,
     clientWidth
   }, transformColumns) {
-    const baseColumns = React349.useMemo(() => {
+    const baseColumns = React341.useMemo(() => {
       const newColumns = columns || convertChildrenToColumns(children) || [];
       return filterHiddenColumns(newColumns.slice());
     }, [columns, children]);
-    const withExpandColumns = React349.useMemo(() => {
+    const withExpandColumns = React341.useMemo(() => {
       if (expandable) {
         let cloneColumns = baseColumns.slice();
         if (expandIconColumnIndex >= 0) {
@@ -73047,7 +71868,7 @@ html body {
               onExpand: onTriggerExpand
             });
             if (expandRowByClick) {
-              return /* @__PURE__ */ React349.createElement("span", {
+              return /* @__PURE__ */ React341.createElement("span", {
                 onClick: (e3) => e3.stopPropagation()
               }, icon);
             }
@@ -73069,7 +71890,7 @@ html body {
       }
       return baseColumns.filter((col) => col !== EXPAND_COLUMN);
     }, [expandable, baseColumns, getRowKey, expandedKeys, expandIcon, direction, expandedRowOffset]);
-    const mergedColumns = React349.useMemo(() => {
+    const mergedColumns = React341.useMemo(() => {
       let finalColumns = withExpandColumns;
       if (transformColumns) {
         finalColumns = transformColumns(finalColumns);
@@ -73081,7 +71902,7 @@ html body {
       }
       return finalColumns;
     }, [transformColumns, withExpandColumns, direction]);
-    const flattenColumns = React349.useMemo(
+    const flattenColumns = React341.useMemo(
       () => flatColumns(mergedColumns),
       [mergedColumns, direction, scrollWidth]
     );
@@ -73091,7 +71912,7 @@ html body {
   var useColumns_default = useColumns;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useExpand.js
-  var React350 = __toESM(require_react());
+  var React342 = __toESM(require_react());
   function useExpand(props, mergedData, getRowKey) {
     const expandableConfig = getExpandableProps(props);
     const {
@@ -73106,7 +71927,7 @@ html body {
     } = expandableConfig;
     const mergedExpandIcon = expandIcon || renderExpandIcon;
     const mergedChildrenColumnName = childrenColumnName || "children";
-    const expandableType = React350.useMemo(() => {
+    const expandableType = React342.useMemo(() => {
       if (expandedRowRender) {
         return "row";
       }
@@ -73115,7 +71936,7 @@ html body {
       }
       return false;
     }, [!!expandedRowRender, mergedData]);
-    const [innerExpandedKeys, setInnerExpandedKeys] = React350.useState(() => {
+    const [innerExpandedKeys, setInnerExpandedKeys] = React342.useState(() => {
       if (defaultExpandedRowKeys) {
         return defaultExpandedRowKeys;
       }
@@ -73124,8 +71945,8 @@ html body {
       }
       return [];
     });
-    const mergedExpandedKeys = React350.useMemo(() => new Set(expandedRowKeys || innerExpandedKeys || []), [expandedRowKeys, innerExpandedKeys]);
-    const onTriggerExpand = React350.useCallback((record) => {
+    const mergedExpandedKeys = React342.useMemo(() => new Set(expandedRowKeys || innerExpandedKeys || []), [expandedRowKeys, innerExpandedKeys]);
+    const onTriggerExpand = React342.useCallback((record) => {
       const key = getRowKey(record, mergedData.indexOf(record));
       let newExpandedKeys;
       const hasKey = mergedExpandedKeys.has(key);
@@ -73152,19 +71973,19 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useFixedInfo.js
-  var React351 = __toESM(require_react());
+  var React343 = __toESM(require_react());
   function useFixedInfo(flattenColumns, stickyOffsets) {
-    const fixedInfoList = React351.useMemo(() => flattenColumns.map((_, colIndex) => getCellFixedInfo(colIndex, colIndex, flattenColumns, stickyOffsets)), [flattenColumns, stickyOffsets]);
+    const fixedInfoList = React343.useMemo(() => flattenColumns.map((_, colIndex) => getCellFixedInfo(colIndex, colIndex, flattenColumns, stickyOffsets)), [flattenColumns, stickyOffsets]);
     return useMemo(() => fixedInfoList, [fixedInfoList], (prev2, next2) => !isEqual_default(prev2, next2));
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useFrame.js
-  var import_react130 = __toESM(require_react());
+  var import_react129 = __toESM(require_react());
   function useLayoutState(defaultState) {
-    const stateRef = (0, import_react130.useRef)(defaultState);
-    const [, forceUpdate] = (0, import_react130.useState)({});
-    const lastPromiseRef = (0, import_react130.useRef)(null);
-    const updateBatchRef = (0, import_react130.useRef)([]);
+    const stateRef = (0, import_react129.useRef)(defaultState);
+    const [, forceUpdate] = (0, import_react129.useState)({});
+    const lastPromiseRef = (0, import_react129.useRef)(null);
+    const updateBatchRef = (0, import_react129.useRef)([]);
     function setFrameState(updater) {
       updateBatchRef.current.push(updater);
       const promise = Promise.resolve();
@@ -73184,14 +72005,14 @@ html body {
         }
       });
     }
-    (0, import_react130.useEffect)(() => () => {
+    (0, import_react129.useEffect)(() => () => {
       lastPromiseRef.current = null;
     }, []);
     return [stateRef.current, setFrameState];
   }
   function useTimeoutLock(defaultState) {
-    const frameRef = (0, import_react130.useRef)(defaultState || null);
-    const timeoutRef = (0, import_react130.useRef)(null);
+    const frameRef = (0, import_react129.useRef)(defaultState || null);
+    const timeoutRef = (0, import_react129.useRef)(null);
     function cleanUp() {
       clearTimeout(timeoutRef.current);
     }
@@ -73206,16 +72027,16 @@ html body {
     function getState() {
       return frameRef.current;
     }
-    (0, import_react130.useEffect)(() => cleanUp, []);
+    (0, import_react129.useEffect)(() => cleanUp, []);
     return [setState, getState];
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useHover.js
-  var React352 = __toESM(require_react());
+  var React344 = __toESM(require_react());
   function useHover() {
-    const [startRow, setStartRow] = React352.useState(-1);
-    const [endRow, setEndRow] = React352.useState(-1);
-    const onHover = React352.useCallback((start, end) => {
+    const [startRow, setStartRow] = React344.useState(-1);
+    const [endRow, setEndRow] = React344.useState(-1);
+    const onHover = React344.useCallback((start, end) => {
       setStartRow(start);
       setEndRow(end);
     }, []);
@@ -73223,7 +72044,7 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useSticky.js
-  var React353 = __toESM(require_react());
+  var React345 = __toESM(require_react());
   var defaultContainer = canUseDom() ? window : null;
   function useSticky(sticky, prefixCls) {
     const {
@@ -73234,7 +72055,7 @@ html body {
     } = typeof sticky === "object" ? sticky : {};
     const container = getContainer2() || defaultContainer;
     const isSticky = !!sticky;
-    return React353.useMemo(() => {
+    return React345.useMemo(() => {
       return {
         isSticky,
         stickyClassName: isSticky ? `${prefixCls}-sticky-holder` : "",
@@ -73247,9 +72068,9 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useStickyOffsets.js
-  var import_react131 = __toESM(require_react());
+  var import_react130 = __toESM(require_react());
   function useStickyOffsets(colWidths, flattenColumns) {
-    const stickyOffsets = (0, import_react131.useMemo)(() => {
+    const stickyOffsets = (0, import_react130.useMemo)(() => {
       const columnCount = flattenColumns.length;
       const getOffsets = (startIndex, endIndex, offset3) => {
         const offsets = [];
@@ -73275,14 +72096,14 @@ html body {
   var useStickyOffsets_default = useStickyOffsets;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Panel/index.js
-  var React354 = __toESM(require_react());
+  var React346 = __toESM(require_react());
   var Panel2 = (props) => {
     const {
       children,
       className,
       style: style2
     } = props;
-    return /* @__PURE__ */ React354.createElement("div", {
+    return /* @__PURE__ */ React346.createElement("div", {
       className,
       style: style2
     }, children);
@@ -73290,7 +72111,7 @@ html body {
   var Panel_default2 = Panel2;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/stickyScrollBar.js
-  var React355 = __toESM(require_react());
+  var React347 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/utils/offsetUtil.js
   function getOffset2(node2) {
@@ -73317,22 +72138,22 @@ html body {
       container,
       direction
     } = props;
-    const prefixCls = useContext117(TableContext_default, "prefixCls");
+    const prefixCls = useContext114(TableContext_default, "prefixCls");
     const bodyScrollWidth = ((_a = scrollBodyRef.current) == null ? void 0 : _a.scrollWidth) || 0;
     const bodyWidth = ((_b = scrollBodyRef.current) == null ? void 0 : _b.clientWidth) || 0;
     const scrollBarWidth = bodyScrollWidth && bodyWidth * (bodyWidth / bodyScrollWidth);
-    const scrollBarRef = React355.useRef(null);
+    const scrollBarRef = React347.useRef(null);
     const [scrollState, setScrollState] = useLayoutState({
       scrollLeft: 0,
       isHiddenScrollBar: true
     });
-    const refState = React355.useRef({
+    const refState = React347.useRef({
       delta: 0,
       x: 0
     });
-    const [isActive2, setActive] = React355.useState(false);
-    const rafRef = React355.useRef(null);
-    React355.useEffect(() => () => {
+    const [isActive2, setActive] = React347.useState(false);
+    const rafRef = React347.useRef(null);
+    React347.useEffect(() => () => {
       raf_default.cancel(rafRef.current);
     }, []);
     const onMouseUp = () => {
@@ -73393,11 +72214,11 @@ html body {
         });
       });
     };
-    React355.useImperativeHandle(ref, () => ({
+    React347.useImperativeHandle(ref, () => ({
       setScrollLeft,
       checkScrollBarVisible
     }));
-    React355.useEffect(() => {
+    React347.useEffect(() => {
       document.body.addEventListener(MOUSEUP_EVENT, onMouseUp, false);
       document.body.addEventListener(MOUSEMOVE_EVENT, onMouseMove, false);
       checkScrollBarVisible();
@@ -73406,7 +72227,7 @@ html body {
         document.body.removeEventListener(MOUSEMOVE_EVENT, onMouseMove);
       };
     }, [scrollBarWidth, isActive2]);
-    React355.useEffect(() => {
+    React347.useEffect(() => {
       if (scrollBodyRef.current) {
         const scrollParents = [];
         let parent = getDOM(scrollBodyRef.current);
@@ -73430,7 +72251,7 @@ html body {
         };
       }
     }, [container]);
-    React355.useEffect(() => {
+    React347.useEffect(() => {
       if (!scrollState.isHiddenScrollBar) {
         setScrollState((state) => {
           const bodyNode = scrollBodyRef.current;
@@ -73446,14 +72267,14 @@ html body {
     if (bodyScrollWidth <= bodyWidth || !scrollBarWidth || scrollState.isHiddenScrollBar) {
       return null;
     }
-    return /* @__PURE__ */ React355.createElement("div", {
+    return /* @__PURE__ */ React347.createElement("div", {
       style: {
         height: getScrollBarSize(),
         width: bodyWidth,
         bottom: offsetScroll
       },
       className: `${prefixCls}-sticky-scroll`
-    }, /* @__PURE__ */ React355.createElement("div", {
+    }, /* @__PURE__ */ React347.createElement("div", {
       onMouseDown,
       ref: scrollBarRef,
       className: clsx(`${prefixCls}-sticky-scroll-bar`, {
@@ -73465,11 +72286,11 @@ html body {
       }
     }));
   };
-  var stickyScrollBar_default = /* @__PURE__ */ React355.forwardRef(StickyScrollBar);
+  var stickyScrollBar_default = /* @__PURE__ */ React347.forwardRef(StickyScrollBar);
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Table.js
-  function _extends74() {
-    _extends74 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends72() {
+    _extends72 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -73480,7 +72301,7 @@ html body {
       }
       return target;
     };
-    return _extends74.apply(this, arguments);
+    return _extends72.apply(this, arguments);
   }
   var DEFAULT_PREFIX = "rc-table";
   var EMPTY_DATA2 = [];
@@ -73536,8 +72357,8 @@ html body {
       });
       warning_default(!("getBodyWrapper" in props), "`getBodyWrapper` is deprecated, please use custom `components` instead.");
     }
-    const getComponent = React356.useCallback((path, defaultComponent) => get(components, path) || defaultComponent, [components]);
-    const getRowKey = React356.useMemo(() => {
+    const getComponent = React348.useCallback((path, defaultComponent) => get(components, path) || defaultComponent, [components]);
+    const getRowKey = React348.useMemo(() => {
       if (typeof rowKey === "function") {
         return rowKey;
       }
@@ -73553,7 +72374,7 @@ html body {
     const [startRow, endRow, onHover] = useHover();
     const [expandableConfig, expandableType, mergedExpandedKeys, mergedExpandIcon, mergedChildrenColumnName, onTriggerExpand] = useExpand(props, mergedData, getRowKey);
     const scrollX = scroll == null ? void 0 : scroll.x;
-    const [componentWidth, setComponentWidth] = React356.useState(0);
+    const [componentWidth, setComponentWidth] = React348.useState(0);
     const [columns, flattenColumns, flattenScrollX] = useColumns_default(__spreadProps(__spreadValues(__spreadValues({}, props), expandableConfig), {
       expandable: !!expandableConfig.expandedRowRender,
       columnTitle: expandableConfig.columnTitle,
@@ -73567,15 +72388,15 @@ html body {
       clientWidth: componentWidth
     }), useInternalHooks ? transformColumns : null);
     const mergedScrollX = flattenScrollX != null ? flattenScrollX : scrollX;
-    const columnContext = React356.useMemo(() => ({
+    const columnContext = React348.useMemo(() => ({
       columns,
       flattenColumns
     }), [columns, flattenColumns]);
-    const fullTableRef = React356.useRef(null);
-    const scrollHeaderRef = React356.useRef(null);
-    const scrollBodyRef = React356.useRef(null);
-    const scrollBodyContainerRef = React356.useRef(null);
-    React356.useImperativeHandle(ref, () => {
+    const fullTableRef = React348.useRef(null);
+    const scrollHeaderRef = React348.useRef(null);
+    const scrollBodyRef = React348.useRef(null);
+    const scrollBodyContainerRef = React348.useRef(null);
+    React348.useImperativeHandle(ref, () => {
       return {
         nativeElement: fullTableRef.current,
         scrollTo: (config) => {
@@ -73611,20 +72432,20 @@ html body {
         }
       };
     });
-    const scrollSummaryRef = React356.useRef(null);
-    const [shadowStart, setShadowStart] = React356.useState(false);
-    const [shadowEnd, setShadowEnd] = React356.useState(false);
-    const [colsWidths, updateColsWidths] = React356.useState(/* @__PURE__ */ new Map());
+    const scrollSummaryRef = React348.useRef(null);
+    const [shadowStart, setShadowStart] = React348.useState(false);
+    const [shadowEnd, setShadowEnd] = React348.useState(false);
+    const [colsWidths, updateColsWidths] = React348.useState(/* @__PURE__ */ new Map());
     const colsKeys = getColumnsKey(flattenColumns);
     const pureColWidths = colsKeys.map((columnKey) => colsWidths.get(columnKey));
-    const colWidths = React356.useMemo(() => pureColWidths, [pureColWidths.join("_")]);
+    const colWidths = React348.useMemo(() => pureColWidths, [pureColWidths.join("_")]);
     const stickyOffsets = useStickyOffsets_default(colWidths, flattenColumns);
     const fixHeader = scroll && validateValue(scroll.y);
     const horizonScroll = scroll && validateValue(mergedScrollX) || Boolean(expandableConfig.fixed);
     const fixColumn = horizonScroll && flattenColumns.some(({
       fixed
     }) => fixed);
-    const stickyRef = React356.useRef(null);
+    const stickyRef = React348.useRef(null);
     const {
       isSticky,
       offsetHeader,
@@ -73633,8 +72454,8 @@ html body {
       stickyClassName,
       container
     } = useSticky(sticky, prefixCls);
-    const summaryNode = React356.useMemo(() => summary == null ? void 0 : summary(mergedData), [summary, mergedData]);
-    const fixFooter = (fixHeader || isSticky) && /* @__PURE__ */ React356.isValidElement(summaryNode) && summaryNode.type === Summary_default && summaryNode.props.fixed;
+    const summaryNode = React348.useMemo(() => summary == null ? void 0 : summary(mergedData), [summary, mergedData]);
+    const fixFooter = (fixHeader || isSticky) && /* @__PURE__ */ React348.isValidElement(summaryNode) && summaryNode.type === Summary_default && summaryNode.props.fixed;
     let scrollXStyle;
     let scrollYStyle;
     let scrollTableStyle;
@@ -73658,7 +72479,7 @@ html body {
         minWidth: "100%"
       };
     }
-    const onColumnResize = React356.useCallback((columnKey, width) => {
+    const onColumnResize = React348.useCallback((columnKey, width) => {
       updateColsWidths((widths) => {
         if (widths.get(columnKey) !== width) {
           const newWidths = new Map(widths);
@@ -73684,7 +72505,7 @@ html body {
         }
       }
     }
-    const [scrollInfo, setScrollInfo] = React356.useState([0, 0]);
+    const [scrollInfo, setScrollInfo] = React348.useState([0, 0]);
     const onInternalScroll = useEvent_default(({
       currentTarget,
       scrollLeft
@@ -73750,16 +72571,16 @@ html body {
         onFullTableResize();
       }
     }, [horizonScroll]);
-    const mounted = React356.useRef(false);
-    React356.useEffect(() => {
+    const mounted = React348.useRef(false);
+    React348.useEffect(() => {
       if (mounted.current) {
         triggerOnScroll();
       }
     }, [horizonScroll, data, columns.length]);
-    React356.useEffect(() => {
+    React348.useEffect(() => {
       mounted.current = true;
     }, []);
-    const [scrollbarSize, setScrollbarSize] = React356.useState(0);
+    const [scrollbarSize, setScrollbarSize] = React348.useState(0);
     useLayoutEffect_default(() => {
       if (!tailor || !useInternalHooks) {
         if (scrollBodyRef.current instanceof Element) {
@@ -73769,15 +72590,15 @@ html body {
         }
       }
     }, []);
-    React356.useEffect(() => {
+    React348.useEffect(() => {
       if (useInternalHooks && internalRefs) {
         internalRefs.body.current = scrollBodyRef.current;
       }
     });
-    const renderFixedHeaderTable = React356.useCallback((fixedHolderPassProps) => /* @__PURE__ */ React356.createElement(React356.Fragment, null, /* @__PURE__ */ React356.createElement(Header_default, fixedHolderPassProps), fixFooter === "top" && /* @__PURE__ */ React356.createElement(Footer_default, fixedHolderPassProps, summaryNode)), [fixFooter, summaryNode]);
-    const renderFixedFooterTable = React356.useCallback((fixedHolderPassProps) => /* @__PURE__ */ React356.createElement(Footer_default, fixedHolderPassProps, summaryNode), [summaryNode]);
+    const renderFixedHeaderTable = React348.useCallback((fixedHolderPassProps) => /* @__PURE__ */ React348.createElement(React348.Fragment, null, /* @__PURE__ */ React348.createElement(Header_default, fixedHolderPassProps), fixFooter === "top" && /* @__PURE__ */ React348.createElement(Footer_default, fixedHolderPassProps, summaryNode)), [fixFooter, summaryNode]);
+    const renderFixedFooterTable = React348.useCallback((fixedHolderPassProps) => /* @__PURE__ */ React348.createElement(Footer_default, fixedHolderPassProps, summaryNode), [summaryNode]);
     const TableComponent = getComponent(["table"], "table");
-    const mergedTableLayout = React356.useMemo(() => {
+    const mergedTableLayout = React348.useMemo(() => {
       if (tableLayout) {
         return tableLayout;
       }
@@ -73800,7 +72621,7 @@ html body {
       fixHeader,
       scroll
     };
-    const emptyNode = React356.useMemo(() => {
+    const emptyNode = React348.useMemo(() => {
       if (hasData) {
         return null;
       }
@@ -73809,17 +72630,17 @@ html body {
       }
       return emptyText;
     }, [hasData, emptyText]);
-    const bodyTable = /* @__PURE__ */ React356.createElement(Body_default, {
+    const bodyTable = /* @__PURE__ */ React348.createElement(Body_default, {
       data: mergedData,
       measureColumnWidth: fixHeader || horizonScroll || isSticky
     });
-    const bodyColGroup = /* @__PURE__ */ React356.createElement(ColGroup_default, {
+    const bodyColGroup = /* @__PURE__ */ React348.createElement(ColGroup_default, {
       colWidths: flattenColumns.map(({
         width
       }) => width),
       columns: flattenColumns
     });
-    const captionElement = caption !== null && caption !== void 0 ? /* @__PURE__ */ React356.createElement("caption", {
+    const captionElement = caption !== null && caption !== void 0 ? /* @__PURE__ */ React348.createElement("caption", {
       className: `${prefixCls}-caption`
     }, caption) : void 0;
     const dataProps = pickAttrs(props, {
@@ -73849,16 +72670,16 @@ html body {
           return 0;
         });
       } else {
-        bodyContent = /* @__PURE__ */ React356.createElement("div", {
+        bodyContent = /* @__PURE__ */ React348.createElement("div", {
           style: __spreadValues(__spreadValues({}, scrollXStyle), scrollYStyle),
           onScroll: onBodyScroll,
           ref: scrollBodyRef,
           className: `${prefixCls}-body`
-        }, /* @__PURE__ */ React356.createElement(TableComponent, _extends74({
+        }, /* @__PURE__ */ React348.createElement(TableComponent, _extends72({
           style: __spreadProps(__spreadValues({}, scrollTableStyle), {
             tableLayout: mergedTableLayout
           })
-        }, ariaProps), captionElement, bodyColGroup, bodyTable, !fixFooter && summaryNode && /* @__PURE__ */ React356.createElement(Footer_default, {
+        }, ariaProps), captionElement, bodyColGroup, bodyTable, !fixFooter && summaryNode && /* @__PURE__ */ React348.createElement(Footer_default, {
           stickyOffsets,
           flattenColumns
         }, summaryNode)));
@@ -73873,17 +72694,17 @@ html body {
         tableLayout: mergedTableLayout,
         onScroll: onInternalScroll
       });
-      groupTableNode = /* @__PURE__ */ React356.createElement(React356.Fragment, null, showHeader !== false && /* @__PURE__ */ React356.createElement(FixedHolder_default, _extends74({}, fixedHolderProps, {
+      groupTableNode = /* @__PURE__ */ React348.createElement(React348.Fragment, null, showHeader !== false && /* @__PURE__ */ React348.createElement(FixedHolder_default, _extends72({}, fixedHolderProps, {
         stickyTopOffset: offsetHeader,
         className: `${prefixCls}-header`,
         ref: scrollHeaderRef,
         colGroup: bodyColGroup
-      }), renderFixedHeaderTable), bodyContent, fixFooter && fixFooter !== "top" && /* @__PURE__ */ React356.createElement(FixedHolder_default, _extends74({}, fixedHolderProps, {
+      }), renderFixedHeaderTable), bodyContent, fixFooter && fixFooter !== "top" && /* @__PURE__ */ React348.createElement(FixedHolder_default, _extends72({}, fixedHolderProps, {
         stickyBottomOffset: offsetSummary,
         className: `${prefixCls}-summary`,
         ref: scrollSummaryRef,
         colGroup: bodyColGroup
-      }), renderFixedFooterTable), isSticky && scrollBodyRef.current && scrollBodyRef.current instanceof Element && /* @__PURE__ */ React356.createElement(stickyScrollBar_default, {
+      }), renderFixedFooterTable), isSticky && scrollBodyRef.current && scrollBodyRef.current instanceof Element && /* @__PURE__ */ React348.createElement(stickyScrollBar_default, {
         ref: stickyRef,
         offsetScroll,
         scrollBodyRef,
@@ -73892,16 +72713,16 @@ html body {
         direction
       }));
     } else {
-      groupTableNode = /* @__PURE__ */ React356.createElement("div", {
+      groupTableNode = /* @__PURE__ */ React348.createElement("div", {
         style: __spreadValues(__spreadValues(__spreadValues({}, scrollXStyle), scrollYStyle), styles == null ? void 0 : styles.content),
         className: clsx(`${prefixCls}-content`, classNames == null ? void 0 : classNames.content),
         onScroll: onInternalScroll,
         ref: scrollBodyRef
-      }, /* @__PURE__ */ React356.createElement(TableComponent, _extends74({
+      }, /* @__PURE__ */ React348.createElement(TableComponent, _extends72({
         style: __spreadProps(__spreadValues({}, scrollTableStyle), {
           tableLayout: mergedTableLayout
         })
-      }, ariaProps), captionElement, bodyColGroup, showHeader !== false && /* @__PURE__ */ React356.createElement(Header_default, _extends74({}, headerProps, columnContext)), bodyTable, summaryNode && /* @__PURE__ */ React356.createElement(Footer_default, {
+      }, ariaProps), captionElement, bodyColGroup, showHeader !== false && /* @__PURE__ */ React348.createElement(Header_default, _extends72({}, headerProps, columnContext)), bodyTable, summaryNode && /* @__PURE__ */ React348.createElement(Footer_default, {
         stickyOffsets,
         flattenColumns
       }, summaryNode)));
@@ -73910,7 +72731,7 @@ html body {
     if (isSticky) {
       tableStyle["--columns-count"] = flattenColumns.length;
     }
-    let fullTable = /* @__PURE__ */ React356.createElement("div", _extends74({
+    let fullTable = /* @__PURE__ */ React348.createElement("div", _extends72({
       className: clsx(prefixCls, className, {
         [`${prefixCls}-rtl`]: direction === "rtl",
         [`${prefixCls}-fix-start-shadow`]: horizonScroll,
@@ -73927,26 +72748,26 @@ html body {
       style: tableStyle,
       id,
       ref: fullTableRef
-    }, dataProps), title && /* @__PURE__ */ React356.createElement(Panel_default2, {
+    }, dataProps), title && /* @__PURE__ */ React348.createElement(Panel_default2, {
       className: clsx(`${prefixCls}-title`, classNames == null ? void 0 : classNames.title),
       style: styles == null ? void 0 : styles.title
-    }, title(mergedData)), /* @__PURE__ */ React356.createElement("div", {
+    }, title(mergedData)), /* @__PURE__ */ React348.createElement("div", {
       ref: scrollBodyContainerRef,
       className: clsx(`${prefixCls}-container`, classNames == null ? void 0 : classNames.section),
       style: styles == null ? void 0 : styles.section
-    }, groupTableNode), footer && /* @__PURE__ */ React356.createElement(Panel_default2, {
+    }, groupTableNode), footer && /* @__PURE__ */ React348.createElement(Panel_default2, {
       className: clsx(`${prefixCls}-footer`, classNames == null ? void 0 : classNames.footer),
       style: styles == null ? void 0 : styles.footer
     }, footer(mergedData)));
     if (horizonScroll) {
-      fullTable = /* @__PURE__ */ React356.createElement(es_default, {
+      fullTable = /* @__PURE__ */ React348.createElement(es_default, {
         onResize: ({
           offsetWidth
         }) => onFullTableResize(offsetWidth)
       }, fullTable);
     }
     const fixedInfoList = useFixedInfo(flattenColumns, stickyOffsets);
-    const TableContextValue = React356.useMemo(() => ({
+    const TableContextValue = React348.useMemo(() => ({
       scrollX: mergedScrollX,
       scrollInfo,
       classNames,
@@ -74030,11 +72851,11 @@ html body {
       rowHoverable,
       measureRowRender
     ]);
-    return /* @__PURE__ */ React356.createElement(TableContext_default.Provider, {
+    return /* @__PURE__ */ React348.createElement(TableContext_default.Provider, {
       value: TableContextValue
     }, fullTable);
   };
-  var RefTable = /* @__PURE__ */ React356.forwardRef(Table);
+  var RefTable = /* @__PURE__ */ React348.forwardRef(Table);
   if (true) {
     RefTable.displayName = "Table";
   }
@@ -74050,24 +72871,24 @@ html body {
   var Table_default = ImmutableTable;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/VirtualTable/index.js
-  var React360 = __toESM(require_react());
+  var React352 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/VirtualTable/BodyGrid.js
-  var React359 = __toESM(require_react());
+  var React351 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/VirtualTable/BodyLine.js
-  var React358 = __toESM(require_react());
+  var React350 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/VirtualTable/VirtualCell.js
-  var React357 = __toESM(require_react());
+  var React349 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/VirtualTable/context.js
-  var StaticContext = createContext38(null);
-  var GridContext = createContext38(null);
+  var StaticContext = createContext37(null);
+  var GridContext = createContext37(null);
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/VirtualTable/VirtualCell.js
-  function _extends75() {
-    _extends75 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends73() {
+    _extends73 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -74078,7 +72899,7 @@ html body {
       }
       return target;
     };
-    return _extends75.apply(this, arguments);
+    return _extends73.apply(this, arguments);
   }
   function getColumnWidth(colIndex, colSpan, columnsOffset) {
     const mergedColSpan = colSpan || 1;
@@ -74107,7 +72928,7 @@ html body {
     } = column2;
     const {
       columnsOffset
-    } = useContext117(GridContext, ["columnsOffset"]);
+    } = useContext114(GridContext, ["columnsOffset"]);
     const {
       key,
       fixedInfo,
@@ -74128,7 +72949,7 @@ html body {
       marginRight: marginOffset,
       pointerEvents: "auto"
     });
-    const needHide = React357.useMemo(() => {
+    const needHide = React349.useMemo(() => {
       if (inverse) {
         return rowSpan <= 1;
       } else {
@@ -74146,7 +72967,7 @@ html body {
       cellSpan.rowSpan = 1;
       cellSpan.colSpan = 1;
     }
-    return /* @__PURE__ */ React357.createElement(Cell_default, _extends75({
+    return /* @__PURE__ */ React349.createElement(Cell_default, _extends73({
       className: clsx(columnClassName, className),
       ellipsis: column2.ellipsis,
       align: column2.align,
@@ -74170,8 +72991,8 @@ html body {
   var VirtualCell_default = VirtualCell;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/VirtualTable/BodyLine.js
-  function _extends76() {
-    _extends76 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends74() {
+    _extends74 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -74182,9 +73003,9 @@ html body {
       }
       return target;
     };
-    return _extends76.apply(this, arguments);
+    return _extends74.apply(this, arguments);
   }
-  var BodyLine = /* @__PURE__ */ React358.forwardRef((props, ref) => {
+  var BodyLine = /* @__PURE__ */ React350.forwardRef((props, ref) => {
     const _a = props, {
       data,
       index,
@@ -74213,10 +73034,10 @@ html body {
       prefixCls,
       fixColumn,
       componentWidth
-    } = useContext117(TableContext_default, ["prefixCls", "flattenColumns", "fixColumn", "componentWidth", "scrollX"]);
+    } = useContext114(TableContext_default, ["prefixCls", "flattenColumns", "fixColumn", "componentWidth", "scrollX"]);
     const {
       getComponent
-    } = useContext117(StaticContext, ["getComponent"]);
+    } = useContext114(StaticContext, ["getComponent"]);
     const rowInfo = useRowInfo(record, rowKey, index, indent);
     const RowComponent = getComponent(["body", "row"], "div");
     const cellComponent = getComponent(["body", "cell"], "div");
@@ -74240,9 +73061,9 @@ html body {
         };
       }
       const rowCellCls = `${prefixCls}-expanded-row-cell`;
-      expandRowNode = /* @__PURE__ */ React358.createElement(RowComponent, {
+      expandRowNode = /* @__PURE__ */ React350.createElement(RowComponent, {
         className: clsx(`${prefixCls}-expanded-row`, `${prefixCls}-expanded-row-level-${indent + 1}`, expandedClsName)
-      }, /* @__PURE__ */ React358.createElement(Cell_default, {
+      }, /* @__PURE__ */ React350.createElement(Cell_default, {
         component: cellComponent,
         prefixCls,
         className: clsx(rowCellCls, {
@@ -74258,7 +73079,7 @@ html body {
       rowStyle.position = "absolute";
       rowStyle.pointerEvents = "none";
     }
-    const rowNode = /* @__PURE__ */ React358.createElement(RowComponent, _extends76({}, rowProps, restProps, {
+    const rowNode = /* @__PURE__ */ React350.createElement(RowComponent, _extends74({}, rowProps, restProps, {
       "data-row-key": rowKey,
       ref: rowSupportExpand ? null : ref,
       className: clsx(className, `${prefixCls}-row`, rowProps == null ? void 0 : rowProps.className, {
@@ -74266,7 +73087,7 @@ html body {
       }),
       style: __spreadValues(__spreadValues({}, rowStyle), rowProps == null ? void 0 : rowProps.style)
     }), flattenColumns.map((column2, colIndex) => {
-      return /* @__PURE__ */ React358.createElement(VirtualCell_default, {
+      return /* @__PURE__ */ React350.createElement(VirtualCell_default, {
         key: colIndex,
         component: cellComponent,
         rowInfo,
@@ -74281,7 +73102,7 @@ html body {
       });
     }));
     if (rowSupportExpand) {
-      return /* @__PURE__ */ React358.createElement("div", {
+      return /* @__PURE__ */ React350.createElement("div", {
         ref
       }, rowNode, expandRowNode);
     }
@@ -74294,7 +73115,7 @@ html body {
   var BodyLine_default = ResponseBodyLine;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/VirtualTable/BodyGrid.js
-  var Grid = /* @__PURE__ */ React359.forwardRef((props, ref) => {
+  var Grid = /* @__PURE__ */ React351.forwardRef((props, ref) => {
     const {
       data,
       onScroll
@@ -74308,17 +73129,17 @@ html body {
       childrenColumnName,
       scrollX,
       direction
-    } = useContext117(TableContext_default, ["flattenColumns", "onColumnResize", "getRowKey", "prefixCls", "expandedKeys", "childrenColumnName", "scrollX", "direction"]);
+    } = useContext114(TableContext_default, ["flattenColumns", "onColumnResize", "getRowKey", "prefixCls", "expandedKeys", "childrenColumnName", "scrollX", "direction"]);
     const {
       sticky,
       scrollY,
       listItemHeight,
       getComponent,
       onScroll: onTablePropScroll
-    } = useContext117(StaticContext);
-    const listRef = React359.useRef(null);
+    } = useContext114(StaticContext);
+    const listRef = React351.useRef(null);
     const flattenData2 = useFlattenRecords(data, childrenColumnName, expandedKeys, getRowKey);
-    const columnsWidth = React359.useMemo(() => {
+    const columnsWidth = React351.useMemo(() => {
       let total = 0;
       return flattenColumns.map(({
         width,
@@ -74330,13 +73151,13 @@ html body {
         return [key, finalWidth, total];
       });
     }, [flattenColumns]);
-    const columnsOffset = React359.useMemo(() => columnsWidth.map((colWidth) => colWidth[2]), [columnsWidth]);
-    React359.useEffect(() => {
+    const columnsOffset = React351.useMemo(() => columnsWidth.map((colWidth) => colWidth[2]), [columnsWidth]);
+    React351.useEffect(() => {
       columnsWidth.forEach(([key, width]) => {
         onColumnResize(key, width);
       });
     }, [columnsWidth]);
-    React359.useImperativeHandle(ref, () => {
+    React351.useImperativeHandle(ref, () => {
       var _a;
       const obj = {
         scrollTo: (config) => {
@@ -74455,7 +73276,7 @@ html body {
           return sizeInfo2.bottom - sizeInfo2.top;
         };
         const sizeInfo = getSize2(rowKey);
-        return /* @__PURE__ */ React359.createElement(BodyLine_default, {
+        return /* @__PURE__ */ React351.createElement(BodyLine_default, {
           key: index,
           data: item,
           rowKey,
@@ -74469,7 +73290,7 @@ html body {
       });
       return nodes;
     };
-    const gridContext = React359.useMemo(() => ({
+    const gridContext = React351.useMemo(() => ({
       columnsOffset
     }), [columnsOffset]);
     const tblPrefixCls = `${prefixCls}-tbody`;
@@ -74482,9 +73303,9 @@ html body {
         horizontalScrollBarStyle.bottom = sticky.offsetScroll;
       }
     }
-    return /* @__PURE__ */ React359.createElement(GridContext.Provider, {
+    return /* @__PURE__ */ React351.createElement(GridContext.Provider, {
       value: gridContext
-    }, /* @__PURE__ */ React359.createElement(es_default9, {
+    }, /* @__PURE__ */ React351.createElement(es_default9, {
       fullHeight: false,
       ref: listRef,
       prefixCls: `${tblPrefixCls}-virtual`,
@@ -74512,7 +73333,7 @@ html body {
       extraRender
     }, (item, index, itemProps) => {
       const rowKey = getRowKey(item.record, index);
-      return /* @__PURE__ */ React359.createElement(BodyLine_default, {
+      return /* @__PURE__ */ React351.createElement(BodyLine_default, {
         data: item,
         rowKey,
         index,
@@ -74527,8 +73348,8 @@ html body {
   var BodyGrid_default = ResponseGrid;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/VirtualTable/index.js
-  function _extends77() {
-    _extends77 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends75() {
+    _extends75 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -74539,14 +73360,14 @@ html body {
       }
       return target;
     };
-    return _extends77.apply(this, arguments);
+    return _extends75.apply(this, arguments);
   }
   var renderBody = (rawData, props) => {
     const {
       ref,
       onScroll
     } = props;
-    return /* @__PURE__ */ React360.createElement(BodyGrid_default, {
+    return /* @__PURE__ */ React352.createElement(BodyGrid_default, {
       ref,
       data: rawData,
       onScroll
@@ -74582,16 +73403,16 @@ html body {
     }
     const getComponent = useEvent_default((path, defaultComponent) => get(components, path) || defaultComponent);
     const onInternalScroll = useEvent_default(onScroll);
-    const context = React360.useMemo(() => ({
+    const context = React352.useMemo(() => ({
       sticky,
       scrollY,
       listItemHeight,
       getComponent,
       onScroll: onInternalScroll
     }), [sticky, scrollY, listItemHeight, getComponent, onInternalScroll]);
-    return /* @__PURE__ */ React360.createElement(StaticContext.Provider, {
+    return /* @__PURE__ */ React352.createElement(StaticContext.Provider, {
       value: context
-    }, /* @__PURE__ */ React360.createElement(Table_default, _extends77({}, props, {
+    }, /* @__PURE__ */ React352.createElement(Table_default, _extends75({}, props, {
       className: clsx(className, `${prefixCls}-virtual`),
       scroll: __spreadProps(__spreadValues({}, scroll), {
         x: scrollX
@@ -74605,7 +73426,7 @@ html body {
       ref
     })));
   };
-  var RefVirtualTable = /* @__PURE__ */ React360.forwardRef(VirtualTable);
+  var RefVirtualTable = /* @__PURE__ */ React352.forwardRef(VirtualTable);
   if (true) {
     RefVirtualTable.displayName = "VirtualTable";
   }
@@ -74623,22 +73444,22 @@ html body {
   var ColumnGroup_default2 = ColumnGroup2;
 
   // ../custom_dashboard/node_modules/antd/es/table/hooks/useSelection.js
-  var React365 = __toESM(require_react());
-  var import_react134 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@rc-component/tree/es/util.js
+  var React357 = __toESM(require_react());
   var import_react133 = __toESM(require_react());
 
-  // ../custom_dashboard/node_modules/@rc-component/tree/es/TreeNode.js
+  // ../custom_dashboard/node_modules/@rc-component/tree/es/util.js
   var import_react132 = __toESM(require_react());
 
+  // ../custom_dashboard/node_modules/@rc-component/tree/es/TreeNode.js
+  var import_react131 = __toESM(require_react());
+
   // ../custom_dashboard/node_modules/@rc-component/tree/es/contextTypes.js
-  var React361 = __toESM(require_react());
-  var TreeContext = /* @__PURE__ */ React361.createContext(null);
-  var UnstableContext = /* @__PURE__ */ React361.createContext({});
+  var React353 = __toESM(require_react());
+  var TreeContext = /* @__PURE__ */ React353.createContext(null);
+  var UnstableContext = /* @__PURE__ */ React353.createContext({});
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/Indent.js
-  var React362 = __toESM(require_react());
+  var React354 = __toESM(require_react());
   var Indent = ({
     prefixCls,
     level,
@@ -74648,7 +73469,7 @@ html body {
     const baseClassName = `${prefixCls}-indent-unit`;
     const list = [];
     for (let i = 0; i < level; i += 1) {
-      list.push(/* @__PURE__ */ React362.createElement("span", {
+      list.push(/* @__PURE__ */ React354.createElement("span", {
         key: i,
         className: clsx(baseClassName, {
           [`${baseClassName}-start`]: isStart[i],
@@ -74656,16 +73477,16 @@ html body {
         })
       }));
     }
-    return /* @__PURE__ */ React362.createElement("span", {
+    return /* @__PURE__ */ React354.createElement("span", {
       "aria-hidden": "true",
       className: `${prefixCls}-indent`
     }, list);
   };
-  var Indent_default = /* @__PURE__ */ React362.memo(Indent);
+  var Indent_default = /* @__PURE__ */ React354.memo(Indent);
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/TreeNode.js
-  function _extends78() {
-    _extends78 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends76() {
+    _extends76 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -74676,7 +73497,7 @@ html body {
       }
       return target;
     };
-    return _extends78.apply(this, arguments);
+    return _extends76.apply(this, arguments);
   }
   var ICON_OPEN = "open";
   var ICON_CLOSE = "close";
@@ -74727,16 +73548,16 @@ html body {
       "treeId"
     ]);
     const nodeId = getId(treeId, eventKey);
-    const context = import_react132.default.useContext(TreeContext);
+    const context = import_react131.default.useContext(TreeContext);
     const {
       classNames: treeClassNames,
       styles
     } = context || {};
-    const unstableContext = import_react132.default.useContext(UnstableContext);
-    const selectHandleRef = import_react132.default.useRef(null);
-    const [dragNodeHighlight, setDragNodeHighlight] = import_react132.default.useState(false);
+    const unstableContext = import_react131.default.useContext(UnstableContext);
+    const selectHandleRef = import_react131.default.useRef(null);
+    const [dragNodeHighlight, setDragNodeHighlight] = import_react131.default.useState(false);
     const isDisabled = !!(context.disabled || props.disabled || ((_b = unstableContext.nodeDisabled) == null ? void 0 : _b.call(unstableContext, data)));
-    const isCheckable = import_react132.default.useMemo(() => {
+    const isCheckable = import_react131.default.useMemo(() => {
       if (!context.checkable || props.checkable === false) {
         return false;
       }
@@ -74757,7 +73578,7 @@ html body {
       }
       context.onNodeCheck(e3, convertNodePropsToEventData(props), !checked);
     };
-    const isSelectable = import_react132.default.useMemo(() => {
+    const isSelectable = import_react131.default.useMemo(() => {
       if (typeof selectable === "boolean") {
         return selectable;
       }
@@ -74783,7 +73604,7 @@ html body {
     const onContextMenu = (e3) => {
       context.onNodeContextMenu(e3, convertNodePropsToEventData(props));
     };
-    const isDraggable = import_react132.default.useMemo(() => {
+    const isDraggable = import_react131.default.useMemo(() => {
       return !!(context.draggable && (!context.draggable.nodeDraggable || context.draggable.nodeDraggable(data)));
     }, [context.draggable, data]);
     const onDragStart = (e3) => {
@@ -74826,16 +73647,16 @@ html body {
       }
       context.onNodeExpand(e3, convertNodePropsToEventData(props));
     };
-    const hasChildren = import_react132.default.useMemo(() => {
+    const hasChildren = import_react131.default.useMemo(() => {
       const {
         children
       } = getEntity(context.keyEntities, eventKey) || {};
       return Boolean((children || []).length);
     }, [context.keyEntities, eventKey]);
-    const memoizedIsLeaf = import_react132.default.useMemo(() => {
+    const memoizedIsLeaf = import_react131.default.useMemo(() => {
       return isLeafNode(isLeaf, context.loadData, hasChildren, props.loaded);
     }, [isLeaf, context.loadData, hasChildren, props.loaded]);
-    import_react132.default.useEffect(() => {
+    import_react131.default.useEffect(() => {
       if (loading) {
         return;
       }
@@ -74843,12 +73664,12 @@ html body {
         context.onNodeLoad(convertNodePropsToEventData(props));
       }
     }, [loading, context.loadData, context.onNodeLoad, expanded, memoizedIsLeaf, props]);
-    const dragHandlerNode = import_react132.default.useMemo(() => {
+    const dragHandlerNode = import_react131.default.useMemo(() => {
       var _a2;
       if (!((_a2 = context.draggable) == null ? void 0 : _a2.icon)) {
         return null;
       }
-      return /* @__PURE__ */ import_react132.default.createElement("span", {
+      return /* @__PURE__ */ import_react131.default.createElement("span", {
         className: `${context.prefixCls}-draggable-icon`
       }, context.draggable.icon);
     }, [context.draggable]);
@@ -74864,22 +73685,22 @@ html body {
     const renderSwitcher = () => {
       if (memoizedIsLeaf) {
         const switcherIconDom2 = renderSwitcherIconDom(true);
-        return switcherIconDom2 !== false ? /* @__PURE__ */ import_react132.default.createElement("span", {
+        return switcherIconDom2 !== false ? /* @__PURE__ */ import_react131.default.createElement("span", {
           className: clsx(`${context.prefixCls}-switcher`, `${context.prefixCls}-switcher-noop`)
         }, switcherIconDom2) : null;
       }
       const switcherIconDom = renderSwitcherIconDom(false);
-      return switcherIconDom !== false ? /* @__PURE__ */ import_react132.default.createElement("span", {
+      return switcherIconDom !== false ? /* @__PURE__ */ import_react131.default.createElement("span", {
         onClick: onExpand,
         className: clsx(`${context.prefixCls}-switcher`, `${context.prefixCls}-switcher_${expanded ? ICON_OPEN : ICON_CLOSE}`)
       }, switcherIconDom) : null;
     };
-    const checkboxNode = import_react132.default.useMemo(() => {
+    const checkboxNode = import_react131.default.useMemo(() => {
       if (!isCheckable) {
         return null;
       }
       const $custom = typeof isCheckable !== "boolean" ? isCheckable : null;
-      return /* @__PURE__ */ import_react132.default.createElement("span", {
+      return /* @__PURE__ */ import_react131.default.createElement("span", {
         className: clsx(`${context.prefixCls}-checkbox`, {
           [`${context.prefixCls}-checkbox-checked`]: checked,
           [`${context.prefixCls}-checkbox-indeterminate`]: !checked && halfChecked,
@@ -74892,21 +73713,21 @@ html body {
         "aria-labelledby": nodeId
       }, $custom);
     }, [isCheckable, checked, halfChecked, isDisabled, props.disableCheckbox, nodeId]);
-    const nodeState = import_react132.default.useMemo(() => {
+    const nodeState = import_react131.default.useMemo(() => {
       if (memoizedIsLeaf) {
         return null;
       }
       return expanded ? ICON_OPEN : ICON_CLOSE;
     }, [memoizedIsLeaf, expanded]);
-    const iconNode = import_react132.default.useMemo(() => {
-      return /* @__PURE__ */ import_react132.default.createElement("span", {
+    const iconNode = import_react131.default.useMemo(() => {
+      return /* @__PURE__ */ import_react131.default.createElement("span", {
         className: clsx(treeClassNames == null ? void 0 : treeClassNames.itemIcon, `${context.prefixCls}-iconEle`, `${context.prefixCls}-icon__${nodeState || "docu"}`, {
           [`${context.prefixCls}-icon_loading`]: loading
         }),
         style: styles == null ? void 0 : styles.itemIcon
       });
     }, [context.prefixCls, nodeState, loading]);
-    const dropIndicatorNode = import_react132.default.useMemo(() => {
+    const dropIndicatorNode = import_react131.default.useMemo(() => {
       const rootDraggable = Boolean(context.draggable);
       const showIndicator = !props.disabled && rootDraggable && context.dragOverNodeKey === eventKey;
       if (!showIndicator) {
@@ -74920,7 +73741,7 @@ html body {
         direction: context.direction
       });
     }, [context.dropPosition, context.dropLevelOffset, context.indent, context.prefixCls, context.direction, context.draggable, context.dragOverNodeKey, context.dropIndicatorRender]);
-    const selectorNode = import_react132.default.useMemo(() => {
+    const selectorNode = import_react131.default.useMemo(() => {
       const {
         title = defaultTitle
       } = props;
@@ -74928,7 +73749,7 @@ html body {
       let $icon;
       if (context.showIcon) {
         const currentIcon = props.icon || context.icon;
-        $icon = currentIcon ? /* @__PURE__ */ import_react132.default.createElement("span", {
+        $icon = currentIcon ? /* @__PURE__ */ import_react131.default.createElement("span", {
           className: clsx(treeClassNames == null ? void 0 : treeClassNames.itemIcon, `${context.prefixCls}-iconEle`, `${context.prefixCls}-icon__customize`),
           style: styles == null ? void 0 : styles.itemIcon
         }, typeof currentIcon === "function" ? currentIcon(props) : currentIcon) : iconNode;
@@ -74943,7 +73764,7 @@ html body {
       } else {
         titleNode = title;
       }
-      return /* @__PURE__ */ import_react132.default.createElement("span", {
+      return /* @__PURE__ */ import_react131.default.createElement("span", {
         ref: selectHandleRef,
         title: typeof title === "string" ? title : "",
         className: clsx(wrapClass, `${wrapClass}-${nodeState || "normal"}`, {
@@ -74954,7 +73775,7 @@ html body {
         onContextMenu,
         onClick: onSelectorClick,
         onDoubleClick: onSelectorDoubleClick
-      }, $icon, /* @__PURE__ */ import_react132.default.createElement("span", {
+      }, $icon, /* @__PURE__ */ import_react131.default.createElement("span", {
         className: clsx(`${context.prefixCls}-title`, treeClassNames == null ? void 0 : treeClassNames.itemTitle),
         style: styles == null ? void 0 : styles.itemTitle
       }, titleNode), dropIndicatorNode);
@@ -74969,7 +73790,7 @@ html body {
     const isEndNode = isEnd[isEnd.length - 1];
     const draggableWithoutDisabled = !isDisabled && isDraggable;
     const dragging = context.draggingNodeKey === eventKey;
-    return /* @__PURE__ */ import_react132.default.createElement("div", _extends78({
+    return /* @__PURE__ */ import_react131.default.createElement("div", _extends76({
       ref: domRef,
       role: "treeitem",
       id: nodeId,
@@ -75005,7 +73826,7 @@ html body {
       onDrop: isDraggable ? onDrop : void 0,
       onDragEnd: isDraggable ? onDragEnd : void 0,
       onMouseMove
-    }, dataOrAriaAttributeProps), /* @__PURE__ */ import_react132.default.createElement(Indent_default, {
+    }, dataOrAriaAttributeProps), /* @__PURE__ */ import_react131.default.createElement(Indent_default, {
       prefixCls: context.prefixCls,
       level,
       isStart,
@@ -75282,8 +74103,8 @@ html body {
     const warning6 = devUseWarning("Table");
     const [multipleSelect, updatePrevSelectedIndex] = useMultipleSelect((item) => item);
     const [mergedSelectedKeys, setMergedSelectedKeys] = useControlledState(defaultSelectedRowKeys || EMPTY_LIST4, selectedRowKeys);
-    const preserveRecordsRef = React365.useRef(/* @__PURE__ */ new Map());
-    const updatePreserveRecordsCache = (0, import_react134.useCallback)((keys2) => {
+    const preserveRecordsRef = React357.useRef(/* @__PURE__ */ new Map());
+    const updatePreserveRecordsCache = (0, import_react133.useCallback)((keys2) => {
       if (preserveSelectedRowKeys) {
         const newCache = /* @__PURE__ */ new Map();
         keys2.forEach((key) => {
@@ -75296,13 +74117,13 @@ html body {
         preserveRecordsRef.current = newCache;
       }
     }, [getRecordByKey, preserveSelectedRowKeys]);
-    React365.useEffect(() => {
+    React357.useEffect(() => {
       updatePreserveRecordsCache(mergedSelectedKeys);
     }, [mergedSelectedKeys]);
-    const flattedData = (0, import_react134.useMemo)(() => flattenData(childrenColumnName, pageData), [childrenColumnName, pageData]);
+    const flattedData = (0, import_react133.useMemo)(() => flattenData(childrenColumnName, pageData), [childrenColumnName, pageData]);
     const {
       keyEntities
-    } = (0, import_react134.useMemo)(() => {
+    } = (0, import_react133.useMemo)(() => {
       if (checkStrictly) {
         return {
           keyEntities: null
@@ -75319,7 +74140,7 @@ html body {
         childrenPropName: childrenColumnName
       });
     }, [data, getRowKey, checkStrictly, childrenColumnName, preserveSelectedRowKeys, flattedData]);
-    const checkboxPropsMap = (0, import_react134.useMemo)(() => {
+    const checkboxPropsMap = (0, import_react133.useMemo)(() => {
       const map = /* @__PURE__ */ new Map();
       flattedData.forEach((record, index) => {
         const key = getRowKey(record, index);
@@ -75329,7 +74150,7 @@ html body {
       });
       return map;
     }, [flattedData, getRowKey, getCheckboxProps]);
-    const isCheckboxDisabled = (0, import_react134.useCallback)((r3) => {
+    const isCheckboxDisabled = (0, import_react133.useCallback)((r3) => {
       const rowKey = getRowKey(r3);
       let checkboxProps;
       if (checkboxPropsMap.has(rowKey)) {
@@ -75339,7 +74160,7 @@ html body {
       }
       return !!(checkboxProps == null ? void 0 : checkboxProps.disabled);
     }, [checkboxPropsMap, getRowKey]);
-    const [derivedSelectedKeys, derivedHalfSelectedKeys] = (0, import_react134.useMemo)(() => {
+    const [derivedSelectedKeys, derivedHalfSelectedKeys] = (0, import_react133.useMemo)(() => {
       if (checkStrictly) {
         return [mergedSelectedKeys || [], []];
       }
@@ -75349,17 +74170,17 @@ html body {
       } = conductCheck(mergedSelectedKeys, true, keyEntities, isCheckboxDisabled);
       return [checkedKeys || [], halfCheckedKeys];
     }, [mergedSelectedKeys, checkStrictly, keyEntities, isCheckboxDisabled]);
-    const derivedSelectedKeySet = (0, import_react134.useMemo)(() => {
+    const derivedSelectedKeySet = (0, import_react133.useMemo)(() => {
       const keys2 = selectionType === "radio" ? derivedSelectedKeys.slice(0, 1) : derivedSelectedKeys;
       return new Set(keys2);
     }, [derivedSelectedKeys, selectionType]);
-    const derivedHalfSelectedKeySet = (0, import_react134.useMemo)(() => selectionType === "radio" ? /* @__PURE__ */ new Set() : new Set(derivedHalfSelectedKeys), [derivedHalfSelectedKeys, selectionType]);
-    React365.useEffect(() => {
+    const derivedHalfSelectedKeySet = (0, import_react133.useMemo)(() => selectionType === "radio" ? /* @__PURE__ */ new Set() : new Set(derivedHalfSelectedKeys), [derivedHalfSelectedKeys, selectionType]);
+    React357.useEffect(() => {
       if (!rowSelection) {
         setMergedSelectedKeys(EMPTY_LIST4);
       }
     }, [!!rowSelection]);
-    const setSelectedKeys = (0, import_react134.useCallback)((keys2, method4) => {
+    const setSelectedKeys = (0, import_react133.useCallback)((keys2, method4) => {
       let availableKeys;
       let records;
       updatePreserveRecordsCache(keys2);
@@ -75382,14 +74203,14 @@ html body {
         type: method4
       });
     }, [setMergedSelectedKeys, getRecordByKey, onSelectionChange, preserveSelectedRowKeys]);
-    const triggerSingleSelection = (0, import_react134.useCallback)((key, selected, keys2, event) => {
+    const triggerSingleSelection = (0, import_react133.useCallback)((key, selected, keys2, event) => {
       if (onSelect) {
         const rows = keys2.map(getRecordByKey);
         onSelect(getRecordByKey(key), selected, rows, event);
       }
       setSelectedKeys(keys2, "single");
     }, [onSelect, getRecordByKey, setSelectedKeys]);
-    const mergedSelections = (0, import_react134.useMemo)(() => {
+    const mergedSelections = (0, import_react133.useMemo)(() => {
       if (!selections || hideSelectAll) {
         return null;
       }
@@ -75455,7 +74276,7 @@ html body {
         }
       }));
     }, [selections, hideSelectAll, tableLocale.selectionAll, tableLocale.selectInvert, tableLocale.selectNone, checkboxPropsMap, derivedSelectedKeySet, data, pageData, getRowKey, onSelectInvert, setSelectedKeys]);
-    const transformColumns = (0, import_react134.useCallback)((columns) => {
+    const transformColumns = (0, import_react133.useCallback)((columns) => {
       var _a;
       if (!rowSelection) {
         true ? warning6(!columns.includes(SELECTION_COLUMN), "usage", "`rowSelection` is not config but `SELECTION_COLUMN` exists in the `columns`.") : void 0;
@@ -75508,12 +74329,12 @@ html body {
               };
             })
           };
-          customizeSelections = /* @__PURE__ */ React365.createElement("div", {
+          customizeSelections = /* @__PURE__ */ React357.createElement("div", {
             className: `${prefixCls}-selection-extra`
-          }, /* @__PURE__ */ React365.createElement(dropdown_default3, {
+          }, /* @__PURE__ */ React357.createElement(dropdown_default3, {
             menu,
             getPopupContainer
-          }, /* @__PURE__ */ React365.createElement("span", null, /* @__PURE__ */ React365.createElement(DownOutlined_default2, null))));
+          }, /* @__PURE__ */ React357.createElement("span", null, /* @__PURE__ */ React357.createElement(DownOutlined_default2, null))));
         }
         const allDisabledData = flattedData.map((record, index) => {
           const key = getRowKey(record, index);
@@ -75536,7 +74357,7 @@ html body {
           onChange,
           disabled
         } = customCheckboxProps;
-        columnTitleCheckbox = /* @__PURE__ */ React365.createElement(checkbox_default, __spreadProps(__spreadValues({
+        columnTitleCheckbox = /* @__PURE__ */ React357.createElement(checkbox_default, __spreadProps(__spreadValues({
           "aria-label": customizeSelections ? "Custom selection" : "Select all"
         }, customCheckboxProps), {
           checked: !allDisabled ? !!flattedData.length && checkedCurrentAll : allDisabledAndChecked,
@@ -75548,7 +74369,7 @@ html body {
           disabled: disabled != null ? disabled : flattedData.length === 0 || allDisabled,
           skipGroup: true
         }));
-        title = !hideSelectAll && /* @__PURE__ */ React365.createElement("div", {
+        title = !hideSelectAll && /* @__PURE__ */ React357.createElement("div", {
           className: `${prefixCls}-selection`
         }, columnTitleCheckbox, customizeSelections);
       }
@@ -75559,7 +74380,7 @@ html body {
           const checked = keySet.has(key);
           const checkboxProps = checkboxPropsMap.get(key);
           return {
-            node: /* @__PURE__ */ React365.createElement(radio_default2, __spreadProps(__spreadValues({}, checkboxProps), {
+            node: /* @__PURE__ */ React357.createElement(radio_default2, __spreadProps(__spreadValues({}, checkboxProps), {
               checked,
               onClick: (e3) => {
                 var _a2;
@@ -75592,7 +74413,7 @@ html body {
             mergedIndeterminate = (_a2 = checkboxProps == null ? void 0 : checkboxProps.indeterminate) != null ? _a2 : indeterminate;
           }
           return {
-            node: /* @__PURE__ */ React365.createElement(checkbox_default, __spreadProps(__spreadValues({}, checkboxProps), {
+            node: /* @__PURE__ */ React357.createElement(checkbox_default, __spreadProps(__spreadValues({}, checkboxProps), {
               indeterminate: mergedIndeterminate,
               checked,
               skipGroup: true,
@@ -75719,10 +74540,10 @@ html body {
   var useSelection_default = useSelection;
 
   // ../custom_dashboard/node_modules/antd/es/table/InternalTable.js
-  var React394 = __toESM(require_react());
+  var React386 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/table/ExpandIcon.js
-  var React366 = __toESM(require_react());
+  var React358 = __toESM(require_react());
   "use client";
   function renderExpandIcon2(locale6) {
     return (props) => {
@@ -75734,7 +74555,7 @@ html body {
         expandable
       } = props;
       const iconPrefix = `${prefixCls}-row-expand-icon`;
-      return /* @__PURE__ */ React366.createElement("button", {
+      return /* @__PURE__ */ React358.createElement("button", {
         type: "button",
         onClick: (e3) => {
           onExpand(record, e3);
@@ -75769,7 +74590,7 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/antd/es/table/hooks/useFilter/index.js
-  var React388 = __toESM(require_react());
+  var React380 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/table/util.js
   var getColumnKey = (column2, defaultKey) => {
@@ -75799,18 +74620,18 @@ html body {
   };
 
   // ../custom_dashboard/node_modules/antd/es/table/hooks/useFilter/FilterDropdown.js
-  var React387 = __toESM(require_react());
+  var React379 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FilterFilled.js
-  var React367 = __toESM(require_react());
+  var React359 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/FilterFilled.js
   var FilterFilled = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M349 838c0 17.7 14.2 32 31.8 32h262.4c17.6 0 31.8-14.3 31.8-32V642H349v196zm531.1-684H143.9c-24.5 0-39.8 26.7-27.5 48l221.3 376h348.8l221.3-376c12.1-21.3-3.2-48-27.7-48z" } }] }, "name": "filter", "theme": "filled" };
   var FilterFilled_default = FilterFilled;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FilterFilled.js
-  function _extends79() {
-    _extends79 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends77() {
+    _extends77 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -75821,23 +74642,23 @@ html body {
       }
       return target;
     };
-    return _extends79.apply(this, arguments);
+    return _extends77.apply(this, arguments);
   }
-  var FilterFilled2 = (props, ref) => /* @__PURE__ */ React367.createElement(AntdIcon_default, _extends79({}, props, {
+  var FilterFilled2 = (props, ref) => /* @__PURE__ */ React359.createElement(AntdIcon_default, _extends77({}, props, {
     ref,
     icon: FilterFilled_default
   }));
-  var RefIcon22 = /* @__PURE__ */ React367.forwardRef(FilterFilled2);
+  var RefIcon22 = /* @__PURE__ */ React359.forwardRef(FilterFilled2);
   if (true) {
     RefIcon22.displayName = "FilterFilled";
   }
   var FilterFilled_default2 = RefIcon22;
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/Tree.js
-  var React372 = __toESM(require_react());
+  var React364 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/DropIndicator.js
-  var import_react135 = __toESM(require_react());
+  var import_react134 = __toESM(require_react());
   var DropIndicator = (props) => {
     const {
       dropPosition,
@@ -75865,7 +74686,7 @@ html body {
         style2.left = indent;
         break;
     }
-    return /* @__PURE__ */ import_react135.default.createElement("div", {
+    return /* @__PURE__ */ import_react134.default.createElement("div", {
       style: style2
     });
   };
@@ -75875,15 +74696,15 @@ html body {
   var DropIndicator_default = DropIndicator;
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/NodeList.js
-  var React371 = __toESM(require_react());
+  var React363 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/MotionTreeNode.js
-  var React370 = __toESM(require_react());
+  var React362 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/useUnmount.js
-  var React369 = __toESM(require_react());
+  var React361 = __toESM(require_react());
   function useUnmount(triggerStart, triggerEnd) {
-    const [firstMount, setFirstMount] = React369.useState(false);
+    const [firstMount, setFirstMount] = React361.useState(false);
     useLayoutEffect_default(() => {
       if (firstMount) {
         triggerStart();
@@ -75902,8 +74723,8 @@ html body {
   var useUnmount_default = useUnmount;
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/MotionTreeNode.js
-  function _extends80() {
-    _extends80 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends78() {
+    _extends78 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -75914,9 +74735,9 @@ html body {
       }
       return target;
     };
-    return _extends80.apply(this, arguments);
+    return _extends78.apply(this, arguments);
   }
-  var MotionTreeNode = /* @__PURE__ */ React370.forwardRef((oriProps, ref) => {
+  var MotionTreeNode = /* @__PURE__ */ React362.forwardRef((oriProps, ref) => {
     const _a = oriProps, {
       className,
       style: style2,
@@ -75938,10 +74759,10 @@ html body {
       "active",
       "treeNodeRequiredProps"
     ]);
-    const [visible, setVisible] = React370.useState(true);
+    const [visible, setVisible] = React362.useState(true);
     const {
       prefixCls
-    } = React370.useContext(TreeContext);
+    } = React362.useContext(TreeContext);
     const targetVisible = motionNodes && motionType !== "hide";
     useLayoutEffect_default(() => {
       if (motionNodes) {
@@ -75955,7 +74776,7 @@ html body {
         onOriginMotionStart();
       }
     };
-    const triggerMotionEndRef = React370.useRef(false);
+    const triggerMotionEndRef = React362.useRef(false);
     const triggerMotionEnd = () => {
       if (motionNodes && !triggerMotionEndRef.current) {
         triggerMotionEndRef.current = true;
@@ -75969,7 +74790,7 @@ html body {
       }
     };
     if (motionNodes) {
-      return /* @__PURE__ */ React370.createElement(es_default2, _extends80({
+      return /* @__PURE__ */ React362.createElement(es_default2, _extends78({
         ref,
         visible
       }, motion2, {
@@ -75978,7 +74799,7 @@ html body {
       }), ({
         className: motionClassName,
         style: motionStyle
-      }, motionRef) => /* @__PURE__ */ React370.createElement("div", {
+      }, motionRef) => /* @__PURE__ */ React362.createElement("div", {
         ref: motionRef,
         className: clsx(`${prefixCls}-treenode-motion`, motionClassName),
         style: motionStyle
@@ -75993,7 +74814,7 @@ html body {
         } = _a2;
         delete restProps.children;
         const treeNodeProps = getTreeNodeProps(key, treeNodeRequiredProps);
-        return /* @__PURE__ */ React370.createElement(TreeNode_default, _extends80({}, restProps, treeNodeProps, {
+        return /* @__PURE__ */ React362.createElement(TreeNode_default, _extends78({}, restProps, treeNodeProps, {
           title,
           active,
           data: treeNode.data,
@@ -76003,7 +74824,7 @@ html body {
         }));
       })));
     }
-    return /* @__PURE__ */ React370.createElement(TreeNode_default, _extends80({
+    return /* @__PURE__ */ React362.createElement(TreeNode_default, _extends78({
       domRef: ref,
       className,
       style: style2
@@ -76057,8 +74878,8 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/NodeList.js
-  function _extends81() {
-    _extends81 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends79() {
+    _extends79 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -76069,7 +74890,7 @@ html body {
       }
       return target;
     };
-    return _extends81.apply(this, arguments);
+    return _extends79.apply(this, arguments);
   }
   var MOTION_KEY = `RC_TREE_MOTION_${Math.random()}`;
   var MotionNode = {
@@ -76106,7 +74927,7 @@ html body {
     } = item;
     return getKey2(key, pos);
   }
-  var NodeList = /* @__PURE__ */ React371.forwardRef((props, ref) => {
+  var NodeList = /* @__PURE__ */ React363.forwardRef((props, ref) => {
     const _a = props, {
       prefixCls,
       data,
@@ -76173,20 +74994,20 @@ html body {
       "onListChangeEnd"
     ]);
     const treeId = useId_default();
-    const listRef = React371.useRef(null);
-    const indentMeasurerRef = React371.useRef(null);
-    React371.useImperativeHandle(ref, () => ({
+    const listRef = React363.useRef(null);
+    const indentMeasurerRef = React363.useRef(null);
+    React363.useImperativeHandle(ref, () => ({
       scrollTo: (scroll) => {
         listRef.current.scrollTo(scroll);
       },
       getIndentWidth: () => indentMeasurerRef.current.offsetWidth
     }));
-    const [prevExpandedKeys, setPrevExpandedKeys] = React371.useState(expandedKeys);
-    const [prevData, setPrevData] = React371.useState(data);
-    const [transitionData, setTransitionData] = React371.useState(data);
-    const [transitionRange, setTransitionRange] = React371.useState([]);
-    const [motionType, setMotionType] = React371.useState(null);
-    const dataRef = React371.useRef(data);
+    const [prevExpandedKeys, setPrevExpandedKeys] = React363.useState(expandedKeys);
+    const [prevData, setPrevData] = React363.useState(data);
+    const [transitionData, setTransitionData] = React363.useState(data);
+    const [transitionRange, setTransitionRange] = React363.useState([]);
+    const [motionType, setMotionType] = React363.useState(null);
+    const dataRef = React363.useRef(data);
     dataRef.current = data;
     function onMotionEnd() {
       const latestData = dataRef.current;
@@ -76226,7 +75047,7 @@ html body {
         setTransitionData(data);
       }
     }, [expandedKeys, data]);
-    React371.useEffect(() => {
+    React363.useEffect(() => {
       if (!dragging) {
         onMotionEnd();
       }
@@ -76243,7 +75064,7 @@ html body {
       dropPosition,
       keyEntities
     };
-    return /* @__PURE__ */ React371.createElement(React371.Fragment, null, /* @__PURE__ */ React371.createElement("div", {
+    return /* @__PURE__ */ React363.createElement(React363.Fragment, null, /* @__PURE__ */ React363.createElement("div", {
       className: `${prefixCls}-treenode`,
       "aria-hidden": true,
       style: {
@@ -76255,12 +75076,12 @@ html body {
         border: 0,
         padding: 0
       }
-    }, /* @__PURE__ */ React371.createElement("div", {
+    }, /* @__PURE__ */ React363.createElement("div", {
       className: `${prefixCls}-indent`
-    }, /* @__PURE__ */ React371.createElement("div", {
+    }, /* @__PURE__ */ React363.createElement("div", {
       ref: indentMeasurerRef,
       className: `${prefixCls}-indent-unit`
-    }))), /* @__PURE__ */ React371.createElement(es_default9, _extends81({}, domProps, {
+    }))), /* @__PURE__ */ React363.createElement(es_default9, _extends79({}, domProps, {
       data: mergedData,
       itemKey: itemKey2,
       height,
@@ -76297,7 +75118,7 @@ html body {
       delete restProps.key;
       delete restProps.children;
       const treeNodeProps = getTreeNodeProps(mergedKey, treeNodeRequiredProps);
-      return /* @__PURE__ */ React371.createElement(MotionTreeNode_default, _extends81({}, restProps, treeNodeProps, {
+      return /* @__PURE__ */ React363.createElement(MotionTreeNode_default, _extends79({}, restProps, treeNodeProps, {
         title,
         active: !!activeItem && key === activeItem.key,
         pos,
@@ -76323,8 +75144,8 @@ html body {
   var NodeList_default = NodeList;
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/Tree.js
-  function _extends82() {
-    _extends82 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends80() {
+    _extends80 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -76335,10 +75156,10 @@ html body {
       }
       return target;
     };
-    return _extends82.apply(this, arguments);
+    return _extends80.apply(this, arguments);
   }
   var MAX_RETRY_TIMES = 10;
-  var Tree = class extends React372.Component {
+  var Tree = class extends React364.Component {
     constructor() {
       super(...arguments);
       __publicField(this, "destroyed", false);
@@ -76373,7 +75194,7 @@ html body {
       __publicField(this, "dragNodeProps", null);
       __publicField(this, "currentMouseOverDroppableNodeKey", null);
       __publicField(this, "focusedByMouse", false);
-      __publicField(this, "listRef", /* @__PURE__ */ React372.createRef());
+      __publicField(this, "listRef", /* @__PURE__ */ React364.createRef());
       __publicField(this, "onNodeDragStart", (event, nodeProps) => {
         const {
           expandedKeys,
@@ -77435,14 +76256,14 @@ html body {
         onNodeDragEnd: this.onNodeDragEnd,
         onNodeDrop: this.onNodeDrop
       };
-      return /* @__PURE__ */ React372.createElement(TreeContext.Provider, {
+      return /* @__PURE__ */ React364.createElement(TreeContext.Provider, {
         value: contextValue
-      }, /* @__PURE__ */ React372.createElement("div", {
+      }, /* @__PURE__ */ React364.createElement("div", {
         className: clsx(prefixCls, className, rootClassName, {
           [`${prefixCls}-show-line`]: showLine
         }),
         style: rootStyle
-      }, /* @__PURE__ */ React372.createElement(NodeList_default, _extends82({
+      }, /* @__PURE__ */ React364.createElement(NodeList_default, _extends80({
         ref: this.listRef,
         prefixCls,
         style: style2,
@@ -77496,19 +76317,83 @@ html body {
   var Tree_default = Tree;
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/index.js
-  var es_default21 = Tree_default;
+  var es_default20 = Tree_default;
 
   // ../custom_dashboard/node_modules/antd/es/tree/DirectoryTree.js
-  var React383 = __toESM(require_react());
+  var React375 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FileOutlined.js
-  var React373 = __toESM(require_react());
+  var React365 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/FileOutlined.js
   var FileOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M854.6 288.6L639.4 73.4c-6-6-14.1-9.4-22.6-9.4H192c-17.7 0-32 14.3-32 32v832c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V311.3c0-8.5-3.4-16.7-9.4-22.7zM790.2 326H602V137.8L790.2 326zm1.8 562H232V136h302v216a42 42 0 0042 42h216v494z" } }] }, "name": "file", "theme": "outlined" };
   var FileOutlined_default = FileOutlined;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FileOutlined.js
+  function _extends81() {
+    _extends81 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends81.apply(this, arguments);
+  }
+  var FileOutlined2 = (props, ref) => /* @__PURE__ */ React365.createElement(AntdIcon_default, _extends81({}, props, {
+    ref,
+    icon: FileOutlined_default
+  }));
+  var RefIcon23 = /* @__PURE__ */ React365.forwardRef(FileOutlined2);
+  if (true) {
+    RefIcon23.displayName = "FileOutlined";
+  }
+  var FileOutlined_default2 = RefIcon23;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FolderOpenOutlined.js
+  var React366 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/FolderOpenOutlined.js
+  var FolderOpenOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M928 444H820V330.4c0-17.7-14.3-32-32-32H473L355.7 186.2a8.15 8.15 0 00-5.5-2.2H96c-17.7 0-32 14.3-32 32v592c0 17.7 14.3 32 32 32h698c13 0 24.8-7.9 29.7-20l134-332c1.5-3.8 2.3-7.9 2.3-12 0-17.7-14.3-32-32-32zM136 256h188.5l119.6 114.4H748V444H238c-13 0-24.8 7.9-29.7 20L136 643.2V256zm635.3 512H159l103.3-256h612.4L771.3 768z" } }] }, "name": "folder-open", "theme": "outlined" };
+  var FolderOpenOutlined_default = FolderOpenOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FolderOpenOutlined.js
+  function _extends82() {
+    _extends82 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends82.apply(this, arguments);
+  }
+  var FolderOpenOutlined2 = (props, ref) => /* @__PURE__ */ React366.createElement(AntdIcon_default, _extends82({}, props, {
+    ref,
+    icon: FolderOpenOutlined_default
+  }));
+  var RefIcon24 = /* @__PURE__ */ React366.forwardRef(FolderOpenOutlined2);
+  if (true) {
+    RefIcon24.displayName = "FolderOpenOutlined";
+  }
+  var FolderOpenOutlined_default2 = RefIcon24;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FolderOutlined.js
+  var React367 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/FolderOutlined.js
+  var FolderOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M880 298.4H521L403.7 186.2a8.15 8.15 0 00-5.5-2.2H144c-17.7 0-32 14.3-32 32v592c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V330.4c0-17.7-14.3-32-32-32zM840 768H184V256h188.5l119.6 114.4H840V768z" } }] }, "name": "folder", "theme": "outlined" };
+  var FolderOutlined_default = FolderOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FolderOutlined.js
   function _extends83() {
     _extends83 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -77523,24 +76408,27 @@ html body {
     };
     return _extends83.apply(this, arguments);
   }
-  var FileOutlined2 = (props, ref) => /* @__PURE__ */ React373.createElement(AntdIcon_default, _extends83({}, props, {
+  var FolderOutlined2 = (props, ref) => /* @__PURE__ */ React367.createElement(AntdIcon_default, _extends83({}, props, {
     ref,
-    icon: FileOutlined_default
+    icon: FolderOutlined_default
   }));
-  var RefIcon23 = /* @__PURE__ */ React373.forwardRef(FileOutlined2);
+  var RefIcon25 = /* @__PURE__ */ React367.forwardRef(FolderOutlined2);
   if (true) {
-    RefIcon23.displayName = "FileOutlined";
+    RefIcon25.displayName = "FolderOutlined";
   }
-  var FileOutlined_default2 = RefIcon23;
+  var FolderOutlined_default2 = RefIcon25;
 
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FolderOpenOutlined.js
-  var React374 = __toESM(require_react());
+  // ../custom_dashboard/node_modules/antd/es/tree/Tree.js
+  var import_react136 = __toESM(require_react());
 
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/FolderOpenOutlined.js
-  var FolderOpenOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M928 444H820V330.4c0-17.7-14.3-32-32-32H473L355.7 186.2a8.15 8.15 0 00-5.5-2.2H96c-17.7 0-32 14.3-32 32v592c0 17.7 14.3 32 32 32h698c13 0 24.8-7.9 29.7-20l134-332c1.5-3.8 2.3-7.9 2.3-12 0-17.7-14.3-32-32-32zM136 256h188.5l119.6 114.4H748V444H238c-13 0-24.8 7.9-29.7 20L136 643.2V256zm635.3 512H159l103.3-256h612.4L771.3 768z" } }] }, "name": "folder-open", "theme": "outlined" };
-  var FolderOpenOutlined_default = FolderOpenOutlined;
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/HolderOutlined.js
+  var React368 = __toESM(require_react());
 
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FolderOpenOutlined.js
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/HolderOutlined.js
+  var HolderOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M300 276.5a56 56 0 1056-97 56 56 0 00-56 97zm0 284a56 56 0 1056-97 56 56 0 00-56 97zM640 228a56 56 0 10112 0 56 56 0 00-112 0zm0 284a56 56 0 10112 0 56 56 0 00-112 0zM300 844.5a56 56 0 1056-97 56 56 0 00-56 97zM640 796a56 56 0 10112 0 56 56 0 00-112 0z" } }] }, "name": "holder", "theme": "outlined" };
+  var HolderOutlined_default = HolderOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/HolderOutlined.js
   function _extends84() {
     _extends84 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -77555,78 +76443,11 @@ html body {
     };
     return _extends84.apply(this, arguments);
   }
-  var FolderOpenOutlined2 = (props, ref) => /* @__PURE__ */ React374.createElement(AntdIcon_default, _extends84({}, props, {
-    ref,
-    icon: FolderOpenOutlined_default
-  }));
-  var RefIcon24 = /* @__PURE__ */ React374.forwardRef(FolderOpenOutlined2);
-  if (true) {
-    RefIcon24.displayName = "FolderOpenOutlined";
-  }
-  var FolderOpenOutlined_default2 = RefIcon24;
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FolderOutlined.js
-  var React375 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/FolderOutlined.js
-  var FolderOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M880 298.4H521L403.7 186.2a8.15 8.15 0 00-5.5-2.2H144c-17.7 0-32 14.3-32 32v592c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V330.4c0-17.7-14.3-32-32-32zM840 768H184V256h188.5l119.6 114.4H840V768z" } }] }, "name": "folder", "theme": "outlined" };
-  var FolderOutlined_default = FolderOutlined;
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FolderOutlined.js
-  function _extends85() {
-    _extends85 = Object.assign ? Object.assign.bind() : function(target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
-      }
-      return target;
-    };
-    return _extends85.apply(this, arguments);
-  }
-  var FolderOutlined2 = (props, ref) => /* @__PURE__ */ React375.createElement(AntdIcon_default, _extends85({}, props, {
-    ref,
-    icon: FolderOutlined_default
-  }));
-  var RefIcon25 = /* @__PURE__ */ React375.forwardRef(FolderOutlined2);
-  if (true) {
-    RefIcon25.displayName = "FolderOutlined";
-  }
-  var FolderOutlined_default2 = RefIcon25;
-
-  // ../custom_dashboard/node_modules/antd/es/tree/Tree.js
-  var import_react137 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/HolderOutlined.js
-  var React376 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/HolderOutlined.js
-  var HolderOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M300 276.5a56 56 0 1056-97 56 56 0 00-56 97zm0 284a56 56 0 1056-97 56 56 0 00-56 97zM640 228a56 56 0 10112 0 56 56 0 00-112 0zm0 284a56 56 0 10112 0 56 56 0 00-112 0zM300 844.5a56 56 0 1056-97 56 56 0 00-56 97zM640 796a56 56 0 10112 0 56 56 0 00-112 0z" } }] }, "name": "holder", "theme": "outlined" };
-  var HolderOutlined_default = HolderOutlined;
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/HolderOutlined.js
-  function _extends86() {
-    _extends86 = Object.assign ? Object.assign.bind() : function(target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
-      }
-      return target;
-    };
-    return _extends86.apply(this, arguments);
-  }
-  var HolderOutlined2 = (props, ref) => /* @__PURE__ */ React376.createElement(AntdIcon_default, _extends86({}, props, {
+  var HolderOutlined2 = (props, ref) => /* @__PURE__ */ React368.createElement(AntdIcon_default, _extends84({}, props, {
     ref,
     icon: HolderOutlined_default
   }));
-  var RefIcon26 = /* @__PURE__ */ React376.forwardRef(HolderOutlined2);
+  var RefIcon26 = /* @__PURE__ */ React368.forwardRef(HolderOutlined2);
   if (true) {
     RefIcon26.displayName = "HolderOutlined";
   }
@@ -78013,7 +76834,7 @@ html body {
       nodeSelectedColor: token2.colorText
     };
   };
-  var prepareComponentToken19 = (token2) => {
+  var prepareComponentToken18 = (token2) => {
     const {
       colorTextLightSolid,
       colorPrimary
@@ -78023,14 +76844,14 @@ html body {
       directoryNodeSelectedBg: colorPrimary
     });
   };
-  var style_default24 = genStyleHooks("Tree", (token2, {
+  var style_default23 = genStyleHooks("Tree", (token2, {
     prefixCls
   }) => [{
     [token2.componentCls]: getStyle(`${prefixCls}-checkbox`, token2)
-  }, genTreeStyle(prefixCls, token2), collapse_default(token2)], prepareComponentToken19);
+  }, genTreeStyle(prefixCls, token2), collapse_default(token2)], prepareComponentToken18);
 
   // ../custom_dashboard/node_modules/antd/es/tree/utils/dropIndicator.js
-  var import_react136 = __toESM(require_react());
+  var import_react135 = __toESM(require_react());
   "use client";
   var offset2 = 4;
   var dropIndicatorRender = (props) => {
@@ -78059,7 +76880,7 @@ html body {
         style2[startPosition] = indent + offset2;
         break;
     }
-    return /* @__PURE__ */ import_react136.default.createElement("div", {
+    return /* @__PURE__ */ import_react135.default.createElement("div", {
       style: style2,
       className: `${prefixCls}-drop-indicator`
     });
@@ -78067,16 +76888,80 @@ html body {
   var dropIndicator_default = dropIndicatorRender;
 
   // ../custom_dashboard/node_modules/antd/es/tree/utils/iconUtil.js
-  var React381 = __toESM(require_react());
+  var React373 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CaretDownFilled.js
-  var React378 = __toESM(require_react());
+  var React370 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/CaretDownFilled.js
   var CaretDownFilled = { "icon": { "tag": "svg", "attrs": { "viewBox": "0 0 1024 1024", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z" } }] }, "name": "caret-down", "theme": "filled" };
   var CaretDownFilled_default = CaretDownFilled;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CaretDownFilled.js
+  function _extends85() {
+    _extends85 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends85.apply(this, arguments);
+  }
+  var CaretDownFilled2 = (props, ref) => /* @__PURE__ */ React370.createElement(AntdIcon_default, _extends85({}, props, {
+    ref,
+    icon: CaretDownFilled_default
+  }));
+  var RefIcon27 = /* @__PURE__ */ React370.forwardRef(CaretDownFilled2);
+  if (true) {
+    RefIcon27.displayName = "CaretDownFilled";
+  }
+  var CaretDownFilled_default2 = RefIcon27;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/MinusSquareOutlined.js
+  var React371 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/MinusSquareOutlined.js
+  var MinusSquareOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M328 544h368c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H328c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8z" } }, { "tag": "path", "attrs": { "d": "M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z" } }] }, "name": "minus-square", "theme": "outlined" };
+  var MinusSquareOutlined_default = MinusSquareOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/MinusSquareOutlined.js
+  function _extends86() {
+    _extends86 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends86.apply(this, arguments);
+  }
+  var MinusSquareOutlined2 = (props, ref) => /* @__PURE__ */ React371.createElement(AntdIcon_default, _extends86({}, props, {
+    ref,
+    icon: MinusSquareOutlined_default
+  }));
+  var RefIcon28 = /* @__PURE__ */ React371.forwardRef(MinusSquareOutlined2);
+  if (true) {
+    RefIcon28.displayName = "MinusSquareOutlined";
+  }
+  var MinusSquareOutlined_default2 = RefIcon28;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/PlusSquareOutlined.js
+  var React372 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/PlusSquareOutlined.js
+  var PlusSquareOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M328 544h152v152c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V544h152c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H544V328c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v152H328c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8z" } }, { "tag": "path", "attrs": { "d": "M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z" } }] }, "name": "plus-square", "theme": "outlined" };
+  var PlusSquareOutlined_default = PlusSquareOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/PlusSquareOutlined.js
   function _extends87() {
     _extends87 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -78091,75 +76976,11 @@ html body {
     };
     return _extends87.apply(this, arguments);
   }
-  var CaretDownFilled2 = (props, ref) => /* @__PURE__ */ React378.createElement(AntdIcon_default, _extends87({}, props, {
-    ref,
-    icon: CaretDownFilled_default
-  }));
-  var RefIcon27 = /* @__PURE__ */ React378.forwardRef(CaretDownFilled2);
-  if (true) {
-    RefIcon27.displayName = "CaretDownFilled";
-  }
-  var CaretDownFilled_default2 = RefIcon27;
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/MinusSquareOutlined.js
-  var React379 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/MinusSquareOutlined.js
-  var MinusSquareOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M328 544h368c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H328c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8z" } }, { "tag": "path", "attrs": { "d": "M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z" } }] }, "name": "minus-square", "theme": "outlined" };
-  var MinusSquareOutlined_default = MinusSquareOutlined;
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/MinusSquareOutlined.js
-  function _extends88() {
-    _extends88 = Object.assign ? Object.assign.bind() : function(target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
-      }
-      return target;
-    };
-    return _extends88.apply(this, arguments);
-  }
-  var MinusSquareOutlined2 = (props, ref) => /* @__PURE__ */ React379.createElement(AntdIcon_default, _extends88({}, props, {
-    ref,
-    icon: MinusSquareOutlined_default
-  }));
-  var RefIcon28 = /* @__PURE__ */ React379.forwardRef(MinusSquareOutlined2);
-  if (true) {
-    RefIcon28.displayName = "MinusSquareOutlined";
-  }
-  var MinusSquareOutlined_default2 = RefIcon28;
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/PlusSquareOutlined.js
-  var React380 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/PlusSquareOutlined.js
-  var PlusSquareOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M328 544h152v152c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V544h152c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H544V328c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v152H328c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8z" } }, { "tag": "path", "attrs": { "d": "M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z" } }] }, "name": "plus-square", "theme": "outlined" };
-  var PlusSquareOutlined_default = PlusSquareOutlined;
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/PlusSquareOutlined.js
-  function _extends89() {
-    _extends89 = Object.assign ? Object.assign.bind() : function(target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
-      }
-      return target;
-    };
-    return _extends89.apply(this, arguments);
-  }
-  var PlusSquareOutlined2 = (props, ref) => /* @__PURE__ */ React380.createElement(AntdIcon_default, _extends89({}, props, {
+  var PlusSquareOutlined2 = (props, ref) => /* @__PURE__ */ React372.createElement(AntdIcon_default, _extends87({}, props, {
     ref,
     icon: PlusSquareOutlined_default
   }));
-  var RefIcon29 = /* @__PURE__ */ React380.forwardRef(PlusSquareOutlined2);
+  var RefIcon29 = /* @__PURE__ */ React372.forwardRef(PlusSquareOutlined2);
   if (true) {
     RefIcon29.displayName = "PlusSquareOutlined";
   }
@@ -78182,10 +77003,10 @@ html body {
       loading
     } = treeNodeProps;
     if (loading) {
-      if (/* @__PURE__ */ React381.isValidElement(switcherLoadingIcon)) {
+      if (/* @__PURE__ */ React373.isValidElement(switcherLoadingIcon)) {
         return switcherLoadingIcon;
       }
-      return /* @__PURE__ */ React381.createElement(LoadingOutlined_default2, {
+      return /* @__PURE__ */ React373.createElement(LoadingOutlined_default2, {
         className: `${prefixCls}-switcher-loading-icon`
       });
     }
@@ -78200,22 +77021,22 @@ html body {
       if (typeof showLeafIcon !== "boolean" && !!showLeafIcon) {
         const leafIcon = typeof showLeafIcon === "function" ? showLeafIcon(treeNodeProps) : showLeafIcon;
         const leafCls = `${prefixCls}-switcher-line-custom-icon`;
-        if (/* @__PURE__ */ React381.isValidElement(leafIcon)) {
+        if (/* @__PURE__ */ React373.isValidElement(leafIcon)) {
           return cloneElement5(leafIcon, {
             className: clsx((_a = leafIcon.props) == null ? void 0 : _a.className, leafCls)
           });
         }
         return leafIcon;
       }
-      return showLeafIcon ? /* @__PURE__ */ React381.createElement(FileOutlined_default2, {
+      return showLeafIcon ? /* @__PURE__ */ React373.createElement(FileOutlined_default2, {
         className: `${prefixCls}-switcher-line-icon`
-      }) : /* @__PURE__ */ React381.createElement("span", {
+      }) : /* @__PURE__ */ React373.createElement("span", {
         className: `${prefixCls}-switcher-leaf-line`
       });
     }
     const switcherCls = `${prefixCls}-switcher-icon`;
     const switcher = typeof switcherIcon === "function" ? switcherIcon(treeNodeProps) : switcherIcon;
-    if (/* @__PURE__ */ React381.isValidElement(switcher)) {
+    if (/* @__PURE__ */ React373.isValidElement(switcher)) {
       return cloneElement5(switcher, {
         className: clsx((_b = switcher.props) == null ? void 0 : _b.className, switcherCls)
       });
@@ -78224,13 +77045,13 @@ html body {
       return switcher;
     }
     if (showLine) {
-      return expanded ? /* @__PURE__ */ React381.createElement(MinusSquareOutlined_default2, {
+      return expanded ? /* @__PURE__ */ React373.createElement(MinusSquareOutlined_default2, {
         className: `${prefixCls}-switcher-line-icon`
-      }) : /* @__PURE__ */ React381.createElement(PlusSquareOutlined_default2, {
+      }) : /* @__PURE__ */ React373.createElement(PlusSquareOutlined_default2, {
         className: `${prefixCls}-switcher-line-icon`
       });
     }
-    return /* @__PURE__ */ React381.createElement(CaretDownFilled_default2, {
+    return /* @__PURE__ */ React373.createElement(CaretDownFilled_default2, {
       className: switcherCls
     });
   };
@@ -78238,7 +77059,7 @@ html body {
 
   // ../custom_dashboard/node_modules/antd/es/tree/Tree.js
   "use client";
-  var Tree2 = /* @__PURE__ */ import_react137.default.forwardRef((props, ref) => {
+  var Tree2 = /* @__PURE__ */ import_react136.default.forwardRef((props, ref) => {
     var _a;
     const {
       getPrefixCls,
@@ -78250,7 +77071,7 @@ html body {
     } = useComponentConfig("tree");
     const {
       virtual
-    } = import_react137.default.useContext(ConfigContext);
+    } = import_react136.default.useContext(ConfigContext);
     const {
       prefixCls: customizePrefixCls,
       className,
@@ -78271,7 +77092,7 @@ html body {
       styles,
       icon
     } = props;
-    const contextDisabled = import_react137.default.useContext(DisabledContext_default);
+    const contextDisabled = import_react136.default.useContext(DisabledContext_default);
     const mergedDisabled = disabled != null ? disabled : contextDisabled;
     const prefixCls = getPrefixCls("tree", customizePrefixCls);
     const rootPrefixCls = getPrefixCls();
@@ -78294,10 +77115,10 @@ html body {
       icon,
       dropIndicatorRender: dropIndicator_default
     });
-    const [hashId, cssVarCls] = style_default24(prefixCls);
+    const [hashId, cssVarCls] = style_default23(prefixCls);
     const [, token2] = useToken();
     const itemHeight = token2.paddingXS / 2 + (((_a = token2.Tree) == null ? void 0 : _a.titleHeight) || token2.controlHeightSM);
-    const draggableConfig = import_react137.default.useMemo(() => {
+    const draggableConfig = import_react136.default.useMemo(() => {
       if (!draggable) {
         return false;
       }
@@ -78313,18 +77134,18 @@ html body {
           break;
       }
       if (mergedDraggable.icon !== false) {
-        mergedDraggable.icon = mergedDraggable.icon || /* @__PURE__ */ import_react137.default.createElement(HolderOutlined_default2, null);
+        mergedDraggable.icon = mergedDraggable.icon || /* @__PURE__ */ import_react136.default.createElement(HolderOutlined_default2, null);
       }
       return mergedDraggable;
     }, [draggable]);
-    const renderSwitcherIcon = (nodeProps) => /* @__PURE__ */ import_react137.default.createElement(iconUtil_default, {
+    const renderSwitcherIcon = (nodeProps) => /* @__PURE__ */ import_react136.default.createElement(iconUtil_default, {
       prefixCls,
       switcherIcon,
       switcherLoadingIcon,
       treeNodeProps: nodeProps,
       showLine
     });
-    return /* @__PURE__ */ import_react137.default.createElement(es_default21, __spreadProps(__spreadValues({
+    return /* @__PURE__ */ import_react136.default.createElement(es_default20, __spreadProps(__spreadValues({
       itemHeight,
       ref,
       virtual
@@ -78343,7 +77164,7 @@ html body {
       classNames: mergedClassNames,
       styles: mergedStyles,
       direction,
-      checkable: checkable ? /* @__PURE__ */ import_react137.default.createElement("span", {
+      checkable: checkable ? /* @__PURE__ */ import_react136.default.createElement("span", {
         className: `${prefixCls}-checkbox-inner`
       }) : checkable,
       selectable,
@@ -78433,9 +77254,9 @@ html body {
       expanded
     } = props;
     if (isLeaf) {
-      return /* @__PURE__ */ React383.createElement(FileOutlined_default2, null);
+      return /* @__PURE__ */ React375.createElement(FileOutlined_default2, null);
     }
-    return expanded ? /* @__PURE__ */ React383.createElement(FolderOpenOutlined_default2, null) : /* @__PURE__ */ React383.createElement(FolderOutlined_default2, null);
+    return expanded ? /* @__PURE__ */ React375.createElement(FolderOpenOutlined_default2, null) : /* @__PURE__ */ React375.createElement(FolderOutlined_default2, null);
   }
   function getTreeData({
     treeData,
@@ -78443,7 +77264,7 @@ html body {
   }) {
     return treeData || convertTreeToData(children);
   }
-  var DirectoryTree = /* @__PURE__ */ React383.forwardRef((oriProps, ref) => {
+  var DirectoryTree = /* @__PURE__ */ React375.forwardRef((oriProps, ref) => {
     const _a = oriProps, {
       defaultExpandAll,
       defaultExpandParent,
@@ -78453,8 +77274,8 @@ html body {
       "defaultExpandParent",
       "defaultExpandedKeys"
     ]);
-    const lastSelectedKeyRef = React383.useRef(null);
-    const cachedSelectedKeysRef = React383.useRef(null);
+    const lastSelectedKeyRef = React375.useRef(null);
+    const cachedSelectedKeysRef = React375.useRef(null);
     const getInitExpandedKeys = () => {
       const {
         keyEntities
@@ -78472,14 +77293,14 @@ html body {
       }
       return initExpandedKeys;
     };
-    const [selectedKeys, setSelectedKeys] = React383.useState(props.selectedKeys || props.defaultSelectedKeys || []);
-    const [expandedKeys, setExpandedKeys] = React383.useState(() => getInitExpandedKeys());
-    React383.useEffect(() => {
+    const [selectedKeys, setSelectedKeys] = React375.useState(props.selectedKeys || props.defaultSelectedKeys || []);
+    const [expandedKeys, setExpandedKeys] = React375.useState(() => getInitExpandedKeys());
+    React375.useEffect(() => {
       if ("selectedKeys" in props) {
         setSelectedKeys(props.selectedKeys);
       }
     }, [props.selectedKeys]);
-    React383.useEffect(() => {
+    React375.useEffect(() => {
       if ("expandedKeys" in props) {
         setExpandedKeys(props.expandedKeys);
       }
@@ -78539,7 +77360,7 @@ html body {
     const {
       getPrefixCls,
       direction
-    } = React383.useContext(ConfigContext);
+    } = React375.useContext(ConfigContext);
     const _b = props, {
       prefixCls: customizePrefixCls,
       className,
@@ -78555,7 +77376,7 @@ html body {
     const connectClassName = clsx(`${prefixCls}-directory`, {
       [`${prefixCls}-directory-rtl`]: direction === "rtl"
     }, className);
-    return /* @__PURE__ */ React383.createElement(Tree_default2, __spreadProps(__spreadValues({
+    return /* @__PURE__ */ React375.createElement(Tree_default2, __spreadProps(__spreadValues({
       icon: getIcon,
       ref,
       blockNode: true
@@ -78583,12 +77404,12 @@ html body {
   var tree_default = Tree3;
 
   // ../custom_dashboard/node_modules/antd/es/table/TableMeasureRowContext.js
-  var import_react138 = __toESM(require_react());
-  var TableMeasureRowContext = /* @__PURE__ */ import_react138.default.createContext(false);
+  var import_react137 = __toESM(require_react());
+  var TableMeasureRowContext = /* @__PURE__ */ import_react137.default.createContext(false);
   var TableMeasureRowContext_default = TableMeasureRowContext;
 
   // ../custom_dashboard/node_modules/antd/es/table/hooks/useFilter/FilterSearch.js
-  var React385 = __toESM(require_react());
+  var React377 = __toESM(require_react());
   "use client";
   var FilterSearch = (props) => {
     const {
@@ -78601,10 +77422,10 @@ html body {
     if (!filterSearch) {
       return null;
     }
-    return /* @__PURE__ */ React385.createElement("div", {
+    return /* @__PURE__ */ React377.createElement("div", {
       className: `${tablePrefixCls}-filter-dropdown-search`
-    }, /* @__PURE__ */ React385.createElement(Input_default4, {
-      prefix: /* @__PURE__ */ React385.createElement(SearchOutlined_default2, null),
+    }, /* @__PURE__ */ React377.createElement(Input_default4, {
+      prefix: /* @__PURE__ */ React377.createElement(SearchOutlined_default2, null),
       placeholder: locale6.filterSearchPlaceholder,
       onChange,
       value,
@@ -78615,7 +77436,7 @@ html body {
   var FilterSearch_default = FilterSearch;
 
   // ../custom_dashboard/node_modules/antd/es/table/hooks/useFilter/FilterWrapper.js
-  var React386 = __toESM(require_react());
+  var React378 = __toESM(require_react());
   "use client";
   var onKeyDown = (event) => {
     const {
@@ -78625,7 +77446,7 @@ html body {
       event.stopPropagation();
     }
   };
-  var FilterDropdownMenuWrapper = /* @__PURE__ */ React386.forwardRef((props, ref) => /* @__PURE__ */ React386.createElement("div", {
+  var FilterDropdownMenuWrapper = /* @__PURE__ */ React378.forwardRef((props, ref) => /* @__PURE__ */ React378.createElement("div", {
     className: props.className,
     onClick: (e3) => e3.stopPropagation(),
     onKeyDown,
@@ -78690,9 +77511,9 @@ html body {
       const Component5 = filterMultiple ? checkbox_default : radio_default2;
       const item = {
         key: filter3.value !== void 0 ? key : index,
-        label: /* @__PURE__ */ React387.createElement(React387.Fragment, null, /* @__PURE__ */ React387.createElement(Component5, {
+        label: /* @__PURE__ */ React379.createElement(React379.Fragment, null, /* @__PURE__ */ React379.createElement(Component5, {
           checked: filteredKeys.includes(key)
-        }), /* @__PURE__ */ React387.createElement("span", null, filter3.text))
+        }), /* @__PURE__ */ React379.createElement("span", null, filter3.text))
       };
       if (searchValue.trim()) {
         if (typeof filterSearch === "function") {
@@ -78732,8 +77553,8 @@ html body {
       filterDropdownOpen,
       onFilterDropdownOpenChange
     } = column2;
-    const [visible, setVisible] = React387.useState(false);
-    const inMeasureRow = React387.useContext(TableMeasureRowContext_default);
+    const [visible, setVisible] = React379.useState(false);
+    const inMeasureRow = React379.useContext(TableMeasureRowContext_default);
     const filtered = !!(filterState && (((_a = filterState.filteredKeys) == null ? void 0 : _a.length) || filterState.forceFiltered));
     const triggerVisible = (newVisible) => {
       var _a2;
@@ -78771,7 +77592,7 @@ html body {
         });
       }
     };
-    React387.useEffect(() => {
+    React379.useEffect(() => {
       if (!visible) {
         return;
       }
@@ -78779,18 +77600,18 @@ html body {
         selectedKeys: wrapStringListType(propFilteredKeys)
       });
     }, [propFilteredKeys]);
-    const [openKeys, setOpenKeys] = React387.useState([]);
+    const [openKeys, setOpenKeys] = React379.useState([]);
     const onOpenChange = (keys2) => {
       setOpenKeys(keys2);
     };
-    const [searchValue, setSearchValue] = React387.useState("");
+    const [searchValue, setSearchValue] = React379.useState("");
     const onSearch = (e3) => {
       const {
         value
       } = e3.target;
       setSearchValue(value);
     };
-    React387.useEffect(() => {
+    React379.useEffect(() => {
       if (!visible) {
         setSearchValue("");
       }
@@ -78892,7 +77713,7 @@ html body {
     const {
       direction,
       renderEmpty
-    } = React387.useContext(ConfigContext);
+    } = React379.useContext(ConfigContext);
     if (typeof column2.filterDropdown === "function") {
       dropdownContent = column2.filterDropdown({
         prefixCls: `${dropdownPrefixCls}-custom`,
@@ -78914,7 +77735,7 @@ html body {
       const selectedKeys = getFilteredKeysSync() || [];
       const getFilterComponent = () => {
         var _a2, _b2;
-        const empty = (_a2 = renderEmpty == null ? void 0 : renderEmpty("Table.filter")) != null ? _a2 : /* @__PURE__ */ React387.createElement(empty_default2, {
+        const empty = (_a2 = renderEmpty == null ? void 0 : renderEmpty("Table.filter")) != null ? _a2 : /* @__PURE__ */ React379.createElement(empty_default2, {
           image: empty_default2.PRESENTED_IMAGE_SIMPLE,
           description: locale6.filterEmptyText,
           styles: {
@@ -78931,20 +77752,20 @@ html body {
           return empty;
         }
         if (filterMode === "tree") {
-          return /* @__PURE__ */ React387.createElement(React387.Fragment, null, /* @__PURE__ */ React387.createElement(FilterSearch_default, {
+          return /* @__PURE__ */ React379.createElement(React379.Fragment, null, /* @__PURE__ */ React379.createElement(FilterSearch_default, {
             filterSearch,
             value: searchValue,
             onChange: onSearch,
             tablePrefixCls,
             locale: locale6
-          }), /* @__PURE__ */ React387.createElement("div", {
+          }), /* @__PURE__ */ React379.createElement("div", {
             className: `${tablePrefixCls}-filter-dropdown-tree`
-          }, filterMultiple ? /* @__PURE__ */ React387.createElement(checkbox_default, {
+          }, filterMultiple ? /* @__PURE__ */ React379.createElement(checkbox_default, {
             checked: selectedKeys.length === flattenKeys(column2.filters).length,
             indeterminate: selectedKeys.length > 0 && selectedKeys.length < flattenKeys(column2.filters).length,
             className: `${tablePrefixCls}-filter-dropdown-checkall`,
             onChange: onCheckAll
-          }, (_b2 = locale6 == null ? void 0 : locale6.filterCheckall) != null ? _b2 : locale6 == null ? void 0 : locale6.filterCheckAll) : null, /* @__PURE__ */ React387.createElement(tree_default, {
+          }, (_b2 = locale6 == null ? void 0 : locale6.filterCheckall) != null ? _b2 : locale6 == null ? void 0 : locale6.filterCheckAll) : null, /* @__PURE__ */ React379.createElement(tree_default, {
             checkable: true,
             selectable: false,
             blockNode: true,
@@ -78977,13 +77798,13 @@ html body {
           searchValue
         });
         const isEmpty2 = items.every((item) => item === null);
-        return /* @__PURE__ */ React387.createElement(React387.Fragment, null, /* @__PURE__ */ React387.createElement(FilterSearch_default, {
+        return /* @__PURE__ */ React379.createElement(React379.Fragment, null, /* @__PURE__ */ React379.createElement(FilterSearch_default, {
           filterSearch,
           value: searchValue,
           onChange: onSearch,
           tablePrefixCls,
           locale: locale6
-        }), isEmpty2 ? empty : /* @__PURE__ */ React387.createElement(menu_default2, {
+        }), isEmpty2 ? empty : /* @__PURE__ */ React379.createElement(menu_default2, {
           selectable: true,
           multiple: filterMultiple,
           prefixCls: `${dropdownPrefixCls}-menu`,
@@ -79003,25 +77824,25 @@ html body {
         }
         return selectedKeys.length === 0;
       };
-      dropdownContent = /* @__PURE__ */ React387.createElement(React387.Fragment, null, getFilterComponent(), /* @__PURE__ */ React387.createElement("div", {
+      dropdownContent = /* @__PURE__ */ React379.createElement(React379.Fragment, null, getFilterComponent(), /* @__PURE__ */ React379.createElement("div", {
         className: `${prefixCls}-dropdown-btns`
-      }, /* @__PURE__ */ React387.createElement(Button_default, {
+      }, /* @__PURE__ */ React379.createElement(Button_default, {
         type: "link",
         size: "small",
         disabled: getResetDisabled(),
         onClick: () => onReset()
-      }, locale6.filterReset), /* @__PURE__ */ React387.createElement(Button_default, {
+      }, locale6.filterReset), /* @__PURE__ */ React379.createElement(Button_default, {
         type: "primary",
         size: "small",
         onClick: onConfirm
       }, locale6.filterConfirm)));
     }
     if (column2.filterDropdown) {
-      dropdownContent = /* @__PURE__ */ React387.createElement(OverrideProvider, {
+      dropdownContent = /* @__PURE__ */ React379.createElement(OverrideProvider, {
         selectable: void 0
       }, dropdownContent);
     }
-    dropdownContent = /* @__PURE__ */ React387.createElement(FilterWrapper_default, {
+    dropdownContent = /* @__PURE__ */ React379.createElement(FilterWrapper_default, {
       className: `${prefixCls}-dropdown`
     }, dropdownContent);
     const getDropdownTrigger = () => {
@@ -79031,9 +77852,9 @@ html body {
       } else if (column2.filterIcon) {
         filterIcon = column2.filterIcon;
       } else {
-        filterIcon = /* @__PURE__ */ React387.createElement(FilterFilled_default2, null);
+        filterIcon = /* @__PURE__ */ React379.createElement(FilterFilled_default2, null);
       }
-      return /* @__PURE__ */ React387.createElement("span", {
+      return /* @__PURE__ */ React379.createElement("span", {
         role: "button",
         tabIndex: -1,
         className: clsx(`${prefixCls}-trigger`, {
@@ -79046,9 +77867,9 @@ html body {
     };
     const triggerNode = getDropdownTrigger();
     if (inMeasureRow) {
-      return /* @__PURE__ */ React387.createElement("div", {
+      return /* @__PURE__ */ React379.createElement("div", {
         className: `${prefixCls}-column`
-      }, /* @__PURE__ */ React387.createElement("span", {
+      }, /* @__PURE__ */ React379.createElement("span", {
         className: `${tablePrefixCls}-column-title`
       }, children), triggerNode);
     }
@@ -79068,11 +77889,11 @@ html body {
         return dropdownContent;
       }
     }));
-    return /* @__PURE__ */ React387.createElement("div", {
+    return /* @__PURE__ */ React379.createElement("div", {
       className: `${prefixCls}-column`
-    }, /* @__PURE__ */ React387.createElement("span", {
+    }, /* @__PURE__ */ React379.createElement("span", {
       className: `${tablePrefixCls}-column-title`
-    }, children), /* @__PURE__ */ React387.createElement(dropdown_default3, __spreadValues({}, mergedDropdownProps)));
+    }, children), /* @__PURE__ */ React379.createElement(dropdown_default3, __spreadValues({}, mergedDropdownProps)));
   };
   var FilterDropdown_default = FilterDropdown;
 
@@ -79127,7 +77948,7 @@ html body {
           key
         }) => columnKey === key);
         newColumn = __spreadProps(__spreadValues({}, newColumn), {
-          title: (renderProps) => /* @__PURE__ */ React388.createElement(FilterDropdown_default, {
+          title: (renderProps) => /* @__PURE__ */ React380.createElement(FilterDropdown_default, {
             tablePrefixCls: prefixCls,
             prefixCls: `${prefixCls}-filter`,
             dropdownPrefixCls,
@@ -79217,9 +78038,9 @@ html body {
       rootClassName
     } = props;
     const warning6 = devUseWarning("Table");
-    const mergedColumns = React388.useMemo(() => getMergedColumns(rawMergedColumns || []), [rawMergedColumns]);
-    const [filterStates, setFilterStates] = React388.useState(() => collectFilterStates(mergedColumns, true));
-    const mergedFilterStates = React388.useMemo(() => {
+    const mergedColumns = React380.useMemo(() => getMergedColumns(rawMergedColumns || []), [rawMergedColumns]);
+    const [filterStates, setFilterStates] = React380.useState(() => collectFilterStates(mergedColumns, true));
+    const mergedFilterStates = React380.useMemo(() => {
       const collectedStates = collectFilterStates(mergedColumns, false);
       if (collectedStates.length === 0) {
         return collectedStates;
@@ -79250,7 +78071,7 @@ html body {
       true ? warning6(filteredKeysIsAllControlled, "usage", "Columns should all contain `filteredValue` or not contain `filteredValue`.") : void 0;
       return collectedStates;
     }, [mergedColumns, filterStates]);
-    const filters = React388.useMemo(() => generateFilterInfo(mergedFilterStates), [mergedFilterStates]);
+    const filters = React380.useMemo(() => generateFilterInfo(mergedFilterStates), [mergedFilterStates]);
     const triggerFilter = (filterState) => {
       const newFilterStates = mergedFilterStates.filter(({
         key
@@ -79265,9 +78086,9 @@ html body {
   var useFilter_default = useFilter;
 
   // ../custom_dashboard/node_modules/antd/es/table/hooks/useLazyKVMap.js
-  var React389 = __toESM(require_react());
+  var React381 = __toESM(require_react());
   var useLazyKVMap = (data, childrenColumnName, getRowKey) => {
-    const mapCacheRef = React389.useRef({});
+    const mapCacheRef = React381.useRef({});
     function getRecordByKey(key) {
       var _a;
       if (!mapCacheRef.current || mapCacheRef.current.data !== data || mapCacheRef.current.childrenColumnName !== childrenColumnName || mapCacheRef.current.getRowKey !== getRowKey) {
@@ -79296,7 +78117,7 @@ html body {
   var useLazyKVMap_default = useLazyKVMap;
 
   // ../custom_dashboard/node_modules/antd/es/table/hooks/usePagination.js
-  var import_react139 = __toESM(require_react());
+  var import_react138 = __toESM(require_react());
   var DEFAULT_PAGE_SIZE = 10;
   function getPaginationParam(mergedPagination, pagination) {
     const param = {
@@ -79318,7 +78139,7 @@ html body {
     } = _a, paginationObj = __objRest(_a, [
       "total"
     ]);
-    const [innerPagination, setInnerPagination] = (0, import_react139.useState)(() => ({
+    const [innerPagination, setInnerPagination] = (0, import_react138.useState)(() => ({
       current: "defaultCurrent" in paginationObj ? paginationObj.defaultCurrent : 1,
       pageSize: "defaultPageSize" in paginationObj ? paginationObj.defaultPageSize : DEFAULT_PAGE_SIZE
     }));
@@ -79354,18 +78175,18 @@ html body {
   var usePagination_default = usePagination;
 
   // ../custom_dashboard/node_modules/antd/es/table/hooks/useSorter.js
-  var React392 = __toESM(require_react());
+  var React384 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CaretDownOutlined.js
-  var React390 = __toESM(require_react());
+  var React382 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/CaretDownOutlined.js
   var CaretDownOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "0 0 1024 1024", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z" } }] }, "name": "caret-down", "theme": "outlined" };
   var CaretDownOutlined_default = CaretDownOutlined;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CaretDownOutlined.js
-  function _extends90() {
-    _extends90 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends88() {
+    _extends88 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -79376,28 +78197,28 @@ html body {
       }
       return target;
     };
-    return _extends90.apply(this, arguments);
+    return _extends88.apply(this, arguments);
   }
-  var CaretDownOutlined2 = (props, ref) => /* @__PURE__ */ React390.createElement(AntdIcon_default, _extends90({}, props, {
+  var CaretDownOutlined2 = (props, ref) => /* @__PURE__ */ React382.createElement(AntdIcon_default, _extends88({}, props, {
     ref,
     icon: CaretDownOutlined_default
   }));
-  var RefIcon30 = /* @__PURE__ */ React390.forwardRef(CaretDownOutlined2);
+  var RefIcon30 = /* @__PURE__ */ React382.forwardRef(CaretDownOutlined2);
   if (true) {
     RefIcon30.displayName = "CaretDownOutlined";
   }
   var CaretDownOutlined_default2 = RefIcon30;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CaretUpOutlined.js
-  var React391 = __toESM(require_react());
+  var React383 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/CaretUpOutlined.js
   var CaretUpOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "0 0 1024 1024", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M858.9 689L530.5 308.2c-9.4-10.9-27.5-10.9-37 0L165.1 689c-12.2 14.2-1.2 35 18.5 35h656.8c19.7 0 30.7-20.8 18.5-35z" } }] }, "name": "caret-up", "theme": "outlined" };
   var CaretUpOutlined_default = CaretUpOutlined;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CaretUpOutlined.js
-  function _extends91() {
-    _extends91 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends89() {
+    _extends89 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -79408,13 +78229,13 @@ html body {
       }
       return target;
     };
-    return _extends91.apply(this, arguments);
+    return _extends89.apply(this, arguments);
   }
-  var CaretUpOutlined2 = (props, ref) => /* @__PURE__ */ React391.createElement(AntdIcon_default, _extends91({}, props, {
+  var CaretUpOutlined2 = (props, ref) => /* @__PURE__ */ React383.createElement(AntdIcon_default, _extends89({}, props, {
     ref,
     icon: CaretUpOutlined_default
   }));
-  var RefIcon31 = /* @__PURE__ */ React391.forwardRef(CaretUpOutlined2);
+  var RefIcon31 = /* @__PURE__ */ React383.forwardRef(CaretUpOutlined2);
   if (true) {
     RefIcon31.displayName = "CaretUpOutlined";
   }
@@ -79496,21 +78317,21 @@ html body {
             sortOrder
           });
         } else {
-          const upNode = sortDirections.includes(ASCEND) && /* @__PURE__ */ React392.createElement(CaretUpOutlined_default2, {
+          const upNode = sortDirections.includes(ASCEND) && /* @__PURE__ */ React384.createElement(CaretUpOutlined_default2, {
             className: clsx(`${prefixCls}-column-sorter-up`, {
               active: sortOrder === ASCEND
             })
           });
-          const downNode = sortDirections.includes(DESCEND) && /* @__PURE__ */ React392.createElement(CaretDownOutlined_default2, {
+          const downNode = sortDirections.includes(DESCEND) && /* @__PURE__ */ React384.createElement(CaretDownOutlined_default2, {
             className: clsx(`${prefixCls}-column-sorter-down`, {
               active: sortOrder === DESCEND
             })
           });
-          sorter = /* @__PURE__ */ React392.createElement("span", {
+          sorter = /* @__PURE__ */ React384.createElement("span", {
             className: clsx(`${prefixCls}-column-sorter`, {
               [`${prefixCls}-column-sorter-full`]: !!(upNode && downNode)
             })
-          }, /* @__PURE__ */ React392.createElement("span", {
+          }, /* @__PURE__ */ React384.createElement("span", {
             className: `${prefixCls}-column-sorter-inner`,
             "aria-hidden": "true"
           }, upNode, downNode));
@@ -79537,19 +78358,19 @@ html body {
           }),
           title: (renderProps) => {
             const columnSortersClass = `${prefixCls}-column-sorters`;
-            const renderColumnTitleWrapper = /* @__PURE__ */ React392.createElement("span", {
+            const renderColumnTitleWrapper = /* @__PURE__ */ React384.createElement("span", {
               className: `${prefixCls}-column-title`
             }, renderColumnTitle(column2.title, renderProps));
-            const renderSortTitle = /* @__PURE__ */ React392.createElement("div", {
+            const renderSortTitle = /* @__PURE__ */ React384.createElement("div", {
               className: columnSortersClass
             }, renderColumnTitleWrapper, sorter);
             if (showSorterTooltip) {
               if (typeof showSorterTooltip !== "boolean" && (showSorterTooltip == null ? void 0 : showSorterTooltip.target) === "sorter-icon") {
-                return /* @__PURE__ */ React392.createElement("div", {
+                return /* @__PURE__ */ React384.createElement("div", {
                   className: clsx(columnSortersClass, `${columnSortersClass}-tooltip-target-sorter`)
-                }, renderColumnTitleWrapper, /* @__PURE__ */ React392.createElement(tooltip_default, __spreadValues({}, tooltipProps), sorter));
+                }, renderColumnTitleWrapper, /* @__PURE__ */ React384.createElement(tooltip_default, __spreadValues({}, tooltipProps), sorter));
               }
-              return /* @__PURE__ */ React392.createElement(tooltip_default, __spreadValues({}, tooltipProps), renderSortTitle);
+              return /* @__PURE__ */ React384.createElement(tooltip_default, __spreadValues({}, tooltipProps), renderSortTitle);
             }
             return renderSortTitle;
           },
@@ -79683,7 +78504,7 @@ html body {
       onSorterChange,
       globalLocale
     } = props;
-    const [sortStates, setSortStates] = React392.useState(() => collectSortStates(mergedColumns, true));
+    const [sortStates, setSortStates] = React384.useState(() => collectSortStates(mergedColumns, true));
     const getColumnKeys = (columns, pos) => {
       const newKeys = [];
       columns.forEach((item, index) => {
@@ -79696,7 +78517,7 @@ html body {
       });
       return newKeys;
     };
-    const mergedSorterStates = React392.useMemo(() => {
+    const mergedSorterStates = React384.useMemo(() => {
       let validate = true;
       const collectedStates = collectSortStates(mergedColumns, false);
       if (!collectedStates.length) {
@@ -79735,7 +78556,7 @@ html body {
       });
       return validateStates;
     }, [mergedColumns, sortStates]);
-    const columnTitleSorterProps = React392.useMemo(() => {
+    const columnTitleSorterProps = React384.useMemo(() => {
       var _a, _b;
       const sortColumns = mergedSorterStates.map(({
         column: column2,
@@ -79769,7 +78590,7 @@ html body {
   var useSorter_default = useFilterSorter;
 
   // ../custom_dashboard/node_modules/antd/es/table/hooks/useTitleColumns.js
-  var React393 = __toESM(require_react());
+  var React385 = __toESM(require_react());
   var fillTitle = (columns, columnTitleProps) => {
     const finalColumns = columns.map((column2) => {
       const cloneColumn = __spreadValues({}, column2);
@@ -79782,7 +78603,7 @@ html body {
     return finalColumns;
   };
   var useTitleColumns = (columnTitleProps) => {
-    const filledColumns = React393.useCallback((columns) => fillTitle(columns, columnTitleProps), [columnTitleProps]);
+    const filledColumns = React385.useCallback((columns) => fillTitle(columns, columnTitleProps), [columnTitleProps]);
     return [filledColumns];
   };
   var useTitleColumns_default = useTitleColumns;
@@ -80986,7 +79807,7 @@ html body {
       })
     };
   };
-  var prepareComponentToken20 = (token2) => {
+  var prepareComponentToken19 = (token2) => {
     const {
       colorFillAlter,
       colorBgContainer,
@@ -81059,7 +79880,7 @@ html body {
     };
   };
   var zIndexTableFixed = 2;
-  var style_default25 = genStyleHooks("Table", (token2) => {
+  var style_default24 = genStyleHooks("Table", (token2) => {
     const {
       colorTextHeading,
       colorSplit,
@@ -81137,7 +79958,7 @@ html body {
       tableScrollBg: colorSplit
     });
     return [genTableStyle(tableToken), pagination_default2(tableToken), summary_default(tableToken), sorter_default(tableToken), filter_default(tableToken), bordered_default2(tableToken), radius_default(tableToken), expand_default(tableToken), summary_default(tableToken), empty_default3(tableToken), selection_default(tableToken), fixed_default(tableToken), sticky_default(tableToken), ellipsis_default(tableToken), size_default(tableToken), rtl_default2(tableToken), virtual_default(tableToken)];
-  }, prepareComponentToken20, {
+  }, prepareComponentToken19, {
     resetFont: false,
     unitless: {
       expandIconScale: true
@@ -81184,10 +80005,10 @@ html body {
       virtual
     } = props;
     const warning6 = devUseWarning("Table");
-    const baseColumns = React394.useMemo(() => columns || convertChildrenToColumns(children), [columns, children]);
-    const needResponsive = React394.useMemo(() => baseColumns.some((col) => col.responsive), [baseColumns]);
+    const baseColumns = React386.useMemo(() => columns || convertChildrenToColumns(children), [columns, children]);
+    const needResponsive = React386.useMemo(() => baseColumns.some((col) => col.responsive), [baseColumns]);
     const screens = useBreakpoint_default(needResponsive);
-    const mergedColumns = React394.useMemo(() => {
+    const mergedColumns = React386.useMemo(() => {
       const matched = new Set(Object.keys(screens).filter((m) => screens[m]));
       return baseColumns.filter((c) => !c.responsive || c.responsive.some((r3) => matched.has(r3)));
     }, [baseColumns, screens]);
@@ -81195,7 +80016,7 @@ html body {
     const {
       locale: contextLocale = en_US_default6,
       table
-    } = React394.useContext(ConfigContext);
+    } = React386.useContext(ConfigContext);
     const {
       getPrefixCls,
       direction,
@@ -81231,7 +80052,7 @@ html body {
     const dropdownPrefixCls = getPrefixCls("dropdown", customizeDropdownPrefixCls);
     const [, token2] = useToken();
     const rootCls = useCSSVarCls_default(prefixCls);
-    const [hashId, cssVarCls] = style_default25(prefixCls, rootCls);
+    const [hashId, cssVarCls] = style_default24(prefixCls, rootCls);
     const mergedExpandable = __spreadProps(__spreadValues({
       childrenColumnName: legacyChildrenColumnName,
       expandIconColumnIndex
@@ -81241,7 +80062,7 @@ html body {
     const {
       childrenColumnName = "children"
     } = mergedExpandable;
-    const expandType = React394.useMemo(() => {
+    const expandType = React386.useMemo(() => {
       if (rawData.some((item) => item == null ? void 0 : item[childrenColumnName])) {
         return "nest";
       }
@@ -81251,11 +80072,11 @@ html body {
       return null;
     }, [childrenColumnName, rawData]);
     const internalRef = {
-      body: React394.useRef(null)
+      body: React386.useRef(null)
     };
     const getContainerWidth = useContainerWidth(prefixCls);
-    const rootRef = React394.useRef(null);
-    const tblRef = React394.useRef(null);
+    const rootRef = React386.useRef(null);
+    const tblRef = React386.useRef(null);
     useProxyImperativeHandle(ref, () => __spreadProps(__spreadValues({}, tblRef.current), {
       nativeElement: rootRef.current
     }));
@@ -81264,7 +80085,7 @@ html body {
     if (true) {
       true ? warning6(!(typeof rowKey === "function" && rowKey.length > 1), "usage", "`index` parameter of `rowKey` function is deprecated. There is no guarantee that it will work as expected.") : void 0;
     }
-    const getRowKey = React394.useMemo(() => {
+    const getRowKey = React386.useMemo(() => {
       if (typeof rowKey === "function") {
         return rowKey;
       }
@@ -81309,7 +80130,7 @@ html body {
       showSorterTooltip,
       globalLocale
     });
-    const sortedData = React394.useMemo(() => getSortData(rawData, sortStates, childrenColumnName), [childrenColumnName, rawData, sortStates]);
+    const sortedData = React386.useMemo(() => getSortData(rawData, sortStates, childrenColumnName), [childrenColumnName, rawData, sortStates]);
     changeEventInfo.sorter = getSorters();
     changeEventInfo.sorterStates = sortStates;
     const onFilterChange = (filters2, filterStates2) => {
@@ -81330,7 +80151,7 @@ html body {
     const mergedData = getFilterData(sortedData, filterStates, childrenColumnName);
     changeEventInfo.filters = filters;
     changeEventInfo.filterStates = filterStates;
-    const columnTitleProps = React394.useMemo(() => {
+    const columnTitleProps = React386.useMemo(() => {
       const mergedFilters = {};
       Object.keys(filters).forEach((filterKey) => {
         if (filters[filterKey] !== null) {
@@ -81353,7 +80174,7 @@ html body {
     const [mergedPagination, resetPagination] = usePagination_default(mergedData.length, onPaginationChange, pagination);
     changeEventInfo.pagination = pagination === false ? {} : getPaginationParam(mergedPagination, pagination);
     changeEventInfo.resetPagination = resetPagination;
-    const pageData = React394.useMemo(() => {
+    const pageData = React386.useMemo(() => {
       if (pagination === false || !mergedPagination.pageSize) {
         return mergedData;
       }
@@ -81399,7 +80220,7 @@ html body {
     if (typeof mergedExpandable.indentSize !== "number") {
       mergedExpandable.indentSize = typeof indentSize === "number" ? indentSize : 15;
     }
-    const transformColumns = React394.useCallback((innerColumns) => transformTitleColumns(transformSelectionColumns(transformFilterColumns(transformSorterColumns(innerColumns)))), [transformSorterColumns, transformFilterColumns, transformSelectionColumns]);
+    const transformColumns = React386.useCallback((innerColumns) => transformTitleColumns(transformSelectionColumns(transformFilterColumns(transformSorterColumns(innerColumns)))), [transformSorterColumns, transformFilterColumns, transformSelectionColumns]);
     let topPaginationNode;
     let bottomPaginationNode;
     if (pagination !== false && (mergedPagination == null ? void 0 : mergedPagination.total)) {
@@ -81409,7 +80230,7 @@ html body {
       } else {
         paginationSize = mergedSize === "small" || mergedSize === "medium" ? "small" : void 0;
       }
-      const renderPagination = (placement2 = "end") => /* @__PURE__ */ React394.createElement(pagination_default, __spreadProps(__spreadValues({}, mergedPagination), {
+      const renderPagination = (placement2 = "end") => /* @__PURE__ */ React386.createElement(pagination_default, __spreadProps(__spreadValues({}, mergedPagination), {
         classNames: mergedClassNames.pagination,
         styles: mergedStyles.pagination,
         className: clsx(`${prefixCls}-pagination ${prefixCls}-pagination-${placement2}`, mergedPagination.className),
@@ -81446,7 +80267,7 @@ html body {
         warning6.deprecated(!position3, "pagination.position", "pagination.placement");
       }
     }
-    const spinProps = React394.useMemo(() => {
+    const spinProps = React386.useMemo(() => {
       if (typeof loading === "boolean") {
         return {
           spinning: loading
@@ -81463,20 +80284,20 @@ html body {
       [`${prefixCls}-wrapper-rtl`]: direction === "rtl"
     }, className, rootClassName, mergedClassNames.root, hashId);
     const mergedStyle = __spreadValues(__spreadValues(__spreadValues({}, mergedStyles.root), contextStyle), style2);
-    const mergedEmptyNode = React394.useMemo(() => {
+    const mergedEmptyNode = React386.useMemo(() => {
       if ((spinProps == null ? void 0 : spinProps.spinning) && rawData === EMPTY_LIST5) {
         return null;
       }
       if (typeof (locale6 == null ? void 0 : locale6.emptyText) !== "undefined") {
         return locale6.emptyText;
       }
-      return (renderEmpty == null ? void 0 : renderEmpty("Table")) || /* @__PURE__ */ React394.createElement(defaultRenderEmpty_default, {
+      return (renderEmpty == null ? void 0 : renderEmpty("Table")) || /* @__PURE__ */ React386.createElement(defaultRenderEmpty_default, {
         componentName: "Table"
       });
     }, [spinProps == null ? void 0 : spinProps.spinning, rawData, locale6 == null ? void 0 : locale6.emptyText, renderEmpty]);
     const TableComponent = virtual ? VirtualTable_default2 : RcTable_default;
     const virtualProps = {};
-    const listItemHeight = React394.useMemo(() => {
+    const listItemHeight = React386.useMemo(() => {
       const {
         fontSize,
         lineHeight,
@@ -81498,13 +80319,13 @@ html body {
     if (virtual) {
       virtualProps.listItemHeight = listItemHeight;
     }
-    return /* @__PURE__ */ React394.createElement("div", {
+    return /* @__PURE__ */ React386.createElement("div", {
       ref: rootRef,
       className: wrappercls,
       style: mergedStyle
-    }, /* @__PURE__ */ React394.createElement(spin_default, __spreadValues({
+    }, /* @__PURE__ */ React386.createElement(spin_default, __spreadValues({
       spinning: false
-    }, spinProps), topPaginationNode, /* @__PURE__ */ React394.createElement(TableComponent, __spreadProps(__spreadValues(__spreadValues({}, virtualProps), tableProps), {
+    }, spinProps), topPaginationNode, /* @__PURE__ */ React386.createElement(TableComponent, __spreadProps(__spreadValues(__spreadValues({}, virtualProps), tableProps), {
       scroll: mergedScroll,
       classNames: mergedClassNames,
       styles: mergedStyles,
@@ -81527,26 +80348,26 @@ html body {
       internalRefs: internalRef,
       transformColumns,
       getContainerWidth,
-      measureRowRender: (measureRow) => /* @__PURE__ */ React394.createElement(TableMeasureRowContext_default.Provider, {
+      measureRowRender: (measureRow) => /* @__PURE__ */ React386.createElement(TableMeasureRowContext_default.Provider, {
         value: true
-      }, /* @__PURE__ */ React394.createElement(config_provider_default, {
+      }, /* @__PURE__ */ React386.createElement(config_provider_default, {
         getPopupContainer: (node2) => node2
       }, measureRow))
     })), bottomPaginationNode));
   };
-  var InternalTable_default = /* @__PURE__ */ React394.forwardRef(InternalTable);
+  var InternalTable_default = /* @__PURE__ */ React386.forwardRef(InternalTable);
 
   // ../custom_dashboard/node_modules/antd/es/table/Table.js
   "use client";
   var Table2 = (props, ref) => {
-    const renderTimesRef = React395.useRef(0);
+    const renderTimesRef = React387.useRef(0);
     renderTimesRef.current += 1;
-    return /* @__PURE__ */ React395.createElement(InternalTable_default, __spreadProps(__spreadValues({}, props), {
+    return /* @__PURE__ */ React387.createElement(InternalTable_default, __spreadProps(__spreadValues({}, props), {
       ref,
       _renderTimes: renderTimesRef.current
     }));
   };
-  var ForwardTable = /* @__PURE__ */ React395.forwardRef(Table2);
+  var ForwardTable = /* @__PURE__ */ React387.forwardRef(Table2);
   ForwardTable.SELECTION_COLUMN = SELECTION_COLUMN;
   ForwardTable.EXPAND_COLUMN = EXPAND_COLUMN;
   ForwardTable.SELECTION_ALL = SELECTION_ALL;
@@ -81565,13 +80386,86 @@ html body {
   var table_default = Table_default2;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/DeleteOutlined.js
-  var React396 = __toESM(require_react());
+  var React388 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/DeleteOutlined.js
   var DeleteOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M360 184h-8c4.4 0 8-3.6 8-8v8h304v-8c0 4.4 3.6 8 8 8h-8v72h72v-80c0-35.3-28.7-64-64-64H352c-35.3 0-64 28.7-64 64v80h72v-72zm504 72H160c-17.7 0-32 14.3-32 32v32c0 4.4 3.6 8 8 8h60.4l24.7 523c1.6 34.1 29.8 61 63.9 61h454c34.2 0 62.3-26.8 63.9-61l24.7-523H888c4.4 0 8-3.6 8-8v-32c0-17.7-14.3-32-32-32zM731.3 840H292.7l-24.2-512h487l-24.2 512z" } }] }, "name": "delete", "theme": "outlined" };
   var DeleteOutlined_default = DeleteOutlined;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/DeleteOutlined.js
+  function _extends90() {
+    _extends90 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends90.apply(this, arguments);
+  }
+  var DeleteOutlined2 = (props, ref) => /* @__PURE__ */ React388.createElement(AntdIcon_default, _extends90({}, props, {
+    ref,
+    icon: DeleteOutlined_default
+  }));
+  var RefIcon32 = /* @__PURE__ */ React388.forwardRef(DeleteOutlined2);
+  if (true) {
+    RefIcon32.displayName = "DeleteOutlined";
+  }
+  var DeleteOutlined_default2 = RefIcon32;
+
+  // ../custom_dashboard/node_modules/antd/es/typography/Link.js
+  var React400 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/antd/es/typography/Base/index.js
+  var React399 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/EditOutlined.js
+  var React389 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/EditOutlined.js
+  var EditOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M257.7 752c2 0 4-.2 6-.5L431.9 722c2-.4 3.9-1.3 5.3-2.8l423.9-423.9a9.96 9.96 0 000-14.1L694.9 114.9c-1.9-1.9-4.4-2.9-7.1-2.9s-5.2 1-7.1 2.9L256.8 538.8c-1.5 1.5-2.4 3.3-2.8 5.3l-29.5 168.2a33.5 33.5 0 009.4 29.8c6.6 6.4 14.9 9.9 23.8 9.9zm67.4-174.4L687.8 215l73.3 73.3-362.7 362.6-88.9 15.7 15.6-89zM880 836H144c-17.7 0-32 14.3-32 32v36c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-36c0-17.7-14.3-32-32-32z" } }] }, "name": "edit", "theme": "outlined" };
+  var EditOutlined_default = EditOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/EditOutlined.js
+  function _extends91() {
+    _extends91 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends91.apply(this, arguments);
+  }
+  var EditOutlined2 = (props, ref) => /* @__PURE__ */ React389.createElement(AntdIcon_default, _extends91({}, props, {
+    ref,
+    icon: EditOutlined_default
+  }));
+  var RefIcon33 = /* @__PURE__ */ React389.forwardRef(EditOutlined2);
+  if (true) {
+    RefIcon33.displayName = "EditOutlined";
+  }
+  var EditOutlined_default2 = RefIcon33;
+
+  // ../custom_dashboard/node_modules/antd/es/typography/Editable.js
+  var React391 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/EnterOutlined.js
+  var React390 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/EnterOutlined.js
+  var EnterOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M864 170h-60c-4.4 0-8 3.6-8 8v518H310v-73c0-6.7-7.8-10.5-13-6.3l-141.9 112a8 8 0 000 12.6l141.9 112c5.3 4.2 13 .4 13-6.3v-75h498c35.3 0 64-28.7 64-64V178c0-4.4-3.6-8-8-8z" } }] }, "name": "enter", "theme": "outlined" };
+  var EnterOutlined_default = EnterOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/EnterOutlined.js
   function _extends92() {
     _extends92 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -81586,84 +80480,11 @@ html body {
     };
     return _extends92.apply(this, arguments);
   }
-  var DeleteOutlined2 = (props, ref) => /* @__PURE__ */ React396.createElement(AntdIcon_default, _extends92({}, props, {
-    ref,
-    icon: DeleteOutlined_default
-  }));
-  var RefIcon32 = /* @__PURE__ */ React396.forwardRef(DeleteOutlined2);
-  if (true) {
-    RefIcon32.displayName = "DeleteOutlined";
-  }
-  var DeleteOutlined_default2 = RefIcon32;
-
-  // ../custom_dashboard/node_modules/antd/es/typography/Link.js
-  var React408 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/antd/es/typography/Base/index.js
-  var React407 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/EditOutlined.js
-  var React397 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/EditOutlined.js
-  var EditOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M257.7 752c2 0 4-.2 6-.5L431.9 722c2-.4 3.9-1.3 5.3-2.8l423.9-423.9a9.96 9.96 0 000-14.1L694.9 114.9c-1.9-1.9-4.4-2.9-7.1-2.9s-5.2 1-7.1 2.9L256.8 538.8c-1.5 1.5-2.4 3.3-2.8 5.3l-29.5 168.2a33.5 33.5 0 009.4 29.8c6.6 6.4 14.9 9.9 23.8 9.9zm67.4-174.4L687.8 215l73.3 73.3-362.7 362.6-88.9 15.7 15.6-89zM880 836H144c-17.7 0-32 14.3-32 32v36c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-36c0-17.7-14.3-32-32-32z" } }] }, "name": "edit", "theme": "outlined" };
-  var EditOutlined_default = EditOutlined;
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/EditOutlined.js
-  function _extends93() {
-    _extends93 = Object.assign ? Object.assign.bind() : function(target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
-      }
-      return target;
-    };
-    return _extends93.apply(this, arguments);
-  }
-  var EditOutlined2 = (props, ref) => /* @__PURE__ */ React397.createElement(AntdIcon_default, _extends93({}, props, {
-    ref,
-    icon: EditOutlined_default
-  }));
-  var RefIcon33 = /* @__PURE__ */ React397.forwardRef(EditOutlined2);
-  if (true) {
-    RefIcon33.displayName = "EditOutlined";
-  }
-  var EditOutlined_default2 = RefIcon33;
-
-  // ../custom_dashboard/node_modules/antd/es/typography/Editable.js
-  var React399 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/EnterOutlined.js
-  var React398 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/EnterOutlined.js
-  var EnterOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M864 170h-60c-4.4 0-8 3.6-8 8v518H310v-73c0-6.7-7.8-10.5-13-6.3l-141.9 112a8 8 0 000 12.6l141.9 112c5.3 4.2 13 .4 13-6.3v-75h498c35.3 0 64-28.7 64-64V178c0-4.4-3.6-8-8-8z" } }] }, "name": "enter", "theme": "outlined" };
-  var EnterOutlined_default = EnterOutlined;
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/EnterOutlined.js
-  function _extends94() {
-    _extends94 = Object.assign ? Object.assign.bind() : function(target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
-      }
-      return target;
-    };
-    return _extends94.apply(this, arguments);
-  }
-  var EnterOutlined2 = (props, ref) => /* @__PURE__ */ React398.createElement(AntdIcon_default, _extends94({}, props, {
+  var EnterOutlined2 = (props, ref) => /* @__PURE__ */ React390.createElement(AntdIcon_default, _extends92({}, props, {
     ref,
     icon: EnterOutlined_default
   }));
-  var RefIcon34 = /* @__PURE__ */ React398.forwardRef(EnterOutlined2);
+  var RefIcon34 = /* @__PURE__ */ React390.forwardRef(EnterOutlined2);
   if (true) {
     RefIcon34.displayName = "EnterOutlined";
   }
@@ -81968,11 +80789,11 @@ html body {
       })
     };
   };
-  var prepareComponentToken21 = () => ({
+  var prepareComponentToken20 = () => ({
     titleMarginTop: "1.2em",
     titleMarginBottom: "0.5em"
   });
-  var style_default26 = genStyleHooks("Typography", genTypographyStyle, prepareComponentToken21);
+  var style_default25 = genStyleHooks("Typography", genTypographyStyle, prepareComponentToken20);
 
   // ../custom_dashboard/node_modules/antd/es/typography/Editable.js
   "use client";
@@ -81990,16 +80811,16 @@ html body {
       onCancel,
       onEnd,
       component,
-      enterIcon = /* @__PURE__ */ React399.createElement(EnterOutlined_default2, null)
+      enterIcon = /* @__PURE__ */ React391.createElement(EnterOutlined_default2, null)
     } = props;
-    const ref = React399.useRef(null);
-    const inCompositionRef = React399.useRef(false);
-    const lastKeyCodeRef = React399.useRef(null);
-    const [current, setCurrent] = React399.useState(value);
-    React399.useEffect(() => {
+    const ref = React391.useRef(null);
+    const inCompositionRef = React391.useRef(false);
+    const lastKeyCodeRef = React391.useRef(null);
+    const [current, setCurrent] = React391.useState(value);
+    React391.useEffect(() => {
       setCurrent(value);
     }, [value]);
-    React399.useEffect(() => {
+    React391.useEffect(() => {
       var _a;
       if ((_a = ref.current) == null ? void 0 : _a.resizableTextArea) {
         const {
@@ -82054,15 +80875,15 @@ html body {
     const onBlur = () => {
       confirmChange();
     };
-    const [hashId, cssVarCls] = style_default26(prefixCls);
+    const [hashId, cssVarCls] = style_default25(prefixCls);
     const textAreaClassName = clsx(prefixCls, `${prefixCls}-edit-content`, {
       [`${prefixCls}-rtl`]: direction === "rtl",
       [`${prefixCls}-${component}`]: !!component
     }, className, hashId, cssVarCls);
-    return /* @__PURE__ */ React399.createElement("div", {
+    return /* @__PURE__ */ React391.createElement("div", {
       className: textAreaClassName,
       style: style2
-    }, /* @__PURE__ */ React399.createElement(TextArea_default2, {
+    }, /* @__PURE__ */ React391.createElement(TextArea_default2, {
       ref,
       maxLength,
       value: current,
@@ -82082,7 +80903,7 @@ html body {
   var Editable_default = Editable;
 
   // ../custom_dashboard/node_modules/antd/es/typography/hooks/useCopyClick.js
-  var React400 = __toESM(require_react());
+  var React392 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/_util/copy.js
   var execCopy = (text, isHtmlFormat) => {
@@ -82152,9 +80973,9 @@ html body {
     copyConfig,
     children
   }) => {
-    const [copied, setCopied] = React400.useState(false);
-    const [copyLoading, setCopyLoading] = React400.useState(false);
-    const copyIdRef = React400.useRef(null);
+    const [copied, setCopied] = React392.useState(false);
+    const [copyLoading, setCopyLoading] = React392.useState(false);
+    const copyIdRef = React392.useRef(null);
     const cleanCopyId = () => {
       if (copyIdRef.current) {
         clearTimeout(copyIdRef.current);
@@ -82164,7 +80985,7 @@ html body {
     if (copyConfig.format) {
       copyOptions.format = copyConfig.format;
     }
-    React400.useEffect(() => cleanCopyId, []);
+    React392.useEffect(() => cleanCopyId, []);
     const onClick = useEvent_default(async (e3) => {
       var _a;
       e3 == null ? void 0 : e3.preventDefault();
@@ -82196,19 +81017,19 @@ html body {
   var useCopyClick_default = useCopyClick;
 
   // ../custom_dashboard/node_modules/antd/es/typography/hooks/useMergedConfig.js
-  var React401 = __toESM(require_react());
+  var React393 = __toESM(require_react());
   function useMergedConfig(propConfig, templateConfig) {
-    return React401.useMemo(() => {
+    return React393.useMemo(() => {
       const support = !!propConfig;
       return [support, __spreadValues(__spreadValues({}, templateConfig), support && typeof propConfig === "object" ? propConfig : null)];
     }, [propConfig]);
   }
 
   // ../custom_dashboard/node_modules/antd/es/typography/hooks/usePrevious.js
-  var import_react140 = __toESM(require_react());
+  var import_react139 = __toESM(require_react());
   var usePrevious = (value) => {
-    const ref = (0, import_react140.useRef)(void 0);
-    (0, import_react140.useEffect)(() => {
+    const ref = (0, import_react139.useRef)(void 0);
+    (0, import_react139.useEffect)(() => {
       ref.current = value;
     });
     return ref.current;
@@ -82216,14 +81037,14 @@ html body {
   var usePrevious_default = usePrevious;
 
   // ../custom_dashboard/node_modules/antd/es/typography/hooks/useTooltipProps.js
-  var import_react141 = __toESM(require_react());
-  var useTooltipProps = (tooltip, editConfigText, children) => (0, import_react141.useMemo)(() => {
+  var import_react140 = __toESM(require_react());
+  var useTooltipProps = (tooltip, editConfigText, children) => (0, import_react140.useMemo)(() => {
     if (tooltip === true) {
       return {
         title: editConfigText != null ? editConfigText : children
       };
     }
-    if (/* @__PURE__ */ (0, import_react141.isValidElement)(tooltip)) {
+    if (/* @__PURE__ */ (0, import_react140.isValidElement)(tooltip)) {
       return {
         title: tooltip
       };
@@ -82240,9 +81061,9 @@ html body {
   var useTooltipProps_default = useTooltipProps;
 
   // ../custom_dashboard/node_modules/antd/es/typography/Typography.js
-  var React402 = __toESM(require_react());
+  var React394 = __toESM(require_react());
   "use client";
-  var Typography = /* @__PURE__ */ React402.forwardRef((props, ref) => {
+  var Typography = /* @__PURE__ */ React394.forwardRef((props, ref) => {
     const _a = props, {
       prefixCls: customizePrefixCls,
       component: Component5 = "article",
@@ -82268,12 +81089,12 @@ html body {
     } = useComponentConfig("typography");
     const direction = typographyDirection != null ? typographyDirection : contextDirection;
     const prefixCls = getPrefixCls("typography", customizePrefixCls);
-    const [hashId, cssVarCls] = style_default26(prefixCls);
+    const [hashId, cssVarCls] = style_default25(prefixCls);
     const componentClassName = clsx(prefixCls, contextClassName, {
       [`${prefixCls}-rtl`]: direction === "rtl"
     }, className, rootClassName, hashId, cssVarCls);
     const mergedStyle = __spreadValues(__spreadValues({}, contextStyle), style2);
-    return /* @__PURE__ */ React402.createElement(Component5, __spreadValues({
+    return /* @__PURE__ */ React394.createElement(Component5, __spreadValues({
       className: componentClassName,
       style: mergedStyle,
       ref
@@ -82285,18 +81106,18 @@ html body {
   var Typography_default = Typography;
 
   // ../custom_dashboard/node_modules/antd/es/typography/Base/CopyBtn.js
-  var React404 = __toESM(require_react());
+  var React396 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CopyOutlined.js
-  var React403 = __toESM(require_react());
+  var React395 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/CopyOutlined.js
   var CopyOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z" } }] }, "name": "copy", "theme": "outlined" };
   var CopyOutlined_default = CopyOutlined;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CopyOutlined.js
-  function _extends95() {
-    _extends95 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends93() {
+    _extends93 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -82307,13 +81128,13 @@ html body {
       }
       return target;
     };
-    return _extends95.apply(this, arguments);
+    return _extends93.apply(this, arguments);
   }
-  var CopyOutlined2 = (props, ref) => /* @__PURE__ */ React403.createElement(AntdIcon_default, _extends95({}, props, {
+  var CopyOutlined2 = (props, ref) => /* @__PURE__ */ React395.createElement(AntdIcon_default, _extends93({}, props, {
     ref,
     icon: CopyOutlined_default
   }));
-  var RefIcon35 = /* @__PURE__ */ React403.forwardRef(CopyOutlined2);
+  var RefIcon35 = /* @__PURE__ */ React395.forwardRef(CopyOutlined2);
   if (true) {
     RefIcon35.displayName = "CopyOutlined";
   }
@@ -82368,9 +81189,9 @@ html body {
     const systemStr = copied ? copiedText : copyText;
     const copyTitle = getNode(tooltipNodes[copied ? 1 : 0], systemStr);
     const ariaLabel = typeof copyTitle === "string" ? copyTitle : systemStr;
-    return /* @__PURE__ */ React404.createElement(tooltip_default, {
+    return /* @__PURE__ */ React396.createElement(tooltip_default, {
       title: copyTitle
-    }, /* @__PURE__ */ React404.createElement("button", {
+    }, /* @__PURE__ */ React396.createElement("button", {
       type: "button",
       className: clsx(`${prefixCls}-copy`, {
         [`${prefixCls}-copy-success`]: copied,
@@ -82379,26 +81200,26 @@ html body {
       onClick: onCopy,
       "aria-label": ariaLabel,
       tabIndex
-    }, copied ? getNode(iconNodes[1], /* @__PURE__ */ React404.createElement(CheckOutlined_default2, null), true) : getNode(iconNodes[0], btnLoading ? /* @__PURE__ */ React404.createElement(LoadingOutlined_default2, null) : /* @__PURE__ */ React404.createElement(CopyOutlined_default2, null), true)));
+    }, copied ? getNode(iconNodes[1], /* @__PURE__ */ React396.createElement(CheckOutlined_default2, null), true) : getNode(iconNodes[0], btnLoading ? /* @__PURE__ */ React396.createElement(LoadingOutlined_default2, null) : /* @__PURE__ */ React396.createElement(CopyOutlined_default2, null), true)));
   };
   var CopyBtn_default = CopyBtn;
 
   // ../custom_dashboard/node_modules/antd/es/typography/Base/Ellipsis.js
-  var React405 = __toESM(require_react());
+  var React397 = __toESM(require_react());
   "use client";
-  var MeasureText = /* @__PURE__ */ React405.forwardRef(({
+  var MeasureText = /* @__PURE__ */ React397.forwardRef(({
     style: style2,
     children
   }, ref) => {
-    const spanRef = React405.useRef(null);
-    React405.useImperativeHandle(ref, () => ({
+    const spanRef = React397.useRef(null);
+    React397.useImperativeHandle(ref, () => ({
       isExceed: () => {
         const span = spanRef.current;
         return span.scrollHeight > span.clientHeight;
       },
       getHeight: () => spanRef.current.clientHeight
     }));
-    return /* @__PURE__ */ React405.createElement("span", {
+    return /* @__PURE__ */ React397.createElement("span", {
       "aria-hidden": true,
       ref: spanRef,
       style: __spreadValues({
@@ -82454,19 +81275,19 @@ html body {
       miscDeps,
       onEllipsis
     } = props;
-    const nodeList = React405.useMemo(() => toArray(text), [text]);
-    const nodeLen = React405.useMemo(() => getNodesLen(nodeList), [text]);
-    const fullContent = React405.useMemo(() => children(nodeList, false), [text]);
-    const [ellipsisCutIndex, setEllipsisCutIndex] = React405.useState(null);
-    const cutMidRef = React405.useRef(null);
-    const measureWhiteSpaceRef = React405.useRef(null);
-    const needEllipsisRef = React405.useRef(null);
-    const descRowsEllipsisRef = React405.useRef(null);
-    const symbolRowEllipsisRef = React405.useRef(null);
-    const [canEllipsis, setCanEllipsis] = React405.useState(false);
-    const [needEllipsis, setNeedEllipsis] = React405.useState(STATUS_MEASURE_NONE);
-    const [ellipsisHeight, setEllipsisHeight] = React405.useState(0);
-    const [parentWhiteSpace, setParentWhiteSpace] = React405.useState(null);
+    const nodeList = React397.useMemo(() => toArray(text), [text]);
+    const nodeLen = React397.useMemo(() => getNodesLen(nodeList), [text]);
+    const fullContent = React397.useMemo(() => children(nodeList, false), [text]);
+    const [ellipsisCutIndex, setEllipsisCutIndex] = React397.useState(null);
+    const cutMidRef = React397.useRef(null);
+    const measureWhiteSpaceRef = React397.useRef(null);
+    const needEllipsisRef = React397.useRef(null);
+    const descRowsEllipsisRef = React397.useRef(null);
+    const symbolRowEllipsisRef = React397.useRef(null);
+    const [canEllipsis, setCanEllipsis] = React397.useState(false);
+    const [needEllipsis, setNeedEllipsis] = React397.useState(STATUS_MEASURE_NONE);
+    const [ellipsisHeight, setEllipsisHeight] = React397.useState(0);
+    const [parentWhiteSpace, setParentWhiteSpace] = React397.useState(null);
     useLayoutEffect_default(() => {
       if (enableMeasure && width && nodeLen) {
         setNeedEllipsis(STATUS_MEASURE_PREPARE);
@@ -82510,7 +81331,7 @@ html body {
         setEllipsisCutIndex(isOverflow ? [minIndex, targetMidIndex] : [targetMidIndex, maxIndex]);
       }
     }, [ellipsisCutIndex, cutMidIndex]);
-    const finalContent = React405.useMemo(() => {
+    const finalContent = React397.useMemo(() => {
       if (!enableMeasure) {
         return children(nodeList, false);
       }
@@ -82519,7 +81340,7 @@ html body {
         if ([STATUS_MEASURE_NO_NEED_ELLIPSIS, STATUS_MEASURE_NONE].includes(needEllipsis)) {
           return content;
         }
-        return /* @__PURE__ */ React405.createElement("span", {
+        return /* @__PURE__ */ React397.createElement("span", {
           style: __spreadProps(__spreadValues({}, lineClipStyle), {
             WebkitLineClamp: rows
           })
@@ -82533,27 +81354,27 @@ html body {
       padding: 0,
       whiteSpace: parentWhiteSpace === "nowrap" ? "normal" : "inherit"
     };
-    return /* @__PURE__ */ React405.createElement(React405.Fragment, null, finalContent, needEllipsis === STATUS_MEASURE_START && /* @__PURE__ */ React405.createElement(React405.Fragment, null, /* @__PURE__ */ React405.createElement(MeasureText, {
+    return /* @__PURE__ */ React397.createElement(React397.Fragment, null, finalContent, needEllipsis === STATUS_MEASURE_START && /* @__PURE__ */ React397.createElement(React397.Fragment, null, /* @__PURE__ */ React397.createElement(MeasureText, {
       style: __spreadProps(__spreadValues(__spreadValues({}, measureStyle), lineClipStyle), {
         WebkitLineClamp: rows
       }),
       ref: needEllipsisRef
-    }, fullContent), /* @__PURE__ */ React405.createElement(MeasureText, {
+    }, fullContent), /* @__PURE__ */ React397.createElement(MeasureText, {
       style: __spreadProps(__spreadValues(__spreadValues({}, measureStyle), lineClipStyle), {
         WebkitLineClamp: rows - 1
       }),
       ref: descRowsEllipsisRef
-    }, fullContent), /* @__PURE__ */ React405.createElement(MeasureText, {
+    }, fullContent), /* @__PURE__ */ React397.createElement(MeasureText, {
       style: __spreadProps(__spreadValues(__spreadValues({}, measureStyle), lineClipStyle), {
         WebkitLineClamp: 1
       }),
       ref: symbolRowEllipsisRef
-    }, children([], true))), needEllipsis === STATUS_MEASURE_NEED_ELLIPSIS && ellipsisCutIndex && ellipsisCutIndex[0] !== ellipsisCutIndex[1] && /* @__PURE__ */ React405.createElement(MeasureText, {
+    }, children([], true))), needEllipsis === STATUS_MEASURE_NEED_ELLIPSIS && ellipsisCutIndex && ellipsisCutIndex[0] !== ellipsisCutIndex[1] && /* @__PURE__ */ React397.createElement(MeasureText, {
       style: __spreadProps(__spreadValues({}, measureStyle), {
         top: 400
       }),
       ref: cutMidRef
-    }, children(sliceNodes(nodeList, cutMidIndex), true)), needEllipsis === STATUS_MEASURE_PREPARE && /* @__PURE__ */ React405.createElement("span", {
+    }, children(sliceNodes(nodeList, cutMidIndex), true)), needEllipsis === STATUS_MEASURE_PREPARE && /* @__PURE__ */ React397.createElement("span", {
       style: {
         whiteSpace: "inherit"
       },
@@ -82562,7 +81383,7 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/antd/es/typography/Base/EllipsisTooltip.js
-  var React406 = __toESM(require_react());
+  var React398 = __toESM(require_react());
   "use client";
   var EllipsisTooltip = ({
     enableEllipsis,
@@ -82575,7 +81396,7 @@ html body {
       return children;
     }
     const mergedOpen = open2 && isEllipsis;
-    return /* @__PURE__ */ React406.createElement(tooltip_default, __spreadValues({
+    return /* @__PURE__ */ React398.createElement(tooltip_default, __spreadValues({
       open: mergedOpen
     }, tooltipProps), children);
   };
@@ -82600,7 +81421,7 @@ html body {
       if (!needed) {
         return;
       }
-      currentContent = /* @__PURE__ */ React407.createElement(tag, {}, currentContent);
+      currentContent = /* @__PURE__ */ React399.createElement(tag, {}, currentContent);
     }
     wrap("strong", strong);
     wrap("u", underline);
@@ -82613,7 +81434,7 @@ html body {
   }
   var ELLIPSIS_STR = "...";
   var DECORATION_PROPS = ["delete", "mark", "code", "underline", "strong", "keyboard", "italic"];
-  var Base = /* @__PURE__ */ React407.forwardRef((props, ref) => {
+  var Base = /* @__PURE__ */ React399.forwardRef((props, ref) => {
     var _b;
     const _a = props, {
       prefixCls: customizePrefixCls,
@@ -82647,10 +81468,10 @@ html body {
     const {
       getPrefixCls,
       direction
-    } = React407.useContext(ConfigContext);
+    } = React399.useContext(ConfigContext);
     const [textLocale] = useLocale_default("Text");
-    const typographyRef = React407.useRef(null);
-    const editIconRef = React407.useRef(null);
+    const typographyRef = React399.useRef(null);
+    const editIconRef = React399.useRef(null);
     const prefixCls = getPrefixCls("typography", customizePrefixCls);
     const textProps = omit(restProps, DECORATION_PROPS);
     const [enableEdit, editConfig] = useMergedConfig(editable);
@@ -82695,11 +81516,11 @@ html body {
       copyConfig,
       children
     });
-    const [isLineClampSupport, setIsLineClampSupport] = React407.useState(false);
-    const [isTextOverflowSupport, setIsTextOverflowSupport] = React407.useState(false);
-    const [isJsEllipsis, setIsJsEllipsis] = React407.useState(false);
-    const [isNativeEllipsis, setIsNativeEllipsis] = React407.useState(false);
-    const [isNativeVisible, setIsNativeVisible] = React407.useState(true);
+    const [isLineClampSupport, setIsLineClampSupport] = React399.useState(false);
+    const [isTextOverflowSupport, setIsTextOverflowSupport] = React399.useState(false);
+    const [isJsEllipsis, setIsJsEllipsis] = React399.useState(false);
+    const [isNativeEllipsis, setIsNativeEllipsis] = React399.useState(false);
+    const [isNativeVisible, setIsNativeVisible] = React399.useState(true);
     const [enableEllipsis, ellipsisConfig] = useMergedConfig(ellipsis, {
       expandable: false,
       symbol: (isExpanded) => isExpanded ? textLocale == null ? void 0 : textLocale.collapse : textLocale == null ? void 0 : textLocale.expand
@@ -82709,15 +81530,15 @@ html body {
     const {
       rows = 1
     } = ellipsisConfig;
-    const needMeasureEllipsis = React407.useMemo(() => mergedEnableEllipsis && (ellipsisConfig.suffix !== void 0 || ellipsisConfig.onEllipsis || ellipsisConfig.expandable || enableEdit || enableCopy), [mergedEnableEllipsis, ellipsisConfig, enableEdit, enableCopy]);
+    const needMeasureEllipsis = React399.useMemo(() => mergedEnableEllipsis && (ellipsisConfig.suffix !== void 0 || ellipsisConfig.onEllipsis || ellipsisConfig.expandable || enableEdit || enableCopy), [mergedEnableEllipsis, ellipsisConfig, enableEdit, enableCopy]);
     useLayoutEffect_default(() => {
       if (enableEllipsis && !needMeasureEllipsis) {
         setIsLineClampSupport(isStyleSupport("webkitLineClamp"));
         setIsTextOverflowSupport(isStyleSupport("textOverflow"));
       }
     }, [needMeasureEllipsis, enableEllipsis]);
-    const [cssEllipsis, setCssEllipsis] = React407.useState(mergedEnableEllipsis);
-    const canUseCssEllipsis = React407.useMemo(() => {
+    const [cssEllipsis, setCssEllipsis] = React399.useState(mergedEnableEllipsis);
+    const canUseCssEllipsis = React399.useMemo(() => {
       if (needMeasureEllipsis) {
         return false;
       }
@@ -82737,9 +81558,9 @@ html body {
       setExpanded(info.expanded);
       (_a2 = ellipsisConfig.onExpand) == null ? void 0 : _a2.call(ellipsisConfig, e3, info);
     };
-    const [ellipsisWidth, setEllipsisWidth] = React407.useState(0);
-    const [isHoveringOperations, setIsHoveringOperations] = React407.useState(false);
-    const [isHoveringTypography, setIsHoveringTypography] = React407.useState(false);
+    const [ellipsisWidth, setEllipsisWidth] = React399.useState(0);
+    const [isHoveringOperations, setIsHoveringOperations] = React399.useState(false);
+    const [isHoveringTypography, setIsHoveringTypography] = React399.useState(false);
     const onResize2 = ({
       offsetWidth
     }) => {
@@ -82752,7 +81573,7 @@ html body {
         (_a2 = ellipsisConfig.onEllipsis) == null ? void 0 : _a2.call(ellipsisConfig, jsEllipsis);
       }
     };
-    React407.useEffect(() => {
+    React399.useEffect(() => {
       const textEle = typographyRef.current;
       if (enableEllipsis && cssEllipsis && textEle) {
         const currentEllipsis = isEleEllipsis(textEle);
@@ -82761,7 +81582,7 @@ html body {
         }
       }
     }, [enableEllipsis, cssEllipsis, children, cssLineClamp, isNativeVisible, ellipsisWidth]);
-    React407.useEffect(() => {
+    React399.useEffect(() => {
       const textEle = typographyRef.current;
       if (typeof IntersectionObserver === "undefined" || !textEle || !cssEllipsis || !mergedEnableEllipsis) {
         return;
@@ -82775,14 +81596,14 @@ html body {
       };
     }, [cssEllipsis, mergedEnableEllipsis]);
     const tooltipProps = useTooltipProps_default(ellipsisConfig.tooltip, editConfig.text, children);
-    const topAriaLabel = React407.useMemo(() => {
+    const topAriaLabel = React399.useMemo(() => {
       if (!enableEllipsis || cssEllipsis) {
         return void 0;
       }
       return [editConfig.text, children, title, tooltipProps.title].find(isValidText);
     }, [enableEllipsis, cssEllipsis, title, tooltipProps.title, isMergedEllipsis]);
     if (editing) {
-      return /* @__PURE__ */ React407.createElement(Editable_default, {
+      return /* @__PURE__ */ React399.createElement(Editable_default, {
         value: (_b = editConfig.text) != null ? _b : typeof children === "string" ? children : "",
         onSave: onEditChange,
         onCancel: onEditCancel,
@@ -82802,7 +81623,7 @@ html body {
         expandable,
         symbol
       } = ellipsisConfig;
-      return expandable ? /* @__PURE__ */ React407.createElement("button", {
+      return expandable ? /* @__PURE__ */ React399.createElement("button", {
         type: "button",
         key: "expand",
         className: `${prefixCls}-${expanded ? "collapse" : "expand"}`,
@@ -82823,17 +81644,17 @@ html body {
       } = editConfig;
       const editTitle = toArray(tooltip)[0] || (textLocale == null ? void 0 : textLocale.edit);
       const ariaLabel = typeof editTitle === "string" ? editTitle : "";
-      return triggerType.includes("icon") ? /* @__PURE__ */ React407.createElement(tooltip_default, {
+      return triggerType.includes("icon") ? /* @__PURE__ */ React399.createElement(tooltip_default, {
         key: "edit",
         title: tooltip === false ? "" : editTitle
-      }, /* @__PURE__ */ React407.createElement("button", {
+      }, /* @__PURE__ */ React399.createElement("button", {
         type: "button",
         ref: editIconRef,
         className: `${prefixCls}-edit`,
         onClick: onEditClick,
         "aria-label": ariaLabel,
         tabIndex
-      }, icon || /* @__PURE__ */ React407.createElement(EditOutlined_default2, {
+      }, icon || /* @__PURE__ */ React399.createElement(EditOutlined_default2, {
         role: "button"
       }))) : null;
     };
@@ -82841,7 +81662,7 @@ html body {
       if (!enableCopy) {
         return null;
       }
-      return /* @__PURE__ */ React407.createElement(CopyBtn_default, __spreadProps(__spreadValues({
+      return /* @__PURE__ */ React399.createElement(CopyBtn_default, __spreadProps(__spreadValues({
         key: "copy"
       }, copyConfig), {
         prefixCls,
@@ -82859,26 +81680,26 @@ html body {
       if (!expandNode && !editNode && !copyNode) {
         return null;
       }
-      return /* @__PURE__ */ React407.createElement("span", {
+      return /* @__PURE__ */ React399.createElement("span", {
         key: "operations",
         className: `${prefixCls}-actions`,
         onMouseEnter: () => setIsHoveringOperations(true),
         onMouseLeave: () => setIsHoveringOperations(false)
       }, expandNode, editNode, copyNode);
     };
-    const renderEllipsis = (canEllipsis) => [canEllipsis && !expanded && /* @__PURE__ */ React407.createElement("span", {
+    const renderEllipsis = (canEllipsis) => [canEllipsis && !expanded && /* @__PURE__ */ React399.createElement("span", {
       "aria-hidden": true,
       key: "ellipsis"
     }, ELLIPSIS_STR), ellipsisConfig.suffix, renderOperations(canEllipsis)];
-    return /* @__PURE__ */ React407.createElement(es_default, {
+    return /* @__PURE__ */ React399.createElement(es_default, {
       onResize: onResize2,
       disabled: !mergedEnableEllipsis
-    }, (resizeRef) => /* @__PURE__ */ React407.createElement(EllipsisTooltip_default, {
+    }, (resizeRef) => /* @__PURE__ */ React399.createElement(EllipsisTooltip_default, {
       tooltipProps,
       enableEllipsis: mergedEnableEllipsis,
       isEllipsis: isMergedEllipsis,
       open: isHoveringTypography && !isHoveringOperations
-    }, /* @__PURE__ */ React407.createElement(Typography_default, __spreadValues({
+    }, /* @__PURE__ */ React399.createElement(Typography_default, __spreadValues({
       onMouseEnter: (e3) => {
         setIsHoveringTypography(true);
         onMouseEnter == null ? void 0 : onMouseEnter(e3);
@@ -82905,7 +81726,7 @@ html body {
       onClick: triggerType.includes("text") ? onEditClick : void 0,
       "aria-label": topAriaLabel == null ? void 0 : topAriaLabel.toString(),
       title
-    }, textProps), /* @__PURE__ */ React407.createElement(EllipsisMeasure, {
+    }, textProps), /* @__PURE__ */ React399.createElement(EllipsisMeasure, {
       enableMeasure: mergedEnableEllipsis && !cssEllipsis,
       text: children,
       rows,
@@ -82913,7 +81734,7 @@ html body {
       onEllipsis: onJsEllipsis,
       expanded,
       miscDeps: [copied, expanded, copyLoading, enableEdit, enableCopy, textLocale].concat(_toConsumableArray(DECORATION_PROPS.map((key) => props[key])))
-    }, (node2, canEllipsis) => wrapperDecorations(props, /* @__PURE__ */ React407.createElement(React407.Fragment, null, node2.length > 0 && canEllipsis && !expanded && topAriaLabel ? /* @__PURE__ */ React407.createElement("span", {
+    }, (node2, canEllipsis) => wrapperDecorations(props, /* @__PURE__ */ React399.createElement(React399.Fragment, null, node2.length > 0 && canEllipsis && !expanded && topAriaLabel ? /* @__PURE__ */ React399.createElement("span", {
       key: "show-content",
       "aria-hidden": true
     }, node2) : node2, renderEllipsis(canEllipsis)))))));
@@ -82922,7 +81743,7 @@ html body {
 
   // ../custom_dashboard/node_modules/antd/es/typography/Link.js
   "use client";
-  var Link = /* @__PURE__ */ React408.forwardRef((props, ref) => {
+  var Link = /* @__PURE__ */ React400.forwardRef((props, ref) => {
     const _a = props, {
       ellipsis,
       rel,
@@ -82941,7 +81762,7 @@ html body {
     const mergedProps = __spreadProps(__spreadValues({}, restProps), {
       rel: rel === void 0 && restProps.target === "_blank" ? "noopener noreferrer" : rel
     });
-    return /* @__PURE__ */ React408.createElement(Base_default, __spreadProps(__spreadValues({}, mergedProps), {
+    return /* @__PURE__ */ React400.createElement(Base_default, __spreadProps(__spreadValues({}, mergedProps), {
       ref,
       ellipsis: !!ellipsis,
       component: "a"
@@ -82950,15 +81771,15 @@ html body {
   var Link_default = Link;
 
   // ../custom_dashboard/node_modules/antd/es/typography/Paragraph.js
-  var React409 = __toESM(require_react());
+  var React401 = __toESM(require_react());
   "use client";
-  var Paragraph2 = /* @__PURE__ */ React409.forwardRef((props, ref) => {
+  var Paragraph2 = /* @__PURE__ */ React401.forwardRef((props, ref) => {
     const _a = props, {
       children
     } = _a, restProps = __objRest(_a, [
       "children"
     ]);
-    return /* @__PURE__ */ React409.createElement(Base_default, __spreadProps(__spreadValues({
+    return /* @__PURE__ */ React401.createElement(Base_default, __spreadProps(__spreadValues({
       ref
     }, restProps), {
       component: "div"
@@ -82967,9 +81788,9 @@ html body {
   var Paragraph_default2 = Paragraph2;
 
   // ../custom_dashboard/node_modules/antd/es/typography/Text.js
-  var React410 = __toESM(require_react());
+  var React402 = __toESM(require_react());
   "use client";
-  var Text = /* @__PURE__ */ React410.forwardRef((props, ref) => {
+  var Text = /* @__PURE__ */ React402.forwardRef((props, ref) => {
     const _a = props, {
       ellipsis,
       children
@@ -82977,7 +81798,7 @@ html body {
       "ellipsis",
       "children"
     ]);
-    const mergedEllipsis = React410.useMemo(() => {
+    const mergedEllipsis = React402.useMemo(() => {
       if (ellipsis && typeof ellipsis === "object") {
         return omit(ellipsis, ["expandable", "rows"]);
       }
@@ -82987,7 +81808,7 @@ html body {
       const warning6 = devUseWarning("Typography.Text");
       true ? warning6(typeof ellipsis !== "object" || !ellipsis || !("expandable" in ellipsis) && !("rows" in ellipsis), "usage", "`ellipsis` do not support `expandable` or `rows` props.") : void 0;
     }
-    return /* @__PURE__ */ React410.createElement(Base_default, __spreadProps(__spreadValues({
+    return /* @__PURE__ */ React402.createElement(Base_default, __spreadProps(__spreadValues({
       ref
     }, restProps), {
       ellipsis: mergedEllipsis,
@@ -82997,10 +81818,10 @@ html body {
   var Text_default = Text;
 
   // ../custom_dashboard/node_modules/antd/es/typography/Title.js
-  var React411 = __toESM(require_react());
+  var React403 = __toESM(require_react());
   "use client";
   var TITLE_ELE_LIST = [1, 2, 3, 4, 5];
-  var Title2 = /* @__PURE__ */ React411.forwardRef((props, ref) => {
+  var Title2 = /* @__PURE__ */ React403.forwardRef((props, ref) => {
     const _a = props, {
       level = 1,
       children
@@ -83013,7 +81834,7 @@ html body {
       true ? warning6(TITLE_ELE_LIST.includes(level), "usage", "Title only accept `1 | 2 | 3 | 4 | 5` as `level` value. And `5` need 4.6.0+ version.") : void 0;
     }
     const component = TITLE_ELE_LIST.includes(level) ? `h${level}` : `h1`;
-    return /* @__PURE__ */ React411.createElement(Base_default, __spreadProps(__spreadValues({
+    return /* @__PURE__ */ React403.createElement(Base_default, __spreadProps(__spreadValues({
       ref
     }, restProps), {
       component
@@ -83038,13 +81859,77 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CheckCircleOutlined.js
-  var React412 = __toESM(require_react());
+  var React404 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/CheckCircleOutlined.js
   var CheckCircleOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M699 353h-46.9c-10.2 0-19.9 4.9-25.9 13.3L469 584.3l-71.2-98.8c-6-8.3-15.6-13.3-25.9-13.3H325c-6.5 0-10.3 7.4-6.5 12.7l124.6 172.8a31.8 31.8 0 0051.7 0l210.6-292c3.9-5.3.1-12.7-6.4-12.7z" } }, { "tag": "path", "attrs": { "d": "M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z" } }] }, "name": "check-circle", "theme": "outlined" };
   var CheckCircleOutlined_default = CheckCircleOutlined;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CheckCircleOutlined.js
+  function _extends94() {
+    _extends94 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends94.apply(this, arguments);
+  }
+  var CheckCircleOutlined2 = (props, ref) => /* @__PURE__ */ React404.createElement(AntdIcon_default, _extends94({}, props, {
+    ref,
+    icon: CheckCircleOutlined_default
+  }));
+  var RefIcon36 = /* @__PURE__ */ React404.forwardRef(CheckCircleOutlined2);
+  if (true) {
+    RefIcon36.displayName = "CheckCircleOutlined";
+  }
+  var CheckCircleOutlined_default2 = RefIcon36;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CreditCardOutlined.js
+  var React405 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/CreditCardOutlined.js
+  var CreditCardOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M928 160H96c-17.7 0-32 14.3-32 32v640c0 17.7 14.3 32 32 32h832c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32zm-792 72h752v120H136V232zm752 560H136V440h752v352zm-237-64h165c4.4 0 8-3.6 8-8v-72c0-4.4-3.6-8-8-8H651c-4.4 0-8 3.6-8 8v72c0 4.4 3.6 8 8 8z" } }] }, "name": "credit-card", "theme": "outlined" };
+  var CreditCardOutlined_default = CreditCardOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CreditCardOutlined.js
+  function _extends95() {
+    _extends95 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends95.apply(this, arguments);
+  }
+  var CreditCardOutlined2 = (props, ref) => /* @__PURE__ */ React405.createElement(AntdIcon_default, _extends95({}, props, {
+    ref,
+    icon: CreditCardOutlined_default
+  }));
+  var RefIcon37 = /* @__PURE__ */ React405.forwardRef(CreditCardOutlined2);
+  if (true) {
+    RefIcon37.displayName = "CreditCardOutlined";
+  }
+  var CreditCardOutlined_default2 = RefIcon37;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/DashboardOutlined.js
+  var React406 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/DashboardOutlined.js
+  var DashboardOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M924.8 385.6a446.7 446.7 0 00-96-142.4 446.7 446.7 0 00-142.4-96C631.1 123.8 572.5 112 512 112s-119.1 11.8-174.4 35.2a446.7 446.7 0 00-142.4 96 446.7 446.7 0 00-96 142.4C75.8 440.9 64 499.5 64 560c0 132.7 58.3 257.7 159.9 343.1l1.7 1.4c5.8 4.8 13.1 7.5 20.6 7.5h531.7c7.5 0 14.8-2.7 20.6-7.5l1.7-1.4C901.7 817.7 960 692.7 960 560c0-60.5-11.9-119.1-35.2-174.4zM761.4 836H262.6A371.12 371.12 0 01140 560c0-99.4 38.7-192.8 109-263 70.3-70.3 163.7-109 263-109 99.4 0 192.8 38.7 263 109 70.3 70.3 109 163.7 109 263 0 105.6-44.5 205.5-122.6 276zM623.5 421.5a8.03 8.03 0 00-11.3 0L527.7 506c-18.7-5-39.4-.2-54.1 14.5a55.95 55.95 0 000 79.2 55.95 55.95 0 0079.2 0 55.87 55.87 0 0014.5-54.1l84.5-84.5c3.1-3.1 3.1-8.2 0-11.3l-28.3-28.3zM490 320h44c4.4 0 8-3.6 8-8v-80c0-4.4-3.6-8-8-8h-44c-4.4 0-8 3.6-8 8v80c0 4.4 3.6 8 8 8zm260 218v44c0 4.4 3.6 8 8 8h80c4.4 0 8-3.6 8-8v-44c0-4.4-3.6-8-8-8h-80c-4.4 0-8 3.6-8 8zm12.7-197.2l-31.1-31.1a8.03 8.03 0 00-11.3 0l-56.6 56.6a8.03 8.03 0 000 11.3l31.1 31.1c3.1 3.1 8.2 3.1 11.3 0l56.6-56.6c3.1-3.1 3.1-8.2 0-11.3zm-458.6-31.1a8.03 8.03 0 00-11.3 0l-31.1 31.1a8.03 8.03 0 000 11.3l56.6 56.6c3.1 3.1 8.2 3.1 11.3 0l31.1-31.1c3.1-3.1 3.1-8.2 0-11.3l-56.6-56.6zM262 530h-80c-4.4 0-8 3.6-8 8v44c0 4.4 3.6 8 8 8h80c4.4 0 8-3.6 8-8v-44c0-4.4-3.6-8-8-8z" } }] }, "name": "dashboard", "theme": "outlined" };
+  var DashboardOutlined_default = DashboardOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/DashboardOutlined.js
   function _extends96() {
     _extends96 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -83059,24 +81944,24 @@ html body {
     };
     return _extends96.apply(this, arguments);
   }
-  var CheckCircleOutlined2 = (props, ref) => /* @__PURE__ */ React412.createElement(AntdIcon_default, _extends96({}, props, {
+  var DashboardOutlined2 = (props, ref) => /* @__PURE__ */ React406.createElement(AntdIcon_default, _extends96({}, props, {
     ref,
-    icon: CheckCircleOutlined_default
+    icon: DashboardOutlined_default
   }));
-  var RefIcon36 = /* @__PURE__ */ React412.forwardRef(CheckCircleOutlined2);
+  var RefIcon38 = /* @__PURE__ */ React406.forwardRef(DashboardOutlined2);
   if (true) {
-    RefIcon36.displayName = "CheckCircleOutlined";
+    RefIcon38.displayName = "DashboardOutlined";
   }
-  var CheckCircleOutlined_default2 = RefIcon36;
+  var DashboardOutlined_default2 = RefIcon38;
 
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CreditCardOutlined.js
-  var React413 = __toESM(require_react());
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/HeartFilled.js
+  var React407 = __toESM(require_react());
 
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/CreditCardOutlined.js
-  var CreditCardOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M928 160H96c-17.7 0-32 14.3-32 32v640c0 17.7 14.3 32 32 32h832c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32zm-792 72h752v120H136V232zm752 560H136V440h752v352zm-237-64h165c4.4 0 8-3.6 8-8v-72c0-4.4-3.6-8-8-8H651c-4.4 0-8 3.6-8 8v72c0 4.4 3.6 8 8 8z" } }] }, "name": "credit-card", "theme": "outlined" };
-  var CreditCardOutlined_default = CreditCardOutlined;
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/HeartFilled.js
+  var HeartFilled = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M923 283.6a260.04 260.04 0 00-56.9-82.8 264.4 264.4 0 00-84-55.5A265.34 265.34 0 00679.7 125c-49.3 0-97.4 13.5-139.2 39-10 6.1-19.5 12.8-28.5 20.1-9-7.3-18.5-14-28.5-20.1-41.8-25.5-89.9-39-139.2-39-35.5 0-69.9 6.8-102.4 20.3-31.4 13-59.7 31.7-84 55.5a258.44 258.44 0 00-56.9 82.8c-13.9 32.3-21 66.6-21 101.9 0 33.3 6.8 68 20.3 103.3 11.3 29.5 27.5 60.1 48.2 91 32.8 48.9 77.9 99.9 133.9 151.6 92.8 85.7 184.7 144.9 188.6 147.3l23.7 15.2c10.5 6.7 24 6.7 34.5 0l23.7-15.2c3.9-2.5 95.7-61.6 188.6-147.3 56-51.7 101.1-102.7 133.9-151.6 20.7-30.9 37-61.5 48.2-91 13.5-35.3 20.3-70 20.3-103.3.1-35.3-7-69.6-20.9-101.9z" } }] }, "name": "heart", "theme": "filled" };
+  var HeartFilled_default = HeartFilled;
 
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CreditCardOutlined.js
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/HeartFilled.js
   function _extends97() {
     _extends97 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -83091,24 +81976,24 @@ html body {
     };
     return _extends97.apply(this, arguments);
   }
-  var CreditCardOutlined2 = (props, ref) => /* @__PURE__ */ React413.createElement(AntdIcon_default, _extends97({}, props, {
+  var HeartFilled2 = (props, ref) => /* @__PURE__ */ React407.createElement(AntdIcon_default, _extends97({}, props, {
     ref,
-    icon: CreditCardOutlined_default
+    icon: HeartFilled_default
   }));
-  var RefIcon37 = /* @__PURE__ */ React413.forwardRef(CreditCardOutlined2);
+  var RefIcon39 = /* @__PURE__ */ React407.forwardRef(HeartFilled2);
   if (true) {
-    RefIcon37.displayName = "CreditCardOutlined";
+    RefIcon39.displayName = "HeartFilled";
   }
-  var CreditCardOutlined_default2 = RefIcon37;
+  var HeartFilled_default2 = RefIcon39;
 
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/DashboardOutlined.js
-  var React414 = __toESM(require_react());
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/ProfileOutlined.js
+  var React408 = __toESM(require_react());
 
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/DashboardOutlined.js
-  var DashboardOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M924.8 385.6a446.7 446.7 0 00-96-142.4 446.7 446.7 0 00-142.4-96C631.1 123.8 572.5 112 512 112s-119.1 11.8-174.4 35.2a446.7 446.7 0 00-142.4 96 446.7 446.7 0 00-96 142.4C75.8 440.9 64 499.5 64 560c0 132.7 58.3 257.7 159.9 343.1l1.7 1.4c5.8 4.8 13.1 7.5 20.6 7.5h531.7c7.5 0 14.8-2.7 20.6-7.5l1.7-1.4C901.7 817.7 960 692.7 960 560c0-60.5-11.9-119.1-35.2-174.4zM761.4 836H262.6A371.12 371.12 0 01140 560c0-99.4 38.7-192.8 109-263 70.3-70.3 163.7-109 263-109 99.4 0 192.8 38.7 263 109 70.3 70.3 109 163.7 109 263 0 105.6-44.5 205.5-122.6 276zM623.5 421.5a8.03 8.03 0 00-11.3 0L527.7 506c-18.7-5-39.4-.2-54.1 14.5a55.95 55.95 0 000 79.2 55.95 55.95 0 0079.2 0 55.87 55.87 0 0014.5-54.1l84.5-84.5c3.1-3.1 3.1-8.2 0-11.3l-28.3-28.3zM490 320h44c4.4 0 8-3.6 8-8v-80c0-4.4-3.6-8-8-8h-44c-4.4 0-8 3.6-8 8v80c0 4.4 3.6 8 8 8zm260 218v44c0 4.4 3.6 8 8 8h80c4.4 0 8-3.6 8-8v-44c0-4.4-3.6-8-8-8h-80c-4.4 0-8 3.6-8 8zm12.7-197.2l-31.1-31.1a8.03 8.03 0 00-11.3 0l-56.6 56.6a8.03 8.03 0 000 11.3l31.1 31.1c3.1 3.1 8.2 3.1 11.3 0l56.6-56.6c3.1-3.1 3.1-8.2 0-11.3zm-458.6-31.1a8.03 8.03 0 00-11.3 0l-31.1 31.1a8.03 8.03 0 000 11.3l56.6 56.6c3.1 3.1 8.2 3.1 11.3 0l31.1-31.1c3.1-3.1 3.1-8.2 0-11.3l-56.6-56.6zM262 530h-80c-4.4 0-8 3.6-8 8v44c0 4.4 3.6 8 8 8h80c4.4 0 8-3.6 8-8v-44c0-4.4-3.6-8-8-8z" } }] }, "name": "dashboard", "theme": "outlined" };
-  var DashboardOutlined_default = DashboardOutlined;
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/ProfileOutlined.js
+  var ProfileOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656zM492 400h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H492c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8zm0 144h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H492c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8zm0 144h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H492c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8zM340 368a40 40 0 1080 0 40 40 0 10-80 0zm0 144a40 40 0 1080 0 40 40 0 10-80 0zm0 144a40 40 0 1080 0 40 40 0 10-80 0z" } }] }, "name": "profile", "theme": "outlined" };
+  var ProfileOutlined_default = ProfileOutlined;
 
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/DashboardOutlined.js
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/ProfileOutlined.js
   function _extends98() {
     _extends98 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -83123,24 +82008,24 @@ html body {
     };
     return _extends98.apply(this, arguments);
   }
-  var DashboardOutlined2 = (props, ref) => /* @__PURE__ */ React414.createElement(AntdIcon_default, _extends98({}, props, {
+  var ProfileOutlined2 = (props, ref) => /* @__PURE__ */ React408.createElement(AntdIcon_default, _extends98({}, props, {
     ref,
-    icon: DashboardOutlined_default
+    icon: ProfileOutlined_default
   }));
-  var RefIcon38 = /* @__PURE__ */ React414.forwardRef(DashboardOutlined2);
+  var RefIcon40 = /* @__PURE__ */ React408.forwardRef(ProfileOutlined2);
   if (true) {
-    RefIcon38.displayName = "DashboardOutlined";
+    RefIcon40.displayName = "ProfileOutlined";
   }
-  var DashboardOutlined_default2 = RefIcon38;
+  var ProfileOutlined_default2 = RefIcon40;
 
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/HeartFilled.js
-  var React415 = __toESM(require_react());
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/QrcodeOutlined.js
+  var React409 = __toESM(require_react());
 
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/HeartFilled.js
-  var HeartFilled = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M923 283.6a260.04 260.04 0 00-56.9-82.8 264.4 264.4 0 00-84-55.5A265.34 265.34 0 00679.7 125c-49.3 0-97.4 13.5-139.2 39-10 6.1-19.5 12.8-28.5 20.1-9-7.3-18.5-14-28.5-20.1-41.8-25.5-89.9-39-139.2-39-35.5 0-69.9 6.8-102.4 20.3-31.4 13-59.7 31.7-84 55.5a258.44 258.44 0 00-56.9 82.8c-13.9 32.3-21 66.6-21 101.9 0 33.3 6.8 68 20.3 103.3 11.3 29.5 27.5 60.1 48.2 91 32.8 48.9 77.9 99.9 133.9 151.6 92.8 85.7 184.7 144.9 188.6 147.3l23.7 15.2c10.5 6.7 24 6.7 34.5 0l23.7-15.2c3.9-2.5 95.7-61.6 188.6-147.3 56-51.7 101.1-102.7 133.9-151.6 20.7-30.9 37-61.5 48.2-91 13.5-35.3 20.3-70 20.3-103.3.1-35.3-7-69.6-20.9-101.9z" } }] }, "name": "heart", "theme": "filled" };
-  var HeartFilled_default = HeartFilled;
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/QrcodeOutlined.js
+  var QrcodeOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M468 128H160c-17.7 0-32 14.3-32 32v308c0 4.4 3.6 8 8 8h332c4.4 0 8-3.6 8-8V136c0-4.4-3.6-8-8-8zm-56 284H192V192h220v220zm-138-74h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm194 210H136c-4.4 0-8 3.6-8 8v308c0 17.7 14.3 32 32 32h308c4.4 0 8-3.6 8-8V556c0-4.4-3.6-8-8-8zm-56 284H192V612h220v220zm-138-74h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm590-630H556c-4.4 0-8 3.6-8 8v332c0 4.4 3.6 8 8 8h332c4.4 0 8-3.6 8-8V160c0-17.7-14.3-32-32-32zm-32 284H612V192h220v220zm-138-74h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm194 210h-48c-4.4 0-8 3.6-8 8v134h-78V556c0-4.4-3.6-8-8-8H556c-4.4 0-8 3.6-8 8v332c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V644h78v102c0 4.4 3.6 8 8 8h190c4.4 0 8-3.6 8-8V556c0-4.4-3.6-8-8-8zM746 832h-48c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8zm142 0h-48c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8z" } }] }, "name": "qrcode", "theme": "outlined" };
+  var QrcodeOutlined_default = QrcodeOutlined;
 
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/HeartFilled.js
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/QrcodeOutlined.js
   function _extends99() {
     _extends99 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -83155,24 +82040,24 @@ html body {
     };
     return _extends99.apply(this, arguments);
   }
-  var HeartFilled2 = (props, ref) => /* @__PURE__ */ React415.createElement(AntdIcon_default, _extends99({}, props, {
+  var QrcodeOutlined2 = (props, ref) => /* @__PURE__ */ React409.createElement(AntdIcon_default, _extends99({}, props, {
     ref,
-    icon: HeartFilled_default
+    icon: QrcodeOutlined_default
   }));
-  var RefIcon39 = /* @__PURE__ */ React415.forwardRef(HeartFilled2);
+  var RefIcon41 = /* @__PURE__ */ React409.forwardRef(QrcodeOutlined2);
   if (true) {
-    RefIcon39.displayName = "HeartFilled";
+    RefIcon41.displayName = "QrcodeOutlined";
   }
-  var HeartFilled_default2 = RefIcon39;
+  var QrcodeOutlined_default2 = RefIcon41;
 
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/MenuOutlined.js
-  var React416 = __toESM(require_react());
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/RedoOutlined.js
+  var React410 = __toESM(require_react());
 
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/MenuOutlined.js
-  var MenuOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z" } }] }, "name": "menu", "theme": "outlined" };
-  var MenuOutlined_default = MenuOutlined;
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/RedoOutlined.js
+  var RedoOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M758.2 839.1C851.8 765.9 912 651.9 912 523.9 912 303 733.5 124.3 512.6 124 291.4 123.7 112 302.8 112 523.9c0 125.2 57.5 236.9 147.6 310.2 3.5 2.8 8.6 2.2 11.4-1.3l39.4-50.5c2.7-3.4 2.1-8.3-1.2-11.1-8.1-6.6-15.9-13.7-23.4-21.2a318.64 318.64 0 01-68.6-101.7C200.4 609 192 567.1 192 523.9s8.4-85.1 25.1-124.5c16.1-38.1 39.2-72.3 68.6-101.7 29.4-29.4 63.6-52.5 101.7-68.6C426.9 212.4 468.8 204 512 204s85.1 8.4 124.5 25.1c38.1 16.1 72.3 39.2 101.7 68.6 29.4 29.4 52.5 63.6 68.6 101.7 16.7 39.4 25.1 81.3 25.1 124.5s-8.4 85.1-25.1 124.5a318.64 318.64 0 01-68.6 101.7c-9.3 9.3-19.1 18-29.3 26L668.2 724a8 8 0 00-14.1 3l-39.6 162.2c-1.2 5 2.6 9.9 7.7 9.9l167 .8c6.7 0 10.5-7.7 6.3-12.9l-37.3-47.9z" } }] }, "name": "redo", "theme": "outlined" };
+  var RedoOutlined_default = RedoOutlined;
 
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/MenuOutlined.js
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/RedoOutlined.js
   function _extends100() {
     _extends100 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -83187,24 +82072,24 @@ html body {
     };
     return _extends100.apply(this, arguments);
   }
-  var MenuOutlined2 = (props, ref) => /* @__PURE__ */ React416.createElement(AntdIcon_default, _extends100({}, props, {
+  var RedoOutlined2 = (props, ref) => /* @__PURE__ */ React410.createElement(AntdIcon_default, _extends100({}, props, {
     ref,
-    icon: MenuOutlined_default
+    icon: RedoOutlined_default
   }));
-  var RefIcon40 = /* @__PURE__ */ React416.forwardRef(MenuOutlined2);
+  var RefIcon42 = /* @__PURE__ */ React410.forwardRef(RedoOutlined2);
   if (true) {
-    RefIcon40.displayName = "MenuOutlined";
+    RefIcon42.displayName = "RedoOutlined";
   }
-  var MenuOutlined_default2 = RefIcon40;
+  var RedoOutlined_default2 = RefIcon42;
 
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/ProfileOutlined.js
-  var React417 = __toESM(require_react());
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/ShoppingCartOutlined.js
+  var React411 = __toESM(require_react());
 
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/ProfileOutlined.js
-  var ProfileOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656zM492 400h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H492c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8zm0 144h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H492c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8zm0 144h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H492c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8zM340 368a40 40 0 1080 0 40 40 0 10-80 0zm0 144a40 40 0 1080 0 40 40 0 10-80 0zm0 144a40 40 0 1080 0 40 40 0 10-80 0z" } }] }, "name": "profile", "theme": "outlined" };
-  var ProfileOutlined_default = ProfileOutlined;
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/ShoppingCartOutlined.js
+  var ShoppingCartOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "0 0 1024 1024", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M922.9 701.9H327.4l29.9-60.9 496.8-.9c16.8 0 31.2-12 34.2-28.6l68.8-385.1c1.8-10.1-.9-20.5-7.5-28.4a34.99 34.99 0 00-26.6-12.5l-632-2.1-5.4-25.4c-3.4-16.2-18-28-34.6-28H96.5a35.3 35.3 0 100 70.6h125.9L246 312.8l58.1 281.3-74.8 122.1a34.96 34.96 0 00-3 36.8c6 11.9 18.1 19.4 31.5 19.4h62.8a102.43 102.43 0 00-20.6 61.7c0 56.6 46 102.6 102.6 102.6s102.6-46 102.6-102.6c0-22.3-7.4-44-20.6-61.7h161.1a102.43 102.43 0 00-20.6 61.7c0 56.6 46 102.6 102.6 102.6s102.6-46 102.6-102.6c0-22.3-7.4-44-20.6-61.7H923c19.4 0 35.3-15.8 35.3-35.3a35.42 35.42 0 00-35.4-35.2zM305.7 253l575.8 1.9-56.4 315.8-452.3.8L305.7 253zm96.9 612.7c-17.4 0-31.6-14.2-31.6-31.6 0-17.4 14.2-31.6 31.6-31.6s31.6 14.2 31.6 31.6a31.6 31.6 0 01-31.6 31.6zm325.1 0c-17.4 0-31.6-14.2-31.6-31.6 0-17.4 14.2-31.6 31.6-31.6s31.6 14.2 31.6 31.6a31.6 31.6 0 01-31.6 31.6z" } }] }, "name": "shopping-cart", "theme": "outlined" };
+  var ShoppingCartOutlined_default = ShoppingCartOutlined;
 
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/ProfileOutlined.js
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/ShoppingCartOutlined.js
   function _extends101() {
     _extends101 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -83219,24 +82104,24 @@ html body {
     };
     return _extends101.apply(this, arguments);
   }
-  var ProfileOutlined2 = (props, ref) => /* @__PURE__ */ React417.createElement(AntdIcon_default, _extends101({}, props, {
+  var ShoppingCartOutlined2 = (props, ref) => /* @__PURE__ */ React411.createElement(AntdIcon_default, _extends101({}, props, {
     ref,
-    icon: ProfileOutlined_default
+    icon: ShoppingCartOutlined_default
   }));
-  var RefIcon41 = /* @__PURE__ */ React417.forwardRef(ProfileOutlined2);
+  var RefIcon43 = /* @__PURE__ */ React411.forwardRef(ShoppingCartOutlined2);
   if (true) {
-    RefIcon41.displayName = "ProfileOutlined";
+    RefIcon43.displayName = "ShoppingCartOutlined";
   }
-  var ProfileOutlined_default2 = RefIcon41;
+  var ShoppingCartOutlined_default2 = RefIcon43;
 
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/QrcodeOutlined.js
-  var React418 = __toESM(require_react());
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/UserAddOutlined.js
+  var React412 = __toESM(require_react());
 
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/QrcodeOutlined.js
-  var QrcodeOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M468 128H160c-17.7 0-32 14.3-32 32v308c0 4.4 3.6 8 8 8h332c4.4 0 8-3.6 8-8V136c0-4.4-3.6-8-8-8zm-56 284H192V192h220v220zm-138-74h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm194 210H136c-4.4 0-8 3.6-8 8v308c0 17.7 14.3 32 32 32h308c4.4 0 8-3.6 8-8V556c0-4.4-3.6-8-8-8zm-56 284H192V612h220v220zm-138-74h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm590-630H556c-4.4 0-8 3.6-8 8v332c0 4.4 3.6 8 8 8h332c4.4 0 8-3.6 8-8V160c0-17.7-14.3-32-32-32zm-32 284H612V192h220v220zm-138-74h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm194 210h-48c-4.4 0-8 3.6-8 8v134h-78V556c0-4.4-3.6-8-8-8H556c-4.4 0-8 3.6-8 8v332c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V644h78v102c0 4.4 3.6 8 8 8h190c4.4 0 8-3.6 8-8V556c0-4.4-3.6-8-8-8zM746 832h-48c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8zm142 0h-48c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8z" } }] }, "name": "qrcode", "theme": "outlined" };
-  var QrcodeOutlined_default = QrcodeOutlined;
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/UserAddOutlined.js
+  var UserAddOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M678.3 642.4c24.2-13 51.9-20.4 81.4-20.4h.1c3 0 4.4-3.6 2.2-5.6a371.67 371.67 0 00-103.7-65.8c-.4-.2-.8-.3-1.2-.5C719.2 505 759.6 431.7 759.6 349c0-137-110.8-248-247.5-248S264.7 212 264.7 349c0 82.7 40.4 156 102.6 201.1-.4.2-.8.3-1.2.5-44.7 18.9-84.8 46-119.3 80.6a373.42 373.42 0 00-80.4 119.5A373.6 373.6 0 00137 888.8a8 8 0 008 8.2h59.9c4.3 0 7.9-3.5 8-7.8 2-77.2 32.9-149.5 87.6-204.3C357 628.2 432.2 597 512.2 597c56.7 0 111.1 15.7 158 45.1a8.1 8.1 0 008.1.3zM512.2 521c-45.8 0-88.9-17.9-121.4-50.4A171.2 171.2 0 01340.5 349c0-45.9 17.9-89.1 50.3-121.6S466.3 177 512.2 177s88.9 17.9 121.4 50.4A171.2 171.2 0 01683.9 349c0 45.9-17.9 89.1-50.3 121.6C601.1 503.1 558 521 512.2 521zM880 759h-84v-84c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v84h-84c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h84v84c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-84h84c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8z" } }] }, "name": "user-add", "theme": "outlined" };
+  var UserAddOutlined_default = UserAddOutlined;
 
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/QrcodeOutlined.js
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/UserAddOutlined.js
   function _extends102() {
     _extends102 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -83251,24 +82136,24 @@ html body {
     };
     return _extends102.apply(this, arguments);
   }
-  var QrcodeOutlined2 = (props, ref) => /* @__PURE__ */ React418.createElement(AntdIcon_default, _extends102({}, props, {
+  var UserAddOutlined2 = (props, ref) => /* @__PURE__ */ React412.createElement(AntdIcon_default, _extends102({}, props, {
     ref,
-    icon: QrcodeOutlined_default
+    icon: UserAddOutlined_default
   }));
-  var RefIcon42 = /* @__PURE__ */ React418.forwardRef(QrcodeOutlined2);
+  var RefIcon44 = /* @__PURE__ */ React412.forwardRef(UserAddOutlined2);
   if (true) {
-    RefIcon42.displayName = "QrcodeOutlined";
+    RefIcon44.displayName = "UserAddOutlined";
   }
-  var QrcodeOutlined_default2 = RefIcon42;
+  var UserAddOutlined_default2 = RefIcon44;
 
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/RedoOutlined.js
-  var React419 = __toESM(require_react());
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/UserOutlined.js
+  var React413 = __toESM(require_react());
 
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/RedoOutlined.js
-  var RedoOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M758.2 839.1C851.8 765.9 912 651.9 912 523.9 912 303 733.5 124.3 512.6 124 291.4 123.7 112 302.8 112 523.9c0 125.2 57.5 236.9 147.6 310.2 3.5 2.8 8.6 2.2 11.4-1.3l39.4-50.5c2.7-3.4 2.1-8.3-1.2-11.1-8.1-6.6-15.9-13.7-23.4-21.2a318.64 318.64 0 01-68.6-101.7C200.4 609 192 567.1 192 523.9s8.4-85.1 25.1-124.5c16.1-38.1 39.2-72.3 68.6-101.7 29.4-29.4 63.6-52.5 101.7-68.6C426.9 212.4 468.8 204 512 204s85.1 8.4 124.5 25.1c38.1 16.1 72.3 39.2 101.7 68.6 29.4 29.4 52.5 63.6 68.6 101.7 16.7 39.4 25.1 81.3 25.1 124.5s-8.4 85.1-25.1 124.5a318.64 318.64 0 01-68.6 101.7c-9.3 9.3-19.1 18-29.3 26L668.2 724a8 8 0 00-14.1 3l-39.6 162.2c-1.2 5 2.6 9.9 7.7 9.9l167 .8c6.7 0 10.5-7.7 6.3-12.9l-37.3-47.9z" } }] }, "name": "redo", "theme": "outlined" };
-  var RedoOutlined_default = RedoOutlined;
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/UserOutlined.js
+  var UserOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M858.5 763.6a374 374 0 00-80.6-119.5 375.63 375.63 0 00-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 00-80.6 119.5A371.7 371.7 0 00136 901.8a8 8 0 008 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 008-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z" } }] }, "name": "user", "theme": "outlined" };
+  var UserOutlined_default = UserOutlined;
 
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/RedoOutlined.js
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/UserOutlined.js
   function _extends103() {
     _extends103 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -83283,24 +82168,24 @@ html body {
     };
     return _extends103.apply(this, arguments);
   }
-  var RedoOutlined2 = (props, ref) => /* @__PURE__ */ React419.createElement(AntdIcon_default, _extends103({}, props, {
+  var UserOutlined2 = (props, ref) => /* @__PURE__ */ React413.createElement(AntdIcon_default, _extends103({}, props, {
     ref,
-    icon: RedoOutlined_default
+    icon: UserOutlined_default
   }));
-  var RefIcon43 = /* @__PURE__ */ React419.forwardRef(RedoOutlined2);
+  var RefIcon45 = /* @__PURE__ */ React413.forwardRef(UserOutlined2);
   if (true) {
-    RefIcon43.displayName = "RedoOutlined";
+    RefIcon45.displayName = "UserOutlined";
   }
-  var RedoOutlined_default2 = RefIcon43;
+  var UserOutlined_default2 = RefIcon45;
 
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/ShoppingCartOutlined.js
-  var React420 = __toESM(require_react());
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/WalletOutlined.js
+  var React414 = __toESM(require_react());
 
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/ShoppingCartOutlined.js
-  var ShoppingCartOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "0 0 1024 1024", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M922.9 701.9H327.4l29.9-60.9 496.8-.9c16.8 0 31.2-12 34.2-28.6l68.8-385.1c1.8-10.1-.9-20.5-7.5-28.4a34.99 34.99 0 00-26.6-12.5l-632-2.1-5.4-25.4c-3.4-16.2-18-28-34.6-28H96.5a35.3 35.3 0 100 70.6h125.9L246 312.8l58.1 281.3-74.8 122.1a34.96 34.96 0 00-3 36.8c6 11.9 18.1 19.4 31.5 19.4h62.8a102.43 102.43 0 00-20.6 61.7c0 56.6 46 102.6 102.6 102.6s102.6-46 102.6-102.6c0-22.3-7.4-44-20.6-61.7h161.1a102.43 102.43 0 00-20.6 61.7c0 56.6 46 102.6 102.6 102.6s102.6-46 102.6-102.6c0-22.3-7.4-44-20.6-61.7H923c19.4 0 35.3-15.8 35.3-35.3a35.42 35.42 0 00-35.4-35.2zM305.7 253l575.8 1.9-56.4 315.8-452.3.8L305.7 253zm96.9 612.7c-17.4 0-31.6-14.2-31.6-31.6 0-17.4 14.2-31.6 31.6-31.6s31.6 14.2 31.6 31.6a31.6 31.6 0 01-31.6 31.6zm325.1 0c-17.4 0-31.6-14.2-31.6-31.6 0-17.4 14.2-31.6 31.6-31.6s31.6 14.2 31.6 31.6a31.6 31.6 0 01-31.6 31.6z" } }] }, "name": "shopping-cart", "theme": "outlined" };
-  var ShoppingCartOutlined_default = ShoppingCartOutlined;
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/WalletOutlined.js
+  var WalletOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 464H528V448h312v128zm0 264H184V184h656v200H496c-17.7 0-32 14.3-32 32v192c0 17.7 14.3 32 32 32h344v200zM580 512a40 40 0 1080 0 40 40 0 10-80 0z" } }] }, "name": "wallet", "theme": "outlined" };
+  var WalletOutlined_default = WalletOutlined;
 
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/ShoppingCartOutlined.js
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/WalletOutlined.js
   function _extends104() {
     _extends104 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -83315,111 +82200,15 @@ html body {
     };
     return _extends104.apply(this, arguments);
   }
-  var ShoppingCartOutlined2 = (props, ref) => /* @__PURE__ */ React420.createElement(AntdIcon_default, _extends104({}, props, {
-    ref,
-    icon: ShoppingCartOutlined_default
-  }));
-  var RefIcon44 = /* @__PURE__ */ React420.forwardRef(ShoppingCartOutlined2);
-  if (true) {
-    RefIcon44.displayName = "ShoppingCartOutlined";
-  }
-  var ShoppingCartOutlined_default2 = RefIcon44;
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/UserAddOutlined.js
-  var React421 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/UserAddOutlined.js
-  var UserAddOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M678.3 642.4c24.2-13 51.9-20.4 81.4-20.4h.1c3 0 4.4-3.6 2.2-5.6a371.67 371.67 0 00-103.7-65.8c-.4-.2-.8-.3-1.2-.5C719.2 505 759.6 431.7 759.6 349c0-137-110.8-248-247.5-248S264.7 212 264.7 349c0 82.7 40.4 156 102.6 201.1-.4.2-.8.3-1.2.5-44.7 18.9-84.8 46-119.3 80.6a373.42 373.42 0 00-80.4 119.5A373.6 373.6 0 00137 888.8a8 8 0 008 8.2h59.9c4.3 0 7.9-3.5 8-7.8 2-77.2 32.9-149.5 87.6-204.3C357 628.2 432.2 597 512.2 597c56.7 0 111.1 15.7 158 45.1a8.1 8.1 0 008.1.3zM512.2 521c-45.8 0-88.9-17.9-121.4-50.4A171.2 171.2 0 01340.5 349c0-45.9 17.9-89.1 50.3-121.6S466.3 177 512.2 177s88.9 17.9 121.4 50.4A171.2 171.2 0 01683.9 349c0 45.9-17.9 89.1-50.3 121.6C601.1 503.1 558 521 512.2 521zM880 759h-84v-84c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v84h-84c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h84v84c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-84h84c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8z" } }] }, "name": "user-add", "theme": "outlined" };
-  var UserAddOutlined_default = UserAddOutlined;
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/UserAddOutlined.js
-  function _extends105() {
-    _extends105 = Object.assign ? Object.assign.bind() : function(target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
-      }
-      return target;
-    };
-    return _extends105.apply(this, arguments);
-  }
-  var UserAddOutlined2 = (props, ref) => /* @__PURE__ */ React421.createElement(AntdIcon_default, _extends105({}, props, {
-    ref,
-    icon: UserAddOutlined_default
-  }));
-  var RefIcon45 = /* @__PURE__ */ React421.forwardRef(UserAddOutlined2);
-  if (true) {
-    RefIcon45.displayName = "UserAddOutlined";
-  }
-  var UserAddOutlined_default2 = RefIcon45;
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/UserOutlined.js
-  var React422 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/UserOutlined.js
-  var UserOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M858.5 763.6a374 374 0 00-80.6-119.5 375.63 375.63 0 00-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 00-80.6 119.5A371.7 371.7 0 00136 901.8a8 8 0 008 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 008-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z" } }] }, "name": "user", "theme": "outlined" };
-  var UserOutlined_default = UserOutlined;
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/UserOutlined.js
-  function _extends106() {
-    _extends106 = Object.assign ? Object.assign.bind() : function(target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
-      }
-      return target;
-    };
-    return _extends106.apply(this, arguments);
-  }
-  var UserOutlined2 = (props, ref) => /* @__PURE__ */ React422.createElement(AntdIcon_default, _extends106({}, props, {
-    ref,
-    icon: UserOutlined_default
-  }));
-  var RefIcon46 = /* @__PURE__ */ React422.forwardRef(UserOutlined2);
-  if (true) {
-    RefIcon46.displayName = "UserOutlined";
-  }
-  var UserOutlined_default2 = RefIcon46;
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/WalletOutlined.js
-  var React423 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/WalletOutlined.js
-  var WalletOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 464H528V448h312v128zm0 264H184V184h656v200H496c-17.7 0-32 14.3-32 32v192c0 17.7 14.3 32 32 32h344v200zM580 512a40 40 0 1080 0 40 40 0 10-80 0z" } }] }, "name": "wallet", "theme": "outlined" };
-  var WalletOutlined_default = WalletOutlined;
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/WalletOutlined.js
-  function _extends107() {
-    _extends107 = Object.assign ? Object.assign.bind() : function(target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
-      }
-      return target;
-    };
-    return _extends107.apply(this, arguments);
-  }
-  var WalletOutlined2 = (props, ref) => /* @__PURE__ */ React423.createElement(AntdIcon_default, _extends107({}, props, {
+  var WalletOutlined2 = (props, ref) => /* @__PURE__ */ React414.createElement(AntdIcon_default, _extends104({}, props, {
     ref,
     icon: WalletOutlined_default
   }));
-  var RefIcon47 = /* @__PURE__ */ React423.forwardRef(WalletOutlined2);
+  var RefIcon46 = /* @__PURE__ */ React414.forwardRef(WalletOutlined2);
   if (true) {
-    RefIcon47.displayName = "WalletOutlined";
+    RefIcon46.displayName = "WalletOutlined";
   }
-  var WalletOutlined_default2 = RefIcon47;
+  var WalletOutlined_default2 = RefIcon46;
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/config/theme.js
   var themeConfig = {
@@ -83451,24 +82240,24 @@ html body {
   };
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/config/navigation.jsx
-  var import_react153 = __toESM(require_react());
+  var import_react152 = __toESM(require_react());
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/pages/Dashboard.jsx
-  var import_react142 = __toESM(require_react());
+  var import_react141 = __toESM(require_react());
   var Dashboard = () => {
-    return /* @__PURE__ */ import_react142.default.createElement("div", null, /* @__PURE__ */ import_react142.default.createElement("h2", null, "Dashboard"), /* @__PURE__ */ import_react142.default.createElement("p", null, "Welcome to your custom dashboard!"));
+    return /* @__PURE__ */ import_react141.default.createElement("div", null, /* @__PURE__ */ import_react141.default.createElement("h2", null, "Dashboard"), /* @__PURE__ */ import_react141.default.createElement("p", null, "Welcome to your custom dashboard!"));
   };
   var Dashboard_default = Dashboard;
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/pages/Donors.jsx
-  var import_react144 = __toESM(require_react());
+  var import_react143 = __toESM(require_react());
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/hooks/useFrappe.js
-  var import_react143 = __toESM(require_react());
+  var import_react142 = __toESM(require_react());
   var useFrappeGetDocList = (doctype, options = {}) => {
-    const [data, setData] = (0, import_react143.useState)([]);
-    const [loading, setLoading] = (0, import_react143.useState)(true);
-    const [error, setError] = (0, import_react143.useState)(null);
+    const [data, setData] = (0, import_react142.useState)([]);
+    const [loading, setLoading] = (0, import_react142.useState)(true);
+    const [error, setError] = (0, import_react142.useState)(null);
     const fetchData = () => {
       if (typeof frappe === "undefined") {
         setLoading(false);
@@ -83494,14 +82283,14 @@ html body {
         }
       });
     };
-    (0, import_react143.useEffect)(() => {
+    (0, import_react142.useEffect)(() => {
       fetchData();
     }, []);
     return { data, loading, error, mutate: fetchData };
   };
   var useFrappeCreateDoc = () => {
-    const [loading, setLoading] = (0, import_react143.useState)(false);
-    const [error, setError] = (0, import_react143.useState)(null);
+    const [loading, setLoading] = (0, import_react142.useState)(false);
+    const [error, setError] = (0, import_react142.useState)(null);
     const createDoc = (doctype, data) => {
       setLoading(true);
       return new Promise((resolve, reject) => {
@@ -83528,8 +82317,8 @@ html body {
     return { createDoc, loading, error };
   };
   var useFrappeUpdateDoc = () => {
-    const [loading, setLoading] = (0, import_react143.useState)(false);
-    const [error, setError] = (0, import_react143.useState)(null);
+    const [loading, setLoading] = (0, import_react142.useState)(false);
+    const [error, setError] = (0, import_react142.useState)(null);
     const updateDoc = (doctype, name, data) => {
       setLoading(true);
       return new Promise((resolve, reject) => {
@@ -83558,8 +82347,8 @@ html body {
     return { updateDoc, loading, error };
   };
   var useFrappeDeleteDoc = () => {
-    const [loading, setLoading] = (0, import_react143.useState)(false);
-    const [error, setError] = (0, import_react143.useState)(null);
+    const [loading, setLoading] = (0, import_react142.useState)(false);
+    const [error, setError] = (0, import_react142.useState)(null);
     const deleteDoc = (doctype, name) => {
       setLoading(true);
       return new Promise((resolve, reject) => {
@@ -83591,10 +82380,10 @@ html body {
     const { createDoc, loading: creating } = useFrappeCreateDoc();
     const { updateDoc, loading: updating } = useFrappeUpdateDoc();
     const { deleteDoc } = useFrappeDeleteDoc();
-    const [isModalOpen, setIsModalOpen] = (0, import_react144.useState)(false);
-    const [editingDonor, setEditingDonor] = (0, import_react144.useState)(null);
+    const [isModalOpen, setIsModalOpen] = (0, import_react143.useState)(false);
+    const [editingDonor, setEditingDonor] = (0, import_react143.useState)(null);
     const [form] = form_default.useForm();
-    const [searchText, setSearchText] = (0, import_react144.useState)("");
+    const [searchText, setSearchText] = (0, import_react143.useState)("");
     const filteredDonors = donors == null ? void 0 : donors.filter(
       (donor) => {
         var _a, _b;
@@ -83607,7 +82396,7 @@ html body {
         dataIndex: "name",
         key: "name",
         width: 150,
-        render: (text) => /* @__PURE__ */ import_react144.default.createElement(Text2, {
+        render: (text) => /* @__PURE__ */ import_react143.default.createElement(Text2, {
           copyable: true
         }, text)
       },
@@ -83615,7 +82404,7 @@ html body {
         title: "Name",
         dataIndex: "donor_name",
         key: "donor_name",
-        render: (text) => /* @__PURE__ */ import_react144.default.createElement(Text2, {
+        render: (text) => /* @__PURE__ */ import_react143.default.createElement(Text2, {
           strong: true
         }, text),
         sorter: (a, b) => a.donor_name.localeCompare(b.donor_name)
@@ -83630,7 +82419,7 @@ html body {
         dataIndex: "address",
         key: "address",
         ellipsis: true,
-        render: (text) => text || /* @__PURE__ */ import_react144.default.createElement(Text2, {
+        render: (text) => text || /* @__PURE__ */ import_react143.default.createElement(Text2, {
           type: "secondary"
         }, "-")
       },
@@ -83638,16 +82427,16 @@ html body {
         title: "Actions",
         key: "actions",
         width: 150,
-        render: (_, record) => /* @__PURE__ */ import_react144.default.createElement(space_default, {
+        render: (_, record) => /* @__PURE__ */ import_react143.default.createElement(space_default, {
           size: "middle"
-        }, /* @__PURE__ */ import_react144.default.createElement(button_default, {
+        }, /* @__PURE__ */ import_react143.default.createElement(button_default, {
           type: "primary",
           ghost: true,
-          icon: /* @__PURE__ */ import_react144.default.createElement(EditOutlined_default2, null),
+          icon: /* @__PURE__ */ import_react143.default.createElement(EditOutlined_default2, null),
           onClick: () => handleEdit(record)
-        }, "Edit"), /* @__PURE__ */ import_react144.default.createElement(button_default, {
+        }, "Edit"), /* @__PURE__ */ import_react143.default.createElement(button_default, {
           danger: true,
-          icon: /* @__PURE__ */ import_react144.default.createElement(DeleteOutlined_default2, null),
+          icon: /* @__PURE__ */ import_react143.default.createElement(DeleteOutlined_default2, null),
           onClick: () => handleDelete(record.name)
         }, "Delete"))
       }
@@ -83699,52 +82488,52 @@ html body {
         message_default.error(err.message || "Something went wrong");
       }
     };
-    return /* @__PURE__ */ import_react144.default.createElement("div", {
+    return /* @__PURE__ */ import_react143.default.createElement("div", {
       style: { padding: "24px" }
-    }, /* @__PURE__ */ import_react144.default.createElement(card_default, {
+    }, /* @__PURE__ */ import_react143.default.createElement(card_default, {
       bordered: false,
       className: "shadow-sm",
       style: { borderRadius: "12px" }
-    }, /* @__PURE__ */ import_react144.default.createElement(row_default2, {
+    }, /* @__PURE__ */ import_react143.default.createElement(row_default2, {
       justify: "space-between",
       align: "middle",
       style: { marginBottom: "24px" }
-    }, /* @__PURE__ */ import_react144.default.createElement(col_default2, null, /* @__PURE__ */ import_react144.default.createElement(Title3, {
+    }, /* @__PURE__ */ import_react143.default.createElement(col_default2, null, /* @__PURE__ */ import_react143.default.createElement(Title3, {
       level: 2,
       style: { margin: 0, fontWeight: 800 }
-    }, "Donors Management"), /* @__PURE__ */ import_react144.default.createElement(Text2, {
+    }, "Donors Management"), /* @__PURE__ */ import_react143.default.createElement(Text2, {
       type: "secondary"
-    }, "View, add, edit or delete donor records")), /* @__PURE__ */ import_react144.default.createElement(col_default2, null, /* @__PURE__ */ import_react144.default.createElement(button_default, {
+    }, "View, add, edit or delete donor records")), /* @__PURE__ */ import_react143.default.createElement(col_default2, null, /* @__PURE__ */ import_react143.default.createElement(button_default, {
       type: "primary",
       size: "large",
-      icon: /* @__PURE__ */ import_react144.default.createElement(UserAddOutlined_default2, null),
+      icon: /* @__PURE__ */ import_react143.default.createElement(UserAddOutlined_default2, null),
       onClick: () => {
         if (typeof frappe !== "undefined") {
           frappe.set_route("aavatto-test", "donation");
         }
       },
       style: { height: "48px", borderRadius: "8px", fontWeight: 600 }
-    }, "Add New Donor"))), /* @__PURE__ */ import_react144.default.createElement("div", {
+    }, "Add New Donor"))), /* @__PURE__ */ import_react143.default.createElement("div", {
       style: { marginBottom: "20px" }
-    }, /* @__PURE__ */ import_react144.default.createElement(input_default, {
+    }, /* @__PURE__ */ import_react143.default.createElement(input_default, {
       placeholder: "Search donors by name or mobile...",
-      prefix: /* @__PURE__ */ import_react144.default.createElement(SearchOutlined_default2, {
+      prefix: /* @__PURE__ */ import_react143.default.createElement(SearchOutlined_default2, {
         style: { color: "#bfbfbf" }
       }),
       onChange: (e3) => setSearchText(e3.target.value),
       style: { width: "100%", maxWidth: "400px", borderRadius: "8px" },
       allowClear: true
-    })), loading ? /* @__PURE__ */ import_react144.default.createElement("div", {
+    })), loading ? /* @__PURE__ */ import_react143.default.createElement("div", {
       style: { textAlign: "center", padding: "100px" }
-    }, /* @__PURE__ */ import_react144.default.createElement(spin_default, {
+    }, /* @__PURE__ */ import_react143.default.createElement(spin_default, {
       size: "large",
       tip: "Fetching donors..."
-    })) : error ? /* @__PURE__ */ import_react144.default.createElement(alert_default, {
+    })) : error ? /* @__PURE__ */ import_react143.default.createElement(alert_default, {
       message: "Connection Error",
       description: error.message || "Failed to fetch donors list.",
       type: "error",
       showIcon: true
-    }) : /* @__PURE__ */ import_react144.default.createElement(table_default, {
+    }) : /* @__PURE__ */ import_react143.default.createElement(table_default, {
       dataSource: filteredDonors,
       columns,
       rowKey: "name",
@@ -83754,47 +82543,47 @@ html body {
         showTotal: (total) => `Total ${total} donors`
       },
       className: "aavatto-table"
-    })), /* @__PURE__ */ import_react144.default.createElement(modal_default, {
+    })), /* @__PURE__ */ import_react143.default.createElement(modal_default, {
       title: editingDonor ? "Edit Donor Details" : "Register New Donor",
       open: isModalOpen,
       onCancel: handleCancel,
       footer: null,
       destroyOnClose: true
-    }, /* @__PURE__ */ import_react144.default.createElement(form_default, {
+    }, /* @__PURE__ */ import_react143.default.createElement(form_default, {
       form,
       layout: "vertical",
       onFinish: handleSave,
       initialValues: { payment_mode: "Cash" }
-    }, /* @__PURE__ */ import_react144.default.createElement(form_default.Item, {
+    }, /* @__PURE__ */ import_react143.default.createElement(form_default.Item, {
       name: "donor_name",
       label: "Full Name",
       rules: [{ required: true, message: "Please enter the donor's full name!" }]
-    }, /* @__PURE__ */ import_react144.default.createElement(input_default, {
+    }, /* @__PURE__ */ import_react143.default.createElement(input_default, {
       placeholder: "John Doe",
       style: { borderRadius: "6px" }
-    })), /* @__PURE__ */ import_react144.default.createElement(form_default.Item, {
+    })), /* @__PURE__ */ import_react143.default.createElement(form_default.Item, {
       name: "mobile_number",
       label: "Mobile Number",
       rules: [
         { required: true, message: "Please enter the mobile number!" },
         { pattern: /^\d{10}$/, message: "Please enter a valid 10-digit number!" }
       ]
-    }, /* @__PURE__ */ import_react144.default.createElement(input_default, {
+    }, /* @__PURE__ */ import_react143.default.createElement(input_default, {
       placeholder: "9876543210",
       style: { borderRadius: "6px" }
-    })), /* @__PURE__ */ import_react144.default.createElement(form_default.Item, {
+    })), /* @__PURE__ */ import_react143.default.createElement(form_default.Item, {
       name: "address",
       label: "Address (Optional)"
-    }, /* @__PURE__ */ import_react144.default.createElement(input_default.TextArea, {
+    }, /* @__PURE__ */ import_react143.default.createElement(input_default.TextArea, {
       placeholder: "Enter full address",
       rows: 3,
       style: { borderRadius: "6px" }
-    })), /* @__PURE__ */ import_react144.default.createElement(form_default.Item, {
+    })), /* @__PURE__ */ import_react143.default.createElement(form_default.Item, {
       style: { marginBottom: 0, textAlign: "right", marginTop: "24px" }
-    }, /* @__PURE__ */ import_react144.default.createElement(space_default, null, /* @__PURE__ */ import_react144.default.createElement(button_default, {
+    }, /* @__PURE__ */ import_react143.default.createElement(space_default, null, /* @__PURE__ */ import_react143.default.createElement(button_default, {
       onClick: handleCancel,
       style: { borderRadius: "6px" }
-    }, "Cancel"), /* @__PURE__ */ import_react144.default.createElement(button_default, {
+    }, "Cancel"), /* @__PURE__ */ import_react143.default.createElement(button_default, {
       type: "primary",
       htmlType: "submit",
       loading: creating || updating,
@@ -83804,20 +82593,20 @@ html body {
   var Donors_default = Donors;
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/pages/Orders.jsx
-  var import_react145 = __toESM(require_react());
+  var import_react144 = __toESM(require_react());
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/pages/Donation.jsx
-  var import_react152 = __toESM(require_react());
+  var import_react151 = __toESM(require_react());
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/components/Donation/DonorSection.jsx
-  var import_react147 = __toESM(require_react());
+  var import_react146 = __toESM(require_react());
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/components/Donation/DonorModal.jsx
-  var import_react146 = __toESM(require_react());
+  var import_react145 = __toESM(require_react());
   var DonorModal = ({ open: open2, onCancel, onSuccess, initialMobileNumber }) => {
     const [form] = form_default.useForm();
     const { createDoc, loading } = useFrappeCreateDoc();
-    (0, import_react146.useEffect)(() => {
+    (0, import_react145.useEffect)(() => {
       if (open2 && initialMobileNumber) {
         form.setFieldsValue({ mobile_number: initialMobileNumber });
       } else if (open2) {
@@ -83836,40 +82625,40 @@ html body {
         message_default.error(error.message || "Failed to add donor");
       }
     };
-    return /* @__PURE__ */ import_react146.default.createElement(modal_default, {
+    return /* @__PURE__ */ import_react145.default.createElement(modal_default, {
       title: "Add New Donor",
       open: open2,
       onCancel,
       onOk: handleSubmit,
       confirmLoading: loading,
       destroyOnClose: true
-    }, /* @__PURE__ */ import_react146.default.createElement(form_default, {
+    }, /* @__PURE__ */ import_react145.default.createElement(form_default, {
       form,
       layout: "vertical"
-    }, /* @__PURE__ */ import_react146.default.createElement(form_default.Item, {
+    }, /* @__PURE__ */ import_react145.default.createElement(form_default.Item, {
       name: "donor_name",
       label: "Donor Name",
       rules: [{ required: true, message: "Please enter donor name" }]
-    }, /* @__PURE__ */ import_react146.default.createElement(input_default, {
+    }, /* @__PURE__ */ import_react145.default.createElement(input_default, {
       placeholder: "Enter full name"
-    })), /* @__PURE__ */ import_react146.default.createElement(form_default.Item, {
+    })), /* @__PURE__ */ import_react145.default.createElement(form_default.Item, {
       name: "mobile_number",
       label: "Mobile Number",
       rules: [
         { required: true, message: "Please enter mobile number" },
         { pattern: /^\d{10}$/, message: "Please enter a valid 10-digit mobile number" }
       ]
-    }, /* @__PURE__ */ import_react146.default.createElement(input_default, {
+    }, /* @__PURE__ */ import_react145.default.createElement(input_default, {
       placeholder: "Enter 10-digit mobile number"
-    })), /* @__PURE__ */ import_react146.default.createElement(form_default.Item, {
+    })), /* @__PURE__ */ import_react145.default.createElement(form_default.Item, {
       name: "email",
       label: "Email (Optional)"
-    }, /* @__PURE__ */ import_react146.default.createElement(input_default, {
+    }, /* @__PURE__ */ import_react145.default.createElement(input_default, {
       placeholder: "Enter email address"
-    })), /* @__PURE__ */ import_react146.default.createElement(form_default.Item, {
+    })), /* @__PURE__ */ import_react145.default.createElement(form_default.Item, {
       name: "address",
       label: "Address (Optional)"
-    }, /* @__PURE__ */ import_react146.default.createElement(input_default.TextArea, {
+    }, /* @__PURE__ */ import_react145.default.createElement(input_default.TextArea, {
       placeholder: "Enter address",
       rows: 3
     }))));
@@ -83879,9 +82668,9 @@ html body {
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/components/Donation/DonorSection.jsx
   var { Text: Text3 } = typography_default;
   var DonorSection = ({ onDonorSelect, selectedDonor }) => {
-    const [mobileNumber, setMobileNumber] = (0, import_react147.useState)("");
-    const [isModalOpen, setIsModalOpen] = (0, import_react147.useState)(false);
-    const [searching, setSearching] = (0, import_react147.useState)(false);
+    const [mobileNumber, setMobileNumber] = (0, import_react146.useState)("");
+    const [isModalOpen, setIsModalOpen] = (0, import_react146.useState)(false);
+    const [searching, setSearching] = (0, import_react146.useState)(false);
     const handleSearch = (value) => {
       setMobileNumber(value);
       if (value.length === 10) {
@@ -83911,41 +82700,41 @@ html body {
       setMobileNumber(donor.mobile_number);
       onDonorSelect(donor);
     };
-    return /* @__PURE__ */ import_react147.default.createElement(card_default, {
+    return /* @__PURE__ */ import_react146.default.createElement(card_default, {
       title: "Donor Information",
       size: "small",
       className: "donation-card shadow-sm"
-    }, /* @__PURE__ */ import_react147.default.createElement(form_default, {
+    }, /* @__PURE__ */ import_react146.default.createElement(form_default, {
       layout: "vertical"
-    }, /* @__PURE__ */ import_react147.default.createElement(row_default2, {
+    }, /* @__PURE__ */ import_react146.default.createElement(row_default2, {
       gutter: 16,
       align: "bottom"
-    }, /* @__PURE__ */ import_react147.default.createElement(col_default2, {
+    }, /* @__PURE__ */ import_react146.default.createElement(col_default2, {
       xs: 24,
       sm: 16,
       md: 18
-    }, /* @__PURE__ */ import_react147.default.createElement(form_default.Item, {
+    }, /* @__PURE__ */ import_react146.default.createElement(form_default.Item, {
       label: "Mobile Number",
       className: "mb-0"
-    }, /* @__PURE__ */ import_react147.default.createElement(input_default, {
+    }, /* @__PURE__ */ import_react146.default.createElement(input_default, {
       placeholder: "Enter 10-digit mobile number",
-      prefix: /* @__PURE__ */ import_react147.default.createElement(SearchOutlined_default2, null),
+      prefix: /* @__PURE__ */ import_react146.default.createElement(SearchOutlined_default2, null),
       value: mobileNumber,
       onChange: (e3) => handleSearch(e3.target.value),
       maxLength: 10,
       allowClear: true,
       style: { height: "40px" }
-    }))), /* @__PURE__ */ import_react147.default.createElement(col_default2, {
+    }))), /* @__PURE__ */ import_react146.default.createElement(col_default2, {
       xs: 24,
       sm: 8,
       md: 6
-    }, !selectedDonor && mobileNumber.length === 10 && !searching && /* @__PURE__ */ import_react147.default.createElement(button_default, {
+    }, !selectedDonor && mobileNumber.length === 10 && !searching && /* @__PURE__ */ import_react146.default.createElement(button_default, {
       type: "primary",
-      icon: /* @__PURE__ */ import_react147.default.createElement(UserAddOutlined_default2, null),
+      icon: /* @__PURE__ */ import_react146.default.createElement(UserAddOutlined_default2, null),
       onClick: () => setIsModalOpen(true),
       block: true,
       style: { height: "40px" }
-    }, "Add Donor"))), selectedDonor && /* @__PURE__ */ import_react147.default.createElement("div", {
+    }, "Add Donor"))), selectedDonor && /* @__PURE__ */ import_react146.default.createElement("div", {
       className: "mt-4 donor-details-fade-in",
       style: {
         background: "#f8fafc",
@@ -83953,12 +82742,12 @@ html body {
         padding: "16px",
         border: "1px solid #e2e8f0"
       }
-    }, /* @__PURE__ */ import_react147.default.createElement("div", {
+    }, /* @__PURE__ */ import_react146.default.createElement("div", {
       style: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "12px" }
-    }, /* @__PURE__ */ import_react147.default.createElement(Text3, {
+    }, /* @__PURE__ */ import_react146.default.createElement(Text3, {
       strong: true,
       style: { color: "#4f46e5", fontSize: "14px", textTransform: "uppercase", letterSpacing: "0.5px" }
-    }, "Matched Donor Profile"), /* @__PURE__ */ import_react147.default.createElement(button_default, {
+    }, "Matched Donor Profile"), /* @__PURE__ */ import_react146.default.createElement(button_default, {
       type: "link",
       danger: true,
       size: "small",
@@ -83967,30 +82756,30 @@ html body {
         setMobileNumber("");
       },
       style: { padding: 0, height: "auto" }
-    }, "Change Donor")), /* @__PURE__ */ import_react147.default.createElement(row_default2, {
+    }, "Change Donor")), /* @__PURE__ */ import_react146.default.createElement(row_default2, {
       gutter: [16, 12]
-    }, /* @__PURE__ */ import_react147.default.createElement(col_default2, {
+    }, /* @__PURE__ */ import_react146.default.createElement(col_default2, {
       span: 24
-    }, /* @__PURE__ */ import_react147.default.createElement("div", {
+    }, /* @__PURE__ */ import_react146.default.createElement("div", {
       style: { fontSize: "12px", color: "#64748b" }
-    }, "Full Name"), /* @__PURE__ */ import_react147.default.createElement(Text3, {
+    }, "Full Name"), /* @__PURE__ */ import_react146.default.createElement(Text3, {
       strong: true,
       style: { fontSize: "16px" }
-    }, selectedDonor.donor_name)), /* @__PURE__ */ import_react147.default.createElement(col_default2, {
+    }, selectedDonor.donor_name)), /* @__PURE__ */ import_react146.default.createElement(col_default2, {
       span: 12
-    }, /* @__PURE__ */ import_react147.default.createElement("div", {
+    }, /* @__PURE__ */ import_react146.default.createElement("div", {
       style: { fontSize: "12px", color: "#64748b" }
-    }, "Mobile"), /* @__PURE__ */ import_react147.default.createElement(Text3, null, selectedDonor.mobile_number)), selectedDonor.email && /* @__PURE__ */ import_react147.default.createElement(col_default2, {
+    }, "Mobile"), /* @__PURE__ */ import_react146.default.createElement(Text3, null, selectedDonor.mobile_number)), selectedDonor.email && /* @__PURE__ */ import_react146.default.createElement(col_default2, {
       span: 12
-    }, /* @__PURE__ */ import_react147.default.createElement("div", {
+    }, /* @__PURE__ */ import_react146.default.createElement("div", {
       style: { fontSize: "12px", color: "#64748b" }
-    }, "Email"), /* @__PURE__ */ import_react147.default.createElement(Text3, null, selectedDonor.email)), selectedDonor.address && /* @__PURE__ */ import_react147.default.createElement(col_default2, {
+    }, "Email"), /* @__PURE__ */ import_react146.default.createElement(Text3, null, selectedDonor.email)), selectedDonor.address && /* @__PURE__ */ import_react146.default.createElement(col_default2, {
       span: 24
-    }, /* @__PURE__ */ import_react147.default.createElement("div", {
+    }, /* @__PURE__ */ import_react146.default.createElement("div", {
       style: { fontSize: "12px", color: "#64748b" }
-    }, "Address"), /* @__PURE__ */ import_react147.default.createElement(Text3, {
+    }, "Address"), /* @__PURE__ */ import_react146.default.createElement(Text3, {
       type: "secondary"
-    }, selectedDonor.address))))), /* @__PURE__ */ import_react147.default.createElement(DonorModal_default, {
+    }, selectedDonor.address))))), /* @__PURE__ */ import_react146.default.createElement(DonorModal_default, {
       open: isModalOpen,
       onCancel: () => setIsModalOpen(false),
       onSuccess: handleNewDonor,
@@ -84000,15 +82789,15 @@ html body {
   var DonorSection_default = DonorSection;
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/components/Donation/TempleSelect.jsx
-  var import_react148 = __toESM(require_react());
+  var import_react147 = __toESM(require_react());
   var { Text: Text4 } = typography_default;
   var TempleSelect = ({ onTempleSelect, selectedTemple }) => {
     const { data: temples, loading } = useFrappeGetDocList("Temple", { fields: ["name", "temple_name"] });
-    return /* @__PURE__ */ import_react148.default.createElement(card_default, {
+    return /* @__PURE__ */ import_react147.default.createElement(card_default, {
       title: "Select Temple",
       size: "small",
       className: "donation-card shadow-sm mt-3"
-    }, /* @__PURE__ */ import_react148.default.createElement(select_default, {
+    }, /* @__PURE__ */ import_react147.default.createElement(select_default, {
       placeholder: "Select a temple",
       style: { width: "100%", height: "40px" },
       value: selectedTemple,
@@ -84024,21 +82813,21 @@ html body {
         value: t2.name,
         label: t2.temple_name
       }))
-    }), temples && temples.length === 0 && !loading && /* @__PURE__ */ import_react148.default.createElement("div", {
+    }), temples && temples.length === 0 && !loading && /* @__PURE__ */ import_react147.default.createElement("div", {
       className: "mt-2"
-    }, /* @__PURE__ */ import_react148.default.createElement(Text4, {
+    }, /* @__PURE__ */ import_react147.default.createElement(Text4, {
       type: "warning"
     }, "No temples found in the system")));
   };
   var TempleSelect_default = TempleSelect;
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/components/Donation/DonationTypes.jsx
-  var import_react149 = __toESM(require_react());
+  var import_react148 = __toESM(require_react());
   var { Text: Text5, Title: Title4 } = typography_default;
   var DonationTypes = ({ selectedTemple, onAddToCart }) => {
-    const [donationTypes, setDonationTypes] = (0, import_react149.useState)([]);
-    const [loading, setLoading] = (0, import_react149.useState)(false);
-    (0, import_react149.useEffect)(() => {
+    const [donationTypes, setDonationTypes] = (0, import_react148.useState)([]);
+    const [loading, setLoading] = (0, import_react148.useState)(false);
+    (0, import_react148.useEffect)(() => {
       if (selectedTemple) {
         fetchDonationTypes();
       } else {
@@ -84065,46 +82854,46 @@ html body {
       });
     };
     if (!selectedTemple) {
-      return /* @__PURE__ */ import_react149.default.createElement(card_default, {
+      return /* @__PURE__ */ import_react148.default.createElement(card_default, {
         className: "shadow-sm mt-3",
         style: { height: "300px", display: "flex", alignItems: "center", justifyContent: "center" }
-      }, /* @__PURE__ */ import_react149.default.createElement(empty_default2, {
+      }, /* @__PURE__ */ import_react148.default.createElement(empty_default2, {
         description: "Please select a temple first"
       }));
     }
-    return /* @__PURE__ */ import_react149.default.createElement(card_default, {
+    return /* @__PURE__ */ import_react148.default.createElement(card_default, {
       title: "Donation Types",
       size: "small",
       className: "donation-card shadow-sm mt-3"
-    }, loading ? /* @__PURE__ */ import_react149.default.createElement("div", {
+    }, loading ? /* @__PURE__ */ import_react148.default.createElement("div", {
       style: { textAlign: "center", padding: "50px" }
-    }, /* @__PURE__ */ import_react149.default.createElement(spin_default, {
+    }, /* @__PURE__ */ import_react148.default.createElement(spin_default, {
       tip: "Loading donation types..."
-    })) : donationTypes.length > 0 ? /* @__PURE__ */ import_react149.default.createElement(row_default2, {
+    })) : donationTypes.length > 0 ? /* @__PURE__ */ import_react148.default.createElement(row_default2, {
       gutter: [12, 12]
-    }, donationTypes.map((type5) => /* @__PURE__ */ import_react149.default.createElement(col_default2, {
+    }, donationTypes.map((type5) => /* @__PURE__ */ import_react148.default.createElement(col_default2, {
       key: type5.name,
       xs: 12,
       sm: 12,
       md: 8,
       lg: 6
-    }, /* @__PURE__ */ import_react149.default.createElement(card_default, {
+    }, /* @__PURE__ */ import_react148.default.createElement(card_default, {
       hoverable: true,
       onClick: () => onAddToCart(type5),
       className: "type-card",
       bodyStyle: { padding: "16px", textAlign: "center" }
-    }, /* @__PURE__ */ import_react149.default.createElement("div", {
+    }, /* @__PURE__ */ import_react148.default.createElement("div", {
       style: { fontSize: "24px", color: "#4f46e5", marginBottom: "8px" }
-    }, /* @__PURE__ */ import_react149.default.createElement(HeartFilled_default2, null)), /* @__PURE__ */ import_react149.default.createElement(Text5, {
+    }, /* @__PURE__ */ import_react148.default.createElement(HeartFilled_default2, null)), /* @__PURE__ */ import_react148.default.createElement(Text5, {
       strong: true
-    }, type5.type_name))))) : /* @__PURE__ */ import_react149.default.createElement(empty_default2, {
+    }, type5.type_name))))) : /* @__PURE__ */ import_react148.default.createElement(empty_default2, {
       description: "No donation types available for this temple"
     }));
   };
   var DonationTypes_default = DonationTypes;
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/components/Donation/Cart.jsx
-  var import_react150 = __toESM(require_react());
+  var import_react149 = __toESM(require_react());
   var { Text: Text6, Title: Title5 } = typography_default;
   var Cart = ({ items, onUpdateAmount, onRemoveItem, totalAmount }) => {
     const quickAmounts = [101, 251, 501, 1001];
@@ -84113,7 +82902,7 @@ html body {
         title: "Donation Type",
         dataIndex: "type_name",
         key: "type_name",
-        render: (text) => /* @__PURE__ */ import_react150.default.createElement(Text6, {
+        render: (text) => /* @__PURE__ */ import_react149.default.createElement(Text6, {
           strong: true
         }, text)
       },
@@ -84122,18 +82911,18 @@ html body {
         dataIndex: "amount",
         key: "amount",
         width: 150,
-        render: (amount, record, index) => /* @__PURE__ */ import_react150.default.createElement("div", {
+        render: (amount, record, index) => /* @__PURE__ */ import_react149.default.createElement("div", {
           style: { display: "flex", flexDirection: "column", gap: "8px" }
-        }, /* @__PURE__ */ import_react150.default.createElement(input_number_default, {
+        }, /* @__PURE__ */ import_react149.default.createElement(input_number_default, {
           min: 1,
           value: amount,
           formatter: (value) => `\u20B9 ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ","),
           parser: (value) => value.replace(/₹\s?|(,*)/g, ""),
           onChange: (val) => onUpdateAmount(index, val),
           style: { width: "100%" }
-        }), /* @__PURE__ */ import_react150.default.createElement("div", {
+        }), /* @__PURE__ */ import_react149.default.createElement("div", {
           style: { display: "flex", gap: "4px", flexWrap: "wrap" }
-        }, quickAmounts.map((q) => /* @__PURE__ */ import_react150.default.createElement(button_default, {
+        }, quickAmounts.map((q) => /* @__PURE__ */ import_react149.default.createElement(button_default, {
           key: q,
           size: "small",
           type: "dashed",
@@ -84145,41 +82934,41 @@ html body {
         title: "",
         key: "action",
         width: 50,
-        render: (_, __, index) => /* @__PURE__ */ import_react150.default.createElement(button_default, {
+        render: (_, __, index) => /* @__PURE__ */ import_react149.default.createElement(button_default, {
           type: "text",
           danger: true,
-          icon: /* @__PURE__ */ import_react150.default.createElement(DeleteOutlined_default2, null),
+          icon: /* @__PURE__ */ import_react149.default.createElement(DeleteOutlined_default2, null),
           onClick: () => onRemoveItem(index)
         })
       }
     ];
-    return /* @__PURE__ */ import_react150.default.createElement(card_default, {
-      title: /* @__PURE__ */ import_react150.default.createElement(Title5, {
+    return /* @__PURE__ */ import_react149.default.createElement(card_default, {
+      title: /* @__PURE__ */ import_react149.default.createElement(Title5, {
         level: 5,
         style: { margin: 0 }
       }, "Selection Cart"),
       size: "small",
       className: "donation-card shadow-sm h-100",
       styles: { body: { padding: 0 } }
-    }, /* @__PURE__ */ import_react150.default.createElement("div", {
+    }, /* @__PURE__ */ import_react149.default.createElement("div", {
       style: { height: "calc(100vh - 450px)", overflowY: "auto" }
-    }, /* @__PURE__ */ import_react150.default.createElement(table_default, {
+    }, /* @__PURE__ */ import_react149.default.createElement(table_default, {
       columns,
       dataSource: items,
       pagination: false,
       rowKey: (record, index) => index,
-      locale: { emptyText: /* @__PURE__ */ import_react150.default.createElement(empty_default2, {
+      locale: { emptyText: /* @__PURE__ */ import_react149.default.createElement(empty_default2, {
         description: "No items in cart"
       }) }
-    })), /* @__PURE__ */ import_react150.default.createElement("div", {
+    })), /* @__PURE__ */ import_react149.default.createElement("div", {
       style: { padding: "16px", borderTop: "1px solid #f0f0f0", backgroundColor: "#fafafa" }
-    }, /* @__PURE__ */ import_react150.default.createElement(row_default2, {
+    }, /* @__PURE__ */ import_react149.default.createElement(row_default2, {
       justify: "space-between",
       align: "middle"
-    }, /* @__PURE__ */ import_react150.default.createElement(col_default2, null, /* @__PURE__ */ import_react150.default.createElement(Text6, {
+    }, /* @__PURE__ */ import_react149.default.createElement(col_default2, null, /* @__PURE__ */ import_react149.default.createElement(Text6, {
       strong: true,
       style: { fontSize: "16px" }
-    }, "Total Amount")), /* @__PURE__ */ import_react150.default.createElement(col_default2, null, /* @__PURE__ */ import_react150.default.createElement(Text6, {
+    }, "Total Amount")), /* @__PURE__ */ import_react149.default.createElement(col_default2, null, /* @__PURE__ */ import_react149.default.createElement(Text6, {
       strong: true,
       style: { fontSize: "24px", color: "#4f46e5" }
     }, "\u20B9 ", totalAmount.toLocaleString())))));
@@ -84187,33 +82976,33 @@ html body {
   var Cart_default = Cart;
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/components/Donation/PaymentSection.jsx
-  var import_react151 = __toESM(require_react());
+  var import_react150 = __toESM(require_react());
   var { Text: Text7 } = typography_default;
   var { useBreakpoint: useBreakpoint3 } = grid_default;
   var PaymentSection = ({ paymentMode, onPaymentModeChange, onSubmit, loading, disabled }) => {
     const screens = useBreakpoint3();
     const isMobile2 = !screens.md;
     const paymentModes = [
-      { label: "Cash", value: "Cash", icon: /* @__PURE__ */ import_react151.default.createElement(WalletOutlined_default2, null) },
-      { label: "UPI", value: "UPI", icon: /* @__PURE__ */ import_react151.default.createElement(QrcodeOutlined_default2, null) },
-      { label: "Card", value: "Card", icon: /* @__PURE__ */ import_react151.default.createElement(CreditCardOutlined_default2, null) },
-      { label: "Cheque", value: "Cheque", icon: /* @__PURE__ */ import_react151.default.createElement(ProfileOutlined_default2, null) }
+      { label: "Cash", value: "Cash", icon: /* @__PURE__ */ import_react150.default.createElement(WalletOutlined_default2, null) },
+      { label: "UPI", value: "UPI", icon: /* @__PURE__ */ import_react150.default.createElement(QrcodeOutlined_default2, null) },
+      { label: "Card", value: "Card", icon: /* @__PURE__ */ import_react150.default.createElement(CreditCardOutlined_default2, null) },
+      { label: "Cheque", value: "Cheque", icon: /* @__PURE__ */ import_react150.default.createElement(ProfileOutlined_default2, null) }
     ];
-    return /* @__PURE__ */ import_react151.default.createElement(card_default, {
+    return /* @__PURE__ */ import_react150.default.createElement(card_default, {
       title: "Payment Information",
       size: "small",
       className: "donation-card shadow-sm mt-3"
-    }, /* @__PURE__ */ import_react151.default.createElement(Text7, {
+    }, /* @__PURE__ */ import_react150.default.createElement(Text7, {
       type: "secondary",
       className: "mb-3 d-block"
-    }, "Select Payment Mode"), /* @__PURE__ */ import_react151.default.createElement(radio_default2.Group, {
+    }, "Select Payment Mode"), /* @__PURE__ */ import_react150.default.createElement(radio_default2.Group, {
       value: paymentMode,
       onChange: (e3) => onPaymentModeChange(e3.target.value),
       style: { width: "100%", marginBottom: "24px" },
       buttonStyle: "solid"
-    }, /* @__PURE__ */ import_react151.default.createElement("div", {
+    }, /* @__PURE__ */ import_react150.default.createElement("div", {
       style: { display: "grid", gridTemplateColumns: isMobile2 ? "1fr 1fr" : "1fr 1fr 1fr 1fr", gap: "8px" }
-    }, paymentModes.map((mode) => /* @__PURE__ */ import_react151.default.createElement(radio_default2.Button, {
+    }, paymentModes.map((mode) => /* @__PURE__ */ import_react150.default.createElement(radio_default2.Button, {
       key: mode.value,
       value: mode.value,
       style: {
@@ -84225,13 +83014,13 @@ html body {
         flexDirection: "column",
         alignItems: "center"
       }
-    }, /* @__PURE__ */ import_react151.default.createElement("div", {
+    }, /* @__PURE__ */ import_react150.default.createElement("div", {
       style: { fontSize: "20px", marginBottom: "4px" }
-    }, mode.icon), /* @__PURE__ */ import_react151.default.createElement("div", null, mode.label))))), /* @__PURE__ */ import_react151.default.createElement(button_default, {
+    }, mode.icon), /* @__PURE__ */ import_react150.default.createElement("div", null, mode.label))))), /* @__PURE__ */ import_react150.default.createElement(button_default, {
       type: "primary",
       size: "large",
       block: true,
-      icon: /* @__PURE__ */ import_react151.default.createElement(CheckCircleOutlined_default2, null),
+      icon: /* @__PURE__ */ import_react150.default.createElement(CheckCircleOutlined_default2, null),
       onClick: onSubmit,
       loading,
       disabled,
@@ -84243,11 +83032,11 @@ html body {
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/pages/Donation.jsx
   var { Title: Title6, Text: Text8 } = typography_default;
   var Donation = () => {
-    const [selectedDonor, setSelectedDonor] = (0, import_react152.useState)(null);
-    const [selectedTemple, setSelectedTemple] = (0, import_react152.useState)(null);
-    const [cartItems, setCartItems] = (0, import_react152.useState)([]);
-    const [paymentMode, setPaymentMode] = (0, import_react152.useState)("Cash");
-    const [submitting, setSubmitting] = (0, import_react152.useState)(false);
+    const [selectedDonor, setSelectedDonor] = (0, import_react151.useState)(null);
+    const [selectedTemple, setSelectedTemple] = (0, import_react151.useState)(null);
+    const [cartItems, setCartItems] = (0, import_react151.useState)([]);
+    const [paymentMode, setPaymentMode] = (0, import_react151.useState)("Cash");
+    const [submitting, setSubmitting] = (0, import_react151.useState)(false);
     const totalAmount = cartItems.reduce((acc, item) => acc + (item.amount || 0), 0);
     const handleAddToCart = (donationType) => {
       const exists = cartItems.find((item) => item.donation_type === donationType.name);
@@ -84325,42 +83114,42 @@ html body {
         }
       });
     };
-    return /* @__PURE__ */ import_react152.default.createElement("div", {
+    return /* @__PURE__ */ import_react151.default.createElement("div", {
       className: "donation-page"
-    }, /* @__PURE__ */ import_react152.default.createElement("div", {
+    }, /* @__PURE__ */ import_react151.default.createElement("div", {
       style: { marginBottom: "24px", display: "flex", justifyContent: "space-between", alignItems: "center" }
-    }, /* @__PURE__ */ import_react152.default.createElement(space_default, null, /* @__PURE__ */ import_react152.default.createElement(HeartFilled_default2, {
+    }, /* @__PURE__ */ import_react151.default.createElement(space_default, null, /* @__PURE__ */ import_react151.default.createElement(HeartFilled_default2, {
       style: { fontSize: "24px", color: "#4f46e5" }
-    }), /* @__PURE__ */ import_react152.default.createElement(Title6, {
+    }), /* @__PURE__ */ import_react151.default.createElement(Title6, {
       level: 2,
       style: { margin: 0, fontWeight: 800, letterSpacing: "-0.5px" }
-    }, "Temple Donation POS")), /* @__PURE__ */ import_react152.default.createElement(button_default, {
-      icon: /* @__PURE__ */ import_react152.default.createElement(RedoOutlined_default2, null),
+    }, "Temple Donation POS")), /* @__PURE__ */ import_react151.default.createElement(button_default, {
+      icon: /* @__PURE__ */ import_react151.default.createElement(RedoOutlined_default2, null),
       onClick: handleReset,
       type: "text"
-    }, "Reset Form")), /* @__PURE__ */ import_react152.default.createElement(row_default2, {
+    }, "Reset Form")), /* @__PURE__ */ import_react151.default.createElement(row_default2, {
       gutter: [24, 24]
-    }, /* @__PURE__ */ import_react152.default.createElement(col_default2, {
+    }, /* @__PURE__ */ import_react151.default.createElement(col_default2, {
       xs: 24,
       lg: 15
-    }, /* @__PURE__ */ import_react152.default.createElement(DonorSection_default, {
+    }, /* @__PURE__ */ import_react151.default.createElement(DonorSection_default, {
       onDonorSelect: setSelectedDonor,
       selectedDonor
-    }), /* @__PURE__ */ import_react152.default.createElement(TempleSelect_default, {
+    }), /* @__PURE__ */ import_react151.default.createElement(TempleSelect_default, {
       onTempleSelect: setSelectedTemple,
       selectedTemple
-    }), /* @__PURE__ */ import_react152.default.createElement(DonationTypes_default, {
+    }), /* @__PURE__ */ import_react151.default.createElement(DonationTypes_default, {
       selectedTemple,
       onAddToCart: handleAddToCart
-    })), /* @__PURE__ */ import_react152.default.createElement(col_default2, {
+    })), /* @__PURE__ */ import_react151.default.createElement(col_default2, {
       xs: 24,
       lg: 9
-    }, /* @__PURE__ */ import_react152.default.createElement(Cart_default, {
+    }, /* @__PURE__ */ import_react151.default.createElement(Cart_default, {
       items: cartItems,
       onUpdateAmount: handleUpdateAmount,
       onRemoveItem: handleRemoveItem,
       totalAmount
-    }), /* @__PURE__ */ import_react152.default.createElement(PaymentSection_default, {
+    }), /* @__PURE__ */ import_react151.default.createElement(PaymentSection_default, {
       paymentMode,
       onPaymentModeChange: setPaymentMode,
       onSubmit: handleSubmit,
@@ -84374,27 +83163,27 @@ html body {
   var navigationItems = [
     {
       key: "dashboard",
-      icon: /* @__PURE__ */ import_react153.default.createElement(DashboardOutlined_default2, null),
+      icon: /* @__PURE__ */ import_react152.default.createElement(DashboardOutlined_default2, null),
       label: "Dashboard",
-      component: /* @__PURE__ */ import_react153.default.createElement(Dashboard_default, null)
+      component: /* @__PURE__ */ import_react152.default.createElement(Dashboard_default, null)
     },
     {
       key: "donation",
-      icon: /* @__PURE__ */ import_react153.default.createElement(ShoppingCartOutlined_default2, null),
+      icon: /* @__PURE__ */ import_react152.default.createElement(ShoppingCartOutlined_default2, null),
       label: "Donation POS",
-      component: /* @__PURE__ */ import_react153.default.createElement(Donation_default, null),
+      component: /* @__PURE__ */ import_react152.default.createElement(Donation_default, null),
       hidden: true
     },
     {
       key: "donors",
-      icon: /* @__PURE__ */ import_react153.default.createElement(UserOutlined_default2, null),
+      icon: /* @__PURE__ */ import_react152.default.createElement(UserOutlined_default2, null),
       label: "Donation List",
-      component: /* @__PURE__ */ import_react153.default.createElement(Donors_default, null)
+      component: /* @__PURE__ */ import_react152.default.createElement(Donors_default, null)
     }
   ];
   var getComponentForRoute = (currentRoute) => {
     const item = navigationItems.find((nav) => nav.key === currentRoute);
-    return item ? item.component : /* @__PURE__ */ import_react153.default.createElement(Dashboard_default, null);
+    return item ? item.component : /* @__PURE__ */ import_react152.default.createElement(Dashboard_default, null);
   };
   var menuItems = navigationItems.filter((item) => !item.hidden).map(({ key, icon, label }) => ({
     key,
@@ -84403,14 +83192,10 @@ html body {
   }));
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/App.jsx
-  var { Sider: Sider2, Content: Content3, Header: Header3 } = layout_default2;
-  var { useBreakpoint: useBreakpoint4 } = grid_default;
+  var { Header: Header3, Content: Content3 } = layout_default2;
   var App = () => {
-    const [currentRoute, setCurrentRoute] = (0, import_react154.useState)("dashboard");
-    const [drawerVisible, setDrawerVisible] = (0, import_react154.useState)(false);
-    const screens = useBreakpoint4();
-    const isMobile2 = !screens.lg;
-    (0, import_react154.useEffect)(() => {
+    const [currentRoute, setCurrentRoute] = (0, import_react153.useState)("dashboard");
+    (0, import_react153.useEffect)(() => {
       const handleRoute = () => {
         if (typeof frappe !== "undefined" && frappe.get_route) {
           const route = frappe.get_route();
@@ -84432,84 +83217,31 @@ html body {
       if (typeof frappe !== "undefined") {
         frappe.set_route("aavatto-test", key === "dashboard" ? "" : key);
       }
-      if (isMobile2) {
-        setDrawerVisible(false);
-      }
     };
-    const SidebarContent = /* @__PURE__ */ import_react154.default.createElement(import_react154.default.Fragment, null, /* @__PURE__ */ import_react154.default.createElement("div", {
-      className: "aavatto-sidebar-header",
-      style: { padding: "24px 20px" }
-    }, /* @__PURE__ */ import_react154.default.createElement("div", {
-      className: "aavatto-sidebar-brand",
-      style: { display: "flex", alignItems: "center", gap: "12px", fontSize: "18px", fontWeight: "800", color: "#4f46e5" }
-    }, /* @__PURE__ */ import_react154.default.createElement(DashboardOutlined_default2, {
-      style: { fontSize: "24px" }
-    }), /* @__PURE__ */ import_react154.default.createElement("span", {
-      style: { letterSpacing: "-0.5px" }
-    }, "Aavatto Dashboard"))), /* @__PURE__ */ import_react154.default.createElement(menu_default2, {
-      mode: "inline",
+    return /* @__PURE__ */ import_react153.default.createElement(config_provider_default, {
+      theme: themeConfig
+    }, /* @__PURE__ */ import_react153.default.createElement(layout_default2, {
+      style: { minHeight: "100vh", background: "#f9fafb" }
+    }, /* @__PURE__ */ import_react153.default.createElement(Header3, {
+      className: "aavatto-topbar"
+    }, /* @__PURE__ */ import_react153.default.createElement("div", {
+      className: "aavatto-topbar-brand"
+    }, /* @__PURE__ */ import_react153.default.createElement(DashboardOutlined_default2, {
+      style: { fontSize: "22px", color: "#4f46e5" }
+    }), /* @__PURE__ */ import_react153.default.createElement("span", null, "Aavatto Dashboard")), /* @__PURE__ */ import_react153.default.createElement(menu_default2, {
+      mode: "horizontal",
       selectedKeys: [currentRoute],
       items: menuItems,
       onClick: handleMenuClick,
-      style: { borderRight: 0, padding: "0 12px" }
-    }), /* @__PURE__ */ import_react154.default.createElement("div", {
-      style: { position: "absolute", bottom: 0, width: "100%", padding: "20px", borderTop: "1px solid #e5e7eb" }
-    }, /* @__PURE__ */ import_react154.default.createElement("small", {
-      style: { color: "#6b7280", textTransform: "uppercase", letterSpacing: "0.5px", fontSize: "11px" }
-    }, "v1.0.0")));
-    return /* @__PURE__ */ import_react154.default.createElement(config_provider_default, {
-      theme: themeConfig
-    }, /* @__PURE__ */ import_react154.default.createElement(layout_default2, {
-      style: { minHeight: "100vh" }
-    }, !isMobile2 && /* @__PURE__ */ import_react154.default.createElement(Sider2, {
-      theme: "light",
-      width: 260,
-      className: "aavatto-antd-sider",
-      style: {
-        borderRight: "1px solid #e5e7eb",
-        position: "fixed",
-        height: "100vh",
-        left: 0,
-        top: 0,
-        bottom: 0,
-        zIndex: 100
-      }
-    }, SidebarContent), /* @__PURE__ */ import_react154.default.createElement(drawer_default, {
-      placement: "left",
-      onClose: () => setDrawerVisible(false),
-      open: drawerVisible,
-      width: "260px",
-      styles: { body: { padding: 0 } },
-      closable: false
-    }, SidebarContent), /* @__PURE__ */ import_react154.default.createElement(layout_default2, {
-      style: { marginLeft: isMobile2 ? 0 : 220, transition: "all 0.2s" }
-    }, isMobile2 && /* @__PURE__ */ import_react154.default.createElement(Header3, {
-      style: {
-        background: "#fff",
-        padding: "0 20px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        borderBottom: "1px solid #e5e7eb",
-        height: "64px",
-        position: "sticky",
-        top: 0,
-        zIndex: 10
-      }
-    }, /* @__PURE__ */ import_react154.default.createElement("div", {
-      style: { display: "flex", alignItems: "center", gap: "12px" }
-    }, /* @__PURE__ */ import_react154.default.createElement(button_default, {
-      type: "text",
-      icon: /* @__PURE__ */ import_react154.default.createElement(MenuOutlined_default2, null),
-      onClick: () => setDrawerVisible(true),
-      style: { fontSize: "18px" }
-    }), /* @__PURE__ */ import_react154.default.createElement("span", {
-      style: { fontWeight: 700, color: "#4f46e5" }
-    }, "Aavatto"))), /* @__PURE__ */ import_react154.default.createElement(Content3, {
-      style: { padding: isMobile2 ? "16px" : "24px", background: "#f9fafb", minHeight: "100%" }
-    }, /* @__PURE__ */ import_react154.default.createElement("div", {
+      className: "aavatto-topbar-menu",
+      disabledOverflow: true
+    }), /* @__PURE__ */ import_react153.default.createElement("div", {
+      className: "aavatto-topbar-version"
+    }, "v1.0.0")), /* @__PURE__ */ import_react153.default.createElement(Content3, {
+      style: { padding: "24px", background: "#f9fafb", minHeight: "calc(100vh - 64px)" }
+    }, /* @__PURE__ */ import_react153.default.createElement("div", {
       className: "aavatto-content-wrapper"
-    }, getComponentForRoute(currentRoute))))));
+    }, getComponentForRoute(currentRoute)))));
   };
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/aavatto_test.bundle.jsx
@@ -84526,7 +83258,7 @@ html body {
     setup_app() {
       const root = (0, import_client2.createRoot)(this.$wrapper.get(0));
       root.render(
-        /* @__PURE__ */ import_react155.default.createElement(App, null)
+        /* @__PURE__ */ import_react154.default.createElement(App, null)
       );
       this.$aavatto_test = root;
     }
@@ -84580,4 +83312,4 @@ html body {
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-//# sourceMappingURL=aavatto_test.bundle.KHGJORRR.js.map
+//# sourceMappingURL=aavatto_test.bundle.SLZIGP7U.js.map
