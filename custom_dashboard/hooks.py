@@ -6,12 +6,12 @@ app_email = "shailesh.parmar@aavatto.com"
 app_license = "mit"
 
 app_include_js = [
+    "/assets/custom_dashboard/dist/temple_dontation.bundle.js"
     "/assets/custom_dashboard/js/aavatto_common.js",
-    "/assets/custom_dashboard/dist/aavatto_test.bundle.js"
 ]
 
 app_include_css = [
-    "/assets/custom_dashboard/js/aavatto_test/styles.css"
+    "/assets/custom_dashboard/js/temple_dontation/styles.css"
 ]
 
 # Apps

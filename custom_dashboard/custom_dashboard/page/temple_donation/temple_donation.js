@@ -6,7 +6,7 @@ frappe.pages["temple-donation"].on_page_load = function (wrapper) {
   });
 
   // Load CSS for basic styling, sidebar is now handled in App.jsx
-  const premium_css = "/assets/custom_dashboard/js/aavatto_test/styles.css";
+  const premium_css = "/assets/custom_dashboard/js/temple_dontation/styles.css";
   frappe.require(premium_css);
 };
 
@@ -21,8 +21,8 @@ frappe.pages["temple-donation"].on_page_show = function (wrapper) {
       callback: function (r) {
         if (r.message) {
           frappe.require(r.message).then(() => {
-            if (frappe.ui.AavattoTest) {
-              frappe.aavatto_test = new frappe.ui.AavattoTest({
+            if (frappe.ui.TempleDontation) {
+              frappe.temple_dontation = new frappe.ui.TempleDontation({
                 wrapper: $parent.find("#react-root"),
                 page: wrapper.page,
               });

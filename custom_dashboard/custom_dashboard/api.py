@@ -13,7 +13,7 @@ def get_latest_bundle():
     bundles = []
     
     for f in files:
-        if f.startswith("aavatto_test.bundle") and f.endswith(".js") and not f.endswith(".map"):
+        if f.startswith("temple_dontation.bundle") and f.endswith(".js") and not f.endswith(".map"):
             full_path = os.path.join(path, f)
             bundles.append((f, os.path.getmtime(full_path)))
             

@@ -2,7 +2,7 @@ import React from "react";
 import { App } from "./App";
 import { createRoot } from "react-dom/client";
 
-class AavattoTest {
+class TempleDontation {
 	constructor({ page, wrapper }) {
 		this.$wrapper = $(wrapper);
 		this.page = page;
@@ -19,10 +19,10 @@ class AavattoTest {
 		root.render(
 			<App />
 		);
-		this.$aavatto_test = root;
+		this.$temple_dontation = root;
 	}
 }
 
 frappe.provide("frappe.ui");
-frappe.ui.AavattoTest = AavattoTest;
-export default AavattoTest;
+frappe.ui.TempleDontation = TempleDontation;
+export default TempleDontation;

@@ -1,24 +1,30 @@
-:root {
+/* ../custom_dashboard/custom_dashboard/public/js/temple_dontation/styles.css */
+[data-page-route=temple-donation] {
   --topbar-height: 64px;
-  --primary-color: #4f46e5;   /* Indigo-600 */
-  --primary-hover: #4338ca;  /* Indigo-700 */
+  --primary-color: #4f46e5;
+  --primary-hover: #4338ca;
   --bg-color: #f9fafb;
   --card-bg: #ffffff;
   --text-main: #111827;
   --text-muted: #6b7280;
   --border-color: #e5e7eb;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-body {
-  margin: 0;
   background-color: var(--bg-color);
-  font-family: var(--font-stack);
   color: var(--text-main);
 }
-
-/* ── Top Navigation Bar ── */
-.aavatto-topbar {
+[data-page-route=temple-donation] .page-head {
+  display: none !important;
+}
+[data-page-route=temple-donation] .layout-main-section {
+  padding: 0 !important;
+  background-color: var(--bg-color) !important;
+}
+[data-page-route=temple-donation] .layout-side-section {
+  background: #fff !important;
+  border-right: 1px solid var(--border-color) !important;
+  padding: 0 !important;
+}
+[data-page-route=temple-donation] .aavatto-topbar {
   display: flex;
   align-items: center;
   gap: 0;
@@ -32,8 +38,7 @@ body {
   top: 0;
   z-index: 200;
 }
-
-.aavatto-topbar-brand {
+[data-page-route=temple-donation] .aavatto-topbar-brand {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -45,25 +50,20 @@ body {
   margin-right: 32px;
   flex-shrink: 0;
 }
-
-.aavatto-topbar-menu {
+[data-page-route=temple-donation] .aavatto-topbar-menu {
   flex: 1;
   border-bottom: none !important;
   line-height: var(--topbar-height) !important;
   background: transparent !important;
 }
-
-/* Override Ant Design active indicator to match brand colour */
-.aavatto-topbar-menu .ant-menu-item-selected,
-.aavatto-topbar-menu .ant-menu-item-active {
+[data-page-route=temple-donation] .aavatto-topbar-menu .ant-menu-item-selected,
+[data-page-route=temple-donation] .aavatto-topbar-menu .ant-menu-item-active {
   color: var(--primary-color) !important;
 }
-
-.aavatto-topbar-menu .ant-menu-item::after {
+[data-page-route=temple-donation] .aavatto-topbar-menu .ant-menu-item::after {
   border-bottom-color: var(--primary-color) !important;
 }
-
-.aavatto-topbar-version {
+[data-page-route=temple-donation] .aavatto-topbar-version {
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -71,30 +71,7 @@ body {
   margin-left: 20px;
   flex-shrink: 0;
 }
-
-/* Page Layout Overrides */
-.layout-side-section {
-  background: #fff !important;
-  border-right: 1px solid var(--border-color) !important;
-  padding: 0 !important;
-}
-
-.layout-main-section {
-  padding: 0 !important;
-  background-color: var(--bg-color) !important;
-  height: 100vh;
-}
-
-.page-head {
-  display: none !important;
-  background: #fff !important;
-  border-bottom: 1px solid var(--border-color) !important;
-  padding: 15px 30px !important;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
-}
-
-/* Card Styling */
-.aavatto-card {
+[data-page-route=temple-donation] .aavatto-card {
   background: var(--card-bg);
   padding: 24px;
   border-radius: 16px;
@@ -103,50 +80,42 @@ body {
   transition: var(--transition);
   margin-bottom: 24px;
 }
-
-.aavatto-card:hover {
+[data-page-route=temple-donation] .aavatto-card:hover {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   transform: translateY(-2px);
 }
-
-@keyframes fadeIn {
+[data-page-route=temple-donation] #react-root {
+  animation: templePageFadeIn 0.4s ease-out;
+}
+@keyframes templePageFadeIn {
   from {
     opacity: 0;
     transform: translateY(10px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-
-#react-root {
-  animation: fadeIn 0.4s ease-out;
-}
-
-.container {
+[data-page-route=temple-donation] .container {
   width: 100%;
   max-width: 1600px;
   margin: 0 auto;
-  /* padding: 0 var(--container-padding); */
 }
-
 @media (max-width: 1200px) {
-  .container {
+  [data-page-route=temple-donation] .container {
     max-width: 1100px;
   }
 }
-
 @media (max-width: 992px) {
-  .container {
+  [data-page-route=temple-donation] .container {
     max-width: 900px;
   }
 }
-
 @media (max-width: 768px) {
-  .container {
+  [data-page-route=temple-donation] .container {
     max-width: 100%;
     padding: 0 15px;
   }
 }
+/*# sourceMappingURL=temple_dontation.bundle.2EWM2OL5.css.map */
