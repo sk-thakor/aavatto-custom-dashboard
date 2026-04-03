@@ -15,14 +15,14 @@ const App = () => {
     const [currentRoute, setCurrentRoute] = useState("dashboard");
     const [drawerVisible, setDrawerVisible] = useState(false);
     const screens = useBreakpoint();
-    
+
     const isMobile = !screens.lg; // Use lg as breakpoint for mobile layout
 
     useEffect(() => {
         const handleRoute = () => {
             if (typeof frappe !== "undefined" && frappe.get_route) {
                 const route = frappe.get_route();
-                
+
                 if (route[0] === "aavatto-test") {
                     const subRoute = route.slice(1).join("/");
                     setCurrentRoute(subRoute || "dashboard");
@@ -98,21 +98,21 @@ const App = () => {
                     placement="left"
                     onClose={() => setDrawerVisible(false)}
                     open={drawerVisible}
-                    width={260}
+                    width="260px"
                     styles={{ body: { padding: 0 } }}
                     closable={false}
                 >
                     {SidebarContent}
                 </Drawer>
 
-                <Layout style={{ marginLeft: isMobile ? 0 : 260, transition: 'all 0.2s' }}>
+                <Layout style={{ marginLeft: isMobile ? 0 : 220, transition: 'all 0.2s' }}>
                     {/* Header with Hamburger (Mobile Only) */}
                     {isMobile && (
-                        <Header style={{ 
-                            background: '#fff', 
-                            padding: '0 20px', 
-                            display: 'flex', 
-                            alignItems: 'center', 
+                        <Header style={{
+                            background: '#fff',
+                            padding: '0 20px',
+                            display: 'flex',
+                            alignItems: 'center',
                             justifyContent: 'space-between',
                             borderBottom: '1px solid #e5e7eb',
                             height: '64px',

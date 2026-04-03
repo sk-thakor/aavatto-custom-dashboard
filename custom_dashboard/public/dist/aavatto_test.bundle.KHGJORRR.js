@@ -60,7 +60,7 @@
       "use strict";
       (function() {
         function defineDeprecationWarning(methodName, info) {
-          Object.defineProperty(Component7.prototype, methodName, {
+          Object.defineProperty(Component5.prototype, methodName, {
             get: function() {
               console.warn(
                 "%s(...) is deprecated in plain JavaScript React classes. %s",
@@ -85,7 +85,7 @@
             publicInstance
           ), didWarnStateUpdateForUnmountedComponent[warningKey] = true);
         }
-        function Component7(props, context, updater) {
+        function Component5(props, context, updater) {
           this.props = props;
           this.context = context;
           this.refs = emptyObject;
@@ -273,9 +273,9 @@
           return newKey;
         }
         function validateChildKeys(node2) {
-          isValidElement28(node2) ? node2._store && (node2._store.validated = 1) : "object" === typeof node2 && null !== node2 && node2.$$typeof === REACT_LAZY_TYPE && ("fulfilled" === node2._payload.status ? isValidElement28(node2._payload.value) && node2._payload.value._store && (node2._payload.value._store.validated = 1) : node2._store && (node2._store.validated = 1));
+          isValidElement31(node2) ? node2._store && (node2._store.validated = 1) : "object" === typeof node2 && null !== node2 && node2.$$typeof === REACT_LAZY_TYPE && ("fulfilled" === node2._payload.status ? isValidElement31(node2._payload.value) && node2._payload.value._store && (node2._payload.value._store.validated = 1) : node2._store && (node2._store.validated = 1));
         }
-        function isValidElement28(object4) {
+        function isValidElement31(object4) {
           return "object" === typeof object4 && null !== object4 && object4.$$typeof === REACT_ELEMENT_TYPE;
         }
         function escape(key) {
@@ -284,8 +284,8 @@
             return escaperLookup[match3];
           });
         }
-        function getElementKey(element, index2) {
-          return "object" === typeof element && null !== element && null != element.key ? (checkKeyStringCoercion(element.key), escape("" + element.key)) : index2.toString(36);
+        function getElementKey(element, index) {
+          return "object" === typeof element && null !== element && null != element.key ? (checkKeyStringCoercion(element.key), escape("" + element.key)) : index.toString(36);
         }
         function resolveThenable(thenable) {
           switch (thenable.status) {
@@ -346,13 +346,13 @@
             var childKey = "" === nameSoFar ? "." + getElementKey(invokeCallback, 0) : nameSoFar;
             isArrayImpl(callback) ? (escapedPrefix = "", null != childKey && (escapedPrefix = childKey.replace(userProvidedKeyEscapeRegex, "$&/") + "/"), mapIntoArray(callback, array4, escapedPrefix, "", function(c) {
               return c;
-            })) : null != callback && (isValidElement28(callback) && (null != callback.key && (invokeCallback && invokeCallback.key === callback.key || checkKeyStringCoercion(callback.key)), escapedPrefix = cloneAndReplaceKey(
+            })) : null != callback && (isValidElement31(callback) && (null != callback.key && (invokeCallback && invokeCallback.key === callback.key || checkKeyStringCoercion(callback.key)), escapedPrefix = cloneAndReplaceKey(
               callback,
               escapedPrefix + (null == callback.key || invokeCallback && invokeCallback.key === callback.key ? "" : ("" + callback.key).replace(
                 userProvidedKeyEscapeRegex,
                 "$&/"
               ) + "/") + childKey
-            ), "" !== nameSoFar && null != invokeCallback && isValidElement28(invokeCallback) && null == invokeCallback.key && invokeCallback._store && !invokeCallback._store.validated && (escapedPrefix._store.validated = 2), callback = escapedPrefix), array4.push(callback));
+            ), "" !== nameSoFar && null != invokeCallback && isValidElement31(invokeCallback) && null == invokeCallback.key && invokeCallback._store && !invokeCallback._store.validated && (escapedPrefix._store.validated = 2), callback = escapedPrefix), array4.push(callback));
             return 1;
           }
           invokeCallback = 0;
@@ -547,15 +547,15 @@
           }
         }, assign2 = Object.assign, emptyObject = {};
         Object.freeze(emptyObject);
-        Component7.prototype.isReactComponent = {};
-        Component7.prototype.setState = function(partialState, callback) {
+        Component5.prototype.isReactComponent = {};
+        Component5.prototype.setState = function(partialState, callback) {
           if ("object" !== typeof partialState && "function" !== typeof partialState && null != partialState)
             throw Error(
               "takes an object of state variables to update or a function which returns an object of state variables."
             );
           this.updater.enqueueSetState(this, partialState, callback, "setState");
         };
-        Component7.prototype.forceUpdate = function(callback) {
+        Component5.prototype.forceUpdate = function(callback) {
           this.updater.enqueueForceUpdate(this, callback, "forceUpdate");
         };
         var deprecatedAPIs = {
@@ -570,10 +570,10 @@
         };
         for (fnName in deprecatedAPIs)
           deprecatedAPIs.hasOwnProperty(fnName) && defineDeprecationWarning(fnName, deprecatedAPIs[fnName]);
-        ComponentDummy.prototype = Component7.prototype;
+        ComponentDummy.prototype = Component5.prototype;
         deprecatedAPIs = PureComponent2.prototype = new ComponentDummy();
         deprecatedAPIs.constructor = PureComponent2;
-        assign2(deprecatedAPIs, Component7.prototype);
+        assign2(deprecatedAPIs, Component5.prototype);
         deprecatedAPIs.isPureReactComponent = true;
         var isArrayImpl = Array.isArray, REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), ReactSharedInternals = {
           H: null,
@@ -653,7 +653,7 @@
             }) || [];
           },
           only: function(children) {
-            if (!isValidElement28(children))
+            if (!isValidElement31(children))
               throw Error(
                 "React.Children.only expected to receive a single React element child."
               );
@@ -662,7 +662,7 @@
         };
         exports.Activity = REACT_ACTIVITY_TYPE;
         exports.Children = fnName;
-        exports.Component = Component7;
+        exports.Component = Component5;
         exports.Fragment = REACT_FRAGMENT_TYPE2;
         exports.Profiler = REACT_PROFILER_TYPE;
         exports.PureComponent = PureComponent2;
@@ -863,20 +863,20 @@
           Object.seal(refObject);
           return refObject;
         };
-        exports.forwardRef = function(render4) {
-          null != render4 && render4.$$typeof === REACT_MEMO_TYPE ? console.error(
+        exports.forwardRef = function(render2) {
+          null != render2 && render2.$$typeof === REACT_MEMO_TYPE ? console.error(
             "forwardRef requires a render function but received a `memo` component. Instead of forwardRef(memo(...)), use memo(forwardRef(...))."
-          ) : "function" !== typeof render4 ? console.error(
+          ) : "function" !== typeof render2 ? console.error(
             "forwardRef requires a render function but was given %s.",
-            null === render4 ? "null" : typeof render4
-          ) : 0 !== render4.length && 2 !== render4.length && console.error(
+            null === render2 ? "null" : typeof render2
+          ) : 0 !== render2.length && 2 !== render2.length && console.error(
             "forwardRef render functions accept exactly two parameters: props and ref. %s",
-            1 === render4.length ? "Did you forget to use the ref parameter?" : "Any additional parameter will be undefined."
+            1 === render2.length ? "Did you forget to use the ref parameter?" : "Any additional parameter will be undefined."
           );
-          null != render4 && null != render4.defaultProps && console.error(
+          null != render2 && null != render2.defaultProps && console.error(
             "forwardRef render functions do not support defaultProps. Did you accidentally pass a React component?"
           );
-          var elementType = { $$typeof: REACT_FORWARD_REF_TYPE, render: render4 }, ownName;
+          var elementType = { $$typeof: REACT_FORWARD_REF_TYPE, render: render2 }, ownName;
           Object.defineProperty(elementType, "displayName", {
             enumerable: false,
             configurable: true,
@@ -885,12 +885,12 @@
             },
             set: function(name) {
               ownName = name;
-              render4.name || render4.displayName || (Object.defineProperty(render4, "name", { value: name }), render4.displayName = name);
+              render2.name || render2.displayName || (Object.defineProperty(render2, "name", { value: name }), render2.displayName = name);
             }
           });
           return elementType;
         };
-        exports.isValidElement = isValidElement28;
+        exports.isValidElement = isValidElement31;
         exports.lazy = function(ctor) {
           ctor = { _status: -1, _result: ctor };
           var lazyType = {
@@ -1132,7 +1132,7 @@
           var ContextProvider = REACT_PROVIDER_TYPE;
           var Element3 = REACT_ELEMENT_TYPE;
           var ForwardRef2 = REACT_FORWARD_REF_TYPE;
-          var Fragment25 = REACT_FRAGMENT_TYPE2;
+          var Fragment27 = REACT_FRAGMENT_TYPE2;
           var Lazy = REACT_LAZY_TYPE;
           var Memo = REACT_MEMO_TYPE;
           var Portal2 = REACT_PORTAL_TYPE;
@@ -1200,7 +1200,7 @@
           exports.ContextProvider = ContextProvider;
           exports.Element = Element3;
           exports.ForwardRef = ForwardRef2;
-          exports.Fragment = Fragment25;
+          exports.Fragment = Fragment27;
           exports.Lazy = Lazy;
           exports.Memo = Memo;
           exports.Portal = Portal2;
@@ -1291,7 +1291,7 @@
           return dispatcher;
         }
         "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-        var React408 = require_react(), Internals = {
+        var React437 = require_react(), Internals = {
           d: {
             f: noop4,
             r: function() {
@@ -1309,7 +1309,7 @@
           },
           p: 0,
           findDOMNode: null
-        }, REACT_PORTAL_TYPE = Symbol.for("react.portal"), ReactSharedInternals = React408.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
+        }, REACT_PORTAL_TYPE = Symbol.for("react.portal"), ReactSharedInternals = React437.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
         "function" === typeof Map && null != Map.prototype && "function" === typeof Map.prototype.forEach && "function" === typeof Set && null != Set.prototype && "function" === typeof Set.prototype.clear && "function" === typeof Set.prototype.forEach || console.error(
           "React depends on Map and Set built-in types. Make sure that you load a polyfill in older browsers. https://reactjs.org/link/react-polyfills"
         );
@@ -1564,13 +1564,13 @@
           }
         }
         function push(heap, node2) {
-          var index2 = heap.length;
+          var index = heap.length;
           heap.push(node2);
           a:
-            for (; 0 < index2; ) {
-              var parentIndex = index2 - 1 >>> 1, parent = heap[parentIndex];
+            for (; 0 < index; ) {
+              var parentIndex = index - 1 >>> 1, parent = heap[parentIndex];
               if (0 < compare(parent, node2))
-                heap[parentIndex] = node2, heap[index2] = parent, index2 = parentIndex;
+                heap[parentIndex] = node2, heap[index] = parent, index = parentIndex;
               else
                 break a;
             }
@@ -1585,12 +1585,12 @@
           if (last !== first) {
             heap[0] = last;
             a:
-              for (var index2 = 0, length2 = heap.length, halfLength = length2 >>> 1; index2 < halfLength; ) {
-                var leftIndex = 2 * (index2 + 1) - 1, left = heap[leftIndex], rightIndex = leftIndex + 1, right = heap[rightIndex];
+              for (var index = 0, length2 = heap.length, halfLength = length2 >>> 1; index < halfLength; ) {
+                var leftIndex = 2 * (index + 1) - 1, left = heap[leftIndex], rightIndex = leftIndex + 1, right = heap[rightIndex];
                 if (0 > compare(left, last))
-                  rightIndex < length2 && 0 > compare(right, left) ? (heap[index2] = right, heap[rightIndex] = last, index2 = rightIndex) : (heap[index2] = left, heap[leftIndex] = last, index2 = leftIndex);
+                  rightIndex < length2 && 0 > compare(right, left) ? (heap[index] = right, heap[rightIndex] = last, index = rightIndex) : (heap[index] = left, heap[leftIndex] = last, index = leftIndex);
                 else if (rightIndex < length2 && 0 > compare(right, last))
-                  heap[index2] = right, heap[rightIndex] = last, index2 = rightIndex;
+                  heap[index] = right, heap[rightIndex] = last, index = rightIndex;
                 else
                   break a;
               }
@@ -1790,11 +1790,11 @@
             fiber = fiber.next, id--;
           return fiber;
         }
-        function copyWithSetImpl(obj, path, index2, value) {
-          if (index2 >= path.length)
+        function copyWithSetImpl(obj, path, index, value) {
+          if (index >= path.length)
             return value;
-          var key = path[index2], updated = isArrayImpl(obj) ? obj.slice() : assign2({}, obj);
-          updated[key] = copyWithSetImpl(obj[key], path, index2 + 1, value);
+          var key = path[index], updated = isArrayImpl(obj) ? obj.slice() : assign2({}, obj);
+          updated[key] = copyWithSetImpl(obj[key], path, index + 1, value);
           return updated;
         }
         function copyWithRename(obj, oldPath, newPath) {
@@ -1811,21 +1811,21 @@
             return copyWithRenameImpl(obj, oldPath, newPath, 0);
           }
         }
-        function copyWithRenameImpl(obj, oldPath, newPath, index2) {
-          var oldKey = oldPath[index2], updated = isArrayImpl(obj) ? obj.slice() : assign2({}, obj);
-          index2 + 1 === oldPath.length ? (updated[newPath[index2]] = updated[oldKey], isArrayImpl(updated) ? updated.splice(oldKey, 1) : delete updated[oldKey]) : updated[oldKey] = copyWithRenameImpl(
+        function copyWithRenameImpl(obj, oldPath, newPath, index) {
+          var oldKey = oldPath[index], updated = isArrayImpl(obj) ? obj.slice() : assign2({}, obj);
+          index + 1 === oldPath.length ? (updated[newPath[index]] = updated[oldKey], isArrayImpl(updated) ? updated.splice(oldKey, 1) : delete updated[oldKey]) : updated[oldKey] = copyWithRenameImpl(
             obj[oldKey],
             oldPath,
             newPath,
-            index2 + 1
+            index + 1
           );
           return updated;
         }
-        function copyWithDeleteImpl(obj, path, index2) {
-          var key = path[index2], updated = isArrayImpl(obj) ? obj.slice() : assign2({}, obj);
-          if (index2 + 1 === path.length)
+        function copyWithDeleteImpl(obj, path, index) {
+          var key = path[index], updated = isArrayImpl(obj) ? obj.slice() : assign2({}, obj);
+          if (index + 1 === path.length)
             return isArrayImpl(updated) ? updated.splice(key, 1) : delete updated[key], updated;
-          updated[key] = copyWithDeleteImpl(obj[key], path, index2 + 1);
+          updated[key] = copyWithDeleteImpl(obj[key], path, index + 1);
           return updated;
         }
         function shouldSuspendImpl() {
@@ -2741,13 +2741,13 @@
           root2.shellSuspendCounter = 0;
           var entanglements = root2.entanglements, expirationTimes = root2.expirationTimes, hiddenUpdates = root2.hiddenUpdates;
           for (remainingLanes = previouslyPendingLanes & ~remainingLanes; 0 < remainingLanes; ) {
-            var index2 = 31 - clz32(remainingLanes), lane = 1 << index2;
-            entanglements[index2] = 0;
-            expirationTimes[index2] = -1;
-            var hiddenUpdatesForLane = hiddenUpdates[index2];
+            var index = 31 - clz32(remainingLanes), lane = 1 << index;
+            entanglements[index] = 0;
+            expirationTimes[index] = -1;
+            var hiddenUpdatesForLane = hiddenUpdates[index];
             if (null !== hiddenUpdatesForLane)
-              for (hiddenUpdates[index2] = null, index2 = 0; index2 < hiddenUpdatesForLane.length; index2++) {
-                var update = hiddenUpdatesForLane[index2];
+              for (hiddenUpdates[index] = null, index = 0; index < hiddenUpdatesForLane.length; index++) {
+                var update = hiddenUpdatesForLane[index];
                 null !== update && (update.lane &= -536870913);
               }
             remainingLanes &= ~lane;
@@ -2765,8 +2765,8 @@
         function markRootEntangled(root2, entangledLanes) {
           var rootEntangledLanes = root2.entangledLanes |= entangledLanes;
           for (root2 = root2.entanglements; rootEntangledLanes; ) {
-            var index2 = 31 - clz32(rootEntangledLanes), lane = 1 << index2;
-            lane & entangledLanes | root2[index2] & entangledLanes && (root2[index2] |= entangledLanes);
+            var index = 31 - clz32(rootEntangledLanes), lane = 1 << index;
+            lane & entangledLanes | root2[index] & entangledLanes && (root2[index] |= entangledLanes);
             rootEntangledLanes &= ~lane;
           }
         }
@@ -2817,21 +2817,21 @@
         function addFiberToLanesMap(root2, fiber, lanes) {
           if (isDevToolsPresent)
             for (root2 = root2.pendingUpdatersLaneMap; 0 < lanes; ) {
-              var index2 = 31 - clz32(lanes), lane = 1 << index2;
-              root2[index2].add(fiber);
+              var index = 31 - clz32(lanes), lane = 1 << index;
+              root2[index].add(fiber);
               lanes &= ~lane;
             }
         }
         function movePendingFibersToMemoized(root2, lanes) {
           if (isDevToolsPresent)
             for (var pendingUpdatersLaneMap = root2.pendingUpdatersLaneMap, memoizedUpdaters = root2.memoizedUpdaters; 0 < lanes; ) {
-              var index2 = 31 - clz32(lanes);
-              root2 = 1 << index2;
-              index2 = pendingUpdatersLaneMap[index2];
-              0 < index2.size && (index2.forEach(function(fiber) {
+              var index = 31 - clz32(lanes);
+              root2 = 1 << index;
+              index = pendingUpdatersLaneMap[index];
+              0 < index.size && (index.forEach(function(fiber) {
                 var alternate = fiber.alternate;
                 null !== alternate && memoizedUpdaters.has(alternate) || memoizedUpdaters.add(fiber);
-              }), index2.clear());
+              }), index.clear());
               lanes &= ~root2;
             }
         }
@@ -3161,7 +3161,7 @@
           "number" === type5 && getActiveElement(node2.ownerDocument) === node2 || node2.defaultValue === "" + value || (node2.defaultValue = "" + value);
         }
         function validateOptionProps(element, props) {
-          null == props.value && ("object" === typeof props.children && null !== props.children ? React408.Children.forEach(props.children, function(child) {
+          null == props.value && ("object" === typeof props.children && null !== props.children ? React437.Children.forEach(props.children, function(child) {
             null == child || "string" === typeof child || "number" === typeof child || "bigint" === typeof child || didWarnInvalidChild || (didWarnInvalidChild = true, console.error(
               "Cannot infer the option value of complex children. Pass a `value` prop or use a plain string as children to <option>."
             ));
@@ -5201,9 +5201,9 @@
           this._debugHookTypes = null;
           hasBadMapPolyfill || "function" !== typeof Object.preventExtensions || Object.preventExtensions(this);
         }
-        function shouldConstruct(Component7) {
-          Component7 = Component7.prototype;
-          return !(!Component7 || !Component7.isReactComponent);
+        function shouldConstruct(Component5) {
+          Component5 = Component5.prototype;
+          return !(!Component5 || !Component5.isReactComponent);
         }
         function createWorkInProgress(current2, pendingProps) {
           var workInProgress2 = current2.alternate;
@@ -5398,7 +5398,7 @@
           treeForkProvider = workInProgress2;
           treeForkCount = totalChildren;
         }
-        function pushTreeId(workInProgress2, totalChildren, index2) {
+        function pushTreeId(workInProgress2, totalChildren, index) {
           warnIfNotHydrating();
           idStack[idStackIndex++] = treeContextId;
           idStack[idStackIndex++] = treeContextOverflow;
@@ -5408,17 +5408,17 @@
           workInProgress2 = treeContextOverflow;
           var baseLength = 32 - clz32(baseIdWithLeadingBit) - 1;
           baseIdWithLeadingBit &= ~(1 << baseLength);
-          index2 += 1;
+          index += 1;
           var length2 = 32 - clz32(totalChildren) + baseLength;
           if (30 < length2) {
             var numberOfOverflowBits = baseLength - baseLength % 5;
             length2 = (baseIdWithLeadingBit & (1 << numberOfOverflowBits) - 1).toString(32);
             baseIdWithLeadingBit >>= numberOfOverflowBits;
             baseLength -= numberOfOverflowBits;
-            treeContextId = 1 << 32 - clz32(totalChildren) + baseLength | index2 << baseLength | baseIdWithLeadingBit;
+            treeContextId = 1 << 32 - clz32(totalChildren) + baseLength | index << baseLength | baseIdWithLeadingBit;
             treeContextOverflow = length2 + workInProgress2;
           } else
-            treeContextId = 1 << length2 | index2 << baseLength | baseIdWithLeadingBit, treeContextOverflow = workInProgress2;
+            treeContextId = 1 << length2 | index << baseLength | baseIdWithLeadingBit, treeContextOverflow = workInProgress2;
         }
         function pushMaterializedTreeId(workInProgress2) {
           warnIfNotHydrating();
@@ -5857,8 +5857,8 @@
         }
         function startUpdateTimerByLane(lane, method4, fiber) {
           if (0 !== (lane & 127))
-            0 > blockingUpdateTime && (blockingUpdateTime = now2(), blockingUpdateTask = createTask(method4), blockingUpdateMethodName = method4, null != fiber && (blockingUpdateComponentName = getComponentNameFromFiber(fiber)), (executionContext & (RenderContext | CommitContext)) !== NoContext && (componentEffectSpawnedUpdate = true, blockingUpdateType = SPAWNED_UPDATE), lane = resolveEventTimeStamp(), method4 = resolveEventType(), lane !== blockingEventRepeatTime || method4 !== blockingEventType ? blockingEventRepeatTime = -1.1 : null !== method4 && (blockingUpdateType = SPAWNED_UPDATE), blockingEventTime = lane, blockingEventType = method4);
-          else if (0 !== (lane & 4194048) && 0 > transitionUpdateTime && (transitionUpdateTime = now2(), transitionUpdateTask = createTask(method4), transitionUpdateMethodName = method4, null != fiber && (transitionUpdateComponentName = getComponentNameFromFiber(fiber)), 0 > transitionStartTime)) {
+            0 > blockingUpdateTime && (blockingUpdateTime = now(), blockingUpdateTask = createTask(method4), blockingUpdateMethodName = method4, null != fiber && (blockingUpdateComponentName = getComponentNameFromFiber(fiber)), (executionContext & (RenderContext | CommitContext)) !== NoContext && (componentEffectSpawnedUpdate = true, blockingUpdateType = SPAWNED_UPDATE), lane = resolveEventTimeStamp(), method4 = resolveEventType(), lane !== blockingEventRepeatTime || method4 !== blockingEventType ? blockingEventRepeatTime = -1.1 : null !== method4 && (blockingUpdateType = SPAWNED_UPDATE), blockingEventTime = lane, blockingEventType = method4);
+          else if (0 !== (lane & 4194048) && 0 > transitionUpdateTime && (transitionUpdateTime = now(), transitionUpdateTask = createTask(method4), transitionUpdateMethodName = method4, null != fiber && (transitionUpdateComponentName = getComponentNameFromFiber(fiber)), 0 > transitionStartTime)) {
             lane = resolveEventTimeStamp();
             method4 = resolveEventType();
             if (lane !== transitionEventRepeatTime || method4 !== transitionEventType)
@@ -5869,7 +5869,7 @@
         }
         function startHostActionTimer(fiber) {
           if (0 > blockingUpdateTime) {
-            blockingUpdateTime = now2();
+            blockingUpdateTime = now();
             blockingUpdateTask = null != fiber._debugTask ? fiber._debugTask : null;
             (executionContext & (RenderContext | CommitContext)) !== NoContext && (blockingUpdateType = SPAWNED_UPDATE);
             var newEventTime = resolveEventTimeStamp(), newEventType = resolveEventType();
@@ -5877,7 +5877,7 @@
             blockingEventTime = newEventTime;
             blockingEventType = newEventType;
           }
-          if (0 > transitionUpdateTime && (transitionUpdateTime = now2(), transitionUpdateTask = null != fiber._debugTask ? fiber._debugTask : null, 0 > transitionStartTime)) {
+          if (0 > transitionUpdateTime && (transitionUpdateTime = now(), transitionUpdateTask = null != fiber._debugTask ? fiber._debugTask : null, 0 > transitionStartTime)) {
             fiber = resolveEventTimeStamp();
             newEventTime = resolveEventType();
             if (fiber !== transitionEventRepeatTime || newEventTime !== transitionEventType)
@@ -5931,12 +5931,12 @@
           return prev2;
         }
         function startProfilerTimer(fiber) {
-          profilerStartTime = now2();
+          profilerStartTime = now();
           0 > fiber.actualStartTime && (fiber.actualStartTime = profilerStartTime);
         }
         function stopProfilerTimerIfRunningAndRecordDuration(fiber) {
           if (0 <= profilerStartTime) {
-            var elapsedTime = now2() - profilerStartTime;
+            var elapsedTime = now() - profilerStartTime;
             fiber.actualDuration += elapsedTime;
             fiber.selfBaseDuration = elapsedTime;
             profilerStartTime = -1;
@@ -5944,14 +5944,14 @@
         }
         function stopProfilerTimerIfRunningAndRecordIncompleteDuration(fiber) {
           if (0 <= profilerStartTime) {
-            var elapsedTime = now2() - profilerStartTime;
+            var elapsedTime = now() - profilerStartTime;
             fiber.actualDuration += elapsedTime;
             profilerStartTime = -1;
           }
         }
         function recordEffectDuration() {
           if (0 <= profilerStartTime) {
-            var endTime = now2(), elapsedTime = endTime - profilerStartTime;
+            var endTime = now(), elapsedTime = endTime - profilerStartTime;
             profilerStartTime = -1;
             profilerEffectDuration += elapsedTime;
             componentEffectDuration += elapsedTime;
@@ -5965,7 +5965,7 @@
           commitErrors.push(errorInfo);
         }
         function startEffectTimer() {
-          profilerStartTime = now2();
+          profilerStartTime = now();
           0 > componentEffectStartTime && (componentEffectStartTime = profilerStartTime);
         }
         function transferActualDuration(fiber) {
@@ -6043,13 +6043,13 @@
           thenable = thenable.status;
           return "fulfilled" === thenable || "rejected" === thenable;
         }
-        function trackUsedThenable(thenableState2, thenable, index2) {
+        function trackUsedThenable(thenableState2, thenable, index) {
           null !== ReactSharedInternals.actQueue && (ReactSharedInternals.didUsePromise = true);
           var trackedThenables = thenableState2.thenables;
-          index2 = trackedThenables[index2];
-          void 0 === index2 ? trackedThenables.push(thenable) : index2 !== thenable && (thenableState2.didWarnAboutUncachedPromise || (thenableState2.didWarnAboutUncachedPromise = true, console.error(
+          index = trackedThenables[index];
+          void 0 === index ? trackedThenables.push(thenable) : index !== thenable && (thenableState2.didWarnAboutUncachedPromise || (thenableState2.didWarnAboutUncachedPromise = true, console.error(
             "A component was suspended by an uncached promise. Creating promises inside a Client Component or hook is not yet supported, except via a Suspense-compatible library or framework."
-          )), thenable.then(noop$1, noop$1), thenable = index2);
+          )), thenable.then(noop$1, noop$1), thenable = index);
           if (void 0 === thenable._debugInfo) {
             thenableState2 = performance.now();
             trackedThenables = thenable.displayName;
@@ -6170,10 +6170,10 @@
           }
         }
         function unwrapThenable(thenable) {
-          var index2 = thenableIndexCounter$1;
+          var index = thenableIndexCounter$1;
           thenableIndexCounter$1 += 1;
           null === thenableState$1 && (thenableState$1 = createThenableState());
-          return trackUsedThenable(thenableState$1, thenable, index2);
+          return trackUsedThenable(thenableState$1, thenable, index);
         }
         function coerceRef(workInProgress2, element) {
           element = element.props.ref;
@@ -6861,13 +6861,13 @@
             }
           };
         }
-        function validateSuspenseListNestedChild(childSlot, index2) {
+        function validateSuspenseListNestedChild(childSlot, index) {
           var isAnArray = isArrayImpl(childSlot);
           childSlot = !isAnArray && "function" === typeof getIteratorFn(childSlot);
           return isAnArray || childSlot ? (isAnArray = isAnArray ? "array" : "iterable", console.error(
             "A nested %s was passed to row #%s in <SuspenseList />. Wrap it in an additional SuspenseList to configure its revealOrder: <SuspenseList revealOrder=...> ... <SuspenseList revealOrder=...>{%s}</SuspenseList> ... </SuspenseList>",
             isAnArray,
-            index2,
+            index,
             isAnArray
           ), false) : true;
         }
@@ -7242,13 +7242,13 @@
               return false;
           return true;
         }
-        function renderWithHooks(current2, workInProgress2, Component7, props, secondArg, nextRenderLanes) {
+        function renderWithHooks(current2, workInProgress2, Component5, props, secondArg, nextRenderLanes) {
           renderLanes = nextRenderLanes;
           currentlyRenderingFiber = workInProgress2;
           hookTypesDev = null !== current2 ? current2._debugHookTypes : null;
           hookTypesUpdateIndexDev = -1;
           ignorePreviousDependencies = null !== current2 && current2.type !== workInProgress2.type;
-          if ("[object AsyncFunction]" === Object.prototype.toString.call(Component7) || "[object AsyncGeneratorFunction]" === Object.prototype.toString.call(Component7))
+          if ("[object AsyncFunction]" === Object.prototype.toString.call(Component5) || "[object AsyncGeneratorFunction]" === Object.prototype.toString.call(Component5))
             nextRenderLanes = getComponentNameFromFiber(currentlyRenderingFiber), didWarnAboutAsyncClientComponent.has(nextRenderLanes) || (didWarnAboutAsyncClientComponent.add(nextRenderLanes), console.error(
               "%s is an async Client Component. Only Server Components can be async at the moment. This error is often caused by accidentally adding `'use client'` to a module that was originally written for the server.",
               null === nextRenderLanes ? "An unknown Component" : "<" + nextRenderLanes + ">"
@@ -7258,11 +7258,11 @@
           workInProgress2.lanes = 0;
           ReactSharedInternals.H = null !== current2 && null !== current2.memoizedState ? HooksDispatcherOnUpdateInDEV : null !== hookTypesDev ? HooksDispatcherOnMountWithHookTypesInDEV : HooksDispatcherOnMountInDEV;
           shouldDoubleInvokeUserFnsInHooksDEV = nextRenderLanes = (workInProgress2.mode & StrictLegacyMode) !== NoMode;
-          var children = callComponentInDEV(Component7, props, secondArg);
+          var children = callComponentInDEV(Component5, props, secondArg);
           shouldDoubleInvokeUserFnsInHooksDEV = false;
           didScheduleRenderPhaseUpdateDuringThisPass && (children = renderWithHooksAgain(
             workInProgress2,
-            Component7,
+            Component5,
             props,
             secondArg
           ));
@@ -7271,7 +7271,7 @@
             try {
               children = renderWithHooksAgain(
                 workInProgress2,
-                Component7,
+                Component5,
                 props,
                 secondArg
               );
@@ -7310,7 +7310,7 @@
             "`use` was called from inside a try/catch block. This is not allowed and can lead to unexpected behavior. To handle errors triggered by `use`, wrap your component in a error boundary."
           )));
         }
-        function renderWithHooksAgain(workInProgress2, Component7, props, secondArg) {
+        function renderWithHooksAgain(workInProgress2, Component5, props, secondArg) {
           currentlyRenderingFiber = workInProgress2;
           var numberOfReRenders = 0;
           do {
@@ -7333,7 +7333,7 @@
             }
             hookTypesUpdateIndexDev = -1;
             ReactSharedInternals.H = HooksDispatcherOnRerenderInDEV;
-            children = callComponentInDEV(Component7, props, secondArg);
+            children = callComponentInDEV(Component5, props, secondArg);
           } while (didScheduleRenderPhaseUpdateDuringThisPass);
           return children;
         }
@@ -7415,12 +7415,12 @@
           return { lastEffect: null, events: null, stores: null, memoCache: null };
         }
         function useThenable(thenable) {
-          var index2 = thenableIndexCounter;
+          var index = thenableIndexCounter;
           thenableIndexCounter += 1;
           null === thenableState && (thenableState = createThenableState());
-          thenable = trackUsedThenable(thenableState, thenable, index2);
-          index2 = currentlyRenderingFiber;
-          null === (null === workInProgressHook ? index2.memoizedState : workInProgressHook.next) && (index2 = index2.alternate, ReactSharedInternals.H = null !== index2 && null !== index2.memoizedState ? HooksDispatcherOnUpdateInDEV : HooksDispatcherOnMountInDEV);
+          thenable = trackUsedThenable(thenableState, thenable, index);
+          index = currentlyRenderingFiber;
+          null === (null === workInProgressHook ? index.memoizedState : workInProgressHook.next) && (index = index.alternate, ReactSharedInternals.H = null !== index && null !== index.memoizedState ? HooksDispatcherOnUpdateInDEV : HooksDispatcherOnMountInDEV);
           return thenable;
         }
         function use(usable) {
@@ -8565,17 +8565,17 @@
             null
           ));
         }
-        function resolveClassComponentProps(Component7, baseProps) {
+        function resolveClassComponentProps(Component5, baseProps) {
           var newProps = baseProps;
           if ("ref" in baseProps) {
             newProps = {};
             for (var propName in baseProps)
               "ref" !== propName && (newProps[propName] = baseProps[propName]);
           }
-          if (Component7 = Component7.defaultProps) {
+          if (Component5 = Component5.defaultProps) {
             newProps === baseProps && (newProps = assign2({}, newProps));
-            for (var _propName in Component7)
-              void 0 === newProps[_propName] && (newProps[_propName] = Component7[_propName]);
+            for (var _propName in Component5)
+              void 0 === newProps[_propName] && (newProps[_propName] = Component5[_propName]);
           }
           return newProps;
         }
@@ -8805,8 +8805,8 @@
             renderLanes2
           );
         }
-        function updateForwardRef(current2, workInProgress2, Component7, nextProps, renderLanes2) {
-          Component7 = Component7.render;
+        function updateForwardRef(current2, workInProgress2, Component5, nextProps, renderLanes2) {
+          Component5 = Component5.render;
           var ref = workInProgress2.ref;
           if ("ref" in nextProps) {
             var propsWithoutRef = {};
@@ -8818,7 +8818,7 @@
           nextProps = renderWithHooks(
             current2,
             workInProgress2,
-            Component7,
+            Component5,
             propsWithoutRef,
             ref,
             renderLanes2
@@ -8831,19 +8831,19 @@
           reconcileChildren(current2, workInProgress2, nextProps, renderLanes2);
           return workInProgress2.child;
         }
-        function updateMemoComponent(current2, workInProgress2, Component7, nextProps, renderLanes2) {
+        function updateMemoComponent(current2, workInProgress2, Component5, nextProps, renderLanes2) {
           if (null === current2) {
-            var type5 = Component7.type;
-            if ("function" === typeof type5 && !shouldConstruct(type5) && void 0 === type5.defaultProps && null === Component7.compare)
-              return Component7 = resolveFunctionForHotReloading(type5), workInProgress2.tag = 15, workInProgress2.type = Component7, validateFunctionComponentInDev(workInProgress2, type5), updateSimpleMemoComponent(
+            var type5 = Component5.type;
+            if ("function" === typeof type5 && !shouldConstruct(type5) && void 0 === type5.defaultProps && null === Component5.compare)
+              return Component5 = resolveFunctionForHotReloading(type5), workInProgress2.tag = 15, workInProgress2.type = Component5, validateFunctionComponentInDev(workInProgress2, type5), updateSimpleMemoComponent(
                 current2,
                 workInProgress2,
-                Component7,
+                Component5,
                 nextProps,
                 renderLanes2
               );
             current2 = createFiberFromTypeAndProps(
-              Component7.type,
+              Component5.type,
               null,
               nextProps,
               workInProgress2,
@@ -8857,9 +8857,9 @@
           type5 = current2.child;
           if (!checkScheduledUpdateOrContext(current2, renderLanes2)) {
             var prevProps = type5.memoizedProps;
-            Component7 = Component7.compare;
-            Component7 = null !== Component7 ? Component7 : shallowEqual;
-            if (Component7(prevProps, nextProps) && current2.ref === workInProgress2.ref)
+            Component5 = Component5.compare;
+            Component5 = null !== Component5 ? Component5 : shallowEqual;
+            if (Component5(prevProps, nextProps) && current2.ref === workInProgress2.ref)
               return bailoutOnAlreadyFinishedWork(
                 current2,
                 workInProgress2,
@@ -8872,7 +8872,7 @@
           current2.return = workInProgress2;
           return workInProgress2.child = current2;
         }
-        function updateSimpleMemoComponent(current2, workInProgress2, Component7, nextProps, renderLanes2) {
+        function updateSimpleMemoComponent(current2, workInProgress2, Component5, nextProps, renderLanes2) {
           if (null !== current2) {
             var prevProps = current2.memoizedProps;
             if (shallowEqual(prevProps, nextProps) && current2.ref === workInProgress2.ref && workInProgress2.type === current2.type)
@@ -8884,7 +8884,7 @@
           return updateFunctionComponent(
             current2,
             workInProgress2,
-            Component7,
+            Component5,
             nextProps,
             renderLanes2
           );
@@ -9075,9 +9075,9 @@
               workInProgress2.flags |= 4194816;
           }
         }
-        function updateFunctionComponent(current2, workInProgress2, Component7, nextProps, renderLanes2) {
-          if (Component7.prototype && "function" === typeof Component7.prototype.render) {
-            var componentName2 = getComponentNameFromType(Component7) || "Unknown";
+        function updateFunctionComponent(current2, workInProgress2, Component5, nextProps, renderLanes2) {
+          if (Component5.prototype && "function" === typeof Component5.prototype.render) {
+            var componentName2 = getComponentNameFromType(Component5) || "Unknown";
             didWarnAboutBadClass[componentName2] || (console.error(
               "The <%s /> component appears to have a render method, but doesn't extend React.Component. This is likely to cause errors. Change %s to extend React.Component instead.",
               componentName2,
@@ -9088,15 +9088,15 @@
             workInProgress2,
             null
           );
-          null === current2 && (validateFunctionComponentInDev(workInProgress2, workInProgress2.type), Component7.contextTypes && (componentName2 = getComponentNameFromType(Component7) || "Unknown", didWarnAboutContextTypes[componentName2] || (didWarnAboutContextTypes[componentName2] = true, console.error(
+          null === current2 && (validateFunctionComponentInDev(workInProgress2, workInProgress2.type), Component5.contextTypes && (componentName2 = getComponentNameFromType(Component5) || "Unknown", didWarnAboutContextTypes[componentName2] || (didWarnAboutContextTypes[componentName2] = true, console.error(
             "%s uses the legacy contextTypes API which was removed in React 19. Use React.createContext() with React.useContext() instead. (https://react.dev/link/legacy-context)",
             componentName2
           ))));
           prepareToReadContext(workInProgress2);
-          Component7 = renderWithHooks(
+          Component5 = renderWithHooks(
             current2,
             workInProgress2,
-            Component7,
+            Component5,
             nextProps,
             void 0,
             renderLanes2
@@ -9106,30 +9106,30 @@
             return bailoutHooks(current2, workInProgress2, renderLanes2), bailoutOnAlreadyFinishedWork(current2, workInProgress2, renderLanes2);
           isHydrating && nextProps && pushMaterializedTreeId(workInProgress2);
           workInProgress2.flags |= 1;
-          reconcileChildren(current2, workInProgress2, Component7, renderLanes2);
+          reconcileChildren(current2, workInProgress2, Component5, renderLanes2);
           return workInProgress2.child;
         }
-        function replayFunctionComponent(current2, workInProgress2, nextProps, Component7, secondArg, renderLanes2) {
+        function replayFunctionComponent(current2, workInProgress2, nextProps, Component5, secondArg, renderLanes2) {
           prepareToReadContext(workInProgress2);
           hookTypesUpdateIndexDev = -1;
           ignorePreviousDependencies = null !== current2 && current2.type !== workInProgress2.type;
           workInProgress2.updateQueue = null;
           nextProps = renderWithHooksAgain(
             workInProgress2,
-            Component7,
+            Component5,
             nextProps,
             secondArg
           );
           finishRenderingHooks(current2, workInProgress2);
-          Component7 = checkDidRenderIdHook();
+          Component5 = checkDidRenderIdHook();
           if (null !== current2 && !didReceiveUpdate)
             return bailoutHooks(current2, workInProgress2, renderLanes2), bailoutOnAlreadyFinishedWork(current2, workInProgress2, renderLanes2);
-          isHydrating && Component7 && pushMaterializedTreeId(workInProgress2);
+          isHydrating && Component5 && pushMaterializedTreeId(workInProgress2);
           workInProgress2.flags |= 1;
           reconcileChildren(current2, workInProgress2, nextProps, renderLanes2);
           return workInProgress2.child;
         }
-        function updateClassComponent(current2, workInProgress2, Component7, nextProps, renderLanes2) {
+        function updateClassComponent(current2, workInProgress2, Component5, nextProps, renderLanes2) {
           switch (shouldErrorImpl(workInProgress2)) {
             case false:
               var _instance = workInProgress2.stateNode, state = new workInProgress2.type(
@@ -9161,18 +9161,18 @@
           prepareToReadContext(workInProgress2);
           if (null === workInProgress2.stateNode) {
             state = emptyContextObject;
-            _instance = Component7.contextType;
-            "contextType" in Component7 && null !== _instance && (void 0 === _instance || _instance.$$typeof !== REACT_CONTEXT_TYPE) && !didWarnAboutInvalidateContextType.has(Component7) && (didWarnAboutInvalidateContextType.add(Component7), lane = void 0 === _instance ? " However, it is set to undefined. This can be caused by a typo or by mixing up named and default imports. This can also happen due to a circular dependency, so try moving the createContext() call to a separate file." : "object" !== typeof _instance ? " However, it is set to a " + typeof _instance + "." : _instance.$$typeof === REACT_CONSUMER_TYPE ? " Did you accidentally pass the Context.Consumer instead?" : " However, it is set to an object with keys {" + Object.keys(_instance).join(", ") + "}.", console.error(
+            _instance = Component5.contextType;
+            "contextType" in Component5 && null !== _instance && (void 0 === _instance || _instance.$$typeof !== REACT_CONTEXT_TYPE) && !didWarnAboutInvalidateContextType.has(Component5) && (didWarnAboutInvalidateContextType.add(Component5), lane = void 0 === _instance ? " However, it is set to undefined. This can be caused by a typo or by mixing up named and default imports. This can also happen due to a circular dependency, so try moving the createContext() call to a separate file." : "object" !== typeof _instance ? " However, it is set to a " + typeof _instance + "." : _instance.$$typeof === REACT_CONSUMER_TYPE ? " Did you accidentally pass the Context.Consumer instead?" : " However, it is set to an object with keys {" + Object.keys(_instance).join(", ") + "}.", console.error(
               "%s defines an invalid contextType. contextType should point to the Context object returned by React.createContext().%s",
-              getComponentNameFromType(Component7) || "Component",
+              getComponentNameFromType(Component5) || "Component",
               lane
             ));
             "object" === typeof _instance && null !== _instance && (state = readContext(_instance));
-            _instance = new Component7(nextProps, state);
+            _instance = new Component5(nextProps, state);
             if (workInProgress2.mode & StrictLegacyMode) {
               setIsStrictModeForDevtools(true);
               try {
-                _instance = new Component7(nextProps, state);
+                _instance = new Component5(nextProps, state);
               } finally {
                 setIsStrictModeForDevtools(false);
               }
@@ -9182,20 +9182,20 @@
             workInProgress2.stateNode = _instance;
             _instance._reactInternals = workInProgress2;
             _instance._reactInternalInstance = fakeInternalInstance;
-            "function" === typeof Component7.getDerivedStateFromProps && null === state && (state = getComponentNameFromType(Component7) || "Component", didWarnAboutUninitializedState.has(state) || (didWarnAboutUninitializedState.add(state), console.error(
+            "function" === typeof Component5.getDerivedStateFromProps && null === state && (state = getComponentNameFromType(Component5) || "Component", didWarnAboutUninitializedState.has(state) || (didWarnAboutUninitializedState.add(state), console.error(
               "`%s` uses `getDerivedStateFromProps` but its initial state is %s. This is not recommended. Instead, define the initial state by assigning an object to `this.state` in the constructor of `%s`. This ensures that `getDerivedStateFromProps` arguments have a consistent shape.",
               state,
               null === _instance.state ? "null" : "undefined",
               state
             )));
-            if ("function" === typeof Component7.getDerivedStateFromProps || "function" === typeof _instance.getSnapshotBeforeUpdate) {
+            if ("function" === typeof Component5.getDerivedStateFromProps || "function" === typeof _instance.getSnapshotBeforeUpdate) {
               var foundWillUpdateName = lane = state = null;
               "function" === typeof _instance.componentWillMount && true !== _instance.componentWillMount.__suppressDeprecationWarning ? state = "componentWillMount" : "function" === typeof _instance.UNSAFE_componentWillMount && (state = "UNSAFE_componentWillMount");
               "function" === typeof _instance.componentWillReceiveProps && true !== _instance.componentWillReceiveProps.__suppressDeprecationWarning ? lane = "componentWillReceiveProps" : "function" === typeof _instance.UNSAFE_componentWillReceiveProps && (lane = "UNSAFE_componentWillReceiveProps");
               "function" === typeof _instance.componentWillUpdate && true !== _instance.componentWillUpdate.__suppressDeprecationWarning ? foundWillUpdateName = "componentWillUpdate" : "function" === typeof _instance.UNSAFE_componentWillUpdate && (foundWillUpdateName = "UNSAFE_componentWillUpdate");
               if (null !== state || null !== lane || null !== foundWillUpdateName) {
-                _instance = getComponentNameFromType(Component7) || "Component";
-                var newApiName = "function" === typeof Component7.getDerivedStateFromProps ? "getDerivedStateFromProps()" : "getSnapshotBeforeUpdate()";
+                _instance = getComponentNameFromType(Component5) || "Component";
+                var newApiName = "function" === typeof Component5.getDerivedStateFromProps ? "getDerivedStateFromProps()" : "getSnapshotBeforeUpdate()";
                 didWarnAboutLegacyLifecyclesAndDerivedState.has(_instance) || (didWarnAboutLegacyLifecyclesAndDerivedState.add(_instance), console.error(
                   "Unsafe legacy lifecycles will not be called for components using new component APIs.\n\n%s uses %s but also contains the following legacy lifecycles:%s%s%s\n\nThe above lifecycles should be removed. Learn more about this warning here:\nhttps://react.dev/link/unsafe-component-lifecycles",
                   _instance,
@@ -9207,8 +9207,8 @@
               }
             }
             _instance = workInProgress2.stateNode;
-            state = getComponentNameFromType(Component7) || "Component";
-            _instance.render || (Component7.prototype && "function" === typeof Component7.prototype.render ? console.error(
+            state = getComponentNameFromType(Component5) || "Component";
+            _instance.render || (Component5.prototype && "function" === typeof Component5.prototype.render ? console.error(
               "No `render` method found on the %s instance: did you accidentally return an object from the constructor?",
               state
             ) : console.error(
@@ -9227,11 +9227,11 @@
               "contextType was defined as an instance property on %s. Use a static property to define contextType instead.",
               state
             );
-            Component7.childContextTypes && !didWarnAboutChildContextTypes.has(Component7) && (didWarnAboutChildContextTypes.add(Component7), console.error(
+            Component5.childContextTypes && !didWarnAboutChildContextTypes.has(Component5) && (didWarnAboutChildContextTypes.add(Component5), console.error(
               "%s uses the legacy childContextTypes API which was removed in React 19. Use React.createContext() instead. (https://react.dev/link/legacy-context)",
               state
             ));
-            Component7.contextTypes && !didWarnAboutContextTypes$1.has(Component7) && (didWarnAboutContextTypes$1.add(Component7), console.error(
+            Component5.contextTypes && !didWarnAboutContextTypes$1.has(Component5) && (didWarnAboutContextTypes$1.add(Component5), console.error(
               "%s uses the legacy contextTypes API which was removed in React 19. Use React.createContext() with static contextType instead. (https://react.dev/link/legacy-context)",
               state
             ));
@@ -9239,9 +9239,9 @@
               "%s has a method called componentShouldUpdate(). Did you mean shouldComponentUpdate()? The name is phrased as a question because the function is expected to return a value.",
               state
             );
-            Component7.prototype && Component7.prototype.isPureReactComponent && "undefined" !== typeof _instance.shouldComponentUpdate && console.error(
+            Component5.prototype && Component5.prototype.isPureReactComponent && "undefined" !== typeof _instance.shouldComponentUpdate && console.error(
               "%s has a method called shouldComponentUpdate(). shouldComponentUpdate should not be used when extending React.PureComponent. Please extend React.Component if shouldComponentUpdate is used.",
-              getComponentNameFromType(Component7) || "A pure component"
+              getComponentNameFromType(Component5) || "A pure component"
             );
             "function" === typeof _instance.componentDidUnmount && console.error(
               "%s has a method called componentDidUnmount(). But there is no such lifecycle method. Did you mean componentWillUnmount()?",
@@ -9269,9 +9269,9 @@
               state,
               state
             );
-            "function" !== typeof _instance.getSnapshotBeforeUpdate || "function" === typeof _instance.componentDidUpdate || didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate.has(Component7) || (didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate.add(Component7), console.error(
+            "function" !== typeof _instance.getSnapshotBeforeUpdate || "function" === typeof _instance.componentDidUpdate || didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate.has(Component5) || (didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate.add(Component5), console.error(
               "%s: getSnapshotBeforeUpdate() should be used with componentDidUpdate(). This component defines getSnapshotBeforeUpdate() only.",
-              getComponentNameFromType(Component7)
+              getComponentNameFromType(Component5)
             ));
             "function" === typeof _instance.getDerivedStateFromProps && console.error(
               "%s: getDerivedStateFromProps() is defined as an instance method and will be ignored. Instead, declare it as a static method.",
@@ -9281,12 +9281,12 @@
               "%s: getDerivedStateFromError() is defined as an instance method and will be ignored. Instead, declare it as a static method.",
               state
             );
-            "function" === typeof Component7.getSnapshotBeforeUpdate && console.error(
+            "function" === typeof Component5.getSnapshotBeforeUpdate && console.error(
               "%s: getSnapshotBeforeUpdate() is defined as a static method and will be ignored. Instead, declare it as an instance method.",
               state
             );
             (lane = _instance.state) && ("object" !== typeof lane || isArrayImpl(lane)) && console.error("%s.state: must be set to an object or null", state);
-            "function" === typeof _instance.getChildContext && "object" !== typeof Component7.childContextTypes && console.error(
+            "function" === typeof _instance.getChildContext && "object" !== typeof Component5.childContextTypes && console.error(
               "%s.getChildContext(): childContextTypes must be defined in order to use getChildContext().",
               state
             );
@@ -9295,9 +9295,9 @@
             _instance.state = workInProgress2.memoizedState;
             _instance.refs = {};
             initializeUpdateQueue(workInProgress2);
-            state = Component7.contextType;
+            state = Component5.contextType;
             _instance.context = "object" === typeof state && null !== state ? readContext(state) : emptyContextObject;
-            _instance.state === nextProps && (state = getComponentNameFromType(Component7) || "Component", didWarnAboutDirectlyAssigningPropsToState.has(state) || (didWarnAboutDirectlyAssigningPropsToState.add(state), console.error(
+            _instance.state === nextProps && (state = getComponentNameFromType(Component5) || "Component", didWarnAboutDirectlyAssigningPropsToState.has(state) || (didWarnAboutDirectlyAssigningPropsToState.add(state), console.error(
               "%s: It is not recommended to assign props directly to state because updates to props won't be reflected in state. In most cases, it is better to use props directly.",
               state
             )));
@@ -9310,14 +9310,14 @@
               _instance
             );
             _instance.state = workInProgress2.memoizedState;
-            state = Component7.getDerivedStateFromProps;
+            state = Component5.getDerivedStateFromProps;
             "function" === typeof state && (applyDerivedStateFromProps(
               workInProgress2,
-              Component7,
+              Component5,
               state,
               nextProps
             ), _instance.state = workInProgress2.memoizedState);
-            "function" === typeof Component7.getDerivedStateFromProps || "function" === typeof _instance.getSnapshotBeforeUpdate || "function" !== typeof _instance.UNSAFE_componentWillMount && "function" !== typeof _instance.componentWillMount || (state = _instance.state, "function" === typeof _instance.componentWillMount && _instance.componentWillMount(), "function" === typeof _instance.UNSAFE_componentWillMount && _instance.UNSAFE_componentWillMount(), state !== _instance.state && (console.error(
+            "function" === typeof Component5.getDerivedStateFromProps || "function" === typeof _instance.getSnapshotBeforeUpdate || "function" !== typeof _instance.UNSAFE_componentWillMount && "function" !== typeof _instance.componentWillMount || (state = _instance.state, "function" === typeof _instance.componentWillMount && _instance.componentWillMount(), "function" === typeof _instance.UNSAFE_componentWillMount && _instance.UNSAFE_componentWillMount(), state !== _instance.state && (console.error(
               "%s.componentWillMount(): Assigning directly to this.state is deprecated (except inside a component's constructor). Use setState instead.",
               getComponentNameFromFiber(workInProgress2) || "Component"
             ), classComponentUpdater.enqueueReplaceState(
@@ -9331,13 +9331,13 @@
           } else if (null === current2) {
             _instance = workInProgress2.stateNode;
             var unresolvedOldProps = workInProgress2.memoizedProps;
-            lane = resolveClassComponentProps(Component7, unresolvedOldProps);
+            lane = resolveClassComponentProps(Component5, unresolvedOldProps);
             _instance.props = lane;
             var oldContext = _instance.context;
-            foundWillUpdateName = Component7.contextType;
+            foundWillUpdateName = Component5.contextType;
             state = emptyContextObject;
             "object" === typeof foundWillUpdateName && null !== foundWillUpdateName && (state = readContext(foundWillUpdateName));
-            newApiName = Component7.getDerivedStateFromProps;
+            newApiName = Component5.getDerivedStateFromProps;
             foundWillUpdateName = "function" === typeof newApiName || "function" === typeof _instance.getSnapshotBeforeUpdate;
             unresolvedOldProps = workInProgress2.pendingProps !== unresolvedOldProps;
             foundWillUpdateName || "function" !== typeof _instance.UNSAFE_componentWillReceiveProps && "function" !== typeof _instance.componentWillReceiveProps || (unresolvedOldProps || oldContext !== state) && callComponentWillReceiveProps(
@@ -9354,12 +9354,12 @@
             oldContext = workInProgress2.memoizedState;
             unresolvedOldProps || oldState !== oldContext || hasForceUpdate ? ("function" === typeof newApiName && (applyDerivedStateFromProps(
               workInProgress2,
-              Component7,
+              Component5,
               newApiName,
               nextProps
             ), oldContext = workInProgress2.memoizedState), (lane = hasForceUpdate || checkShouldComponentUpdate(
               workInProgress2,
-              Component7,
+              Component5,
               lane,
               nextProps,
               oldState,
@@ -9370,14 +9370,14 @@
             _instance = workInProgress2.stateNode;
             cloneUpdateQueue(current2, workInProgress2);
             state = workInProgress2.memoizedProps;
-            foundWillUpdateName = resolveClassComponentProps(Component7, state);
+            foundWillUpdateName = resolveClassComponentProps(Component5, state);
             _instance.props = foundWillUpdateName;
             newApiName = workInProgress2.pendingProps;
             oldState = _instance.context;
-            oldContext = Component7.contextType;
+            oldContext = Component5.contextType;
             lane = emptyContextObject;
             "object" === typeof oldContext && null !== oldContext && (lane = readContext(oldContext));
-            unresolvedOldProps = Component7.getDerivedStateFromProps;
+            unresolvedOldProps = Component5.getDerivedStateFromProps;
             (oldContext = "function" === typeof unresolvedOldProps || "function" === typeof _instance.getSnapshotBeforeUpdate) || "function" !== typeof _instance.UNSAFE_componentWillReceiveProps && "function" !== typeof _instance.componentWillReceiveProps || (state !== newApiName || oldState !== lane) && callComponentWillReceiveProps(
               workInProgress2,
               _instance,
@@ -9392,12 +9392,12 @@
             var newState = workInProgress2.memoizedState;
             state !== newApiName || oldState !== newState || hasForceUpdate || null !== current2 && null !== current2.dependencies && checkIfContextChanged(current2.dependencies) ? ("function" === typeof unresolvedOldProps && (applyDerivedStateFromProps(
               workInProgress2,
-              Component7,
+              Component5,
               unresolvedOldProps,
               nextProps
             ), newState = workInProgress2.memoizedState), (foundWillUpdateName = hasForceUpdate || checkShouldComponentUpdate(
               workInProgress2,
-              Component7,
+              Component5,
               foundWillUpdateName,
               nextProps,
               oldState,
@@ -9415,9 +9415,9 @@
           if (lane || state) {
             lane = workInProgress2.stateNode;
             setCurrentFiber(workInProgress2);
-            if (state && "function" !== typeof Component7.getDerivedStateFromError)
-              Component7 = null, profilerStartTime = -1;
-            else if (Component7 = callRenderInDEV(lane), workInProgress2.mode & StrictLegacyMode) {
+            if (state && "function" !== typeof Component5.getDerivedStateFromError)
+              Component5 = null, profilerStartTime = -1;
+            else if (Component5 = callRenderInDEV(lane), workInProgress2.mode & StrictLegacyMode) {
               setIsStrictModeForDevtools(true);
               try {
                 callRenderInDEV(lane);
@@ -9434,9 +9434,9 @@
             ), workInProgress2.child = reconcileChildFibers(
               workInProgress2,
               null,
-              Component7,
+              Component5,
               renderLanes2
-            )) : reconcileChildren(current2, workInProgress2, Component7, renderLanes2);
+            )) : reconcileChildren(current2, workInProgress2, Component5, renderLanes2);
             workInProgress2.memoizedState = lane.state;
             current2 = workInProgress2.child;
           } else
@@ -9458,19 +9458,19 @@
           reconcileChildren(current2, workInProgress2, nextChildren, renderLanes2);
           return workInProgress2.child;
         }
-        function validateFunctionComponentInDev(workInProgress2, Component7) {
-          Component7 && Component7.childContextTypes && console.error(
+        function validateFunctionComponentInDev(workInProgress2, Component5) {
+          Component5 && Component5.childContextTypes && console.error(
             "childContextTypes cannot be defined on a function component.\n  %s.childContextTypes = ...",
-            Component7.displayName || Component7.name || "Component"
+            Component5.displayName || Component5.name || "Component"
           );
-          "function" === typeof Component7.getDerivedStateFromProps && (workInProgress2 = getComponentNameFromType(Component7) || "Unknown", didWarnAboutGetDerivedStateOnFunctionComponent[workInProgress2] || (console.error(
+          "function" === typeof Component5.getDerivedStateFromProps && (workInProgress2 = getComponentNameFromType(Component5) || "Unknown", didWarnAboutGetDerivedStateOnFunctionComponent[workInProgress2] || (console.error(
             "%s: Function components do not support getDerivedStateFromProps.",
             workInProgress2
           ), didWarnAboutGetDerivedStateOnFunctionComponent[workInProgress2] = true));
-          "object" === typeof Component7.contextType && null !== Component7.contextType && (Component7 = getComponentNameFromType(Component7) || "Unknown", didWarnAboutContextTypeOnFunctionComponent[Component7] || (console.error(
+          "object" === typeof Component5.contextType && null !== Component5.contextType && (Component5 = getComponentNameFromType(Component5) || "Unknown", didWarnAboutContextTypeOnFunctionComponent[Component5] || (console.error(
             "%s: Function components do not support contextType.",
-            Component7
-          ), didWarnAboutContextTypeOnFunctionComponent[Component7] = true));
+            Component5
+          ), didWarnAboutContextTypeOnFunctionComponent[Component5] = true));
         }
         function mountSuspenseOffscreenState(renderLanes2) {
           return { baseLanes: renderLanes2, cachePool: getSuspendedCache() };
@@ -13435,7 +13435,7 @@
             if (startTime === RootInProgress) {
               workInProgressRootIsPrerendering && !forceSync && markRootSuspended(root2, lanes, 0, false);
               lanes = workInProgressSuspendedReason;
-              yieldStartTime = now2();
+              yieldStartTime = now();
               yieldReason = lanes;
               break;
             } else {
@@ -13739,8 +13739,8 @@
           didAttemptEntireTree && (root2.warmLanes |= suspendedLanes);
           didAttemptEntireTree = root2.expirationTimes;
           for (var lanes = suspendedLanes; 0 < lanes; ) {
-            var index2 = 31 - clz32(lanes), lane = 1 << index2;
-            didAttemptEntireTree[index2] = -1;
+            var index = 31 - clz32(lanes), lane = 1 << index;
+            didAttemptEntireTree[index] = -1;
             lanes &= ~lane;
           }
           0 !== spawnedLane && markSpawnedDeferredLane(root2, spawnedLane, suspendedLanes);
@@ -13796,7 +13796,7 @@
             "primary-light"
           ));
           var previousRenderStartTime = renderStartTime;
-          renderStartTime = now2();
+          renderStartTime = now();
           if (0 !== workInProgressRootRenderLanes && 0 < previousRenderStartTime) {
             setCurrentTrackFromLanes(workInProgressRootRenderLanes);
             if (workInProgressRootExitStatus === RootSuspended || workInProgressRootExitStatus === RootSuspendedWithDelay)
@@ -13901,7 +13901,7 @@
             blockingSuspendedTime = -1.1;
             blockingEventRepeatTime = blockingEventTime;
             blockingEventTime = -1.1;
-            blockingClampTime = now2();
+            blockingClampTime = now();
           }
           0 !== (lanes & 4194048) && (workInProgressUpdateTask = transitionUpdateTask, debugTask = 0 <= transitionStartTime && transitionStartTime < transitionClampTime ? transitionClampTime : transitionStartTime, previousRenderStartTime = 0 <= transitionUpdateTime && transitionUpdateTime < transitionClampTime ? transitionClampTime : transitionUpdateTime, endTime = 0 <= transitionEventTime && transitionEventTime < transitionClampTime ? transitionClampTime : transitionEventTime, color = 0 <= endTime ? endTime : 0 <= previousRenderStartTime ? previousRenderStartTime : renderStartTime, 0 <= transitionSuspendedTime ? (setCurrentTrackFromLanes(256), logSuspendedWithDelayPhase(
             transitionSuspendedTime,
@@ -13959,7 +13959,7 @@
               debugTask,
               previousRenderStartTime
             )
-          ) : performance.measure(debugTask, previousRenderStartTime))), transitionUpdateTime = transitionStartTime = -1.1, transitionUpdateType = 0, transitionSuspendedTime = -1.1, transitionEventRepeatTime = transitionEventTime, transitionEventTime = -1.1, transitionClampTime = now2());
+          ) : performance.measure(debugTask, previousRenderStartTime))), transitionUpdateTime = transitionStartTime = -1.1, transitionUpdateType = 0, transitionSuspendedTime = -1.1, transitionEventRepeatTime = transitionEventTime, transitionEventTime = -1.1, transitionClampTime = now());
           0 !== (lanes & 62914560) && 0 !== (animatingLanes & 62914560) && (setCurrentTrackFromLanes(4194304), logAnimatingPhase(retryClampTime, renderStartTime, animatingTask));
           0 !== (lanes & 2080374784) && 0 !== (animatingLanes & 2080374784) && (setCurrentTrackFromLanes(268435456), logAnimatingPhase(idleClampTime, renderStartTime, animatingTask));
           previousRenderStartTime = root2.timeoutHandle;
@@ -14459,7 +14459,7 @@
               return null;
             })) : (root2.callbackNode = null, root2.callbackPriority = 0);
             commitErrors = null;
-            commitStartTime = now2();
+            commitStartTime = now();
             null !== suspendedCommitReason && logSuspendedCommitPhase(
               completedRenderEndTime,
               commitStartTime,
@@ -14570,7 +14570,7 @@
             pendingEffectsStatus = NO_PENDING_EFFECTS;
             var suspendedViewTransitionReason = pendingSuspendedViewTransitionReason;
             if (null !== suspendedViewTransitionReason) {
-              commitStartTime = now2();
+              commitStartTime = now();
               var startTime = commitEndTime, endTime = commitStartTime;
               !supportsUserTiming || endTime <= startTime || (animatingTask ? animatingTask.run(
                 console.timeStamp.bind(
@@ -14614,7 +14614,7 @@
             }
             suspendedViewTransitionReason = pendingEffectsRenderEndTime;
             startTime = pendingSuspendedCommitReason;
-            commitEndTime = now2();
+            commitEndTime = now();
             suspendedViewTransitionReason = null === startTime ? suspendedViewTransitionReason : commitStartTime;
             startTime = commitEndTime;
             endTime = pendingDelayedCommitReason === ABORTED_VIEW_TRANSITION_COMMIT;
@@ -14650,7 +14650,7 @@
           if (pendingEffectsStatus === PENDING_SPAWNED_WORK || pendingEffectsStatus === PENDING_AFTER_MUTATION_PHASE) {
             if (pendingEffectsStatus === PENDING_SPAWNED_WORK) {
               var startViewTransitionStartTime = commitEndTime;
-              commitEndTime = now2();
+              commitEndTime = now();
               var endTime = commitEndTime, abortedViewTransition = pendingDelayedCommitReason === ABORTED_VIEW_TRANSITION_COMMIT;
               !supportsUserTiming || endTime <= startViewTransitionStartTime || (animatingTask ? animatingTask.run(
                 console.timeStamp.bind(
@@ -14947,7 +14947,7 @@
           null !== pingCache && pingCache.delete(wakeable);
           root2.pingedLanes |= root2.suspendedLanes & pingedLanes;
           root2.warmLanes &= ~pingedLanes;
-          0 !== (pingedLanes & 127) ? 0 > blockingUpdateTime && (blockingClampTime = blockingUpdateTime = now2(), blockingUpdateTask = createTask("Promise Resolved"), blockingUpdateType = PINGED_UPDATE) : 0 !== (pingedLanes & 4194048) && 0 > transitionUpdateTime && (transitionClampTime = transitionUpdateTime = now2(), transitionUpdateTask = createTask("Promise Resolved"), transitionUpdateType = PINGED_UPDATE);
+          0 !== (pingedLanes & 127) ? 0 > blockingUpdateTime && (blockingClampTime = blockingUpdateTime = now(), blockingUpdateTask = createTask("Promise Resolved"), blockingUpdateType = PINGED_UPDATE) : 0 !== (pingedLanes & 4194048) && 0 > transitionUpdateTime && (transitionClampTime = transitionUpdateTime = now(), transitionUpdateTask = createTask("Promise Resolved"), transitionUpdateType = PINGED_UPDATE);
           isConcurrentActEnvironment() && null === ReactSharedInternals.actQueue && console.error(
             "A suspended resource finished loading inside a test, but the event was not wrapped in act(...).\n\nWhen testing, code that resolves suspended data should be wrapped into act(...):\n\nact(() => {\n  /* finish loading suspended data */\n});\n/* assert on the output */\n\nThis ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act"
           );
@@ -15125,10 +15125,10 @@
         }
         function scheduleTaskForRootDuringMicrotask(root2, currentTime) {
           for (var suspendedLanes = root2.suspendedLanes, pingedLanes = root2.pingedLanes, expirationTimes = root2.expirationTimes, lanes = root2.pendingLanes & -62914561; 0 < lanes; ) {
-            var index2 = 31 - clz32(lanes), lane = 1 << index2, expirationTime = expirationTimes[index2];
+            var index = 31 - clz32(lanes), lane = 1 << index, expirationTime = expirationTimes[index];
             if (-1 === expirationTime) {
               if (0 === (lane & suspendedLanes) || 0 !== (lane & pingedLanes))
-                expirationTimes[index2] = computeExpirationTime(lane, currentTime);
+                expirationTimes[index] = computeExpirationTime(lane, currentTime);
             } else
               expirationTime <= currentTime && (root2.expiredLanes |= lane);
             lanes &= ~lane;
@@ -18999,14 +18999,14 @@
           ));
         }
         "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-        var Scheduler = require_scheduler(), React408 = require_react(), ReactDOM = require_react_dom(), assign2 = Object.assign, REACT_LEGACY_ELEMENT_TYPE = Symbol.for("react.element"), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE2 = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy");
+        var Scheduler = require_scheduler(), React437 = require_react(), ReactDOM = require_react_dom(), assign2 = Object.assign, REACT_LEGACY_ELEMENT_TYPE = Symbol.for("react.element"), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE2 = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy");
         Symbol.for("react.scope");
         var REACT_ACTIVITY_TYPE = Symbol.for("react.activity");
         Symbol.for("react.legacy_hidden");
         Symbol.for("react.tracing_marker");
         var REACT_MEMO_CACHE_SENTINEL = Symbol.for("react.memo_cache_sentinel");
         Symbol.for("react.view_transition");
-        var MAYBE_ITERATOR_SYMBOL = Symbol.iterator, REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), isArrayImpl = Array.isArray, ReactSharedInternals = React408.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, ReactDOMSharedInternals = ReactDOM.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, NotPending = Object.freeze({
+        var MAYBE_ITERATOR_SYMBOL = Symbol.iterator, REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), isArrayImpl = Array.isArray, ReactSharedInternals = React437.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, ReactDOMSharedInternals = ReactDOM.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, NotPending = Object.freeze({
           pending: false,
           data: null,
           method: null,
@@ -20097,14 +20097,14 @@
           _threadCount: 0,
           _currentRenderer: null,
           _currentRenderer2: null
-        }, now2 = Scheduler.unstable_now, createTask = console.createTask ? console.createTask : function() {
+        }, now = Scheduler.unstable_now, createTask = console.createTask ? console.createTask : function() {
           return null;
         }, SPAWNED_UPDATE = 1, PINGED_UPDATE = 2, renderStartTime = -0, commitStartTime = -0, commitEndTime = -0, commitErrors = null, profilerStartTime = -1.1, profilerEffectDuration = -0, componentEffectDuration = -0, componentEffectStartTime = -1.1, componentEffectEndTime = -1.1, componentEffectErrors = null, componentEffectSpawnedUpdate = false, blockingClampTime = -0, blockingUpdateTime = -1.1, blockingUpdateTask = null, blockingUpdateType = 0, blockingUpdateMethodName = null, blockingUpdateComponentName = null, blockingEventTime = -1.1, blockingEventType = null, blockingEventRepeatTime = -1.1, blockingSuspendedTime = -1.1, transitionClampTime = -0, transitionStartTime = -1.1, transitionUpdateTime = -1.1, transitionUpdateType = 0, transitionUpdateTask = null, transitionUpdateMethodName = null, transitionUpdateComponentName = null, transitionEventTime = -1.1, transitionEventType = null, transitionEventRepeatTime = -1.1, transitionSuspendedTime = -1.1, retryClampTime = -0, idleClampTime = -0, animatingLanes = 0, animatingTask = null, yieldReason = 0, yieldStartTime = -1.1, currentUpdateIsNested = false, nestedUpdateScheduled = false, currentEntangledListeners = null, currentEntangledPendingCount = 0, currentEntangledLane = 0, currentEntangledActionThenable = null, prevOnStartTransitionFinish = ReactSharedInternals.S;
         ReactSharedInternals.S = function(transition, returnValue) {
           globalMostRecentTransitionTime = now$1();
           if ("object" === typeof returnValue && null !== returnValue && "function" === typeof returnValue.then) {
             if (0 > transitionStartTime && 0 > transitionUpdateTime) {
-              transitionStartTime = now2();
+              transitionStartTime = now();
               var newEventTime = resolveEventTimeStamp(), newEventType = resolveEventType();
               if (newEventTime !== transitionEventRepeatTime || newEventType !== transitionEventType)
                 transitionEventRepeatTime = -1.1;
@@ -20248,11 +20248,11 @@
           pendingLegacyContextWarning = /* @__PURE__ */ new Map();
         };
         var callComponent = {
-          react_stack_bottom_frame: function(Component7, props, secondArg) {
+          react_stack_bottom_frame: function(Component5, props, secondArg) {
             var wasRendering = isRendering;
             isRendering = true;
             try {
-              return Component7(props, secondArg);
+              return Component5(props, secondArg);
             } finally {
               isRendering = wasRendering;
             }
@@ -21799,7 +21799,7 @@
           }
         };
         (function() {
-          var isomorphicReactPackageVersion = React408.version;
+          var isomorphicReactPackageVersion = React437.version;
           if ("19.2.4" !== isomorphicReactPackageVersion)
             throw Error(
               'Incompatible React versions: The "react" and "react-dom" packages must have the exact same version. Instead got:\n  - react:      ' + (isomorphicReactPackageVersion + "\n  - react-dom:  19.2.4\nLearn more: https://react.dev/warnings/version-mismatch")
@@ -21939,11 +21939,41 @@
     }
   });
 
+  // ../custom_dashboard/node_modules/is-mobile/index.js
+  var require_is_mobile = __commonJS({
+    "../custom_dashboard/node_modules/is-mobile/index.js"(exports, module2) {
+      "use strict";
+      module2.exports = isMobile2;
+      module2.exports.isMobile = isMobile2;
+      module2.exports.default = isMobile2;
+      var mobileRE = /(android|bb\d+|meego).+mobile|armv7l|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|redmi|series[46]0|samsungbrowser.*mobile|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i;
+      var notMobileRE = /CrOS/;
+      var tabletRE = /android|ipad|playbook|silk/i;
+      function isMobile2(opts) {
+        if (!opts)
+          opts = {};
+        let ua = opts.ua;
+        if (!ua && typeof navigator !== "undefined")
+          ua = navigator.userAgent;
+        if (ua && ua.headers && typeof ua.headers["user-agent"] === "string") {
+          ua = ua.headers["user-agent"];
+        }
+        if (typeof ua !== "string")
+          return false;
+        let result = mobileRE.test(ua) && !notMobileRE.test(ua) || !!opts.tablet && tabletRE.test(ua);
+        if (!result && opts.tablet && opts.featureDetect && navigator && navigator.maxTouchPoints > 1 && ua.indexOf("Macintosh") !== -1 && ua.indexOf("Safari") !== -1) {
+          result = true;
+        }
+        return result;
+      }
+    }
+  });
+
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/aavatto_test.bundle.jsx
-  var import_react141 = __toESM(require_react());
+  var import_react155 = __toESM(require_react());
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/App.jsx
-  var import_react140 = __toESM(require_react());
+  var import_react154 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/_util/getReactMajorVersionCanDelMe.js
   var import_react = __toESM(require_react());
@@ -21989,6 +22019,13 @@
         firstMountRef.current = true;
       };
     }, []);
+  };
+  var useLayoutUpdateEffect = (callback, deps) => {
+    useLayoutEffect2((firstMount) => {
+      if (!firstMount) {
+        return callback();
+      }
+    }, deps);
   };
   var useLayoutEffect_default = useLayoutEffect2;
 
@@ -22527,11 +22564,11 @@
         warning(false, "`children` of ResizeObserver is empty. Nothing is in observe.");
       }
     }
-    return childNodes.map((child, index2) => {
-      const key = (child == null ? void 0 : child.key) || `${INTERNAL_PREFIX_KEY}-${index2}`;
+    return childNodes.map((child, index) => {
+      const key = (child == null ? void 0 : child.key) || `${INTERNAL_PREFIX_KEY}-${index}`;
       return /* @__PURE__ */ React10.createElement(SingleObserver_default, _extends({}, props, {
         key,
-        ref: index2 === 0 ? ref : void 0
+        ref: index === 0 ? ref : void 0
       }), child);
     });
   }
@@ -23038,8 +23075,8 @@
         this.keys.push(derivativeOption);
       }
       let cache = this.cache;
-      derivativeOption.forEach((derivative2, index2) => {
-        if (index2 === derivativeOption.length - 1) {
+      derivativeOption.forEach((derivative2, index) => {
+        if (index === derivativeOption.length - 1) {
           cache.set(derivative2, {
             value: [value, this.cacheCallTimes++]
           });
@@ -23538,8 +23575,8 @@
   function indexof(value, search, position3) {
     return value.indexOf(search, position3);
   }
-  function charat(value, index2) {
-    return value.charCodeAt(index2) | 0;
+  function charat(value, index) {
+    return value.charCodeAt(index) | 0;
   }
   function substr(value, begin, end) {
     return value.slice(begin, end);
@@ -23653,11 +23690,11 @@
         break;
     return token(type5) > 2 || token(character) > 3 ? "" : " ";
   }
-  function escaping(index2, count) {
+  function escaping(index, count) {
     while (--count && next())
       if (character < 48 || character > 102 || character > 57 && character < 65 || character > 70 && character < 97)
         break;
-    return slice(index2, caret() + (count < 6 && peek() == 32 && next() == 32));
+    return slice(index, caret() + (count < 6 && peek() == 32 && next() == 32));
   }
   function delimiter(type5) {
     while (next())
@@ -23679,18 +23716,18 @@
       }
     return position;
   }
-  function commenter(type5, index2) {
+  function commenter(type5, index) {
     while (next())
       if (type5 + character === 47 + 10)
         break;
       else if (type5 + character === 42 + 42 && peek() === 47)
         break;
-    return "/*" + slice(index2, position - 1) + "*" + from(type5 === 47 ? type5 : next());
+    return "/*" + slice(index, position - 1) + "*" + from(type5 === 47 ? type5 : next());
   }
-  function identifier(index2) {
+  function identifier(index) {
     while (!token(peek()))
       next();
-    return slice(index2, position);
+    return slice(index, position);
   }
 
   // ../custom_dashboard/node_modules/stylis/src/Parser.js
@@ -23698,7 +23735,7 @@
     return dealloc(parse("", null, null, null, [""], value = alloc(value), 0, [0], value));
   }
   function parse(value, root, parent, rule, rules, rulesets, pseudo, points, declarations) {
-    var index2 = 0;
+    var index = 0;
     var offset3 = 0;
     var length2 = pseudo;
     var atrule = 0;
@@ -23717,7 +23754,7 @@
       switch (previous = character2, character2 = next()) {
         case 40:
           if (previous != 108 && charat(characters2, length2 - 1) == 58) {
-            if (indexof(characters2 += replace(delimit(character2), "&", "&\f"), "&\f", abs(index2 ? points[index2 - 1] : 0)) != -1)
+            if (indexof(characters2 += replace(delimit(character2), "&", "&\f"), "&\f", abs(index ? points[index - 1] : 0)) != -1)
               ampersand = -1;
             break;
           }
@@ -23748,7 +23785,7 @@
           }
           break;
         case 123 * variable:
-          points[index2++] = strlen(characters2) * ampersand;
+          points[index++] = strlen(characters2) * ampersand;
         case 125 * variable:
         case 59:
         case 0:
@@ -23765,7 +23802,7 @@
             case 59:
               characters2 += ";";
             default:
-              append(reference = ruleset(characters2, root, parent, index2, offset3, rules, points, type5, props = [], children = [], length2, rulesets), rulesets);
+              append(reference = ruleset(characters2, root, parent, index, offset3, rules, points, type5, props = [], children = [], length2, rulesets), rulesets);
               if (character2 === 123)
                 if (offset3 === 0)
                   parse(characters2, root, reference, reference, props, rulesets, length2, points, children);
@@ -23789,7 +23826,7 @@
                     parse(characters2, reference, reference, reference, [""], children, 0, points, children);
                 }
           }
-          index2 = offset3 = property = 0, variable = ampersand = 1, type5 = characters2 = "", length2 = pseudo;
+          index = offset3 = property = 0, variable = ampersand = 1, type5 = characters2 = "", length2 = pseudo;
           break;
         case 58:
           length2 = 1 + strlen(characters2), property = previous;
@@ -23805,7 +23842,7 @@
               ampersand = offset3 > 0 ? 1 : (characters2 += "\f", -1);
               break;
             case 44:
-              points[index2++] = (strlen(characters2) - 1) * ampersand, ampersand = 1;
+              points[index++] = (strlen(characters2) - 1) * ampersand, ampersand = 1;
               break;
             case 64:
               if (peek() === 45)
@@ -23819,11 +23856,11 @@
       }
     return rulesets;
   }
-  function ruleset(value, root, parent, index2, offset3, rules, points, type5, props, children, length2, siblings) {
+  function ruleset(value, root, parent, index, offset3, rules, points, type5, props, children, length2, siblings) {
     var post = offset3 - 1;
     var rule = offset3 === 0 ? rules : [""];
     var size = sizeof(rule);
-    for (var i = 0, j = 0, k = 0; i < index2; ++i)
+    for (var i = 0, j = 0, k = 0; i < index; ++i)
       for (var x = 0, y = substr(value, post + 1, post = abs(j = points[i])), z = value; x < size; ++x)
         if (z = trim(j > 0 ? rule[x] + " " + y : replace(y, /&\f/g, rule[x])))
           props[k++] = z;
@@ -23921,8 +23958,8 @@
         return MS + replace(value, "template-", "") + value;
       case 4384:
       case 3616:
-        if (children && children.some(function(element, index2) {
-          return length2 = index2, match(element.props, /grid-\w+-end/);
+        if (children && children.some(function(element, index) {
+          return length2 = index, match(element.props, /grid-\w+-end/);
         })) {
           return ~indexof(value + (children = children[length2].value), "span", 0) ? value : MS + replace(value, "-start", "") + value + MS + "grid-row-span:" + (~indexof(children, "span", 0) ? match(children, /\d+/) : +match(children, /\d+/) - +match(value, /\d+/)) + ";";
         }
@@ -23994,7 +24031,7 @@
       output += callback(children[i], i, children, callback) || "";
     return output;
   }
-  function stringify(element, index2, children, callback) {
+  function stringify(element, index, children, callback) {
     switch (element.type) {
       case LAYER:
         if (element.children.length)
@@ -24017,14 +24054,14 @@
   // ../custom_dashboard/node_modules/stylis/src/Middleware.js
   function middleware(collection) {
     var length2 = sizeof(collection);
-    return function(element, index2, children, callback) {
+    return function(element, index, children, callback) {
       var output = "";
       for (var i = 0; i < length2; i++)
-        output += collection[i](element, index2, children, callback) || "";
+        output += collection[i](element, index, children, callback) || "";
       return output;
     };
   }
-  function prefixer(element, index2, children, callback) {
+  function prefixer(element, index, children, callback) {
     if (element.length > -1) {
       if (!element.return)
         switch (element.type) {
@@ -25162,9 +25199,9 @@
       value: function clear() {
         var _this2 = this;
         if (this.accessBeat > 1e4) {
-          var now2 = Date.now();
+          var now = Date.now();
           this.lastAccessBeat.forEach(function(beat, key) {
-            if (now2 - beat > BEAT_LIMIT) {
+            if (now - beat > BEAT_LIMIT) {
               _this2.map.delete(key);
               _this2.lastAccessBeat.delete(key);
             }
@@ -25197,7 +25234,7 @@
 
   // ../custom_dashboard/node_modules/@ant-design/cssinjs-utils/es/util/genStyleUtils.js
   function genStyleUtils(config) {
-    var _config$useCSP = config.useCSP, useCSP = _config$useCSP === void 0 ? useCSP_default : _config$useCSP, useToken2 = config.useToken, usePrefix = config.usePrefix, getResetStyles = config.getResetStyles, getCommonStyle = config.getCommonStyle, getCompUnitless = config.getCompUnitless;
+    var _config$useCSP = config.useCSP, useCSP = _config$useCSP === void 0 ? useCSP_default : _config$useCSP, useToken2 = config.useToken, usePrefix = config.usePrefix, getResetStyles2 = config.getResetStyles, getCommonStyle = config.getCommonStyle, getCompUnitless = config.getCompUnitless;
     function genStyleHooks2(component, styleFn, getDefaultToken, options) {
       var componentName = Array.isArray(component) ? component[0] : component;
       function prefixToken(key) {
@@ -25299,12 +25336,12 @@
           layer: mergedLayer,
           order: options.order || -999
         };
-        if (typeof getResetStyles === "function") {
+        if (typeof getResetStyles2 === "function") {
           useStyleRegister(_objectSpread2(_objectSpread2({}, sharedConfig), {}, {
             clientOnly: false,
             path: ["Shared", rootPrefixCls]
           }), function() {
-            return getResetStyles(token2, {
+            return getResetStyles2(token2, {
               prefix: {
                 rootPrefixCls,
                 iconPrefixCls
@@ -25386,10 +25423,10 @@
   function getFontSizes(base) {
     const fontSizes = Array.from({
       length: 10
-    }).map((_, index2) => {
-      const i = index2 - 1;
+    }).map((_, index) => {
+      const i = index - 1;
       const baseSize = base * Math.E ** (i / 5);
-      const intSize = index2 > 1 ? Math.floor(baseSize) : Math.ceil(baseSize);
+      const intSize = index > 1 ? Math.floor(baseSize) : Math.ceil(baseSize);
       return Math.floor(intSize / 2) * 2;
     });
     fontSizes[1] = base;
@@ -25634,7 +25671,7 @@
     }
     return numList;
   }
-  var parseHSVorHSL = (num, _, index2) => index2 === 0 ? num : num / 100;
+  var parseHSVorHSL = (num, _, index) => index === 0 ? num : num / 100;
   function limitRange(value, max) {
     const mergedMax = max || 255;
     if (value > mergedMax) {
@@ -26192,9 +26229,9 @@
     }
     if (opts.theme === "dark") {
       return darkColorMap.map(({
-        index: index2,
+        index,
         amount
-      }) => new FastColor(opts.backgroundColor || "#141414").mix(patterns[index2], amount).toHexString());
+      }) => new FastColor(opts.backgroundColor || "#141414").mix(patterns[index], amount).toHexString());
     }
     return patterns.map((c) => c.toHexString());
   }
@@ -27185,11 +27222,11 @@
     if (!rootProps) {
       return /* @__PURE__ */ import_react14.default.createElement(node2.tag, __spreadValues({
         key
-      }, normalizeAttrs(node2.attrs)), (node2.children || []).map((child, index2) => generate2(child, `${key}-${node2.tag}-${index2}`)));
+      }, normalizeAttrs(node2.attrs)), (node2.children || []).map((child, index) => generate2(child, `${key}-${node2.tag}-${index}`)));
     }
     return /* @__PURE__ */ import_react14.default.createElement(node2.tag, __spreadValues(__spreadValues({
       key
-    }, normalizeAttrs(node2.attrs)), rootProps), (node2.children || []).map((child, index2) => generate2(child, `${key}-${node2.tag}-${index2}`)));
+    }, normalizeAttrs(node2.attrs)), rootProps), (node2.children || []).map((child, index) => generate2(child, `${key}-${node2.tag}-${index}`)));
   }
   function getSecondaryColor(primaryColor) {
     return generate(primaryColor)[0];
@@ -27799,8 +27836,8 @@ ${mergedStyleStr}
     const STEP_QUEUE = prepareOnly ? SIMPLE_STEP_QUEUE : FULL_STEP_QUEUE;
     useIsomorphicLayoutEffect_default(() => {
       if (step !== STEP_NONE && step !== STEP_ACTIVATED) {
-        const index2 = STEP_QUEUE.indexOf(step);
-        const nextStep = STEP_QUEUE[index2 + 1];
+        const index = STEP_QUEUE.indexOf(step);
+        const nextStep = STEP_QUEUE[index + 1];
         const result = callback(step);
         if (result === SkipStep) {
           setStep(nextStep, true);
@@ -28284,14 +28321,14 @@ ${mergedStyleStr}
           "onVisibleChanged",
           "onAllRemoved"
         ]);
-        const Component7 = component || React33.Fragment;
+        const Component5 = component || React33.Fragment;
         const motionProps = {};
         MOTION_PROP_NAMES.forEach((prop) => {
           motionProps[prop] = restProps[prop];
           delete restProps[prop];
         });
         delete restProps.keys;
-        return /* @__PURE__ */ React33.createElement(Component7, restProps, keyEntities.map((_b, index2) => {
+        return /* @__PURE__ */ React33.createElement(Component5, restProps, keyEntities.map((_b, index) => {
           var _c = _b, {
             status
           } = _c, eventProps = __objRest(_c, [
@@ -28311,7 +28348,7 @@ ${mergedStyleStr}
               }
             }
           }), (props, ref) => children(__spreadProps(__spreadValues({}, props), {
-            index: index2
+            index
           }), ref));
         }));
       }
@@ -29576,7 +29613,7 @@ ${mergedStyleStr}
       }
     }, {
       key: "render",
-      value: function render4() {
+      value: function render2() {
         const {
           message: message2,
           title,
@@ -29816,7 +29853,7 @@ ${mergedStyleStr}
   // ../custom_dashboard/node_modules/@rc-component/portal/es/useDom.js
   var React46 = __toESM(require_react());
   var EMPTY_LIST = [];
-  function useDom(render4, debug) {
+  function useDom(render2, debug) {
     const [ele] = React46.useState(() => {
       if (!canUseDom()) {
         return null;
@@ -29848,7 +29885,7 @@ ${mergedStyleStr}
       appendedRef.current = false;
     }
     useLayoutEffect_default(() => {
-      if (render4) {
+      if (render2) {
         if (queueCreate) {
           queueCreate(append2);
         } else {
@@ -29858,7 +29895,7 @@ ${mergedStyleStr}
         cleanup2();
       }
       return cleanup2;
-    }, [render4]);
+    }, [render2]);
     useLayoutEffect_default(() => {
       if (queue.length) {
         queue.forEach((appendFn) => appendFn());
@@ -30013,8 +30050,8 @@ html body {
   var lastCompositionEndTime = 0;
   var onGlobalKeyDown = (event) => {
     if (event.key === "Escape" && !event.isComposing) {
-      const now2 = Date.now();
-      if (now2 - lastCompositionEndTime < IME_LOCK_DURATION) {
+      const now = Date.now();
+      if (now - lastCompositionEndTime < IME_LOCK_DURATION) {
         return;
       }
       const len = stack.length;
@@ -30226,13 +30263,13 @@ html body {
       open: open2,
       zIndex,
       mask,
-      motion,
+      motion: motion2,
       mobile
     } = props;
     if (!mask) {
       return null;
     }
-    return /* @__PURE__ */ React51.createElement(es_default2, _extends9({}, motion, {
+    return /* @__PURE__ */ React51.createElement(es_default2, _extends9({}, motion2, {
       motionAppear: true,
       visible: open2,
       removeOnLeave: true
@@ -30257,16 +30294,16 @@ html body {
   var PopupContent_default = PopupContent;
 
   // ../custom_dashboard/node_modules/@rc-component/trigger/es/hooks/useOffsetStyle.js
-  function useOffsetStyle(isMobile, ready, open2, align, offsetR, offsetB, offsetX, offsetY) {
+  function useOffsetStyle(isMobile2, ready, open2, align, offsetR, offsetB, offsetX, offsetY) {
     var _a;
     const AUTO = "auto";
-    const offsetStyle = isMobile ? {} : {
+    const offsetStyle = isMobile2 ? {} : {
       left: "-1000vw",
       top: "-1000vh",
       right: AUTO,
       bottom: AUTO
     };
-    if (!isMobile && (ready || !open2)) {
+    if (!isMobile2 && (ready || !open2)) {
       const {
         points
       } = align;
@@ -30323,7 +30360,7 @@ html body {
       arrow,
       arrowPos,
       align,
-      motion,
+      motion: motion2,
       maskMotion,
       mobile,
       forceRender,
@@ -30350,13 +30387,13 @@ html body {
     } = props;
     const popupContent = typeof popup === "function" ? popup() : popup;
     const isNodeVisible = open2 || keepDom;
-    const isMobile = !!mobile;
+    const isMobile2 = !!mobile;
     const [mergedMask, mergedMaskMotion, mergedPopupMotion] = React53.useMemo(() => {
       if (mobile) {
         return [mobile.mask, mobile.maskMotion, mobile.motion];
       }
-      return [mask, maskMotion, motion];
-    }, [mobile, mask, maskMotion, motion]);
+      return [mask, maskMotion, motion2];
+    }, [mobile, mask, maskMotion, motion2]);
     const getPopupContainerNeedParams = (getPopupContainer == null ? void 0 : getPopupContainer.length) > 0;
     const [show, setShow] = React53.useState(!getPopupContainer || !getPopupContainerNeedParams);
     useLayoutEffect_default(() => {
@@ -30368,7 +30405,7 @@ html body {
       onResize2 == null ? void 0 : onResize2(size, ele);
       onAlign();
     });
-    const offsetStyle = useOffsetStyle(isMobile, ready, open2, align, offsetR, offsetB, offsetX, offsetY);
+    const offsetStyle = useOffsetStyle(isMobile2, ready, open2, align, offsetR, offsetB, offsetX, offsetY);
     if (!show) {
       return null;
     }
@@ -30399,7 +30436,7 @@ html body {
       zIndex,
       mask: mergedMask,
       motion: mergedMaskMotion,
-      mobile: isMobile
+      mobile: isMobile2
     }), /* @__PURE__ */ React53.createElement(es_default, {
       onResize: onInternalResize,
       disabled: !open2
@@ -30417,7 +30454,7 @@ html body {
         visible: open2,
         onVisibleChanged: (nextVisible) => {
           var _a;
-          (_a = motion == null ? void 0 : motion.onVisibleChanged) == null ? void 0 : _a.call(motion, nextVisible);
+          (_a = motion2 == null ? void 0 : motion2.onVisibleChanged) == null ? void 0 : _a.call(motion2, nextVisible);
           onVisibleChanged(nextVisible);
         }
       }), ({
@@ -30425,7 +30462,7 @@ html body {
         style: motionStyle
       }, motionRef) => {
         const cls = clsx(prefixCls, motionClassName, className, {
-          [`${prefixCls}-mobile`]: isMobile
+          [`${prefixCls}-mobile`]: isMobile2
         });
         return /* @__PURE__ */ React53.createElement("div", {
           ref: composeRef(resizeObserverRef, ref, motionRef),
@@ -30521,7 +30558,7 @@ html body {
 
   // ../custom_dashboard/node_modules/@rc-component/trigger/es/util.js
   function isPointsEq(a1 = [], a2 = [], isAlignPoint) {
-    const getVal = (a, index2) => a[index2] || "";
+    const getVal = (a, index) => a[index] || "";
     if (isAlignPoint) {
       return getVal(a1, 0) === getVal(a2, 0);
     }
@@ -30659,7 +30696,7 @@ html body {
       y
     };
   }
-  function reversePoints(points, index2) {
+  function reversePoints(points, index) {
     const reverseMap = {
       t: "b",
       b: "t",
@@ -30667,7 +30704,7 @@ html body {
       r: "l"
     };
     const clone = [...points];
-    clone[index2] = reverseMap[points[index2]] || "c";
+    clone[index] = reverseMap[points[index]] || "c";
     return clone;
   }
   function flatPoints(points) {
@@ -31207,7 +31244,7 @@ html body {
   var UniqueContainer = (props) => {
     const {
       prefixCls,
-      isMobile,
+      isMobile: isMobile2,
       ready,
       open: open2,
       align,
@@ -31217,13 +31254,13 @@ html body {
       offsetY,
       arrowPos,
       popupSize,
-      motion,
+      motion: motion2,
       uniqueContainerClassName,
       uniqueContainerStyle
     } = props;
     const containerCls = `${prefixCls}-unique-container`;
     const [motionVisible, setMotionVisible] = import_react31.default.useState(false);
-    const offsetStyle = useOffsetStyle(isMobile, ready, open2, align, offsetR, offsetB, offsetX, offsetY);
+    const offsetStyle = useOffsetStyle(isMobile2, ready, open2, align, offsetR, offsetB, offsetX, offsetY);
     const cachedOffsetStyleRef = import_react31.default.useRef(offsetStyle);
     if (ready) {
       cachedOffsetStyleRef.current = offsetStyle;
@@ -31239,7 +31276,7 @@ html body {
       motionLeave: true,
       removeOnLeave: false,
       leavedClassName: `${containerCls}-hidden`
-    }, motion, {
+    }, motion2, {
       visible: open2,
       onVisibleChanged: (nextVisible) => {
         setMotionVisible(nextVisible);
@@ -31509,7 +31546,7 @@ html body {
       ]);
       const mergedAutoDestroy = autoDestroy || false;
       const openUncontrolled = popupVisible === void 0;
-      const isMobile = !!mobile;
+      const isMobile2 = !!mobile;
       const subPopupElements = React62.useRef({});
       const parentContext = React62.useContext(context_default3);
       const context = React62.useMemo(() => {
@@ -31638,7 +31675,7 @@ html body {
       const setMousePosByEvent = (event) => {
         setMousePos([event.clientX, event.clientY]);
       };
-      const [ready, offsetX, offsetY, offsetR, offsetB, arrowX, arrowY, scaleX, scaleY, alignInfo, onAlign] = useAlign(mergedOpen, popupEle, alignPoint && mousePos !== null ? mousePos : targetEle, popupPlacement, builtinPlacements, popupAlign, onPopupAlign, isMobile);
+      const [ready, offsetX, offsetY, offsetR, offsetB, arrowX, arrowY, scaleX, scaleY, alignInfo, onAlign] = useAlign(mergedOpen, popupEle, alignPoint && mousePos !== null ? mousePos : targetEle, popupPlacement, builtinPlacements, popupAlign, onPopupAlign, isMobile2);
       const [showActions, hideActions] = useAction(action, showAction, hideAction);
       const clickToShow = showActions.has("click");
       const clickToHide = hideActions.has("click") || hideActions.has("contextMenu");
@@ -31820,7 +31857,7 @@ html body {
         ref: setPopupRef,
         prefixCls,
         popup,
-        className: clsx(popupClassName, !isMobile && alignedClassName),
+        className: clsx(popupClassName, !isMobile2 && alignedClassName),
         style: popupStyle,
         target: targetEle,
         onMouseEnter: onPopupMouseEnter,
@@ -32034,8 +32071,8 @@ html body {
         components: mergedComponents,
         cssVar: mergedCssVar
       });
-    }, [themeConfig2, parentThemeConfig], (prev2, next2) => prev2.some((prevTheme, index2) => {
-      const nextTheme = next2[index2];
+    }, [themeConfig2, parentThemeConfig], (prev2, next2) => prev2.some((prevTheme, index) => {
+      const nextTheme = next2[index];
       return !isEqual_default(prevTheme, nextTheme, true);
     }));
   }
@@ -32054,15 +32091,15 @@ html body {
     } = props;
     const [, token2] = useToken();
     const {
-      motion
+      motion: motion2
     } = token2;
     const needWrapMotionProviderRef = React68.useRef(false);
-    needWrapMotionProviderRef.current || (needWrapMotionProviderRef.current = parentMotion !== motion);
+    needWrapMotionProviderRef.current || (needWrapMotionProviderRef.current = parentMotion !== motion2);
     if (needWrapMotionProviderRef.current) {
       return /* @__PURE__ */ React68.createElement(MotionCacheContext.Provider, {
-        value: motion
+        value: motion2
       }, /* @__PURE__ */ React68.createElement(context_default, {
-        motion
+        motion: motion2
       }, children));
     }
     return children;
@@ -32197,7 +32234,7 @@ html body {
       input,
       textArea,
       otp,
-      empty: empty2,
+      empty,
       badge,
       radio,
       rate,
@@ -32213,7 +32250,7 @@ html body {
       tabs,
       timeline,
       timePicker,
-      upload: upload2,
+      upload,
       notification,
       tree,
       colorPicker,
@@ -32299,7 +32336,7 @@ html body {
       masonry,
       menu,
       pagination,
-      empty: empty2,
+      empty,
       badge,
       radio,
       rate,
@@ -32315,7 +32352,7 @@ html body {
       tabs,
       timeline,
       timePicker,
-      upload: upload2,
+      upload,
       notification,
       tree,
       colorPicker,
@@ -32879,7 +32916,7 @@ html body {
       prefixCls,
       className,
       style: style2,
-      motion,
+      motion: motion2,
       onAllNoticeRemoved,
       onNoticeClose,
       stack: stackConfig
@@ -32900,7 +32937,7 @@ html body {
       gap
     }] = useStack_default(stackConfig);
     const expanded = stack2 && (hoverKeys.length > 0 || keys2.length <= threshold);
-    const placementMotion = typeof motion === "function" ? motion(placement) : motion;
+    const placementMotion = typeof motion2 === "function" ? motion2(placement) : motion2;
     (0, import_react38.useEffect)(() => {
       if (stack2 && hoverKeys.length > 1) {
         setHoverKeys((prev2) => prev2.filter((key) => keys2.some(({
@@ -32953,16 +32990,16 @@ html body {
       const dataIndex = keys2.findIndex((item) => item.key === strKey);
       const stackStyle = {};
       if (stack2) {
-        const index2 = keys2.length - 1 - (dataIndex > -1 ? dataIndex : motionIndex - 1);
+        const index = keys2.length - 1 - (dataIndex > -1 ? dataIndex : motionIndex - 1);
         const transformX = placement === "top" || placement === "bottom" ? "-50%" : "0";
-        if (index2 > 0) {
+        if (index > 0) {
           stackStyle.height = expanded ? (_b = dictRef.current[strKey]) == null ? void 0 : _b.offsetHeight : latestNotice == null ? void 0 : latestNotice.offsetHeight;
           let verticalOffset = 0;
-          for (let i = 0; i < index2; i++) {
+          for (let i = 0; i < index; i++) {
             verticalOffset += ((_c = dictRef.current[keys2[keys2.length - 1 - i].key]) == null ? void 0 : _c.offsetHeight) + gap;
           }
-          const transformY = (expanded ? verticalOffset : index2 * offset3) * (placement.startsWith("top") ? 1 : -1);
-          const scaleX = !expanded && (latestNotice == null ? void 0 : latestNotice.offsetWidth) && ((_d = dictRef.current[strKey]) == null ? void 0 : _d.offsetWidth) ? ((latestNotice == null ? void 0 : latestNotice.offsetWidth) - offset3 * 2 * (index2 < 3 ? index2 : 3)) / ((_e = dictRef.current[strKey]) == null ? void 0 : _e.offsetWidth) : 1;
+          const transformY = (expanded ? verticalOffset : index * offset3) * (placement.startsWith("top") ? 1 : -1);
+          const scaleX = !expanded && (latestNotice == null ? void 0 : latestNotice.offsetWidth) && ((_d = dictRef.current[strKey]) == null ? void 0 : _d.offsetWidth) ? ((latestNotice == null ? void 0 : latestNotice.offsetWidth) - offset3 * 2 * (index < 3 ? index : 3)) / ((_e = dictRef.current[strKey]) == null ? void 0 : _e.offsetWidth) : 1;
           stackStyle.transform = `translate3d(${transformX}, ${transformY}px, 0) scaleX(${scaleX})`;
         } else {
           stackStyle.transform = `translate3d(${transformX}, 0, 0)`;
@@ -33005,7 +33042,7 @@ html body {
     const {
       prefixCls = "rc-notification",
       container,
-      motion,
+      motion: motion2,
       maxCount,
       className,
       style: style2,
@@ -33031,11 +33068,11 @@ html body {
         setConfigList((list) => {
           var _a;
           let clone = [...list];
-          const index2 = clone.findIndex((item) => item.key === config.key);
+          const index = clone.findIndex((item) => item.key === config.key);
           const innerConfig = __spreadValues({}, config);
-          if (index2 >= 0) {
-            innerConfig.times = (((_a = list[index2]) == null ? void 0 : _a.times) || 0) + 1;
-            clone[index2] = innerConfig;
+          if (index >= 0) {
+            innerConfig.times = (((_a = list[index]) == null ? void 0 : _a.times) || 0) + 1;
+            clone[index] = innerConfig;
           } else {
             innerConfig.times = 0;
             clone.push(innerConfig);
@@ -33102,7 +33139,7 @@ html body {
         prefixCls,
         className: className == null ? void 0 : className(placement),
         style: style2 == null ? void 0 : style2(placement),
-        motion,
+        motion: motion2,
         onNoticeClose,
         onAllNoticeRemoved,
         stack: stack2
@@ -33138,7 +33175,7 @@ html body {
   function useNotification(rootConfig = {}) {
     const _a = rootConfig, {
       getContainer: getContainer2 = defaultGetContainer,
-      motion,
+      motion: motion2,
       prefixCls,
       maxCount,
       className,
@@ -33163,7 +33200,7 @@ html body {
       container,
       ref: notificationsRef,
       prefixCls,
-      motion,
+      motion: motion2,
       maxCount,
       className,
       style: style2,
@@ -33798,11 +33835,11 @@ html body {
     onLeaveEnd: skipOpacityTransition,
     motionDeadline: 500
   });
-  var getTransitionName2 = (rootPrefixCls, motion, transitionName) => {
+  var getTransitionName2 = (rootPrefixCls, motion2, transitionName) => {
     if (transitionName !== void 0) {
       return transitionName;
     }
-    return `${rootPrefixCls}-${motion}`;
+    return `${rootPrefixCls}-${motion2}`;
   };
   var motion_default = initCollapseMotion;
 
@@ -37973,15 +38010,15 @@ html body {
     });
   }
   function asyncSerialArray(arr, func, callback) {
-    var index2 = 0;
+    var index = 0;
     var arrLength = arr.length;
     function next2(errors) {
       if (errors && errors.length) {
         callback(errors);
         return;
       }
-      var original = index2;
-      index2 = index2 + 1;
+      var original = index;
+      index = index + 1;
       if (original < arrLength) {
         func(arr[original], next2);
       } else {
@@ -38981,10 +39018,10 @@ html body {
       if (errObj.errors) {
         result = errObj.errors.map(({
           message: message2
-        }, index2) => {
+        }, index) => {
           const mergedMessage = message2 === CODE_LOGIC_ERROR ? messages2.default : message2;
           return /* @__PURE__ */ React113.isValidElement(mergedMessage) ? /* @__PURE__ */ React113.cloneElement(mergedMessage, {
-            key: `error_${index2}`
+            key: `error_${index}`
           }) : mergedMessage;
         });
       }
@@ -39795,13 +39832,13 @@ html body {
         return values || [];
       };
       const operations = {
-        add: (defaultValue, index2) => {
+        add: (defaultValue, index) => {
           const newValue = getNewValue();
-          if (index2 >= 0 && index2 <= newValue.length) {
-            keyManager.keys = [...keyManager.keys.slice(0, index2), keyManager.id, ...keyManager.keys.slice(index2)];
-            onChange([...newValue.slice(0, index2), defaultValue, ...newValue.slice(index2)]);
+          if (index >= 0 && index <= newValue.length) {
+            keyManager.keys = [...keyManager.keys.slice(0, index), keyManager.id, ...keyManager.keys.slice(index)];
+            onChange([...newValue.slice(0, index), defaultValue, ...newValue.slice(index)]);
           } else {
-            if (index2 < 0 || index2 > newValue.length) {
+            if (index < 0 || index > newValue.length) {
               warning_default(false, "The second parameter of the add function should be a valid positive number.");
             }
             keyManager.keys = [...keyManager.keys, keyManager.id];
@@ -39809,9 +39846,9 @@ html body {
           }
           keyManager.id += 1;
         },
-        remove: (index2) => {
+        remove: (index) => {
           const newValue = getNewValue();
-          const indexSet = new Set(Array.isArray(index2) ? index2 : [index2]);
+          const indexSet = new Set(Array.isArray(index) ? index : [index]);
           if (indexSet.size <= 0) {
             return;
           }
@@ -39837,15 +39874,15 @@ html body {
           warning_default(false, `Current value of '${prefixName.join(" > ")}' is not an array type.`);
         }
       }
-      return children(listValue.map((__, index2) => {
-        let key = keyManager.keys[index2];
+      return children(listValue.map((__, index) => {
+        let key = keyManager.keys[index];
         if (key === void 0) {
-          keyManager.keys[index2] = keyManager.id;
-          key = keyManager.keys[index2];
+          keyManager.keys[index] = keyManager.id;
+          key = keyManager.keys[index];
           keyManager.id += 1;
         }
         return {
-          name: index2,
+          name: index,
           key,
           isListField: true
         };
@@ -39866,13 +39903,13 @@ html body {
       return Promise.resolve([]);
     }
     return new Promise((resolve, reject) => {
-      promiseList.forEach((promise, index2) => {
+      promiseList.forEach((promise, index) => {
         promise.catch((e3) => {
           hasError = true;
           return e3;
         }).then((result) => {
           count -= 1;
-          results[index2] = result;
+          results[index] = result;
           if (count > 0) {
             return;
           }
@@ -40157,7 +40194,7 @@ html body {
       __publicField(this, "getFieldsError", (nameList) => {
         this.warningUnhooked();
         const fieldEntities = this.getFieldEntitiesForNamePathList(nameList);
-        return fieldEntities.map((entity, index2) => {
+        return fieldEntities.map((entity, index) => {
           if (entity && !entity.INVALIDATE_NAME_PATH) {
             return {
               name: entity.getNamePath(),
@@ -40166,7 +40203,7 @@ html body {
             };
           }
           return {
-            name: getNamePath(nameList[index2]),
+            name: getNamePath(nameList[index]),
             errors: [],
             warnings: []
           };
@@ -40803,7 +40840,7 @@ html body {
       form,
       preserve: preserve2,
       children,
-      component: Component7 = "form",
+      component: Component5 = "form",
       validateMessages,
       validateTrigger = "onChange",
       onValuesChange,
@@ -40898,10 +40935,10 @@ html body {
     }, /* @__PURE__ */ React118.createElement(FieldContext_default.Provider, {
       value: formContextValue
     }, childrenNode));
-    if (Component7 === false) {
+    if (Component5 === false) {
       return wrapperNode;
     }
-    return /* @__PURE__ */ React118.createElement(Component7, _extends24({}, restProps, {
+    return /* @__PURE__ */ React118.createElement(Component5, _extends24({}, restProps, {
       ref: nativeElementRef,
       onSubmit: (event) => {
         event.preventDefault();
@@ -41055,6 +41092,33 @@ html body {
     return result;
   };
   var ContextIsolator_default = ContextIsolator;
+
+  // ../custom_dashboard/node_modules/@rc-component/util/es/Dom/styleChecker.js
+  var isStyleNameSupport = (styleName) => {
+    if (canUseDom() && window.document.documentElement) {
+      const styleNameList = Array.isArray(styleName) ? styleName : [styleName];
+      const {
+        documentElement
+      } = window.document;
+      return styleNameList.some((name) => name in documentElement.style);
+    }
+    return false;
+  };
+  var isStyleValueSupport = (styleName, value) => {
+    if (!isStyleNameSupport(styleName)) {
+      return false;
+    }
+    const ele = document.createElement("div");
+    const origin = ele.style[styleName];
+    ele.style[styleName] = value;
+    return ele.style[styleName] !== origin;
+  };
+  function isStyleSupport(styleName, styleValue) {
+    if (!Array.isArray(styleName) && styleValue !== void 0) {
+      return isStyleValueSupport(styleName, styleValue);
+    }
+    return isStyleNameSupport(styleName);
+  }
 
   // ../custom_dashboard/node_modules/antd/es/_util/styleChecker.js
   var canUseDocElement = () => canUseDom() && window.document.documentElement;
@@ -41624,15 +41688,15 @@ html body {
   // ../custom_dashboard/node_modules/antd/es/skeleton/Paragraph.js
   var React128 = __toESM(require_react());
   "use client";
-  var getWidth = (index2, props) => {
+  var getWidth = (index, props) => {
     const {
       width,
       rows = 2
     } = props;
     if (Array.isArray(width)) {
-      return width[index2];
+      return width[index];
     }
-    if (rows - 1 === index2) {
+    if (rows - 1 === index) {
       return width;
     }
     return void 0;
@@ -41646,10 +41710,10 @@ html body {
     } = props;
     const rowList = Array.from({
       length: rows
-    }).map((_, index2) => /* @__PURE__ */ React128.createElement("li", {
-      key: index2,
+    }).map((_, index) => /* @__PURE__ */ React128.createElement("li", {
+      key: index,
       style: {
-        width: getWidth(index2, props)
+        width: getWidth(index, props)
       }
     }));
     return /* @__PURE__ */ React128.createElement("ul", {
@@ -42334,8 +42398,8 @@ html body {
     }));
     return {
       [`${componentCls}-root`]: {
-        [componentCls]: [].concat(_toConsumableArray(Object.keys(oriGridMediaSizesMap).map((currentKey, index2) => {
-          const previousKey = Object.keys(oriGridMediaSizesMap)[index2 - 1];
+        [componentCls]: [].concat(_toConsumableArray(Object.keys(oriGridMediaSizesMap).map((currentKey, index) => {
+          const previousKey = Object.keys(oriGridMediaSizesMap)[index - 1];
           return previousKey ? {
             [`${cssVarPrefix}${currentKey}-width`]: `var(${cssVarPrefix}${previousKey}-width)`
           } : null;
@@ -43210,7 +43274,7 @@ html body {
   // ../custom_dashboard/node_modules/antd/es/_util/PurePanel.js
   var React141 = __toESM(require_react());
   "use client";
-  function withPureRenderTheme(Component7) {
+  function withPureRenderTheme(Component5) {
     return (props) => /* @__PURE__ */ React141.createElement(config_provider_default, {
       theme: {
         token: {
@@ -43218,9 +43282,9 @@ html body {
           zIndexPopupBase: 0
         }
       }
-    }, /* @__PURE__ */ React141.createElement(Component7, __spreadValues({}, props)));
+    }, /* @__PURE__ */ React141.createElement(Component5, __spreadValues({}, props)));
   }
-  var genPurePanel = (Component7, alignPropName, postProps, defaultPrefixCls2, getDropdownCls) => {
+  var genPurePanel = (Component5, alignPropName, postProps, defaultPrefixCls2, getDropdownCls) => {
     const PurePanel7 = (props) => {
       const {
         prefixCls: customizePrefixCls,
@@ -43285,7 +43349,7 @@ html body {
       return /* @__PURE__ */ React141.createElement("div", {
         ref: holderRef,
         style: mergedStyle
-      }, /* @__PURE__ */ React141.createElement(Component7, __spreadValues({}, mergedProps)));
+      }, /* @__PURE__ */ React141.createElement(Component5, __spreadValues({}, mergedProps)));
     };
     return withPureRenderTheme(PurePanel7);
   };
@@ -43454,7 +43518,7 @@ html body {
       popupRender,
       popupAlign,
       getPopupContainer,
-      empty: empty2,
+      empty,
       onPopupVisibleChange,
       onPopupMouseEnter,
       onPopupMouseDown,
@@ -43529,7 +43593,7 @@ html body {
       popupVisible: visible,
       getPopupContainer,
       popupClassName: clsx(popupClassName, {
-        [`${popupPrefixCls}-empty`]: empty2
+        [`${popupPrefixCls}-empty`]: empty
       }),
       popupStyle: mergedPopupStyle,
       onPopupVisibleChange
@@ -43542,7 +43606,7 @@ html body {
   var SelectTrigger_default = RefSelectTrigger;
 
   // ../custom_dashboard/node_modules/@rc-component/select/es/utils/valueUtil.js
-  function getKey(data, index2) {
+  function getKey(data, index) {
     const {
       key
     } = data;
@@ -43558,7 +43622,7 @@ html body {
     if (value !== void 0) {
       return value;
     }
-    return `rc-index-key-${index2}`;
+    return `rc-index-key-${index}`;
   }
   function isValidCount(value) {
     return typeof value !== "undefined" && !Number.isNaN(value);
@@ -43923,8 +43987,8 @@ html body {
       mergedProps.ref = composeRef(InputComponent.ref, sharedInputProps.ref);
       return /* @__PURE__ */ React149.cloneElement(InputComponent, mergedProps);
     }
-    const Component7 = InputComponent;
-    return /* @__PURE__ */ React149.createElement(Component7, sharedInputProps);
+    const Component5 = InputComponent;
+    return /* @__PURE__ */ React149.createElement(Component5, sharedInputProps);
   });
   var Input_default2 = Input;
 
@@ -44112,7 +44176,7 @@ html body {
       children,
       display,
       order,
-      component: Component7 = "div"
+      component: Component5 = "div"
     } = _a, restProps = __objRest(_a, [
       "prefixCls",
       "invalidate",
@@ -44154,7 +44218,7 @@ html body {
     if (mergedHidden) {
       overflowProps["aria-hidden"] = true;
     }
-    let itemNode = /* @__PURE__ */ React153.createElement(Component7, _extends17({
+    let itemNode = /* @__PURE__ */ React153.createElement(Component5, _extends17({
       className: clsx(!invalidate && prefixCls, className),
       style: __spreadValues(__spreadValues({}, overflowStyle), style2)
     }, overflowProps, restProps, {
@@ -44234,11 +44298,11 @@ html body {
     const context = React156.useContext(OverflowContext);
     if (!context) {
       const _a = props, {
-        component: Component7 = "div"
+        component: Component5 = "div"
       } = _a, restProps2 = __objRest(_a, [
         "component"
       ]);
-      return /* @__PURE__ */ React156.createElement(Component7, _extends17({}, restProps2, {
+      return /* @__PURE__ */ React156.createElement(Component5, _extends17({}, restProps2, {
         ref
       }));
     }
@@ -44287,7 +44351,7 @@ html body {
       renderRawRest,
       prefix: prefix2,
       suffix,
-      component: Component7 = "div",
+      component: Component5 = "div",
       itemComponent,
       onVisibleChange
     } = _a, restProps = __objRest(_a, [
@@ -44352,12 +44416,12 @@ html body {
       }
       return data.slice(mergedData.length);
     }, [data, mergedData, shouldResponsive, mergedDisplayCount]);
-    const getKey3 = (0, import_react74.useCallback)((item, index2) => {
+    const getKey3 = (0, import_react74.useCallback)((item, index) => {
       var _a2;
       if (typeof itemKey3 === "function") {
         return itemKey3(item);
       }
-      return (_a2 = itemKey3 && (item == null ? void 0 : item[itemKey3])) != null ? _a2 : index2;
+      return (_a2 = itemKey3 && (item == null ? void 0 : item[itemKey3])) != null ? _a2 : index;
     }, [itemKey3]);
     const mergedRenderItem = (0, import_react74.useCallback)(renderItem || ((item) => item), [renderItem]);
     function updateDisplayCount(count, suffixFixedStartVal, notReady) {
@@ -44397,8 +44461,8 @@ html body {
     function registerSuffixSize(_, width) {
       setSuffixWidth(width);
     }
-    function getItemWidth(index2) {
-      return itemWidths.get(getKey3(mergedData[index2], index2));
+    function getItemWidth(index) {
+      return itemWidths.get(getKey3(mergedData[index], index));
     }
     useLayoutEffect_default(() => {
       if (mergedContainerWidth && typeof mergedRestWidth === "number" && mergedData) {
@@ -44447,28 +44511,28 @@ html body {
       component: itemComponent,
       invalidate
     };
-    const internalRenderItemNode = renderRawItem ? (item, index2) => {
-      const key = getKey3(item, index2);
+    const internalRenderItemNode = renderRawItem ? (item, index) => {
+      const key = getKey3(item, index);
       return /* @__PURE__ */ React157.createElement(OverflowContext.Provider, {
         key,
         value: __spreadProps(__spreadValues({}, itemSharedProps), {
-          order: index2,
+          order: index,
           item,
           itemKey: key,
           registerSize,
-          display: index2 <= mergedDisplayCount
+          display: index <= mergedDisplayCount
         })
-      }, renderRawItem(item, index2));
-    } : (item, index2) => {
-      const key = getKey3(item, index2);
+      }, renderRawItem(item, index));
+    } : (item, index) => {
+      const key = getKey3(item, index);
       return /* @__PURE__ */ React157.createElement(Item_default, _extends17({}, itemSharedProps, {
-        order: index2,
+        order: index,
         key,
         item,
         renderItem: mergedRenderItem,
         itemKey: key,
         registerSize,
-        display: index2 <= mergedDisplayCount
+        display: index <= mergedDisplayCount
       }));
     };
     const restContextProps = {
@@ -44481,7 +44545,7 @@ html body {
     const restNode = renderRawRest ? /* @__PURE__ */ React157.createElement(OverflowContext.Provider, {
       value: __spreadValues(__spreadValues({}, itemSharedProps), restContextProps)
     }, renderRawRest(omittedItems)) : /* @__PURE__ */ React157.createElement(Item_default, _extends17({}, itemSharedProps, restContextProps), typeof mergedRenderRest === "function" ? mergedRenderRest(omittedItems) : mergedRenderRest);
-    const overflowNode = /* @__PURE__ */ React157.createElement(Component7, _extends17({
+    const overflowNode = /* @__PURE__ */ React157.createElement(Component5, _extends17({
       className: clsx(!invalidate && prefixCls, className),
       style: style2,
       ref
@@ -45526,8 +45590,8 @@ html body {
   function useChildren(list, startIndex, endIndex, scrollWidth, offsetX, setNodeRef, renderFunc, {
     getKey: getKey3
   }) {
-    return list.slice(startIndex, endIndex + 1).map((item, index2) => {
-      const eleIndex = startIndex + index2;
+    return list.slice(startIndex, endIndex + 1).map((item, index) => {
+      const eleIndex = startIndex + index;
       const node2 = renderFunc(item, eleIndex, {
         style: {
           width: scrollWidth
@@ -46028,7 +46092,7 @@ html body {
         const {
           targetAlign,
           originAlign,
-          index: index2,
+          index,
           offset: offset3
         } = syncState;
         const height = containerRef.current.clientHeight;
@@ -46040,7 +46104,7 @@ html body {
           let stackTop = 0;
           let itemTop = 0;
           let itemBottom = 0;
-          const maxLen = Math.min(data.length - 1, index2);
+          const maxLen = Math.min(data.length - 1, index);
           for (let i = 0; i <= maxLen; i += 1) {
             const key = getKey3(data[i]);
             itemTop = stackTop;
@@ -46107,23 +46171,23 @@ html body {
       if (typeof arg === "number") {
         syncScrollTop(arg);
       } else if (arg && typeof arg === "object") {
-        let index2;
+        let index;
         const {
           align
         } = arg;
         if ("index" in arg) {
           ({
-            index: index2
+            index
           } = arg);
         } else {
-          index2 = data.findIndex((item) => getKey3(item) === arg.key);
+          index = data.findIndex((item) => getKey3(item) === arg.key);
         }
         const {
           offset: offset3 = 0
         } = arg;
         setSyncState({
           times: 0,
-          index: index2,
+          index,
           offset: offset3,
           originAlign: align
         });
@@ -46377,7 +46441,7 @@ html body {
       virtual,
       direction,
       scrollWidth,
-      component: Component7 = "div",
+      component: Component5 = "div",
       onScroll,
       onVirtualScroll,
       onVisibleChange,
@@ -46747,7 +46811,7 @@ html body {
       className: mergedClassName
     }, containerProps, restProps), /* @__PURE__ */ React173.createElement(es_default, {
       onResize: onHolderResize
-    }, /* @__PURE__ */ React173.createElement(Component7, {
+    }, /* @__PURE__ */ React173.createElement(Component5, {
       className: `${prefixCls}-holder`,
       style: componentStyle,
       ref: componentRef,
@@ -46880,10 +46944,10 @@ html body {
       }
       return rawValues.has(value);
     }, [mode, [...rawValues].toString(), rawValues.size]);
-    const getEnabledActiveIndex = (index2, offset3 = 1) => {
+    const getEnabledActiveIndex = (index, offset3 = 1) => {
       const len = memoFlattenOptions.length;
       for (let i = 0; i < len; i += 1) {
-        const current = (index2 + i * offset3 + len) % len;
+        const current = (index + i * offset3 + len) % len;
         const {
           group,
           data
@@ -46895,17 +46959,17 @@ html body {
       return -1;
     };
     const [activeIndex, setActiveIndex] = React174.useState(() => getEnabledActiveIndex(0));
-    const setActive = (index2, fromKeyboard = false) => {
-      setActiveIndex(index2);
+    const setActive = (index, fromKeyboard = false) => {
+      setActiveIndex(index);
       const info = {
         source: fromKeyboard ? "keyboard" : "mouse"
       };
-      const flattenItem = memoFlattenOptions[index2];
+      const flattenItem = memoFlattenOptions[index];
       if (!flattenItem) {
         onActiveValue(null, -1, info);
         return;
       }
-      onActiveValue(flattenItem.value, index2, info);
+      onActiveValue(flattenItem.value, index, info);
     };
     (0, import_react80.useEffect)(() => {
       setActive(defaultActiveFirstOption !== false ? getEnabledActiveIndex(0) : -1);
@@ -46921,13 +46985,13 @@ html body {
       let timeoutId;
       if (!multiple && open2 && rawValues.size === 1) {
         const value = Array.from(rawValues)[0];
-        const index2 = memoFlattenOptions.findIndex(({
+        const index = memoFlattenOptions.findIndex(({
           data
         }) => searchValue ? String(data.value).startsWith(searchValue) : data.value === value);
-        if (index2 !== -1) {
-          setActive(index2);
+        if (index !== -1) {
+          setActive(index);
           timeoutId = setTimeout(() => {
-            scrollIntoView(index2);
+            scrollIntoView(index);
           });
         }
       }
@@ -47002,8 +47066,8 @@ html body {
       },
       onKeyUp: () => {
       },
-      scrollTo: (index2) => {
-        scrollIntoView(index2);
+      scrollTo: (index) => {
+        scrollIntoView(index);
       }
     }));
     if (memoFlattenOptions.length === 0) {
@@ -47016,17 +47080,17 @@ html body {
     }
     const omitFieldNameList = Object.keys(fieldNames).map((key) => fieldNames[key]);
     const getLabel = (item) => item.label;
-    function getItemAriaProps(item, index2) {
+    function getItemAriaProps(item, index) {
       const {
         group
       } = item;
       return {
         role: group ? "presentation" : "option",
-        id: `${id}_list_${index2}`
+        id: `${id}_list_${index}`
       };
     }
-    const renderItem = (index2) => {
-      const item = memoFlattenOptions[index2];
+    const renderItem = (index) => {
+      const item = memoFlattenOptions[index];
       if (!item) {
         return null;
       }
@@ -47043,8 +47107,8 @@ html body {
       return item ? /* @__PURE__ */ React174.createElement("div", _extends30({
         "aria-label": typeof mergedLabel === "string" && !group ? mergedLabel : null
       }, attrs, {
-        key: index2
-      }, getItemAriaProps(item, index2), {
+        key: index
+      }, getItemAriaProps(item, index), {
         "aria-selected": isAriaSelected(value),
         "aria-disabled": disabled
       }), value) : null;
@@ -47270,7 +47334,7 @@ html body {
     }, restProps);
   }
   function convertChildrenToData(nodes, optionOnly = false) {
-    return toArray(nodes).map((node2, index2) => {
+    return toArray(nodes).map((node2, index) => {
       if (!/* @__PURE__ */ React177.isValidElement(node2) || !node2.type) {
         return null;
       }
@@ -47289,7 +47353,7 @@ html body {
         return convertNodeToOption(node2);
       }
       return __spreadProps(__spreadValues({
-        key: `__RC_SELECT_GRP__${key === null ? index2 : key}__`,
+        key: `__RC_SELECT_GRP__${key === null ? index : key}__`,
         label: key
       }, restProps), {
         options: convertChildrenToData(children)
@@ -47738,9 +47802,9 @@ html body {
     const triggerChange = (values) => {
       const labeledValues = convert2LabelValues(values);
       setInternalValue(labeledValues);
-      if (onChange && (labeledValues.length !== mergedValues.length || labeledValues.some((newVal, index2) => {
+      if (onChange && (labeledValues.length !== mergedValues.length || labeledValues.some((newVal, index) => {
         var _a2;
-        return ((_a2 = mergedValues[index2]) == null ? void 0 : _a2.value) !== (newVal == null ? void 0 : newVal.value);
+        return ((_a2 = mergedValues[index]) == null ? void 0 : _a2.value) !== (newVal == null ? void 0 : newVal.value);
       }))) {
         const returnValues = labelInValue ? labeledValues.map(({
           label: l2,
@@ -47760,10 +47824,10 @@ html body {
     const [accessibilityIndex, setAccessibilityIndex] = React182.useState(0);
     const mergedDefaultActiveFirstOption = defaultActiveFirstOption !== void 0 ? defaultActiveFirstOption : mode !== "combobox";
     const activeEventRef = React182.useRef();
-    const onActiveValue = React182.useCallback((active, index2, {
+    const onActiveValue = React182.useCallback((active, index, {
       source = "keyboard"
     } = {}) => {
-      setAccessibilityIndex(index2);
+      setAccessibilityIndex(index);
       if (backfill && mode === "combobox" && active !== null && source === "keyboard") {
         setActiveValue(String(active));
       }
@@ -49749,7 +49813,7 @@ html body {
       children,
       onVisibleChange,
       afterVisibleChange,
-      motion,
+      motion: motion2,
       placement = "right",
       align = {},
       destroyOnHidden = false,
@@ -49828,7 +49892,7 @@ html body {
       getPopupContainer: getTooltipContainer,
       onOpenChange: onVisibleChange,
       afterOpenChange: afterVisibleChange,
-      popupMotion: motion,
+      popupMotion: motion2,
       defaultPopupVisible: defaultVisible,
       autoDestroy: destroyOnHidden,
       mouseLeaveDelay,
@@ -50513,7 +50577,7 @@ html body {
       trigger,
       builtinPlacements,
       autoAdjustOverflow: autoAdjustOverflow3 = true,
-      motion,
+      motion: motion2,
       getPopupContainer,
       placement = "top",
       mouseEnterDelay = 0.1,
@@ -50678,7 +50742,7 @@ html body {
         className: `${prefixCls}-arrow-content`
       }),
       motion: {
-        motionName: getTransitionName2(rootPrefixCls, "zoom-big-fast", typeof (motion == null ? void 0 : motion.motionName) === "string" ? motion == null ? void 0 : motion.motionName : void 0),
+        motionName: getTransitionName2(rootPrefixCls, "zoom-big-fast", typeof (motion2 == null ? void 0 : motion2.motionName) === "string" ? motion2 == null ? void 0 : motion2.motionName : void 0),
         motionDeadline: 1e3
       },
       trigger: mergedTrigger,
@@ -51044,8 +51108,8 @@ html body {
   // ../custom_dashboard/node_modules/@rc-component/menu/es/context/IdContext.js
   var React204 = __toESM(require_react());
   var IdContext = /* @__PURE__ */ React204.createContext(null);
-  function getMenuId(uuid5, eventKey) {
-    return `${uuid5}-${eventKey}`;
+  function getMenuId(uuid6, eventKey) {
+    return `${uuid6}-${eventKey}`;
   }
   function useMenuId(eventKey) {
     const id = React204.useContext(IdContext);
@@ -51747,7 +51811,7 @@ html body {
   // ../custom_dashboard/node_modules/@rc-component/menu/es/utils/commonUtil.js
   var React216 = __toESM(require_react());
   function parseChildren(children, keyPath) {
-    return toArray(children).map((child, index2) => {
+    return toArray(children).map((child, index) => {
       var _a, _b;
       if (/* @__PURE__ */ React216.isValidElement(child)) {
         const {
@@ -51756,7 +51820,7 @@ html body {
         let eventKey = (_b = (_a = child.props) == null ? void 0 : _a.eventKey) != null ? _b : key;
         const emptyKey = eventKey === null || eventKey === void 0;
         if (emptyKey) {
-          eventKey = `tmp_key-${[...keyPath, index2].join("-")}`;
+          eventKey = `tmp_key-${[...keyPath, index].join("-")}`;
         }
         const cloneProps = {
           key: eventKey,
@@ -51849,9 +51913,9 @@ html body {
   };
 
   // ../custom_dashboard/node_modules/@rc-component/menu/es/utils/motionUtil.js
-  function getMotion2(mode, motion, defaultMotions) {
-    if (motion) {
-      return motion;
+  function getMotion2(mode, motion2, defaultMotions) {
+    if (motion2) {
+      return motion2;
     }
     if (defaultMotions) {
       return defaultMotions[mode] || defaultMotions.other;
@@ -51887,13 +51951,13 @@ html body {
       triggerSubMenuAction,
       forceSubMenuRender,
       rootClassName,
-      motion,
+      motion: motion2,
       defaultMotions
     } = React217.useContext(MenuContext);
     const [innerVisible, setInnerVisible] = React217.useState(false);
     const placement = rtl ? __spreadValues(__spreadValues({}, placementsRtl), builtinPlacements) : __spreadValues(__spreadValues({}, placements3), builtinPlacements);
     const popupPlacement = popupPlacementMap[mode];
-    const targetMotion = getMotion2(mode, motion, defaultMotions);
+    const targetMotion = getMotion2(mode, motion2, defaultMotions);
     const targetMotionRef = React217.useRef(targetMotion);
     if (mode !== "inline") {
       targetMotionRef.current = targetMotion;
@@ -51963,7 +52027,7 @@ html body {
     const {
       prefixCls,
       forceSubMenuRender,
-      motion,
+      motion: motion2,
       defaultMotions,
       mode
     } = React218.useContext(MenuContext);
@@ -51976,7 +52040,7 @@ html body {
         setDestroy(false);
       }
     }, [mode]);
-    const mergedMotion = __spreadValues({}, getMotion2(fixedMode, motion, defaultMotions));
+    const mergedMotion = __spreadValues({}, getMotion2(fixedMode, motion2, defaultMotions));
     if (keyPath.length > 1) {
       mergedMotion.motionAppear = false;
     }
@@ -52418,7 +52482,7 @@ html body {
       submenu: MergedSubMenu,
       divider: MergedDivider
     } = components;
-    return (list || []).map((opt, index2) => {
+    return (list || []).map((opt, index) => {
       if (opt && typeof opt === "object") {
         const _a = opt, {
           label,
@@ -52433,7 +52497,7 @@ html body {
           "type",
           "extra"
         ]);
-        const mergedKey = key != null ? key : `tmp-${index2}`;
+        const mergedKey = key != null ? key : `tmp-${index}`;
         if (children || type5 === "group") {
           if (type5 === "group") {
             return /* @__PURE__ */ React222.createElement(MergedMenuItemGroup, _extends43({
@@ -52526,7 +52590,7 @@ html body {
       onSelect,
       onDeselect,
       inlineIndent = 24,
-      motion,
+      motion: motion2,
       defaultMotions,
       triggerSubMenuAction = "hover",
       builtinPlacements,
@@ -52596,7 +52660,7 @@ html body {
     const [childList, measureChildList] = React223.useMemo(() => [parseItems(children, items, EMPTY_LIST2, _internalComponents, prefixCls), parseItems(children, items, EMPTY_LIST2, {}, prefixCls)], [children, items, _internalComponents]);
     const [mounted, setMounted] = React223.useState(false);
     const containerRef = React223.useRef();
-    const uuid5 = useId_default(id ? `rc-menu-uuid-${id}` : "rc-menu-uuid");
+    const uuid6 = useId_default(id ? `rc-menu-uuid-${id}` : "rc-menu-uuid");
     const isRtl = direction === "rtl";
     if (true) {
       warning_default(!openAnimation && !openTransitionName, "`openAnimation` and `openTransitionName` is removed. Please use `motion` or `defaultMotion` instead.");
@@ -52686,7 +52750,7 @@ html body {
             elements,
             key2element,
             element2key
-          } = refreshElements(keys2, uuid5);
+          } = refreshElements(keys2, uuid6);
           const focusableElements = getFocusableElements(containerRef.current, elements);
           let shouldFocusKey;
           if (mergedActiveKey && keys2.includes(mergedActiveKey)) {
@@ -52705,7 +52769,7 @@ html body {
           const keys2 = getKeys();
           const {
             key2element
-          } = refreshElements(keys2, uuid5);
+          } = refreshElements(keys2, uuid6);
           return key2element.get(itemKey3) || null;
         }
       };
@@ -52770,7 +52834,7 @@ html body {
       const nextOpen = open2 != null ? open2 : !mergedOpenKeys.includes(key);
       onInternalOpenChange(key, nextOpen);
     };
-    const onInternalKeyDown = useAccessibility2(internalMode, mergedActiveKey, isRtl, uuid5, containerRef, getKeys, getKeyPath, setMergedActiveKey, triggerAccessibilityOpen, onKeyDown2);
+    const onInternalKeyDown = useAccessibility2(internalMode, mergedActiveKey, isRtl, uuid6, containerRef, getKeys, getKeyPath, setMergedActiveKey, triggerAccessibilityOpen, onKeyDown2);
     React223.useEffect(() => {
       setMounted(true);
     }, []);
@@ -52778,9 +52842,9 @@ html body {
       _internalRenderMenuItem,
       _internalRenderSubMenuItem
     }), [_internalRenderMenuItem, _internalRenderSubMenuItem]);
-    const wrappedChildList = internalMode !== "horizontal" || disabledOverflow ? childList : childList.map((child, index2) => /* @__PURE__ */ React223.createElement(InheritableContextProvider, {
+    const wrappedChildList = internalMode !== "horizontal" || disabledOverflow ? childList : childList.map((child, index) => /* @__PURE__ */ React223.createElement(InheritableContextProvider, {
       key: child.key,
-      overflowDisabled: index2 > lastVisibleIndex,
+      overflowDisabled: index > lastVisibleIndex,
       classNames: menuClassNames,
       styles
     }, child));
@@ -52822,7 +52886,7 @@ html body {
     return /* @__PURE__ */ React223.createElement(PrivateContext_default.Provider, {
       value: privateContext
     }, /* @__PURE__ */ React223.createElement(IdContext.Provider, {
-      value: uuid5
+      value: uuid6
     }, /* @__PURE__ */ React223.createElement(InheritableContextProvider, {
       prefixCls,
       rootClassName,
@@ -52832,7 +52896,7 @@ html body {
       openKeys: mergedOpenKeys,
       rtl: isRtl,
       disabled,
-      motion: mounted ? motion : null,
+      motion: mounted ? motion2 : null,
       defaultMotions: mounted ? defaultMotions : null,
       activeKey: mergedActiveKey,
       onActive,
@@ -56930,6 +56994,3391 @@ html body {
     resetFont: false
   });
 
+  // ../custom_dashboard/node_modules/antd/es/card/Card.js
+  var React258 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/antd/es/tabs/index.js
+  var React256 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/PlusOutlined.js
+  var React242 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/PlusOutlined.js
+  var PlusOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M482 152h60q8 0 8 8v704q0 8-8 8h-60q-8 0-8-8V160q0-8 8-8z" } }, { "tag": "path", "attrs": { "d": "M192 474h672q8 0 8 8v60q0 8-8 8H160q-8 0-8-8v-60q0-8 8-8z" } }] }, "name": "plus", "theme": "outlined" };
+  var PlusOutlined_default = PlusOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/PlusOutlined.js
+  function _extends48() {
+    _extends48 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends48.apply(this, arguments);
+  }
+  var PlusOutlined2 = (props, ref) => /* @__PURE__ */ React242.createElement(AntdIcon_default, _extends48({}, props, {
+    ref,
+    icon: PlusOutlined_default
+  }));
+  var RefIcon14 = /* @__PURE__ */ React242.forwardRef(PlusOutlined2);
+  if (true) {
+    RefIcon14.displayName = "PlusOutlined";
+  }
+  var PlusOutlined_default2 = RefIcon14;
+
+  // ../custom_dashboard/node_modules/@rc-component/util/es/isMobile.js
+  var import_is_mobile = __toESM(require_is_mobile());
+  var cached2;
+  var getIsMobile = () => {
+    if (typeof cached2 === "undefined") {
+      cached2 = (0, import_is_mobile.default)();
+    }
+    return cached2;
+  };
+  var isMobile_default = getIsMobile;
+
+  // ../custom_dashboard/node_modules/@rc-component/tabs/es/Tabs.js
+  var React254 = __toESM(require_react());
+  var import_react106 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@rc-component/tabs/es/TabContext.js
+  var import_react98 = __toESM(require_react());
+  var TabContext_default = /* @__PURE__ */ (0, import_react98.createContext)(null);
+
+  // ../custom_dashboard/node_modules/@rc-component/tabs/es/TabNavList/Wrapper.js
+  var React251 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@rc-component/tabs/es/TabNavList/index.js
+  var React250 = __toESM(require_react());
+  var import_react105 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@rc-component/tabs/es/hooks/useIndicator.js
+  var import_react99 = __toESM(require_react());
+  var useIndicator = (options) => {
+    const {
+      activeTabOffset,
+      horizontal,
+      rtl,
+      indicator = {}
+    } = options;
+    const {
+      size,
+      align = "center"
+    } = indicator;
+    const [inkStyle, setInkStyle] = (0, import_react99.useState)();
+    const inkBarRafRef = (0, import_react99.useRef)();
+    const getLength = import_react99.default.useCallback((origin) => {
+      if (typeof size === "function") {
+        return size(origin);
+      }
+      if (typeof size === "number") {
+        return size;
+      }
+      return origin;
+    }, [size]);
+    function cleanInkBarRaf() {
+      raf_default.cancel(inkBarRafRef.current);
+    }
+    (0, import_react99.useEffect)(() => {
+      const newInkStyle = {};
+      if (activeTabOffset) {
+        if (horizontal) {
+          newInkStyle.width = getLength(activeTabOffset.width);
+          const key = rtl ? "right" : "left";
+          if (align === "start") {
+            newInkStyle[key] = activeTabOffset[key];
+          }
+          if (align === "center") {
+            newInkStyle[key] = activeTabOffset[key] + activeTabOffset.width / 2;
+            newInkStyle.transform = rtl ? "translateX(50%)" : "translateX(-50%)";
+          }
+          if (align === "end") {
+            newInkStyle[key] = activeTabOffset[key] + activeTabOffset.width;
+            newInkStyle.transform = "translateX(-100%)";
+          }
+        } else {
+          newInkStyle.height = getLength(activeTabOffset.height);
+          if (align === "start") {
+            newInkStyle.top = activeTabOffset.top;
+          }
+          if (align === "center") {
+            newInkStyle.top = activeTabOffset.top + activeTabOffset.height / 2;
+            newInkStyle.transform = "translateY(-50%)";
+          }
+          if (align === "end") {
+            newInkStyle.top = activeTabOffset.top + activeTabOffset.height;
+            newInkStyle.transform = "translateY(-100%)";
+          }
+        }
+      }
+      cleanInkBarRaf();
+      inkBarRafRef.current = raf_default(() => {
+        const isEqual2 = inkStyle && newInkStyle && Object.keys(newInkStyle).every((key) => {
+          const newValue = newInkStyle[key];
+          const oldValue = inkStyle[key];
+          return typeof newValue === "number" && typeof oldValue === "number" ? Math.round(newValue) === Math.round(oldValue) : newValue === oldValue;
+        });
+        if (!isEqual2) {
+          setInkStyle(newInkStyle);
+        }
+      });
+      return cleanInkBarRaf;
+    }, [JSON.stringify(activeTabOffset), horizontal, rtl, align, getLength]);
+    return {
+      style: inkStyle
+    };
+  };
+  var useIndicator_default = useIndicator;
+
+  // ../custom_dashboard/node_modules/@rc-component/tabs/es/hooks/useOffsets.js
+  var import_react100 = __toESM(require_react());
+  var DEFAULT_SIZE = {
+    width: 0,
+    height: 0,
+    left: 0,
+    top: 0
+  };
+  function useOffsets(tabs, tabSizes, holderScrollWidth) {
+    return (0, import_react100.useMemo)(() => {
+      var _a, _b;
+      const map = /* @__PURE__ */ new Map();
+      const lastOffset = tabSizes.get((_a = tabs[0]) == null ? void 0 : _a.key) || DEFAULT_SIZE;
+      const rightOffset = lastOffset.left + lastOffset.width;
+      for (let i = 0; i < tabs.length; i += 1) {
+        const {
+          key
+        } = tabs[i];
+        let data = tabSizes.get(key);
+        if (!data) {
+          data = tabSizes.get((_b = tabs[i - 1]) == null ? void 0 : _b.key) || DEFAULT_SIZE;
+        }
+        const entity = map.get(key) || __spreadValues({}, data);
+        entity.right = rightOffset - entity.left - entity.width;
+        map.set(key, entity);
+      }
+      return map;
+    }, [tabs.map((tab) => tab.key).join("_"), tabSizes, holderScrollWidth]);
+  }
+
+  // ../custom_dashboard/node_modules/@rc-component/tabs/es/hooks/useSyncState.js
+  var React244 = __toESM(require_react());
+  function useSyncState3(defaultState, onChange) {
+    const stateRef = React244.useRef(defaultState);
+    const [, forceUpdate] = React244.useState({});
+    function setState(updater) {
+      const newValue = typeof updater === "function" ? updater(stateRef.current) : updater;
+      if (newValue !== stateRef.current) {
+        onChange(newValue, stateRef.current);
+      }
+      stateRef.current = newValue;
+      forceUpdate({});
+    }
+    return [stateRef.current, setState];
+  }
+
+  // ../custom_dashboard/node_modules/@rc-component/tabs/es/hooks/useTouchMove.js
+  var React245 = __toESM(require_react());
+  var import_react101 = __toESM(require_react());
+  var MIN_SWIPE_DISTANCE = 0.1;
+  var STOP_SWIPE_DISTANCE = 0.01;
+  var REFRESH_INTERVAL = 20;
+  var SPEED_OFF_MULTIPLE = 0.995 ** REFRESH_INTERVAL;
+  function useTouchMove(ref, onOffset) {
+    const [touchPosition, setTouchPosition] = (0, import_react101.useState)();
+    const [lastTimestamp, setLastTimestamp] = (0, import_react101.useState)(0);
+    const [lastTimeDiff, setLastTimeDiff] = (0, import_react101.useState)(0);
+    const [lastOffset, setLastOffset] = (0, import_react101.useState)();
+    const motionRef = (0, import_react101.useRef)();
+    function onTouchStart(e3) {
+      const {
+        screenX,
+        screenY
+      } = e3.touches[0];
+      setTouchPosition({
+        x: screenX,
+        y: screenY
+      });
+      window.clearInterval(motionRef.current);
+    }
+    function onTouchMove(e3) {
+      if (!touchPosition)
+        return;
+      const {
+        screenX,
+        screenY
+      } = e3.touches[0];
+      setTouchPosition({
+        x: screenX,
+        y: screenY
+      });
+      const offsetX = screenX - touchPosition.x;
+      const offsetY = screenY - touchPosition.y;
+      onOffset(offsetX, offsetY);
+      const now = Date.now();
+      setLastTimestamp(now);
+      setLastTimeDiff(now - lastTimestamp);
+      setLastOffset({
+        x: offsetX,
+        y: offsetY
+      });
+    }
+    function onTouchEnd() {
+      if (!touchPosition)
+        return;
+      setTouchPosition(null);
+      setLastOffset(null);
+      if (lastOffset) {
+        const distanceX = lastOffset.x / lastTimeDiff;
+        const distanceY = lastOffset.y / lastTimeDiff;
+        const absX = Math.abs(distanceX);
+        const absY = Math.abs(distanceY);
+        if (Math.max(absX, absY) < MIN_SWIPE_DISTANCE)
+          return;
+        let currentX = distanceX;
+        let currentY = distanceY;
+        motionRef.current = window.setInterval(() => {
+          if (Math.abs(currentX) < STOP_SWIPE_DISTANCE && Math.abs(currentY) < STOP_SWIPE_DISTANCE) {
+            window.clearInterval(motionRef.current);
+            return;
+          }
+          currentX *= SPEED_OFF_MULTIPLE;
+          currentY *= SPEED_OFF_MULTIPLE;
+          onOffset(currentX * REFRESH_INTERVAL, currentY * REFRESH_INTERVAL);
+        }, REFRESH_INTERVAL);
+      }
+    }
+    const lastWheelDirectionRef = (0, import_react101.useRef)();
+    function onWheel(e3) {
+      const {
+        deltaX,
+        deltaY
+      } = e3;
+      let mixed = 0;
+      const absX = Math.abs(deltaX);
+      const absY = Math.abs(deltaY);
+      if (absX === absY) {
+        mixed = lastWheelDirectionRef.current === "x" ? deltaX : deltaY;
+      } else if (absX > absY) {
+        mixed = deltaX;
+        lastWheelDirectionRef.current = "x";
+      } else {
+        mixed = deltaY;
+        lastWheelDirectionRef.current = "y";
+      }
+      if (onOffset(-mixed, -mixed)) {
+        e3.preventDefault();
+      }
+    }
+    const touchEventsRef = (0, import_react101.useRef)(null);
+    touchEventsRef.current = {
+      onTouchStart,
+      onTouchMove,
+      onTouchEnd,
+      onWheel
+    };
+    React245.useEffect(() => {
+      function onProxyTouchStart(e3) {
+        touchEventsRef.current.onTouchStart(e3);
+      }
+      function onProxyTouchMove(e3) {
+        touchEventsRef.current.onTouchMove(e3);
+      }
+      function onProxyTouchEnd(e3) {
+        touchEventsRef.current.onTouchEnd(e3);
+      }
+      function onProxyWheel(e3) {
+        touchEventsRef.current.onWheel(e3);
+      }
+      document.addEventListener("touchmove", onProxyTouchMove, {
+        passive: false
+      });
+      document.addEventListener("touchend", onProxyTouchEnd, {
+        passive: true
+      });
+      ref.current.addEventListener("touchstart", onProxyTouchStart, {
+        passive: true
+      });
+      ref.current.addEventListener("wheel", onProxyWheel, {
+        passive: false
+      });
+      return () => {
+        document.removeEventListener("touchmove", onProxyTouchMove);
+        document.removeEventListener("touchend", onProxyTouchEnd);
+      };
+    }, []);
+  }
+
+  // ../custom_dashboard/node_modules/@rc-component/tabs/es/hooks/useUpdate.js
+  var import_react102 = __toESM(require_react());
+  function useUpdate(callback) {
+    const [count, setCount] = (0, import_react102.useState)(0);
+    const effectRef = (0, import_react102.useRef)(0);
+    const callbackRef = (0, import_react102.useRef)();
+    callbackRef.current = callback;
+    useLayoutUpdateEffect(() => {
+      var _a;
+      (_a = callbackRef.current) == null ? void 0 : _a.call(callbackRef);
+    }, [count]);
+    return () => {
+      if (effectRef.current !== count) {
+        return;
+      }
+      effectRef.current += 1;
+      setCount(effectRef.current);
+    };
+  }
+  function useUpdateState(defaultState) {
+    const batchRef = (0, import_react102.useRef)([]);
+    const [, forceUpdate] = (0, import_react102.useState)({});
+    const state = (0, import_react102.useRef)(typeof defaultState === "function" ? defaultState() : defaultState);
+    const flushUpdate = useUpdate(() => {
+      let current = state.current;
+      batchRef.current.forEach((callback) => {
+        current = callback(current);
+      });
+      batchRef.current = [];
+      state.current = current;
+      forceUpdate({});
+    });
+    function updater(callback) {
+      batchRef.current.push(callback);
+      flushUpdate();
+    }
+    return [state.current, updater];
+  }
+
+  // ../custom_dashboard/node_modules/@rc-component/tabs/es/hooks/useVisibleRange.js
+  var import_react103 = __toESM(require_react());
+  var DEFAULT_SIZE2 = {
+    width: 0,
+    height: 0,
+    left: 0,
+    top: 0,
+    right: 0
+  };
+  function useVisibleRange(tabOffsets, visibleTabContentValue, transform, tabContentSizeValue, addNodeSizeValue, operationNodeSizeValue, {
+    tabs,
+    tabPosition,
+    rtl
+  }) {
+    let charUnit;
+    let position3;
+    let transformSize;
+    if (["top", "bottom"].includes(tabPosition)) {
+      charUnit = "width";
+      position3 = rtl ? "right" : "left";
+      transformSize = Math.abs(transform);
+    } else {
+      charUnit = "height";
+      position3 = "top";
+      transformSize = -transform;
+    }
+    return (0, import_react103.useMemo)(() => {
+      if (!tabs.length) {
+        return [0, 0];
+      }
+      const len = tabs.length;
+      let endIndex = len;
+      for (let i = 0; i < len; i += 1) {
+        const offset3 = tabOffsets.get(tabs[i].key) || DEFAULT_SIZE2;
+        if (Math.floor(offset3[position3] + offset3[charUnit]) > Math.floor(transformSize + visibleTabContentValue)) {
+          endIndex = i - 1;
+          break;
+        }
+      }
+      let startIndex = 0;
+      for (let i = len - 1; i >= 0; i -= 1) {
+        const offset3 = tabOffsets.get(tabs[i].key) || DEFAULT_SIZE2;
+        if (offset3[position3] < transformSize) {
+          startIndex = i + 1;
+          break;
+        }
+      }
+      return startIndex > endIndex ? [0, -1] : [startIndex, endIndex];
+    }, [tabOffsets, visibleTabContentValue, tabContentSizeValue, addNodeSizeValue, operationNodeSizeValue, transformSize, tabPosition, tabs.map((tab) => tab.key).join("_"), rtl]);
+  }
+
+  // ../custom_dashboard/node_modules/@rc-component/tabs/es/util.js
+  function stringify3(obj) {
+    let tgt;
+    if (obj instanceof Map) {
+      tgt = {};
+      obj.forEach((v, k) => {
+        tgt[k] = v;
+      });
+    } else {
+      tgt = obj;
+    }
+    return JSON.stringify(tgt);
+  }
+  var RC_TABS_DOUBLE_QUOTE = "TABS_DQ";
+  function genDataNodeKey(key) {
+    return String(key).replace(/"/g, RC_TABS_DOUBLE_QUOTE);
+  }
+  function getRemovable(closable, closeIcon, editable, disabled) {
+    if (!editable || disabled || closable === false || closable === void 0 && (closeIcon === false || closeIcon === null)) {
+      return false;
+    }
+    return true;
+  }
+
+  // ../custom_dashboard/node_modules/@rc-component/tabs/es/TabNavList/AddButton.js
+  var React246 = __toESM(require_react());
+  var AddButton = /* @__PURE__ */ React246.forwardRef((props, ref) => {
+    const {
+      prefixCls,
+      editable,
+      locale: locale6,
+      style: style2
+    } = props;
+    if (!editable || editable.showAdd === false) {
+      return null;
+    }
+    return /* @__PURE__ */ React246.createElement("button", {
+      ref,
+      type: "button",
+      className: `${prefixCls}-nav-add`,
+      style: style2,
+      "aria-label": (locale6 == null ? void 0 : locale6.addAriaLabel) || "Add tab",
+      onClick: (event) => {
+        editable.onEdit("add", {
+          event
+        });
+      }
+    }, editable.addIcon || "+");
+  });
+  var AddButton_default = AddButton;
+
+  // ../custom_dashboard/node_modules/@rc-component/tabs/es/TabNavList/ExtraContent.js
+  var React247 = __toESM(require_react());
+  var ExtraContent = /* @__PURE__ */ React247.forwardRef((props, ref) => {
+    const {
+      position: position3,
+      prefixCls,
+      extra
+    } = props;
+    if (!extra) {
+      return null;
+    }
+    let content;
+    let assertExtra = {};
+    if (typeof extra === "object" && !/* @__PURE__ */ React247.isValidElement(extra)) {
+      assertExtra = extra;
+    } else {
+      assertExtra.right = extra;
+    }
+    if (position3 === "right") {
+      content = assertExtra.right;
+    }
+    if (position3 === "left") {
+      content = assertExtra.left;
+    }
+    return content ? /* @__PURE__ */ React247.createElement("div", {
+      className: `${prefixCls}-extra-content`,
+      ref
+    }, content) : null;
+  });
+  if (true) {
+    ExtraContent.displayName = "ExtraContent";
+  }
+  var ExtraContent_default = ExtraContent;
+
+  // ../custom_dashboard/node_modules/@rc-component/tabs/es/TabNavList/OperationNode.js
+  var React248 = __toESM(require_react());
+  var import_react104 = __toESM(require_react());
+  function _extends49() {
+    _extends49 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends49.apply(this, arguments);
+  }
+  var OperationNode = /* @__PURE__ */ React248.forwardRef((props, ref) => {
+    const {
+      prefixCls,
+      id,
+      tabs,
+      locale: locale6,
+      mobile,
+      more: moreProps = {},
+      style: style2,
+      className,
+      editable,
+      tabBarGutter,
+      rtl,
+      removeAriaLabel,
+      onTabClick,
+      getPopupContainer,
+      popupClassName,
+      popupStyle
+    } = props;
+    const [open2, setOpen] = (0, import_react104.useState)(false);
+    const [selectedKey, setSelectedKey] = (0, import_react104.useState)(null);
+    const {
+      icon: moreIcon = "More"
+    } = moreProps;
+    const popupId = `${id}-more-popup`;
+    const dropdownPrefix = `${prefixCls}-dropdown`;
+    const selectedItemId = selectedKey !== null ? `${popupId}-${selectedKey}` : null;
+    const dropdownAriaLabel = locale6 == null ? void 0 : locale6.dropdownAriaLabel;
+    function onRemoveTab(event, key) {
+      event.preventDefault();
+      event.stopPropagation();
+      editable.onEdit("remove", {
+        key,
+        event
+      });
+    }
+    const menu = /* @__PURE__ */ React248.createElement(es_default13, {
+      onClick: ({
+        key,
+        domEvent
+      }) => {
+        onTabClick(key, domEvent);
+        setOpen(false);
+      },
+      prefixCls: `${dropdownPrefix}-menu`,
+      id: popupId,
+      tabIndex: -1,
+      role: "listbox",
+      "aria-activedescendant": selectedItemId,
+      selectedKeys: [selectedKey],
+      "aria-label": dropdownAriaLabel !== void 0 ? dropdownAriaLabel : "expanded dropdown"
+    }, tabs.map((tab) => {
+      const {
+        closable,
+        disabled,
+        closeIcon,
+        key,
+        label
+      } = tab;
+      const removable = getRemovable(closable, closeIcon, editable, disabled);
+      return /* @__PURE__ */ React248.createElement(MenuItem_default, {
+        key,
+        id: `${popupId}-${key}`,
+        role: "option",
+        "aria-controls": id && `${id}-panel-${key}`,
+        disabled
+      }, /* @__PURE__ */ React248.createElement("span", null, label), removable && /* @__PURE__ */ React248.createElement("button", {
+        type: "button",
+        "aria-label": removeAriaLabel || "remove",
+        tabIndex: 0,
+        className: `${dropdownPrefix}-menu-item-remove`,
+        onClick: (e3) => {
+          e3.stopPropagation();
+          onRemoveTab(e3, key);
+        }
+      }, closeIcon || editable.removeIcon || "\xD7"));
+    }));
+    function selectOffset(offset3) {
+      const enabledTabs = tabs.filter((tab) => !tab.disabled);
+      let selectedIndex = enabledTabs.findIndex((tab) => tab.key === selectedKey) || 0;
+      const len = enabledTabs.length;
+      for (let i = 0; i < len; i += 1) {
+        selectedIndex = (selectedIndex + offset3 + len) % len;
+        const tab = enabledTabs[selectedIndex];
+        if (!tab.disabled) {
+          setSelectedKey(tab.key);
+          return;
+        }
+      }
+    }
+    function onKeyDown2(e3) {
+      const {
+        which
+      } = e3;
+      if (!open2) {
+        if ([KeyCode_default.DOWN, KeyCode_default.SPACE, KeyCode_default.ENTER].includes(which)) {
+          setOpen(true);
+          e3.preventDefault();
+        }
+        return;
+      }
+      switch (which) {
+        case KeyCode_default.UP:
+          selectOffset(-1);
+          e3.preventDefault();
+          break;
+        case KeyCode_default.DOWN:
+          selectOffset(1);
+          e3.preventDefault();
+          break;
+        case KeyCode_default.ESC:
+          setOpen(false);
+          break;
+        case KeyCode_default.SPACE:
+        case KeyCode_default.ENTER:
+          if (selectedKey !== null) {
+            onTabClick(selectedKey, e3);
+          }
+          break;
+      }
+    }
+    (0, import_react104.useEffect)(() => {
+      const ele = document.getElementById(selectedItemId);
+      if (ele == null ? void 0 : ele.scrollIntoView) {
+        ele.scrollIntoView(false);
+      }
+    }, [selectedItemId, selectedKey]);
+    (0, import_react104.useEffect)(() => {
+      if (!open2) {
+        setSelectedKey(null);
+      }
+    }, [open2]);
+    const moreStyle = {
+      marginInlineStart: tabBarGutter
+    };
+    if (!tabs.length) {
+      moreStyle.visibility = "hidden";
+      moreStyle.order = 1;
+    }
+    const overlayClassName = clsx(popupClassName, {
+      [`${dropdownPrefix}-rtl`]: rtl
+    });
+    const moreNode = mobile ? null : /* @__PURE__ */ React248.createElement(es_default12, _extends49({
+      prefixCls: dropdownPrefix,
+      overlay: menu,
+      visible: tabs.length ? open2 : false,
+      onVisibleChange: setOpen,
+      overlayClassName,
+      overlayStyle: popupStyle,
+      mouseEnterDelay: 0.1,
+      mouseLeaveDelay: 0.1,
+      getPopupContainer
+    }, moreProps), /* @__PURE__ */ React248.createElement("button", {
+      type: "button",
+      className: `${prefixCls}-nav-more`,
+      style: moreStyle,
+      "aria-haspopup": "listbox",
+      "aria-controls": popupId,
+      id: `${id}-more`,
+      "aria-expanded": open2,
+      onKeyDown: onKeyDown2
+    }, moreIcon));
+    return /* @__PURE__ */ React248.createElement("div", {
+      className: clsx(`${prefixCls}-nav-operations`, className),
+      style: style2,
+      ref
+    }, moreNode, /* @__PURE__ */ React248.createElement(AddButton_default, {
+      prefixCls,
+      locale: locale6,
+      editable
+    }));
+  });
+  var OperationNode_default = /* @__PURE__ */ React248.memo(OperationNode, (_, next2) => next2.tabMoving);
+
+  // ../custom_dashboard/node_modules/@rc-component/tabs/es/TabNavList/TabNode.js
+  var React249 = __toESM(require_react());
+  var TabNode = (props) => {
+    const {
+      prefixCls,
+      id,
+      active,
+      focus,
+      tab: {
+        key,
+        label,
+        disabled,
+        closeIcon,
+        icon
+      },
+      closable,
+      renderWrapper,
+      removeAriaLabel,
+      editable,
+      onClick,
+      onFocus,
+      onBlur,
+      onKeyDown: onKeyDown2,
+      onMouseDown,
+      onMouseUp,
+      style: style2,
+      className,
+      tabCount,
+      currentPosition
+    } = props;
+    const tabPrefix = `${prefixCls}-tab`;
+    const removable = getRemovable(closable, closeIcon, editable, disabled);
+    function onInternalClick(e3) {
+      if (disabled) {
+        return;
+      }
+      onClick(e3);
+    }
+    function onRemoveTab(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      editable.onEdit("remove", {
+        key,
+        event
+      });
+    }
+    const labelNode = React249.useMemo(() => icon && typeof label === "string" ? /* @__PURE__ */ React249.createElement("span", null, label) : label, [label, icon]);
+    const btnRef = React249.useRef(null);
+    React249.useEffect(() => {
+      if (focus && btnRef.current) {
+        btnRef.current.focus();
+      }
+    }, [focus]);
+    const node2 = /* @__PURE__ */ React249.createElement("div", {
+      key,
+      "data-node-key": genDataNodeKey(key),
+      className: clsx(tabPrefix, className, {
+        [`${tabPrefix}-with-remove`]: removable,
+        [`${tabPrefix}-active`]: active,
+        [`${tabPrefix}-disabled`]: disabled,
+        [`${tabPrefix}-focus`]: focus
+      }),
+      style: style2,
+      onClick: onInternalClick
+    }, /* @__PURE__ */ React249.createElement("div", {
+      ref: btnRef,
+      role: "tab",
+      "aria-selected": active,
+      id: id && `${id}-tab-${key}`,
+      className: `${tabPrefix}-btn`,
+      "aria-controls": id && `${id}-panel-${key}`,
+      "aria-disabled": disabled,
+      tabIndex: disabled ? null : active ? 0 : -1,
+      onClick: (e3) => {
+        e3.stopPropagation();
+        onInternalClick(e3);
+      },
+      onKeyDown: onKeyDown2,
+      onMouseDown,
+      onMouseUp,
+      onFocus,
+      onBlur
+    }, focus && /* @__PURE__ */ React249.createElement("div", {
+      "aria-live": "polite",
+      style: {
+        width: 0,
+        height: 0,
+        position: "absolute",
+        overflow: "hidden",
+        opacity: 0
+      }
+    }, `Tab ${currentPosition} of ${tabCount}`), icon && /* @__PURE__ */ React249.createElement("span", {
+      className: `${tabPrefix}-icon`
+    }, icon), label && labelNode), removable && /* @__PURE__ */ React249.createElement("button", {
+      type: "button",
+      "aria-label": removeAriaLabel || "remove",
+      tabIndex: active ? 0 : -1,
+      className: `${tabPrefix}-remove`,
+      onClick: (e3) => {
+        e3.stopPropagation();
+        onRemoveTab(e3);
+      }
+    }, closeIcon || editable.removeIcon || "\xD7"));
+    return renderWrapper ? renderWrapper(node2) : node2;
+  };
+  var TabNode_default = TabNode;
+
+  // ../custom_dashboard/node_modules/@rc-component/tabs/es/TabNavList/index.js
+  function _extends50() {
+    _extends50 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends50.apply(this, arguments);
+  }
+  var getTabSize = (tab, containerRect) => {
+    const {
+      offsetWidth,
+      offsetHeight,
+      offsetTop,
+      offsetLeft
+    } = tab;
+    const {
+      width,
+      height,
+      left,
+      top
+    } = tab.getBoundingClientRect();
+    if (Math.abs(width - offsetWidth) < 1) {
+      return [width, height, left - containerRect.left, top - containerRect.top];
+    }
+    return [offsetWidth, offsetHeight, offsetLeft, offsetTop];
+  };
+  var getSize = (refObj) => {
+    const {
+      offsetWidth = 0,
+      offsetHeight = 0
+    } = refObj.current || {};
+    if (refObj.current) {
+      const {
+        width,
+        height
+      } = refObj.current.getBoundingClientRect();
+      if (Math.abs(width - offsetWidth) < 1) {
+        return [width, height];
+      }
+    }
+    return [offsetWidth, offsetHeight];
+  };
+  var getUnitValue = (size, tabPositionTopOrBottom) => {
+    return size[tabPositionTopOrBottom ? 0 : 1];
+  };
+  var TabNavList = /* @__PURE__ */ React250.forwardRef((props, ref) => {
+    const {
+      className,
+      style: style2,
+      id,
+      animated,
+      activeKey,
+      rtl,
+      extra,
+      editable,
+      locale: locale6,
+      tabPosition,
+      tabBarGutter,
+      children,
+      onTabClick,
+      onTabScroll,
+      indicator,
+      classNames: tabsClassNames,
+      styles
+    } = props;
+    const {
+      prefixCls,
+      tabs
+    } = React250.useContext(TabContext_default);
+    const containerRef = (0, import_react105.useRef)(null);
+    const extraLeftRef = (0, import_react105.useRef)(null);
+    const extraRightRef = (0, import_react105.useRef)(null);
+    const tabsWrapperRef = (0, import_react105.useRef)(null);
+    const tabListRef = (0, import_react105.useRef)(null);
+    const operationsRef = (0, import_react105.useRef)(null);
+    const innerAddButtonRef = (0, import_react105.useRef)(null);
+    const tabPositionTopOrBottom = tabPosition === "top" || tabPosition === "bottom";
+    const [transformLeft, setTransformLeft] = useSyncState3(0, (next2, prev2) => {
+      if (tabPositionTopOrBottom && onTabScroll) {
+        onTabScroll({
+          direction: next2 > prev2 ? "left" : "right"
+        });
+      }
+    });
+    const [transformTop, setTransformTop] = useSyncState3(0, (next2, prev2) => {
+      if (!tabPositionTopOrBottom && onTabScroll) {
+        onTabScroll({
+          direction: next2 > prev2 ? "top" : "bottom"
+        });
+      }
+    });
+    const [containerExcludeExtraSize, setContainerExcludeExtraSize] = (0, import_react105.useState)([0, 0]);
+    const [tabContentSize, setTabContentSize] = (0, import_react105.useState)([0, 0]);
+    const [addSize, setAddSize] = (0, import_react105.useState)([0, 0]);
+    const [operationSize, setOperationSize] = (0, import_react105.useState)([0, 0]);
+    const [tabSizes, setTabSizes] = useUpdateState(/* @__PURE__ */ new Map());
+    const tabOffsets = useOffsets(tabs, tabSizes, tabContentSize[0]);
+    const containerExcludeExtraSizeValue = getUnitValue(containerExcludeExtraSize, tabPositionTopOrBottom);
+    const tabContentSizeValue = getUnitValue(tabContentSize, tabPositionTopOrBottom);
+    const addSizeValue = getUnitValue(addSize, tabPositionTopOrBottom);
+    const operationSizeValue = getUnitValue(operationSize, tabPositionTopOrBottom);
+    const needScroll = Math.floor(containerExcludeExtraSizeValue) < Math.floor(tabContentSizeValue + addSizeValue);
+    const visibleTabContentValue = needScroll ? containerExcludeExtraSizeValue - operationSizeValue : containerExcludeExtraSizeValue - addSizeValue;
+    const operationsHiddenClassName = `${prefixCls}-nav-operations-hidden`;
+    let transformMin = 0;
+    let transformMax = 0;
+    if (!tabPositionTopOrBottom) {
+      transformMin = Math.min(0, visibleTabContentValue - tabContentSizeValue);
+      transformMax = 0;
+    } else if (rtl) {
+      transformMin = 0;
+      transformMax = Math.max(0, tabContentSizeValue - visibleTabContentValue);
+    } else {
+      transformMin = Math.min(0, visibleTabContentValue - tabContentSizeValue);
+      transformMax = 0;
+    }
+    function alignInRange(value) {
+      if (value < transformMin) {
+        return transformMin;
+      }
+      if (value > transformMax) {
+        return transformMax;
+      }
+      return value;
+    }
+    const touchMovingRef = (0, import_react105.useRef)(null);
+    const [lockAnimation, setLockAnimation] = (0, import_react105.useState)();
+    function doLockAnimation() {
+      setLockAnimation(Date.now());
+    }
+    function clearTouchMoving() {
+      if (touchMovingRef.current) {
+        clearTimeout(touchMovingRef.current);
+      }
+    }
+    useTouchMove(tabsWrapperRef, (offsetX, offsetY) => {
+      function doMove(setState, offset3) {
+        setState((value) => {
+          const newValue = alignInRange(value + offset3);
+          return newValue;
+        });
+      }
+      if (!needScroll) {
+        return false;
+      }
+      if (tabPositionTopOrBottom) {
+        doMove(setTransformLeft, offsetX);
+      } else {
+        doMove(setTransformTop, offsetY);
+      }
+      clearTouchMoving();
+      doLockAnimation();
+      return true;
+    });
+    (0, import_react105.useEffect)(() => {
+      clearTouchMoving();
+      if (lockAnimation) {
+        touchMovingRef.current = setTimeout(() => {
+          setLockAnimation(0);
+        }, 100);
+      }
+      return clearTouchMoving;
+    }, [lockAnimation]);
+    const [visibleStart, visibleEnd] = useVisibleRange(
+      tabOffsets,
+      visibleTabContentValue,
+      tabPositionTopOrBottom ? transformLeft : transformTop,
+      tabContentSizeValue,
+      addSizeValue,
+      operationSizeValue,
+      __spreadProps(__spreadValues({}, props), {
+        tabs
+      })
+    );
+    const scrollToTab = useEvent_default((key = activeKey) => {
+      const tabOffset = tabOffsets.get(key) || {
+        width: 0,
+        height: 0,
+        left: 0,
+        right: 0,
+        top: 0
+      };
+      if (tabPositionTopOrBottom) {
+        let newTransform = transformLeft;
+        if (rtl) {
+          if (tabOffset.right < transformLeft) {
+            newTransform = tabOffset.right;
+          } else if (tabOffset.right + tabOffset.width > transformLeft + visibleTabContentValue) {
+            newTransform = tabOffset.right + tabOffset.width - visibleTabContentValue;
+          }
+        } else if (tabOffset.left < -transformLeft) {
+          newTransform = -tabOffset.left;
+        } else if (tabOffset.left + tabOffset.width > -transformLeft + visibleTabContentValue) {
+          newTransform = -(tabOffset.left + tabOffset.width - visibleTabContentValue);
+        }
+        setTransformTop(0);
+        setTransformLeft(alignInRange(newTransform));
+      } else {
+        let newTransform = transformTop;
+        if (tabOffset.top < -transformTop) {
+          newTransform = -tabOffset.top;
+        } else if (tabOffset.top + tabOffset.height > -transformTop + visibleTabContentValue) {
+          newTransform = -(tabOffset.top + tabOffset.height - visibleTabContentValue);
+        }
+        setTransformLeft(0);
+        setTransformTop(alignInRange(newTransform));
+      }
+    });
+    const [focusKey, setFocusKey] = (0, import_react105.useState)();
+    const [isMouse, setIsMouse] = (0, import_react105.useState)(false);
+    const enabledTabs = tabs.filter((tab) => !tab.disabled).map((tab) => tab.key);
+    const onOffset = (offset3) => {
+      const currentIndex = enabledTabs.indexOf(focusKey || activeKey);
+      const len = enabledTabs.length;
+      const nextIndex = (currentIndex + offset3 + len) % len;
+      const newKey = enabledTabs[nextIndex];
+      setFocusKey(newKey);
+    };
+    const handleRemoveTab = (removalTabKey, e3) => {
+      const removeIndex = enabledTabs.indexOf(removalTabKey);
+      const removeTab = tabs.find((tab) => tab.key === removalTabKey);
+      const removable = getRemovable(removeTab == null ? void 0 : removeTab.closable, removeTab == null ? void 0 : removeTab.closeIcon, editable, removeTab == null ? void 0 : removeTab.disabled);
+      if (removable) {
+        e3.preventDefault();
+        e3.stopPropagation();
+        editable.onEdit("remove", {
+          key: removalTabKey,
+          event: e3
+        });
+        if (removeIndex === enabledTabs.length - 1) {
+          onOffset(-1);
+        } else {
+          onOffset(1);
+        }
+      }
+    };
+    const handleMouseDown = (key, e3) => {
+      setIsMouse(true);
+      if (e3.button === 1) {
+        handleRemoveTab(key, e3);
+      }
+    };
+    const handleKeyDown = (e3) => {
+      const {
+        code
+      } = e3;
+      const isRTL = rtl && tabPositionTopOrBottom;
+      const firstEnabledTab = enabledTabs[0];
+      const lastEnabledTab = enabledTabs[enabledTabs.length - 1];
+      switch (code) {
+        case "ArrowLeft": {
+          if (tabPositionTopOrBottom) {
+            onOffset(isRTL ? 1 : -1);
+          }
+          break;
+        }
+        case "ArrowRight": {
+          if (tabPositionTopOrBottom) {
+            onOffset(isRTL ? -1 : 1);
+          }
+          break;
+        }
+        case "ArrowUp": {
+          e3.preventDefault();
+          if (!tabPositionTopOrBottom) {
+            onOffset(-1);
+          }
+          break;
+        }
+        case "ArrowDown": {
+          e3.preventDefault();
+          if (!tabPositionTopOrBottom) {
+            onOffset(1);
+          }
+          break;
+        }
+        case "Home": {
+          e3.preventDefault();
+          setFocusKey(firstEnabledTab);
+          break;
+        }
+        case "End": {
+          e3.preventDefault();
+          setFocusKey(lastEnabledTab);
+          break;
+        }
+        case "Enter":
+        case "Space": {
+          e3.preventDefault();
+          onTabClick(focusKey != null ? focusKey : activeKey, e3);
+          break;
+        }
+        case "Backspace":
+        case "Delete": {
+          handleRemoveTab(focusKey, e3);
+          break;
+        }
+      }
+    };
+    const tabNodeStyle = {};
+    if (tabPositionTopOrBottom) {
+      tabNodeStyle.marginInlineStart = tabBarGutter;
+    } else {
+      tabNodeStyle.marginTop = tabBarGutter;
+    }
+    const tabNodes = tabs.map((tab, i) => {
+      const {
+        key
+      } = tab;
+      return /* @__PURE__ */ React250.createElement(TabNode_default, {
+        id,
+        prefixCls,
+        key,
+        tab,
+        className: tabsClassNames == null ? void 0 : tabsClassNames.item,
+        style: i === 0 ? styles == null ? void 0 : styles.item : __spreadValues(__spreadValues({}, tabNodeStyle), styles == null ? void 0 : styles.item),
+        closable: tab.closable,
+        editable,
+        active: key === activeKey,
+        focus: key === focusKey,
+        renderWrapper: children,
+        removeAriaLabel: locale6 == null ? void 0 : locale6.removeAriaLabel,
+        tabCount: enabledTabs.length,
+        currentPosition: i + 1,
+        onClick: (e3) => {
+          onTabClick(key, e3);
+        },
+        onKeyDown: handleKeyDown,
+        onFocus: () => {
+          if (!isMouse) {
+            setFocusKey(key);
+          }
+          scrollToTab(key);
+          doLockAnimation();
+          if (!tabsWrapperRef.current) {
+            return;
+          }
+          if (!rtl) {
+            tabsWrapperRef.current.scrollLeft = 0;
+          }
+          tabsWrapperRef.current.scrollTop = 0;
+        },
+        onBlur: () => {
+          setFocusKey(void 0);
+        },
+        onMouseDown: (e3) => handleMouseDown(key, e3),
+        onMouseUp: () => {
+          setIsMouse(false);
+        }
+      });
+    });
+    const updateTabSizes = () => setTabSizes(() => {
+      var _a;
+      const newSizes = /* @__PURE__ */ new Map();
+      const listRect = (_a = tabListRef.current) == null ? void 0 : _a.getBoundingClientRect();
+      tabs.forEach(({
+        key
+      }) => {
+        var _a2;
+        const btnNode = (_a2 = tabListRef.current) == null ? void 0 : _a2.querySelector(`[data-node-key="${genDataNodeKey(key)}"]`);
+        if (btnNode) {
+          const [width, height, left, top] = getTabSize(btnNode, listRect);
+          newSizes.set(key, {
+            width,
+            height,
+            left,
+            top
+          });
+        }
+      });
+      return newSizes;
+    });
+    (0, import_react105.useEffect)(() => {
+      updateTabSizes();
+    }, [tabs.map((tab) => tab.key).join("_")]);
+    const onListHolderResize = useUpdate(() => {
+      const containerSize = getSize(containerRef);
+      const extraLeftSize = getSize(extraLeftRef);
+      const extraRightSize = getSize(extraRightRef);
+      setContainerExcludeExtraSize([containerSize[0] - extraLeftSize[0] - extraRightSize[0], containerSize[1] - extraLeftSize[1] - extraRightSize[1]]);
+      const newAddSize = getSize(innerAddButtonRef);
+      setAddSize(newAddSize);
+      const newOperationSize = getSize(operationsRef);
+      setOperationSize(newOperationSize);
+      const tabContentFullSize = getSize(tabListRef);
+      setTabContentSize([tabContentFullSize[0] - newAddSize[0], tabContentFullSize[1] - newAddSize[1]]);
+      updateTabSizes();
+    });
+    const startHiddenTabs = tabs.slice(0, visibleStart);
+    const endHiddenTabs = tabs.slice(visibleEnd + 1);
+    const hiddenTabs = [...startHiddenTabs, ...endHiddenTabs];
+    const activeTabOffset = tabOffsets.get(activeKey);
+    const {
+      style: indicatorStyle
+    } = useIndicator_default({
+      activeTabOffset,
+      horizontal: tabPositionTopOrBottom,
+      indicator,
+      rtl
+    });
+    (0, import_react105.useEffect)(() => {
+      scrollToTab();
+    }, [activeKey, transformMin, transformMax, stringify3(activeTabOffset), stringify3(tabOffsets), tabPositionTopOrBottom]);
+    (0, import_react105.useEffect)(() => {
+      onListHolderResize();
+    }, [rtl]);
+    const hasDropdown = !!hiddenTabs.length;
+    const wrapPrefix = `${prefixCls}-nav-wrap`;
+    let pingLeft;
+    let pingRight;
+    let pingTop;
+    let pingBottom;
+    if (tabPositionTopOrBottom) {
+      if (rtl) {
+        pingRight = transformLeft > 0;
+        pingLeft = transformLeft !== transformMax;
+      } else {
+        pingLeft = transformLeft < 0;
+        pingRight = transformLeft !== transformMin;
+      }
+    } else {
+      pingTop = transformTop < 0;
+      pingBottom = transformTop !== transformMin;
+    }
+    return /* @__PURE__ */ React250.createElement(es_default, {
+      onResize: onListHolderResize
+    }, /* @__PURE__ */ React250.createElement("div", {
+      ref: useComposeRef(ref, containerRef),
+      role: "tablist",
+      "aria-orientation": tabPositionTopOrBottom ? "horizontal" : "vertical",
+      className: clsx(`${prefixCls}-nav`, className, tabsClassNames == null ? void 0 : tabsClassNames.header),
+      style: __spreadValues(__spreadValues({}, styles == null ? void 0 : styles.header), style2),
+      onKeyDown: () => {
+        doLockAnimation();
+      }
+    }, /* @__PURE__ */ React250.createElement(ExtraContent_default, {
+      ref: extraLeftRef,
+      position: "left",
+      extra,
+      prefixCls
+    }), /* @__PURE__ */ React250.createElement(es_default, {
+      onResize: onListHolderResize
+    }, /* @__PURE__ */ React250.createElement("div", {
+      className: clsx(wrapPrefix, {
+        [`${wrapPrefix}-ping-left`]: pingLeft,
+        [`${wrapPrefix}-ping-right`]: pingRight,
+        [`${wrapPrefix}-ping-top`]: pingTop,
+        [`${wrapPrefix}-ping-bottom`]: pingBottom
+      }),
+      ref: tabsWrapperRef
+    }, /* @__PURE__ */ React250.createElement(es_default, {
+      onResize: onListHolderResize
+    }, /* @__PURE__ */ React250.createElement("div", {
+      ref: tabListRef,
+      className: `${prefixCls}-nav-list`,
+      style: {
+        transform: `translate(${transformLeft}px, ${transformTop}px)`,
+        transition: lockAnimation ? "none" : void 0
+      }
+    }, tabNodes, /* @__PURE__ */ React250.createElement(AddButton_default, {
+      ref: innerAddButtonRef,
+      prefixCls,
+      locale: locale6,
+      editable,
+      style: __spreadProps(__spreadValues({}, tabNodes.length === 0 ? void 0 : tabNodeStyle), {
+        visibility: hasDropdown ? "hidden" : null
+      })
+    }), /* @__PURE__ */ React250.createElement("div", {
+      className: clsx(`${prefixCls}-ink-bar`, tabsClassNames == null ? void 0 : tabsClassNames.indicator, {
+        [`${prefixCls}-ink-bar-animated`]: animated.inkBar
+      }),
+      style: __spreadValues(__spreadValues({}, indicatorStyle), styles == null ? void 0 : styles.indicator)
+    }))))), /* @__PURE__ */ React250.createElement(OperationNode_default, _extends50({}, props, {
+      removeAriaLabel: locale6 == null ? void 0 : locale6.removeAriaLabel,
+      ref: operationsRef,
+      prefixCls,
+      tabs: hiddenTabs,
+      className: !hasDropdown && operationsHiddenClassName,
+      popupStyle: styles == null ? void 0 : styles.popup,
+      tabMoving: !!lockAnimation
+    })), /* @__PURE__ */ React250.createElement(ExtraContent_default, {
+      ref: extraRightRef,
+      position: "right",
+      extra,
+      prefixCls
+    })));
+  });
+  var TabNavList_default = TabNavList;
+
+  // ../custom_dashboard/node_modules/@rc-component/tabs/es/TabNavList/Wrapper.js
+  var TabNavListWrapper = (_a) => {
+    var _b = _a, {
+      renderTabBar
+    } = _b, restProps = __objRest(_b, [
+      "renderTabBar"
+    ]);
+    if (renderTabBar) {
+      return renderTabBar(restProps, TabNavList_default);
+    }
+    return /* @__PURE__ */ React251.createElement(TabNavList_default, restProps);
+  };
+  if (true) {
+    TabNavListWrapper.displayName = "TabNavListWrapper";
+  }
+  var Wrapper_default = TabNavListWrapper;
+
+  // ../custom_dashboard/node_modules/@rc-component/tabs/es/TabPanelList/index.js
+  var React253 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@rc-component/tabs/es/TabPanelList/TabPane.js
+  var React252 = __toESM(require_react());
+  var TabPane = /* @__PURE__ */ React252.forwardRef((props, ref) => {
+    const {
+      prefixCls,
+      className,
+      style: style2,
+      id,
+      active,
+      tabKey,
+      children
+    } = props;
+    const hasContent = React252.Children.count(children) > 0;
+    return /* @__PURE__ */ React252.createElement("div", {
+      id: id && `${id}-panel-${tabKey}`,
+      role: "tabpanel",
+      tabIndex: active && hasContent ? 0 : -1,
+      "aria-labelledby": id && `${id}-tab-${tabKey}`,
+      "aria-hidden": !active,
+      style: style2,
+      className: clsx(prefixCls, active && `${prefixCls}-active`, className),
+      ref
+    }, children);
+  });
+  if (true) {
+    TabPane.displayName = "TabPane";
+  }
+  var TabPane_default = TabPane;
+
+  // ../custom_dashboard/node_modules/@rc-component/tabs/es/TabPanelList/index.js
+  function _extends51() {
+    _extends51 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends51.apply(this, arguments);
+  }
+  var TabPanelList = (props) => {
+    const {
+      id,
+      activeKey,
+      animated,
+      tabPosition,
+      destroyOnHidden,
+      contentStyle,
+      contentClassName
+    } = props;
+    const {
+      prefixCls,
+      tabs
+    } = React253.useContext(TabContext_default);
+    const tabPaneAnimated = animated.tabPane;
+    const tabPanePrefixCls = `${prefixCls}-tabpane`;
+    return /* @__PURE__ */ React253.createElement("div", {
+      className: clsx(`${prefixCls}-content-holder`)
+    }, /* @__PURE__ */ React253.createElement("div", {
+      className: clsx(`${prefixCls}-content`, `${prefixCls}-content-${tabPosition}`, {
+        [`${prefixCls}-content-animated`]: tabPaneAnimated
+      })
+    }, tabs.map((item) => {
+      const _a = item, {
+        key,
+        forceRender,
+        style: paneStyle,
+        className: paneClassName,
+        destroyOnHidden: itemDestroyOnHidden
+      } = _a, restTabProps = __objRest(_a, [
+        "key",
+        "forceRender",
+        "style",
+        "className",
+        "destroyOnHidden"
+      ]);
+      const active = key === activeKey;
+      return /* @__PURE__ */ React253.createElement(es_default2, _extends51({
+        key,
+        visible: active,
+        forceRender,
+        removeOnLeave: !!(destroyOnHidden != null ? destroyOnHidden : itemDestroyOnHidden),
+        leavedClassName: `${tabPanePrefixCls}-hidden`
+      }, animated.tabPaneMotion), ({
+        style: motionStyle,
+        className: motionClassName
+      }, ref) => /* @__PURE__ */ React253.createElement(TabPane_default, _extends51({}, restTabProps, {
+        prefixCls: tabPanePrefixCls,
+        id,
+        tabKey: key,
+        animated: tabPaneAnimated,
+        active,
+        style: __spreadValues(__spreadValues(__spreadValues({}, contentStyle), paneStyle), motionStyle),
+        className: clsx(contentClassName, paneClassName, motionClassName),
+        ref
+      })));
+    })));
+  };
+  var TabPanelList_default = TabPanelList;
+
+  // ../custom_dashboard/node_modules/@rc-component/tabs/es/hooks/useAnimateConfig.js
+  function useAnimateConfig(animated = {
+    inkBar: true,
+    tabPane: false
+  }) {
+    let mergedAnimated;
+    if (animated === false) {
+      mergedAnimated = {
+        inkBar: false,
+        tabPane: false
+      };
+    } else if (animated === true) {
+      mergedAnimated = {
+        inkBar: true,
+        tabPane: false
+      };
+    } else {
+      mergedAnimated = __spreadValues({
+        inkBar: true
+      }, typeof animated === "object" ? animated : {});
+    }
+    if (mergedAnimated.tabPaneMotion && mergedAnimated.tabPane === void 0) {
+      mergedAnimated.tabPane = true;
+    }
+    if (!mergedAnimated.tabPaneMotion && mergedAnimated.tabPane) {
+      if (true) {
+        warning_default(false, "`animated.tabPane` is true but `animated.tabPaneMotion` is not provided. Motion will not work.");
+      }
+      mergedAnimated.tabPane = false;
+    }
+    return mergedAnimated;
+  }
+
+  // ../custom_dashboard/node_modules/@rc-component/tabs/es/Tabs.js
+  function _extends52() {
+    _extends52 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends52.apply(this, arguments);
+  }
+  var uuid5 = 0;
+  var Tabs = /* @__PURE__ */ React254.forwardRef((props, ref) => {
+    var _b;
+    const _a = props, {
+      id,
+      prefixCls = "rc-tabs",
+      className,
+      items,
+      direction,
+      activeKey,
+      defaultActiveKey,
+      editable,
+      animated,
+      tabPosition = "top",
+      tabBarGutter,
+      tabBarStyle,
+      tabBarExtraContent,
+      locale: locale6,
+      more,
+      destroyOnHidden,
+      renderTabBar,
+      onChange,
+      onTabClick,
+      onTabScroll,
+      getPopupContainer,
+      popupClassName,
+      indicator,
+      classNames: tabsClassNames,
+      styles
+    } = _a, restProps = __objRest(_a, [
+      "id",
+      "prefixCls",
+      "className",
+      "items",
+      "direction",
+      "activeKey",
+      "defaultActiveKey",
+      "editable",
+      "animated",
+      "tabPosition",
+      "tabBarGutter",
+      "tabBarStyle",
+      "tabBarExtraContent",
+      "locale",
+      "more",
+      "destroyOnHidden",
+      "renderTabBar",
+      "onChange",
+      "onTabClick",
+      "onTabScroll",
+      "getPopupContainer",
+      "popupClassName",
+      "indicator",
+      "classNames",
+      "styles"
+    ]);
+    const tabs = React254.useMemo(() => (items || []).filter((item) => item && typeof item === "object" && "key" in item), [items]);
+    const rtl = direction === "rtl";
+    const mergedAnimated = useAnimateConfig(animated);
+    const [mobile, setMobile] = (0, import_react106.useState)(false);
+    (0, import_react106.useEffect)(() => {
+      setMobile(isMobile_default());
+    }, []);
+    const [mergedActiveKey, setMergedActiveKey] = useControlledState(defaultActiveKey != null ? defaultActiveKey : (_b = tabs[0]) == null ? void 0 : _b.key, activeKey);
+    const [activeIndex, setActiveIndex] = (0, import_react106.useState)(() => tabs.findIndex((tab) => tab.key === mergedActiveKey));
+    (0, import_react106.useEffect)(() => {
+      var _a2;
+      let newActiveIndex = tabs.findIndex((tab) => tab.key === mergedActiveKey);
+      if (newActiveIndex === -1) {
+        newActiveIndex = Math.max(0, Math.min(activeIndex, tabs.length - 1));
+        setMergedActiveKey((_a2 = tabs[newActiveIndex]) == null ? void 0 : _a2.key);
+      }
+      setActiveIndex(newActiveIndex);
+    }, [tabs.map((tab) => tab.key).join("_"), mergedActiveKey, activeIndex]);
+    const [mergedId, setMergedId] = useControlledState(null, id);
+    (0, import_react106.useEffect)(() => {
+      if (!id) {
+        setMergedId(`rc-tabs-${false ? "test" : uuid5}`);
+        uuid5 += 1;
+      }
+    }, []);
+    function onInternalTabClick(key, e3) {
+      onTabClick == null ? void 0 : onTabClick(key, e3);
+      const isActiveChanged = key !== mergedActiveKey;
+      setMergedActiveKey(key);
+      if (isActiveChanged) {
+        onChange == null ? void 0 : onChange(key);
+      }
+    }
+    const sharedProps = {
+      id: mergedId,
+      activeKey: mergedActiveKey,
+      animated: mergedAnimated,
+      tabPosition,
+      rtl,
+      mobile
+    };
+    const tabNavBarProps = __spreadProps(__spreadValues({}, sharedProps), {
+      editable,
+      locale: locale6,
+      more,
+      tabBarGutter,
+      onTabClick: onInternalTabClick,
+      onTabScroll,
+      extra: tabBarExtraContent,
+      style: tabBarStyle,
+      getPopupContainer,
+      popupClassName: clsx(popupClassName, tabsClassNames == null ? void 0 : tabsClassNames.popup),
+      indicator,
+      styles,
+      classNames: tabsClassNames
+    });
+    const memoizedValue = React254.useMemo(() => {
+      return {
+        tabs,
+        prefixCls
+      };
+    }, [tabs, prefixCls]);
+    return /* @__PURE__ */ React254.createElement(TabContext_default.Provider, {
+      value: memoizedValue
+    }, /* @__PURE__ */ React254.createElement("div", _extends52({
+      ref,
+      id,
+      className: clsx(prefixCls, `${prefixCls}-${tabPosition}`, {
+        [`${prefixCls}-mobile`]: mobile,
+        [`${prefixCls}-editable`]: editable,
+        [`${prefixCls}-rtl`]: rtl
+      }, className)
+    }, restProps), /* @__PURE__ */ React254.createElement(Wrapper_default, _extends52({}, tabNavBarProps, {
+      renderTabBar
+    })), /* @__PURE__ */ React254.createElement(TabPanelList_default, _extends52({
+      destroyOnHidden
+    }, sharedProps, {
+      contentStyle: styles == null ? void 0 : styles.content,
+      contentClassName: tabsClassNames == null ? void 0 : tabsClassNames.content,
+      animated: mergedAnimated
+    }))));
+  });
+  if (true) {
+    Tabs.displayName = "Tabs";
+  }
+  var Tabs_default = Tabs;
+
+  // ../custom_dashboard/node_modules/@rc-component/tabs/es/index.js
+  var es_default15 = Tabs_default;
+
+  // ../custom_dashboard/node_modules/antd/es/tabs/hooks/useAnimateConfig.js
+  var motion = {
+    motionAppear: false,
+    motionEnter: true,
+    motionLeave: true
+  };
+  function useAnimateConfig2(prefixCls, animated = {
+    inkBar: true,
+    tabPane: false
+  }) {
+    let mergedAnimated;
+    if (animated === false) {
+      mergedAnimated = {
+        inkBar: false,
+        tabPane: false
+      };
+    } else if (animated === true) {
+      mergedAnimated = {
+        inkBar: true,
+        tabPane: true
+      };
+    } else {
+      mergedAnimated = __spreadValues({
+        inkBar: true
+      }, typeof animated === "object" ? animated : {});
+    }
+    if (mergedAnimated.tabPane) {
+      mergedAnimated.tabPaneMotion = __spreadProps(__spreadValues({}, motion), {
+        motionName: getTransitionName2(prefixCls, "switch")
+      });
+    }
+    return mergedAnimated;
+  }
+
+  // ../custom_dashboard/node_modules/antd/es/tabs/hooks/useLegacyItems.js
+  var React255 = __toESM(require_react());
+  function filter2(items) {
+    return items.filter((item) => item);
+  }
+  function useLegacyItems(items, children) {
+    if (true) {
+      const warning6 = devUseWarning("Tabs");
+      warning6.deprecated(!children, "Tabs.TabPane", "items");
+    }
+    if (items) {
+      return items.map((item) => {
+        var _a;
+        return __spreadProps(__spreadValues({}, item), {
+          destroyOnHidden: (_a = item.destroyOnHidden) != null ? _a : item.destroyInactiveTabPane
+        });
+      });
+    }
+    const childrenItems = toArray(children).map((node2) => {
+      if (/* @__PURE__ */ React255.isValidElement(node2)) {
+        const {
+          key,
+          props
+        } = node2;
+        const _a = props || {}, {
+          tab
+        } = _a, restProps = __objRest(_a, [
+          "tab"
+        ]);
+        const item = __spreadProps(__spreadValues({
+          key: String(key)
+        }, restProps), {
+          label: tab
+        });
+        return item;
+      }
+      return null;
+    });
+    return filter2(childrenItems);
+  }
+  var useLegacyItems_default = useLegacyItems;
+
+  // ../custom_dashboard/node_modules/antd/es/tabs/style/motion.js
+  var genMotionStyle = (token2) => {
+    const {
+      componentCls,
+      motionDurationSlow
+    } = token2;
+    return [
+      {
+        [componentCls]: {
+          [`${componentCls}-switch`]: {
+            "&-appear, &-enter": {
+              transition: "none",
+              "&-start": {
+                opacity: 0
+              },
+              "&-active": {
+                opacity: 1,
+                transition: `opacity ${motionDurationSlow}`
+              }
+            },
+            "&-leave": {
+              position: "absolute",
+              transition: "none",
+              inset: 0,
+              "&-start": {
+                opacity: 1
+              },
+              "&-active": {
+                opacity: 0,
+                transition: `opacity ${motionDurationSlow}`
+              }
+            }
+          }
+        }
+      },
+      [initSlideMotion(token2, "slide-up"), initSlideMotion(token2, "slide-down")]
+    ];
+  };
+  var motion_default2 = genMotionStyle;
+
+  // ../custom_dashboard/node_modules/antd/es/tabs/style/index.js
+  var genCardStyle = (token2) => {
+    const {
+      componentCls,
+      tabsCardPadding,
+      cardBg,
+      cardGutter,
+      colorBorderSecondary,
+      itemSelectedColor
+    } = token2;
+    return {
+      [`${componentCls}-card`]: {
+        [`> ${componentCls}-nav, > div > ${componentCls}-nav`]: {
+          [`${componentCls}-tab`]: {
+            margin: 0,
+            padding: tabsCardPadding,
+            background: cardBg,
+            border: `${unit(token2.lineWidth)} ${token2.lineType} ${colorBorderSecondary}`,
+            transition: `all ${token2.motionDurationSlow} ${token2.motionEaseInOut}`
+          },
+          [`${componentCls}-tab-active`]: {
+            color: itemSelectedColor,
+            background: token2.colorBgContainer
+          },
+          [`${componentCls}-tab-focus:has(${componentCls}-tab-btn:focus-visible)`]: genFocusOutline(token2, -3),
+          [`& ${componentCls}-tab${componentCls}-tab-focus ${componentCls}-tab-btn:focus-visible`]: {
+            outline: "none"
+          },
+          [`${componentCls}-ink-bar`]: {
+            visibility: "hidden"
+          }
+        },
+        [`&${componentCls}-top, &${componentCls}-bottom`]: {
+          [`> ${componentCls}-nav, > div > ${componentCls}-nav`]: {
+            [`${componentCls}-tab + ${componentCls}-tab`]: {
+              marginLeft: {
+                _skip_check_: true,
+                value: unit(cardGutter)
+              }
+            }
+          }
+        },
+        [`&${componentCls}-top`]: {
+          [`> ${componentCls}-nav, > div > ${componentCls}-nav`]: {
+            [`${componentCls}-tab`]: {
+              borderRadius: `${unit(token2.borderRadiusLG)} ${unit(token2.borderRadiusLG)} 0 0`
+            },
+            [`${componentCls}-tab-active`]: {
+              borderBottomColor: token2.colorBgContainer
+            }
+          }
+        },
+        [`&${componentCls}-bottom`]: {
+          [`> ${componentCls}-nav, > div > ${componentCls}-nav`]: {
+            [`${componentCls}-tab`]: {
+              borderRadius: `0 0 ${unit(token2.borderRadiusLG)} ${unit(token2.borderRadiusLG)}`
+            },
+            [`${componentCls}-tab-active`]: {
+              borderTopColor: token2.colorBgContainer
+            }
+          }
+        },
+        [`&${componentCls}-left, &${componentCls}-right`]: {
+          [`> ${componentCls}-nav, > div > ${componentCls}-nav`]: {
+            [`${componentCls}-tab + ${componentCls}-tab`]: {
+              marginTop: unit(cardGutter)
+            }
+          }
+        },
+        [`&${componentCls}-left`]: {
+          [`> ${componentCls}-nav, > div > ${componentCls}-nav`]: {
+            [`${componentCls}-tab`]: {
+              borderRadius: {
+                _skip_check_: true,
+                value: `${unit(token2.borderRadiusLG)} 0 0 ${unit(token2.borderRadiusLG)}`
+              }
+            },
+            [`${componentCls}-tab-active`]: {
+              borderRightColor: {
+                _skip_check_: true,
+                value: token2.colorBgContainer
+              }
+            }
+          }
+        },
+        [`&${componentCls}-right`]: {
+          [`> ${componentCls}-nav, > div > ${componentCls}-nav`]: {
+            [`${componentCls}-tab`]: {
+              borderRadius: {
+                _skip_check_: true,
+                value: `0 ${unit(token2.borderRadiusLG)} ${unit(token2.borderRadiusLG)} 0`
+              }
+            },
+            [`${componentCls}-tab-active`]: {
+              borderLeftColor: {
+                _skip_check_: true,
+                value: token2.colorBgContainer
+              }
+            }
+          }
+        }
+      }
+    };
+  };
+  var genDropdownStyle = (token2) => {
+    const {
+      componentCls,
+      itemHoverColor,
+      dropdownEdgeChildVerticalPadding
+    } = token2;
+    return {
+      [`${componentCls}-dropdown`]: __spreadProps(__spreadValues({}, resetComponent(token2)), {
+        position: "absolute",
+        top: -9999,
+        left: {
+          _skip_check_: true,
+          value: -9999
+        },
+        zIndex: token2.zIndexPopup,
+        display: "block",
+        "&-hidden": {
+          display: "none"
+        },
+        [`${componentCls}-dropdown-menu`]: {
+          maxHeight: token2.tabsDropdownHeight,
+          margin: 0,
+          padding: `${unit(dropdownEdgeChildVerticalPadding)} 0`,
+          overflowX: "hidden",
+          overflowY: "auto",
+          textAlign: {
+            _skip_check_: true,
+            value: "left"
+          },
+          listStyleType: "none",
+          backgroundColor: token2.colorBgContainer,
+          backgroundClip: "padding-box",
+          borderRadius: token2.borderRadiusLG,
+          outline: "none",
+          boxShadow: token2.boxShadowSecondary,
+          "&-item": __spreadProps(__spreadValues({}, textEllipsis), {
+            display: "flex",
+            alignItems: "center",
+            minWidth: token2.tabsDropdownWidth,
+            margin: 0,
+            padding: `${unit(token2.paddingXXS)} ${unit(token2.paddingSM)}`,
+            color: token2.colorText,
+            fontWeight: "normal",
+            fontSize: token2.fontSize,
+            lineHeight: token2.lineHeight,
+            cursor: "pointer",
+            transition: `all ${token2.motionDurationSlow}`,
+            "> span": {
+              flex: 1,
+              whiteSpace: "nowrap"
+            },
+            "&-remove": {
+              flex: "none",
+              marginLeft: {
+                _skip_check_: true,
+                value: token2.marginSM
+              },
+              color: token2.colorIcon,
+              fontSize: token2.fontSizeSM,
+              background: "transparent",
+              border: 0,
+              cursor: "pointer",
+              "&:hover": {
+                color: itemHoverColor
+              }
+            },
+            "&:hover": {
+              background: token2.controlItemBgHover
+            },
+            "&-disabled": {
+              "&, &:hover": {
+                color: token2.colorTextDisabled,
+                background: "transparent",
+                cursor: "not-allowed"
+              }
+            }
+          })
+        }
+      })
+    };
+  };
+  var genPositionStyle = (token2) => {
+    const {
+      componentCls,
+      margin,
+      colorBorderSecondary,
+      horizontalMargin,
+      verticalItemPadding,
+      verticalItemMargin,
+      motionDurationSlow,
+      calc
+    } = token2;
+    return {
+      [`${componentCls}-top, ${componentCls}-bottom`]: {
+        flexDirection: "column",
+        [`> ${componentCls}-nav, > div > ${componentCls}-nav`]: {
+          margin: horizontalMargin,
+          "&::before": {
+            position: "absolute",
+            right: {
+              _skip_check_: true,
+              value: 0
+            },
+            left: {
+              _skip_check_: true,
+              value: 0
+            },
+            borderBottom: `${unit(token2.lineWidth)} ${token2.lineType} ${colorBorderSecondary}`,
+            content: "''"
+          },
+          [`${componentCls}-ink-bar`]: {
+            height: token2.lineWidthBold,
+            "&-animated": {
+              transition: ["width", "left", "right"].map((prop) => `${prop} ${motionDurationSlow}`).join(", ")
+            }
+          },
+          [`${componentCls}-nav-wrap`]: {
+            "&::before, &::after": {
+              top: 0,
+              bottom: 0,
+              width: token2.controlHeight
+            },
+            "&::before": {
+              left: {
+                _skip_check_: true,
+                value: 0
+              },
+              boxShadow: token2.boxShadowTabsOverflowLeft
+            },
+            "&::after": {
+              right: {
+                _skip_check_: true,
+                value: 0
+              },
+              boxShadow: token2.boxShadowTabsOverflowRight
+            },
+            [`&${componentCls}-nav-wrap-ping-left::before`]: {
+              opacity: 1
+            },
+            [`&${componentCls}-nav-wrap-ping-right::after`]: {
+              opacity: 1
+            }
+          }
+        }
+      },
+      [`${componentCls}-top`]: {
+        [`> ${componentCls}-nav,
+        > div > ${componentCls}-nav`]: {
+          "&::before": {
+            bottom: 0
+          },
+          [`${componentCls}-ink-bar`]: {
+            bottom: 0
+          }
+        }
+      },
+      [`${componentCls}-bottom`]: {
+        [`> ${componentCls}-nav, > div > ${componentCls}-nav`]: {
+          order: 1,
+          marginTop: margin,
+          marginBottom: 0,
+          "&::before": {
+            top: 0
+          },
+          [`${componentCls}-ink-bar`]: {
+            top: 0
+          }
+        },
+        [`> ${componentCls}-content-holder, > div > ${componentCls}-content-holder`]: {
+          order: 0
+        }
+      },
+      [`${componentCls}-left, ${componentCls}-right`]: {
+        [`> ${componentCls}-nav, > div > ${componentCls}-nav`]: {
+          flexDirection: "column",
+          minWidth: calc(token2.controlHeight).mul(1.25).equal(),
+          [`${componentCls}-tab`]: {
+            padding: verticalItemPadding,
+            textAlign: "center"
+          },
+          [`${componentCls}-tab + ${componentCls}-tab`]: {
+            margin: verticalItemMargin
+          },
+          [`${componentCls}-nav-wrap`]: {
+            flexDirection: "column",
+            "&::before, &::after": {
+              right: {
+                _skip_check_: true,
+                value: 0
+              },
+              left: {
+                _skip_check_: true,
+                value: 0
+              },
+              height: token2.controlHeight
+            },
+            "&::before": {
+              top: 0,
+              boxShadow: token2.boxShadowTabsOverflowTop
+            },
+            "&::after": {
+              bottom: 0,
+              boxShadow: token2.boxShadowTabsOverflowBottom
+            },
+            [`&${componentCls}-nav-wrap-ping-top::before`]: {
+              opacity: 1
+            },
+            [`&${componentCls}-nav-wrap-ping-bottom::after`]: {
+              opacity: 1
+            }
+          },
+          [`${componentCls}-ink-bar`]: {
+            width: token2.lineWidthBold,
+            "&-animated": {
+              transition: ["height", "top"].map((prop) => `${prop} ${motionDurationSlow}`).join(", ")
+            }
+          },
+          [`${componentCls}-nav-list, ${componentCls}-nav-operations`]: {
+            flex: "1 0 auto",
+            flexDirection: "column"
+          }
+        }
+      },
+      [`${componentCls}-left`]: {
+        [`> ${componentCls}-nav, > div > ${componentCls}-nav`]: {
+          [`${componentCls}-ink-bar`]: {
+            right: {
+              _skip_check_: true,
+              value: 0
+            }
+          }
+        },
+        [`> ${componentCls}-content-holder, > div > ${componentCls}-content-holder`]: {
+          marginLeft: {
+            _skip_check_: true,
+            value: unit(calc(token2.lineWidth).mul(-1).equal())
+          },
+          borderLeft: {
+            _skip_check_: true,
+            value: `${unit(token2.lineWidth)} ${token2.lineType} ${token2.colorBorder}`
+          },
+          [`> ${componentCls}-content > ${componentCls}-tabpane`]: {
+            paddingLeft: {
+              _skip_check_: true,
+              value: token2.paddingLG
+            }
+          }
+        }
+      },
+      [`${componentCls}-right`]: {
+        [`> ${componentCls}-nav, > div > ${componentCls}-nav`]: {
+          order: 1,
+          [`${componentCls}-ink-bar`]: {
+            left: {
+              _skip_check_: true,
+              value: 0
+            }
+          }
+        },
+        [`> ${componentCls}-content-holder, > div > ${componentCls}-content-holder`]: {
+          order: 0,
+          marginRight: {
+            _skip_check_: true,
+            value: calc(token2.lineWidth).mul(-1).equal()
+          },
+          borderRight: {
+            _skip_check_: true,
+            value: `${unit(token2.lineWidth)} ${token2.lineType} ${token2.colorBorder}`
+          },
+          [`> ${componentCls}-content > ${componentCls}-tabpane`]: {
+            paddingRight: {
+              _skip_check_: true,
+              value: token2.paddingLG
+            }
+          }
+        }
+      }
+    };
+  };
+  var genSizeStyle = (token2) => {
+    const {
+      componentCls,
+      cardPaddingSM,
+      cardPaddingLG,
+      cardHeightSM,
+      cardHeightLG,
+      horizontalItemPaddingSM,
+      horizontalItemPaddingLG
+    } = token2;
+    return {
+      [componentCls]: {
+        "&-small": {
+          [`> ${componentCls}-nav`]: {
+            [`${componentCls}-tab`]: {
+              padding: horizontalItemPaddingSM,
+              fontSize: token2.titleFontSizeSM
+            }
+          }
+        },
+        "&-large": {
+          [`> ${componentCls}-nav`]: {
+            [`${componentCls}-tab`]: {
+              padding: horizontalItemPaddingLG,
+              fontSize: token2.titleFontSizeLG,
+              lineHeight: token2.lineHeightLG
+            }
+          }
+        }
+      },
+      [`${componentCls}-card`]: {
+        [`&${componentCls}-small`]: {
+          [`> ${componentCls}-nav`]: {
+            [`${componentCls}-tab`]: {
+              padding: cardPaddingSM
+            },
+            [`${componentCls}-nav-add`]: {
+              minWidth: cardHeightSM,
+              minHeight: cardHeightSM
+            }
+          },
+          [`&${componentCls}-bottom`]: {
+            [`> ${componentCls}-nav ${componentCls}-tab`]: {
+              borderRadius: `0 0 ${unit(token2.borderRadius)} ${unit(token2.borderRadius)}`
+            }
+          },
+          [`&${componentCls}-top`]: {
+            [`> ${componentCls}-nav ${componentCls}-tab`]: {
+              borderRadius: `${unit(token2.borderRadius)} ${unit(token2.borderRadius)} 0 0`
+            }
+          },
+          [`&${componentCls}-right`]: {
+            [`> ${componentCls}-nav ${componentCls}-tab`]: {
+              borderRadius: {
+                _skip_check_: true,
+                value: `0 ${unit(token2.borderRadius)} ${unit(token2.borderRadius)} 0`
+              }
+            }
+          },
+          [`&${componentCls}-left`]: {
+            [`> ${componentCls}-nav ${componentCls}-tab`]: {
+              borderRadius: {
+                _skip_check_: true,
+                value: `${unit(token2.borderRadius)} 0 0 ${unit(token2.borderRadius)}`
+              }
+            }
+          }
+        },
+        [`&${componentCls}-large`]: {
+          [`> ${componentCls}-nav`]: {
+            [`${componentCls}-tab`]: {
+              padding: cardPaddingLG
+            },
+            [`${componentCls}-nav-add`]: {
+              minWidth: cardHeightLG,
+              minHeight: cardHeightLG
+            }
+          }
+        }
+      }
+    };
+  };
+  var genTabStyle = (token2) => {
+    const {
+      componentCls,
+      itemActiveColor,
+      itemHoverColor,
+      iconCls,
+      tabsHorizontalItemMargin,
+      horizontalItemPadding,
+      itemSelectedColor,
+      itemColor
+    } = token2;
+    const tabCls = `${componentCls}-tab`;
+    return {
+      [tabCls]: {
+        position: "relative",
+        WebkitTouchCallout: "none",
+        WebkitTapHighlightColor: "transparent",
+        display: "inline-flex",
+        alignItems: "center",
+        padding: horizontalItemPadding,
+        fontSize: token2.titleFontSize,
+        background: "transparent",
+        border: 0,
+        outline: "none",
+        cursor: "pointer",
+        color: itemColor,
+        "&-btn, &-remove": {
+          "&:focus:not(:focus-visible), &:active": {
+            color: itemActiveColor
+          }
+        },
+        "&-btn": {
+          outline: "none",
+          transition: `all ${token2.motionDurationSlow}`,
+          [`${tabCls}-icon:not(:last-child)`]: {
+            marginInlineEnd: token2.marginSM
+          }
+        },
+        "&-remove": __spreadValues({
+          flex: "none",
+          lineHeight: 1,
+          marginRight: {
+            _skip_check_: true,
+            value: token2.calc(token2.marginXXS).mul(-1).equal()
+          },
+          marginLeft: {
+            _skip_check_: true,
+            value: token2.marginXS
+          },
+          color: token2.colorIcon,
+          fontSize: token2.fontSizeSM,
+          background: "transparent",
+          border: "none",
+          outline: "none",
+          cursor: "pointer",
+          transition: `all ${token2.motionDurationSlow}`,
+          "&:hover": {
+            color: token2.colorTextHeading
+          }
+        }, genFocusStyle(token2)),
+        "&:hover": {
+          color: itemHoverColor
+        },
+        [`&${tabCls}-active ${tabCls}-btn`]: {
+          color: itemSelectedColor
+        },
+        [`&${tabCls}-focus ${tabCls}-btn:focus-visible`]: genFocusOutline(token2),
+        [`&${tabCls}-disabled`]: {
+          color: token2.colorTextDisabled,
+          cursor: "not-allowed"
+        },
+        [`&${tabCls}-disabled ${tabCls}-btn, &${tabCls}-disabled ${componentCls}-remove`]: {
+          "&:focus, &:active": {
+            color: token2.colorTextDisabled
+          }
+        },
+        [`& ${tabCls}-remove ${iconCls}`]: {
+          margin: 0,
+          verticalAlign: "middle"
+        },
+        [`${iconCls}:not(:last-child)`]: {
+          marginRight: {
+            _skip_check_: true,
+            value: token2.marginSM
+          }
+        }
+      },
+      [`${tabCls} + ${tabCls}`]: {
+        margin: {
+          _skip_check_: true,
+          value: tabsHorizontalItemMargin
+        }
+      }
+    };
+  };
+  var genRtlStyle = (token2) => {
+    const {
+      componentCls,
+      tabsHorizontalItemMarginRTL,
+      iconCls,
+      cardGutter,
+      calc
+    } = token2;
+    const rtlCls = `${componentCls}-rtl`;
+    return {
+      [rtlCls]: {
+        direction: "rtl",
+        [`${componentCls}-nav`]: {
+          [`${componentCls}-tab`]: {
+            margin: {
+              _skip_check_: true,
+              value: tabsHorizontalItemMarginRTL
+            },
+            [`${componentCls}-tab:last-of-type`]: {
+              marginLeft: {
+                _skip_check_: true,
+                value: 0
+              }
+            },
+            [iconCls]: {
+              marginRight: {
+                _skip_check_: true,
+                value: 0
+              },
+              marginLeft: {
+                _skip_check_: true,
+                value: token2.marginSM
+              }
+            },
+            [`${componentCls}-tab-remove`]: {
+              marginRight: {
+                _skip_check_: true,
+                value: token2.marginXS
+              },
+              marginLeft: {
+                _skip_check_: true,
+                value: calc(token2.marginXXS).mul(-1).equal()
+              },
+              [iconCls]: {
+                margin: 0
+              }
+            }
+          }
+        },
+        [`&${componentCls}-left`]: {
+          [`> ${componentCls}-nav`]: {
+            order: 1
+          },
+          [`> ${componentCls}-content-holder`]: {
+            order: 0
+          }
+        },
+        [`&${componentCls}-right`]: {
+          [`> ${componentCls}-nav`]: {
+            order: 0
+          },
+          [`> ${componentCls}-content-holder`]: {
+            order: 1
+          }
+        },
+        [`&${componentCls}-card${componentCls}-top, &${componentCls}-card${componentCls}-bottom`]: {
+          [`> ${componentCls}-nav, > div > ${componentCls}-nav`]: {
+            [`${componentCls}-tab + ${componentCls}-tab`]: {
+              marginRight: {
+                _skip_check_: true,
+                value: cardGutter
+              },
+              marginLeft: {
+                _skip_check_: true,
+                value: 0
+              }
+            }
+          }
+        }
+      },
+      [`${componentCls}-dropdown-rtl`]: {
+        direction: "rtl"
+      },
+      [`${componentCls}-menu-item`]: {
+        [`${componentCls}-dropdown-rtl`]: {
+          textAlign: {
+            _skip_check_: true,
+            value: "right"
+          }
+        }
+      }
+    };
+  };
+  var genTabsStyle = (token2) => {
+    const {
+      componentCls,
+      tabsCardPadding,
+      cardHeight,
+      cardGutter,
+      itemHoverColor,
+      itemActiveColor,
+      colorBorderSecondary
+    } = token2;
+    return {
+      [componentCls]: __spreadProps(__spreadValues(__spreadProps(__spreadValues({}, resetComponent(token2)), {
+        display: "flex",
+        [`> ${componentCls}-nav, > div > ${componentCls}-nav`]: {
+          position: "relative",
+          display: "flex",
+          flex: "none",
+          alignItems: "center",
+          [`${componentCls}-nav-wrap`]: {
+            position: "relative",
+            display: "flex",
+            flex: "auto",
+            alignSelf: "stretch",
+            overflow: "hidden",
+            whiteSpace: "nowrap",
+            transform: "translate(0)",
+            "&::before, &::after": {
+              position: "absolute",
+              zIndex: 1,
+              opacity: 0,
+              transition: `opacity ${token2.motionDurationSlow}`,
+              content: "''",
+              pointerEvents: "none"
+            }
+          },
+          [`${componentCls}-nav-list`]: {
+            position: "relative",
+            display: "flex",
+            transition: `opacity ${token2.motionDurationSlow}`
+          },
+          [`${componentCls}-nav-operations`]: {
+            display: "flex",
+            alignSelf: "stretch"
+          },
+          [`${componentCls}-nav-operations-hidden`]: {
+            position: "absolute",
+            visibility: "hidden",
+            pointerEvents: "none"
+          },
+          [`${componentCls}-nav-more`]: {
+            position: "relative",
+            padding: tabsCardPadding,
+            background: "transparent",
+            border: 0,
+            color: token2.colorText,
+            "&::after": {
+              position: "absolute",
+              right: {
+                _skip_check_: true,
+                value: 0
+              },
+              bottom: 0,
+              left: {
+                _skip_check_: true,
+                value: 0
+              },
+              height: token2.calc(token2.controlHeightLG).div(8).equal(),
+              transform: "translateY(100%)",
+              content: "''"
+            }
+          },
+          [`${componentCls}-nav-add`]: __spreadValues({
+            minWidth: cardHeight,
+            minHeight: cardHeight,
+            marginLeft: {
+              _skip_check_: true,
+              value: cardGutter
+            },
+            background: "transparent",
+            border: `${unit(token2.lineWidth)} ${token2.lineType} ${colorBorderSecondary}`,
+            borderRadius: `${unit(token2.borderRadiusLG)} ${unit(token2.borderRadiusLG)} 0 0`,
+            outline: "none",
+            cursor: "pointer",
+            color: token2.colorText,
+            transition: `all ${token2.motionDurationSlow} ${token2.motionEaseInOut}`,
+            "&:hover": {
+              color: itemHoverColor
+            },
+            "&:active, &:focus:not(:focus-visible)": {
+              color: itemActiveColor
+            }
+          }, genFocusStyle(token2, -3))
+        },
+        [`${componentCls}-extra-content`]: {
+          flex: "none"
+        },
+        [`${componentCls}-ink-bar`]: {
+          position: "absolute",
+          background: token2.inkBarColor,
+          pointerEvents: "none"
+        }
+      }), genTabStyle(token2)), {
+        [`${componentCls}-content`]: {
+          position: "relative",
+          width: "100%"
+        },
+        [`${componentCls}-content-holder`]: {
+          flex: "auto",
+          minWidth: 0,
+          minHeight: 0
+        },
+        [`${componentCls}-tabpane`]: __spreadProps(__spreadValues({}, genFocusStyle(token2)), {
+          "&-hidden": {
+            display: "none"
+          }
+        })
+      }),
+      [`${componentCls}-centered`]: {
+        [`> ${componentCls}-nav, > div > ${componentCls}-nav`]: {
+          [`${componentCls}-nav-wrap`]: {
+            [`&:not([class*='${componentCls}-nav-wrap-ping']) > ${componentCls}-nav-list`]: {
+              margin: "auto"
+            }
+          }
+        }
+      }
+    };
+  };
+  var prepareComponentToken12 = (token2) => {
+    const {
+      cardHeight,
+      cardHeightSM,
+      cardHeightLG,
+      controlHeight,
+      controlHeightLG
+    } = token2;
+    const mergedCardHeight = cardHeight || controlHeightLG;
+    const mergedCardHeightSM = cardHeightSM || controlHeight;
+    const mergedCardHeightLG = cardHeightLG || controlHeightLG + 8;
+    return {
+      zIndexPopup: token2.zIndexPopupBase + 50,
+      cardBg: token2.colorFillAlter,
+      cardHeight: mergedCardHeight,
+      cardHeightSM: mergedCardHeightSM,
+      cardHeightLG: mergedCardHeightLG,
+      cardPadding: `${(mergedCardHeight - token2.fontHeight) / 2 - token2.lineWidth}px ${token2.padding}px`,
+      cardPaddingSM: `${(mergedCardHeightSM - token2.fontHeight) / 2 - token2.lineWidth}px ${token2.paddingXS}px`,
+      cardPaddingLG: `${(mergedCardHeightLG - token2.fontHeightLG) / 2 - token2.lineWidth}px ${token2.padding}px`,
+      titleFontSize: token2.fontSize,
+      titleFontSizeLG: token2.fontSizeLG,
+      titleFontSizeSM: token2.fontSize,
+      inkBarColor: token2.colorPrimary,
+      horizontalMargin: `0 0 ${token2.margin}px 0`,
+      horizontalItemGutter: 32,
+      horizontalItemMargin: ``,
+      horizontalItemMarginRTL: ``,
+      horizontalItemPadding: `${token2.paddingSM}px 0`,
+      horizontalItemPaddingSM: `${token2.paddingXS}px 0`,
+      horizontalItemPaddingLG: `${token2.padding}px 0`,
+      verticalItemPadding: `${token2.paddingXS}px ${token2.paddingLG}px`,
+      verticalItemMargin: `${token2.margin}px 0 0 0`,
+      itemColor: token2.colorText,
+      itemSelectedColor: token2.colorPrimary,
+      itemHoverColor: token2.colorPrimaryHover,
+      itemActiveColor: token2.colorPrimaryActive,
+      cardGutter: token2.marginXXS / 2
+    };
+  };
+  var style_default15 = genStyleHooks("Tabs", (token2) => {
+    const tabsToken = merge2(token2, {
+      tabsCardPadding: token2.cardPadding,
+      dropdownEdgeChildVerticalPadding: token2.paddingXXS,
+      tabsDropdownHeight: 200,
+      tabsDropdownWidth: 120,
+      tabsHorizontalItemMargin: `0 0 0 ${unit(token2.horizontalItemGutter)}`,
+      tabsHorizontalItemMarginRTL: `0 0 0 ${unit(token2.horizontalItemGutter)}`
+    });
+    return [genSizeStyle(tabsToken), genRtlStyle(tabsToken), genPositionStyle(tabsToken), genDropdownStyle(tabsToken), genCardStyle(tabsToken), genTabsStyle(tabsToken), motion_default2(tabsToken)];
+  }, prepareComponentToken12);
+
+  // ../custom_dashboard/node_modules/antd/es/tabs/TabPane.js
+  var TabPane2 = () => null;
+  if (true) {
+    TabPane2.displayName = "DeprecatedTabPane";
+  }
+  var TabPane_default2 = TabPane2;
+
+  // ../custom_dashboard/node_modules/antd/es/tabs/index.js
+  "use client";
+  var InternalTabs = /* @__PURE__ */ React256.forwardRef((props, ref) => {
+    var _b, _c, _d, _e, _f, _g, _h, _i, _j, _k, _l, _m;
+    const _a = props, {
+      type: type5,
+      className,
+      rootClassName,
+      size: customSize,
+      onEdit,
+      hideAdd,
+      centered,
+      addIcon,
+      removeIcon,
+      moreIcon,
+      more,
+      popupClassName,
+      children,
+      items,
+      animated,
+      style: style2,
+      indicatorSize,
+      indicator,
+      classNames,
+      styles,
+      destroyInactiveTabPane,
+      destroyOnHidden,
+      tabPlacement,
+      tabPosition
+    } = _a, restProps = __objRest(_a, [
+      "type",
+      "className",
+      "rootClassName",
+      "size",
+      "onEdit",
+      "hideAdd",
+      "centered",
+      "addIcon",
+      "removeIcon",
+      "moreIcon",
+      "more",
+      "popupClassName",
+      "children",
+      "items",
+      "animated",
+      "style",
+      "indicatorSize",
+      "indicator",
+      "classNames",
+      "styles",
+      "destroyInactiveTabPane",
+      "destroyOnHidden",
+      "tabPlacement",
+      "tabPosition"
+    ]);
+    const {
+      prefixCls: customizePrefixCls
+    } = restProps;
+    const {
+      getPrefixCls,
+      direction,
+      getPopupContainer,
+      className: contextClassName,
+      style: contextStyle,
+      classNames: contextClassNames,
+      styles: contextStyles
+    } = useComponentConfig("tabs");
+    const {
+      tabs
+    } = React256.useContext(ConfigContext);
+    const prefixCls = getPrefixCls("tabs", customizePrefixCls);
+    const rootCls = useCSSVarCls_default(prefixCls);
+    const [hashId, cssVarCls] = style_default15(prefixCls, rootCls);
+    const tabsRef = React256.useRef(null);
+    React256.useImperativeHandle(ref, () => ({
+      nativeElement: tabsRef.current
+    }));
+    let editable;
+    if (type5 === "editable-card") {
+      editable = {
+        onEdit: (editType, {
+          key,
+          event
+        }) => {
+          onEdit == null ? void 0 : onEdit(editType === "add" ? event : key, editType);
+        },
+        removeIcon: (_b = removeIcon != null ? removeIcon : tabs == null ? void 0 : tabs.removeIcon) != null ? _b : /* @__PURE__ */ React256.createElement(CloseOutlined_default2, null),
+        addIcon: (addIcon != null ? addIcon : tabs == null ? void 0 : tabs.addIcon) || /* @__PURE__ */ React256.createElement(PlusOutlined_default2, null),
+        showAdd: hideAdd !== true
+      };
+    }
+    const rootPrefixCls = getPrefixCls();
+    if (true) {
+      const warning6 = devUseWarning("Tabs");
+      [["popupClassName", "classNames.popup"], ["tabPosition", "tabPlacement"]].forEach(([deprecatedName, newName]) => {
+        warning6.deprecated(!(deprecatedName in props), deprecatedName, newName);
+      });
+      true ? warning6(!("onPrevClick" in props) && !("onNextClick" in props), "breaking", "`onPrevClick` and `onNextClick` has been removed. Please use `onTabScroll` instead.") : void 0;
+      true ? warning6(!(indicatorSize || (tabs == null ? void 0 : tabs.indicatorSize)), "deprecated", "`indicatorSize` has been deprecated. Please use `indicator={{ size: ... }}` instead.") : void 0;
+      warning6.deprecated(!("destroyInactiveTabPane" in props || (items == null ? void 0 : items.some((item) => "destroyInactiveTabPane" in item))), "destroyInactiveTabPane", "destroyOnHidden");
+    }
+    const size = useSize_default(customSize);
+    const mergedItems = useLegacyItems_default(items, children);
+    const mergedAnimated = useAnimateConfig2(prefixCls, animated);
+    const mergedIndicator = {
+      align: (_d = indicator == null ? void 0 : indicator.align) != null ? _d : (_c = tabs == null ? void 0 : tabs.indicator) == null ? void 0 : _c.align,
+      size: (_h = (_g = (_e = indicator == null ? void 0 : indicator.size) != null ? _e : indicatorSize) != null ? _g : (_f = tabs == null ? void 0 : tabs.indicator) == null ? void 0 : _f.size) != null ? _h : tabs == null ? void 0 : tabs.indicatorSize
+    };
+    const mergedPlacement = React256.useMemo(() => {
+      var _a2;
+      const placement = (_a2 = tabPlacement != null ? tabPlacement : tabPosition) != null ? _a2 : void 0;
+      const isRTL = direction === "rtl";
+      switch (placement) {
+        case "start":
+          return isRTL ? "right" : "left";
+        case "end":
+          return isRTL ? "left" : "right";
+        default:
+          return placement;
+      }
+    }, [tabPlacement, tabPosition, direction]);
+    const mergedProps = __spreadProps(__spreadValues({}, props), {
+      size,
+      tabPlacement: mergedPlacement,
+      items: mergedItems
+    });
+    const [mergedClassNames, mergedStyles] = useMergeSemantic([contextClassNames, classNames], [contextStyles, styles], {
+      props: mergedProps
+    }, {
+      popup: {
+        _default: "root"
+      }
+    });
+    return /* @__PURE__ */ React256.createElement(es_default15, __spreadProps(__spreadValues({
+      ref: tabsRef,
+      direction,
+      getPopupContainer
+    }, restProps), {
+      items: mergedItems,
+      className: clsx({
+        [`${prefixCls}-large`]: size === "large",
+        [`${prefixCls}-small`]: size === "small",
+        [`${prefixCls}-card`]: ["card", "editable-card"].includes(type5),
+        [`${prefixCls}-editable-card`]: type5 === "editable-card",
+        [`${prefixCls}-centered`]: centered
+      }, contextClassName, className, rootClassName, mergedClassNames.root, hashId, cssVarCls, rootCls),
+      classNames: __spreadProps(__spreadValues({}, mergedClassNames), {
+        popup: clsx(popupClassName, hashId, cssVarCls, rootCls, (_i = mergedClassNames.popup) == null ? void 0 : _i.root)
+      }),
+      styles: mergedStyles,
+      style: __spreadValues(__spreadValues(__spreadValues({}, mergedStyles.root), contextStyle), style2),
+      editable,
+      more: __spreadValues({
+        icon: (_m = (_l = (_k = (_j = tabs == null ? void 0 : tabs.more) == null ? void 0 : _j.icon) != null ? _k : tabs == null ? void 0 : tabs.moreIcon) != null ? _l : moreIcon) != null ? _m : /* @__PURE__ */ React256.createElement(EllipsisOutlined_default2, null),
+        transitionName: `${rootPrefixCls}-slide-up`
+      }, more),
+      prefixCls,
+      animated: mergedAnimated,
+      indicator: mergedIndicator,
+      destroyOnHidden: destroyOnHidden != null ? destroyOnHidden : destroyInactiveTabPane,
+      tabPosition: mergedPlacement
+    }));
+  });
+  var Tabs2 = InternalTabs;
+  Tabs2.TabPane = TabPane_default2;
+  if (true) {
+    Tabs2.displayName = "Tabs";
+  }
+  var tabs_default = Tabs2;
+
+  // ../custom_dashboard/node_modules/antd/es/card/CardGrid.js
+  var React257 = __toESM(require_react());
+  "use client";
+  var CardGrid = (_a) => {
+    var _b = _a, {
+      prefixCls,
+      className,
+      hoverable = true
+    } = _b, rest = __objRest(_b, [
+      "prefixCls",
+      "className",
+      "hoverable"
+    ]);
+    const {
+      getPrefixCls
+    } = React257.useContext(ConfigContext);
+    const prefix2 = getPrefixCls("card", prefixCls);
+    const classString = clsx(`${prefix2}-grid`, className, {
+      [`${prefix2}-grid-hoverable`]: hoverable
+    });
+    return /* @__PURE__ */ React257.createElement("div", __spreadProps(__spreadValues({}, rest), {
+      className: classString
+    }));
+  };
+  if (true) {
+    CardGrid.displayName = "CardGrid";
+  }
+  var CardGrid_default = CardGrid;
+
+  // ../custom_dashboard/node_modules/antd/es/card/style/index.js
+  var genCardHeadStyle = (token2) => {
+    const {
+      antCls,
+      componentCls,
+      headerHeight,
+      headerPadding,
+      tabsMarginBottom
+    } = token2;
+    return __spreadProps(__spreadValues({
+      display: "flex",
+      justifyContent: "center",
+      flexDirection: "column",
+      minHeight: headerHeight,
+      marginBottom: -1,
+      padding: `0 ${unit(headerPadding)}`,
+      color: token2.colorTextHeading,
+      fontWeight: token2.fontWeightStrong,
+      fontSize: token2.headerFontSize,
+      background: token2.headerBg,
+      borderBottom: `${unit(token2.lineWidth)} ${token2.lineType} ${token2.colorBorderSecondary}`,
+      borderRadius: `${unit(token2.borderRadiusLG)} ${unit(token2.borderRadiusLG)} 0 0`
+    }, clearFix()), {
+      "&-wrapper": {
+        width: "100%",
+        display: "flex",
+        alignItems: "center"
+      },
+      "&-title": __spreadProps(__spreadValues({
+        display: "inline-block",
+        flex: 1
+      }, textEllipsis), {
+        [`
+          > ${componentCls}-typography,
+          > ${componentCls}-typography-edit-content
+        `]: {
+          insetInlineStart: 0,
+          marginTop: 0,
+          marginBottom: 0
+        }
+      }),
+      [`${antCls}-tabs-top`]: {
+        clear: "both",
+        marginBottom: tabsMarginBottom,
+        color: token2.colorText,
+        fontWeight: "normal",
+        fontSize: token2.fontSize,
+        "&-bar": {
+          borderBottom: `${unit(token2.lineWidth)} ${token2.lineType} ${token2.colorBorderSecondary}`
+        }
+      }
+    });
+  };
+  var genCardGridStyle = (token2) => {
+    const {
+      cardPaddingBase,
+      colorBorderSecondary,
+      cardShadow,
+      lineWidth
+    } = token2;
+    return {
+      width: "33.33%",
+      padding: cardPaddingBase,
+      border: 0,
+      borderRadius: 0,
+      boxShadow: `
+      ${unit(lineWidth)} 0 0 0 ${colorBorderSecondary},
+      0 ${unit(lineWidth)} 0 0 ${colorBorderSecondary},
+      ${unit(lineWidth)} ${unit(lineWidth)} 0 0 ${colorBorderSecondary},
+      ${unit(lineWidth)} 0 0 0 ${colorBorderSecondary} inset,
+      0 ${unit(lineWidth)} 0 0 ${colorBorderSecondary} inset;
+    `,
+      transition: `all ${token2.motionDurationMid}`,
+      "&-hoverable:hover": {
+        position: "relative",
+        zIndex: 1,
+        boxShadow: cardShadow
+      }
+    };
+  };
+  var genCardActionsStyle = (token2) => {
+    const {
+      componentCls,
+      iconCls,
+      actionsLiMargin,
+      cardActionsIconSize,
+      colorBorderSecondary,
+      actionsBg
+    } = token2;
+    return __spreadProps(__spreadValues({
+      margin: 0,
+      padding: 0,
+      listStyle: "none",
+      background: actionsBg,
+      borderTop: `${unit(token2.lineWidth)} ${token2.lineType} ${colorBorderSecondary}`,
+      display: "flex",
+      borderRadius: `0 0 ${unit(token2.borderRadiusLG)} ${unit(token2.borderRadiusLG)}`
+    }, clearFix()), {
+      "& > li": {
+        margin: actionsLiMargin,
+        color: token2.colorTextDescription,
+        textAlign: "center",
+        "> span": {
+          position: "relative",
+          display: "block",
+          minWidth: token2.calc(token2.cardActionsIconSize).mul(2).equal(),
+          fontSize: token2.fontSize,
+          lineHeight: token2.lineHeight,
+          cursor: "pointer",
+          "&:hover": {
+            color: token2.colorPrimary,
+            transition: `color ${token2.motionDurationMid}`
+          },
+          [`a:not(${componentCls}-btn), > ${iconCls}`]: {
+            display: "inline-block",
+            width: "100%",
+            color: token2.colorIcon,
+            lineHeight: unit(token2.fontHeight),
+            transition: `color ${token2.motionDurationMid}`,
+            "&:hover": {
+              color: token2.colorPrimary
+            }
+          },
+          [`> ${iconCls}`]: {
+            fontSize: cardActionsIconSize,
+            lineHeight: unit(token2.calc(cardActionsIconSize).mul(token2.lineHeight).equal())
+          }
+        },
+        "&:not(:last-child)": {
+          borderInlineEnd: `${unit(token2.lineWidth)} ${token2.lineType} ${colorBorderSecondary}`
+        }
+      }
+    });
+  };
+  var genCardMetaStyle = (token2) => __spreadProps(__spreadValues({
+    margin: `${unit(token2.calc(token2.marginXXS).mul(-1).equal())} 0`,
+    display: "flex"
+  }, clearFix()), {
+    "&-avatar": {
+      paddingInlineEnd: token2.padding
+    },
+    "&-section": {
+      overflow: "hidden",
+      flex: 1,
+      "> div:not(:last-child)": {
+        marginBottom: token2.marginXS
+      }
+    },
+    "&-title": __spreadValues({
+      color: token2.colorTextHeading,
+      fontWeight: token2.fontWeightStrong,
+      fontSize: token2.fontSizeLG
+    }, textEllipsis),
+    "&-description": {
+      color: token2.colorTextDescription
+    }
+  });
+  var genCardTypeInnerStyle = (token2) => {
+    const {
+      componentCls,
+      colorFillAlter,
+      headerPadding,
+      bodyPadding
+    } = token2;
+    return {
+      [`${componentCls}-head`]: {
+        padding: `0 ${unit(headerPadding)}`,
+        background: colorFillAlter,
+        "&-title": {
+          fontSize: token2.fontSize
+        }
+      },
+      [`${componentCls}-body`]: {
+        padding: `${unit(token2.padding)} ${unit(bodyPadding)}`
+      }
+    };
+  };
+  var genCardLoadingStyle = (token2) => {
+    const {
+      componentCls
+    } = token2;
+    return {
+      overflow: "hidden",
+      [`${componentCls}-body`]: {
+        userSelect: "none"
+      }
+    };
+  };
+  var genCardStyle2 = (token2) => {
+    const {
+      componentCls,
+      cardShadow,
+      cardHeadPadding,
+      colorBorderSecondary,
+      boxShadowTertiary,
+      bodyPadding,
+      extraColor,
+      motionDurationMid
+    } = token2;
+    return {
+      [componentCls]: __spreadProps(__spreadValues({}, resetComponent(token2)), {
+        position: "relative",
+        background: token2.colorBgContainer,
+        borderRadius: token2.borderRadiusLG,
+        [`&:not(${componentCls}-bordered)`]: {
+          boxShadow: boxShadowTertiary
+        },
+        [`${componentCls}-head`]: genCardHeadStyle(token2),
+        [`${componentCls}-extra`]: {
+          marginInlineStart: "auto",
+          color: extraColor,
+          fontWeight: "normal",
+          fontSize: token2.fontSize
+        },
+        [`${componentCls}-body`]: {
+          padding: bodyPadding,
+          borderRadius: `0 0 ${unit(token2.borderRadiusLG)} ${unit(token2.borderRadiusLG)}`,
+          "&:first-child": {
+            borderStartStartRadius: token2.borderRadiusLG,
+            borderStartEndRadius: token2.borderRadiusLG
+          },
+          "&:not(:last-child)": {
+            borderEndStartRadius: 0,
+            borderEndEndRadius: 0
+          }
+        },
+        [`${componentCls}-grid`]: genCardGridStyle(token2),
+        [`${componentCls}-cover`]: {
+          "> *": {
+            display: "block",
+            width: "100%",
+            borderRadius: `${unit(token2.borderRadiusLG)} ${unit(token2.borderRadiusLG)} 0 0`
+          }
+        },
+        [`${componentCls}-actions`]: genCardActionsStyle(token2),
+        [`${componentCls}-meta`]: genCardMetaStyle(token2)
+      }),
+      [`${componentCls}-bordered`]: {
+        border: `${unit(token2.lineWidth)} ${token2.lineType} ${colorBorderSecondary}`,
+        [`${componentCls}-cover`]: {
+          marginTop: -1,
+          marginInlineStart: -1,
+          marginInlineEnd: -1
+        }
+      },
+      [`${componentCls}-hoverable`]: {
+        cursor: "pointer",
+        transition: [`box-shadow`, `border-color`].map((prop) => `${prop} ${motionDurationMid}`).join(", "),
+        "&:hover": {
+          borderColor: "transparent",
+          boxShadow: cardShadow
+        }
+      },
+      [`${componentCls}-contain-grid`]: {
+        borderRadius: `${unit(token2.borderRadiusLG)} ${unit(token2.borderRadiusLG)} 0 0 `,
+        [`&:not(:has(> ${componentCls}-head))`]: {
+          borderRadius: 0
+        },
+        [`${componentCls}-body`]: {
+          display: "flex",
+          flexWrap: "wrap"
+        },
+        [`&:not(${componentCls}-loading) ${componentCls}-body`]: {
+          marginBlockStart: token2.calc(token2.lineWidth).mul(-1).equal(),
+          marginInlineStart: token2.calc(token2.lineWidth).mul(-1).equal(),
+          padding: 0
+        }
+      },
+      [`${componentCls}-contain-tabs`]: {
+        [`> div${componentCls}-head`]: {
+          minHeight: 0,
+          [`${componentCls}-head-title, ${componentCls}-extra`]: {
+            paddingTop: cardHeadPadding
+          }
+        }
+      },
+      [`${componentCls}-type-inner`]: genCardTypeInnerStyle(token2),
+      [`${componentCls}-loading`]: genCardLoadingStyle(token2),
+      [`${componentCls}-rtl`]: {
+        direction: "rtl"
+      }
+    };
+  };
+  var genCardSizeStyle = (token2) => {
+    const {
+      componentCls,
+      bodyPaddingSM,
+      headerPaddingSM,
+      headerHeightSM,
+      headerFontSizeSM
+    } = token2;
+    return {
+      [`${componentCls}-small`]: {
+        [`> ${componentCls}-head`]: {
+          minHeight: headerHeightSM,
+          padding: `0 ${unit(headerPaddingSM)}`,
+          fontSize: headerFontSizeSM,
+          [`> ${componentCls}-head-wrapper`]: {
+            [`> ${componentCls}-extra`]: {
+              fontSize: token2.fontSize
+            }
+          }
+        },
+        [`> ${componentCls}-body`]: {
+          padding: bodyPaddingSM
+        }
+      },
+      [`${componentCls}-small${componentCls}-contain-tabs`]: {
+        [`> ${componentCls}-head`]: {
+          [`${componentCls}-head-title, ${componentCls}-extra`]: {
+            paddingTop: 0,
+            display: "flex",
+            alignItems: "center"
+          }
+        }
+      }
+    };
+  };
+  var prepareComponentToken13 = (token2) => {
+    var _a, _b;
+    return {
+      headerBg: "transparent",
+      headerFontSize: token2.fontSizeLG,
+      headerFontSizeSM: token2.fontSize,
+      headerHeight: token2.fontSizeLG * token2.lineHeightLG + token2.padding * 2,
+      headerHeightSM: token2.fontSize * token2.lineHeight + token2.paddingXS * 2,
+      actionsBg: token2.colorBgContainer,
+      actionsLiMargin: `${token2.paddingSM}px 0`,
+      tabsMarginBottom: -token2.padding - token2.lineWidth,
+      extraColor: token2.colorText,
+      bodyPaddingSM: 12,
+      headerPaddingSM: 12,
+      bodyPadding: (_a = token2.bodyPadding) != null ? _a : token2.paddingLG,
+      headerPadding: (_b = token2.headerPadding) != null ? _b : token2.paddingLG
+    };
+  };
+  var style_default16 = genStyleHooks("Card", (token2) => {
+    const cardToken = merge2(token2, {
+      cardShadow: token2.boxShadowCard,
+      cardHeadPadding: token2.padding,
+      cardPaddingBase: token2.paddingLG,
+      cardActionsIconSize: token2.fontSize
+    });
+    return [
+      genCardStyle2(cardToken),
+      genCardSizeStyle(cardToken)
+    ];
+  }, prepareComponentToken13);
+
+  // ../custom_dashboard/node_modules/antd/es/card/Card.js
+  "use client";
+  var ActionNode = (props) => {
+    const {
+      actionClasses,
+      actions = [],
+      actionStyle
+    } = props;
+    return /* @__PURE__ */ React258.createElement("ul", {
+      className: actionClasses,
+      style: actionStyle
+    }, actions.map((action, index) => {
+      const key = `action-${index}`;
+      return /* @__PURE__ */ React258.createElement("li", {
+        style: {
+          width: `${100 / actions.length}%`
+        },
+        key
+      }, /* @__PURE__ */ React258.createElement("span", null, action));
+    }));
+  };
+  var Card = /* @__PURE__ */ React258.forwardRef((props, ref) => {
+    const _a = props, {
+      prefixCls: customizePrefixCls,
+      className,
+      rootClassName,
+      style: style2,
+      extra,
+      headStyle = {},
+      bodyStyle = {},
+      title,
+      loading,
+      bordered,
+      variant: customVariant,
+      size: customizeSize,
+      type: type5,
+      cover,
+      actions,
+      tabList,
+      children,
+      activeTabKey,
+      defaultActiveTabKey,
+      tabBarExtraContent,
+      hoverable,
+      tabProps = {},
+      classNames,
+      styles
+    } = _a, rest = __objRest(_a, [
+      "prefixCls",
+      "className",
+      "rootClassName",
+      "style",
+      "extra",
+      "headStyle",
+      "bodyStyle",
+      "title",
+      "loading",
+      "bordered",
+      "variant",
+      "size",
+      "type",
+      "cover",
+      "actions",
+      "tabList",
+      "children",
+      "activeTabKey",
+      "defaultActiveTabKey",
+      "tabBarExtraContent",
+      "hoverable",
+      "tabProps",
+      "classNames",
+      "styles"
+    ]);
+    const {
+      getPrefixCls,
+      direction,
+      className: contextClassName,
+      style: contextStyle,
+      classNames: contextClassNames,
+      styles: contextStyles
+    } = useComponentConfig("card");
+    const [variant] = useVariants_default("card", customVariant, bordered);
+    if (true) {
+      const warning6 = devUseWarning("Card");
+      warning6.deprecated(customizeSize !== "default", 'size="default"', 'size="medium"');
+    }
+    const mergedSize = useSize_default(customizeSize);
+    const mergedProps = __spreadProps(__spreadValues({}, props), {
+      size: mergedSize,
+      variant
+    });
+    const [mergedClassNames, mergedStyles] = useMergeSemantic([contextClassNames, classNames], [contextStyles, styles], {
+      props: mergedProps
+    });
+    if (true) {
+      const warning6 = devUseWarning("Card");
+      [["headStyle", "styles.header"], ["bodyStyle", "styles.body"], ["bordered", "variant"]].forEach(([deprecatedName, newName]) => {
+        warning6.deprecated(!(deprecatedName in props), deprecatedName, newName);
+      });
+    }
+    const onTabChange = (key) => {
+      var _a2;
+      (_a2 = props.onTabChange) == null ? void 0 : _a2.call(props, key);
+    };
+    const isContainGrid = React258.useMemo(() => {
+      const childNodes = toArray(children);
+      return childNodes.some((child) => /* @__PURE__ */ React258.isValidElement(child) && child.type === CardGrid_default);
+    }, [children]);
+    const prefixCls = getPrefixCls("card", customizePrefixCls);
+    const [hashId, cssVarCls] = style_default16(prefixCls);
+    const loadingBlock = /* @__PURE__ */ React258.createElement(skeleton_default, {
+      loading: true,
+      active: true,
+      paragraph: {
+        rows: 4
+      },
+      title: false
+    }, children);
+    const hasActiveTabKey = activeTabKey !== void 0;
+    const extraProps = __spreadProps(__spreadValues({}, tabProps), {
+      [hasActiveTabKey ? "activeKey" : "defaultActiveKey"]: hasActiveTabKey ? activeTabKey : defaultActiveTabKey,
+      tabBarExtraContent
+    });
+    let head;
+    const tabSize = mergedSize !== "small" ? "large" : mergedSize;
+    const tabs = tabList ? /* @__PURE__ */ React258.createElement(tabs_default, __spreadProps(__spreadValues({
+      size: tabSize
+    }, extraProps), {
+      className: `${prefixCls}-head-tabs`,
+      onChange: onTabChange,
+      items: tabList.map((_b) => {
+        var _c = _b, {
+          tab
+        } = _c, item = __objRest(_c, [
+          "tab"
+        ]);
+        return __spreadValues({
+          label: tab
+        }, item);
+      })
+    })) : null;
+    if (title || extra || tabs) {
+      const headClasses = clsx(`${prefixCls}-head`, mergedClassNames.header);
+      const titleClasses = clsx(`${prefixCls}-head-title`, mergedClassNames.title);
+      const extraClasses = clsx(`${prefixCls}-extra`, mergedClassNames.extra);
+      const mergedHeadStyle = __spreadValues(__spreadValues({}, headStyle), mergedStyles.header);
+      head = /* @__PURE__ */ React258.createElement("div", {
+        className: headClasses,
+        style: mergedHeadStyle
+      }, /* @__PURE__ */ React258.createElement("div", {
+        className: `${prefixCls}-head-wrapper`
+      }, title && /* @__PURE__ */ React258.createElement("div", {
+        className: titleClasses,
+        style: mergedStyles.title
+      }, title), extra && /* @__PURE__ */ React258.createElement("div", {
+        className: extraClasses,
+        style: mergedStyles.extra
+      }, extra)), tabs);
+    }
+    const coverClasses = clsx(`${prefixCls}-cover`, mergedClassNames.cover);
+    const coverDom = cover ? /* @__PURE__ */ React258.createElement("div", {
+      className: coverClasses,
+      style: mergedStyles.cover
+    }, cover) : null;
+    const bodyClasses = clsx(`${prefixCls}-body`, mergedClassNames.body);
+    const mergedBodyStyle = __spreadValues(__spreadValues({}, bodyStyle), mergedStyles.body);
+    const body = /* @__PURE__ */ React258.createElement("div", {
+      className: bodyClasses,
+      style: mergedBodyStyle
+    }, loading ? loadingBlock : children);
+    const actionClasses = clsx(`${prefixCls}-actions`, mergedClassNames.actions);
+    const actionDom = (actions == null ? void 0 : actions.length) ? /* @__PURE__ */ React258.createElement(ActionNode, {
+      actionClasses,
+      actionStyle: mergedStyles.actions,
+      actions
+    }) : null;
+    const divProps = omit(rest, ["onTabChange"]);
+    const classString = clsx(prefixCls, contextClassName, {
+      [`${prefixCls}-loading`]: loading,
+      [`${prefixCls}-bordered`]: variant !== "borderless",
+      [`${prefixCls}-hoverable`]: hoverable,
+      [`${prefixCls}-contain-grid`]: isContainGrid,
+      [`${prefixCls}-contain-tabs`]: tabList == null ? void 0 : tabList.length,
+      [`${prefixCls}-small`]: mergedSize === "small",
+      [`${prefixCls}-type-${type5}`]: !!type5,
+      [`${prefixCls}-rtl`]: direction === "rtl"
+    }, className, rootClassName, hashId, cssVarCls, mergedClassNames.root);
+    const mergedStyle = __spreadValues(__spreadValues(__spreadValues({}, mergedStyles.root), contextStyle), style2);
+    return /* @__PURE__ */ React258.createElement("div", __spreadProps(__spreadValues({
+      ref
+    }, divProps), {
+      className: classString,
+      style: mergedStyle
+    }), head, coverDom, body, actionDom);
+  });
+  if (true) {
+    Card.displayName = "Card";
+  }
+  var Card_default = Card;
+
+  // ../custom_dashboard/node_modules/antd/es/card/CardMeta.js
+  var React259 = __toESM(require_react());
+  "use client";
+  var CardMeta = (props) => {
+    const _a = props, {
+      prefixCls: customizePrefixCls,
+      className,
+      avatar,
+      title,
+      description,
+      style: style2,
+      classNames: cardMetaClassNames,
+      styles
+    } = _a, restProps = __objRest(_a, [
+      "prefixCls",
+      "className",
+      "avatar",
+      "title",
+      "description",
+      "style",
+      "classNames",
+      "styles"
+    ]);
+    const {
+      getPrefixCls,
+      className: contextClassName,
+      style: contextStyle,
+      classNames: contextClassNames,
+      styles: contextStyles
+    } = useComponentConfig("cardMeta");
+    const prefixCls = getPrefixCls("card", customizePrefixCls);
+    const metaPrefixCls = `${prefixCls}-meta`;
+    const [mergedClassNames, mergedStyles] = useMergeSemantic([contextClassNames, cardMetaClassNames], [contextStyles, styles], {
+      props
+    });
+    const rootClassNames = clsx(metaPrefixCls, className, contextClassName, mergedClassNames.root);
+    const rootStyles = __spreadValues(__spreadValues(__spreadValues({}, contextStyle), mergedStyles.root), style2);
+    const avatarClassNames = clsx(`${metaPrefixCls}-avatar`, mergedClassNames.avatar);
+    const titleClassNames = clsx(`${metaPrefixCls}-title`, mergedClassNames.title);
+    const descriptionClassNames = clsx(`${metaPrefixCls}-description`, mergedClassNames.description);
+    const sectionClassNames = clsx(`${metaPrefixCls}-section`, mergedClassNames.section);
+    const avatarDom = avatar ? /* @__PURE__ */ React259.createElement("div", {
+      className: avatarClassNames,
+      style: mergedStyles.avatar
+    }, avatar) : null;
+    const titleDom = title ? /* @__PURE__ */ React259.createElement("div", {
+      className: titleClassNames,
+      style: mergedStyles.title
+    }, title) : null;
+    const descriptionDom = description ? /* @__PURE__ */ React259.createElement("div", {
+      className: descriptionClassNames,
+      style: mergedStyles.description
+    }, description) : null;
+    const MetaDetail = titleDom || descriptionDom ? /* @__PURE__ */ React259.createElement("div", {
+      className: sectionClassNames,
+      style: mergedStyles.section
+    }, titleDom, descriptionDom) : null;
+    return /* @__PURE__ */ React259.createElement("div", __spreadProps(__spreadValues({}, restProps), {
+      className: rootClassNames,
+      style: rootStyles
+    }), avatarDom, MetaDetail);
+  };
+  if (true) {
+    CardMeta.displayName = "CardMeta";
+  }
+  var CardMeta_default = CardMeta;
+
+  // ../custom_dashboard/node_modules/antd/es/card/index.js
+  "use client";
+  var Card2 = Card_default;
+  Card2.Grid = CardGrid_default;
+  Card2.Meta = CardMeta_default;
+  var card_default = Card2;
+
   // ../custom_dashboard/node_modules/throttle-debounce/esm/index.js
   function throttle(delay, callback, options) {
     var _ref = options || {}, _ref$noTrailing = _ref.noTrailing, noTrailing = _ref$noTrailing === void 0 ? false : _ref$noTrailing, _ref$noLeading = _ref.noLeading, noLeading = _ref$noLeading === void 0 ? false : _ref$noLeading, _ref$debounceMode = _ref.debounceMode, debounceMode = _ref$debounceMode === void 0 ? void 0 : _ref$debounceMode;
@@ -56995,8 +60444,8 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/utils/treeUtil.js
-  function getPosition2(level, index2) {
-    return `${level}-${index2}`;
+  function getPosition2(level, index) {
+    return `${level}-${index}`;
   }
   function isTreeNode(node2) {
     return node2 && node2.type && node2.type.isTreeNode;
@@ -57074,8 +60523,8 @@ html body {
     const expandedKeySet = new Set(expandedKeys === true ? [] : expandedKeys);
     const flattenList = [];
     function dig(list, parent = null) {
-      return list.map((treeNode, index2) => {
-        const pos = getPosition2(parent ? parent.pos : "0", index2);
+      return list.map((treeNode, index) => {
+        const pos = getPosition2(parent ? parent.pos : "0", index);
         const mergedKey = getKey2(treeNode[fieldKey], pos);
         let mergedTitle;
         for (let i = 0; i < fieldTitles.length; i += 1) {
@@ -57092,8 +60541,8 @@ html body {
           pos,
           children: null,
           data: treeNode,
-          isStart: [...parent ? parent.isStart : [], index2 === 0],
-          isEnd: [...parent ? parent.isEnd : [], index2 === list.length - 1]
+          isStart: [...parent ? parent.isStart : [], index === 0],
+          isEnd: [...parent ? parent.isEnd : [], index === list.length - 1]
         });
         flattenList.push(flattenNode);
         if (expandedKeys === true || expandedKeySet.has(mergedKey)) {
@@ -57137,15 +60586,15 @@ html body {
     } else {
       syntheticGetKey = (node2, pos) => getKey2(node2[fieldKey], pos);
     }
-    function processNode(node2, index2, parent, pathNodes) {
+    function processNode(node2, index, parent, pathNodes) {
       const children = node2 ? node2[mergeChildrenPropName] : dataNodes;
-      const pos = node2 ? getPosition2(parent.pos, index2) : "0";
+      const pos = node2 ? getPosition2(parent.pos, index) : "0";
       const connectNodes = node2 ? [...pathNodes, node2] : [];
       if (node2) {
         const key = syntheticGetKey(node2, pos);
         const data = {
           node: node2,
-          index: index2,
+          index,
           pos,
           key,
           parentPos: parent.node ? parent.pos : null,
@@ -57187,7 +60636,7 @@ html body {
     traverseDataNodes(dataNodes, (item) => {
       const {
         node: node2,
-        index: index2,
+        index,
         pos,
         key,
         parentPos,
@@ -57197,7 +60646,7 @@ html body {
       const entity = {
         node: node2,
         nodes,
-        index: index2,
+        index,
         key,
         pos,
         level
@@ -57648,16 +61097,16 @@ html body {
     });
     return genCheckboxStyle(checkboxToken);
   }
-  var style_default15 = genStyleHooks("Checkbox", (token2, {
+  var style_default17 = genStyleHooks("Checkbox", (token2, {
     prefixCls
   }) => [getStyle(prefixCls, token2)]);
 
   // ../custom_dashboard/node_modules/antd/es/checkbox/Checkbox.js
-  var React243 = __toESM(require_react());
+  var React261 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/checkbox/GroupContext.js
-  var import_react98 = __toESM(require_react());
-  var GroupContext = /* @__PURE__ */ import_react98.default.createContext(null);
+  var import_react107 = __toESM(require_react());
+  var GroupContext = /* @__PURE__ */ import_react107.default.createContext(null);
   var GroupContext_default = GroupContext;
 
   // ../custom_dashboard/node_modules/antd/es/checkbox/Checkbox.js
@@ -57709,11 +61158,11 @@ html body {
       classNames: contextClassNames,
       styles: contextStyles
     } = useComponentConfig("checkbox");
-    const checkboxGroup = React243.useContext(GroupContext_default);
+    const checkboxGroup = React261.useContext(GroupContext_default);
     const {
       isFormItemInput
-    } = React243.useContext(FormItemInputContext);
-    const contextDisabled = React243.useContext(DisabledContext_default);
+    } = React261.useContext(FormItemInputContext);
+    const contextDisabled = React261.useContext(DisabledContext_default);
     const mergedDisabled = (_b = (checkboxGroup == null ? void 0 : checkboxGroup.disabled) || disabled) != null ? _b : contextDisabled;
     if (true) {
       const warning6 = devUseWarning("Checkbox");
@@ -57734,9 +61183,9 @@ html body {
     if (checkboxGroup && !skipGroup) {
       mergedChecked = checkboxGroup.value.includes(value);
     }
-    const checkboxRef = React243.useRef(null);
+    const checkboxRef = React261.useRef(null);
     const mergedRef = useComposeRef(ref, checkboxRef);
-    React243.useEffect(() => {
+    React261.useEffect(() => {
       if (skipGroup || !checkboxGroup) {
         return;
       }
@@ -57745,7 +61194,7 @@ html body {
         checkboxGroup.cancelValue(value);
       };
     }, [value, skipGroup]);
-    React243.useEffect(() => {
+    React261.useEffect(() => {
       var _a2;
       if ((_a2 = checkboxRef.current) == null ? void 0 : _a2.input) {
         checkboxRef.current.input.indeterminate = indeterminate;
@@ -57753,7 +61202,7 @@ html body {
     }, [indeterminate]);
     const prefixCls = getPrefixCls("checkbox", customizePrefixCls);
     const rootCls = useCSSVarCls_default(prefixCls);
-    const [hashId, cssVarCls] = style_default15(prefixCls, rootCls);
+    const [hashId, cssVarCls] = style_default17(prefixCls, rootCls);
     const checkboxProps = __spreadValues({}, restProps);
     const mergedProps = __spreadProps(__spreadValues({}, props), {
       indeterminate,
@@ -57773,16 +61222,16 @@ html body {
       [`${prefixCls}-indeterminate`]: indeterminate
     }, TARGET_CLS, hashId);
     const [onLabelClick, onInputClick] = useBubbleLock(checkboxProps.onClick);
-    return /* @__PURE__ */ React243.createElement(wave_default, {
+    return /* @__PURE__ */ React261.createElement(wave_default, {
       component: "Checkbox",
       disabled: mergedDisabled
-    }, /* @__PURE__ */ React243.createElement("label", {
+    }, /* @__PURE__ */ React261.createElement("label", {
       className: classString,
       style: __spreadValues(__spreadValues(__spreadValues({}, mergedStyles.root), contextStyle), style2),
       onMouseEnter,
       onMouseLeave,
       onClick: onLabelClick
-    }, /* @__PURE__ */ React243.createElement(es_default14, __spreadProps(__spreadValues({}, checkboxProps), {
+    }, /* @__PURE__ */ React261.createElement(es_default14, __spreadProps(__spreadValues({}, checkboxProps), {
       name: !skipGroup && checkboxGroup ? checkboxGroup.name : name,
       checked: mergedChecked,
       onClick: onInputClick,
@@ -57793,21 +61242,21 @@ html body {
       disabled: mergedDisabled,
       ref: mergedRef,
       value
-    })), isNonNullable_default(children) && /* @__PURE__ */ React243.createElement("span", {
+    })), isNonNullable_default(children) && /* @__PURE__ */ React261.createElement("span", {
       className: clsx(`${prefixCls}-label`, mergedClassNames.label),
       style: mergedStyles.label
     }, children)));
   };
-  var Checkbox2 = /* @__PURE__ */ React243.forwardRef(InternalCheckbox);
+  var Checkbox2 = /* @__PURE__ */ React261.forwardRef(InternalCheckbox);
   if (true) {
     Checkbox2.displayName = "Checkbox";
   }
   var Checkbox_default = Checkbox2;
 
   // ../custom_dashboard/node_modules/antd/es/checkbox/Group.js
-  var React244 = __toESM(require_react());
+  var React262 = __toESM(require_react());
   "use client";
-  var CheckboxGroup = /* @__PURE__ */ React244.forwardRef((props, ref) => {
+  var CheckboxGroup = /* @__PURE__ */ React262.forwardRef((props, ref) => {
     const _a = props, {
       defaultValue,
       children,
@@ -57832,15 +61281,15 @@ html body {
     const {
       getPrefixCls,
       direction
-    } = React244.useContext(ConfigContext);
-    const [value, setValue] = React244.useState(restProps.value || defaultValue || []);
-    const [registeredValues, setRegisteredValues] = React244.useState([]);
-    React244.useEffect(() => {
+    } = React262.useContext(ConfigContext);
+    const [value, setValue] = React262.useState(restProps.value || defaultValue || []);
+    const [registeredValues, setRegisteredValues] = React262.useState([]);
+    React262.useEffect(() => {
       if ("value" in restProps) {
         setValue(restProps.value || []);
       }
     }, [restProps.value]);
-    const memoizedOptions = React244.useMemo(() => options.map((option) => {
+    const memoizedOptions = React262.useMemo(() => options.map((option) => {
       if (typeof option === "string" || typeof option === "number") {
         return {
           label: option,
@@ -57875,9 +61324,9 @@ html body {
     const prefixCls = getPrefixCls("checkbox", customizePrefixCls);
     const groupPrefixCls = `${prefixCls}-group`;
     const rootCls = useCSSVarCls_default(prefixCls);
-    const [hashId, cssVarCls] = style_default15(prefixCls, rootCls);
+    const [hashId, cssVarCls] = style_default17(prefixCls, rootCls);
     const domProps = omit(restProps, ["value", "disabled"]);
-    const childrenNode = options.length ? memoizedOptions.map((option) => /* @__PURE__ */ React244.createElement(Checkbox_default, {
+    const childrenNode = options.length ? memoizedOptions.map((option) => /* @__PURE__ */ React262.createElement(Checkbox_default, {
       prefixCls,
       key: option.value.toString(),
       disabled: "disabled" in option ? option.disabled : restProps.disabled,
@@ -57890,7 +61339,7 @@ html body {
       id: option.id,
       required: option.required
     }, option.label)) : children;
-    const memoizedContext = React244.useMemo(() => ({
+    const memoizedContext = React262.useMemo(() => ({
       toggleOption,
       value,
       disabled: restProps.disabled,
@@ -57901,13 +61350,13 @@ html body {
     const classString = clsx(groupPrefixCls, {
       [`${groupPrefixCls}-rtl`]: direction === "rtl"
     }, className, rootClassName, cssVarCls, rootCls, hashId);
-    return /* @__PURE__ */ React244.createElement("div", __spreadProps(__spreadValues({
+    return /* @__PURE__ */ React262.createElement("div", __spreadProps(__spreadValues({
       className: classString,
       style: style2,
       role
     }, domProps), {
       ref
-    }), /* @__PURE__ */ React244.createElement(GroupContext_default.Provider, {
+    }), /* @__PURE__ */ React262.createElement(GroupContext_default.Provider, {
       value: memoizedContext
     }, childrenNode));
   });
@@ -57924,11 +61373,11 @@ html body {
   var checkbox_default = Checkbox3;
 
   // ../custom_dashboard/node_modules/antd/es/grid/col.js
-  var React245 = __toESM(require_react());
+  var React263 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/grid/RowContext.js
-  var import_react99 = __toESM(require_react());
-  var RowContext = /* @__PURE__ */ (0, import_react99.createContext)({});
+  var import_react108 = __toESM(require_react());
+  var RowContext = /* @__PURE__ */ (0, import_react108.createContext)({});
   var RowContext_default = RowContext;
 
   // ../custom_dashboard/node_modules/antd/es/grid/col.js
@@ -57948,15 +61397,15 @@ html body {
     }
     return flex;
   }
-  var Col = /* @__PURE__ */ React245.forwardRef((props, ref) => {
+  var Col = /* @__PURE__ */ React263.forwardRef((props, ref) => {
     const {
       getPrefixCls,
       direction
-    } = React245.useContext(ConfigContext);
+    } = React263.useContext(ConfigContext);
     const {
       gutter,
       wrap
-    } = React245.useContext(RowContext_default);
+    } = React263.useContext(RowContext_default);
     const _a = props, {
       prefixCls: customizePrefixCls,
       span,
@@ -58026,7 +61475,7 @@ html body {
         mergedStyle.minWidth = 0;
       }
     }
-    return /* @__PURE__ */ React245.createElement("div", __spreadProps(__spreadValues({}, others), {
+    return /* @__PURE__ */ React263.createElement("div", __spreadProps(__spreadValues({}, others), {
       style: __spreadValues(__spreadValues(__spreadValues({}, mergedStyle), style2), sizeStyle),
       className: classes,
       ref
@@ -58038,7 +61487,7 @@ html body {
   var col_default = Col;
 
   // ../custom_dashboard/node_modules/antd/es/grid/row.js
-  var React246 = __toESM(require_react());
+  var React264 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/grid/hooks/useGutter.js
   function useGutter(gutter, screens) {
@@ -58053,17 +61502,17 @@ html body {
       xxl: true,
       xxxl: true
     };
-    normalizedGutter.forEach((g, index2) => {
+    normalizedGutter.forEach((g, index) => {
       if (typeof g === "object" && g !== null) {
         for (let i = 0; i < responsiveArray.length; i++) {
           const breakpoint = responsiveArray[i];
           if (mergedScreens[breakpoint] && g[breakpoint] !== void 0) {
-            results[index2] = g[breakpoint];
+            results[index] = g[breakpoint];
             break;
           }
         }
       } else {
-        results[index2] = g;
+        results[index] = g;
       }
     });
     return results;
@@ -58072,7 +61521,7 @@ html body {
   // ../custom_dashboard/node_modules/antd/es/grid/row.js
   "use client";
   function useMergedPropByScreen(oriProp, screen) {
-    const [prop, setProp] = React246.useState(typeof oriProp === "string" ? oriProp : "");
+    const [prop, setProp] = React264.useState(typeof oriProp === "string" ? oriProp : "");
     const calcMergedAlignOrJustify = () => {
       if (typeof oriProp === "string") {
         setProp(oriProp);
@@ -58092,12 +61541,12 @@ html body {
         }
       }
     };
-    React246.useEffect(() => {
+    React264.useEffect(() => {
       calcMergedAlignOrJustify();
     }, [JSON.stringify(oriProp), screen]);
     return prop;
   }
-  var Row = /* @__PURE__ */ React246.forwardRef((props, ref) => {
+  var Row = /* @__PURE__ */ React264.forwardRef((props, ref) => {
     const _a = props, {
       prefixCls: customizePrefixCls,
       justify,
@@ -58120,7 +61569,7 @@ html body {
     const {
       getPrefixCls,
       direction
-    } = React246.useContext(ConfigContext);
+    } = React264.useContext(ConfigContext);
     const screens = useBreakpoint_default(true, null);
     const mergedAlign = useMergedPropByScreen(align, screens);
     const mergedJustify = useMergedPropByScreen(justify, screens);
@@ -58140,13 +61589,13 @@ html body {
     }
     const [gutterH, gutterV] = gutters;
     rowStyle.rowGap = gutterV;
-    const rowContext = React246.useMemo(() => ({
+    const rowContext = React264.useMemo(() => ({
       gutter: [gutterH, gutterV],
       wrap
     }), [gutterH, gutterV, wrap]);
-    return /* @__PURE__ */ React246.createElement(RowContext_default.Provider, {
+    return /* @__PURE__ */ React264.createElement(RowContext_default.Provider, {
       value: rowContext
-    }, /* @__PURE__ */ React246.createElement("div", __spreadProps(__spreadValues({}, others), {
+    }, /* @__PURE__ */ React264.createElement("div", __spreadProps(__spreadValues({}, others), {
       className: classes,
       style: __spreadValues(__spreadValues({}, rowStyle), style2),
       ref
@@ -58166,8 +61615,1087 @@ html body {
     useBreakpoint: useBreakpoint2
   };
 
+  // ../custom_dashboard/node_modules/antd/es/col/index.js
+  "use client";
+  var col_default2 = col_default;
+
+  // ../custom_dashboard/node_modules/antd/es/input-number/index.js
+  var React270 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/MinusOutlined.js
+  var React265 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/MinusOutlined.js
+  var MinusOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M872 474H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h720c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z" } }] }, "name": "minus", "theme": "outlined" };
+  var MinusOutlined_default = MinusOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/MinusOutlined.js
+  function _extends53() {
+    _extends53 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends53.apply(this, arguments);
+  }
+  var MinusOutlined2 = (props, ref) => /* @__PURE__ */ React265.createElement(AntdIcon_default, _extends53({}, props, {
+    ref,
+    icon: MinusOutlined_default
+  }));
+  var RefIcon15 = /* @__PURE__ */ React265.forwardRef(MinusOutlined2);
+  if (true) {
+    RefIcon15.displayName = "MinusOutlined";
+  }
+  var MinusOutlined_default2 = RefIcon15;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/UpOutlined.js
+  var React266 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/UpOutlined.js
+  var UpOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M890.5 755.3L537.9 269.2c-12.8-17.6-39-17.6-51.7 0L133.5 755.3A8 8 0 00140 768h75c5.1 0 9.9-2.5 12.9-6.6L512 369.8l284.1 391.6c3 4.1 7.8 6.6 12.9 6.6h75c6.5 0 10.3-7.4 6.5-12.7z" } }] }, "name": "up", "theme": "outlined" };
+  var UpOutlined_default = UpOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/UpOutlined.js
+  function _extends54() {
+    _extends54 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends54.apply(this, arguments);
+  }
+  var UpOutlined2 = (props, ref) => /* @__PURE__ */ React266.createElement(AntdIcon_default, _extends54({}, props, {
+    ref,
+    icon: UpOutlined_default
+  }));
+  var RefIcon16 = /* @__PURE__ */ React266.forwardRef(UpOutlined2);
+  if (true) {
+    RefIcon16.displayName = "UpOutlined";
+  }
+  var UpOutlined_default2 = RefIcon16;
+
+  // ../custom_dashboard/node_modules/@rc-component/mini-decimal/es/supportUtil.js
+  function supportBigInt() {
+    return typeof BigInt === "function";
+  }
+
+  // ../custom_dashboard/node_modules/@rc-component/mini-decimal/es/numberUtil.js
+  function isEmpty(value) {
+    return !value && value !== 0 && !Number.isNaN(value) || !String(value).trim();
+  }
+  function trimNumber(numStr) {
+    var str = numStr.trim();
+    var negative = str.startsWith("-");
+    if (negative) {
+      str = str.slice(1);
+    }
+    str = str.replace(/(\.\d*[^0])0*$/, "$1").replace(/\.0*$/, "").replace(/^0+/, "");
+    if (str.startsWith(".")) {
+      str = "0".concat(str);
+    }
+    var trimStr = str || "0";
+    var splitNumber = trimStr.split(".");
+    var integerStr = splitNumber[0] || "0";
+    var decimalStr = splitNumber[1] || "0";
+    if (integerStr === "0" && decimalStr === "0") {
+      negative = false;
+    }
+    var negativeStr = negative ? "-" : "";
+    return {
+      negative,
+      negativeStr,
+      trimStr,
+      integerStr,
+      decimalStr,
+      fullStr: "".concat(negativeStr).concat(trimStr)
+    };
+  }
+  function isE(number4) {
+    var str = String(number4);
+    return !Number.isNaN(Number(str)) && str.includes("e");
+  }
+  function parseScientificNotation(numStr) {
+    var _numStr$toLowerCase$s = numStr.toLowerCase().split("e"), _numStr$toLowerCase$s2 = _slicedToArray(_numStr$toLowerCase$s, 2), mantissa = _numStr$toLowerCase$s2[0], _numStr$toLowerCase$s3 = _numStr$toLowerCase$s2[1], exponent = _numStr$toLowerCase$s3 === void 0 ? "0" : _numStr$toLowerCase$s3;
+    var negative = mantissa.startsWith("-");
+    var unsignedMantissa = negative ? mantissa.slice(1) : mantissa;
+    var _unsignedMantissa$spl = unsignedMantissa.split("."), _unsignedMantissa$spl2 = _slicedToArray(_unsignedMantissa$spl, 2), _unsignedMantissa$spl3 = _unsignedMantissa$spl2[0], integer4 = _unsignedMantissa$spl3 === void 0 ? "0" : _unsignedMantissa$spl3, _unsignedMantissa$spl4 = _unsignedMantissa$spl2[1], decimal = _unsignedMantissa$spl4 === void 0 ? "" : _unsignedMantissa$spl4;
+    var digits = "".concat(integer4).concat(decimal).replace(/^0+/, "") || "0";
+    return {
+      decimal,
+      digits,
+      exponent: Number(exponent),
+      integer: integer4,
+      negative
+    };
+  }
+  function expandScientificNotation(parsed) {
+    var decimal = parsed.decimal, digits = parsed.digits, exponent = parsed.exponent, integer4 = parsed.integer, negative = parsed.negative;
+    if (digits === "0") {
+      return "0";
+    }
+    var integerDigits = integer4.replace(/^0+/, "").length;
+    var leadingDecimalZeros = (decimal.match(/^0*/) || [""])[0].length;
+    var initialDecimalIndex = integerDigits || -leadingDecimalZeros;
+    var decimalIndex = initialDecimalIndex + exponent;
+    var expanded = "";
+    if (decimalIndex <= 0) {
+      expanded = "0.".concat("0".repeat(-decimalIndex)).concat(digits);
+    } else if (decimalIndex >= digits.length) {
+      expanded = "".concat(digits).concat("0".repeat(decimalIndex - digits.length));
+    } else {
+      expanded = "".concat(digits.slice(0, decimalIndex), ".").concat(digits.slice(decimalIndex));
+    }
+    return "".concat(negative ? "-" : "").concat(expanded);
+  }
+  function getScientificPrecision(parsed) {
+    if (parsed.exponent >= 0) {
+      return Math.max(0, parsed.decimal.length - parsed.exponent);
+    }
+    return Math.abs(parsed.exponent) + parsed.decimal.length;
+  }
+  function getNumberPrecision(number4) {
+    var numStr = String(number4);
+    if (isE(number4)) {
+      return getScientificPrecision(parseScientificNotation(numStr));
+    }
+    return numStr.includes(".") && validateNumber(numStr) ? numStr.length - numStr.indexOf(".") - 1 : 0;
+  }
+  function num2str(number4) {
+    var numStr = String(number4);
+    if (isE(number4)) {
+      if (number4 > Number.MAX_SAFE_INTEGER) {
+        return String(supportBigInt() ? BigInt(number4).toString() : Number.MAX_SAFE_INTEGER);
+      }
+      if (number4 < Number.MIN_SAFE_INTEGER) {
+        return String(supportBigInt() ? BigInt(number4).toString() : Number.MIN_SAFE_INTEGER);
+      }
+      var parsed = parseScientificNotation(numStr);
+      var precision = getScientificPrecision(parsed);
+      numStr = precision > 100 ? expandScientificNotation(parsed) : number4.toFixed(precision);
+    }
+    return trimNumber(numStr).fullStr;
+  }
+  function validateNumber(num) {
+    if (typeof num === "number") {
+      return !Number.isNaN(num);
+    }
+    if (!num) {
+      return false;
+    }
+    return /^\s*-?\d+(\.\d+)?\s*$/.test(num) || /^\s*-?\d+\.\s*$/.test(num) || /^\s*-?\.\d+\s*$/.test(num);
+  }
+
+  // ../custom_dashboard/node_modules/@rc-component/mini-decimal/es/BigIntDecimal.js
+  var BigIntDecimal = /* @__PURE__ */ function() {
+    function BigIntDecimal2(value) {
+      _classCallCheck(this, BigIntDecimal2);
+      _defineProperty(this, "origin", "");
+      _defineProperty(this, "negative", void 0);
+      _defineProperty(this, "integer", void 0);
+      _defineProperty(this, "decimal", void 0);
+      _defineProperty(this, "decimalLen", void 0);
+      _defineProperty(this, "empty", void 0);
+      _defineProperty(this, "nan", void 0);
+      if (isEmpty(value)) {
+        this.empty = true;
+        return;
+      }
+      this.origin = String(value);
+      if (value === "-" || Number.isNaN(value)) {
+        this.nan = true;
+        return;
+      }
+      var mergedValue = value;
+      if (isE(mergedValue)) {
+        mergedValue = Number(mergedValue);
+      }
+      mergedValue = typeof mergedValue === "string" ? mergedValue : num2str(mergedValue);
+      if (validateNumber(mergedValue)) {
+        var trimRet = trimNumber(mergedValue);
+        this.negative = trimRet.negative;
+        var numbers = trimRet.trimStr.split(".");
+        this.integer = BigInt(numbers[0]);
+        var decimalStr = numbers[1] || "0";
+        this.decimal = BigInt(decimalStr);
+        this.decimalLen = decimalStr.length;
+      } else {
+        this.nan = true;
+      }
+    }
+    _createClass(BigIntDecimal2, [{
+      key: "getMark",
+      value: function getMark2() {
+        return this.negative ? "-" : "";
+      }
+    }, {
+      key: "getIntegerStr",
+      value: function getIntegerStr() {
+        return this.integer.toString();
+      }
+    }, {
+      key: "getDecimalStr",
+      value: function getDecimalStr() {
+        return this.decimal.toString().padStart(this.decimalLen, "0");
+      }
+    }, {
+      key: "alignDecimal",
+      value: function alignDecimal(decimalLength) {
+        var str = "".concat(this.getMark()).concat(this.getIntegerStr()).concat(this.getDecimalStr().padEnd(decimalLength, "0"));
+        return BigInt(str);
+      }
+    }, {
+      key: "negate",
+      value: function negate() {
+        var clone = new BigIntDecimal2(this.toString());
+        clone.negative = !clone.negative;
+        return clone;
+      }
+    }, {
+      key: "cal",
+      value: function cal(offset3, calculator, calDecimalLen) {
+        var maxDecimalLength = Math.max(this.getDecimalStr().length, offset3.getDecimalStr().length);
+        var myAlignedDecimal = this.alignDecimal(maxDecimalLength);
+        var offsetAlignedDecimal = offset3.alignDecimal(maxDecimalLength);
+        var valueStr = calculator(myAlignedDecimal, offsetAlignedDecimal).toString();
+        var nextDecimalLength = calDecimalLen(maxDecimalLength);
+        var _trimNumber = trimNumber(valueStr), negativeStr = _trimNumber.negativeStr, trimStr = _trimNumber.trimStr;
+        var hydrateValueStr = "".concat(negativeStr).concat(trimStr.padStart(nextDecimalLength + 1, "0"));
+        return new BigIntDecimal2("".concat(hydrateValueStr.slice(0, -nextDecimalLength), ".").concat(hydrateValueStr.slice(-nextDecimalLength)));
+      }
+    }, {
+      key: "add",
+      value: function add(value) {
+        if (this.isInvalidate()) {
+          return new BigIntDecimal2(value);
+        }
+        var offset3 = new BigIntDecimal2(value);
+        if (offset3.isInvalidate()) {
+          return this;
+        }
+        return this.cal(offset3, function(num1, num2) {
+          return num1 + num2;
+        }, function(len) {
+          return len;
+        });
+      }
+    }, {
+      key: "multi",
+      value: function multi(value) {
+        var target = new BigIntDecimal2(value);
+        if (this.isInvalidate() || target.isInvalidate()) {
+          return new BigIntDecimal2(NaN);
+        }
+        return this.cal(target, function(num1, num2) {
+          return num1 * num2;
+        }, function(len) {
+          return len * 2;
+        });
+      }
+    }, {
+      key: "isEmpty",
+      value: function isEmpty2() {
+        return this.empty;
+      }
+    }, {
+      key: "isNaN",
+      value: function isNaN2() {
+        return this.nan;
+      }
+    }, {
+      key: "isInvalidate",
+      value: function isInvalidate() {
+        return this.isEmpty() || this.isNaN();
+      }
+    }, {
+      key: "equals",
+      value: function equals(target) {
+        return this.toString() === (target === null || target === void 0 ? void 0 : target.toString());
+      }
+    }, {
+      key: "lessEquals",
+      value: function lessEquals(target) {
+        return this.add(target.negate().toString()).toNumber() <= 0;
+      }
+    }, {
+      key: "toNumber",
+      value: function toNumber() {
+        if (this.isNaN()) {
+          return NaN;
+        }
+        return Number(this.toString());
+      }
+    }, {
+      key: "toString",
+      value: function toString() {
+        var safe = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : true;
+        if (!safe) {
+          return this.origin;
+        }
+        if (this.isInvalidate()) {
+          return "";
+        }
+        return trimNumber("".concat(this.getMark()).concat(this.getIntegerStr(), ".").concat(this.getDecimalStr())).fullStr;
+      }
+    }]);
+    return BigIntDecimal2;
+  }();
+
+  // ../custom_dashboard/node_modules/@rc-component/mini-decimal/es/NumberDecimal.js
+  var NumberDecimal = /* @__PURE__ */ function() {
+    function NumberDecimal2(value) {
+      _classCallCheck(this, NumberDecimal2);
+      _defineProperty(this, "origin", "");
+      _defineProperty(this, "number", void 0);
+      _defineProperty(this, "empty", void 0);
+      if (isEmpty(value)) {
+        this.empty = true;
+        return;
+      }
+      this.origin = String(value);
+      this.number = Number(value);
+    }
+    _createClass(NumberDecimal2, [{
+      key: "negate",
+      value: function negate() {
+        return new NumberDecimal2(-this.toNumber());
+      }
+    }, {
+      key: "add",
+      value: function add(value) {
+        if (this.isInvalidate()) {
+          return new NumberDecimal2(value);
+        }
+        var target = Number(value);
+        if (Number.isNaN(target)) {
+          return this;
+        }
+        var number4 = this.number + target;
+        if (number4 > Number.MAX_SAFE_INTEGER) {
+          return new NumberDecimal2(Number.MAX_SAFE_INTEGER);
+        }
+        if (number4 < Number.MIN_SAFE_INTEGER) {
+          return new NumberDecimal2(Number.MIN_SAFE_INTEGER);
+        }
+        var maxPrecision = Math.max(getNumberPrecision(this.number), getNumberPrecision(target));
+        return new NumberDecimal2(number4.toFixed(maxPrecision));
+      }
+    }, {
+      key: "multi",
+      value: function multi(value) {
+        var target = Number(value);
+        if (this.isInvalidate() || Number.isNaN(target)) {
+          return new NumberDecimal2(NaN);
+        }
+        var number4 = this.number * target;
+        if (number4 > Number.MAX_SAFE_INTEGER) {
+          return new NumberDecimal2(Number.MAX_SAFE_INTEGER);
+        }
+        if (number4 < Number.MIN_SAFE_INTEGER) {
+          return new NumberDecimal2(Number.MIN_SAFE_INTEGER);
+        }
+        var maxPrecision = Math.max(getNumberPrecision(this.number), getNumberPrecision(target));
+        return new NumberDecimal2(number4.toFixed(maxPrecision));
+      }
+    }, {
+      key: "isEmpty",
+      value: function isEmpty2() {
+        return this.empty;
+      }
+    }, {
+      key: "isNaN",
+      value: function isNaN2() {
+        return Number.isNaN(this.number);
+      }
+    }, {
+      key: "isInvalidate",
+      value: function isInvalidate() {
+        return this.isEmpty() || this.isNaN();
+      }
+    }, {
+      key: "equals",
+      value: function equals(target) {
+        return this.toNumber() === (target === null || target === void 0 ? void 0 : target.toNumber());
+      }
+    }, {
+      key: "lessEquals",
+      value: function lessEquals(target) {
+        return this.add(target.negate().toString()).toNumber() <= 0;
+      }
+    }, {
+      key: "toNumber",
+      value: function toNumber() {
+        return this.number;
+      }
+    }, {
+      key: "toString",
+      value: function toString() {
+        var safe = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : true;
+        if (!safe) {
+          return this.origin;
+        }
+        if (this.isInvalidate()) {
+          return "";
+        }
+        if (isE(this.number) && getNumberPrecision(this.number) > 100) {
+          return String(this.number);
+        }
+        return num2str(this.number);
+      }
+    }]);
+    return NumberDecimal2;
+  }();
+
+  // ../custom_dashboard/node_modules/@rc-component/mini-decimal/es/MiniDecimal.js
+  function getMiniDecimal(value) {
+    if (supportBigInt()) {
+      return new BigIntDecimal(value);
+    }
+    return new NumberDecimal(value);
+  }
+  function toFixed(numStr, separatorStr, precision) {
+    var cutOnly = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : false;
+    if (numStr === "") {
+      return "";
+    }
+    var _trimNumber = trimNumber(numStr), negativeStr = _trimNumber.negativeStr, integerStr = _trimNumber.integerStr, decimalStr = _trimNumber.decimalStr;
+    var precisionDecimalStr = "".concat(separatorStr).concat(decimalStr);
+    var numberWithoutDecimal = "".concat(negativeStr).concat(integerStr);
+    if (precision >= 0) {
+      var advancedNum = Number(decimalStr[precision]);
+      if (advancedNum >= 5 && !cutOnly) {
+        var advancedDecimal = getMiniDecimal(numStr).add("".concat(negativeStr, "0.").concat("0".repeat(precision)).concat(10 - advancedNum));
+        return toFixed(advancedDecimal.toString(), separatorStr, precision, cutOnly);
+      }
+      if (precision === 0) {
+        return numberWithoutDecimal;
+      }
+      return "".concat(numberWithoutDecimal).concat(separatorStr).concat(decimalStr.padEnd(precision, "0").slice(0, precision));
+    }
+    if (precisionDecimalStr === ".0") {
+      return numberWithoutDecimal;
+    }
+    return "".concat(numberWithoutDecimal).concat(precisionDecimalStr);
+  }
+
+  // ../custom_dashboard/node_modules/@rc-component/mini-decimal/es/index.js
+  var es_default16 = getMiniDecimal;
+
+  // ../custom_dashboard/node_modules/@rc-component/util/es/proxyObject.js
+  function proxyObject(obj, extendProps) {
+    if (typeof Proxy !== "undefined" && obj) {
+      return new Proxy(obj, {
+        get(target, prop) {
+          if (extendProps[prop]) {
+            return extendProps[prop];
+          }
+          const originProp = target[prop];
+          return typeof originProp === "function" ? originProp.bind(target) : originProp;
+        }
+      });
+    }
+    return obj;
+  }
+
+  // ../custom_dashboard/node_modules/@rc-component/input-number/es/InputNumber.js
+  var React268 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@rc-component/input-number/es/hooks/useCursor.js
+  var import_react109 = __toESM(require_react());
+  function useCursor(input, focused) {
+    const selectionRef = (0, import_react109.useRef)(null);
+    function recordCursor() {
+      try {
+        const {
+          selectionStart: start,
+          selectionEnd: end,
+          value
+        } = input;
+        const beforeTxt = value.substring(0, start);
+        const afterTxt = value.substring(end);
+        selectionRef.current = {
+          start,
+          end,
+          value,
+          beforeTxt,
+          afterTxt
+        };
+      } catch (e3) {
+      }
+    }
+    function restoreCursor() {
+      if (input && selectionRef.current && focused) {
+        try {
+          const {
+            value
+          } = input;
+          const {
+            beforeTxt,
+            afterTxt,
+            start
+          } = selectionRef.current;
+          let startPos = value.length;
+          if (value.startsWith(beforeTxt)) {
+            startPos = beforeTxt.length;
+          } else if (value.endsWith(afterTxt)) {
+            startPos = value.length - selectionRef.current.afterTxt.length;
+          } else {
+            const beforeLastChar = beforeTxt[start - 1];
+            const newIndex = value.indexOf(beforeLastChar, start - 1);
+            if (newIndex !== -1) {
+              startPos = newIndex + 1;
+            }
+          }
+          input.setSelectionRange(startPos, startPos);
+        } catch (e3) {
+          warning_default(false, `Something warning of cursor restore. Please fire issue about this: ${e3.message}`);
+        }
+      }
+    }
+    return [recordCursor, restoreCursor];
+  }
+
+  // ../custom_dashboard/node_modules/@rc-component/input-number/es/StepHandler.js
+  var React267 = __toESM(require_react());
+  var STEP_INTERVAL = 200;
+  var STEP_DELAY = 600;
+  function StepHandler({
+    prefixCls,
+    action,
+    children,
+    disabled,
+    className,
+    style: style2,
+    onStep
+  }) {
+    const isUpAction = action === "up";
+    const stepTimeoutRef = React267.useRef();
+    const frameIds = React267.useRef([]);
+    const onStopStep = () => {
+      clearTimeout(stepTimeoutRef.current);
+    };
+    const onStepMouseDown = (e3) => {
+      e3.preventDefault();
+      onStopStep();
+      onStep(isUpAction, "handler");
+      function loopStep() {
+        onStep(isUpAction, "handler");
+        stepTimeoutRef.current = setTimeout(loopStep, STEP_INTERVAL);
+      }
+      stepTimeoutRef.current = setTimeout(loopStep, STEP_DELAY);
+    };
+    React267.useEffect(() => () => {
+      onStopStep();
+      frameIds.current.forEach((id) => {
+        raf_default.cancel(id);
+      });
+    }, []);
+    const actionClassName = `${prefixCls}-action`;
+    const mergedClassName = clsx(actionClassName, `${actionClassName}-${action}`, {
+      [`${actionClassName}-${action}-disabled`]: disabled
+    }, className);
+    const safeOnStopStep = () => frameIds.current.push(raf_default(onStopStep));
+    return /* @__PURE__ */ React267.createElement("span", {
+      unselectable: "on",
+      role: "button",
+      onMouseUp: safeOnStopStep,
+      onMouseLeave: safeOnStopStep,
+      onMouseDown: (e3) => {
+        onStepMouseDown(e3);
+      },
+      "aria-label": isUpAction ? "Increase Value" : "Decrease Value",
+      "aria-disabled": disabled,
+      className: mergedClassName,
+      style: style2
+    }, children || /* @__PURE__ */ React267.createElement("span", {
+      unselectable: "on",
+      className: `${prefixCls}-action-${action}-inner`
+    }));
+  }
+
+  // ../custom_dashboard/node_modules/@rc-component/input-number/es/utils/numberUtil.js
+  function getDecupleSteps(step) {
+    const stepStr = typeof step === "number" ? num2str(step) : trimNumber(step).fullStr;
+    const hasPoint = stepStr.includes(".");
+    if (!hasPoint) {
+      return step + "0";
+    }
+    return trimNumber(stepStr.replace(/(\d)\.(\d)/g, "$1$2.")).fullStr;
+  }
+
+  // ../custom_dashboard/node_modules/@rc-component/input-number/es/hooks/useFrame.js
+  var import_react110 = __toESM(require_react());
+  var useFrame_default = () => {
+    const idRef = (0, import_react110.useRef)(0);
+    const cleanUp = () => {
+      raf_default.cancel(idRef.current);
+    };
+    (0, import_react110.useEffect)(() => cleanUp, []);
+    return (callback) => {
+      cleanUp();
+      idRef.current = raf_default(() => {
+        callback();
+      });
+    };
+  };
+
+  // ../custom_dashboard/node_modules/@rc-component/input-number/es/InputNumber.js
+  function _extends55() {
+    _extends55 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends55.apply(this, arguments);
+  }
+  var getDecimalValue = (stringMode, decimalValue) => {
+    if (stringMode || decimalValue.isEmpty()) {
+      return decimalValue.toString();
+    }
+    return decimalValue.toNumber();
+  };
+  var getDecimalIfValidate = (value) => {
+    const decimal = es_default16(value);
+    return decimal.isInvalidate() ? null : decimal;
+  };
+  var InputNumber = /* @__PURE__ */ React268.forwardRef((props, ref) => {
+    const _a = props, {
+      mode = "input",
+      prefixCls = "rc-input-number",
+      className,
+      style: style2,
+      classNames,
+      styles,
+      min,
+      max,
+      step = 1,
+      defaultValue,
+      value,
+      disabled,
+      readOnly,
+      upHandler,
+      downHandler,
+      keyboard,
+      changeOnWheel = false,
+      controls = true,
+      prefix: prefix2,
+      suffix,
+      stringMode,
+      parser,
+      formatter,
+      precision,
+      decimalSeparator,
+      onChange,
+      onInput,
+      onPressEnter,
+      onStep,
+      onMouseDown,
+      onClick,
+      onMouseUp,
+      onMouseLeave,
+      onMouseMove,
+      onMouseEnter,
+      onMouseOut,
+      changeOnBlur = true
+    } = _a, restProps = __objRest(_a, [
+      "mode",
+      "prefixCls",
+      "className",
+      "style",
+      "classNames",
+      "styles",
+      "min",
+      "max",
+      "step",
+      "defaultValue",
+      "value",
+      "disabled",
+      "readOnly",
+      "upHandler",
+      "downHandler",
+      "keyboard",
+      "changeOnWheel",
+      "controls",
+      "prefix",
+      "suffix",
+      "stringMode",
+      "parser",
+      "formatter",
+      "precision",
+      "decimalSeparator",
+      "onChange",
+      "onInput",
+      "onPressEnter",
+      "onStep",
+      "onMouseDown",
+      "onClick",
+      "onMouseUp",
+      "onMouseLeave",
+      "onMouseMove",
+      "onMouseEnter",
+      "onMouseOut",
+      "changeOnBlur"
+    ]);
+    const [focus, setFocus] = React268.useState(false);
+    const userTypingRef = React268.useRef(false);
+    const compositionRef = React268.useRef(false);
+    const shiftKeyRef = React268.useRef(false);
+    const rootRef = React268.useRef(null);
+    const inputRef = React268.useRef(null);
+    React268.useImperativeHandle(ref, () => proxyObject(inputRef.current, {
+      focus: (option) => {
+        triggerFocus(inputRef.current, option);
+      },
+      blur: () => {
+        var _a2;
+        (_a2 = inputRef.current) == null ? void 0 : _a2.blur();
+      },
+      nativeElement: rootRef.current
+    }));
+    const [decimalValue, setDecimalValue] = React268.useState(() => es_default16(value != null ? value : defaultValue));
+    function setUncontrolledDecimalValue(newDecimal) {
+      if (value === void 0) {
+        setDecimalValue(newDecimal);
+      }
+    }
+    const getPrecision = React268.useCallback((numStr, userTyping) => {
+      if (userTyping) {
+        return void 0;
+      }
+      if (precision >= 0) {
+        return precision;
+      }
+      return Math.max(getNumberPrecision(numStr), getNumberPrecision(step));
+    }, [precision, step]);
+    const mergedParser = React268.useCallback((num) => {
+      const numStr = String(num);
+      if (parser) {
+        return parser(numStr);
+      }
+      let parsedStr = numStr;
+      if (decimalSeparator) {
+        parsedStr = parsedStr.replace(decimalSeparator, ".");
+      }
+      return parsedStr.replace(/[^\w.-]+/g, "");
+    }, [parser, decimalSeparator]);
+    const inputValueRef = React268.useRef("");
+    const mergedFormatter = React268.useCallback((number4, userTyping) => {
+      if (formatter) {
+        return formatter(number4, {
+          userTyping,
+          input: String(inputValueRef.current)
+        });
+      }
+      let str = typeof number4 === "number" ? num2str(number4) : number4;
+      if (!userTyping) {
+        const mergedPrecision = getPrecision(str, userTyping);
+        if (validateNumber(str) && (decimalSeparator || mergedPrecision >= 0)) {
+          const separatorStr = decimalSeparator || ".";
+          str = toFixed(str, separatorStr, mergedPrecision);
+        }
+      }
+      return str;
+    }, [formatter, getPrecision, decimalSeparator]);
+    const [inputValue, setInternalInputValue] = React268.useState(() => {
+      const initValue = defaultValue != null ? defaultValue : value;
+      if (decimalValue.isInvalidate() && ["string", "number"].includes(typeof initValue)) {
+        return Number.isNaN(initValue) ? "" : initValue;
+      }
+      return mergedFormatter(decimalValue.toString(), false);
+    });
+    inputValueRef.current = inputValue;
+    function setInputValue(newValue, userTyping) {
+      setInternalInputValue(mergedFormatter(
+        newValue.isInvalidate() ? newValue.toString(false) : newValue.toString(!userTyping),
+        userTyping
+      ));
+    }
+    const maxDecimal = React268.useMemo(() => getDecimalIfValidate(max), [max, precision]);
+    const minDecimal = React268.useMemo(() => getDecimalIfValidate(min), [min, precision]);
+    const upDisabled = React268.useMemo(() => {
+      if (!maxDecimal || !decimalValue || decimalValue.isInvalidate()) {
+        return false;
+      }
+      return maxDecimal.lessEquals(decimalValue);
+    }, [maxDecimal, decimalValue]);
+    const downDisabled = React268.useMemo(() => {
+      if (!minDecimal || !decimalValue || decimalValue.isInvalidate()) {
+        return false;
+      }
+      return decimalValue.lessEquals(minDecimal);
+    }, [minDecimal, decimalValue]);
+    const [recordCursor, restoreCursor] = useCursor(inputRef.current, focus);
+    const getRangeValue = (target) => {
+      if (maxDecimal && !target.lessEquals(maxDecimal)) {
+        return maxDecimal;
+      }
+      if (minDecimal && !minDecimal.lessEquals(target)) {
+        return minDecimal;
+      }
+      return null;
+    };
+    const isInRange = (target) => !getRangeValue(target);
+    const triggerValueUpdate = (newValue, userTyping) => {
+      let updateValue = newValue;
+      let isRangeValidate = isInRange(updateValue) || updateValue.isEmpty();
+      if (!updateValue.isEmpty() && !userTyping) {
+        updateValue = getRangeValue(updateValue) || updateValue;
+        isRangeValidate = true;
+      }
+      if (!readOnly && !disabled && isRangeValidate) {
+        const numStr = updateValue.toString();
+        const mergedPrecision = getPrecision(numStr, userTyping);
+        if (mergedPrecision >= 0) {
+          updateValue = es_default16(toFixed(numStr, ".", mergedPrecision));
+          if (!isInRange(updateValue)) {
+            updateValue = es_default16(toFixed(numStr, ".", mergedPrecision, true));
+          }
+        }
+        if (!updateValue.equals(decimalValue)) {
+          setUncontrolledDecimalValue(updateValue);
+          onChange == null ? void 0 : onChange(updateValue.isEmpty() ? null : getDecimalValue(stringMode, updateValue));
+          if (value === void 0) {
+            setInputValue(updateValue, userTyping);
+          }
+        }
+        return updateValue;
+      }
+      return decimalValue;
+    };
+    const onNextPromise = useFrame_default();
+    const collectInputValue = (inputStr) => {
+      recordCursor();
+      inputValueRef.current = inputStr;
+      setInternalInputValue(inputStr);
+      if (!compositionRef.current) {
+        const finalValue = mergedParser(inputStr);
+        const finalDecimal = es_default16(finalValue);
+        if (!finalDecimal.isNaN()) {
+          triggerValueUpdate(finalDecimal, true);
+        }
+      }
+      onInput == null ? void 0 : onInput(inputStr);
+      onNextPromise(() => {
+        let nextInputStr = inputStr;
+        if (!parser) {
+          nextInputStr = inputStr.replace(/。/g, ".");
+        }
+        if (nextInputStr !== inputStr) {
+          collectInputValue(nextInputStr);
+        }
+      });
+    };
+    const onCompositionStart = () => {
+      compositionRef.current = true;
+    };
+    const onCompositionEnd = () => {
+      compositionRef.current = false;
+      collectInputValue(inputRef.current.value);
+    };
+    const onInternalInput = (e3) => {
+      collectInputValue(e3.target.value);
+    };
+    const onInternalStep = useEvent_default((up, emitter) => {
+      var _a2;
+      if (up && upDisabled || !up && downDisabled) {
+        return;
+      }
+      userTypingRef.current = false;
+      let stepDecimal = es_default16(shiftKeyRef.current ? getDecupleSteps(step) : step);
+      if (!up) {
+        stepDecimal = stepDecimal.negate();
+      }
+      const target = (decimalValue || es_default16(0)).add(stepDecimal.toString());
+      const updatedValue = triggerValueUpdate(target, false);
+      onStep == null ? void 0 : onStep(getDecimalValue(stringMode, updatedValue), {
+        offset: shiftKeyRef.current ? getDecupleSteps(step) : step,
+        type: up ? "up" : "down",
+        emitter
+      });
+      (_a2 = inputRef.current) == null ? void 0 : _a2.focus();
+    });
+    const flushInputValue = (userTyping) => {
+      const parsedValue = es_default16(mergedParser(inputValue));
+      let formatValue;
+      if (!parsedValue.isNaN()) {
+        formatValue = triggerValueUpdate(parsedValue, userTyping);
+      } else {
+        formatValue = triggerValueUpdate(decimalValue, userTyping);
+      }
+      if (value !== void 0) {
+        setInputValue(decimalValue, false);
+      } else if (!formatValue.isNaN()) {
+        setInputValue(formatValue, false);
+      }
+    };
+    const onBeforeInput = () => {
+      userTypingRef.current = true;
+    };
+    const onKeyDown2 = (event) => {
+      const {
+        key,
+        shiftKey
+      } = event;
+      userTypingRef.current = true;
+      shiftKeyRef.current = shiftKey;
+      if (key === "Enter") {
+        if (!compositionRef.current) {
+          userTypingRef.current = false;
+        }
+        flushInputValue(false);
+        onPressEnter == null ? void 0 : onPressEnter(event);
+      }
+      if (keyboard === false) {
+        return;
+      }
+      if (!compositionRef.current && ["Up", "ArrowUp", "Down", "ArrowDown"].includes(key)) {
+        onInternalStep(key === "Up" || key === "ArrowUp", "keyboard");
+        event.preventDefault();
+      }
+    };
+    const onKeyUp = () => {
+      userTypingRef.current = false;
+      shiftKeyRef.current = false;
+    };
+    React268.useEffect(() => {
+      if (changeOnWheel && focus) {
+        const onWheel = (event) => {
+          onInternalStep(event.deltaY < 0, "wheel");
+          event.preventDefault();
+        };
+        const input = inputRef.current;
+        if (input) {
+          input.addEventListener("wheel", onWheel, {
+            passive: false
+          });
+          return () => input.removeEventListener("wheel", onWheel);
+        }
+      }
+    });
+    const onBlur = () => {
+      if (changeOnBlur) {
+        flushInputValue(false);
+      }
+      setFocus(false);
+      userTypingRef.current = false;
+    };
+    const onInternalMouseDown = (event) => {
+      if (inputRef.current && event.target !== inputRef.current) {
+        inputRef.current.focus();
+        event.preventDefault();
+      }
+      onMouseDown == null ? void 0 : onMouseDown(event);
+    };
+    useLayoutUpdateEffect(() => {
+      if (!decimalValue.isInvalidate()) {
+        setInputValue(decimalValue, false);
+      }
+    }, [precision, formatter]);
+    useLayoutUpdateEffect(() => {
+      const newValue = es_default16(value);
+      setDecimalValue(newValue);
+      const currentParsedValue = es_default16(mergedParser(inputValue));
+      if (!newValue.equals(currentParsedValue) || !userTypingRef.current || formatter) {
+        setInputValue(newValue, userTypingRef.current);
+      }
+    }, [value]);
+    useLayoutUpdateEffect(() => {
+      if (formatter) {
+        restoreCursor();
+      }
+    }, [inputValue]);
+    const sharedHandlerProps = {
+      prefixCls,
+      onStep: onInternalStep,
+      className: classNames == null ? void 0 : classNames.action,
+      style: styles == null ? void 0 : styles.action
+    };
+    const upNode = /* @__PURE__ */ React268.createElement(StepHandler, _extends55({}, sharedHandlerProps, {
+      action: "up",
+      disabled: upDisabled
+    }), upHandler);
+    const downNode = /* @__PURE__ */ React268.createElement(StepHandler, _extends55({}, sharedHandlerProps, {
+      action: "down",
+      disabled: downDisabled
+    }), downHandler);
+    return /* @__PURE__ */ React268.createElement("div", {
+      ref: rootRef,
+      className: clsx(prefixCls, `${prefixCls}-mode-${mode}`, className, classNames == null ? void 0 : classNames.root, {
+        [`${prefixCls}-focused`]: focus,
+        [`${prefixCls}-disabled`]: disabled,
+        [`${prefixCls}-readonly`]: readOnly,
+        [`${prefixCls}-not-a-number`]: decimalValue.isNaN(),
+        [`${prefixCls}-out-of-range`]: !decimalValue.isInvalidate() && !isInRange(decimalValue)
+      }),
+      style: __spreadValues(__spreadValues({}, styles == null ? void 0 : styles.root), style2),
+      onMouseDown: onInternalMouseDown,
+      onMouseUp,
+      onMouseLeave,
+      onMouseMove,
+      onMouseEnter,
+      onMouseOut,
+      onClick,
+      onFocus: () => {
+        setFocus(true);
+      },
+      onBlur,
+      onKeyDown: onKeyDown2,
+      onKeyUp,
+      onCompositionStart,
+      onCompositionEnd,
+      onBeforeInput
+    }, mode === "spinner" && controls && downNode, prefix2 !== void 0 && /* @__PURE__ */ React268.createElement("div", {
+      className: clsx(`${prefixCls}-prefix`, classNames == null ? void 0 : classNames.prefix),
+      style: styles == null ? void 0 : styles.prefix
+    }, prefix2), /* @__PURE__ */ React268.createElement("input", _extends55({
+      autoComplete: "off",
+      role: "spinbutton",
+      "aria-valuemin": min,
+      "aria-valuemax": max,
+      "aria-valuenow": decimalValue.isInvalidate() ? null : decimalValue.toString(),
+      step,
+      ref: inputRef,
+      className: clsx(`${prefixCls}-input`, classNames == null ? void 0 : classNames.input),
+      style: styles == null ? void 0 : styles.input,
+      value: inputValue,
+      onChange: onInternalInput,
+      disabled,
+      readOnly
+    }, restProps)), suffix !== void 0 && /* @__PURE__ */ React268.createElement("div", {
+      className: clsx(`${prefixCls}-suffix`, classNames == null ? void 0 : classNames.suffix),
+      style: styles == null ? void 0 : styles.suffix
+    }, suffix), mode === "spinner" && controls && upNode, mode === "input" && controls && /* @__PURE__ */ React268.createElement("div", {
+      className: clsx(`${prefixCls}-actions`, classNames == null ? void 0 : classNames.actions),
+      style: styles == null ? void 0 : styles.actions
+    }, upNode, downNode));
+  });
+  if (true) {
+    InputNumber.displayName = "InputNumber";
+  }
+  var InputNumber_default = InputNumber;
+
+  // ../custom_dashboard/node_modules/@rc-component/input-number/es/index.js
+  var es_default17 = InputNumber_default;
+
   // ../custom_dashboard/node_modules/antd/es/space/Addon.js
-  var import_react100 = __toESM(require_react());
+  var import_react111 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/space/style/addon.js
   var genSpaceAddonStyle = (token2) => {
@@ -58278,7 +62806,7 @@ html body {
 
   // ../custom_dashboard/node_modules/antd/es/space/Addon.js
   "use client";
-  var SpaceAddon = /* @__PURE__ */ import_react100.default.forwardRef((props, ref) => {
+  var SpaceAddon = /* @__PURE__ */ import_react111.default.forwardRef((props, ref) => {
     const _a = props, {
       className,
       children,
@@ -58299,7 +62827,7 @@ html body {
     const {
       getPrefixCls,
       direction: directionConfig
-    } = import_react100.default.useContext(ConfigContext);
+    } = import_react111.default.useContext(ConfigContext);
     const prefixCls = getPrefixCls("space-addon", customizePrefixCls);
     const [hashId, cssVarCls] = addon_default(prefixCls);
     const {
@@ -58311,7 +62839,7 @@ html body {
       [`${prefixCls}-${compactSize}`]: compactSize,
       [`${prefixCls}-disabled`]: disabled
     }, className);
-    return /* @__PURE__ */ import_react100.default.createElement("div", __spreadValues({
+    return /* @__PURE__ */ import_react111.default.createElement("div", __spreadValues({
       ref,
       className: classes,
       style: style2
@@ -58319,11 +62847,503 @@ html body {
   });
   var Addon_default = SpaceAddon;
 
+  // ../custom_dashboard/node_modules/antd/es/input-number/style/token.js
+  var prepareComponentToken14 = (token2) => {
+    var _a;
+    const handleVisible = (_a = token2.handleVisible) != null ? _a : "auto";
+    const handleWidth = token2.controlHeightSM - token2.lineWidth * 2;
+    return __spreadProps(__spreadValues({}, initComponentToken(token2)), {
+      controlWidth: 90,
+      handleWidth,
+      handleFontSize: token2.fontSize / 2,
+      handleVisible,
+      handleActiveBg: token2.colorFillAlter,
+      handleBg: token2.colorBgContainer,
+      filledHandleBg: new FastColor(token2.colorFillSecondary).onBackground(token2.colorBgContainer).toHexString(),
+      handleHoverColor: token2.colorPrimary,
+      handleBorderColor: token2.colorBorder,
+      handleOpacity: handleVisible === true ? 1 : 0,
+      handleVisibleWidth: handleVisible === true ? handleWidth : 0
+    });
+  };
+
+  // ../custom_dashboard/node_modules/antd/es/input-number/style/index.js
+  var genInputNumberStyles = (token2) => {
+    const {
+      componentCls,
+      lineWidth,
+      lineType,
+      borderRadius,
+      inputFontSizeSM,
+      inputFontSizeLG,
+      colorError,
+      paddingInlineSM,
+      paddingBlockSM,
+      paddingBlockLG,
+      paddingInlineLG,
+      colorIcon,
+      motionDurationMid,
+      handleHoverColor,
+      handleOpacity,
+      paddingInline,
+      paddingBlock,
+      handleBg,
+      handleActiveBg,
+      inputAffixPadding,
+      borderRadiusSM,
+      controlWidth,
+      handleBorderColor,
+      filledHandleBg,
+      lineHeightLG,
+      antCls
+    } = token2;
+    const borderStyle = `${unit(lineWidth)} ${lineType} ${handleBorderColor}`;
+    const [varName, varRef] = genCssVar(antCls, "input-number");
+    return [
+      {
+        [componentCls]: __spreadProps(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadProps(__spreadValues(__spreadValues({}, resetComponent(token2)), genBasicInputStyle(token2)), {
+          [varName("input-padding-block")]: unit(paddingBlock),
+          [varName("input-padding-inline")]: unit(paddingInline),
+          display: "inline-flex",
+          width: controlWidth,
+          margin: 0,
+          paddingBlock: 0,
+          borderRadius
+        }), genOutlinedStyle(token2, {
+          [`${componentCls}-actions`]: {
+            background: handleBg,
+            [`${componentCls}-action-down`]: {
+              borderBlockStart: borderStyle
+            }
+          }
+        })), genFilledStyle(token2, {
+          [`${componentCls}-actions`]: {
+            background: filledHandleBg,
+            [`${componentCls}-action-down`]: {
+              borderBlockStart: borderStyle
+            }
+          },
+          "&:focus-within": {
+            [`${componentCls}-actions`]: {
+              background: handleBg
+            }
+          }
+        })), genUnderlinedStyle(token2, {
+          [`${componentCls}-actions`]: {
+            background: handleBg,
+            [`${componentCls}-action-down`]: {
+              borderBlockStart: borderStyle
+            }
+          }
+        })), genBorderlessStyle(token2)), {
+          [`&${componentCls}-borderless`]: {
+            paddingBlock: 0,
+            [varName("input-padding-block")]: unit(token2.calc(paddingBlock).add(lineWidth).equal())
+          },
+          [`&${componentCls}-borderless${componentCls}-sm`]: {
+            paddingBlock: 0,
+            [varName("input-padding-block")]: unit(token2.calc(paddingBlockSM).add(lineWidth).equal())
+          },
+          [`&${componentCls}-borderless${componentCls}-lg`]: {
+            paddingBlock: 0,
+            [varName("input-padding-block")]: unit(token2.calc(paddingBlockLG).add(lineWidth).equal())
+          },
+          "&-rtl": {
+            direction: "rtl",
+            [`${componentCls}-input`]: {
+              direction: "rtl"
+            }
+          },
+          [`&${componentCls}-out-of-range`]: {
+            [`${componentCls}-input`]: {
+              color: colorError
+            }
+          },
+          [`${componentCls}-input`]: __spreadProps(__spreadValues(__spreadProps(__spreadValues({}, resetComponent(token2)), {
+            width: "100%",
+            paddingBlock: varRef("input-padding-block"),
+            textAlign: "start",
+            backgroundColor: "transparent",
+            border: 0,
+            borderRadius,
+            outline: 0,
+            transition: `all ${motionDurationMid} linear`,
+            appearance: "textfield",
+            fontSize: "inherit",
+            lineHeight: "inherit"
+          }), genPlaceholderStyle(token2.colorTextPlaceholder)), {
+            '&[type="number"]::-webkit-inner-spin-button, &[type="number"]::-webkit-outer-spin-button': {
+              margin: 0,
+              appearance: "none"
+            }
+          }),
+          [`&:hover ${componentCls}-handler-wrap, &-focused ${componentCls}-handler-wrap`]: {
+            width: token2.handleWidth,
+            opacity: 1
+          },
+          [`&-disabled ${componentCls}-input`]: {
+            cursor: "not-allowed",
+            color: token2.colorTextDisabled
+          }
+        })
+      },
+      {
+        [componentCls]: {
+          [`
+          ${componentCls}-action-up-disabled,
+          ${componentCls}-action-down-disabled
+        `]: {
+            cursor: "not-allowed"
+          },
+          [`${componentCls}-action`]: __spreadProps(__spreadValues({}, resetIcon()), {
+            userSelect: "none",
+            overflow: "hidden",
+            fontWeight: "bold",
+            lineHeight: 0,
+            textAlign: "center",
+            cursor: "pointer",
+            transition: `all ${motionDurationMid} linear`,
+            "&:active": {
+              background: handleActiveBg
+            },
+            "&:hover": {
+              color: handleHoverColor
+            }
+          }),
+          "&-mode-input": {
+            overflow: "hidden",
+            [`${componentCls}-actions`]: {
+              position: "absolute",
+              insetBlockStart: 0,
+              insetInlineEnd: 0,
+              width: token2.handleVisibleWidth,
+              opacity: handleOpacity,
+              height: "100%",
+              borderRadius: 0,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "stretch",
+              transition: `all ${motionDurationMid}`,
+              overflow: "hidden",
+              [`${componentCls}-action`]: {
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flex: "auto",
+                height: "40%",
+                marginInlineEnd: 0,
+                fontSize: token2.handleFontSize
+              }
+            },
+            [`&:hover ${componentCls}-actions, &-focused ${componentCls}-actions`]: {
+              width: token2.handleWidth,
+              opacity: 1
+            },
+            [`${componentCls}-action`]: {
+              color: colorIcon,
+              height: "50%",
+              borderInlineStart: borderStyle,
+              "&:hover": {
+                height: `60%`
+              }
+            },
+            [`&${componentCls}-disabled, &${componentCls}-readonly`]: {
+              [`${componentCls}-actions`]: {
+                display: "none"
+              }
+            }
+          },
+          [`&${componentCls}-mode-spinner`]: {
+            padding: 0,
+            width: "auto",
+            [`${componentCls}-action`]: {
+              flex: "none",
+              paddingInline: varRef("input-padding-inline"),
+              "&-up": {
+                borderInlineStart: borderStyle
+              },
+              "&-down": {
+                borderInlineEnd: borderStyle
+              }
+            },
+            [`${componentCls}-input`]: {
+              textAlign: "center",
+              paddingInline: varRef("input-padding-inline")
+            }
+          }
+        }
+      },
+      {
+        [componentCls]: {
+          "&-lg": {
+            [varName("input-padding-block")]: unit(paddingBlockLG),
+            [varName("input-padding-inline")]: unit(paddingInlineLG),
+            paddingBlock: 0,
+            fontSize: inputFontSizeLG,
+            lineHeight: lineHeightLG
+          },
+          "&-sm": {
+            [varName("input-padding-block")]: unit(paddingBlockSM),
+            [varName("input-padding-inline")]: unit(paddingInlineSM),
+            paddingBlock: 0,
+            fontSize: inputFontSizeSM,
+            borderRadius: borderRadiusSM
+          }
+        }
+      },
+      {
+        [componentCls]: {
+          [`${componentCls}-prefix, ${componentCls}-suffix`]: {
+            display: "flex",
+            flex: "none",
+            alignItems: "center",
+            alignSelf: "center",
+            pointerEvents: "none"
+          },
+          [`${componentCls}-prefix`]: {
+            marginInlineEnd: inputAffixPadding
+          },
+          [`${componentCls}-suffix`]: {
+            height: "100%",
+            marginInlineStart: inputAffixPadding,
+            transition: `margin ${motionDurationMid}`
+          },
+          [`&:hover:not(${componentCls}-without-controls)`]: {
+            [`${componentCls}-suffix`]: {
+              marginInlineEnd: token2.handleWidth
+            }
+          }
+        }
+      }
+    ];
+  };
+  var genCompatibleStyles = (token2) => {
+    const {
+      componentCls,
+      antCls
+    } = token2;
+    return {
+      [`${componentCls}-addon`]: {
+        [`&:has(${antCls}-select)`]: {
+          border: 0,
+          padding: 0
+        }
+      }
+    };
+  };
+  var style_default18 = genStyleHooks("InputNumber", (token2) => {
+    const inputNumberToken = merge2(token2, initInputToken(token2));
+    return [
+      genInputNumberStyles(inputNumberToken),
+      genCompatibleStyles(inputNumberToken),
+      genCompactItemStyle(inputNumberToken)
+    ];
+  }, prepareComponentToken14, {
+    unitless: {
+      handleOpacity: true
+    },
+    resetFont: false
+  });
+
+  // ../custom_dashboard/node_modules/antd/es/input-number/index.js
+  "use client";
+  var InternalInputNumber = /* @__PURE__ */ React270.forwardRef((props, ref) => {
+    const inputRef = React270.useRef(null);
+    React270.useImperativeHandle(ref, () => inputRef.current);
+    const _a = props, {
+      rootClassName,
+      size: customizeSize,
+      disabled: customDisabled,
+      prefixCls,
+      addonBefore: _addonBefore,
+      addonAfter: _addonAfter,
+      prefix: prefix2,
+      suffix,
+      bordered,
+      readOnly,
+      status,
+      controls = true,
+      variant: customVariant,
+      className,
+      style: style2,
+      classNames,
+      styles,
+      mode
+    } = _a, others = __objRest(_a, [
+      "rootClassName",
+      "size",
+      "disabled",
+      "prefixCls",
+      "addonBefore",
+      "addonAfter",
+      "prefix",
+      "suffix",
+      "bordered",
+      "readOnly",
+      "status",
+      "controls",
+      "variant",
+      "className",
+      "style",
+      "classNames",
+      "styles",
+      "mode"
+    ]);
+    const {
+      direction,
+      className: contextClassName,
+      style: contextStyle,
+      styles: contextStyles,
+      classNames: contextClassNames
+    } = useComponentConfig("inputNumber");
+    const disabled = React270.useContext(DisabledContext_default);
+    const mergedDisabled = customDisabled != null ? customDisabled : disabled;
+    const mergedControls = React270.useMemo(() => {
+      if (!controls || mergedDisabled || readOnly) {
+        return false;
+      }
+      return controls;
+    }, [controls, mergedDisabled, readOnly]);
+    const {
+      compactSize,
+      compactItemClassnames
+    } = useCompactItemContext(prefixCls, direction);
+    let upIcon = mode === "spinner" ? /* @__PURE__ */ React270.createElement(PlusOutlined_default2, null) : /* @__PURE__ */ React270.createElement(UpOutlined_default2, null);
+    let downIcon = mode === "spinner" ? /* @__PURE__ */ React270.createElement(MinusOutlined_default2, null) : /* @__PURE__ */ React270.createElement(DownOutlined_default2, null);
+    const controlsTemp = typeof mergedControls === "boolean" ? mergedControls : void 0;
+    if (typeof mergedControls === "object") {
+      upIcon = mergedControls.upIcon || upIcon;
+      downIcon = mergedControls.downIcon || downIcon;
+    }
+    const {
+      hasFeedback,
+      isFormItemInput,
+      feedbackIcon
+    } = React270.useContext(FormItemInputContext);
+    const mergedSize = useSize_default((ctx) => {
+      var _a2;
+      return (_a2 = customizeSize != null ? customizeSize : compactSize) != null ? _a2 : ctx;
+    });
+    const [variant, enableVariantCls] = useVariants_default("inputNumber", customVariant, bordered);
+    const suffixNode = hasFeedback && /* @__PURE__ */ React270.createElement(React270.Fragment, null, feedbackIcon);
+    const mergedProps = __spreadProps(__spreadValues({}, props), {
+      size: mergedSize,
+      disabled: mergedDisabled,
+      controls: mergedControls
+    });
+    const [mergedClassNames, mergedStyles] = useMergeSemantic([contextClassNames, classNames], [contextStyles, styles], {
+      props: mergedProps
+    });
+    return /* @__PURE__ */ React270.createElement(es_default17, __spreadValues({
+      ref: inputRef,
+      mode,
+      disabled: mergedDisabled,
+      className: clsx(className, rootClassName, mergedClassNames.root, contextClassName, compactItemClassnames, getStatusClassNames(prefixCls, status, hasFeedback), {
+        [`${prefixCls}-${variant}`]: enableVariantCls,
+        [`${prefixCls}-lg`]: mergedSize === "large",
+        [`${prefixCls}-sm`]: mergedSize === "small",
+        [`${prefixCls}-rtl`]: direction === "rtl",
+        [`${prefixCls}-in-form-item`]: isFormItemInput,
+        [`${prefixCls}-without-controls`]: !mergedControls
+      }),
+      style: __spreadValues(__spreadValues(__spreadValues({}, mergedStyles.root), contextStyle), style2),
+      upHandler: upIcon,
+      downHandler: downIcon,
+      prefixCls,
+      readOnly,
+      controls: controlsTemp,
+      prefix: prefix2,
+      suffix: suffixNode || suffix,
+      classNames: mergedClassNames,
+      styles: mergedStyles
+    }, others));
+  });
+  var InputNumber2 = /* @__PURE__ */ React270.forwardRef((props, ref) => {
+    const _a = props, {
+      addonBefore,
+      addonAfter,
+      prefixCls: customizePrefixCls,
+      className,
+      status: customStatus,
+      rootClassName
+    } = _a, rest = __objRest(_a, [
+      "addonBefore",
+      "addonAfter",
+      "prefixCls",
+      "className",
+      "status",
+      "rootClassName"
+    ]);
+    const {
+      getPrefixCls
+    } = useComponentConfig("inputNumber");
+    const prefixCls = getPrefixCls("input-number", customizePrefixCls);
+    const {
+      status: contextStatus
+    } = React270.useContext(FormItemInputContext);
+    const mergedStatus = getMergedStatus(contextStatus, customStatus);
+    const rootCls = useCSSVarCls_default(prefixCls);
+    const [hashId, cssVarCls] = style_default18(prefixCls, rootCls);
+    const hasLegacyAddon = addonBefore || addonAfter;
+    if (true) {
+      const typeWarning = devUseWarning("InputNumber");
+      [["bordered", "variant"], ["addonAfter", "Space.Compact"], ["addonBefore", "Space.Compact"]].forEach(([prop, newProp]) => {
+        typeWarning.deprecated(!(prop in props), prop, newProp);
+      });
+      typeWarning(!(props.type === "number" && props.changeOnWheel), "usage", "When `type=number` is used together with `changeOnWheel`, changeOnWheel may not work properly. Please delete `type=number` if it is not necessary.");
+    }
+    const inputNumberNode = /* @__PURE__ */ React270.createElement(InternalInputNumber, __spreadProps(__spreadValues({
+      ref
+    }, rest), {
+      prefixCls,
+      status: mergedStatus,
+      className: clsx(cssVarCls, rootCls, hashId, className),
+      rootClassName: !hasLegacyAddon ? rootClassName : void 0
+    }));
+    if (hasLegacyAddon) {
+      const renderAddon = (node2) => {
+        if (!node2) {
+          return null;
+        }
+        return /* @__PURE__ */ React270.createElement(Addon_default, {
+          className: clsx(`${prefixCls}-addon`, cssVarCls, hashId),
+          variant: props.variant,
+          disabled: props.disabled,
+          status: mergedStatus
+        }, /* @__PURE__ */ React270.createElement(ContextIsolator_default, {
+          form: true
+        }, node2));
+      };
+      const addonBeforeNode = renderAddon(addonBefore);
+      const addonAfterNode = renderAddon(addonAfter);
+      return /* @__PURE__ */ React270.createElement(Compact_default, {
+        rootClassName
+      }, addonBeforeNode, inputNumberNode, addonAfterNode);
+    }
+    return inputNumberNode;
+  });
+  var TypedInputNumber = InputNumber2;
+  var PureInputNumber = (props) => /* @__PURE__ */ React270.createElement(config_provider_default, {
+    theme: {
+      components: {
+        InputNumber: {
+          handleVisible: true
+        }
+      }
+    }
+  }, /* @__PURE__ */ React270.createElement(InputNumber2, __spreadValues({}, props)));
+  if (true) {
+    InternalInputNumber.displayName = "InternalInputNumber";
+    TypedInputNumber.displayName = "InputNumber";
+  }
+  TypedInputNumber._InternalPanelDoNotUseOrYouWillBeFired = PureInputNumber;
+  var input_number_default = TypedInputNumber;
+
   // ../custom_dashboard/node_modules/antd/es/input/Input.js
-  var import_react105 = __toESM(require_react());
+  var import_react116 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/input/es/BaseInput.js
-  var import_react101 = __toESM(require_react());
+  var import_react112 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/input/es/utils/commonUtils.js
   function hasAddon(props) {
@@ -58371,8 +63391,8 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/input/es/BaseInput.js
-  function _extends48() {
-    _extends48 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends56() {
+    _extends56 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -58383,9 +63403,9 @@ html body {
       }
       return target;
     };
-    return _extends48.apply(this, arguments);
+    return _extends56.apply(this, arguments);
   }
-  var BaseInput = /* @__PURE__ */ import_react101.default.forwardRef((props, ref) => {
+  var BaseInput = /* @__PURE__ */ import_react112.default.forwardRef((props, ref) => {
     var _a, _b, _c;
     const {
       inputElement: inputEl,
@@ -58417,7 +63437,7 @@ html body {
     const GroupWrapperComponent = (components == null ? void 0 : components.groupWrapper) || "span";
     const WrapperComponent = (components == null ? void 0 : components.wrapper) || "span";
     const GroupAddonComponent = (components == null ? void 0 : components.groupAddon) || "span";
-    const containerRef = (0, import_react101.useRef)(null);
+    const containerRef = (0, import_react112.useRef)(null);
     const onInputClick = (e3) => {
       var _a2;
       if ((_a2 = containerRef.current) == null ? void 0 : _a2.contains(e3.target)) {
@@ -58425,12 +63445,12 @@ html body {
       }
     };
     const hasAffix = hasPrefixSuffix(props);
-    let element = /* @__PURE__ */ (0, import_react101.cloneElement)(inputElement, {
+    let element = /* @__PURE__ */ (0, import_react112.cloneElement)(inputElement, {
       value,
       className: clsx((_a = inputElement.props) == null ? void 0 : _a.className, !hasAffix && (classNames == null ? void 0 : classNames.variant)) || null
     });
-    const groupRef = (0, import_react101.useRef)(null);
-    import_react101.default.useImperativeHandle(ref, () => ({
+    const groupRef = (0, import_react112.useRef)(null);
+    import_react112.default.useImperativeHandle(ref, () => ({
       nativeElement: groupRef.current || containerRef.current
     }));
     if (hasAffix) {
@@ -58439,7 +63459,7 @@ html body {
         const needClear = !disabled && !readOnly && value;
         const clearIconCls = `${prefixCls}-clear-icon`;
         const iconNode = typeof allowClear === "object" && (allowClear == null ? void 0 : allowClear.clearIcon) ? allowClear.clearIcon : "\u2716";
-        clearIcon = /* @__PURE__ */ import_react101.default.createElement("button", {
+        clearIcon = /* @__PURE__ */ import_react112.default.createElement("button", {
           type: "button",
           tabIndex: -1,
           onClick: (event) => {
@@ -58461,17 +63481,17 @@ html body {
         [`${affixWrapperPrefixCls}-readonly`]: readOnly,
         [`${affixWrapperPrefixCls}-input-with-clear-btn`]: suffix && allowClear && value
       }, classes == null ? void 0 : classes.affixWrapper, classNames == null ? void 0 : classNames.affixWrapper, classNames == null ? void 0 : classNames.variant);
-      const suffixNode = (suffix || allowClear) && /* @__PURE__ */ import_react101.default.createElement("span", {
+      const suffixNode = (suffix || allowClear) && /* @__PURE__ */ import_react112.default.createElement("span", {
         className: clsx(`${prefixCls}-suffix`, classNames == null ? void 0 : classNames.suffix),
         style: styles == null ? void 0 : styles.suffix
       }, clearIcon, suffix);
-      element = /* @__PURE__ */ import_react101.default.createElement(AffixWrapperComponent, _extends48({
+      element = /* @__PURE__ */ import_react112.default.createElement(AffixWrapperComponent, _extends56({
         className: affixWrapperCls,
         style: styles == null ? void 0 : styles.affixWrapper,
         onClick: onInputClick
       }, dataAttrs == null ? void 0 : dataAttrs.affixWrapper, {
         ref: containerRef
-      }), prefix2 && /* @__PURE__ */ import_react101.default.createElement("span", {
+      }), prefix2 && /* @__PURE__ */ import_react112.default.createElement("span", {
         className: clsx(`${prefixCls}-prefix`, classNames == null ? void 0 : classNames.prefix),
         style: styles == null ? void 0 : styles.prefix
       }, prefix2), element, suffixNode);
@@ -58484,18 +63504,18 @@ html body {
       const mergedGroupClassName = clsx(groupWrapperCls, {
         [`${groupWrapperCls}-disabled`]: disabled
       }, classes == null ? void 0 : classes.group, classNames == null ? void 0 : classNames.groupWrapper);
-      element = /* @__PURE__ */ import_react101.default.createElement(GroupWrapperComponent, {
+      element = /* @__PURE__ */ import_react112.default.createElement(GroupWrapperComponent, {
         className: mergedGroupClassName,
         ref: groupRef
-      }, /* @__PURE__ */ import_react101.default.createElement(WrapperComponent, {
+      }, /* @__PURE__ */ import_react112.default.createElement(WrapperComponent, {
         className: mergedWrapperClassName
-      }, addonBefore && /* @__PURE__ */ import_react101.default.createElement(GroupAddonComponent, {
+      }, addonBefore && /* @__PURE__ */ import_react112.default.createElement(GroupAddonComponent, {
         className: addonCls
-      }, addonBefore), element, addonAfter && /* @__PURE__ */ import_react101.default.createElement(GroupAddonComponent, {
+      }, addonBefore), element, addonAfter && /* @__PURE__ */ import_react112.default.createElement(GroupAddonComponent, {
         className: addonCls
       }, addonAfter)));
     }
-    return /* @__PURE__ */ import_react101.default.cloneElement(element, {
+    return /* @__PURE__ */ import_react112.default.cloneElement(element, {
       className: clsx((_b = element.props) == null ? void 0 : _b.className, className) || null,
       style: __spreadValues(__spreadValues({}, (_c = element.props) == null ? void 0 : _c.style), style2),
       hidden
@@ -58504,12 +63524,12 @@ html body {
   var BaseInput_default = BaseInput;
 
   // ../custom_dashboard/node_modules/@rc-component/input/es/Input.js
-  var import_react102 = __toESM(require_react());
+  var import_react113 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/input/es/hooks/useCount.js
-  var React249 = __toESM(require_react());
+  var React272 = __toESM(require_react());
   function useCount(count, showCount) {
-    return React249.useMemo(() => {
+    return React272.useMemo(() => {
       let mergedConfig = {};
       if (showCount) {
         mergedConfig.show = typeof showCount === "object" && showCount.formatter ? showCount.formatter : !!showCount;
@@ -58529,8 +63549,8 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/input/es/Input.js
-  function _extends49() {
-    _extends49 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends57() {
+    _extends57 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -58541,9 +63561,9 @@ html body {
       }
       return target;
     };
-    return _extends49.apply(this, arguments);
+    return _extends57.apply(this, arguments);
   }
-  var Input2 = /* @__PURE__ */ (0, import_react102.forwardRef)((props, ref) => {
+  var Input2 = /* @__PURE__ */ (0, import_react113.forwardRef)((props, ref) => {
     const _a = props, {
       autoComplete,
       onChange,
@@ -58589,11 +63609,11 @@ html body {
       "onCompositionStart",
       "onCompositionEnd"
     ]);
-    const [focused, setFocused] = (0, import_react102.useState)(false);
-    const compositionRef = (0, import_react102.useRef)(false);
-    const keyLockRef = (0, import_react102.useRef)(false);
-    const inputRef = (0, import_react102.useRef)(null);
-    const holderRef = (0, import_react102.useRef)(null);
+    const [focused, setFocused] = (0, import_react113.useState)(false);
+    const compositionRef = (0, import_react113.useRef)(false);
+    const keyLockRef = (0, import_react113.useRef)(false);
+    const inputRef = (0, import_react113.useRef)(null);
+    const holderRef = (0, import_react113.useRef)(null);
     const focus = (option) => {
       if (inputRef.current) {
         triggerFocus(inputRef.current, option);
@@ -58601,12 +63621,12 @@ html body {
     };
     const [value, setValue] = useControlledState(props.defaultValue, props.value);
     const formatValue = value === void 0 || value === null ? "" : String(value);
-    const [selection, setSelection] = (0, import_react102.useState)(null);
+    const [selection, setSelection] = (0, import_react113.useState)(null);
     const countConfig = useCount(count, showCount);
     const mergedMax = countConfig.max || maxLength;
     const valueLength = countConfig.strategy(formatValue);
     const isOutOfRange = !!mergedMax && valueLength > mergedMax;
-    (0, import_react102.useImperativeHandle)(ref, () => {
+    (0, import_react113.useImperativeHandle)(ref, () => {
       var _a2;
       return {
         focus,
@@ -58626,7 +63646,7 @@ html body {
         nativeElement: ((_a2 = holderRef.current) == null ? void 0 : _a2.nativeElement) || inputRef.current
       };
     });
-    (0, import_react102.useEffect)(() => {
+    (0, import_react113.useEffect)(() => {
       if (keyLockRef.current) {
         keyLockRef.current = false;
       }
@@ -58650,7 +63670,7 @@ html body {
         resolveOnChange(inputRef.current, e3, onChange, cutValue);
       }
     };
-    (0, import_react102.useEffect)(() => {
+    (0, import_react113.useEffect)(() => {
       var _a2;
       if (selection) {
         (_a2 = inputRef.current) == null ? void 0 : _a2.setSelectionRange(...selection);
@@ -58718,7 +63738,7 @@ html body {
         "classNames",
         "onClear"
       ]);
-      return /* @__PURE__ */ import_react102.default.createElement("input", _extends49({
+      return /* @__PURE__ */ import_react113.default.createElement("input", _extends57({
         autoComplete
       }, otherProps, {
         onChange: onInternalChange,
@@ -58748,7 +63768,7 @@ html body {
           count: valueLength,
           maxLength: mergedMax
         }) : `${valueLength}${hasMaxLength ? ` / ${mergedMax}` : ""}`;
-        return /* @__PURE__ */ import_react102.default.createElement(import_react102.default.Fragment, null, countConfig.show && /* @__PURE__ */ import_react102.default.createElement("span", {
+        return /* @__PURE__ */ import_react113.default.createElement(import_react113.default.Fragment, null, countConfig.show && /* @__PURE__ */ import_react113.default.createElement("span", {
           className: clsx(`${prefixCls}-show-count-suffix`, {
             [`${prefixCls}-show-count-has-suffix`]: !!suffix
           }, classNames == null ? void 0 : classNames.count),
@@ -58757,7 +63777,7 @@ html body {
       }
       return null;
     };
-    return /* @__PURE__ */ import_react102.default.createElement(BaseInput_default, _extends49({}, rest, {
+    return /* @__PURE__ */ import_react113.default.createElement(BaseInput_default, _extends57({}, rest, {
       prefixCls,
       className: clsx(className, outOfRangeCls),
       handleReset,
@@ -58775,10 +63795,10 @@ html body {
   var Input_default3 = Input2;
 
   // ../custom_dashboard/node_modules/@rc-component/input/es/index.js
-  var es_default15 = Input_default3;
+  var es_default18 = Input_default3;
 
   // ../custom_dashboard/node_modules/antd/es/_util/getAllowClear.js
-  var import_react103 = __toESM(require_react());
+  var import_react114 = __toESM(require_react());
   "use client";
   var getAllowClear = (allowClear) => {
     let mergedAllowClear;
@@ -58786,7 +63806,7 @@ html body {
       mergedAllowClear = allowClear;
     } else if (allowClear) {
       mergedAllowClear = {
-        clearIcon: /* @__PURE__ */ import_react103.default.createElement(CloseCircleFilled_default2, null)
+        clearIcon: /* @__PURE__ */ import_react114.default.createElement(CloseCircleFilled_default2, null)
       };
     }
     return mergedAllowClear;
@@ -58794,9 +63814,9 @@ html body {
   var getAllowClear_default = getAllowClear;
 
   // ../custom_dashboard/node_modules/antd/es/input/hooks/useRemovePasswordTimeout.js
-  var import_react104 = __toESM(require_react());
+  var import_react115 = __toESM(require_react());
   function useRemovePasswordTimeout(inputRef, triggerOnMount) {
-    const removePasswordTimeoutRef = (0, import_react104.useRef)([]);
+    const removePasswordTimeoutRef = (0, import_react115.useRef)([]);
     const removePasswordTimeout = () => {
       removePasswordTimeoutRef.current.push(setTimeout(() => {
         var _a, _b, _c, _d;
@@ -58805,7 +63825,7 @@ html body {
         }
       }));
     };
-    (0, import_react104.useEffect)(() => {
+    (0, import_react115.useEffect)(() => {
       if (triggerOnMount) {
         removePasswordTimeout();
       }
@@ -58825,7 +63845,7 @@ html body {
 
   // ../custom_dashboard/node_modules/antd/es/input/Input.js
   "use client";
-  var Input3 = /* @__PURE__ */ (0, import_react105.forwardRef)((props, ref) => {
+  var Input3 = /* @__PURE__ */ (0, import_react116.forwardRef)((props, ref) => {
     const _a = props, {
       prefixCls: customizePrefixCls,
       bordered = true,
@@ -58884,7 +63904,7 @@ html body {
       styles: contextStyles
     } = useComponentConfig("input");
     const prefixCls = getPrefixCls("input", customizePrefixCls);
-    const inputRef = (0, import_react105.useRef)(null);
+    const inputRef = (0, import_react116.useRef)(null);
     const rootCls = useCSSVarCls_default(prefixCls);
     const [hashId, cssVarCls] = useSharedStyle(prefixCls, rootClassName);
     style_default14(prefixCls, rootCls);
@@ -58896,7 +63916,7 @@ html body {
       var _a2;
       return (_a2 = customSize != null ? customSize : compactSize) != null ? _a2 : ctx;
     });
-    const disabled = import_react105.default.useContext(DisabledContext_default);
+    const disabled = import_react116.default.useContext(DisabledContext_default);
     const mergedDisabled = customDisabled != null ? customDisabled : disabled;
     const mergedProps = __spreadProps(__spreadValues({}, props), {
       size: mergedSize,
@@ -58909,13 +63929,13 @@ html body {
       status: contextStatus,
       hasFeedback,
       feedbackIcon
-    } = (0, import_react105.useContext)(FormItemInputContext);
+    } = (0, import_react116.useContext)(FormItemInputContext);
     const mergedStatus = getMergedStatus(contextStatus, customStatus);
     const inputHasPrefixSuffix = hasPrefixSuffix2(props) || !!hasFeedback;
-    const prevHasPrefixSuffixRef = (0, import_react105.useRef)(inputHasPrefixSuffix);
+    const prevHasPrefixSuffixRef = (0, import_react116.useRef)(inputHasPrefixSuffix);
     if (true) {
       const warning6 = devUseWarning("Input");
-      (0, import_react105.useEffect)(() => {
+      (0, import_react116.useEffect)(() => {
         var _a2;
         if (inputHasPrefixSuffix && !prevHasPrefixSuffixRef.current) {
           true ? warning6(document.activeElement === ((_a2 = inputRef.current) == null ? void 0 : _a2.input), "usage", `When Input is focused, dynamic add or remove prefix / suffix will make it lose focus caused by dom structure change. Read more: https://ant.design/components/input/#FAQ`) : void 0;
@@ -58936,10 +63956,10 @@ html body {
       removePasswordTimeout();
       onChange == null ? void 0 : onChange(e3);
     };
-    const suffixNode = (hasFeedback || suffix) && /* @__PURE__ */ import_react105.default.createElement(import_react105.default.Fragment, null, suffix, hasFeedback && feedbackIcon);
+    const suffixNode = (hasFeedback || suffix) && /* @__PURE__ */ import_react116.default.createElement(import_react116.default.Fragment, null, suffix, hasFeedback && feedbackIcon);
     const mergedAllowClear = getAllowClear_default(allowClear != null ? allowClear : contextAllowClear);
     const [variant, enableVariantCls] = useVariants_default("input", customVariant, bordered);
-    return /* @__PURE__ */ import_react105.default.createElement(es_default15, __spreadProps(__spreadValues({
+    return /* @__PURE__ */ import_react116.default.createElement(es_default18, __spreadProps(__spreadValues({
       ref: composeRef(ref, inputRef),
       prefixCls,
       autoComplete: contextAutoComplete
@@ -58953,11 +63973,11 @@ html body {
       allowClear: mergedAllowClear,
       className: clsx(className, rootClassName, cssVarCls, rootCls, compactItemClassnames, contextClassName, mergedClassNames.root),
       onChange: handleChange,
-      addonBefore: addonBefore && /* @__PURE__ */ import_react105.default.createElement(ContextIsolator_default, {
+      addonBefore: addonBefore && /* @__PURE__ */ import_react116.default.createElement(ContextIsolator_default, {
         form: true,
         space: true
       }, addonBefore),
-      addonAfter: addonAfter && /* @__PURE__ */ import_react105.default.createElement(ContextIsolator_default, {
+      addonAfter: addonAfter && /* @__PURE__ */ import_react116.default.createElement(ContextIsolator_default, {
         form: true,
         space: true
       }, addonAfter),
@@ -58993,24 +64013,24 @@ html body {
   var Input_default4 = Input3;
 
   // ../custom_dashboard/node_modules/antd/es/drawer/Drawer.js
-  var React260 = __toESM(require_react());
+  var React283 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/drawer/es/Drawer.js
-  var React258 = __toESM(require_react());
+  var React281 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/drawer/es/context.js
-  var React253 = __toESM(require_react());
-  var DrawerContext = /* @__PURE__ */ React253.createContext(null);
-  var RefContext2 = /* @__PURE__ */ React253.createContext({});
+  var React276 = __toESM(require_react());
+  var DrawerContext = /* @__PURE__ */ React276.createContext(null);
+  var RefContext2 = /* @__PURE__ */ React276.createContext({});
   var context_default6 = DrawerContext;
 
   // ../custom_dashboard/node_modules/@rc-component/drawer/es/DrawerPopup.js
-  var React257 = __toESM(require_react());
+  var React280 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/drawer/es/DrawerPanel.js
-  var React254 = __toESM(require_react());
-  function _extends50() {
-    _extends50 = Object.assign ? Object.assign.bind() : function(target) {
+  var React277 = __toESM(require_react());
+  function _extends58() {
+    _extends58 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -59021,7 +64041,7 @@ html body {
       }
       return target;
     };
-    return _extends50.apply(this, arguments);
+    return _extends58.apply(this, arguments);
   }
   var DrawerPanel = (props) => {
     const _a = props, {
@@ -59035,9 +64055,9 @@ html body {
     ]);
     const {
       panel: panelRef
-    } = React254.useContext(RefContext2);
+    } = React277.useContext(RefContext2);
     const mergedRef = useComposeRef(panelRef, containerRef);
-    return /* @__PURE__ */ React254.createElement("div", _extends50({
+    return /* @__PURE__ */ React277.createElement("div", _extends58({
       className: clsx(`${prefixCls}-section`, className),
       role: "dialog",
       ref: mergedRef
@@ -59053,7 +64073,7 @@ html body {
   var DrawerPanel_default = DrawerPanel;
 
   // ../custom_dashboard/node_modules/@rc-component/drawer/es/hooks/useDrag.js
-  var React255 = __toESM(require_react());
+  var React278 = __toESM(require_react());
   function useDrag(options) {
     const {
       prefixCls,
@@ -59067,9 +64087,9 @@ html body {
       onResizeEnd,
       onResizeStart
     } = options;
-    const [isDragging, setIsDragging] = React255.useState(false);
-    const [startPos, setStartPos] = React255.useState(0);
-    const [startSize, setStartSize] = React255.useState(0);
+    const [isDragging, setIsDragging] = React278.useState(false);
+    const [startPos, setStartPos] = React278.useState(0);
+    const [startSize, setStartSize] = React278.useState(0);
     const isHorizontal = direction === "left" || direction === "right";
     const handleMouseDown = useEvent_default((e3) => {
       e3.preventDefault();
@@ -59107,7 +64127,7 @@ html body {
       }
       onResize2 == null ? void 0 : onResize2(newSize);
     });
-    const handleMouseUp = React255.useCallback(() => {
+    const handleMouseUp = React278.useCallback(() => {
       if (isDragging) {
         setIsDragging(false);
         if (containerRef == null ? void 0 : containerRef.current) {
@@ -59117,7 +64137,7 @@ html body {
         }
       }
     }, [isDragging, containerRef, onResizeEnd, isHorizontal]);
-    React255.useEffect(() => {
+    React278.useEffect(() => {
       if (isDragging) {
         document.addEventListener("mousemove", handleMouseMove);
         document.addEventListener("mouseup", handleMouseUp);
@@ -59162,11 +64182,11 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/drawer/es/hooks/useFocusable.js
-  var import_react106 = __toESM(require_react());
+  var import_react117 = __toESM(require_react());
   function useFocusable2(getContainer2, open2, autoFocus, focusTrap, mask) {
     const mergedFocusTrap = focusTrap != null ? focusTrap : mask !== false;
     const [ignoreElement] = useLockFocus(open2 && mergedFocusTrap, getContainer2);
-    import_react106.default.useEffect(() => {
+    import_react117.default.useEffect(() => {
       var _a;
       if (open2 && autoFocus === true) {
         (_a = getContainer2()) == null ? void 0 : _a.focus({
@@ -59178,8 +64198,8 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/drawer/es/DrawerPopup.js
-  function _extends51() {
-    _extends51 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends59() {
+    _extends59 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -59190,7 +64210,7 @@ html body {
       }
       return target;
     };
-    return _extends51.apply(this, arguments);
+    return _extends59.apply(this, arguments);
   }
   var DrawerPopup = (props, ref) => {
     var _a, _b;
@@ -59210,7 +64230,7 @@ html body {
       className,
       id,
       style: style2,
-      motion,
+      motion: motion2,
       width,
       height,
       size,
@@ -59234,11 +64254,11 @@ html body {
       resizable,
       defaultSize
     } = props;
-    const panelRef = React257.useRef(null);
-    React257.useImperativeHandle(ref, () => panelRef.current);
+    const panelRef = React280.useRef(null);
+    React280.useImperativeHandle(ref, () => panelRef.current);
     const ignoreElement = useFocusable2(() => panelRef.current, open2, autoFocus, focusTrap, mask);
-    const [pushed, setPushed] = React257.useState(false);
-    const parentContext = React257.useContext(context_default6);
+    const [pushed, setPushed] = React280.useState(false);
+    const parentContext = React280.useContext(context_default6);
     let pushConfig;
     if (typeof push === "boolean") {
       pushConfig = push ? {} : {
@@ -59248,7 +64268,7 @@ html body {
       pushConfig = push || {};
     }
     const pushDistance = (_b = (_a = pushConfig == null ? void 0 : pushConfig.distance) != null ? _a : parentContext == null ? void 0 : parentContext.pushDistance) != null ? _b : 180;
-    const mergedContext = React257.useMemo(() => ({
+    const mergedContext = React280.useMemo(() => ({
       pushDistance,
       push: () => {
         setPushed(true);
@@ -59257,7 +64277,7 @@ html body {
         setPushed(false);
       }
     }), [pushDistance]);
-    React257.useEffect(() => {
+    React280.useEffect(() => {
       var _a2, _b2;
       if (open2) {
         (_a2 = parentContext == null ? void 0 : parentContext.push) == null ? void 0 : _a2.call(parentContext);
@@ -59265,33 +64285,33 @@ html body {
         (_b2 = parentContext == null ? void 0 : parentContext.pull) == null ? void 0 : _b2.call(parentContext);
       }
     }, [open2]);
-    React257.useEffect(() => () => {
+    React280.useEffect(() => () => {
       var _a2;
       (_a2 = parentContext == null ? void 0 : parentContext.pull) == null ? void 0 : _a2.call(parentContext);
     }, []);
-    const maskNode = /* @__PURE__ */ React257.createElement(es_default2, _extends51({
+    const maskNode = /* @__PURE__ */ React280.createElement(es_default2, _extends59({
       key: "mask"
     }, maskMotion, {
       visible: mask && open2
     }), ({
       className: motionMaskClassName,
       style: motionMaskStyle
-    }, maskRef) => /* @__PURE__ */ React257.createElement("div", {
+    }, maskRef) => /* @__PURE__ */ React280.createElement("div", {
       className: clsx(`${prefixCls}-mask`, motionMaskClassName, drawerClassNames == null ? void 0 : drawerClassNames.mask, maskClassName),
       style: __spreadValues(__spreadValues(__spreadValues({}, motionMaskStyle), maskStyle), styles == null ? void 0 : styles.mask),
       onClick: maskClosable && open2 ? onClose : void 0,
       ref: maskRef
     }));
-    const motionProps = typeof motion === "function" ? motion(placement) : motion;
-    const [currentSize, setCurrentSize] = React257.useState();
+    const motionProps = typeof motion2 === "function" ? motion2(placement) : motion2;
+    const [currentSize, setCurrentSize] = React280.useState();
     const isHorizontal = placement === "left" || placement === "right";
-    const mergedSize = React257.useMemo(() => {
+    const mergedSize = React280.useMemo(() => {
       var _a2, _b2, _c;
       const legacySize = isHorizontal ? width : height;
       const nextMergedSize = (_c = (_b2 = (_a2 = size != null ? size : legacySize) != null ? _a2 : currentSize) != null ? _b2 : defaultSize) != null ? _c : isHorizontal ? 378 : void 0;
       return parseWidthHeight(nextMergedSize);
     }, [size, width, height, defaultSize, isHorizontal, currentSize]);
-    const wrapperStyle = React257.useMemo(() => {
+    const wrapperStyle = React280.useMemo(() => {
       const nextWrapperStyle = {};
       if (pushed && pushDistance) {
         switch (placement) {
@@ -59316,7 +64336,7 @@ html body {
       }
       return nextWrapperStyle;
     }, [pushed, pushDistance, placement, isHorizontal, mergedSize]);
-    const wrapperRef = React257.useRef(null);
+    const wrapperRef = React280.useRef(null);
     const isResizable = !!resizable;
     const resizeConfig = typeof resizable === "object" && resizable || {};
     const onInternalResize = useEvent_default((size2) => {
@@ -59350,7 +64370,7 @@ html body {
         ignoreElement(e3.target);
       }
     };
-    const panelNode = /* @__PURE__ */ React257.createElement(es_default2, _extends51({
+    const panelNode = /* @__PURE__ */ React280.createElement(es_default2, _extends59({
       key: "panel"
     }, motionProps, {
       visible: open2,
@@ -59362,7 +64382,7 @@ html body {
       className: motionClassName,
       style: motionStyle
     }, motionRef) => {
-      const content = /* @__PURE__ */ React257.createElement(DrawerPanel_default, _extends51({
+      const content = /* @__PURE__ */ React280.createElement(DrawerPanel_default, _extends59({
         id,
         containerRef: motionRef,
         prefixCls,
@@ -59371,21 +64391,21 @@ html body {
       }, pickAttrs(props, {
         aria: true
       }), eventHandlers), children);
-      return /* @__PURE__ */ React257.createElement("div", _extends51({
+      return /* @__PURE__ */ React280.createElement("div", _extends59({
         ref: wrapperRef,
         className: clsx(`${prefixCls}-content-wrapper`, isDragging && `${prefixCls}-content-wrapper-dragging`, drawerClassNames == null ? void 0 : drawerClassNames.wrapper, !isDragging && motionClassName),
         style: __spreadValues(__spreadValues(__spreadValues({}, motionStyle), wrapperStyle), styles == null ? void 0 : styles.wrapper)
       }, pickAttrs(props, {
         data: true
-      })), isResizable && /* @__PURE__ */ React257.createElement("div", dragElementProps), drawerRender ? drawerRender(content) : content);
+      })), isResizable && /* @__PURE__ */ React280.createElement("div", dragElementProps), drawerRender ? drawerRender(content) : content);
     });
     const containerStyle = __spreadValues({}, rootStyle);
     if (zIndex) {
       containerStyle.zIndex = zIndex;
     }
-    return /* @__PURE__ */ React257.createElement(context_default6.Provider, {
+    return /* @__PURE__ */ React280.createElement(context_default6.Provider, {
       value: mergedContext
-    }, /* @__PURE__ */ React257.createElement("div", {
+    }, /* @__PURE__ */ React280.createElement("div", {
       className: clsx(prefixCls, `${prefixCls}-${placement}`, rootClassName, {
         [`${prefixCls}-open`]: open2,
         [`${prefixCls}-inline`]: inline2
@@ -59395,7 +64415,7 @@ html body {
       ref: panelRef
     }, maskNode, panelNode));
   };
-  var RefDrawerPopup = /* @__PURE__ */ React257.forwardRef(DrawerPopup);
+  var RefDrawerPopup = /* @__PURE__ */ React280.forwardRef(DrawerPopup);
   if (true) {
     RefDrawerPopup.displayName = "DrawerPopup";
   }
@@ -59431,17 +64451,17 @@ html body {
       focusTriggerAfterClose,
       panelRef
     } = props;
-    const [animatedVisible, setAnimatedVisible] = React258.useState(false);
+    const [animatedVisible, setAnimatedVisible] = React281.useState(false);
     if (true) {
       warnCheck(props);
     }
-    const [mounted, setMounted] = React258.useState(false);
+    const [mounted, setMounted] = React281.useState(false);
     useLayoutEffect_default(() => {
       setMounted(true);
     }, []);
     const mergedOpen = mounted ? open2 : false;
-    const popupRef = React258.useRef(null);
-    const lastActiveRef = React258.useRef(null);
+    const popupRef = React281.useRef(null);
+    const lastActiveRef = React281.useRef(null);
     useLayoutEffect_default(() => {
       if (mergedOpen) {
         lastActiveRef.current = document.activeElement;
@@ -59457,7 +64477,7 @@ html body {
         });
       }
     };
-    const refContext = React258.useMemo(() => ({
+    const refContext = React281.useMemo(() => ({
       panel: panelRef
     }), [panelRef]);
     if (!forceRender && !animatedVisible && !mergedOpen && destroyOnHidden) {
@@ -59498,15 +64518,15 @@ html body {
         onClose == null ? void 0 : onClose(event);
       }
     };
-    return /* @__PURE__ */ React258.createElement(RefContext2.Provider, {
+    return /* @__PURE__ */ React281.createElement(RefContext2.Provider, {
       value: refContext
-    }, /* @__PURE__ */ React258.createElement(es_default3, {
+    }, /* @__PURE__ */ React281.createElement(es_default3, {
       open: mergedOpen || forceRender || animatedVisible,
       autoDestroy: false,
       getContainer: getContainer2,
       autoLock: mask && (mergedOpen || animatedVisible),
       onEsc
-    }, /* @__PURE__ */ React258.createElement(DrawerPopup_default, drawerPopupProps)));
+    }, /* @__PURE__ */ React281.createElement(DrawerPopup_default, drawerPopupProps)));
   };
   if (true) {
     Drawer.displayName = "Drawer";
@@ -59514,10 +64534,10 @@ html body {
   var Drawer_default = Drawer;
 
   // ../custom_dashboard/node_modules/@rc-component/drawer/es/index.js
-  var es_default16 = Drawer_default;
+  var es_default19 = Drawer_default;
 
   // ../custom_dashboard/node_modules/antd/es/drawer/DrawerPanel.js
-  var React259 = __toESM(require_react());
+  var React282 = __toESM(require_react());
   "use client";
   var DrawerPanel2 = (props) => {
     const {
@@ -59547,7 +64567,7 @@ html body {
         closable: closable != null ? closable : contextClosable
       })
     });
-    const closablePlacement = React259.useMemo(() => {
+    const closablePlacement = React282.useMemo(() => {
       const merged = closable != null ? closable : contextClosable;
       if (merged === false) {
         return void 0;
@@ -59557,7 +64577,7 @@ html body {
       }
       return "start";
     }, [closable, contextClosable]);
-    const customCloseIconRender = React259.useCallback((icon) => /* @__PURE__ */ React259.createElement("button", {
+    const customCloseIconRender = React282.useCallback((icon) => /* @__PURE__ */ React282.createElement("button", {
       type: "button",
       onClick: onClose,
       className: clsx(`${prefixCls}-close`, {
@@ -59573,18 +64593,18 @@ html body {
       if (!title && !mergedClosable) {
         return null;
       }
-      return /* @__PURE__ */ React259.createElement("div", {
+      return /* @__PURE__ */ React282.createElement("div", {
         style: __spreadValues(__spreadValues({}, mergedStyles.header), headerStyle),
         className: clsx(`${prefixCls}-header`, mergedClassNames.header, {
           [`${prefixCls}-header-close-only`]: mergedClosable && !title && !extra
         })
-      }, /* @__PURE__ */ React259.createElement("div", {
+      }, /* @__PURE__ */ React282.createElement("div", {
         className: `${prefixCls}-header-title`
-      }, closablePlacement === "start" && mergedCloseIcon, title && /* @__PURE__ */ React259.createElement("div", {
+      }, closablePlacement === "start" && mergedCloseIcon, title && /* @__PURE__ */ React282.createElement("div", {
         className: clsx(`${prefixCls}-title`, mergedClassNames.title),
         style: mergedStyles.title,
         id: ariaId
-      }, title)), extra && /* @__PURE__ */ React259.createElement("div", {
+      }, title)), extra && /* @__PURE__ */ React282.createElement("div", {
         className: clsx(`${prefixCls}-extra`, mergedClassNames.extra),
         style: mergedStyles.extra
       }, extra), closablePlacement === "end" && mergedCloseIcon);
@@ -59593,15 +64613,15 @@ html body {
       if (!footer) {
         return null;
       }
-      return /* @__PURE__ */ React259.createElement("div", {
+      return /* @__PURE__ */ React282.createElement("div", {
         className: clsx(`${prefixCls}-footer`, mergedClassNames.footer),
         style: __spreadValues(__spreadValues({}, mergedStyles.footer), footerStyle)
       }, footer);
     };
-    return /* @__PURE__ */ React259.createElement(React259.Fragment, null, renderHeader(), /* @__PURE__ */ React259.createElement("div", {
+    return /* @__PURE__ */ React282.createElement(React282.Fragment, null, renderHeader(), /* @__PURE__ */ React282.createElement("div", {
       className: clsx(`${prefixCls}-body`, mergedClassNames.body),
       style: __spreadValues(__spreadValues({}, mergedStyles.body), bodyStyle)
-    }, loading ? /* @__PURE__ */ React259.createElement(skeleton_default, {
+    }, loading ? /* @__PURE__ */ React282.createElement(skeleton_default, {
       active: true,
       title: false,
       paragraph: {
@@ -59649,7 +64669,7 @@ html body {
   }, {
     transform: "none"
   })];
-  var genMotionStyle = (token2) => {
+  var genMotionStyle2 = (token2) => {
     const {
       componentCls,
       motionDurationSlow
@@ -59665,7 +64685,7 @@ html body {
       }
     };
   };
-  var motion_default2 = genMotionStyle;
+  var motion_default3 = genMotionStyle2;
 
   // ../custom_dashboard/node_modules/antd/es/drawer/style/index.js
   var genDrawerStyle = (token2) => {
@@ -59927,23 +64947,23 @@ html body {
       }
     };
   };
-  var prepareComponentToken12 = (token2) => ({
+  var prepareComponentToken15 = (token2) => ({
     zIndexPopup: token2.zIndexPopupBase,
     footerPaddingBlock: token2.paddingXS,
     footerPaddingInline: token2.padding,
     draggerSize: 4
   });
-  var style_default16 = genStyleHooks("Drawer", (token2) => {
+  var style_default19 = genStyleHooks("Drawer", (token2) => {
     const drawerToken = merge2(token2, {});
-    return [genDrawerStyle(drawerToken), motion_default2(drawerToken)];
-  }, prepareComponentToken12);
+    return [genDrawerStyle(drawerToken), motion_default3(drawerToken)];
+  }, prepareComponentToken15);
 
   // ../custom_dashboard/node_modules/antd/es/drawer/Drawer.js
   "use client";
   var DEFAULT_PUSH_STATE = {
     distance: 180
   };
-  var DEFAULT_SIZE = 378;
+  var DEFAULT_SIZE3 = 378;
   var MOTION_CONFIG = {
     motionAppear: true,
     motionEnter: true,
@@ -59955,7 +64975,7 @@ html body {
     const _a = props, {
       rootClassName,
       size,
-      defaultSize = DEFAULT_SIZE,
+      defaultSize = DEFAULT_SIZE3,
       height,
       width,
       mask: drawerMask,
@@ -60019,9 +65039,9 @@ html body {
       mask: contextMask
     } = useComponentConfig("drawer");
     const prefixCls = getPrefixCls("drawer", customizePrefixCls);
-    const [hashId, cssVarCls] = style_default16(prefixCls);
+    const [hashId, cssVarCls] = style_default19(prefixCls);
     const getContainer2 = customizeGetContainer === void 0 && getPopupContainer ? () => getPopupContainer(document.body) : customizeGetContainer;
-    const drawerSize = React260.useMemo(() => {
+    const drawerSize = React283.useMemo(() => {
       if (typeof size === "number") {
         return size;
       }
@@ -60029,7 +65049,7 @@ html body {
         return 736;
       }
       if (size === "default") {
-        return DEFAULT_SIZE;
+        return DEFAULT_SIZE3;
       }
       if (typeof size === "string") {
         if (/^\d+(\.\d+)?$/.test(size)) {
@@ -60084,12 +65104,12 @@ html body {
       }
       warning6.deprecated(!((mergedClassNames == null ? void 0 : mergedClassNames.content) || (mergedStyles == null ? void 0 : mergedStyles.content)), "classNames.content and styles.content", "classNames.section and styles.section");
     }
-    return /* @__PURE__ */ React260.createElement(ContextIsolator_default, {
+    return /* @__PURE__ */ React283.createElement(ContextIsolator_default, {
       form: true,
       space: true
-    }, /* @__PURE__ */ React260.createElement(zindexContext_default.Provider, {
+    }, /* @__PURE__ */ React283.createElement(zindexContext_default.Provider, {
       value: contextZIndex
-    }, /* @__PURE__ */ React260.createElement(es_default16, __spreadProps(__spreadValues(__spreadProps(__spreadValues({
+    }, /* @__PURE__ */ React283.createElement(es_default19, __spreadProps(__spreadValues(__spreadProps(__spreadValues({
       prefixCls,
       onClose,
       maskMotion,
@@ -60128,7 +65148,7 @@ html body {
       destroyOnHidden: destroyOnHidden != null ? destroyOnHidden : destroyOnClose,
       focusTriggerAfterClose: mergedFocusable.focusTriggerAfterClose,
       focusTrap: mergedFocusable.trap
-    }), /* @__PURE__ */ React260.createElement(DrawerPanel_default2, __spreadProps(__spreadValues({
+    }), /* @__PURE__ */ React283.createElement(DrawerPanel_default2, __spreadProps(__spreadValues({
       prefixCls,
       size
     }, rest), {
@@ -60150,14 +65170,14 @@ html body {
     ]);
     const {
       getPrefixCls
-    } = React260.useContext(ConfigContext);
+    } = React283.useContext(ConfigContext);
     const prefixCls = getPrefixCls("drawer", customizePrefixCls);
-    const [hashId, cssVarCls] = style_default16(prefixCls);
+    const [hashId, cssVarCls] = style_default19(prefixCls);
     const cls = clsx(prefixCls, `${prefixCls}-pure`, `${prefixCls}-${placement}`, hashId, cssVarCls, className);
-    return /* @__PURE__ */ React260.createElement("div", {
+    return /* @__PURE__ */ React283.createElement("div", {
       className: cls,
       style: style2
-    }, /* @__PURE__ */ React260.createElement(DrawerPanel_default2, __spreadValues({
+    }, /* @__PURE__ */ React283.createElement(DrawerPanel_default2, __spreadValues({
       prefixCls
     }, restProps)));
   };
@@ -60172,10 +65192,10 @@ html body {
   var drawer_default = Drawer_default2;
 
   // ../custom_dashboard/node_modules/antd/es/dropdown/dropdown-button.js
-  var React264 = __toESM(require_react());
+  var React287 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/space/index.js
-  var React263 = __toESM(require_react());
+  var React286 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/_util/gapSize.js
   function isPresetSize(size) {
@@ -60189,20 +65209,20 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/antd/es/space/context.js
-  var import_react107 = __toESM(require_react());
-  var SpaceContext = /* @__PURE__ */ import_react107.default.createContext({
+  var import_react118 = __toESM(require_react());
+  var SpaceContext = /* @__PURE__ */ import_react118.default.createContext({
     latestIndex: 0
   });
   var SpaceContextProvider = SpaceContext.Provider;
 
   // ../custom_dashboard/node_modules/antd/es/space/Item.js
-  var React262 = __toESM(require_react());
+  var React285 = __toESM(require_react());
   "use client";
   var Item3 = (props) => {
     const {
       className,
       prefix: prefix2,
-      index: index2,
+      index,
       children,
       separator,
       style: style2,
@@ -60211,14 +65231,14 @@ html body {
     } = props;
     const {
       latestIndex
-    } = React262.useContext(SpaceContext);
+    } = React285.useContext(SpaceContext);
     if (!isNonNullable_default(children)) {
       return null;
     }
-    return /* @__PURE__ */ React262.createElement(React262.Fragment, null, /* @__PURE__ */ React262.createElement("div", {
+    return /* @__PURE__ */ React285.createElement(React285.Fragment, null, /* @__PURE__ */ React285.createElement("div", {
       className,
       style: style2
-    }, children), index2 < latestIndex && separator && /* @__PURE__ */ React262.createElement("span", {
+    }, children), index < latestIndex && separator && /* @__PURE__ */ React285.createElement("span", {
       className: clsx(`${prefix2}-item-separator`, classNames == null ? void 0 : classNames.separator),
       style: styles == null ? void 0 : styles.separator
     }, separator));
@@ -60291,7 +65311,7 @@ html body {
       }
     };
   };
-  var style_default17 = genStyleHooks("Space", (token2) => {
+  var style_default20 = genStyleHooks("Space", (token2) => {
     const spaceToken = merge2(token2, {
       spaceGapSmallSize: token2.paddingXS,
       spaceGapMiddleSize: token2.padding,
@@ -60304,7 +65324,7 @@ html body {
 
   // ../custom_dashboard/node_modules/antd/es/space/index.js
   "use client";
-  var InternalSpace = /* @__PURE__ */ React263.forwardRef((props, ref) => {
+  var InternalSpace = /* @__PURE__ */ React286.forwardRef((props, ref) => {
     const {
       getPrefixCls,
       direction: directionConfig,
@@ -60359,7 +65379,7 @@ html body {
     const mergedAlign = align === void 0 && !mergedVertical ? "center" : align;
     const mergedSeparator = separator != null ? separator : split;
     const prefixCls = getPrefixCls("space", customizePrefixCls);
-    const [hashId, cssVarCls] = style_default17(prefixCls);
+    const [hashId, cssVarCls] = style_default20(prefixCls);
     const mergedProps = __spreadProps(__spreadValues({}, props), {
       size,
       orientation: mergedOrientation,
@@ -60377,7 +65397,7 @@ html body {
     const itemClassName = clsx(`${prefixCls}-item`, mergedClassNames.item);
     const renderedItems = childNodes.map((child, i) => {
       const key = (child == null ? void 0 : child.key) || `${itemClassName}-${i}`;
-      return /* @__PURE__ */ React263.createElement(Item_default2, {
+      return /* @__PURE__ */ React286.createElement(Item_default2, {
         prefix: prefixCls,
         classNames: mergedClassNames,
         styles: mergedStyles,
@@ -60394,7 +65414,7 @@ html body {
         warning6.deprecated(!(deprecatedName in props), deprecatedName, newName);
       });
     }
-    const memoizedSpaceContext = React263.useMemo(() => {
+    const memoizedSpaceContext = React286.useMemo(() => {
       const calcLatestIndex = childNodes.reduce((latest, child, i) => isNonNullable_default(child) ? i : latest, 0);
       return {
         latestIndex: calcLatestIndex
@@ -60413,11 +65433,11 @@ html body {
     if (!isPresetVerticalSize && isValidVerticalSize) {
       gapStyle.rowGap = verticalSize;
     }
-    return /* @__PURE__ */ React263.createElement("div", __spreadValues({
+    return /* @__PURE__ */ React286.createElement("div", __spreadValues({
       ref,
       className: rootClassNames,
       style: __spreadValues(__spreadValues(__spreadValues(__spreadValues({}, gapStyle), mergedStyles.root), contextStyle), style2)
-    }, restProps), /* @__PURE__ */ React263.createElement(SpaceContextProvider, {
+    }, restProps), /* @__PURE__ */ React286.createElement(SpaceContextProvider, {
       value: memoizedSpaceContext
     }, renderedItems));
   });
@@ -60436,7 +65456,7 @@ html body {
       getPopupContainer: getContextPopupContainer,
       getPrefixCls,
       direction
-    } = React264.useContext(ConfigContext);
+    } = React287.useContext(ConfigContext);
     const _a = props, {
       prefixCls: customizePrefixCls,
       type: type5 = "default",
@@ -60457,7 +65477,7 @@ html body {
       placement,
       getPopupContainer,
       href,
-      icon = /* @__PURE__ */ React264.createElement(EllipsisOutlined_default2, null),
+      icon = /* @__PURE__ */ React287.createElement(EllipsisOutlined_default2, null),
       title,
       buttonsRender = (buttons) => buttons,
       mouseEnterDelay,
@@ -60543,7 +65563,7 @@ html body {
       const warning6 = devUseWarning("Dropdown.Button");
       warning6.deprecated(false, "Dropdown.Button", "Space.Compact + Dropdown + Button");
     }
-    const leftButton = /* @__PURE__ */ React264.createElement(button_default, {
+    const leftButton = /* @__PURE__ */ React287.createElement(button_default, {
       type: type5,
       danger,
       disabled,
@@ -60553,17 +65573,17 @@ html body {
       href,
       title
     }, children);
-    const rightButton = /* @__PURE__ */ React264.createElement(button_default, {
+    const rightButton = /* @__PURE__ */ React287.createElement(button_default, {
       type: type5,
       danger,
       icon
     });
     const [leftButtonToRender, rightButtonToRender] = buttonsRender([leftButton, rightButton]);
-    return /* @__PURE__ */ React264.createElement(space_default.Compact, __spreadValues({
+    return /* @__PURE__ */ React287.createElement(space_default.Compact, __spreadValues({
       className: classes,
       size: compactSize,
       block: true
-    }, restProps), leftButtonToRender, /* @__PURE__ */ React264.createElement(dropdown_default2, __spreadValues({}, dropdownProps), rightButtonToRender));
+    }, restProps), leftButtonToRender, /* @__PURE__ */ React287.createElement(dropdown_default2, __spreadValues({}, dropdownProps), rightButtonToRender));
   };
   DropdownButton.__ANT_BUTTON = true;
   var dropdown_button_default = DropdownButton;
@@ -60575,12 +65595,12 @@ html body {
   var dropdown_default3 = Dropdown3;
 
   // ../custom_dashboard/node_modules/antd/es/_util/convertToTooltipProps.js
-  var import_react108 = __toESM(require_react());
+  var import_react119 = __toESM(require_react());
   var convertToTooltipProps = (tooltip, context) => {
     if (!isNonNullable_default(tooltip)) {
       return null;
     }
-    if (typeof tooltip === "object" && !/* @__PURE__ */ (0, import_react108.isValidElement)(tooltip)) {
+    if (typeof tooltip === "object" && !/* @__PURE__ */ (0, import_react119.isValidElement)(tooltip)) {
       return __spreadValues(__spreadValues({}, context), tooltip);
     }
     return __spreadProps(__spreadValues({}, context), {
@@ -60590,13 +65610,13 @@ html body {
   var convertToTooltipProps_default = convertToTooltipProps;
 
   // ../custom_dashboard/node_modules/antd/es/form/ErrorList.js
-  var React266 = __toESM(require_react());
+  var React289 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/form/hooks/useDebounce.js
-  var React265 = __toESM(require_react());
+  var React288 = __toESM(require_react());
   function useDebounce(value) {
-    const [cacheValue, setCacheValue] = React265.useState(value);
-    React265.useEffect(() => {
+    const [cacheValue, setCacheValue] = React288.useState(value);
+    React288.useEffect(() => {
       const timeout = setTimeout(() => {
         setCacheValue(value);
       }, value.length ? 0 : 10);
@@ -61052,7 +66072,7 @@ html body {
       }
     };
   };
-  var prepareComponentToken13 = (token2) => ({
+  var prepareComponentToken16 = (token2) => ({
     labelRequiredMarkColor: token2.colorError,
     labelColor: token2.colorTextHeading,
     labelFontSize: token2.fontSize,
@@ -61071,21 +66091,21 @@ html body {
     });
     return formToken;
   };
-  var style_default18 = genStyleHooks("Form", (token2, {
+  var style_default21 = genStyleHooks("Form", (token2, {
     rootPrefixCls
   }) => {
     const formToken = prepareToken3(token2, rootPrefixCls);
     return [genFormStyle(formToken), genFormItemStyle(formToken), explain_default(formToken), genHorizontalStyle(formToken), genInlineStyle(formToken), genVerticalStyle(formToken), collapse_default(formToken), zoomIn];
-  }, prepareComponentToken13, {
+  }, prepareComponentToken16, {
     order: -1e3
   });
 
   // ../custom_dashboard/node_modules/antd/es/form/ErrorList.js
   "use client";
   var EMPTY_LIST3 = [];
-  function toErrorEntity(error, prefix2, errorStatus, index2 = 0) {
+  function toErrorEntity(error, prefix2, errorStatus, index = 0) {
     return {
-      key: typeof error === "string" ? error : `${prefix2}-${index2}`,
+      key: typeof error === "string" ? error : `${prefix2}-${index}`,
       error,
       errorStatus
     };
@@ -61101,35 +66121,35 @@ html body {
   }) => {
     const {
       prefixCls
-    } = React266.useContext(FormItemPrefixContext);
+    } = React289.useContext(FormItemPrefixContext);
     const baseClassName = `${prefixCls}-item-explain`;
     const rootCls = useCSSVarCls_default(prefixCls);
-    const [hashId, cssVarCls] = style_default18(prefixCls, rootCls);
-    const collapseMotion = React266.useMemo(() => motion_default(prefixCls), [prefixCls]);
+    const [hashId, cssVarCls] = style_default21(prefixCls, rootCls);
+    const collapseMotion = React289.useMemo(() => motion_default(prefixCls), [prefixCls]);
     const debounceErrors = useDebounce(errors);
     const debounceWarnings = useDebounce(warnings);
-    const fullKeyList = React266.useMemo(() => {
+    const fullKeyList = React289.useMemo(() => {
       if (isNonNullable_default(help)) {
         return [toErrorEntity(help, "help", helpStatus)];
       }
-      return [].concat(_toConsumableArray(debounceErrors.map((error, index2) => toErrorEntity(error, "error", "error", index2))), _toConsumableArray(debounceWarnings.map((warning6, index2) => toErrorEntity(warning6, "warning", "warning", index2))));
+      return [].concat(_toConsumableArray(debounceErrors.map((error, index) => toErrorEntity(error, "error", "error", index))), _toConsumableArray(debounceWarnings.map((warning6, index) => toErrorEntity(warning6, "warning", "warning", index))));
     }, [help, helpStatus, debounceErrors, debounceWarnings]);
-    const filledKeyFullKeyList = React266.useMemo(() => {
+    const filledKeyFullKeyList = React289.useMemo(() => {
       const keysCount = {};
       fullKeyList.forEach(({
         key
       }) => {
         keysCount[key] = (keysCount[key] || 0) + 1;
       });
-      return fullKeyList.map((entity, index2) => __spreadProps(__spreadValues({}, entity), {
-        key: keysCount[entity.key] > 1 ? `${entity.key}-fallback-${index2}` : entity.key
+      return fullKeyList.map((entity, index) => __spreadProps(__spreadValues({}, entity), {
+        key: keysCount[entity.key] > 1 ? `${entity.key}-fallback-${index}` : entity.key
       }));
     }, [fullKeyList]);
     const helpProps = {};
     if (fieldId) {
       helpProps.id = `${fieldId}_help`;
     }
-    return /* @__PURE__ */ React266.createElement(es_default2, {
+    return /* @__PURE__ */ React289.createElement(es_default2, {
       motionDeadline: collapseMotion.motionDeadline,
       motionName: `${prefixCls}-show-help`,
       visible: !!filledKeyFullKeyList.length,
@@ -61139,10 +66159,10 @@ html body {
         className: holderClassName,
         style: holderStyle
       } = holderProps;
-      return /* @__PURE__ */ React266.createElement("div", __spreadProps(__spreadValues({}, helpProps), {
+      return /* @__PURE__ */ React289.createElement("div", __spreadProps(__spreadValues({}, helpProps), {
         className: clsx(baseClassName, holderClassName, cssVarCls, rootCls, rootClassName, hashId),
         style: holderStyle
-      }), /* @__PURE__ */ React266.createElement(CSSMotionList_default, __spreadProps(__spreadValues({
+      }), /* @__PURE__ */ React289.createElement(CSSMotionList_default, __spreadProps(__spreadValues({
         keys: filledKeyFullKeyList
       }, motion_default(prefixCls)), {
         motionName: `${prefixCls}-show-help-item`,
@@ -61155,7 +66175,7 @@ html body {
           className: itemClassName,
           style: itemStyle
         } = itemProps;
-        return /* @__PURE__ */ React266.createElement("div", {
+        return /* @__PURE__ */ React289.createElement("div", {
           key,
           className: clsx(itemClassName, {
             [`${baseClassName}-${errorStatus}`]: errorStatus
@@ -61168,16 +66188,16 @@ html body {
   var ErrorList_default = ErrorList;
 
   // ../custom_dashboard/node_modules/antd/es/form/Form.js
-  var React268 = __toESM(require_react());
+  var React291 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/form/hooks/useFormWarning.js
-  var React267 = __toESM(require_react());
+  var React290 = __toESM(require_react());
   var names = {};
   function useFormWarning({
     name
   }) {
     const warning6 = devUseWarning("Form");
-    React267.useEffect(() => {
+    React290.useEffect(() => {
       if (name) {
         names[name] = (names[name] || 0) + 1;
         true ? warning6(names[name] <= 1, "usage", "There exist multiple Form with same `name`.") : void 0;
@@ -61191,7 +66211,7 @@ html body {
   // ../custom_dashboard/node_modules/antd/es/form/Form.js
   "use client";
   var InternalForm2 = (props, ref) => {
-    const contextDisabled = React268.useContext(DisabledContext_default);
+    const contextDisabled = React291.useContext(DisabledContext_default);
     const {
       getPrefixCls,
       direction,
@@ -61252,11 +66272,11 @@ html body {
       "tooltip"
     ]);
     const mergedSize = useSize_default(size);
-    const contextValidateMessages = React268.useContext(validateMessagesContext_default);
+    const contextValidateMessages = React291.useContext(validateMessagesContext_default);
     if (true) {
       useFormWarning(props);
     }
-    const mergedRequiredMark = React268.useMemo(() => {
+    const mergedRequiredMark = React291.useMemo(() => {
       if (requiredMark !== void 0) {
         return requiredMark;
       }
@@ -61269,7 +66289,7 @@ html body {
     const mergedTooltip = __spreadValues(__spreadValues({}, contextTooltip), tooltip);
     const prefixCls = getPrefixCls("form", customizePrefixCls);
     const rootCls = useCSSVarCls_default(prefixCls);
-    const [hashId, cssVarCls] = style_default18(prefixCls, rootCls);
+    const [hashId, cssVarCls] = style_default21(prefixCls, rootCls);
     const mergedProps = __spreadProps(__spreadValues({}, props), {
       size: mergedSize,
       disabled,
@@ -61291,7 +66311,7 @@ html body {
       __INTERNAL__
     } = wrapForm;
     __INTERNAL__.name = name;
-    const formContextValue = React268.useMemo(() => ({
+    const formContextValue = React291.useMemo(() => ({
       name,
       labelAlign,
       labelCol,
@@ -61307,8 +66327,8 @@ html body {
       classNames: mergedClassNames,
       styles: mergedStyles
     }), [name, labelAlign, labelCol, wrapperCol, layout, mergedColon, mergedRequiredMark, wrapForm, feedbackIcons, mergedClassNames, mergedStyles, mergedTooltip]);
-    const nativeElementRef = React268.useRef(null);
-    React268.useImperativeHandle(ref, () => {
+    const nativeElementRef = React291.useRef(null);
+    React291.useImperativeHandle(ref, () => {
       var _a2;
       return __spreadProps(__spreadValues({}, wrapForm), {
         nativeElement: (_a2 = nativeElementRef.current) == null ? void 0 : _a2.nativeElement
@@ -61338,19 +66358,19 @@ html body {
         }
       }
     };
-    return /* @__PURE__ */ React268.createElement(VariantContext.Provider, {
+    return /* @__PURE__ */ React291.createElement(VariantContext.Provider, {
       value: variant
-    }, /* @__PURE__ */ React268.createElement(DisabledContextProvider, {
+    }, /* @__PURE__ */ React291.createElement(DisabledContextProvider, {
       disabled
-    }, /* @__PURE__ */ React268.createElement(SizeContext_default.Provider, {
+    }, /* @__PURE__ */ React291.createElement(SizeContext_default.Provider, {
       value: mergedSize
-    }, /* @__PURE__ */ React268.createElement(FormProvider2, {
+    }, /* @__PURE__ */ React291.createElement(FormProvider2, {
       validateMessages: contextValidateMessages
-    }, /* @__PURE__ */ React268.createElement(FormContext2.Provider, {
+    }, /* @__PURE__ */ React291.createElement(FormContext2.Provider, {
       value: formContextValue
-    }, /* @__PURE__ */ React268.createElement(NoFormStyle, {
+    }, /* @__PURE__ */ React291.createElement(NoFormStyle, {
       status: true
-    }, /* @__PURE__ */ React268.createElement(es_default7, __spreadProps(__spreadValues({
+    }, /* @__PURE__ */ React291.createElement(es_default7, __spreadProps(__spreadValues({
       id: name
     }, restFormProps), {
       name,
@@ -61361,14 +66381,14 @@ html body {
       className: formClassName
     }))))))));
   };
-  var Form2 = /* @__PURE__ */ React268.forwardRef(InternalForm2);
+  var Form2 = /* @__PURE__ */ React291.forwardRef(InternalForm2);
   if (true) {
     Form2.displayName = "Form";
   }
   var Form_default2 = Form2;
 
   // ../custom_dashboard/node_modules/antd/es/form/FormItem/index.js
-  var React277 = __toESM(require_react());
+  var React300 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/form/hooks/useChildren.js
   function useChildren2(children) {
@@ -61380,13 +66400,13 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/antd/es/form/hooks/useFormItemStatus.js
-  var React269 = __toESM(require_react());
+  var React292 = __toESM(require_react());
   var useFormItemStatus = () => {
     const {
       status,
       errors = [],
       warnings = []
-    } = React269.useContext(FormItemInputContext);
+    } = React292.useContext(FormItemInputContext);
     if (true) {
       const warning6 = devUseWarning("Form.Item");
       true ? warning6(status !== void 0, "usage", "Form.Item.useStatus should be used under Form.Item component. For more information: https://u.ant.design/form-item-usestatus") : void 0;
@@ -61401,13 +66421,13 @@ html body {
   var useFormItemStatus_default = useFormItemStatus;
 
   // ../custom_dashboard/node_modules/antd/es/form/hooks/useFrameState.js
-  var React270 = __toESM(require_react());
+  var React293 = __toESM(require_react());
   function useFrameState(defaultValue) {
-    const [value, setValue] = React270.useState(defaultValue);
-    const frameRef = React270.useRef(null);
-    const batchRef = React270.useRef([]);
-    const destroyRef = React270.useRef(false);
-    React270.useEffect(() => {
+    const [value, setValue] = React293.useState(defaultValue);
+    const frameRef = React293.useRef(null);
+    const batchRef = React293.useRef([]);
+    const destroyRef = React293.useRef(false);
+    React293.useEffect(() => {
       destroyRef.current = false;
       return () => {
         destroyRef.current = true;
@@ -61438,12 +66458,12 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/antd/es/form/hooks/useItemRef.js
-  var React271 = __toESM(require_react());
+  var React294 = __toESM(require_react());
   function useItemRef() {
     const {
       itemRef
-    } = React271.useContext(FormContext2);
-    const cacheRef = React271.useRef({});
+    } = React294.useContext(FormContext2);
+    const cacheRef = React294.useRef({});
     function getRef(name, children) {
       const childrenRef = children && typeof children === "object" && getNodeRef(children);
       const nameStr = name.join("_");
@@ -61458,10 +66478,10 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/antd/es/form/FormItem/ItemHolder.js
-  var React276 = __toESM(require_react());
+  var React299 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/form/FormItemInput.js
-  var React272 = __toESM(require_react());
+  var React295 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/form/style/fallbackCmp.js
   var genFallbackStyle = (token2) => {
@@ -61504,12 +66524,12 @@ html body {
       label
     } = props;
     const baseClassName = `${prefixCls}-item`;
-    const formContext = React272.useContext(FormContext2);
+    const formContext = React295.useContext(FormContext2);
     const {
       classNames: contextClassNames,
       styles: contextStyles
     } = formContext;
-    const mergedWrapperCol = React272.useMemo(() => {
+    const mergedWrapperCol = React295.useMemo(() => {
       let mergedWrapper = __spreadValues({}, wrapperCol || formContext.wrapperCol || {});
       if (label === null && !labelCol && !wrapperCol && formContext.labelCol) {
         const list = [void 0].concat(_toConsumableArray(responsiveArrayReversed));
@@ -61527,7 +66547,7 @@ html body {
       return mergedWrapper;
     }, [wrapperCol, formContext.wrapperCol, formContext.labelCol, label, labelCol]);
     const className = clsx(`${baseClassName}-control`, mergedWrapperCol.className);
-    const subFormContext = React272.useMemo(() => {
+    const subFormContext = React295.useMemo(() => {
       const _a = formContext, {
         labelCol: _labelCol,
         wrapperCol: _wrapperCol
@@ -61537,8 +66557,8 @@ html body {
       ]);
       return rest;
     }, [formContext]);
-    const extraRef = React272.useRef(null);
-    const [extraHeight, setExtraHeight] = React272.useState(0);
+    const extraRef = React295.useRef(null);
+    const [extraHeight, setExtraHeight] = React295.useState(0);
     useLayoutEffect_default(() => {
       if (extra && extraRef.current) {
         setExtraHeight(extraRef.current.clientHeight);
@@ -61546,19 +66566,19 @@ html body {
         setExtraHeight(0);
       }
     }, [extra]);
-    const inputDom = /* @__PURE__ */ React272.createElement("div", {
+    const inputDom = /* @__PURE__ */ React295.createElement("div", {
       className: `${baseClassName}-control-input`
-    }, /* @__PURE__ */ React272.createElement("div", {
+    }, /* @__PURE__ */ React295.createElement("div", {
       className: clsx(`${baseClassName}-control-input-content`, contextClassNames == null ? void 0 : contextClassNames.content),
       style: contextStyles == null ? void 0 : contextStyles.content
     }, children));
-    const formItemContext = React272.useMemo(() => ({
+    const formItemContext = React295.useMemo(() => ({
       prefixCls,
       status
     }), [prefixCls, status]);
-    const errorListDom = marginBottom !== null || errors.length || warnings.length ? /* @__PURE__ */ React272.createElement(FormItemPrefixContext.Provider, {
+    const errorListDom = marginBottom !== null || errors.length || warnings.length ? /* @__PURE__ */ React295.createElement(FormItemPrefixContext.Provider, {
       value: formItemContext
-    }, /* @__PURE__ */ React272.createElement(ErrorList_default, {
+    }, /* @__PURE__ */ React295.createElement(ErrorList_default, {
       fieldId,
       errors,
       warnings,
@@ -61571,11 +66591,11 @@ html body {
     if (fieldId) {
       extraProps.id = `${fieldId}_extra`;
     }
-    const extraDom = extra ? /* @__PURE__ */ React272.createElement("div", __spreadProps(__spreadValues({}, extraProps), {
+    const extraDom = extra ? /* @__PURE__ */ React295.createElement("div", __spreadProps(__spreadValues({}, extraProps), {
       className: `${baseClassName}-extra`,
       ref: extraRef
     }), extra) : null;
-    const additionalDom = errorListDom || extraDom ? /* @__PURE__ */ React272.createElement("div", {
+    const additionalDom = errorListDom || extraDom ? /* @__PURE__ */ React295.createElement("div", {
       className: `${baseClassName}-additional`,
       style: marginBottom ? {
         minHeight: marginBottom + extraHeight
@@ -61585,30 +66605,30 @@ html body {
       input: inputDom,
       errorList: errorListDom,
       extra: extraDom
-    }) : /* @__PURE__ */ React272.createElement(React272.Fragment, null, inputDom, additionalDom);
-    return /* @__PURE__ */ React272.createElement(FormContext2.Provider, {
+    }) : /* @__PURE__ */ React295.createElement(React295.Fragment, null, inputDom, additionalDom);
+    return /* @__PURE__ */ React295.createElement(FormContext2.Provider, {
       value: subFormContext
-    }, /* @__PURE__ */ React272.createElement(col_default, __spreadProps(__spreadValues({}, mergedWrapperCol), {
+    }, /* @__PURE__ */ React295.createElement(col_default, __spreadProps(__spreadValues({}, mergedWrapperCol), {
       className
-    }), dom), /* @__PURE__ */ React272.createElement(fallbackCmp_default, {
+    }), dom), /* @__PURE__ */ React295.createElement(fallbackCmp_default, {
       prefixCls
     }));
   };
   var FormItemInput_default = FormItemInput;
 
   // ../custom_dashboard/node_modules/antd/es/form/FormItemLabel.js
-  var React274 = __toESM(require_react());
+  var React297 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/QuestionCircleOutlined.js
-  var React273 = __toESM(require_react());
+  var React296 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/QuestionCircleOutlined.js
   var QuestionCircleOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z" } }, { "tag": "path", "attrs": { "d": "M623.6 316.7C593.6 290.4 554 276 512 276s-81.6 14.5-111.6 40.7C369.2 344 352 380.7 352 420v7.6c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V420c0-44.1 43.1-80 96-80s96 35.9 96 80c0 31.1-22 59.6-56.1 72.7-21.2 8.1-39.2 22.3-52.1 40.9-13.1 19-19.9 41.8-19.9 64.9V620c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8v-22.7a48.3 48.3 0 0130.9-44.8c59-22.7 97.1-74.7 97.1-132.5.1-39.3-17.1-76-48.3-103.3zM472 732a40 40 0 1080 0 40 40 0 10-80 0z" } }] }, "name": "question-circle", "theme": "outlined" };
   var QuestionCircleOutlined_default = QuestionCircleOutlined;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/QuestionCircleOutlined.js
-  function _extends52() {
-    _extends52 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends60() {
+    _extends60 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -61619,17 +66639,17 @@ html body {
       }
       return target;
     };
-    return _extends52.apply(this, arguments);
+    return _extends60.apply(this, arguments);
   }
-  var QuestionCircleOutlined2 = (props, ref) => /* @__PURE__ */ React273.createElement(AntdIcon_default, _extends52({}, props, {
+  var QuestionCircleOutlined2 = (props, ref) => /* @__PURE__ */ React296.createElement(AntdIcon_default, _extends60({}, props, {
     ref,
     icon: QuestionCircleOutlined_default
   }));
-  var RefIcon14 = /* @__PURE__ */ React273.forwardRef(QuestionCircleOutlined2);
+  var RefIcon17 = /* @__PURE__ */ React296.forwardRef(QuestionCircleOutlined2);
   if (true) {
-    RefIcon14.displayName = "QuestionCircleOutlined";
+    RefIcon17.displayName = "QuestionCircleOutlined";
   }
-  var QuestionCircleOutlined_default2 = RefIcon14;
+  var QuestionCircleOutlined_default2 = RefIcon17;
 
   // ../custom_dashboard/node_modules/antd/es/form/FormItemLabel.js
   "use client";
@@ -61655,7 +66675,7 @@ html body {
       classNames: contextClassNames,
       styles: contextStyles,
       tooltip: contextTooltip
-    } = React274.useContext(FormContext2);
+    } = React297.useContext(FormContext2);
     if (!label) {
       return null;
     }
@@ -61673,14 +66693,14 @@ html body {
     }
     const tooltipProps = convertToTooltipProps_default(tooltip, contextTooltip);
     if (tooltipProps) {
-      const tooltipNode = /* @__PURE__ */ React274.createElement(tooltip_default, __spreadValues({}, tooltipProps), /* @__PURE__ */ React274.createElement("span", {
+      const tooltipNode = /* @__PURE__ */ React297.createElement(tooltip_default, __spreadValues({}, tooltipProps), /* @__PURE__ */ React297.createElement("span", {
         className: `${prefixCls}-item-tooltip`,
         onClick: (e3) => {
           e3.preventDefault();
         },
         tabIndex: -1
-      }, tooltipProps.icon || tooltipProps.children || /* @__PURE__ */ React274.createElement(QuestionCircleOutlined_default2, null)));
-      labelChildren = /* @__PURE__ */ React274.createElement(React274.Fragment, null, labelChildren, tooltipNode);
+      }, tooltipProps.icon || tooltipProps.children || /* @__PURE__ */ React297.createElement(QuestionCircleOutlined_default2, null)));
+      labelChildren = /* @__PURE__ */ React297.createElement(React297.Fragment, null, labelChildren, tooltipNode);
     }
     const isOptionalMark = requiredMark === "optional";
     const isRenderMark = typeof requiredMark === "function";
@@ -61690,7 +66710,7 @@ html body {
         required: !!required5
       });
     } else if (isOptionalMark && !required5) {
-      labelChildren = /* @__PURE__ */ React274.createElement(React274.Fragment, null, labelChildren, /* @__PURE__ */ React274.createElement("span", {
+      labelChildren = /* @__PURE__ */ React297.createElement(React297.Fragment, null, labelChildren, /* @__PURE__ */ React297.createElement("span", {
         className: `${prefixCls}-item-optional`,
         title: ""
       }, (formLocale == null ? void 0 : formLocale.optional) || ((_a = en_US_default6.Form) == null ? void 0 : _a.optional)));
@@ -61706,9 +66726,9 @@ html body {
       [`${prefixCls}-item-required-mark-${markType}`]: markType,
       [`${prefixCls}-item-no-colon`]: !computedColon
     });
-    return /* @__PURE__ */ React274.createElement(col_default, __spreadProps(__spreadValues({}, mergedLabelCol), {
+    return /* @__PURE__ */ React297.createElement(col_default, __spreadProps(__spreadValues({}, mergedLabelCol), {
       className: labelColClassName
-    }), /* @__PURE__ */ React274.createElement("label", {
+    }), /* @__PURE__ */ React297.createElement("label", {
       htmlFor,
       className: labelClassName,
       style: contextStyles == null ? void 0 : contextStyles.label,
@@ -61718,7 +66738,7 @@ html body {
   var FormItemLabel_default = FormItemLabel;
 
   // ../custom_dashboard/node_modules/antd/es/form/FormItem/StatusProvider.js
-  var React275 = __toESM(require_react());
+  var React298 = __toESM(require_react());
   "use client";
   var iconMap = {
     success: CheckCircleFilled_default2,
@@ -61740,7 +66760,7 @@ html body {
     const itemPrefixCls = `${prefixCls}-item`;
     const {
       feedbackIcons
-    } = React275.useContext(FormContext2);
+    } = React298.useContext(FormContext2);
     const mergedValidateStatus = getStatus(errors, warnings, meta, null, !!hasFeedback, validateStatus);
     const {
       isFormItemInput: parentIsFormItemInput,
@@ -61748,8 +66768,8 @@ html body {
       hasFeedback: parentHasFeedback,
       feedbackIcon: parentFeedbackIcon,
       name: parentName
-    } = React275.useContext(FormItemInputContext);
-    const formItemStatusContext = React275.useMemo(() => {
+    } = React298.useContext(FormItemInputContext);
+    const formItemStatusContext = React298.useMemo(() => {
       var _a;
       let feedbackIcon;
       if (hasFeedback) {
@@ -61760,9 +66780,9 @@ html body {
           warnings
         })) == null ? void 0 : _a[mergedValidateStatus]);
         const IconNode2 = mergedValidateStatus ? iconMap[mergedValidateStatus] : null;
-        feedbackIcon = customIconNode !== false && IconNode2 ? /* @__PURE__ */ React275.createElement("span", {
+        feedbackIcon = customIconNode !== false && IconNode2 ? /* @__PURE__ */ React298.createElement("span", {
           className: clsx(`${itemPrefixCls}-feedback-icon`, `${itemPrefixCls}-feedback-icon-${mergedValidateStatus}`)
-        }, customIconNode || /* @__PURE__ */ React275.createElement(IconNode2, null)) : null;
+        }, customIconNode || /* @__PURE__ */ React298.createElement(IconNode2, null)) : null;
       }
       const context = {
         status: mergedValidateStatus || "",
@@ -61782,7 +66802,7 @@ html body {
       }
       return context;
     }, [mergedValidateStatus, hasFeedback, noStyle, parentIsFormItemInput, parentStatus]);
-    return /* @__PURE__ */ React275.createElement(FormItemInputContext.Provider, {
+    return /* @__PURE__ */ React298.createElement(FormItemInputContext.Provider, {
       value: formItemStatusContext
     }, children);
   }
@@ -61834,16 +66854,16 @@ html body {
     const {
       requiredMark,
       layout: formLayout
-    } = React276.useContext(FormContext2);
+    } = React299.useContext(FormContext2);
     const layout = propsLayout || formLayout;
     const vertical = layout === "vertical";
-    const itemRef = React276.useRef(null);
+    const itemRef = React299.useRef(null);
     const debounceErrors = useDebounce(errors);
     const debounceWarnings = useDebounce(warnings);
     const hasHelp = isNonNullable_default(help);
     const hasError = !!(hasHelp || errors.length || warnings.length);
     const isOnScreen = !!itemRef.current && isVisible_default(itemRef.current);
-    const [marginBottom, setMarginBottom] = React276.useState(null);
+    const [marginBottom, setMarginBottom] = React299.useState(null);
     useLayoutEffect_default(() => {
       if (hasError && itemRef.current) {
         const itemStyle = getComputedStyle(itemRef.current);
@@ -61871,11 +66891,11 @@ html body {
       [`${itemPrefixCls}-hidden`]: hidden,
       [`${itemPrefixCls}-${layout}`]: layout
     });
-    return /* @__PURE__ */ React276.createElement("div", {
+    return /* @__PURE__ */ React299.createElement("div", {
       className: itemClassName,
       style: style2,
       ref: itemRef
-    }, /* @__PURE__ */ React276.createElement(row_default, __spreadValues({
+    }, /* @__PURE__ */ React299.createElement(row_default, __spreadValues({
       className: `${itemPrefixCls}-row`
     }, omit(restProps, [
       "_internalItemRender",
@@ -61908,14 +66928,14 @@ html body {
       "valuePropName",
       "wrapperCol",
       "validateDebounce"
-    ])), /* @__PURE__ */ React276.createElement(FormItemLabel_default, __spreadProps(__spreadValues({
+    ])), /* @__PURE__ */ React299.createElement(FormItemLabel_default, __spreadProps(__spreadValues({
       htmlFor: fieldId
     }, props), {
       requiredMark,
       required: required5 != null ? required5 : isRequired,
       prefixCls,
       vertical
-    })), /* @__PURE__ */ React276.createElement(FormItemInput_default, __spreadProps(__spreadValues(__spreadValues({}, props), meta), {
+    })), /* @__PURE__ */ React299.createElement(FormItemInput_default, __spreadProps(__spreadValues(__spreadValues({}, props), meta), {
       errors: debounceErrors,
       warnings: debounceWarnings,
       prefixCls,
@@ -61923,9 +66943,9 @@ html body {
       help,
       marginBottom,
       onErrorVisibleChanged
-    }), /* @__PURE__ */ React276.createElement(NoStyleItemContext.Provider, {
+    }), /* @__PURE__ */ React299.createElement(NoStyleItemContext.Provider, {
       value: onSubItemMetaChange
-    }, /* @__PURE__ */ React276.createElement(StatusProvider_default, {
+    }, /* @__PURE__ */ React299.createElement(StatusProvider_default, {
       prefixCls,
       meta,
       errors: meta.errors,
@@ -61933,7 +66953,7 @@ html body {
       hasFeedback,
       validateStatus: mergedValidateStatus,
       name
-    }, children)))), !!marginBottom && /* @__PURE__ */ React276.createElement("div", {
+    }, children)))), !!marginBottom && /* @__PURE__ */ React299.createElement("div", {
       className: `${itemPrefixCls}-margin-offset`,
       style: {
         marginBottom: -marginBottom
@@ -61953,7 +66973,7 @@ html body {
       return propValueA === propValueB || typeof propValueA === "function" || typeof propValueB === "function";
     });
   }
-  var MemoInput = /* @__PURE__ */ React277.memo((props) => props.children, (prev2, next2) => isSimilarControl(prev2.control, next2.control) && prev2.update === next2.update && prev2.childProps.length === next2.childProps.length && prev2.childProps.every((value, index2) => value === next2.childProps[index2]));
+  var MemoInput = /* @__PURE__ */ React300.memo((props) => props.children, (prev2, next2) => isSimilarControl(prev2.control, next2.control) && prev2.update === next2.update && prev2.childProps.length === next2.childProps.length && prev2.childProps.every((value, index) => value === next2.childProps[index]));
   function genEmptyMeta() {
     return {
       errors: [],
@@ -61985,27 +67005,27 @@ html body {
     } = props;
     const {
       getPrefixCls
-    } = React277.useContext(ConfigContext);
+    } = React300.useContext(ConfigContext);
     const {
       name: formName
-    } = React277.useContext(FormContext2);
+    } = React300.useContext(FormContext2);
     const mergedChildren = useChildren2(children);
     const isRenderProps = typeof mergedChildren === "function";
-    const notifyParentMetaChange = React277.useContext(NoStyleItemContext);
+    const notifyParentMetaChange = React300.useContext(NoStyleItemContext);
     const {
       validateTrigger: contextValidateTrigger
-    } = React277.useContext(FieldContext_default);
+    } = React300.useContext(FieldContext_default);
     const mergedValidateTrigger = isNonNullable_default(validateTrigger) ? validateTrigger : contextValidateTrigger;
     const hasName = isNonNullable_default(name);
     const prefixCls = getPrefixCls("form", customizePrefixCls);
     const rootCls = useCSSVarCls_default(prefixCls);
-    const [hashId, cssVarCls] = style_default18(prefixCls, rootCls);
+    const [hashId, cssVarCls] = style_default21(prefixCls, rootCls);
     const warning6 = devUseWarning("Form.Item");
     if (true) {
       true ? warning6(name !== null, "usage", "`null` is passed as `name` property") : void 0;
     }
-    const listContext = React277.useContext(ListContext_default);
-    const fieldKeyPathRef = React277.useRef(null);
+    const listContext = React300.useContext(ListContext_default);
+    const fieldKeyPathRef = React300.useRef(null);
     const [subFieldErrors, setSubFieldErrors] = useFrameState({});
     const [meta, setMeta] = useState_default(() => genEmptyMeta());
     const onMetaChange = (nextMeta) => {
@@ -62038,7 +67058,7 @@ html body {
         return clone;
       });
     };
-    const [mergedErrors, mergedWarnings] = React277.useMemo(() => {
+    const [mergedErrors, mergedWarnings] = React300.useMemo(() => {
       const errorList = _toConsumableArray(meta.errors);
       const warningList = _toConsumableArray(meta.warnings);
       Object.values(subFieldErrors).forEach((subFieldError) => {
@@ -62050,7 +67070,7 @@ html body {
     const getItemRef = useItemRef();
     function renderLayout(baseChildren, fieldId, isRequired) {
       if (noStyle && !hidden) {
-        return /* @__PURE__ */ React277.createElement(StatusProvider_default, {
+        return /* @__PURE__ */ React300.createElement(StatusProvider_default, {
           prefixCls,
           hasFeedback: props.hasFeedback,
           validateStatus: props.validateStatus,
@@ -62061,7 +67081,7 @@ html body {
           name
         }, baseChildren);
       }
-      return /* @__PURE__ */ React277.createElement(ItemHolder, __spreadProps(__spreadValues({
+      return /* @__PURE__ */ React300.createElement(ItemHolder, __spreadProps(__spreadValues({
         key: "row"
       }, props), {
         className: clsx(className, cssVarCls, rootCls, hashId),
@@ -62088,7 +67108,7 @@ html body {
     if (messageVariables) {
       variables = __spreadValues(__spreadValues({}, variables), messageVariables);
     }
-    return /* @__PURE__ */ React277.createElement(Field_default, __spreadProps(__spreadValues({}, props), {
+    return /* @__PURE__ */ React300.createElement(Field_default, __spreadProps(__spreadValues({}, props), {
       messageVariables: variables,
       trigger,
       validateTrigger: mergedValidateTrigger,
@@ -62117,7 +67137,7 @@ html body {
         true ? warning6(!hasName, "usage", "A `Form.Item` with a render function cannot be a field, and thus cannot have a `name` prop.") : void 0;
       } else if (dependencies && !isRenderProps && !hasName) {
         true ? warning6(false, "usage", "Must set `name` or use a render function when `dependencies` is set.") : void 0;
-      } else if (/* @__PURE__ */ React277.isValidElement(mergedChildren)) {
+      } else if (/* @__PURE__ */ React300.isValidElement(mergedChildren)) {
         true ? warning6(mergedChildren.props.defaultValue === void 0, "usage", "`defaultValue` will not work on controlled Field. You should use `initialValues` of Form instead.") : void 0;
         const childProps = __spreadValues(__spreadValues({}, mergedChildren.props), mergedControl);
         if (!childProps.id) {
@@ -62151,7 +67171,7 @@ html body {
           };
         });
         const watchingChildProps = [childProps["aria-required"], childProps["aria-invalid"], childProps["aria-describedby"]];
-        childNode = /* @__PURE__ */ React277.createElement(MemoInput, {
+        childNode = /* @__PURE__ */ React300.createElement(MemoInput, {
           control: mergedControl,
           update: mergedChildren,
           childProps: watchingChildProps
@@ -62170,7 +67190,7 @@ html body {
   var FormItem_default = FormItem;
 
   // ../custom_dashboard/node_modules/antd/es/form/FormList.js
-  var React278 = __toESM(require_react());
+  var React301 = __toESM(require_react());
   "use client";
   var FormList = (_a) => {
     var _b = _a, {
@@ -62186,13 +67206,13 @@ html body {
     }
     const {
       getPrefixCls
-    } = React278.useContext(ConfigContext);
+    } = React301.useContext(ConfigContext);
     const prefixCls = getPrefixCls("form", customizePrefixCls);
-    const contextValue = React278.useMemo(() => ({
+    const contextValue = React301.useMemo(() => ({
       prefixCls,
       status: "error"
     }), [prefixCls]);
-    return /* @__PURE__ */ React278.createElement(List_default, __spreadValues({}, props), (fields, operation, meta) => /* @__PURE__ */ React278.createElement(FormItemPrefixContext.Provider, {
+    return /* @__PURE__ */ React301.createElement(List_default, __spreadValues({}, props), (fields, operation, meta) => /* @__PURE__ */ React301.createElement(FormItemPrefixContext.Provider, {
       value: contextValue
     }, children(fields.map((field) => __spreadProps(__spreadValues({}, field), {
       fieldKey: field.key
@@ -62204,11 +67224,11 @@ html body {
   var FormList_default = FormList;
 
   // ../custom_dashboard/node_modules/antd/es/form/hooks/useFormInstance.js
-  var React279 = __toESM(require_react());
+  var React302 = __toESM(require_react());
   function useFormInstance() {
     const {
       form
-    } = React279.useContext(FormContext2);
+    } = React302.useContext(FormContext2);
     return form;
   }
 
@@ -62225,14 +67245,14 @@ html body {
   var form_default = Form3;
 
   // ../custom_dashboard/node_modules/antd/es/input/Group.js
-  var React280 = __toESM(require_react());
-  var import_react109 = __toESM(require_react());
+  var React303 = __toESM(require_react());
+  var import_react120 = __toESM(require_react());
   "use client";
   var Group = (props) => {
     const {
       getPrefixCls,
       direction
-    } = (0, import_react109.useContext)(ConfigContext);
+    } = (0, import_react120.useContext)(ConfigContext);
     const {
       prefixCls: customizePrefixCls,
       className
@@ -62246,17 +67266,17 @@ html body {
       [`${prefixCls}-compact`]: props.compact,
       [`${prefixCls}-rtl`]: direction === "rtl"
     }, hashId, className);
-    const formItemContext = (0, import_react109.useContext)(FormItemInputContext);
-    const groupFormItemContext = (0, import_react109.useMemo)(() => __spreadProps(__spreadValues({}, formItemContext), {
+    const formItemContext = (0, import_react120.useContext)(FormItemInputContext);
+    const groupFormItemContext = (0, import_react120.useMemo)(() => __spreadProps(__spreadValues({}, formItemContext), {
       isFormItemInput: false
     }), [formItemContext]);
     if (true) {
       const warning6 = devUseWarning("Input.Group");
       warning6.deprecated(false, "Input.Group", "Space.Compact");
     }
-    return /* @__PURE__ */ React280.createElement(FormItemInputContext.Provider, {
+    return /* @__PURE__ */ React303.createElement(FormItemInputContext.Provider, {
       value: groupFormItemContext
-    }, /* @__PURE__ */ React280.createElement(space_default.Compact, {
+    }, /* @__PURE__ */ React303.createElement(space_default.Compact, {
       className: cls,
       style: props.style,
       onMouseEnter: props.onMouseEnter,
@@ -62268,7 +67288,7 @@ html body {
   var Group_default2 = Group;
 
   // ../custom_dashboard/node_modules/antd/es/input/OTP/index.js
-  var React282 = __toESM(require_react());
+  var React305 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/input/style/otp.js
   var genOTPStyle = (token2) => {
@@ -62326,15 +67346,15 @@ html body {
   }, initComponentToken);
 
   // ../custom_dashboard/node_modules/antd/es/input/OTP/OTPInput.js
-  var React281 = __toESM(require_react());
+  var React304 = __toESM(require_react());
   "use client";
-  var OTPInput = /* @__PURE__ */ React281.forwardRef((props, ref) => {
+  var OTPInput = /* @__PURE__ */ React304.forwardRef((props, ref) => {
     const _a = props, {
       className,
       value,
       onChange,
       onActiveChange,
-      index: index2,
+      index,
       mask,
       onFocus
     } = _a, restProps = __objRest(_a, [
@@ -62348,13 +67368,13 @@ html body {
     ]);
     const {
       getPrefixCls
-    } = React281.useContext(ConfigContext);
+    } = React304.useContext(ConfigContext);
     const prefixCls = getPrefixCls("otp");
     const maskValue = typeof mask === "string" ? mask : value;
-    const inputRef = React281.useRef(null);
-    React281.useImperativeHandle(ref, () => inputRef.current);
+    const inputRef = React304.useRef(null);
+    React304.useImperativeHandle(ref, () => inputRef.current);
     const onInternalChange = (e3) => {
-      onChange(index2, e3.target.value);
+      onChange(index, e3.target.value);
     };
     const syncSelection = () => {
       raf_default(() => {
@@ -62376,24 +67396,24 @@ html body {
         metaKey
       } = event;
       if (key === "ArrowLeft") {
-        onActiveChange(index2 - 1);
+        onActiveChange(index - 1);
       } else if (key === "ArrowRight") {
-        onActiveChange(index2 + 1);
+        onActiveChange(index + 1);
       } else if (key === "z" && (ctrlKey || metaKey)) {
         event.preventDefault();
       } else if (key === "Backspace" && !value) {
-        onActiveChange(index2 - 1);
+        onActiveChange(index - 1);
       }
       syncSelection();
     };
-    return /* @__PURE__ */ React281.createElement("span", {
+    return /* @__PURE__ */ React304.createElement("span", {
       className: `${prefixCls}-input-wrapper`,
       role: "presentation"
-    }, mask && value !== "" && value !== void 0 && /* @__PURE__ */ React281.createElement("span", {
+    }, mask && value !== "" && value !== void 0 && /* @__PURE__ */ React304.createElement("span", {
       className: `${prefixCls}-mask-icon`,
       "aria-hidden": "true"
-    }, maskValue), /* @__PURE__ */ React281.createElement(Input_default4, __spreadProps(__spreadValues({
-      "aria-label": `OTP Input ${index2 + 1}`,
+    }, maskValue), /* @__PURE__ */ React304.createElement(Input_default4, __spreadProps(__spreadValues({
+      "aria-label": `OTP Input ${index + 1}`,
       type: mask === true ? "password" : "text"
     }, restProps), {
       ref: inputRef,
@@ -62417,22 +67437,22 @@ html body {
   }
   var Separator = (props) => {
     const {
-      index: index2,
+      index,
       prefixCls,
       separator,
       className: semanticClassName,
       style: semanticStyle
     } = props;
-    const separatorNode = typeof separator === "function" ? separator(index2) : separator;
+    const separatorNode = typeof separator === "function" ? separator(index) : separator;
     if (!separatorNode) {
       return null;
     }
-    return /* @__PURE__ */ React282.createElement("span", {
+    return /* @__PURE__ */ React305.createElement("span", {
       className: clsx(`${prefixCls}-separator`, semanticClassName),
       style: semanticStyle
     }, separatorNode);
   };
-  var OTP = /* @__PURE__ */ React282.forwardRef((props, ref) => {
+  var OTP = /* @__PURE__ */ React305.forwardRef((props, ref) => {
     const _a = props, {
       prefixCls: customizePrefixCls,
       length: length2 = 6,
@@ -62506,16 +67526,16 @@ html body {
     });
     const [hashId, cssVarCls] = otp_default(prefixCls);
     const mergedSize = useSize_default((ctx) => customSize != null ? customSize : ctx);
-    const formContext = React282.useContext(FormItemInputContext);
+    const formContext = React305.useContext(FormItemInputContext);
     const mergedStatus = getMergedStatus(formContext.status, customStatus);
-    const proxyFormContext = React282.useMemo(() => __spreadProps(__spreadValues({}, formContext), {
+    const proxyFormContext = React305.useMemo(() => __spreadProps(__spreadValues({}, formContext), {
       status: mergedStatus,
       hasFeedback: false,
       feedbackIcon: null
     }), [formContext, mergedStatus]);
-    const containerRef = React282.useRef(null);
-    const inputsRef = React282.useRef({});
-    React282.useImperativeHandle(ref, () => ({
+    const containerRef = React305.useRef(null);
+    const inputsRef = React305.useRef({});
+    React305.useImperativeHandle(ref, () => ({
       focus: () => {
         var _a2;
         (_a2 = inputsRef.current[0]) == null ? void 0 : _a2.focus();
@@ -62529,8 +67549,8 @@ html body {
       nativeElement: containerRef.current
     }));
     const internalFormatter = (txt) => formatter ? formatter(txt) : txt;
-    const [valueCells, setValueCells] = React282.useState(() => strToArr(internalFormatter(defaultValue || "")));
-    React282.useEffect(() => {
+    const [valueCells, setValueCells] = React305.useState(() => strToArr(internalFormatter(defaultValue || "")));
+    React305.useEffect(() => {
       if (value !== void 0) {
         setValueCells(strToArr(value));
       }
@@ -62540,21 +67560,21 @@ html body {
       if (onInput) {
         onInput(nextValueCells);
       }
-      if (onChange && nextValueCells.length === length2 && nextValueCells.every((c) => c) && nextValueCells.some((c, index2) => valueCells[index2] !== c)) {
+      if (onChange && nextValueCells.length === length2 && nextValueCells.every((c) => c) && nextValueCells.some((c, index) => valueCells[index] !== c)) {
         onChange(nextValueCells.join(""));
       }
     });
-    const patchValue = useEvent_default((index2, txt) => {
+    const patchValue = useEvent_default((index, txt) => {
       let nextCells = _toConsumableArray(valueCells);
-      for (let i = 0; i < index2; i += 1) {
+      for (let i = 0; i < index; i += 1) {
         if (!nextCells[i]) {
           nextCells[i] = "";
         }
       }
       if (txt.length <= 1) {
-        nextCells[index2] = txt;
+        nextCells[index] = txt;
       } else {
-        nextCells = nextCells.slice(0, index2).concat(strToArr(txt));
+        nextCells = nextCells.slice(0, index).concat(strToArr(txt));
       }
       nextCells = nextCells.slice(0, length2);
       for (let i = nextCells.length - 1; i >= 0; i -= 1) {
@@ -62572,11 +67592,11 @@ html body {
       });
       return nextCells;
     });
-    const onInputChange = (index2, txt) => {
+    const onInputChange = (index, txt) => {
       var _a2;
-      const nextCells = patchValue(index2, txt);
-      const nextIndex = Math.min(index2 + txt.length, length2 - 1);
-      if (nextIndex !== index2 && nextCells[index2] !== void 0) {
+      const nextCells = patchValue(index, txt);
+      const nextIndex = Math.min(index + txt.length, length2 - 1);
+      if (nextIndex !== index && nextCells[index] !== void 0) {
         (_a2 = inputsRef.current[nextIndex]) == null ? void 0 : _a2.focus();
       }
       triggerValueCellsChange(nextCells);
@@ -62585,9 +67605,9 @@ html body {
       var _a2;
       (_a2 = inputsRef.current[nextIndex]) == null ? void 0 : _a2.focus();
     };
-    const onInputFocus = (event, index2) => {
+    const onInputFocus = (event, index) => {
       var _a2, _b, _c;
-      for (let i = 0; i < index2; i += 1) {
+      for (let i = 0; i < index; i += 1) {
         if (!((_b = (_a2 = inputsRef.current[i]) == null ? void 0 : _a2.input) == null ? void 0 : _b.value)) {
           (_c = inputsRef.current[i]) == null ? void 0 : _c.focus();
           break;
@@ -62604,7 +67624,7 @@ html body {
       inputMode,
       autoComplete
     };
-    return /* @__PURE__ */ React282.createElement("div", __spreadProps(__spreadValues({}, domAttrs), {
+    return /* @__PURE__ */ React305.createElement("div", __spreadProps(__spreadValues({}, domAttrs), {
       ref: containerRef,
       className: clsx(className, prefixCls, {
         [`${prefixCls}-sm`]: mergedSize === "small",
@@ -62613,20 +67633,20 @@ html body {
       }, cssVarCls, hashId, contextClassName, mergedClassNames.root),
       style: __spreadValues(__spreadValues(__spreadValues({}, mergedStyles.root), contextStyle), style2),
       role: "group"
-    }), /* @__PURE__ */ React282.createElement(FormItemInputContext.Provider, {
+    }), /* @__PURE__ */ React305.createElement(FormItemInputContext.Provider, {
       value: proxyFormContext
     }, Array.from({
       length: length2
-    }).map((_, index2) => {
-      const key = `otp-${index2}`;
-      const singleValue = valueCells[index2] || "";
-      return /* @__PURE__ */ React282.createElement(React282.Fragment, {
+    }).map((_, index) => {
+      const key = `otp-${index}`;
+      const singleValue = valueCells[index] || "";
+      return /* @__PURE__ */ React305.createElement(React305.Fragment, {
         key
-      }, /* @__PURE__ */ React282.createElement(OTPInput_default, __spreadValues({
+      }, /* @__PURE__ */ React305.createElement(OTPInput_default, __spreadValues({
         ref: (inputEle) => {
-          inputsRef.current[index2] = inputEle;
+          inputsRef.current[index] = inputEle;
         },
-        index: index2,
+        index,
         size: mergedSize,
         htmlSize: 1,
         className: clsx(mergedClassNames.input, `${prefixCls}-input`),
@@ -62634,11 +67654,11 @@ html body {
         onChange: onInputChange,
         value: singleValue,
         onActiveChange: onInputActiveChange,
-        autoFocus: index2 === 0 && autoFocus,
-        onFocus: (event) => onInputFocus(event, index2)
-      }, inputSharedProps)), index2 < length2 - 1 && /* @__PURE__ */ React282.createElement(Separator, {
+        autoFocus: index === 0 && autoFocus,
+        onFocus: (event) => onInputFocus(event, index)
+      }, inputSharedProps)), index < length2 - 1 && /* @__PURE__ */ React305.createElement(Separator, {
         separator,
-        index: index2,
+        index,
         prefixCls,
         className: clsx(mergedClassNames.separator),
         style: mergedStyles.separator
@@ -62648,19 +67668,19 @@ html body {
   var OTP_default = OTP;
 
   // ../custom_dashboard/node_modules/antd/es/input/Password.js
-  var React285 = __toESM(require_react());
-  var import_react110 = __toESM(require_react());
+  var React308 = __toESM(require_react());
+  var import_react121 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/EyeInvisibleOutlined.js
-  var React283 = __toESM(require_react());
+  var React306 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/EyeInvisibleOutlined.js
   var EyeInvisibleOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z" } }, { "tag": "path", "attrs": { "d": "M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z" } }] }, "name": "eye-invisible", "theme": "outlined" };
   var EyeInvisibleOutlined_default = EyeInvisibleOutlined;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/EyeInvisibleOutlined.js
-  function _extends53() {
-    _extends53 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends61() {
+    _extends61 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -62671,28 +67691,28 @@ html body {
       }
       return target;
     };
-    return _extends53.apply(this, arguments);
+    return _extends61.apply(this, arguments);
   }
-  var EyeInvisibleOutlined2 = (props, ref) => /* @__PURE__ */ React283.createElement(AntdIcon_default, _extends53({}, props, {
+  var EyeInvisibleOutlined2 = (props, ref) => /* @__PURE__ */ React306.createElement(AntdIcon_default, _extends61({}, props, {
     ref,
     icon: EyeInvisibleOutlined_default
   }));
-  var RefIcon15 = /* @__PURE__ */ React283.forwardRef(EyeInvisibleOutlined2);
+  var RefIcon18 = /* @__PURE__ */ React306.forwardRef(EyeInvisibleOutlined2);
   if (true) {
-    RefIcon15.displayName = "EyeInvisibleOutlined";
+    RefIcon18.displayName = "EyeInvisibleOutlined";
   }
-  var EyeInvisibleOutlined_default2 = RefIcon15;
+  var EyeInvisibleOutlined_default2 = RefIcon18;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/EyeOutlined.js
-  var React284 = __toESM(require_react());
+  var React307 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/EyeOutlined.js
   var EyeOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z" } }] }, "name": "eye", "theme": "outlined" };
   var EyeOutlined_default = EyeOutlined;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/EyeOutlined.js
-  function _extends54() {
-    _extends54 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends62() {
+    _extends62 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -62703,26 +67723,26 @@ html body {
       }
       return target;
     };
-    return _extends54.apply(this, arguments);
+    return _extends62.apply(this, arguments);
   }
-  var EyeOutlined2 = (props, ref) => /* @__PURE__ */ React284.createElement(AntdIcon_default, _extends54({}, props, {
+  var EyeOutlined2 = (props, ref) => /* @__PURE__ */ React307.createElement(AntdIcon_default, _extends62({}, props, {
     ref,
     icon: EyeOutlined_default
   }));
-  var RefIcon16 = /* @__PURE__ */ React284.forwardRef(EyeOutlined2);
+  var RefIcon19 = /* @__PURE__ */ React307.forwardRef(EyeOutlined2);
   if (true) {
-    RefIcon16.displayName = "EyeOutlined";
+    RefIcon19.displayName = "EyeOutlined";
   }
-  var EyeOutlined_default2 = RefIcon16;
+  var EyeOutlined_default2 = RefIcon19;
 
   // ../custom_dashboard/node_modules/antd/es/input/Password.js
   "use client";
-  var defaultIconRender = (visible) => visible ? /* @__PURE__ */ React285.createElement(EyeOutlined_default2, null) : /* @__PURE__ */ React285.createElement(EyeInvisibleOutlined_default2, null);
+  var defaultIconRender = (visible) => visible ? /* @__PURE__ */ React308.createElement(EyeOutlined_default2, null) : /* @__PURE__ */ React308.createElement(EyeInvisibleOutlined_default2, null);
   var actionMap = {
     click: "onClick",
     hover: "onMouseOver"
   };
-  var Password = /* @__PURE__ */ React285.forwardRef((props, ref) => {
+  var Password = /* @__PURE__ */ React308.forwardRef((props, ref) => {
     const {
       disabled: customDisabled,
       action = "click",
@@ -62730,12 +67750,12 @@ html body {
       iconRender = defaultIconRender,
       suffix
     } = props;
-    const disabled = React285.useContext(DisabledContext_default);
+    const disabled = React308.useContext(DisabledContext_default);
     const mergedDisabled = customDisabled != null ? customDisabled : disabled;
     const visibilityControlled = typeof visibilityToggle === "object" && visibilityToggle.visible !== void 0;
-    const [visible, setVisible] = (0, import_react110.useState)(() => visibilityControlled ? visibilityToggle.visible : false);
-    const inputRef = (0, import_react110.useRef)(null);
-    React285.useEffect(() => {
+    const [visible, setVisible] = (0, import_react121.useState)(() => visibilityControlled ? visibilityToggle.visible : false);
+    const inputRef = (0, import_react121.useRef)(null);
+    React308.useEffect(() => {
       if (visibilityControlled) {
         setVisible(visibilityToggle.visible);
       }
@@ -62769,7 +67789,7 @@ html body {
           e3.preventDefault();
         }
       };
-      return /* @__PURE__ */ React285.cloneElement(/* @__PURE__ */ React285.isValidElement(icon) ? icon : /* @__PURE__ */ React285.createElement("span", null, icon), iconProps);
+      return /* @__PURE__ */ React308.cloneElement(/* @__PURE__ */ React308.isValidElement(icon) ? icon : /* @__PURE__ */ React308.createElement("span", null, icon), iconProps);
     };
     const _a = props, {
       className,
@@ -62784,7 +67804,7 @@ html body {
     ]);
     const {
       getPrefixCls
-    } = React285.useContext(ConfigContext);
+    } = React308.useContext(ConfigContext);
     const inputPrefixCls = getPrefixCls("input", customizeInputPrefixCls);
     const prefixCls = getPrefixCls("input-password", customizePrefixCls);
     const suffixIcon = visibilityToggle && getIcon2(prefixCls);
@@ -62795,12 +67815,12 @@ html body {
       type: visible ? "text" : "password",
       className: inputClassName,
       prefixCls: inputPrefixCls,
-      suffix: /* @__PURE__ */ React285.createElement(React285.Fragment, null, suffixIcon, suffix)
+      suffix: /* @__PURE__ */ React308.createElement(React308.Fragment, null, suffixIcon, suffix)
     });
     if (size) {
       omittedProps.size = size;
     }
-    return /* @__PURE__ */ React285.createElement(Input_default4, __spreadValues({
+    return /* @__PURE__ */ React308.createElement(Input_default4, __spreadValues({
       ref: composeRef(ref, inputRef)
     }, omittedProps));
   });
@@ -62810,7 +67830,7 @@ html body {
   var Password_default = Password;
 
   // ../custom_dashboard/node_modules/antd/es/input/Search.js
-  var React286 = __toESM(require_react());
+  var React309 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/input/style/search.js
   var genSearchStyle = (token2) => {
@@ -62841,7 +67861,7 @@ html body {
 
   // ../custom_dashboard/node_modules/antd/es/input/Search.js
   "use client";
-  var Search = /* @__PURE__ */ React286.forwardRef((props, ref) => {
+  var Search = /* @__PURE__ */ React309.forwardRef((props, ref) => {
     const _a = props, {
       prefixCls: customizePrefixCls,
       inputPrefixCls: customizeInputPrefixCls,
@@ -62897,7 +67917,7 @@ html body {
         _default: "root"
       }
     });
-    const composedRef = React286.useRef(false);
+    const composedRef = React309.useRef(false);
     const prefixCls = getPrefixCls("input-search", customizePrefixCls);
     const inputPrefixCls = getPrefixCls("input", customizeInputPrefixCls);
     const [hashId, cssVarCls] = search_default(prefixCls);
@@ -62908,7 +67928,7 @@ html body {
       var _a2;
       return (_a2 = customizeSize != null ? customizeSize : compactSize) != null ? _a2 : ctx;
     });
-    const inputRef = React286.useRef(null);
+    const inputRef = React309.useRef(null);
     const onChange = (e3) => {
       if ((e3 == null ? void 0 : e3.target) && e3.type === "click" && customOnSearch) {
         customOnSearch(e3.target.value, e3, {
@@ -62938,7 +67958,7 @@ html body {
       customOnPressEnter == null ? void 0 : customOnPressEnter(e3);
       onSearch(e3);
     };
-    const searchIcon = typeof enterButton === "boolean" ? /* @__PURE__ */ React286.createElement(SearchOutlined_default2, null) : null;
+    const searchIcon = typeof enterButton === "boolean" ? /* @__PURE__ */ React309.createElement(SearchOutlined_default2, null) : null;
     const btnPrefixCls = `${prefixCls}-btn`;
     const btnClassName = clsx(btnPrefixCls, {
       [`${btnPrefixCls}-${variant}`]: variant
@@ -62960,7 +67980,7 @@ html body {
         size
       } : {}));
     } else {
-      button = /* @__PURE__ */ React286.createElement(Button_default, {
+      button = /* @__PURE__ */ React309.createElement(Button_default, {
         classNames: mergedClassNames.button,
         styles: mergedStyles.button,
         className: btnClassName,
@@ -63009,12 +68029,12 @@ html body {
       onChange,
       disabled
     }), Object.keys(rootProps));
-    return /* @__PURE__ */ React286.createElement(Compact_default, __spreadProps(__spreadValues({
+    return /* @__PURE__ */ React309.createElement(Compact_default, __spreadProps(__spreadValues({
       className: mergedClassName,
       style: __spreadValues(__spreadValues({}, style2), mergedStyles.root)
     }, rootProps), {
       hidden
-    }), /* @__PURE__ */ React286.createElement(Input_default4, __spreadValues({
+    }), /* @__PURE__ */ React309.createElement(Input_default4, __spreadValues({
       ref: composeRef(inputRef, ref)
     }, inputProps)), button);
   });
@@ -63024,14 +68044,14 @@ html body {
   var Search_default = Search;
 
   // ../custom_dashboard/node_modules/antd/es/input/TextArea.js
-  var React289 = __toESM(require_react());
-  var import_react112 = __toESM(require_react());
+  var React312 = __toESM(require_react());
+  var import_react123 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/textarea/es/TextArea.js
-  var import_react111 = __toESM(require_react());
+  var import_react122 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/textarea/es/ResizableTextArea.js
-  var React287 = __toESM(require_react());
+  var React310 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/textarea/es/calculateNodeHeight.js
   var HIDDEN_TEXTAREA_STYLE = `
@@ -63134,8 +68154,8 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/textarea/es/ResizableTextArea.js
-  function _extends55() {
-    _extends55 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends63() {
+    _extends63 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -63146,12 +68166,12 @@ html body {
       }
       return target;
     };
-    return _extends55.apply(this, arguments);
+    return _extends63.apply(this, arguments);
   }
   var RESIZE_START = 0;
   var RESIZE_MEASURING = 1;
   var RESIZE_STABLE = 2;
-  var ResizableTextArea = /* @__PURE__ */ React287.forwardRef((props, ref) => {
+  var ResizableTextArea = /* @__PURE__ */ React310.forwardRef((props, ref) => {
     const _a = props, {
       prefixCls,
       defaultValue,
@@ -63181,19 +68201,19 @@ html body {
       setMergedValue(event.target.value);
       onChange == null ? void 0 : onChange(event);
     };
-    const textareaRef = React287.useRef();
-    React287.useImperativeHandle(ref, () => ({
+    const textareaRef = React310.useRef();
+    React310.useImperativeHandle(ref, () => ({
       textArea: textareaRef.current
     }));
-    const [minRows, maxRows] = React287.useMemo(() => {
+    const [minRows, maxRows] = React310.useMemo(() => {
       if (autoSize && typeof autoSize === "object") {
         return [autoSize.minRows, autoSize.maxRows];
       }
       return [];
     }, [autoSize]);
     const needAutoSize = !!autoSize;
-    const [resizeState, setResizeState] = React287.useState(RESIZE_STABLE);
-    const [autoSizeStyle, setAutoSizeStyle] = React287.useState();
+    const [resizeState, setResizeState] = React310.useState(RESIZE_STABLE);
+    const [autoSizeStyle, setAutoSizeStyle] = React310.useState();
     const startResize = () => {
       setResizeState(RESIZE_START);
       if (false) {
@@ -63215,7 +68235,7 @@ html body {
       } else {
       }
     }, [resizeState]);
-    const resizeRafRef = React287.useRef();
+    const resizeRafRef = React310.useRef();
     const cleanRaf = () => {
       raf_default.cancel(resizeRafRef.current);
     };
@@ -63230,17 +68250,17 @@ html body {
         }
       }
     };
-    React287.useEffect(() => cleanRaf, []);
+    React310.useEffect(() => cleanRaf, []);
     const mergedAutoSizeStyle = needAutoSize ? autoSizeStyle : null;
     const mergedStyle = __spreadValues(__spreadValues({}, style2), mergedAutoSizeStyle);
     if (resizeState === RESIZE_START || resizeState === RESIZE_MEASURING) {
       mergedStyle.overflowY = "hidden";
       mergedStyle.overflowX = "hidden";
     }
-    return /* @__PURE__ */ React287.createElement(es_default, {
+    return /* @__PURE__ */ React310.createElement(es_default, {
       onResize: onInternalResize,
       disabled: !(autoSize || onResize2)
-    }, /* @__PURE__ */ React287.createElement("textarea", _extends55({}, restProps, {
+    }, /* @__PURE__ */ React310.createElement("textarea", _extends63({}, restProps, {
       ref: textareaRef,
       style: mergedStyle,
       className: clsx(prefixCls, className, {
@@ -63254,8 +68274,8 @@ html body {
   var ResizableTextArea_default = ResizableTextArea;
 
   // ../custom_dashboard/node_modules/@rc-component/textarea/es/TextArea.js
-  function _extends56() {
-    _extends56 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends64() {
+    _extends64 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -63266,9 +68286,9 @@ html body {
       }
       return target;
     };
-    return _extends56.apply(this, arguments);
+    return _extends64.apply(this, arguments);
   }
-  var TextArea = /* @__PURE__ */ import_react111.default.forwardRef((_a, ref) => {
+  var TextArea = /* @__PURE__ */ import_react122.default.forwardRef((_a, ref) => {
     var _b = _a, {
       defaultValue,
       value: customValue,
@@ -63325,11 +68345,11 @@ html body {
     var _a2;
     const [value, setValue] = useControlledState(defaultValue, customValue);
     const formatValue = value === void 0 || value === null ? "" : String(value);
-    const [focused, setFocused] = import_react111.default.useState(false);
-    const compositionRef = import_react111.default.useRef(false);
-    const [textareaResized, setTextareaResized] = import_react111.default.useState(null);
-    const holderRef = (0, import_react111.useRef)(null);
-    const resizableTextAreaRef = (0, import_react111.useRef)(null);
+    const [focused, setFocused] = import_react122.default.useState(false);
+    const compositionRef = import_react122.default.useRef(false);
+    const [textareaResized, setTextareaResized] = import_react122.default.useState(null);
+    const holderRef = (0, import_react122.useRef)(null);
+    const resizableTextAreaRef = (0, import_react122.useRef)(null);
     const getTextArea = () => {
       var _a3;
       return (_a3 = resizableTextAreaRef.current) == null ? void 0 : _a3.textArea;
@@ -63337,7 +68357,7 @@ html body {
     const focus = () => {
       getTextArea().focus();
     };
-    (0, import_react111.useImperativeHandle)(ref, () => {
+    (0, import_react122.useImperativeHandle)(ref, () => {
       var _a3;
       return {
         resizableTextArea: resizableTextAreaRef.current,
@@ -63348,11 +68368,11 @@ html body {
         nativeElement: ((_a3 = holderRef.current) == null ? void 0 : _a3.nativeElement) || getTextArea()
       };
     });
-    (0, import_react111.useEffect)(() => {
+    (0, import_react122.useEffect)(() => {
       setFocused((prev2) => !disabled && prev2);
     }, [disabled]);
-    const [selection, setSelection] = import_react111.default.useState(null);
-    import_react111.default.useEffect(() => {
+    const [selection, setSelection] = import_react122.default.useState(null);
+    import_react122.default.useEffect(() => {
       if (selection) {
         getTextArea().setSelectionRange(...selection);
       }
@@ -63418,7 +68438,7 @@ html body {
       } else {
         dataCount = `${valueLength}${hasMaxLength ? ` / ${mergedMax}` : ""}`;
       }
-      suffixNode = /* @__PURE__ */ import_react111.default.createElement(import_react111.default.Fragment, null, suffixNode, /* @__PURE__ */ import_react111.default.createElement("span", {
+      suffixNode = /* @__PURE__ */ import_react122.default.createElement(import_react122.default.Fragment, null, suffixNode, /* @__PURE__ */ import_react122.default.createElement("span", {
         className: clsx(`${prefixCls}-data-count`, classNames == null ? void 0 : classNames.count),
         style: styles == null ? void 0 : styles.count
       }, dataCount));
@@ -63431,7 +68451,7 @@ html body {
       }
     };
     const isPureTextArea = !autoSize && !showCount && !allowClear;
-    return /* @__PURE__ */ import_react111.default.createElement(BaseInput_default, {
+    return /* @__PURE__ */ import_react122.default.createElement(BaseInput_default, {
       ref: holderRef,
       value: formatValue,
       allowClear,
@@ -63458,7 +68478,7 @@ html body {
       hidden,
       readOnly,
       onClear
-    }, /* @__PURE__ */ import_react111.default.createElement(ResizableTextArea_default, _extends56({}, rest, {
+    }, /* @__PURE__ */ import_react122.default.createElement(ResizableTextArea_default, _extends64({}, rest, {
       autoSize,
       maxLength,
       onKeyDown: handleKeyDown,
@@ -63481,7 +68501,7 @@ html body {
   var TextArea_default = TextArea;
 
   // ../custom_dashboard/node_modules/@rc-component/textarea/es/index.js
-  var es_default17 = TextArea_default;
+  var es_default20 = TextArea_default;
 
   // ../custom_dashboard/node_modules/antd/es/input/style/textarea.js
   var genTextAreaStyle = (token2) => {
@@ -63586,7 +68606,7 @@ html body {
 
   // ../custom_dashboard/node_modules/antd/es/input/TextArea.js
   "use client";
-  var TextArea2 = /* @__PURE__ */ (0, import_react112.forwardRef)((props, ref) => {
+  var TextArea2 = /* @__PURE__ */ (0, import_react123.forwardRef)((props, ref) => {
     var _b;
     const _a = props, {
       prefixCls: customizePrefixCls,
@@ -63637,19 +68657,19 @@ html body {
       classNames: contextClassNames,
       styles: contextStyles
     } = useComponentConfig("textArea");
-    const disabled = React289.useContext(DisabledContext_default);
+    const disabled = React312.useContext(DisabledContext_default);
     const mergedDisabled = customDisabled != null ? customDisabled : disabled;
     const {
       status: contextStatus,
       hasFeedback,
       feedbackIcon
-    } = React289.useContext(FormItemInputContext);
+    } = React312.useContext(FormItemInputContext);
     const mergedStatus = getMergedStatus(contextStatus, customStatus);
     const [mergedClassNames, mergedStyles] = useMergeSemantic([contextClassNames, classNames], [contextStyles, styles], {
       props
     });
-    const innerRef = React289.useRef(null);
-    React289.useImperativeHandle(ref, () => {
+    const innerRef = React312.useRef(null);
+    React312.useImperativeHandle(ref, () => {
       var _a2, _b2;
       return {
         resizableTextArea: (_a2 = innerRef.current) == null ? void 0 : _a2.resizableTextArea,
@@ -63678,8 +68698,8 @@ html body {
     });
     const [variant, enableVariantCls] = useVariants_default("textArea", customVariant, bordered);
     const mergedAllowClear = getAllowClear_default(allowClear != null ? allowClear : contextAllowClear);
-    const [isMouseDown, setIsMouseDown] = React289.useState(false);
-    const [resizeDirty, setResizeDirty] = React289.useState(false);
+    const [isMouseDown, setIsMouseDown] = React312.useState(false);
+    const [resizeDirty, setResizeDirty] = React312.useState(false);
     const onInternalMouseDown = (e3) => {
       setIsMouseDown(true);
       onMouseDown == null ? void 0 : onMouseDown(e3);
@@ -63699,7 +68719,7 @@ html body {
         }
       }
     };
-    return /* @__PURE__ */ React289.createElement(es_default17, __spreadProps(__spreadValues({
+    return /* @__PURE__ */ React312.createElement(es_default20, __spreadProps(__spreadValues({
       autoComplete: contextAutoComplete
     }, rest), {
       style: __spreadValues(__spreadValues(__spreadValues({}, mergedStyles.root), contextStyle), style2),
@@ -63734,7 +68754,7 @@ html body {
         }, hashId)
       }),
       prefixCls,
-      suffix: hasFeedback && /* @__PURE__ */ React289.createElement("span", {
+      suffix: hasFeedback && /* @__PURE__ */ React312.createElement("span", {
         className: `${prefixCls}-textarea-suffix`
       }, feedbackIcon),
       showCount,
@@ -63756,7 +68776,7 @@ html body {
   var input_default = Input4;
 
   // ../custom_dashboard/node_modules/antd/es/layout/layout.js
-  var React290 = __toESM(require_react());
+  var React313 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/layout/hooks/useHasSider.js
   function useHasSider(siders, children, hasSider) {
@@ -63777,8 +68797,8 @@ html body {
     tagName,
     displayName
   }) => {
-    return (Component7) => {
-      const Adapter = /* @__PURE__ */ React290.forwardRef((props, ref) => /* @__PURE__ */ React290.createElement(Component7, __spreadValues({
+    return (Component5) => {
+      const Adapter = /* @__PURE__ */ React313.forwardRef((props, ref) => /* @__PURE__ */ React313.createElement(Component5, __spreadValues({
         ref,
         suffixCls,
         tagName
@@ -63789,7 +68809,7 @@ html body {
       return Adapter;
     };
   };
-  var Basic = /* @__PURE__ */ React290.forwardRef((props, ref) => {
+  var Basic = /* @__PURE__ */ React313.forwardRef((props, ref) => {
     const _a = props, {
       prefixCls: customizePrefixCls,
       suffixCls,
@@ -63803,20 +68823,20 @@ html body {
     ]);
     const {
       getPrefixCls
-    } = React290.useContext(ConfigContext);
+    } = React313.useContext(ConfigContext);
     const prefixCls = getPrefixCls("layout", customizePrefixCls);
     const [hashId] = style_default10(prefixCls);
     const prefixWithSuffixCls = suffixCls ? `${prefixCls}-${suffixCls}` : prefixCls;
-    return /* @__PURE__ */ React290.createElement(TagName, __spreadValues({
+    return /* @__PURE__ */ React313.createElement(TagName, __spreadValues({
       className: clsx(customizePrefixCls || prefixWithSuffixCls, className, hashId),
       ref
     }, others));
   });
-  var BasicLayout = /* @__PURE__ */ React290.forwardRef((props, ref) => {
+  var BasicLayout = /* @__PURE__ */ React313.forwardRef((props, ref) => {
     const {
       direction
-    } = React290.useContext(ConfigContext);
-    const [siders, setSiders] = React290.useState([]);
+    } = React313.useContext(ConfigContext);
+    const [siders, setSiders] = React313.useState([]);
     const _a = props, {
       prefixCls: customizePrefixCls,
       className,
@@ -63847,7 +68867,7 @@ html body {
       [`${prefixCls}-has-sider`]: mergedHasSider,
       [`${prefixCls}-rtl`]: direction === "rtl"
     }, contextClassName, className, rootClassName, hashId, cssVarCls);
-    const contextValue = React290.useMemo(() => ({
+    const contextValue = React313.useMemo(() => ({
       siderHook: {
         addSider: (id) => {
           setSiders((prev2) => [].concat(_toConsumableArray(prev2), [id]));
@@ -63857,9 +68877,9 @@ html body {
         }
       }
     }), []);
-    return /* @__PURE__ */ React290.createElement(LayoutContext.Provider, {
+    return /* @__PURE__ */ React313.createElement(LayoutContext.Provider, {
       value: contextValue
-    }, /* @__PURE__ */ React290.createElement(Tag, __spreadValues({
+    }, /* @__PURE__ */ React313.createElement(Tag, __spreadValues({
       ref,
       className: classString,
       style: __spreadValues(__spreadValues({}, contextStyle), style2)
@@ -63897,18 +68917,18 @@ html body {
   var layout_default2 = Layout2;
 
   // ../custom_dashboard/node_modules/antd/es/pagination/Pagination.js
-  var React296 = __toESM(require_react());
+  var React319 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/DoubleLeftOutlined.js
-  var React291 = __toESM(require_react());
+  var React314 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/DoubleLeftOutlined.js
   var DoubleLeftOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M272.9 512l265.4-339.1c4.1-5.2.4-12.9-6.3-12.9h-77.3c-4.9 0-9.6 2.3-12.6 6.1L186.8 492.3a31.99 31.99 0 000 39.5l255.3 326.1c3 3.9 7.7 6.1 12.6 6.1H532c6.7 0 10.4-7.7 6.3-12.9L272.9 512zm304 0l265.4-339.1c4.1-5.2.4-12.9-6.3-12.9h-77.3c-4.9 0-9.6 2.3-12.6 6.1L490.8 492.3a31.99 31.99 0 000 39.5l255.3 326.1c3 3.9 7.7 6.1 12.6 6.1H836c6.7 0 10.4-7.7 6.3-12.9L576.9 512z" } }] }, "name": "double-left", "theme": "outlined" };
   var DoubleLeftOutlined_default = DoubleLeftOutlined;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/DoubleLeftOutlined.js
-  function _extends57() {
-    _extends57 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends65() {
+    _extends65 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -63919,28 +68939,28 @@ html body {
       }
       return target;
     };
-    return _extends57.apply(this, arguments);
+    return _extends65.apply(this, arguments);
   }
-  var DoubleLeftOutlined2 = (props, ref) => /* @__PURE__ */ React291.createElement(AntdIcon_default, _extends57({}, props, {
+  var DoubleLeftOutlined2 = (props, ref) => /* @__PURE__ */ React314.createElement(AntdIcon_default, _extends65({}, props, {
     ref,
     icon: DoubleLeftOutlined_default
   }));
-  var RefIcon17 = /* @__PURE__ */ React291.forwardRef(DoubleLeftOutlined2);
+  var RefIcon20 = /* @__PURE__ */ React314.forwardRef(DoubleLeftOutlined2);
   if (true) {
-    RefIcon17.displayName = "DoubleLeftOutlined";
+    RefIcon20.displayName = "DoubleLeftOutlined";
   }
-  var DoubleLeftOutlined_default2 = RefIcon17;
+  var DoubleLeftOutlined_default2 = RefIcon20;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/DoubleRightOutlined.js
-  var React292 = __toESM(require_react());
+  var React315 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/DoubleRightOutlined.js
   var DoubleRightOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M533.2 492.3L277.9 166.1c-3-3.9-7.7-6.1-12.6-6.1H188c-6.7 0-10.4 7.7-6.3 12.9L447.1 512 181.7 851.1A7.98 7.98 0 00188 864h77.3c4.9 0 9.6-2.3 12.6-6.1l255.3-326.1c9.1-11.7 9.1-27.9 0-39.5zm304 0L581.9 166.1c-3-3.9-7.7-6.1-12.6-6.1H492c-6.7 0-10.4 7.7-6.3 12.9L751.1 512 485.7 851.1A7.98 7.98 0 00492 864h77.3c4.9 0 9.6-2.3 12.6-6.1l255.3-326.1c9.1-11.7 9.1-27.9 0-39.5z" } }] }, "name": "double-right", "theme": "outlined" };
   var DoubleRightOutlined_default = DoubleRightOutlined;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/DoubleRightOutlined.js
-  function _extends58() {
-    _extends58 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends66() {
+    _extends66 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -63951,20 +68971,20 @@ html body {
       }
       return target;
     };
-    return _extends58.apply(this, arguments);
+    return _extends66.apply(this, arguments);
   }
-  var DoubleRightOutlined2 = (props, ref) => /* @__PURE__ */ React292.createElement(AntdIcon_default, _extends58({}, props, {
+  var DoubleRightOutlined2 = (props, ref) => /* @__PURE__ */ React315.createElement(AntdIcon_default, _extends66({}, props, {
     ref,
     icon: DoubleRightOutlined_default
   }));
-  var RefIcon18 = /* @__PURE__ */ React292.forwardRef(DoubleRightOutlined2);
+  var RefIcon21 = /* @__PURE__ */ React315.forwardRef(DoubleRightOutlined2);
   if (true) {
-    RefIcon18.displayName = "DoubleRightOutlined";
+    RefIcon21.displayName = "DoubleRightOutlined";
   }
-  var DoubleRightOutlined_default2 = RefIcon18;
+  var DoubleRightOutlined_default2 = RefIcon21;
 
   // ../custom_dashboard/node_modules/@rc-component/pagination/es/Pagination.js
-  var import_react115 = __toESM(require_react());
+  var import_react126 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/pagination/es/locale/zh_CN.js
   var locale5 = {
@@ -63983,7 +69003,7 @@ html body {
   var zh_CN_default = locale5;
 
   // ../custom_dashboard/node_modules/@rc-component/pagination/es/Options.js
-  var import_react113 = __toESM(require_react());
+  var import_react124 = __toESM(require_react());
   var defaultPageSizeOptions = [10, 20, 50, 100];
   var Options = (props) => {
     const {
@@ -63999,8 +69019,8 @@ html body {
       showSizeChanger,
       sizeChangerRender
     } = props;
-    const [goInputText, setGoInputText] = import_react113.default.useState("");
-    const getValidValue = import_react113.default.useMemo(() => {
+    const [goInputText, setGoInputText] = import_react124.default.useState("");
+    const getValidValue = import_react124.default.useMemo(() => {
       return !goInputText || Number.isNaN(goInputText) ? void 0 : Number(goInputText);
     }, [goInputText]);
     const mergeBuildOptionText = typeof buildOptionText === "function" ? buildOptionText : (value) => `${value} ${locale6.items_per_page}`;
@@ -64063,20 +69083,20 @@ html body {
     }
     if (quickGo) {
       if (goButton) {
-        gotoButton = typeof goButton === "boolean" ? /* @__PURE__ */ import_react113.default.createElement("button", {
+        gotoButton = typeof goButton === "boolean" ? /* @__PURE__ */ import_react124.default.createElement("button", {
           type: "button",
           onClick: go,
           onKeyUp: go,
           disabled,
           className: `${prefixCls}-quick-jumper-button`
-        }, locale6.jump_to_confirm) : /* @__PURE__ */ import_react113.default.createElement("span", {
+        }, locale6.jump_to_confirm) : /* @__PURE__ */ import_react124.default.createElement("span", {
           onClick: go,
           onKeyUp: go
         }, goButton);
       }
-      goInput = /* @__PURE__ */ import_react113.default.createElement("div", {
+      goInput = /* @__PURE__ */ import_react124.default.createElement("div", {
         className: `${prefixCls}-quick-jumper`
-      }, locale6.jump_to, /* @__PURE__ */ import_react113.default.createElement("input", {
+      }, locale6.jump_to, /* @__PURE__ */ import_react124.default.createElement("input", {
         disabled,
         type: "text",
         value: goInputText,
@@ -64086,7 +69106,7 @@ html body {
         "aria-label": locale6.page
       }), locale6.page, gotoButton);
     }
-    return /* @__PURE__ */ import_react113.default.createElement("li", {
+    return /* @__PURE__ */ import_react124.default.createElement("li", {
       className: prefixCls
     }, changeSelect, goInput);
   };
@@ -64096,7 +69116,7 @@ html body {
   var Options_default = Options;
 
   // ../custom_dashboard/node_modules/@rc-component/pagination/es/Pager.js
-  var import_react114 = __toESM(require_react());
+  var import_react125 = __toESM(require_react());
   var Pager = (props) => {
     const {
       rootPrefixCls,
@@ -64120,10 +69140,10 @@ html body {
     const handleKeyPress = (e3) => {
       onKeyPress(e3, onClick, page);
     };
-    const pager = itemRender(page, "page", /* @__PURE__ */ import_react114.default.createElement("a", {
+    const pager = itemRender(page, "page", /* @__PURE__ */ import_react125.default.createElement("a", {
       rel: "nofollow"
     }, page));
-    return pager ? /* @__PURE__ */ import_react114.default.createElement("li", {
+    return pager ? /* @__PURE__ */ import_react125.default.createElement("li", {
       title: showTitle ? String(page) : null,
       className: cls,
       style: style2,
@@ -64138,8 +69158,8 @@ html body {
   var Pager_default = Pager;
 
   // ../custom_dashboard/node_modules/@rc-component/pagination/es/Pagination.js
-  function _extends59() {
-    _extends59 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends67() {
+    _extends67 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -64150,7 +69170,7 @@ html body {
       }
       return target;
     };
-    return _extends59.apply(this, arguments);
+    return _extends67.apply(this, arguments);
   }
   var defaultItemRender = (_, __, element) => element;
   function noop3() {
@@ -64198,12 +69218,12 @@ html body {
       prevIcon,
       nextIcon
     } = props;
-    const paginationRef = import_react115.default.useRef(null);
+    const paginationRef = import_react126.default.useRef(null);
     const [pageSize, setPageSize] = useControlledState(defaultPageSize, pageSizeProp);
     const [internalCurrent, setCurrent] = useControlledState(defaultCurrent, currentProp);
     const current = Math.max(1, Math.min(internalCurrent, calculatePage(void 0, pageSize, total)));
-    const [internalInputVal, setInternalInputVal] = import_react115.default.useState(current);
-    (0, import_react115.useEffect)(() => {
+    const [internalInputVal, setInternalInputVal] = import_react126.default.useState(current);
+    (0, import_react126.useEffect)(() => {
       setInternalInputVal(current);
     }, [current]);
     const hasOnChange = onChange !== noop3;
@@ -64214,13 +69234,13 @@ html body {
     const jumpPrevPage = Math.max(1, current - (showLessItems ? 3 : 5));
     const jumpNextPage = Math.min(calculatePage(void 0, pageSize, total), current + (showLessItems ? 3 : 5));
     function getItemIcon(icon, label) {
-      let iconNode = icon || /* @__PURE__ */ import_react115.default.createElement("button", {
+      let iconNode = icon || /* @__PURE__ */ import_react126.default.createElement("button", {
         type: "button",
         "aria-label": label,
         className: `${prefixCls}-item-link`
       });
       if (typeof icon === "function") {
-        iconNode = /* @__PURE__ */ import_react115.default.createElement(icon, props);
+        iconNode = /* @__PURE__ */ import_react126.default.createElement(icon, props);
       }
       return iconNode;
     }
@@ -64332,13 +69352,13 @@ html body {
     }
     function renderPrev(prevPage2) {
       const prevButton = itemRender(prevPage2, "prev", getItemIcon(prevIcon, "prev page"));
-      return /* @__PURE__ */ import_react115.default.isValidElement(prevButton) ? /* @__PURE__ */ import_react115.default.cloneElement(prevButton, {
+      return /* @__PURE__ */ import_react126.default.isValidElement(prevButton) ? /* @__PURE__ */ import_react126.default.cloneElement(prevButton, {
         disabled: !hasPrev
       }) : prevButton;
     }
     function renderNext(nextPage2) {
       const nextButton = itemRender(nextPage2, "next", getItemIcon(nextIcon, "next page"));
-      return /* @__PURE__ */ import_react115.default.isValidElement(nextButton) ? /* @__PURE__ */ import_react115.default.cloneElement(nextButton, {
+      return /* @__PURE__ */ import_react126.default.isValidElement(nextButton) ? /* @__PURE__ */ import_react126.default.cloneElement(nextButton, {
         disabled: !hasNext
       }) : nextButton;
     }
@@ -64352,7 +69372,7 @@ html body {
       aria: true,
       data: true
     });
-    const totalText = showTotal && /* @__PURE__ */ import_react115.default.createElement("li", {
+    const totalText = showTotal && /* @__PURE__ */ import_react126.default.createElement("li", {
       className: `${prefixCls}-total-text`
     }, showTotal(total, [total === 0 ? 0 : (current - 1) * pageSize + 1, current * pageSize > total ? total : current * pageSize]));
     let jumpNext = null;
@@ -64380,27 +69400,27 @@ html body {
     if (simple) {
       if (goButton) {
         if (typeof goButton === "boolean") {
-          gotoButton = /* @__PURE__ */ import_react115.default.createElement("button", {
+          gotoButton = /* @__PURE__ */ import_react126.default.createElement("button", {
             type: "button",
             onClick: handleGoTO,
             onKeyUp: handleGoTO
           }, locale6.jump_to_confirm);
         } else {
-          gotoButton = /* @__PURE__ */ import_react115.default.createElement("span", {
+          gotoButton = /* @__PURE__ */ import_react126.default.createElement("span", {
             onClick: handleGoTO,
             onKeyUp: handleGoTO
           }, goButton);
         }
-        gotoButton = /* @__PURE__ */ import_react115.default.createElement("li", {
+        gotoButton = /* @__PURE__ */ import_react126.default.createElement("li", {
           title: showTitle ? `${locale6.jump_to}${current}/${allPages}` : null,
           className: `${prefixCls}-simple-pager`
         }, gotoButton);
       }
-      simplePager = /* @__PURE__ */ import_react115.default.createElement("li", {
+      simplePager = /* @__PURE__ */ import_react126.default.createElement("li", {
         title: showTitle ? `${current}/${allPages}` : null,
         className: clsx(`${prefixCls}-simple-pager`, paginationClassNames == null ? void 0 : paginationClassNames.item),
         style: styles == null ? void 0 : styles.item
-      }, isReadOnly ? internalInputVal : /* @__PURE__ */ import_react115.default.createElement("input", {
+      }, isReadOnly ? internalInputVal : /* @__PURE__ */ import_react126.default.createElement("input", {
         type: "text",
         "aria-label": locale6.jump_to,
         value: internalInputVal,
@@ -64410,21 +69430,21 @@ html body {
         onChange: handleKeyUp,
         onBlur: handleBlur,
         size: 3
-      }), /* @__PURE__ */ import_react115.default.createElement("span", {
+      }), /* @__PURE__ */ import_react126.default.createElement("span", {
         className: `${prefixCls}-slash`
       }, "/"), allPages);
     }
     const pageBufferSize = showLessItems ? 1 : 2;
     if (allPages <= 3 + pageBufferSize * 2) {
       if (!allPages) {
-        pagerList.push(/* @__PURE__ */ import_react115.default.createElement(Pager_default, _extends59({}, pagerProps, {
+        pagerList.push(/* @__PURE__ */ import_react126.default.createElement(Pager_default, _extends67({}, pagerProps, {
           key: "noPager",
           page: 1,
           className: `${prefixCls}-item-disabled`
         })));
       }
       for (let i = 1; i <= allPages; i += 1) {
-        pagerList.push(/* @__PURE__ */ import_react115.default.createElement(Pager_default, _extends59({}, pagerProps, {
+        pagerList.push(/* @__PURE__ */ import_react126.default.createElement(Pager_default, _extends67({}, pagerProps, {
           key: i,
           page: i,
           active: current === i
@@ -64436,7 +69456,7 @@ html body {
       const jumpPrevContent = itemRender(jumpPrevPage, "jump-prev", getItemIcon(jumpPrevIcon, "prev page"));
       const jumpNextContent = itemRender(jumpNextPage, "jump-next", getItemIcon(jumpNextIcon, "next page"));
       if (showPrevNextJumpers) {
-        jumpPrev = jumpPrevContent ? /* @__PURE__ */ import_react115.default.createElement("li", {
+        jumpPrev = jumpPrevContent ? /* @__PURE__ */ import_react126.default.createElement("li", {
           title: showTitle ? prevItemTitle : null,
           key: "prev",
           onClick: jumpPrevHandle,
@@ -64446,7 +69466,7 @@ html body {
             [`${prefixCls}-jump-prev-custom-icon`]: !!jumpPrevIcon
           })
         }, jumpPrevContent) : null;
-        jumpNext = jumpNextContent ? /* @__PURE__ */ import_react115.default.createElement("li", {
+        jumpNext = jumpNextContent ? /* @__PURE__ */ import_react126.default.createElement("li", {
           title: showTitle ? nextItemTitle : null,
           key: "next",
           onClick: jumpNextHandle,
@@ -64466,33 +69486,33 @@ html body {
         left = allPages - pageBufferSize * 2;
       }
       for (let i = left; i <= right; i += 1) {
-        pagerList.push(/* @__PURE__ */ import_react115.default.createElement(Pager_default, _extends59({}, pagerProps, {
+        pagerList.push(/* @__PURE__ */ import_react126.default.createElement(Pager_default, _extends67({}, pagerProps, {
           key: i,
           page: i,
           active: current === i
         })));
       }
       if (current - 1 >= pageBufferSize * 2 && current !== 1 + 2) {
-        pagerList[0] = /* @__PURE__ */ import_react115.default.cloneElement(pagerList[0], {
+        pagerList[0] = /* @__PURE__ */ import_react126.default.cloneElement(pagerList[0], {
           className: clsx(`${prefixCls}-item-after-jump-prev`, pagerList[0].props.className)
         });
         pagerList.unshift(jumpPrev);
       }
       if (allPages - current >= pageBufferSize * 2 && current !== allPages - 2) {
         const lastOne = pagerList[pagerList.length - 1];
-        pagerList[pagerList.length - 1] = /* @__PURE__ */ import_react115.default.cloneElement(lastOne, {
+        pagerList[pagerList.length - 1] = /* @__PURE__ */ import_react126.default.cloneElement(lastOne, {
           className: clsx(`${prefixCls}-item-before-jump-next`, lastOne.props.className)
         });
         pagerList.push(jumpNext);
       }
       if (left !== 1) {
-        pagerList.unshift(/* @__PURE__ */ import_react115.default.createElement(Pager_default, _extends59({}, pagerProps, {
+        pagerList.unshift(/* @__PURE__ */ import_react126.default.createElement(Pager_default, _extends67({}, pagerProps, {
           key: 1,
           page: 1
         })));
       }
       if (right !== allPages) {
-        pagerList.push(/* @__PURE__ */ import_react115.default.createElement(Pager_default, _extends59({}, pagerProps, {
+        pagerList.push(/* @__PURE__ */ import_react126.default.createElement(Pager_default, _extends67({}, pagerProps, {
           key: allPages,
           page: allPages
         })));
@@ -64501,7 +69521,7 @@ html body {
     let prev2 = renderPrev(prevPage);
     if (prev2) {
       const prevDisabled = !hasPrev || !allPages;
-      prev2 = /* @__PURE__ */ import_react115.default.createElement("li", {
+      prev2 = /* @__PURE__ */ import_react126.default.createElement("li", {
         title: showTitle ? locale6.prev_page : null,
         onClick: prevHandle,
         tabIndex: prevDisabled ? null : 0,
@@ -64523,7 +69543,7 @@ html body {
         nextDisabled = !hasNext || !allPages;
         nextTabIndex = nextDisabled ? null : 0;
       }
-      next2 = /* @__PURE__ */ import_react115.default.createElement("li", {
+      next2 = /* @__PURE__ */ import_react126.default.createElement("li", {
         title: showTitle ? locale6.next_page : null,
         onClick: nextHandle,
         tabIndex: nextTabIndex,
@@ -64542,11 +69562,11 @@ html body {
       [`${prefixCls}-simple`]: simple,
       [`${prefixCls}-disabled`]: disabled
     });
-    return /* @__PURE__ */ import_react115.default.createElement("ul", _extends59({
+    return /* @__PURE__ */ import_react126.default.createElement("ul", _extends67({
       className: cls,
       style: style2,
       ref: paginationRef
-    }, dataOrAriaAttributeProps), totalText, prev2, simple ? simplePager : pagerList, next2, /* @__PURE__ */ import_react115.default.createElement(Options_default, {
+    }, dataOrAriaAttributeProps), totalText, prev2, simple ? simplePager : pagerList, next2, /* @__PURE__ */ import_react126.default.createElement(Options_default, {
       locale: locale6,
       rootPrefixCls: prefixCls,
       disabled,
@@ -65036,7 +70056,7 @@ html body {
       }
     };
   };
-  var prepareComponentToken14 = (token2) => __spreadValues({
+  var prepareComponentToken17 = (token2) => __spreadValues({
     itemBg: token2.colorBgContainer,
     itemSize: token2.controlHeight,
     itemSizeSM: token2.controlHeightSM,
@@ -65061,10 +70081,10 @@ html body {
     paginationSlashMarginInlineEnd: token2.marginSM,
     paginationEllipsisTextIndent: "0.13em"
   }, initInputToken(token2));
-  var style_default19 = genStyleHooks("Pagination", (token2) => {
+  var style_default22 = genStyleHooks("Pagination", (token2) => {
     const paginationToken = prepareToken4(token2);
     return [genPaginationStyle(paginationToken), genPaginationFocusStyle(paginationToken)];
-  }, prepareComponentToken14);
+  }, prepareComponentToken17);
 
   // ../custom_dashboard/node_modules/antd/es/pagination/style/bordered.js
   var genBorderedStyle = (token2) => {
@@ -65151,12 +70171,12 @@ html body {
   var bordered_default = genSubStyleComponent(["Pagination", "bordered"], (token2) => {
     const paginationToken = prepareToken4(token2);
     return genBorderedStyle(paginationToken);
-  }, prepareComponentToken14);
+  }, prepareComponentToken17);
 
   // ../custom_dashboard/node_modules/antd/es/pagination/useShowSizeChanger.js
-  var import_react116 = __toESM(require_react());
+  var import_react127 = __toESM(require_react());
   function useShowSizeChanger(showSizeChanger) {
-    return (0, import_react116.useMemo)(() => {
+    return (0, import_react127.useMemo)(() => {
       if (typeof showSizeChanger === "boolean") {
         return [showSizeChanger, {}];
       }
@@ -65217,7 +70237,7 @@ html body {
       totalBoundaryShowSizeChanger: contextTotalBoundaryShowSizeChanger
     } = useComponentConfig("pagination");
     const prefixCls = getPrefixCls("pagination", customizePrefixCls);
-    const [hashId, cssVarCls] = style_default19(prefixCls);
+    const [hashId, cssVarCls] = style_default22(prefixCls);
     const mergedSize = useSize_default(customizeSize);
     const isSmall = mergedSize === "small" || !!(xs && !mergedSize && responsive);
     const mergedProps = __spreadProps(__spreadValues({}, props), {
@@ -65233,7 +70253,7 @@ html body {
     const mergedShowSizeChanger = propShowSizeChanger != null ? propShowSizeChanger : contextShowSizeChanger;
     const mergedShowSizeChangerSelectProps = propSizeChangerSelectProps != null ? propSizeChangerSelectProps : contextSizeChangerSelectProps;
     const SizeChanger = selectComponentClass || select_default;
-    const mergedPageSizeOptions = React296.useMemo(() => {
+    const mergedPageSizeOptions = React319.useMemo(() => {
       return pageSizeOptions ? pageSizeOptions.map(Number) : void 0;
     }, [pageSizeOptions]);
     const sizeChangerRender = (info) => {
@@ -65251,7 +70271,7 @@ html body {
         onChange: propSizeChangerOnChange
       } = mergedShowSizeChangerSelectProps || {};
       const selectedValue = (_a2 = options.find((option) => String(option.value) === String(pageSize))) == null ? void 0 : _a2.value;
-      return /* @__PURE__ */ React296.createElement(SizeChanger, __spreadProps(__spreadValues({
+      return /* @__PURE__ */ React319.createElement(SizeChanger, __spreadProps(__spreadValues({
         disabled,
         showSearch: true,
         popupMatchSelectWidth: false,
@@ -65272,36 +70292,36 @@ html body {
       const warning6 = devUseWarning("Pagination");
       true ? warning6(!selectComponentClass, "usage", "`selectComponentClass` is not official api which will be removed.") : void 0;
     }
-    const iconsProps = React296.useMemo(() => {
-      const ellipsis = /* @__PURE__ */ React296.createElement("span", {
+    const iconsProps = React319.useMemo(() => {
+      const ellipsis = /* @__PURE__ */ React319.createElement("span", {
         className: `${prefixCls}-item-ellipsis`
       }, "\u2022\u2022\u2022");
-      const prevIcon = /* @__PURE__ */ React296.createElement("button", {
+      const prevIcon = /* @__PURE__ */ React319.createElement("button", {
         className: `${prefixCls}-item-link`,
         type: "button",
         tabIndex: -1
-      }, direction === "rtl" ? /* @__PURE__ */ React296.createElement(RightOutlined_default2, null) : /* @__PURE__ */ React296.createElement(LeftOutlined_default2, null));
-      const nextIcon = /* @__PURE__ */ React296.createElement("button", {
+      }, direction === "rtl" ? /* @__PURE__ */ React319.createElement(RightOutlined_default2, null) : /* @__PURE__ */ React319.createElement(LeftOutlined_default2, null));
+      const nextIcon = /* @__PURE__ */ React319.createElement("button", {
         className: `${prefixCls}-item-link`,
         type: "button",
         tabIndex: -1
-      }, direction === "rtl" ? /* @__PURE__ */ React296.createElement(LeftOutlined_default2, null) : /* @__PURE__ */ React296.createElement(RightOutlined_default2, null));
-      const jumpPrevIcon = /* @__PURE__ */ React296.createElement("a", {
+      }, direction === "rtl" ? /* @__PURE__ */ React319.createElement(LeftOutlined_default2, null) : /* @__PURE__ */ React319.createElement(RightOutlined_default2, null));
+      const jumpPrevIcon = /* @__PURE__ */ React319.createElement("a", {
         className: `${prefixCls}-item-link`
-      }, /* @__PURE__ */ React296.createElement("div", {
+      }, /* @__PURE__ */ React319.createElement("div", {
         className: `${prefixCls}-item-container`
-      }, direction === "rtl" ? /* @__PURE__ */ React296.createElement(DoubleRightOutlined_default2, {
+      }, direction === "rtl" ? /* @__PURE__ */ React319.createElement(DoubleRightOutlined_default2, {
         className: `${prefixCls}-item-link-icon`
-      }) : /* @__PURE__ */ React296.createElement(DoubleLeftOutlined_default2, {
+      }) : /* @__PURE__ */ React319.createElement(DoubleLeftOutlined_default2, {
         className: `${prefixCls}-item-link-icon`
       }), ellipsis));
-      const jumpNextIcon = /* @__PURE__ */ React296.createElement("a", {
+      const jumpNextIcon = /* @__PURE__ */ React319.createElement("a", {
         className: `${prefixCls}-item-link`
-      }, /* @__PURE__ */ React296.createElement("div", {
+      }, /* @__PURE__ */ React319.createElement("div", {
         className: `${prefixCls}-item-container`
-      }, direction === "rtl" ? /* @__PURE__ */ React296.createElement(DoubleLeftOutlined_default2, {
+      }, direction === "rtl" ? /* @__PURE__ */ React319.createElement(DoubleLeftOutlined_default2, {
         className: `${prefixCls}-item-link-icon`
-      }) : /* @__PURE__ */ React296.createElement(DoubleRightOutlined_default2, {
+      }) : /* @__PURE__ */ React319.createElement(DoubleRightOutlined_default2, {
         className: `${prefixCls}-item-link-icon`
       }), ellipsis));
       return {
@@ -65320,9 +70340,9 @@ html body {
       [`${prefixCls}-bordered`]: token2.wireframe
     }, contextClassName, className, rootClassName, mergedClassNames.root, hashId, cssVarCls);
     const mergedStyle = __spreadValues(__spreadValues(__spreadValues({}, mergedStyles.root), contextStyle), style2);
-    return /* @__PURE__ */ React296.createElement(React296.Fragment, null, token2.wireframe && /* @__PURE__ */ React296.createElement(bordered_default, {
+    return /* @__PURE__ */ React319.createElement(React319.Fragment, null, token2.wireframe && /* @__PURE__ */ React319.createElement(bordered_default, {
       prefixCls
-    }), /* @__PURE__ */ React296.createElement(Pagination_default, __spreadProps(__spreadValues(__spreadValues({}, iconsProps), restProps), {
+    }), /* @__PURE__ */ React319.createElement(Pagination_default, __spreadProps(__spreadValues(__spreadValues({}, iconsProps), restProps), {
       styles: mergedStyles,
       classNames: mergedClassNames,
       style: mergedStyle,
@@ -65346,16 +70366,16 @@ html body {
   var pagination_default = Pagination_default2;
 
   // ../custom_dashboard/node_modules/antd/es/spin/index.js
-  var React301 = __toESM(require_react());
+  var React324 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/spin/Indicator/index.js
-  var React299 = __toESM(require_react());
+  var React322 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/spin/Indicator/Looper.js
-  var React298 = __toESM(require_react());
+  var React321 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/spin/Indicator/Progress.js
-  var React297 = __toESM(require_react());
+  var React320 = __toESM(require_react());
   "use client";
   var viewSize = 100;
   var borderWidth = viewSize / 5;
@@ -65368,7 +70388,7 @@ html body {
       style: style2,
       hasCircleCls
     } = props;
-    return /* @__PURE__ */ React297.createElement("circle", {
+    return /* @__PURE__ */ React320.createElement("circle", {
       className: clsx(`${dotClassName}-circle`, {
         [`${dotClassName}-circle-bg`]: hasCircleCls
       }),
@@ -65386,32 +70406,32 @@ html body {
     const dotClassName = `${prefixCls}-dot`;
     const holderClassName = `${dotClassName}-holder`;
     const hideClassName = `${holderClassName}-hidden`;
-    const [render4, setRender] = React297.useState(false);
+    const [render2, setRender] = React320.useState(false);
     useLayoutEffect_default(() => {
       if (percent !== 0) {
         setRender(true);
       }
     }, [percent !== 0]);
     const safePtg = Math.max(Math.min(percent, 100), 0);
-    if (!render4) {
+    if (!render2) {
       return null;
     }
     const circleStyle = {
       strokeDashoffset: `${circumference / 4}`,
       strokeDasharray: `${circumference * safePtg / 100} ${circumference * (100 - safePtg) / 100}`
     };
-    return /* @__PURE__ */ React297.createElement("span", {
+    return /* @__PURE__ */ React320.createElement("span", {
       className: clsx(holderClassName, `${dotClassName}-progress`, safePtg <= 0 && hideClassName)
-    }, /* @__PURE__ */ React297.createElement("svg", {
+    }, /* @__PURE__ */ React320.createElement("svg", {
       viewBox: `0 0 ${viewSize} ${viewSize}`,
       role: "progressbar",
       "aria-valuemin": 0,
       "aria-valuemax": 100,
       "aria-valuenow": safePtg
-    }, /* @__PURE__ */ React297.createElement(CustomCircle, {
+    }, /* @__PURE__ */ React320.createElement(CustomCircle, {
       dotClassName,
       hasCircleCls: true
-    }), /* @__PURE__ */ React297.createElement(CustomCircle, {
+    }), /* @__PURE__ */ React320.createElement(CustomCircle, {
       dotClassName,
       style: circleStyle
     })));
@@ -65430,15 +70450,15 @@ html body {
     const dotClassName = `${prefixCls}-dot`;
     const holderClassName = `${dotClassName}-holder`;
     const hideClassName = `${holderClassName}-hidden`;
-    return /* @__PURE__ */ React298.createElement(React298.Fragment, null, /* @__PURE__ */ React298.createElement("span", {
+    return /* @__PURE__ */ React321.createElement(React321.Fragment, null, /* @__PURE__ */ React321.createElement("span", {
       className: clsx(holderClassName, className, percent > 0 && hideClassName),
       style: style2
-    }, /* @__PURE__ */ React298.createElement("span", {
+    }, /* @__PURE__ */ React321.createElement("span", {
       className: clsx(dotClassName, `${prefixCls}-dot-spin`)
-    }, [1, 2, 3, 4].map((i) => /* @__PURE__ */ React298.createElement("i", {
+    }, [1, 2, 3, 4].map((i) => /* @__PURE__ */ React321.createElement("i", {
       className: `${prefixCls}-dot-item`,
       key: i
-    })))), /* @__PURE__ */ React298.createElement(Progress_default, {
+    })))), /* @__PURE__ */ React321.createElement(Progress_default, {
       prefixCls,
       percent
     }));
@@ -65455,14 +70475,14 @@ html body {
       style: style2
     } = props;
     const dotClassName = `${prefixCls}-dot`;
-    if (indicator && /* @__PURE__ */ React299.isValidElement(indicator)) {
+    if (indicator && /* @__PURE__ */ React322.isValidElement(indicator)) {
       return cloneElement5(indicator, (currentProps) => ({
         className: clsx(currentProps.className, dotClassName, className),
         style: __spreadValues(__spreadValues({}, currentProps.style), style2),
         percent
       }));
     }
-    return /* @__PURE__ */ React299.createElement(Looper, {
+    return /* @__PURE__ */ React322.createElement(Looper, {
       prefixCls,
       percent,
       className,
@@ -65664,7 +70684,7 @@ html body {
       }
     };
   };
-  var genSizeStyle = (token2) => {
+  var genSizeStyle2 = (token2) => {
     const {
       componentCls
     } = token2;
@@ -65680,7 +70700,7 @@ html body {
       }
     };
   };
-  var prepareComponentToken15 = (token2) => {
+  var prepareComponentToken18 = (token2) => {
     const {
       controlHeightLG,
       controlHeight
@@ -65692,22 +70712,22 @@ html body {
       dotSizeLG: controlHeight
     };
   };
-  var style_default20 = genStyleHooks("Spin", (token2) => {
+  var style_default23 = genStyleHooks("Spin", (token2) => {
     const spinToken = merge2(token2, {
       spinDotDefault: token2.colorTextDescription
     });
-    return [genSpinStyle(spinToken), genIndicatorStyle(spinToken), genSizeStyle(spinToken)];
-  }, prepareComponentToken15);
+    return [genSpinStyle(spinToken), genIndicatorStyle(spinToken), genSizeStyle2(spinToken)];
+  }, prepareComponentToken18);
 
   // ../custom_dashboard/node_modules/antd/es/spin/usePercent.js
-  var React300 = __toESM(require_react());
+  var React323 = __toESM(require_react());
   var AUTO_INTERVAL = 200;
   var STEP_BUCKETS = [[30, 0.05], [70, 0.03], [96, 0.01]];
   function usePercent(spinning, percent) {
-    const [mockPercent, setMockPercent] = React300.useState(0);
-    const mockIntervalRef = React300.useRef(null);
+    const [mockPercent, setMockPercent] = React323.useState(0);
+    const mockIntervalRef = React323.useRef(null);
     const isAuto = percent === "auto";
-    React300.useEffect(() => {
+    React323.useEffect(() => {
       if (isAuto && spinning) {
         setMockPercent(0);
         mockIntervalRef.current = setInterval(() => {
@@ -65786,10 +70806,10 @@ html body {
       styles: contextStyles
     } = useComponentConfig("spin");
     const prefixCls = getPrefixCls("spin", customizePrefixCls);
-    const [hashId, cssVarCls] = style_default20(prefixCls);
-    const [spinning, setSpinning] = React301.useState(() => customSpinning && !shouldDelay(customSpinning, delay));
+    const [hashId, cssVarCls] = style_default23(prefixCls);
+    const [spinning, setSpinning] = React324.useState(() => customSpinning && !shouldDelay(customSpinning, delay));
     const mergedPercent = usePercent(spinning, percent);
-    React301.useEffect(() => {
+    React324.useEffect(() => {
       if (customSpinning) {
         const showSpinning = debounce(delay, () => {
           setSpinning(true);
@@ -65830,17 +70850,17 @@ html body {
     const mergedIndicator = (_b = indicator != null ? indicator : contextIndicator) != null ? _b : defaultIndicator;
     const hasChildren = typeof children !== "undefined";
     const isNested = hasChildren || fullscreen;
-    const indicatorNode = /* @__PURE__ */ React301.createElement(React301.Fragment, null, /* @__PURE__ */ React301.createElement(Indicator, {
+    const indicatorNode = /* @__PURE__ */ React324.createElement(React324.Fragment, null, /* @__PURE__ */ React324.createElement(Indicator, {
       className: clsx(mergedClassNames.indicator),
       style: mergedStyles.indicator,
       prefixCls,
       indicator: mergedIndicator,
       percent: mergedPercent
-    }), mergedDescription && /* @__PURE__ */ React301.createElement("div", {
+    }), mergedDescription && /* @__PURE__ */ React324.createElement("div", {
       className: clsx(`${prefixCls}-description`, mergedClassNames.tip, mergedClassNames.description),
       style: __spreadValues(__spreadValues({}, mergedStyles.tip), mergedStyles.description)
     }, mergedDescription));
-    return /* @__PURE__ */ React301.createElement("div", __spreadValues({
+    return /* @__PURE__ */ React324.createElement("div", __spreadValues({
       className: clsx(prefixCls, {
         [`${prefixCls}-sm`]: mergedSize === "small",
         [`${prefixCls}-lg`]: mergedSize === "large",
@@ -65851,10 +70871,10 @@ html body {
       style: __spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues({}, mergedStyles.root), !isNested ? mergedStyles.section : {}), fullscreen ? mergedStyles.mask : {}), contextStyle), style2),
       "aria-live": "polite",
       "aria-busy": spinning
-    }, restProps), spinning && (isNested ? /* @__PURE__ */ React301.createElement("div", {
+    }, restProps), spinning && (isNested ? /* @__PURE__ */ React324.createElement("div", {
       className: clsx(`${prefixCls}-section`, mergedClassNames.section),
       style: mergedStyles.section
-    }, indicatorNode) : indicatorNode), hasChildren && /* @__PURE__ */ React301.createElement("div", {
+    }, indicatorNode) : indicatorNode), hasChildren && /* @__PURE__ */ React324.createElement("div", {
       className: clsx(`${prefixCls}-container`, mergedClassNames.container),
       style: mergedStyles.container
     }, children));
@@ -65867,8 +70887,17 @@ html body {
   }
   var spin_default = Spin;
 
+  // ../custom_dashboard/node_modules/antd/es/_util/toList.js
+  var toList = (val, config = {}) => {
+    if (!isNonNullable_default(val) && (config == null ? void 0 : config.skipEmpty)) {
+      return [];
+    }
+    return Array.isArray(val) ? val : [val];
+  };
+  var toList_default = toList;
+
   // ../custom_dashboard/node_modules/antd/es/message/index.js
-  var import_react117 = __toESM(require_react());
+  var import_react128 = __toESM(require_react());
   "use client";
   var message = null;
   var act = (callback) => callback();
@@ -65891,20 +70920,20 @@ html body {
       top
     };
   }
-  var GlobalHolder = /* @__PURE__ */ import_react117.default.forwardRef((props, ref) => {
+  var GlobalHolder = /* @__PURE__ */ import_react128.default.forwardRef((props, ref) => {
     const {
       messageConfig,
       sync
     } = props;
     const {
       getPrefixCls
-    } = (0, import_react117.useContext)(ConfigContext);
+    } = (0, import_react128.useContext)(ConfigContext);
     const prefixCls = defaultGlobalConfig.prefixCls || getPrefixCls("message");
-    const appConfig = (0, import_react117.useContext)(AppConfigContext);
+    const appConfig = (0, import_react128.useContext)(AppConfigContext);
     const [api, holder] = useInternalMessage(__spreadValues(__spreadProps(__spreadValues({}, messageConfig), {
       prefixCls
     }), appConfig.message));
-    import_react117.default.useImperativeHandle(ref, () => {
+    import_react128.default.useImperativeHandle(ref, () => {
       const instance = __spreadValues({}, api);
       Object.keys(instance).forEach((method4) => {
         instance[method4] = (...args) => {
@@ -65919,22 +70948,22 @@ html body {
     });
     return holder;
   });
-  var GlobalHolderWrapper = /* @__PURE__ */ import_react117.default.forwardRef((_, ref) => {
-    const [messageConfig, setMessageConfig] = import_react117.default.useState(getGlobalContext);
+  var GlobalHolderWrapper = /* @__PURE__ */ import_react128.default.forwardRef((_, ref) => {
+    const [messageConfig, setMessageConfig] = import_react128.default.useState(getGlobalContext);
     const sync = () => {
       setMessageConfig(getGlobalContext);
     };
-    import_react117.default.useEffect(sync, []);
+    import_react128.default.useEffect(sync, []);
     const global = globalConfig();
     const rootPrefixCls = global.getRootPrefixCls();
     const rootIconPrefixCls = global.getIconPrefixCls();
     const theme = global.getTheme();
-    const dom = /* @__PURE__ */ import_react117.default.createElement(GlobalHolder, {
+    const dom = /* @__PURE__ */ import_react128.default.createElement(GlobalHolder, {
       ref,
       sync,
       messageConfig
     });
-    return /* @__PURE__ */ import_react117.default.createElement(config_provider_default, {
+    return /* @__PURE__ */ import_react128.default.createElement(config_provider_default, {
       prefixCls: rootPrefixCls,
       iconPrefixCls: rootIconPrefixCls,
       theme
@@ -65948,7 +70977,7 @@ html body {
       };
       message = newMessage;
       act(() => {
-        render(/* @__PURE__ */ import_react117.default.createElement(GlobalHolderWrapper, {
+        render(/* @__PURE__ */ import_react128.default.createElement(GlobalHolderWrapper, {
           ref: (node2) => {
             const {
               instance,
@@ -66095,7 +71124,7 @@ html body {
   var message_default = staticMethods;
 
   // ../custom_dashboard/node_modules/antd/es/modal/PurePanel.js
-  var React303 = __toESM(require_react());
+  var React326 = __toESM(require_react());
   "use client";
   var PurePanel6 = (props) => {
     const _a = props, {
@@ -66123,7 +71152,7 @@ html body {
     ]);
     const {
       getPrefixCls
-    } = React303.useContext(ConfigContext);
+    } = React326.useContext(ConfigContext);
     const {
       className: contextClassName,
       style: contextStyle,
@@ -66144,7 +71173,7 @@ html body {
         closable: closable != null ? closable : false,
         title: "",
         footer: "",
-        children: /* @__PURE__ */ React303.createElement(ConfirmContent, __spreadProps(__spreadValues({}, props), {
+        children: /* @__PURE__ */ React326.createElement(ConfirmContent, __spreadProps(__spreadValues({}, props), {
           prefixCls,
           confirmPrefixCls,
           rootPrefixCls,
@@ -66155,11 +71184,11 @@ html body {
       additionalProps = {
         closable: closable != null ? closable : true,
         title,
-        footer: footer !== null && /* @__PURE__ */ React303.createElement(Footer, __spreadValues({}, props)),
+        footer: footer !== null && /* @__PURE__ */ React326.createElement(Footer, __spreadValues({}, props)),
         children
       };
     }
-    return /* @__PURE__ */ React303.createElement(Panel_default, __spreadValues(__spreadProps(__spreadValues({
+    return /* @__PURE__ */ React326.createElement(Panel_default, __spreadValues(__spreadProps(__spreadValues({
       prefixCls,
       className: clsx(hashId, `${prefixCls}-pure-panel`, type5 && confirmPrefixCls, type5 && `${confirmPrefixCls}-${type5}`, className, contextClassName, cssVarCls, rootCls, mergedClassNames.root),
       style: __spreadValues(__spreadValues({}, contextStyle), mergedStyles.root)
@@ -66208,1289 +71237,29 @@ html body {
   }
   var modal_default = Modal2;
 
-  // ../custom_dashboard/node_modules/antd/es/progress/progress.js
-  var React312 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/antd/es/progress/Circle.js
-  var React309 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@rc-component/progress/es/Line.js
-  var React305 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@rc-component/progress/es/common.js
-  var import_react118 = __toESM(require_react());
-  var defaultProps = {
-    percent: 0,
-    prefixCls: "rc-progress",
-    strokeColor: "#2db7f5",
-    strokeLinecap: "round",
-    strokeWidth: 1,
-    railColor: "#D9D9D9",
-    railWidth: 1,
-    gapPosition: "bottom",
-    loading: false
-  };
-  var useTransitionDuration = () => {
-    const pathsRef = (0, import_react118.useRef)([]);
-    const prevTimeStamp = (0, import_react118.useRef)(null);
-    (0, import_react118.useEffect)(() => {
-      const now2 = Date.now();
-      let updated = false;
-      pathsRef.current.forEach((path) => {
-        if (!path) {
-          return;
-        }
-        updated = true;
-        const pathStyle = path.style;
-        pathStyle.transitionDuration = ".3s, .3s, .3s, .06s";
-        if (prevTimeStamp.current && now2 - prevTimeStamp.current < 100) {
-          pathStyle.transitionDuration = "0s, 0s";
-        }
-      });
-      if (updated) {
-        prevTimeStamp.current = Date.now();
-      }
-    });
-    return pathsRef.current;
-  };
-
-  // ../custom_dashboard/node_modules/@rc-component/progress/es/utils/getIndeterminateLine.js
-  var import_react119 = __toESM(require_react());
-  var getIndeterminateLine_default = (options) => {
-    const {
-      id,
-      percent,
-      strokeLinecap,
-      strokeWidth,
-      loading
-    } = options;
-    if (!loading) {
-      return {
-        indeterminateStyleProps: {},
-        indeterminateStyleAnimation: null
-      };
-    }
-    const animationName = `${id}-indeterminate-animate`;
-    const strokeDashOffset = 100 - (percent + (strokeLinecap === "round" ? strokeWidth : 0));
-    return {
-      indeterminateStyleProps: {
-        strokeDasharray: `${percent} 100`,
-        animation: `${animationName} .6s linear alternate infinite`,
-        strokeDashoffset: 0
-      },
-      indeterminateStyleAnimation: /* @__PURE__ */ import_react119.default.createElement("style", null, `@keyframes ${animationName} {
-            0% { stroke-dashoffset: 0; }
-            100% { stroke-dashoffset: -${strokeDashOffset};
-          }`)
-    };
-  };
-
-  // ../custom_dashboard/node_modules/@rc-component/progress/es/Line.js
-  function _extends60() {
-    _extends60 = Object.assign ? Object.assign.bind() : function(target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
-      }
-      return target;
-    };
-    return _extends60.apply(this, arguments);
-  }
-  var Line = (props) => {
-    const _a = __spreadValues(__spreadValues({}, defaultProps), props), {
-      id,
-      className,
-      percent,
-      prefixCls,
-      strokeColor,
-      strokeLinecap,
-      strokeWidth,
-      style: style2,
-      railColor,
-      railWidth,
-      transition,
-      loading
-    } = _a, restProps = __objRest(_a, [
-      "id",
-      "className",
-      "percent",
-      "prefixCls",
-      "strokeColor",
-      "strokeLinecap",
-      "strokeWidth",
-      "style",
-      "railColor",
-      "railWidth",
-      "transition",
-      "loading"
-    ]);
-    const mergedId = useId_default(id);
-    delete restProps.gapPosition;
-    const percentList = Array.isArray(percent) ? percent : [percent];
-    const strokeColorList = Array.isArray(strokeColor) ? strokeColor : [strokeColor];
-    const paths = useTransitionDuration();
-    const center = strokeWidth / 2;
-    const right = 100 - strokeWidth / 2;
-    const pathString = `M ${strokeLinecap === "round" ? center : 0},${center}
-         L ${strokeLinecap === "round" ? right : 100},${center}`;
-    const viewBoxString = `0 0 100 ${strokeWidth}`;
-    let stackPtg = 0;
-    const {
-      indeterminateStyleProps,
-      indeterminateStyleAnimation
-    } = getIndeterminateLine_default({
-      id: mergedId,
-      loading,
-      percent: percentList[0],
-      strokeLinecap,
-      strokeWidth
-    });
-    return /* @__PURE__ */ React305.createElement("svg", _extends60({
-      className: clsx(`${prefixCls}-line`, className),
-      viewBox: viewBoxString,
-      preserveAspectRatio: "none",
-      style: style2
-    }, restProps), /* @__PURE__ */ React305.createElement("path", {
-      className: `${prefixCls}-line-rail`,
-      d: pathString,
-      strokeLinecap,
-      stroke: railColor,
-      strokeWidth: railWidth || strokeWidth,
-      fillOpacity: "0"
-    }), percentList.map((ptg, index2) => {
-      let dashPercent = 1;
-      switch (strokeLinecap) {
-        case "round":
-          dashPercent = 1 - strokeWidth / 100;
-          break;
-        case "square":
-          dashPercent = 1 - strokeWidth / 2 / 100;
-          break;
-        default:
-          dashPercent = 1;
-          break;
-      }
-      const pathStyle = __spreadValues({
-        strokeDasharray: `${ptg * dashPercent}px, 100px`,
-        strokeDashoffset: `-${stackPtg}px`,
-        transition: transition || "stroke-dashoffset 0.3s ease 0s, stroke-dasharray .3s ease 0s, stroke 0.3s linear"
-      }, indeterminateStyleProps);
-      const color = strokeColorList[index2] || strokeColorList[strokeColorList.length - 1];
-      stackPtg += ptg;
-      return /* @__PURE__ */ React305.createElement("path", {
-        key: index2,
-        className: `${prefixCls}-line-path`,
-        d: pathString,
-        strokeLinecap,
-        stroke: color,
-        strokeWidth,
-        fillOpacity: "0",
-        ref: (elem) => {
-          paths[index2] = elem;
-        },
-        style: pathStyle
-      });
-    }), indeterminateStyleAnimation);
-  };
-  if (true) {
-    Line.displayName = "Line";
-  }
-
-  // ../custom_dashboard/node_modules/@rc-component/progress/es/Circle/index.js
-  var React308 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@rc-component/progress/es/Circle/PtgCircle.js
-  var React306 = __toESM(require_react());
-  var Block = ({
-    bg,
-    children
-  }) => /* @__PURE__ */ React306.createElement("div", {
-    style: {
-      width: "100%",
-      height: "100%",
-      background: bg
-    }
-  }, children);
-  function getPtgColors(color, scale) {
-    return Object.keys(color).map((key) => {
-      const parsedKey = parseFloat(key);
-      const ptgKey = `${Math.floor(parsedKey * scale)}%`;
-      return `${color[key]} ${ptgKey}`;
-    });
-  }
-  var PtgCircle = /* @__PURE__ */ React306.forwardRef((props, ref) => {
-    const {
-      prefixCls,
-      color,
-      gradientId,
-      radius: radius2,
-      className,
-      style: circleStyleForStack,
-      ptg,
-      strokeLinecap,
-      strokeWidth,
-      size,
-      gapDegree
-    } = props;
-    const isGradient = color && typeof color === "object";
-    const stroke = isGradient ? `#FFF` : void 0;
-    const halfSize = size / 2;
-    const circleNode = /* @__PURE__ */ React306.createElement("circle", {
-      className: clsx(`${prefixCls}-circle-path`, className),
-      r: radius2,
-      cx: halfSize,
-      cy: halfSize,
-      stroke,
-      strokeLinecap,
-      strokeWidth,
-      opacity: ptg === 0 ? 0 : 1,
-      style: circleStyleForStack,
-      ref
-    });
-    if (!isGradient) {
-      return circleNode;
-    }
-    const maskId = `${gradientId}-conic`;
-    const fromDeg = gapDegree ? `${180 + gapDegree / 2}deg` : "0deg";
-    const conicColors = getPtgColors(color, (360 - gapDegree) / 360);
-    const linearColors = getPtgColors(color, 1);
-    const conicColorBg = `conic-gradient(from ${fromDeg}, ${conicColors.join(", ")})`;
-    const linearColorBg = `linear-gradient(to ${gapDegree ? "bottom" : "top"}, ${linearColors.join(", ")})`;
-    return /* @__PURE__ */ React306.createElement(React306.Fragment, null, /* @__PURE__ */ React306.createElement("mask", {
-      id: maskId
-    }, circleNode), /* @__PURE__ */ React306.createElement("foreignObject", {
-      x: 0,
-      y: 0,
-      width: size,
-      height: size,
-      mask: `url(#${maskId})`
-    }, /* @__PURE__ */ React306.createElement(Block, {
-      bg: linearColorBg
-    }, /* @__PURE__ */ React306.createElement(Block, {
-      bg: conicColorBg
-    }))));
-  });
-  if (true) {
-    PtgCircle.displayName = "PtgCircle";
-  }
-  var PtgCircle_default = PtgCircle;
-
-  // ../custom_dashboard/node_modules/@rc-component/progress/es/Circle/util.js
-  var VIEW_BOX_SIZE = 100;
-  var getCircleStyle = (perimeter, perimeterWithoutGap, offset3, percent, rotateDeg, gapDegree, gapPosition, strokeColor, strokeLinecap, strokeWidth, stepSpace = 0) => {
-    const offsetDeg = offset3 / 100 * 360 * ((360 - gapDegree) / 360);
-    const positionDeg = gapDegree === 0 ? 0 : {
-      bottom: 0,
-      top: 180,
-      left: 90,
-      right: -90
-    }[gapPosition];
-    let strokeDashoffset = (100 - percent) / 100 * perimeterWithoutGap;
-    if (strokeLinecap === "round" && percent !== 100) {
-      strokeDashoffset += strokeWidth / 2;
-      if (strokeDashoffset >= perimeterWithoutGap) {
-        strokeDashoffset = perimeterWithoutGap - 0.01;
-      }
-    }
-    const halfSize = VIEW_BOX_SIZE / 2;
-    return {
-      stroke: typeof strokeColor === "string" ? strokeColor : void 0,
-      strokeDasharray: `${perimeterWithoutGap}px ${perimeter}`,
-      strokeDashoffset: strokeDashoffset + stepSpace,
-      transform: `rotate(${rotateDeg + offsetDeg + positionDeg}deg)`,
-      transformOrigin: `${halfSize}px ${halfSize}px`,
-      transition: "stroke-dashoffset .3s ease 0s, stroke-dasharray .3s ease 0s, stroke .3s, stroke-width .06s ease .3s, opacity .3s ease 0s",
-      fillOpacity: 0
-    };
-  };
-
-  // ../custom_dashboard/node_modules/@rc-component/progress/es/utils/getIndeterminateCircle.js
-  var import_react120 = __toESM(require_react());
-  var getIndeterminateCircle_default = ({
-    id,
-    loading
-  }) => {
-    if (!loading) {
-      return {
-        indeterminateStyleProps: {},
-        indeterminateStyleAnimation: null
-      };
-    }
-    const animationName = `${id}-indeterminate-animate`;
-    return {
-      indeterminateStyleProps: {
-        transform: "rotate(0deg)",
-        animation: `${animationName} 1s linear infinite`
-      },
-      indeterminateStyleAnimation: /* @__PURE__ */ import_react120.default.createElement("style", null, `@keyframes ${animationName} {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-          }`)
-    };
-  };
-
-  // ../custom_dashboard/node_modules/@rc-component/progress/es/Circle/index.js
-  function _extends61() {
-    _extends61 = Object.assign ? Object.assign.bind() : function(target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
-      }
-      return target;
-    };
-    return _extends61.apply(this, arguments);
-  }
-  function toArray6(value) {
-    const mergedValue = value != null ? value : [];
-    return Array.isArray(mergedValue) ? mergedValue : [mergedValue];
-  }
-  var Circle = (props) => {
-    const _a = __spreadValues(__spreadValues({}, defaultProps), props), {
-      id,
-      prefixCls,
-      classNames = {},
-      styles = {},
-      steps,
-      strokeWidth,
-      railWidth,
-      gapDegree = 0,
-      gapPosition,
-      railColor,
-      strokeLinecap,
-      style: style2,
-      className,
-      strokeColor,
-      percent,
-      loading
-    } = _a, restProps = __objRest(_a, [
-      "id",
-      "prefixCls",
-      "classNames",
-      "styles",
-      "steps",
-      "strokeWidth",
-      "railWidth",
-      "gapDegree",
-      "gapPosition",
-      "railColor",
-      "strokeLinecap",
-      "style",
-      "className",
-      "strokeColor",
-      "percent",
-      "loading"
-    ]);
-    const halfSize = VIEW_BOX_SIZE / 2;
-    const mergedId = useId_default(id);
-    const gradientId = `${mergedId}-gradient`;
-    const radius2 = halfSize - strokeWidth / 2;
-    const perimeter = Math.PI * 2 * radius2;
-    const rotateDeg = gapDegree > 0 ? 90 + gapDegree / 2 : -90;
-    const perimeterWithoutGap = perimeter * ((360 - gapDegree) / 360);
-    const {
-      count: stepCount,
-      gap: stepGap
-    } = typeof steps === "object" ? steps : {
-      count: steps,
-      gap: 2
-    };
-    const percentList = toArray6(percent);
-    const strokeColorList = toArray6(strokeColor);
-    const gradient = strokeColorList.find((color) => color && typeof color === "object");
-    const isConicGradient = gradient && typeof gradient === "object";
-    const mergedStrokeLinecap = isConicGradient ? "butt" : strokeLinecap;
-    const {
-      indeterminateStyleProps,
-      indeterminateStyleAnimation
-    } = getIndeterminateCircle_default({
-      id: mergedId,
-      loading
-    });
-    const circleStyle = getCircleStyle(perimeter, perimeterWithoutGap, 0, 100, rotateDeg, gapDegree, gapPosition, railColor, mergedStrokeLinecap, strokeWidth);
-    const paths = useTransitionDuration();
-    const getStokeList = () => {
-      let stackPtg = 0;
-      return percentList.map((ptg, index2) => {
-        const color = strokeColorList[index2] || strokeColorList[strokeColorList.length - 1];
-        const circleStyleForStack = getCircleStyle(perimeter, perimeterWithoutGap, stackPtg, ptg, rotateDeg, gapDegree, gapPosition, color, mergedStrokeLinecap, strokeWidth);
-        stackPtg += ptg;
-        return /* @__PURE__ */ React308.createElement(PtgCircle_default, {
-          key: index2,
-          color,
-          ptg,
-          radius: radius2,
-          prefixCls,
-          gradientId,
-          className: classNames.track,
-          style: __spreadValues(__spreadValues(__spreadValues({}, circleStyleForStack), indeterminateStyleProps), styles.track),
-          strokeLinecap: mergedStrokeLinecap,
-          strokeWidth,
-          gapDegree,
-          ref: (elem) => {
-            paths[index2] = elem;
-          },
-          size: VIEW_BOX_SIZE
-        });
-      }).reverse();
-    };
-    const getStepStokeList = () => {
-      const current = Math.round(stepCount * (percentList[0] / 100));
-      const stepPtg = 100 / stepCount;
-      let stackPtg = 0;
-      return new Array(stepCount).fill(null).map((_, index2) => {
-        const color = index2 <= current - 1 ? strokeColorList[0] : railColor;
-        const stroke = color && typeof color === "object" ? `url(#${gradientId})` : void 0;
-        const circleStyleForStack = getCircleStyle(perimeter, perimeterWithoutGap, stackPtg, stepPtg, rotateDeg, gapDegree, gapPosition, color, "butt", strokeWidth, stepGap);
-        stackPtg += (perimeterWithoutGap - circleStyleForStack.strokeDashoffset + stepGap) * 100 / perimeterWithoutGap;
-        return /* @__PURE__ */ React308.createElement("circle", {
-          key: index2,
-          className: clsx(`${prefixCls}-circle-path`, classNames.track),
-          r: radius2,
-          cx: halfSize,
-          cy: halfSize,
-          stroke,
-          strokeWidth,
-          opacity: 1,
-          style: __spreadValues(__spreadValues({}, circleStyleForStack), styles.track),
-          ref: (elem) => {
-            paths[index2] = elem;
-          }
-        });
-      });
-    };
-    return /* @__PURE__ */ React308.createElement("svg", _extends61({
-      className: clsx(`${prefixCls}-circle`, classNames.root, className),
-      viewBox: `0 0 ${VIEW_BOX_SIZE} ${VIEW_BOX_SIZE}`,
-      style: __spreadValues(__spreadValues({}, styles.root), style2),
-      id,
-      role: "presentation"
-    }, restProps), !stepCount && /* @__PURE__ */ React308.createElement("circle", {
-      className: clsx(`${prefixCls}-circle-rail`, classNames.rail),
-      r: radius2,
-      cx: halfSize,
-      cy: halfSize,
-      stroke: railColor,
-      strokeLinecap: mergedStrokeLinecap,
-      strokeWidth: railWidth || strokeWidth,
-      style: __spreadValues(__spreadValues({}, circleStyle), styles.rail)
-    }), stepCount ? getStepStokeList() : getStokeList(), indeterminateStyleAnimation);
-  };
-  if (true) {
-    Circle.displayName = "Circle";
-  }
-  var Circle_default = Circle;
-
-  // ../custom_dashboard/node_modules/antd/es/progress/utils.js
-  function validProgress(progress) {
-    if (!progress || progress < 0) {
-      return 0;
-    }
-    if (progress > 100) {
-      return 100;
-    }
-    return progress;
-  }
-  function getSuccessPercent({
-    success
-  }) {
-    let percent;
-    if (success && "percent" in success) {
-      percent = success.percent;
-    }
-    return percent;
-  }
-  var getPercentage = ({
-    percent,
-    success
-  }) => {
-    const realSuccessPercent = validProgress(getSuccessPercent({
-      success
-    }));
-    return [realSuccessPercent, validProgress(validProgress(percent) - realSuccessPercent)];
-  };
-  var getStrokeColor = ({
-    success = {},
-    strokeColor
-  }) => {
-    const {
-      strokeColor: successColor
-    } = success;
-    return [successColor || presetPrimaryColors.green, strokeColor || null];
-  };
-  var getSize = (size, type5, extra) => {
-    var _a, _b, _c, _d;
-    let width = -1;
-    let height = -1;
-    if (type5 === "step") {
-      const steps = extra.steps;
-      const strokeWidth = extra.strokeWidth;
-      if (typeof size === "string" || typeof size === "undefined") {
-        width = size === "small" ? 2 : 14;
-        height = strokeWidth != null ? strokeWidth : 8;
-      } else if (typeof size === "number") {
-        [width, height] = [size, size];
-      } else {
-        [width = 14, height = 8] = Array.isArray(size) ? size : [size.width, size.height];
-      }
-      width *= steps;
-    } else if (type5 === "line") {
-      const strokeWidth = extra == null ? void 0 : extra.strokeWidth;
-      if (typeof size === "string" || typeof size === "undefined") {
-        height = strokeWidth || (size === "small" ? 6 : 8);
-      } else if (typeof size === "number") {
-        [width, height] = [size, size];
-      } else {
-        [width = -1, height = 8] = Array.isArray(size) ? size : [size.width, size.height];
-      }
-    } else if (type5 === "circle" || type5 === "dashboard") {
-      if (typeof size === "string" || typeof size === "undefined") {
-        [width, height] = size === "small" ? [60, 60] : [120, 120];
-      } else if (typeof size === "number") {
-        [width, height] = [size, size];
-      } else if (Array.isArray(size)) {
-        width = (_b = (_a = size[0]) != null ? _a : size[1]) != null ? _b : 120;
-        height = (_d = (_c = size[0]) != null ? _c : size[1]) != null ? _d : 120;
-      }
-    }
-    return [width, height];
-  };
-
-  // ../custom_dashboard/node_modules/antd/es/progress/Circle.js
+  // ../custom_dashboard/node_modules/antd/es/row/index.js
   "use client";
-  var CIRCLE_MIN_STROKE_WIDTH = 3;
-  var getMinPercent = (width) => CIRCLE_MIN_STROKE_WIDTH / width * 100;
-  var OMIT_SEMANTIC_NAMES = ["root", "body", "indicator"];
-  var Circle2 = (props) => {
-    const {
-      prefixCls,
-      classNames,
-      styles,
-      railColor,
-      trailColor,
-      strokeLinecap = "round",
-      gapPosition,
-      gapPlacement,
-      gapDegree,
-      width: originWidth = 120,
-      type: type5,
-      children,
-      success,
-      size = originWidth,
-      steps
-    } = props;
-    const {
-      direction
-    } = useComponentConfig("progress");
-    const mergedRailColor = railColor != null ? railColor : trailColor;
-    const [width, height] = getSize(size, "circle");
-    let {
-      strokeWidth
-    } = props;
-    if (strokeWidth === void 0) {
-      strokeWidth = Math.max(getMinPercent(width), 6);
-    }
-    const circleStyle = {
-      width,
-      height,
-      fontSize: width * 0.15 + 6
-    };
-    const realGapDegree = React309.useMemo(() => {
-      if (gapDegree || gapDegree === 0) {
-        return gapDegree;
-      }
-      if (type5 === "dashboard") {
-        return 75;
-      }
-      return void 0;
-    }, [gapDegree, type5]);
-    const percentArray = getPercentage(props);
-    const gapPos = React309.useMemo(() => {
-      const mergedPlacement = (gapPlacement != null ? gapPlacement : gapPosition) || type5 === "dashboard" && "bottom" || void 0;
-      const isRTL = direction === "rtl";
-      switch (mergedPlacement) {
-        case "start":
-          return isRTL ? "right" : "left";
-        case "end":
-          return isRTL ? "left" : "right";
-        default:
-          return mergedPlacement;
-      }
-    }, [direction, gapPlacement, gapPosition, type5]);
-    const isGradient = Object.prototype.toString.call(props.strokeColor) === "[object Object]";
-    const strokeColor = getStrokeColor({
-      success,
-      strokeColor: props.strokeColor
-    });
-    const wrapperClassName = clsx(`${prefixCls}-body`, {
-      [`${prefixCls}-circle-gradient`]: isGradient
-    }, classNames.body);
-    const circleContent = /* @__PURE__ */ React309.createElement(Circle_default, {
-      steps,
-      percent: steps ? percentArray[1] : percentArray,
-      strokeWidth,
-      railWidth: strokeWidth,
-      strokeColor: steps ? strokeColor[1] : strokeColor,
-      strokeLinecap,
-      railColor: mergedRailColor,
-      prefixCls,
-      gapDegree: realGapDegree,
-      gapPosition: gapPos,
-      classNames: omit(classNames, OMIT_SEMANTIC_NAMES),
-      styles: omit(styles, OMIT_SEMANTIC_NAMES)
-    });
-    const smallCircle = width <= 20;
-    const node2 = /* @__PURE__ */ React309.createElement("div", {
-      className: wrapperClassName,
-      style: __spreadValues(__spreadValues({}, circleStyle), styles.body)
-    }, circleContent, !smallCircle && children);
-    if (smallCircle) {
-      return /* @__PURE__ */ React309.createElement(tooltip_default, {
-        title: children
-      }, node2);
-    }
-    return node2;
-  };
-  var Circle_default2 = Circle2;
-
-  // ../custom_dashboard/node_modules/antd/es/progress/Line.js
-  var React310 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/antd/es/progress/style/index.js
-  var LineStrokeColorVar = "--progress-line-stroke-color";
-  var genAntProgressActive = (isRtl) => {
-    const direction = isRtl ? "100%" : "-100%";
-    return new Keyframes_default(`antProgress${isRtl ? "RTL" : "LTR"}Active`, {
-      "0%": {
-        transform: `translateX(${direction}) scaleX(0)`,
-        opacity: 0.1
-      },
-      "20%": {
-        transform: `translateX(${direction}) scaleX(0)`,
-        opacity: 0.5
-      },
-      to: {
-        transform: "translateX(0) scaleX(1)",
-        opacity: 0
-      }
-    });
-  };
-  var genBaseStyle5 = (token2) => {
-    const {
-      componentCls: progressCls,
-      iconCls: iconPrefixCls
-    } = token2;
-    return {
-      [progressCls]: __spreadProps(__spreadValues({}, resetComponent(token2)), {
-        display: "inline-flex",
-        "&-rtl": {
-          direction: "rtl"
-        },
-        [`${progressCls}-indicator`]: {
-          color: token2.colorText,
-          lineHeight: 1,
-          whiteSpace: "nowrap",
-          verticalAlign: "middle",
-          wordBreak: "normal",
-          [iconPrefixCls]: {
-            fontSize: token2.fontSize
-          }
-        },
-        [`&${progressCls}-status-exception`]: {
-          [`${progressCls}-indicator`]: {
-            color: token2.colorError
-          }
-        },
-        [`&${progressCls}-status-success`]: {
-          [`${progressCls}-indicator`]: {
-            color: token2.colorSuccess
-          }
-        }
-      })
-    };
-  };
-  var genLineStyle = (token2) => {
-    const {
-      componentCls
-    } = token2;
-    return {
-      [`${componentCls}-line`]: {
-        position: "relative",
-        width: "100%",
-        fontSize: token2.fontSize,
-        [`${componentCls}-body`]: {
-          display: "inline-flex",
-          alignItems: "center",
-          width: "100%",
-          gap: token2.marginXS
-        },
-        [`${componentCls}-rail`]: {
-          flex: "auto",
-          background: token2.remainingColor,
-          borderRadius: token2.lineBorderRadius,
-          position: "relative",
-          width: "100%",
-          overflow: "hidden"
-        },
-        [`&${componentCls}-status-active`]: {
-          [`${componentCls}-track:after`]: {
-            content: '""',
-            position: "absolute",
-            inset: 0,
-            backgroundColor: token2.colorBgContainer,
-            borderRadius: "inherit",
-            opacity: 0,
-            animationName: genAntProgressActive(),
-            animationDuration: token2.progressActiveMotionDuration,
-            animationTimingFunction: token2.motionEaseOutQuint,
-            animationIterationCount: "infinite"
-          }
-        },
-        [`${componentCls}-track`]: {
-          position: "absolute",
-          insetInlineStart: 0,
-          insetBlock: 0,
-          borderRadius: "inherit",
-          background: token2.defaultColor,
-          transition: `all ${token2.motionDurationSlow} ${token2.motionEaseInOutCirc}`,
-          minWidth: "max-content",
-          display: "flex",
-          alignItems: "center",
-          "&-success": {
-            background: token2.colorSuccess
-          }
-        },
-        [`&${componentCls}-status-exception`]: {
-          [`${componentCls}-track`]: {
-            background: token2.colorError
-          }
-        },
-        [`&${componentCls}-status-success`]: {
-          [`${componentCls}-track`]: {
-            background: token2.colorSuccess
-          }
-        },
-        [`${componentCls}-indicator-outer`]: {
-          [`&${componentCls}-indicator-start`]: {
-            order: -1
-          }
-        },
-        [`${componentCls}-body-layout-bottom`]: {
-          flexDirection: "column",
-          alignItems: "center",
-          gap: token2.marginXXS
-        },
-        [`${componentCls}-indicator${componentCls}-indicator-inner`]: {
-          color: token2.colorWhite,
-          paddingInline: token2.paddingXXS,
-          width: "100%",
-          display: "flex",
-          justifyContent: "center",
-          [`&${componentCls}-indicator-end`]: {
-            justifyContent: "end"
-          },
-          [`&${componentCls}-indicator-start`]: {
-            justifyContent: "start"
-          },
-          [`&${componentCls}-indicator-bright`]: {
-            color: "rgba(0, 0, 0, 0.45)"
-          }
-        }
-      }
-    };
-  };
-  var genCircleStyle = (token2) => {
-    const {
-      componentCls: progressCls,
-      iconCls: iconPrefixCls
-    } = token2;
-    return {
-      [`${progressCls}-circle`]: {
-        [`${progressCls}-circle-rail`]: {
-          stroke: token2.remainingColor
-        },
-        [`${progressCls}-body:not(${progressCls}-circle-gradient)`]: {
-          [`${progressCls}-circle-path`]: {
-            stroke: token2.defaultColor
-          }
-        },
-        [`${progressCls}-body`]: {
-          position: "relative",
-          lineHeight: 1,
-          backgroundColor: "transparent"
-        },
-        [`${progressCls}-indicator`]: {
-          position: "absolute",
-          insetBlockStart: "50%",
-          insetInlineStart: 0,
-          width: "100%",
-          margin: 0,
-          padding: 0,
-          color: token2.circleTextColor,
-          fontSize: token2.circleTextFontSize,
-          lineHeight: 1,
-          whiteSpace: "normal",
-          textAlign: "center",
-          transform: "translateY(-50%)",
-          [iconPrefixCls]: {
-            fontSize: token2.circleIconFontSize
-          }
-        },
-        [`&${progressCls}-status-exception`]: {
-          [`${progressCls}-body:not(${progressCls}-circle-gradient)`]: {
-            [`${progressCls}-circle-path`]: {
-              stroke: token2.colorError
-            }
-          }
-        },
-        [`&${progressCls}-status-success`]: {
-          [`${progressCls}-body:not(${progressCls}-circle-gradient)`]: {
-            [`${progressCls}-circle-path`]: {
-              stroke: token2.colorSuccess
-            }
-          }
-        }
-      },
-      [`${progressCls}-inline-circle`]: {
-        lineHeight: 1,
-        [`${progressCls}-inner`]: {
-          verticalAlign: "bottom"
-        }
-      }
-    };
-  };
-  var genStepStyle = (token2) => {
-    const {
-      componentCls: progressCls
-    } = token2;
-    return {
-      [progressCls]: {
-        [`${progressCls}-steps`]: {
-          display: "inline-block",
-          "&-body": {
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            gap: token2.progressStepMarginInlineEnd,
-            [`${progressCls}-indicator`]: {
-              marginInlineStart: token2.marginXS
-            }
-          },
-          "&-item": {
-            flexShrink: 0,
-            minWidth: token2.progressStepMinWidth,
-            backgroundColor: token2.remainingColor,
-            transition: `all ${token2.motionDurationSlow}`,
-            "&-active": {
-              backgroundColor: token2.defaultColor
-            }
-          }
-        }
-      }
-    };
-  };
-  var genSmallLine = (token2) => {
-    const {
-      componentCls: progressCls,
-      iconCls: iconPrefixCls
-    } = token2;
-    return {
-      [progressCls]: {
-        [`${progressCls}-small&-line, ${progressCls}-small&-line ${progressCls}-indicator ${iconPrefixCls}`]: {
-          fontSize: token2.fontSizeSM
-        }
-      }
-    };
-  };
-  var prepareComponentToken16 = (token2) => ({
-    circleTextColor: token2.colorText,
-    defaultColor: token2.colorInfo,
-    remainingColor: token2.colorFillSecondary,
-    lineBorderRadius: 100,
-    circleTextFontSize: "1em",
-    circleIconFontSize: `${token2.fontSize / token2.fontSizeSM}em`
-  });
-  var style_default21 = genStyleHooks("Progress", (token2) => {
-    const progressStepMarginInlineEnd = token2.calc(token2.marginXXS).div(2).equal();
-    const progressToken = merge2(token2, {
-      progressStepMarginInlineEnd,
-      progressStepMinWidth: progressStepMarginInlineEnd,
-      progressActiveMotionDuration: "2.4s"
-    });
-    return [genBaseStyle5(progressToken), genLineStyle(progressToken), genCircleStyle(progressToken), genStepStyle(progressToken), genSmallLine(progressToken)];
-  }, prepareComponentToken16);
-
-  // ../custom_dashboard/node_modules/antd/es/progress/Line.js
-  "use client";
-  var sortGradient = (gradients) => {
-    let tempArr = [];
-    Object.keys(gradients).forEach((key) => {
-      const formattedKey = Number.parseFloat(key.replace(/%/g, ""));
-      if (!Number.isNaN(formattedKey)) {
-        tempArr.push({
-          key: formattedKey,
-          value: gradients[key]
-        });
-      }
-    });
-    tempArr = tempArr.sort((a, b) => a.key - b.key);
-    return tempArr.map(({
-      key,
-      value
-    }) => `${value} ${key}%`).join(", ");
-  };
-  var handleGradient = (strokeColor, directionConfig) => {
-    const _a = strokeColor, {
-      from: from2 = presetPrimaryColors.blue,
-      to = presetPrimaryColors.blue,
-      direction = directionConfig === "rtl" ? "to left" : "to right"
-    } = _a, rest = __objRest(_a, [
-      "from",
-      "to",
-      "direction"
-    ]);
-    if (Object.keys(rest).length !== 0) {
-      const sortedGradients = sortGradient(rest);
-      const background2 = `linear-gradient(${direction}, ${sortedGradients})`;
-      return {
-        background: background2,
-        [LineStrokeColorVar]: background2
-      };
-    }
-    const background = `linear-gradient(${direction}, ${from2}, ${to})`;
-    return {
-      background,
-      [LineStrokeColorVar]: background
-    };
-  };
-  var Line2 = (props) => {
-    const {
-      prefixCls,
-      classNames,
-      styles,
-      direction: directionConfig,
-      percent,
-      size,
-      strokeWidth,
-      strokeColor,
-      strokeLinecap = "round",
-      children,
-      railColor,
-      trailColor,
-      percentPosition,
-      success
-    } = props;
-    const {
-      align: infoAlign,
-      type: infoPosition
-    } = percentPosition;
-    const mergedRailColor = railColor != null ? railColor : trailColor;
-    const borderRadius = strokeLinecap === "square" || strokeLinecap === "butt" ? 0 : void 0;
-    if (true) {
-      const warning6 = devUseWarning("Progress");
-      warning6.deprecated(!("strokeWidth" in props), "strokeWidth", "size");
-    }
-    const mergedSize = size != null ? size : [-1, strokeWidth || (size === "small" ? 6 : 8)];
-    const [width, height] = getSize(mergedSize, "line", {
-      strokeWidth
-    });
-    const railStyle = {
-      backgroundColor: mergedRailColor || void 0,
-      borderRadius,
-      height
-    };
-    const trackCls = `${prefixCls}-track`;
-    const backgroundProps = strokeColor && typeof strokeColor !== "string" ? handleGradient(strokeColor, directionConfig) : {
-      [LineStrokeColorVar]: strokeColor,
-      background: strokeColor
-    };
-    const percentTrackStyle = __spreadValues({
-      width: `${validProgress(percent)}%`,
-      height,
-      borderRadius
-    }, backgroundProps);
-    const successPercent = getSuccessPercent(props);
-    const successTrackStyle = {
-      width: `${validProgress(successPercent)}%`,
-      height,
-      borderRadius,
-      backgroundColor: success == null ? void 0 : success.strokeColor
-    };
-    return /* @__PURE__ */ React310.createElement("div", {
-      className: clsx(`${prefixCls}-body`, classNames.body, {
-        [`${prefixCls}-body-layout-bottom`]: infoAlign === "center" && infoPosition === "outer"
-      }),
-      style: __spreadValues({
-        width: width > 0 ? width : "100%"
-      }, styles.body)
-    }, /* @__PURE__ */ React310.createElement("div", {
-      className: clsx(`${prefixCls}-rail`, classNames.rail),
-      style: __spreadValues(__spreadValues({}, railStyle), styles.rail)
-    }, /* @__PURE__ */ React310.createElement("div", {
-      className: clsx(trackCls, classNames.track),
-      style: __spreadValues(__spreadValues({}, percentTrackStyle), styles.track)
-    }, infoPosition === "inner" && children), successPercent !== void 0 && /* @__PURE__ */ React310.createElement("div", {
-      className: clsx(trackCls, `${trackCls}-success`, classNames.track),
-      style: __spreadValues(__spreadValues({}, successTrackStyle), styles.track)
-    })), infoPosition === "outer" && children);
-  };
-  var Line_default2 = Line2;
-
-  // ../custom_dashboard/node_modules/antd/es/progress/Steps.js
-  var React311 = __toESM(require_react());
-  "use client";
-  var Steps = (props) => {
-    const {
-      classNames,
-      styles,
-      size,
-      steps,
-      rounding: customRounding = Math.round,
-      percent = 0,
-      strokeWidth = 8,
-      strokeColor,
-      railColor,
-      trailColor,
-      prefixCls,
-      children
-    } = props;
-    const current = customRounding(steps * (percent / 100));
-    const stepWidth = size === "small" ? 2 : 14;
-    const mergedSize = size != null ? size : [stepWidth, strokeWidth];
-    const [width, height] = getSize(mergedSize, "step", {
-      steps,
-      strokeWidth
-    });
-    const unitWidth = width / steps;
-    const styledSteps = Array.from({
-      length: steps
-    });
-    const mergedRailColor = railColor != null ? railColor : trailColor;
-    for (let i = 0; i < steps; i++) {
-      const color = Array.isArray(strokeColor) ? strokeColor[i] : strokeColor;
-      styledSteps[i] = /* @__PURE__ */ React311.createElement("div", {
-        key: i,
-        className: clsx(`${prefixCls}-steps-item`, {
-          [`${prefixCls}-steps-item-active`]: i <= current - 1
-        }, classNames.track),
-        style: __spreadValues({
-          backgroundColor: i <= current - 1 ? color : mergedRailColor,
-          width: unitWidth,
-          height
-        }, styles.track)
-      });
-    }
-    return /* @__PURE__ */ React311.createElement("div", {
-      className: clsx(`${prefixCls}-steps-body`, classNames.body),
-      style: styles.body
-    }, styledSteps, children);
-  };
-  var Steps_default = Steps;
-
-  // ../custom_dashboard/node_modules/antd/es/progress/progress.js
-  "use client";
-  var ProgressStatuses = ["normal", "exception", "active", "success"];
-  var Progress2 = /* @__PURE__ */ React312.forwardRef((props, ref) => {
-    const _a = props, {
-      prefixCls: customizePrefixCls,
-      className,
-      rootClassName,
-      classNames,
-      styles,
-      steps,
-      strokeColor,
-      percent = 0,
-      size = "medium",
-      showInfo = true,
-      type: type5 = "line",
-      status,
-      format: format2,
-      style: style2,
-      percentPosition = {}
-    } = _a, restProps = __objRest(_a, [
-      "prefixCls",
-      "className",
-      "rootClassName",
-      "classNames",
-      "styles",
-      "steps",
-      "strokeColor",
-      "percent",
-      "size",
-      "showInfo",
-      "type",
-      "status",
-      "format",
-      "style",
-      "percentPosition"
-    ]);
-    const {
-      align: infoAlign = "end",
-      type: infoPosition = "outer"
-    } = percentPosition;
-    const strokeColorNotArray = Array.isArray(strokeColor) ? strokeColor[0] : strokeColor;
-    const strokeColorNotGradient = typeof strokeColor === "string" || Array.isArray(strokeColor) ? strokeColor : void 0;
-    const strokeColorIsBright = React312.useMemo(() => {
-      if (strokeColorNotArray) {
-        const color = typeof strokeColorNotArray === "string" ? strokeColorNotArray : Object.values(strokeColorNotArray)[0];
-        return new FastColor(color).isLight();
-      }
-      return false;
-    }, [strokeColor]);
-    const percentNumber = React312.useMemo(() => {
-      var _a2, _b;
-      const successPercent = getSuccessPercent(props);
-      return Number.parseInt(successPercent !== void 0 ? (_a2 = successPercent != null ? successPercent : 0) == null ? void 0 : _a2.toString() : (_b = percent != null ? percent : 0) == null ? void 0 : _b.toString(), 10);
-    }, [percent, props.success]);
-    const progressStatus = React312.useMemo(() => {
-      if (!ProgressStatuses.includes(status) && percentNumber >= 100) {
-        return "success";
-      }
-      return status || "normal";
-    }, [status, percentNumber]);
-    const {
-      getPrefixCls,
-      direction,
-      className: contextClassName,
-      style: contextStyle,
-      classNames: contextClassNames,
-      styles: contextStyles
-    } = useComponentConfig("progress");
-    const prefixCls = getPrefixCls("progress", customizePrefixCls);
-    const [hashId, cssVarCls] = style_default21(prefixCls);
-    const mergedProps = __spreadProps(__spreadValues({}, props), {
-      percent,
-      type: type5,
-      size,
-      showInfo,
-      percentPosition
-    });
-    const [mergedClassNames, mergedStyles] = useMergeSemantic([contextClassNames, classNames], [contextStyles, styles], {
-      props: mergedProps
-    });
-    const isLineType = type5 === "line";
-    const isPureLineType = isLineType && !steps;
-    const progressInfo = React312.useMemo(() => {
-      if (!showInfo) {
-        return null;
-      }
-      const successPercent = getSuccessPercent(props);
-      let text;
-      const textFormatter = format2 || ((number4) => `${number4}%`);
-      const isBrightInnerColor = isLineType && strokeColorIsBright && infoPosition === "inner";
-      if (infoPosition === "inner" || format2 || progressStatus !== "exception" && progressStatus !== "success") {
-        text = textFormatter(validProgress(percent), validProgress(successPercent));
-      } else if (progressStatus === "exception") {
-        text = isLineType ? /* @__PURE__ */ React312.createElement(CloseCircleFilled_default2, null) : /* @__PURE__ */ React312.createElement(CloseOutlined_default2, null);
-      } else if (progressStatus === "success") {
-        text = isLineType ? /* @__PURE__ */ React312.createElement(CheckCircleFilled_default2, null) : /* @__PURE__ */ React312.createElement(CheckOutlined_default2, null);
-      }
-      return /* @__PURE__ */ React312.createElement("span", {
-        className: clsx(`${prefixCls}-indicator`, {
-          [`${prefixCls}-indicator-bright`]: isBrightInnerColor,
-          [`${prefixCls}-indicator-${infoAlign}`]: isPureLineType,
-          [`${prefixCls}-indicator-${infoPosition}`]: isPureLineType
-        }, mergedClassNames.indicator),
-        style: mergedStyles.indicator,
-        title: typeof text === "string" ? text : void 0
-      }, text);
-    }, [showInfo, percent, percentNumber, progressStatus, type5, prefixCls, format2, isLineType, strokeColorIsBright, infoPosition, infoAlign, isPureLineType, mergedClassNames.indicator, mergedStyles.indicator]);
-    if (true) {
-      const warning6 = devUseWarning("Progress");
-      [["width", "size"], ["trailColor", "railColor"], ["gapPosition", "gapPlacement"]].forEach(([deprecatedName, newName]) => {
-        warning6.deprecated(!(deprecatedName in props), deprecatedName, newName);
-      });
-      if (type5 === "circle" || type5 === "dashboard") {
-        if (Array.isArray(size)) {
-          true ? warning6(false, "usage", 'Type "circle" and "dashboard" do not accept array as `size`, please use number or preset size instead.') : void 0;
-        } else if (typeof size === "object") {
-          true ? warning6(false, "usage", 'Type "circle" and "dashboard" do not accept object as `size`, please use number or preset size instead.') : void 0;
-        }
-      }
-      warning6.deprecated(size !== "default", 'size="default"', 'size="medium"');
-    }
-    const sharedProps = __spreadProps(__spreadValues({}, props), {
-      classNames: mergedClassNames,
-      styles: mergedStyles
-    });
-    let progress;
-    if (type5 === "line") {
-      progress = steps ? /* @__PURE__ */ React312.createElement(Steps_default, __spreadProps(__spreadValues({}, sharedProps), {
-        strokeColor: strokeColorNotGradient,
-        prefixCls,
-        steps: typeof steps === "object" ? steps.count : steps
-      }), progressInfo) : /* @__PURE__ */ React312.createElement(Line_default2, __spreadProps(__spreadValues({}, sharedProps), {
-        strokeColor: strokeColorNotArray,
-        prefixCls,
-        direction,
-        percentPosition: {
-          align: infoAlign,
-          type: infoPosition
-        }
-      }), progressInfo);
-    } else if (type5 === "circle" || type5 === "dashboard") {
-      progress = /* @__PURE__ */ React312.createElement(Circle_default2, __spreadProps(__spreadValues({}, sharedProps), {
-        strokeColor: strokeColorNotArray,
-        prefixCls,
-        progressStatus
-      }), progressInfo);
-    }
-    const classString = clsx(prefixCls, `${prefixCls}-status-${progressStatus}`, {
-      [`${prefixCls}-${type5 === "dashboard" && "circle" || type5}`]: type5 !== "line",
-      [`${prefixCls}-inline-circle`]: type5 === "circle" && getSize(size, "circle")[0] <= 20,
-      [`${prefixCls}-line`]: isPureLineType,
-      [`${prefixCls}-line-align-${infoAlign}`]: isPureLineType,
-      [`${prefixCls}-line-position-${infoPosition}`]: isPureLineType,
-      [`${prefixCls}-steps`]: steps,
-      [`${prefixCls}-show-info`]: showInfo,
-      [`${prefixCls}-small`]: size === "small",
-      [`${prefixCls}-rtl`]: direction === "rtl"
-    }, contextClassName, className, rootClassName, mergedClassNames.root, hashId, cssVarCls);
-    return /* @__PURE__ */ React312.createElement("div", __spreadValues({
-      ref,
-      style: __spreadValues(__spreadValues(__spreadValues({}, contextStyle), mergedStyles.root), style2),
-      className: classString,
-      role: "progressbar",
-      "aria-valuenow": percentNumber,
-      "aria-valuemin": 0,
-      "aria-valuemax": 100
-    }, omit(restProps, ["railColor", "trailColor", "strokeWidth", "width", "gapDegree", "gapPosition", "gapPlacement", "strokeLinecap", "success"])), progress);
-  });
-  if (true) {
-    Progress2.displayName = "Progress";
-  }
-  var progress_default = Progress2;
-
-  // ../custom_dashboard/node_modules/antd/es/progress/index.js
-  "use client";
-  var progress_default2 = progress_default;
+  var row_default2 = row_default;
 
   // ../custom_dashboard/node_modules/antd/es/table/Table.js
-  var React381 = __toESM(require_react());
+  var React395 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/constant.js
   var EXPAND_COLUMN = {};
   var INTERNAL_HOOKS = "rc-table-internal-hook";
 
   // ../custom_dashboard/node_modules/@rc-component/context/es/context.js
-  var React313 = __toESM(require_react());
+  var React327 = __toESM(require_react());
   var import_react_dom7 = __toESM(require_react_dom());
-  function createContext37(defaultValue) {
-    const Context3 = /* @__PURE__ */ React313.createContext(void 0);
+  function createContext38(defaultValue) {
+    const Context3 = /* @__PURE__ */ React327.createContext(void 0);
     const Provider = ({
       value,
       children
     }) => {
-      const valueRef = React313.useRef(value);
+      const valueRef = React327.useRef(value);
       valueRef.current = value;
-      const [context] = React313.useState(() => ({
+      const [context] = React327.useState(() => ({
         getValue: () => valueRef.current,
         listeners: /* @__PURE__ */ new Set()
       }));
@@ -67501,7 +71270,7 @@ html body {
           });
         });
       }, [value]);
-      return /* @__PURE__ */ React313.createElement(Context3.Provider, {
+      return /* @__PURE__ */ React327.createElement(Context3.Provider, {
         value: context
       }, children);
     };
@@ -67511,7 +71280,7 @@ html body {
       defaultValue
     };
   }
-  function useContext112(holder, selector) {
+  function useContext117(holder, selector) {
     const eventSelector = useEvent_default(typeof selector === "function" ? selector : (ctx) => {
       if (selector === void 0) {
         return ctx;
@@ -67525,14 +71294,14 @@ html body {
       });
       return obj;
     });
-    const context = React313.useContext(holder == null ? void 0 : holder.Context);
+    const context = React327.useContext(holder == null ? void 0 : holder.Context);
     const {
       listeners,
       getValue: getValue3
     } = context || {};
-    const valueRef = React313.useRef();
+    const valueRef = React327.useRef();
     valueRef.current = eventSelector(context ? getValue3() : holder == null ? void 0 : holder.defaultValue);
-    const [, forceUpdate] = React313.useState({});
+    const [, forceUpdate] = React327.useState({});
     useLayoutEffect_default(() => {
       if (!context) {
         return;
@@ -67552,9 +71321,9 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/context/es/Immutable.js
-  var React314 = __toESM(require_react());
-  function _extends62() {
-    _extends62 = Object.assign ? Object.assign.bind() : function(target) {
+  var React328 = __toESM(require_react());
+  function _extends68() {
+    _extends68 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -67565,51 +71334,51 @@ html body {
       }
       return target;
     };
-    return _extends62.apply(this, arguments);
+    return _extends68.apply(this, arguments);
   }
   function createImmutable() {
-    const ImmutableContext = /* @__PURE__ */ React314.createContext(null);
+    const ImmutableContext = /* @__PURE__ */ React328.createContext(null);
     function useImmutableMark3() {
-      return React314.useContext(ImmutableContext);
+      return React328.useContext(ImmutableContext);
     }
-    function makeImmutable3(Component7, shouldTriggerRender) {
-      const refAble = supportRef(Component7);
+    function makeImmutable3(Component5, shouldTriggerRender) {
+      const refAble = supportRef(Component5);
       const ImmutableComponent = (props, ref) => {
         const refProps = refAble ? {
           ref
         } : {};
-        const renderTimesRef = React314.useRef(0);
-        const prevProps = React314.useRef(props);
+        const renderTimesRef = React328.useRef(0);
+        const prevProps = React328.useRef(props);
         const mark = useImmutableMark3();
         if (mark !== null) {
-          return /* @__PURE__ */ React314.createElement(Component7, _extends62({}, props, refProps));
+          return /* @__PURE__ */ React328.createElement(Component5, _extends68({}, props, refProps));
         }
         if (!shouldTriggerRender || shouldTriggerRender(prevProps.current, props)) {
           renderTimesRef.current += 1;
         }
         prevProps.current = props;
-        return /* @__PURE__ */ React314.createElement(ImmutableContext.Provider, {
+        return /* @__PURE__ */ React328.createElement(ImmutableContext.Provider, {
           value: renderTimesRef.current
-        }, /* @__PURE__ */ React314.createElement(Component7, _extends62({}, props, refProps)));
+        }, /* @__PURE__ */ React328.createElement(Component5, _extends68({}, props, refProps)));
       };
       if (true) {
-        ImmutableComponent.displayName = `ImmutableRoot(${Component7.displayName || Component7.name})`;
+        ImmutableComponent.displayName = `ImmutableRoot(${Component5.displayName || Component5.name})`;
       }
-      return refAble ? /* @__PURE__ */ React314.forwardRef(ImmutableComponent) : ImmutableComponent;
+      return refAble ? /* @__PURE__ */ React328.forwardRef(ImmutableComponent) : ImmutableComponent;
     }
-    function responseImmutable3(Component7, propsAreEqual) {
-      const refAble = supportRef(Component7);
+    function responseImmutable3(Component5, propsAreEqual) {
+      const refAble = supportRef(Component5);
       const ImmutableComponent = (props, ref) => {
         const refProps = refAble ? {
           ref
         } : {};
         useImmutableMark3();
-        return /* @__PURE__ */ React314.createElement(Component7, _extends62({}, props, refProps));
+        return /* @__PURE__ */ React328.createElement(Component5, _extends68({}, props, refProps));
       };
       if (true) {
-        ImmutableComponent.displayName = `ImmutableResponse(${Component7.displayName || Component7.name})`;
+        ImmutableComponent.displayName = `ImmutableResponse(${Component5.displayName || Component5.name})`;
       }
-      return /* @__PURE__ */ React314.memo(refAble ? /* @__PURE__ */ React314.forwardRef(ImmutableComponent) : ImmutableComponent, propsAreEqual);
+      return /* @__PURE__ */ React328.memo(refAble ? /* @__PURE__ */ React328.forwardRef(ImmutableComponent) : ImmutableComponent, propsAreEqual);
     }
     return {
       makeImmutable: makeImmutable3,
@@ -67626,7 +71395,7 @@ html body {
   } = createImmutable();
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Footer/index.js
-  var React322 = __toESM(require_react());
+  var React336 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/context/TableContext.js
   var {
@@ -67634,15 +71403,15 @@ html body {
     responseImmutable: responseImmutable2,
     useImmutableMark: useImmutableMark2
   } = createImmutable();
-  var TableContext = createContext37();
+  var TableContext = createContext38();
   var TableContext_default = TableContext;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useRenderTimes.js
-  var React315 = __toESM(require_react());
+  var React329 = __toESM(require_react());
   function useRenderTimes(props, debug) {
-    const timesRef = React315.useRef(0);
+    const timesRef = React329.useRef(0);
     timesRef.current += 1;
-    const propsRef = React315.useRef(props);
+    const propsRef = React329.useRef(props);
     const keys2 = [];
     Object.keys(props || {}).map((key) => {
       var _a;
@@ -67651,12 +71420,12 @@ html body {
       }
     });
     propsRef.current = props;
-    const keysRef = React315.useRef([]);
+    const keysRef = React329.useRef([]);
     if (keys2.length) {
       keysRef.current = keys2;
     }
-    React315.useDebugValue(timesRef.current);
-    React315.useDebugValue(keysRef.current.join(", "));
+    React329.useDebugValue(timesRef.current);
+    React329.useDebugValue(keysRef.current.join(", "));
     if (debug) {
       console.log(`${debug}:`, timesRef.current, keysRef.current);
     }
@@ -67664,33 +71433,33 @@ html body {
   }
   var useRenderTimes_default = true ? useRenderTimes : () => {
   };
-  var RenderBlock = /* @__PURE__ */ React315.memo(() => {
+  var RenderBlock = /* @__PURE__ */ React329.memo(() => {
     const times = useRenderTimes();
-    return /* @__PURE__ */ React315.createElement("h1", null, "Render Times: ", times);
+    return /* @__PURE__ */ React329.createElement("h1", null, "Render Times: ", times);
   });
   if (true) {
     RenderBlock.displayName = "RenderBlock";
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Footer/Cell.js
-  var React320 = __toESM(require_react());
+  var React334 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Cell/index.js
-  var React318 = __toESM(require_react());
+  var React332 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Cell/useCellRender.js
-  var React317 = __toESM(require_react());
+  var React331 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/context/PerfContext.js
-  var React316 = __toESM(require_react());
-  var PerfContext = /* @__PURE__ */ React316.createContext({
+  var React330 = __toESM(require_react());
+  var PerfContext = /* @__PURE__ */ React330.createContext({
     renderWithProps: false
   });
   var PerfContext_default = PerfContext;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/utils/valueUtil.js
   var INTERNAL_KEY_PREFIX = "RC_TABLE_KEY";
-  function toArray7(arr) {
+  function toArray6(arr) {
     if (arr === void 0 || arr === null) {
       return [];
     }
@@ -67704,7 +71473,7 @@ html body {
         key,
         dataIndex
       } = column2 || {};
-      let mergedKey = key || toArray7(dataIndex).join("-") || INTERNAL_KEY_PREFIX;
+      let mergedKey = key || toArray6(dataIndex).join("-") || INTERNAL_KEY_PREFIX;
       while (keys2[mergedKey]) {
         mergedKey = `${mergedKey}_next`;
       }
@@ -67722,10 +71491,10 @@ html body {
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Cell/useCellRender.js
   function isRenderCell(data) {
-    return data && typeof data === "object" && !Array.isArray(data) && !/* @__PURE__ */ React317.isValidElement(data);
+    return data && typeof data === "object" && !Array.isArray(data) && !/* @__PURE__ */ React331.isValidElement(data);
   }
-  function useCellRender(record, dataIndex, renderIndex, children, render4, shouldCellUpdate) {
-    const perfRecord = React317.useContext(PerfContext_default);
+  function useCellRender(record, dataIndex, renderIndex, children, render2, shouldCellUpdate) {
+    const perfRecord = React331.useContext(PerfContext_default);
     const mark = useImmutableMark2();
     const retData = useMemo(() => {
       if (validateValue(children)) {
@@ -67735,8 +71504,8 @@ html body {
       const value = get(record, path);
       let returnChildNode = value;
       let returnCellProps = void 0;
-      if (render4) {
-        const renderData = render4(value, record, renderIndex);
+      if (render2) {
+        const renderData = render2(value, record, renderIndex);
         if (isRenderCell(renderData)) {
           if (true) {
             warning_default(false, "`columns.render` return cell props is deprecated with perf issue, please use `onCell` instead.");
@@ -67754,7 +71523,7 @@ html body {
       record,
       children,
       dataIndex,
-      render4,
+      render2,
       renderIndex
     ], (prev2, next2) => {
       if (shouldCellUpdate) {
@@ -67776,15 +71545,15 @@ html body {
     return cellStartRow <= endRow && cellEndRow >= startRow;
   }
   function useHoverState(rowIndex, rowSpan) {
-    return useContext112(TableContext_default, (ctx) => {
+    return useContext117(TableContext_default, (ctx) => {
       const hovering = inHoverRange(rowIndex, rowSpan || 1, ctx.hoverStartRow, ctx.hoverEndRow);
       return [hovering, ctx.onHover];
     });
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Cell/index.js
-  function _extends63() {
-    _extends63 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends69() {
+    _extends69 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -67795,7 +71564,7 @@ html body {
       }
       return target;
     };
-    return _extends63.apply(this, arguments);
+    return _extends69.apply(this, arguments);
   }
   var getTitleFromCellRenderChildren = ({
     ellipsis,
@@ -67810,7 +71579,7 @@ html body {
     if (ellipsisConfig && (ellipsisConfig.showTitle || rowType === "header")) {
       if (typeof children === "string" || typeof children === "number") {
         title = children.toString();
-      } else if (/* @__PURE__ */ React318.isValidElement(children) && typeof ((_a = children.props) == null ? void 0 : _a.children) === "string") {
+      } else if (/* @__PURE__ */ React332.isValidElement(children) && typeof ((_a = children.props) == null ? void 0 : _a.children) === "string") {
         title = (_b = children.props) == null ? void 0 : _b.children;
       }
     }
@@ -67822,7 +71591,7 @@ html body {
       useRenderTimes_default(props);
     }
     const {
-      component: Component7,
+      component: Component5,
       children,
       ellipsis,
       scope,
@@ -67831,11 +71600,11 @@ html body {
       style: style2,
       align,
       record,
-      render: render4,
+      render: render2,
       dataIndex,
       renderIndex,
       shouldCellUpdate,
-      index: index2,
+      index,
       rowType,
       colSpan,
       rowSpan,
@@ -67855,12 +71624,12 @@ html body {
     const {
       allColumnsFixedLeft,
       rowHoverable
-    } = useContext112(TableContext_default, ["allColumnsFixedLeft", "rowHoverable"]);
-    const [childNode, legacyCellProps] = useCellRender(record, dataIndex, renderIndex, children, render4, shouldCellUpdate);
+    } = useContext117(TableContext_default, ["allColumnsFixedLeft", "rowHoverable"]);
+    const [childNode, legacyCellProps] = useCellRender(record, dataIndex, renderIndex, children, render2, shouldCellUpdate);
     const fixedStyle = {};
     const isFixStart = typeof fixStart === "number" && !allColumnsFixedLeft;
     const isFixEnd = typeof fixEnd === "number" && !allColumnsFixedLeft;
-    const [showFixStartShadow, showFixEndShadow] = useContext112(TableContext_default, ({
+    const [showFixStartShadow, showFixEndShadow] = useContext117(TableContext_default, ({
       scrollInfo
     }) => {
       if (!isFixStart && !isFixEnd) {
@@ -67883,11 +71652,11 @@ html body {
     }
     const mergedColSpan = (_c = (_b = (_a = legacyCellProps == null ? void 0 : legacyCellProps.colSpan) != null ? _a : additionalProps.colSpan) != null ? _b : colSpan) != null ? _c : 1;
     const mergedRowSpan = (_f = (_e = (_d = legacyCellProps == null ? void 0 : legacyCellProps.rowSpan) != null ? _d : additionalProps.rowSpan) != null ? _e : rowSpan) != null ? _f : 1;
-    const [hovering, onHover] = useHoverState(index2, mergedRowSpan);
+    const [hovering, onHover] = useHoverState(index, mergedRowSpan);
     const onMouseEnter = useEvent_default((event) => {
       var _a2;
       if (record) {
-        onHover(index2, index2 + mergedRowSpan - 1);
+        onHover(index, index + mergedRowSpan - 1);
       }
       (_a2 = additionalProps == null ? void 0 : additionalProps.onMouseEnter) == null ? void 0 : _a2.call(additionalProps, event);
     });
@@ -67925,15 +71694,15 @@ html body {
     }
     const mergedStyle = __spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues({}, legacyCellProps == null ? void 0 : legacyCellProps.style), fixedStyle), alignStyle), additionalProps.style), style2);
     let mergedChildNode = childNode;
-    if (typeof mergedChildNode === "object" && !Array.isArray(mergedChildNode) && !/* @__PURE__ */ React318.isValidElement(mergedChildNode)) {
+    if (typeof mergedChildNode === "object" && !Array.isArray(mergedChildNode) && !/* @__PURE__ */ React332.isValidElement(mergedChildNode)) {
       mergedChildNode = null;
     }
     if (ellipsis && (fixedStartShadow || fixedEndShadow)) {
-      mergedChildNode = /* @__PURE__ */ React318.createElement("span", {
+      mergedChildNode = /* @__PURE__ */ React332.createElement("span", {
         className: `${cellPrefixCls}-content`
       }, mergedChildNode);
     }
-    return /* @__PURE__ */ React318.createElement(Component7, _extends63({}, legacyCellProps, additionalProps, {
+    return /* @__PURE__ */ React332.createElement(Component5, _extends69({}, legacyCellProps, additionalProps, {
       className: mergedClassName,
       style: mergedStyle,
       title,
@@ -67944,7 +71713,7 @@ html body {
       rowSpan: mergedRowSpan !== 1 ? mergedRowSpan : null
     }), appendNode, mergedChildNode);
   };
-  var Cell_default = /* @__PURE__ */ React318.memo(Cell);
+  var Cell_default = /* @__PURE__ */ React332.memo(Cell);
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/utils/fixUtil.js
   function isFixedStart(column2) {
@@ -68007,13 +71776,13 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Footer/SummaryContext.js
-  var React319 = __toESM(require_react());
-  var SummaryContext = /* @__PURE__ */ React319.createContext({});
+  var React333 = __toESM(require_react());
+  var SummaryContext = /* @__PURE__ */ React333.createContext({});
   var SummaryContext_default = SummaryContext;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Footer/Cell.js
-  function _extends64() {
-    _extends64 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends70() {
+    _extends70 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -68024,12 +71793,12 @@ html body {
       }
       return target;
     };
-    return _extends64.apply(this, arguments);
+    return _extends70.apply(this, arguments);
   }
   var SummaryCell = (props) => {
     const {
       className,
-      index: index2,
+      index,
       children,
       colSpan = 1,
       rowSpan,
@@ -68037,18 +71806,18 @@ html body {
     } = props;
     const {
       prefixCls
-    } = useContext112(TableContext_default, ["prefixCls"]);
+    } = useContext117(TableContext_default, ["prefixCls"]);
     const {
       scrollColumnIndex,
       stickyOffsets,
       flattenColumns
-    } = React320.useContext(SummaryContext_default);
-    const lastIndex = index2 + colSpan - 1;
+    } = React334.useContext(SummaryContext_default);
+    const lastIndex = index + colSpan - 1;
     const mergedColSpan = lastIndex + 1 === scrollColumnIndex ? colSpan + 1 : colSpan;
-    const fixedInfo = React320.useMemo(() => getCellFixedInfo(index2, index2 + mergedColSpan - 1, flattenColumns, stickyOffsets), [index2, mergedColSpan, flattenColumns, stickyOffsets]);
-    return /* @__PURE__ */ React320.createElement(Cell_default, _extends64({
+    const fixedInfo = React334.useMemo(() => getCellFixedInfo(index, index + mergedColSpan - 1, flattenColumns, stickyOffsets), [index, mergedColSpan, flattenColumns, stickyOffsets]);
+    return /* @__PURE__ */ React334.createElement(Cell_default, _extends70({
       className,
-      index: index2,
+      index,
       component: "td",
       prefixCls,
       record: null,
@@ -68062,14 +71831,14 @@ html body {
   var Cell_default2 = SummaryCell;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Footer/Row.js
-  var React321 = __toESM(require_react());
+  var React335 = __toESM(require_react());
   var FooterRow = (props) => {
     const _a = props, {
       children
     } = _a, restProps = __objRest(_a, [
       "children"
     ]);
-    return /* @__PURE__ */ React321.createElement("tr", restProps, children);
+    return /* @__PURE__ */ React335.createElement("tr", restProps, children);
   };
   var Row_default = FooterRow;
 
@@ -68094,17 +71863,17 @@ html body {
       stickyOffsets,
       flattenColumns
     } = props;
-    const prefixCls = useContext112(TableContext_default, "prefixCls");
+    const prefixCls = useContext117(TableContext_default, "prefixCls");
     const lastColumnIndex = flattenColumns.length - 1;
     const scrollColumn = flattenColumns[lastColumnIndex];
-    const summaryContext = React322.useMemo(() => ({
+    const summaryContext = React336.useMemo(() => ({
       stickyOffsets,
       flattenColumns,
       scrollColumnIndex: (scrollColumn == null ? void 0 : scrollColumn.scrollbar) ? lastColumnIndex : null
     }), [scrollColumn, flattenColumns, lastColumnIndex, stickyOffsets]);
-    return /* @__PURE__ */ React322.createElement(SummaryContext_default.Provider, {
+    return /* @__PURE__ */ React336.createElement(SummaryContext_default.Provider, {
       value: summaryContext
-    }, /* @__PURE__ */ React322.createElement("tfoot", {
+    }, /* @__PURE__ */ React336.createElement("tfoot", {
       className: `${prefixCls}-summary`
     }, children));
   };
@@ -68124,19 +71893,19 @@ html body {
   var ColumnGroup_default = ColumnGroup;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Table.js
-  var React342 = __toESM(require_react());
+  var React356 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Body/index.js
-  var React329 = __toESM(require_react());
+  var React343 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useFlattenRecords.js
-  var React323 = __toESM(require_react());
-  function fillRecords(list, record, indent, childrenColumnName, expandedKeys, getRowKey, index2) {
-    const key = getRowKey(record, index2);
+  var React337 = __toESM(require_react());
+  function fillRecords(list, record, indent, childrenColumnName, expandedKeys, getRowKey, index) {
+    const key = getRowKey(record, index);
     list.push({
       record,
       indent,
-      index: index2,
+      index,
       rowKey: key
     });
     const expanded = expandedKeys == null ? void 0 : expandedKeys.has(key);
@@ -68147,7 +71916,7 @@ html body {
     }
   }
   function useFlattenRecords(data, childrenColumnName, expandedKeys, getRowKey) {
-    const arr = React323.useMemo(() => {
+    const arr = React337.useMemo(() => {
       if (expandedKeys == null ? void 0 : expandedKeys.size) {
         const list = [];
         for (let i = 0; i < (data == null ? void 0 : data.length); i += 1) {
@@ -68156,12 +71925,12 @@ html body {
         }
         return list;
       }
-      return data == null ? void 0 : data.map((item, index2) => {
+      return data == null ? void 0 : data.map((item, index) => {
         return {
           record: item,
           indent: 0,
-          index: index2,
-          rowKey: getRowKey(item, index2)
+          index,
+          rowKey: getRowKey(item, index)
         };
       });
     }, [data, childrenColumnName, expandedKeys, getRowKey]);
@@ -68169,11 +71938,11 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Body/BodyRow.js
-  var React326 = __toESM(require_react());
+  var React340 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useRowInfo.js
   function useRowInfo(record, rowKey, recordIndex, indent) {
-    const context = useContext112(TableContext_default, ["prefixCls", "fixedInfoList", "flattenColumns", "expandableType", "expandRowByClick", "onTriggerExpand", "rowClassName", "expandedRowClassName", "indentSize", "expandIcon", "expandedRowRender", "expandIconColumnIndex", "expandedKeys", "childrenColumnName", "rowExpandable", "onRow"]);
+    const context = useContext117(TableContext_default, ["prefixCls", "fixedInfoList", "flattenColumns", "expandableType", "expandRowByClick", "onTriggerExpand", "rowClassName", "expandedRowClassName", "indentSize", "expandIcon", "expandedRowRender", "expandIconColumnIndex", "expandedKeys", "childrenColumnName", "rowExpandable", "onRow"]);
     const {
       flattenColumns,
       expandableType,
@@ -68223,7 +71992,7 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Body/ExpandedRow.js
-  var React324 = __toESM(require_react());
+  var React338 = __toESM(require_react());
   var ExpandedRow = (props) => {
     if (true) {
       useRenderTimes_default(props);
@@ -68231,12 +72000,12 @@ html body {
     const {
       prefixCls,
       children,
-      component: Component7,
+      component: Component5,
       cellComponent,
       className,
       expanded,
       colSpan,
-      isEmpty,
+      isEmpty: isEmpty2,
       stickyOffset = 0
     } = props;
     const {
@@ -68245,12 +72014,12 @@ html body {
       fixColumn,
       componentWidth,
       horizonScroll
-    } = useContext112(TableContext_default, ["scrollbarSize", "fixHeader", "fixColumn", "componentWidth", "horizonScroll"]);
+    } = useContext117(TableContext_default, ["scrollbarSize", "fixHeader", "fixColumn", "componentWidth", "horizonScroll"]);
     let contentNode = children;
-    if (isEmpty ? horizonScroll && componentWidth : fixColumn) {
-      contentNode = /* @__PURE__ */ React324.createElement("div", {
+    if (isEmpty2 ? horizonScroll && componentWidth : fixColumn) {
+      contentNode = /* @__PURE__ */ React338.createElement("div", {
         style: {
-          width: componentWidth - stickyOffset - (fixHeader && !isEmpty ? scrollbarSize : 0),
+          width: componentWidth - stickyOffset - (fixHeader && !isEmpty2 ? scrollbarSize : 0),
           position: "sticky",
           left: stickyOffset,
           overflow: "hidden"
@@ -68258,12 +72027,12 @@ html body {
         className: `${prefixCls}-expanded-row-fixed`
       }, contentNode);
     }
-    return /* @__PURE__ */ React324.createElement(Component7, {
+    return /* @__PURE__ */ React338.createElement(Component5, {
       className,
       style: {
         display: expanded ? null : "none"
       }
-    }, /* @__PURE__ */ React324.createElement(Cell_default, {
+    }, /* @__PURE__ */ React338.createElement(Cell_default, {
       component: cellComponent,
       prefixCls,
       colSpan
@@ -68272,7 +72041,7 @@ html body {
   var ExpandedRow_default = ExpandedRow;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/utils/expandUtil.js
-  var React325 = __toESM(require_react());
+  var React339 = __toESM(require_react());
   function renderExpandIcon({
     prefixCls,
     record,
@@ -68282,7 +72051,7 @@ html body {
   }) {
     const expandClassName = `${prefixCls}-row-expand-icon`;
     if (!expandable) {
-      return /* @__PURE__ */ React325.createElement("span", {
+      return /* @__PURE__ */ React339.createElement("span", {
         className: clsx(expandClassName, `${prefixCls}-row-spaced`)
       });
     }
@@ -68290,7 +72059,7 @@ html body {
       onExpand(record, event);
       event.stopPropagation();
     };
-    return /* @__PURE__ */ React325.createElement("span", {
+    return /* @__PURE__ */ React339.createElement("span", {
       className: clsx(expandClassName, {
         [`${prefixCls}-row-expanded`]: expanded,
         [`${prefixCls}-row-collapsed`]: !expanded
@@ -68301,27 +72070,27 @@ html body {
   function findAllChildrenKeys(data, getRowKey, childrenColumnName) {
     const keys2 = [];
     function dig(list) {
-      (list || []).forEach((item, index2) => {
-        keys2.push(getRowKey(item, index2));
+      (list || []).forEach((item, index) => {
+        keys2.push(getRowKey(item, index));
         dig(item[childrenColumnName]);
       });
     }
     dig(data);
     return keys2;
   }
-  function computedExpandedClassName(cls, record, index2, indent) {
+  function computedExpandedClassName(cls, record, index, indent) {
     if (typeof cls === "string") {
       return cls;
     }
     if (typeof cls === "function") {
-      return cls(record, index2, indent);
+      return cls(record, index, indent);
     }
     return "";
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Body/BodyRow.js
-  function _extends65() {
-    _extends65 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends71() {
+    _extends71 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -68332,9 +72101,9 @@ html body {
       }
       return target;
     };
-    return _extends65.apply(this, arguments);
+    return _extends71.apply(this, arguments);
   }
-  function getCellProps(rowInfo, column2, colIndex, indent, index2, rowKeys = [], expandedRowOffset = 0) {
+  function getCellProps(rowInfo, column2, colIndex, indent, index, rowKeys = [], expandedRowOffset = 0) {
     var _a;
     const {
       record,
@@ -68355,7 +72124,7 @@ html body {
     const fixedInfo = fixedInfoList[colIndex];
     let appendCellNode;
     if (colIndex === (expandIconColumnIndex || 0) && nestExpandable) {
-      appendCellNode = /* @__PURE__ */ React326.createElement(React326.Fragment, null, /* @__PURE__ */ React326.createElement("span", {
+      appendCellNode = /* @__PURE__ */ React340.createElement(React340.Fragment, null, /* @__PURE__ */ React340.createElement("span", {
         style: {
           paddingLeft: `${indentSize * indent}px`
         },
@@ -68368,14 +72137,14 @@ html body {
         onExpand: onTriggerExpand
       }));
     }
-    const additionalCellProps = ((_a = column2.onCell) == null ? void 0 : _a.call(column2, record, index2)) || {};
+    const additionalCellProps = ((_a = column2.onCell) == null ? void 0 : _a.call(column2, record, index)) || {};
     if (expandedRowOffset) {
       const {
         rowSpan = 1
       } = additionalCellProps;
       if (expandable && rowSpan && colIndex < expandedRowOffset) {
         let currentRowSpan = rowSpan;
-        for (let i = index2; i < index2 + rowSpan; i += 1) {
+        for (let i = index; i < index + rowSpan; i += 1) {
           const rowKey = rowKeys[i];
           if (expandedKeys.has(rowKey)) {
             currentRowSpan += 1;
@@ -68401,7 +72170,7 @@ html body {
       classNames,
       styles,
       record,
-      index: index2,
+      index,
       renderIndex,
       rowKey,
       rowKeys,
@@ -68411,7 +72180,7 @@ html body {
       scopeCellComponent,
       expandedRowInfo
     } = props;
-    const rowInfo = useRowInfo(record, rowKey, index2, indent);
+    const rowInfo = useRowInfo(record, rowKey, index, indent);
     const {
       prefixCls,
       flattenColumns,
@@ -68421,13 +72190,13 @@ html body {
       expanded,
       rowSupportExpand
     } = rowInfo;
-    const expandedRef = React326.useRef(false);
+    const expandedRef = React340.useRef(false);
     expandedRef.current || (expandedRef.current = expanded);
     if (true) {
       useRenderTimes_default(props);
     }
-    const expandedClsName = computedExpandedClassName(expandedRowClassName, record, index2, indent);
-    const baseRowNode = /* @__PURE__ */ React326.createElement(RowComponent, _extends65({}, rowProps, {
+    const expandedClsName = computedExpandedClassName(expandedRowClassName, record, index, indent);
+    const baseRowNode = /* @__PURE__ */ React340.createElement(RowComponent, _extends71({}, rowProps, {
       "data-row-key": rowKey,
       className: clsx(className, `${prefixCls}-row`, `${prefixCls}-row-level-${indent}`, rowProps == null ? void 0 : rowProps.className, classNames.row, {
         [expandedClsName]: indent >= 1
@@ -68435,7 +72204,7 @@ html body {
       style: __spreadValues(__spreadValues(__spreadValues({}, style2), rowProps == null ? void 0 : rowProps.style), styles.row)
     }), flattenColumns.map((column2, colIndex) => {
       const {
-        render: render4,
+        render: render2,
         dataIndex,
         className: columnClassName
       } = column2;
@@ -68444,8 +72213,8 @@ html body {
         fixedInfo,
         appendCellNode,
         additionalCellProps
-      } = getCellProps(rowInfo, column2, colIndex, indent, index2, rowKeys, expandedRowInfo == null ? void 0 : expandedRowInfo.offset);
-      return /* @__PURE__ */ React326.createElement(Cell_default, _extends65({
+      } = getCellProps(rowInfo, column2, colIndex, indent, index, rowKeys, expandedRowInfo == null ? void 0 : expandedRowInfo.offset);
+      return /* @__PURE__ */ React340.createElement(Cell_default, _extends71({
         className: clsx(columnClassName, classNames.cell),
         style: styles.cell,
         ellipsis: column2.ellipsis,
@@ -68455,10 +72224,10 @@ html body {
         prefixCls,
         key,
         record,
-        index: index2,
+        index,
         renderIndex,
         dataIndex,
-        render: render4,
+        render: render2,
         shouldCellUpdate: column2.shouldCellUpdate
       }, fixedInfo, {
         appendNode: appendCellNode,
@@ -68467,8 +72236,8 @@ html body {
     }));
     let expandRowNode;
     if (rowSupportExpand && (expandedRef.current || expanded)) {
-      const expandContent = expandedRowRender(record, index2, indent + 1, expanded);
-      expandRowNode = /* @__PURE__ */ React326.createElement(ExpandedRow_default, {
+      const expandContent = expandedRowRender(record, index, indent + 1, expanded);
+      expandRowNode = /* @__PURE__ */ React340.createElement(ExpandedRow_default, {
         expanded,
         className: clsx(`${prefixCls}-expanded-row`, `${prefixCls}-expanded-row-level-${indent + 1}`, expandedClsName),
         prefixCls,
@@ -68479,7 +72248,7 @@ html body {
         stickyOffset: expandedRowInfo == null ? void 0 : expandedRowInfo.sticky
       }, expandContent);
     }
-    return /* @__PURE__ */ React326.createElement(React326.Fragment, null, baseRowNode, expandRowNode);
+    return /* @__PURE__ */ React340.createElement(React340.Fragment, null, baseRowNode, expandRowNode);
   };
   if (true) {
     BodyRow.displayName = "BodyRow";
@@ -68487,25 +72256,25 @@ html body {
   var BodyRow_default = responseImmutable2(BodyRow);
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Body/MeasureRow.js
-  var React328 = __toESM(require_react());
+  var React342 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Body/MeasureCell.js
-  var React327 = __toESM(require_react());
+  var React341 = __toESM(require_react());
   var MeasureCell = (props) => {
     const {
       columnKey,
       onColumnResize,
       title
     } = props;
-    const cellRef = React327.useRef(null);
+    const cellRef = React341.useRef(null);
     useLayoutEffect_default(() => {
       if (cellRef.current) {
         onColumnResize(columnKey, cellRef.current.offsetWidth);
       }
     }, []);
-    return /* @__PURE__ */ React327.createElement(es_default, {
+    return /* @__PURE__ */ React341.createElement(es_default, {
       data: columnKey
-    }, /* @__PURE__ */ React327.createElement("td", {
+    }, /* @__PURE__ */ React341.createElement("td", {
       ref: cellRef,
       style: {
         paddingTop: 0,
@@ -68514,7 +72283,7 @@ html body {
         borderBottom: 0,
         height: 0
       }
-    }, /* @__PURE__ */ React327.createElement("div", {
+    }, /* @__PURE__ */ React341.createElement("div", {
       style: {
         height: 0,
         overflow: "hidden",
@@ -68531,18 +72300,18 @@ html body {
     onColumnResize,
     columns
   }) => {
-    const ref = React328.useRef(null);
+    const ref = React342.useRef(null);
     const {
       measureRowRender
-    } = useContext112(TableContext_default, ["measureRowRender"]);
-    const measureRow = /* @__PURE__ */ React328.createElement("tr", {
+    } = useContext117(TableContext_default, ["measureRowRender"]);
+    const measureRow = /* @__PURE__ */ React342.createElement("tr", {
       "aria-hidden": "true",
       className: `${prefixCls}-measure-row`,
       style: {
         height: 0
       },
       ref
-    }, /* @__PURE__ */ React328.createElement(es_default.Collection, {
+    }, /* @__PURE__ */ React342.createElement(es_default.Collection, {
       onBatchResize: (infoList) => {
         if (isVisible_default(ref.current)) {
           infoList.forEach(({
@@ -68556,10 +72325,10 @@ html body {
     }, columnsKey.map((columnKey) => {
       const column2 = columns.find((col) => col.key === columnKey);
       const rawTitle = column2 == null ? void 0 : column2.title;
-      const titleForMeasure = /* @__PURE__ */ React328.isValidElement(rawTitle) ? /* @__PURE__ */ React328.cloneElement(rawTitle, {
+      const titleForMeasure = /* @__PURE__ */ React342.isValidElement(rawTitle) ? /* @__PURE__ */ React342.cloneElement(rawTitle, {
         ref: null
       }) : rawTitle;
-      return /* @__PURE__ */ React328.createElement(MeasureCell_default, {
+      return /* @__PURE__ */ React342.createElement(MeasureCell_default, {
         key: columnKey,
         columnKey,
         onColumnResize,
@@ -68592,7 +72361,7 @@ html body {
       styles,
       expandedRowOffset = 0,
       colWidths
-    } = useContext112(TableContext_default, ["prefixCls", "getComponent", "onColumnResize", "flattenColumns", "getRowKey", "expandedKeys", "childrenColumnName", "emptyNode", "classNames", "styles", "expandedRowOffset", "fixedInfoList", "colWidths"]);
+    } = useContext117(TableContext_default, ["prefixCls", "getComponent", "onColumnResize", "flattenColumns", "getRowKey", "expandedKeys", "childrenColumnName", "emptyNode", "classNames", "styles", "expandedRowOffset", "fixedInfoList", "colWidths"]);
     const {
       body: bodyCls = {}
     } = classNames || {};
@@ -68600,11 +72369,11 @@ html body {
       body: bodyStyles = {}
     } = styles || {};
     const flattenData2 = useFlattenRecords(data, childrenColumnName, expandedKeys, getRowKey);
-    const rowKeys = React329.useMemo(() => flattenData2.map((item) => item.rowKey), [flattenData2]);
-    const perfRef = React329.useRef({
+    const rowKeys = React343.useMemo(() => flattenData2.map((item) => item.rowKey), [flattenData2]);
+    const perfRef = React343.useRef({
       renderWithProps: false
     });
-    const expandedRowInfo = React329.useMemo(() => {
+    const expandedRowInfo = React343.useMemo(() => {
       const expandedColSpan = flattenColumns.length - expandedRowOffset;
       let expandedStickyStart = 0;
       for (let i = 0; i < expandedRowOffset; i += 1) {
@@ -68629,7 +72398,7 @@ html body {
           index: renderIndex,
           rowKey
         } = item;
-        return /* @__PURE__ */ React329.createElement(BodyRow_default, {
+        return /* @__PURE__ */ React343.createElement(BodyRow_default, {
           classNames: bodyCls,
           styles: bodyStyles,
           key: rowKey,
@@ -68646,7 +72415,7 @@ html body {
         });
       });
     } else {
-      rows = /* @__PURE__ */ React329.createElement(ExpandedRow_default, {
+      rows = /* @__PURE__ */ React343.createElement(ExpandedRow_default, {
         expanded: true,
         className: `${prefixCls}-placeholder`,
         prefixCls,
@@ -68657,12 +72426,12 @@ html body {
       }, emptyNode);
     }
     const columnsKey = getColumnsKey(flattenColumns);
-    return /* @__PURE__ */ React329.createElement(PerfContext_default.Provider, {
+    return /* @__PURE__ */ React343.createElement(PerfContext_default.Provider, {
       value: perfRef.current
-    }, /* @__PURE__ */ React329.createElement(WrapperComponent, {
+    }, /* @__PURE__ */ React343.createElement(WrapperComponent, {
       style: bodyStyles.wrapper,
       className: clsx(`${prefixCls}-tbody`, bodyCls.wrapper)
-    }, measureColumnWidth && /* @__PURE__ */ React329.createElement(MeasureRow_default, {
+    }, measureColumnWidth && /* @__PURE__ */ React343.createElement(MeasureRow_default, {
       prefixCls,
       columnsKey,
       onColumnResize,
@@ -68675,7 +72444,7 @@ html body {
   var Body_default = responseImmutable2(Body);
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/ColGroup.js
-  var React330 = __toESM(require_react());
+  var React344 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/utils/legacyUtil.js
   var INTERNAL_COL_DEFINE = "RC_TABLE_INTERNAL_COL_DEFINE";
@@ -68701,8 +72470,8 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/ColGroup.js
-  function _extends66() {
-    _extends66 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends72() {
+    _extends72 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -68713,7 +72482,7 @@ html body {
       }
       return target;
     };
-    return _extends66.apply(this, arguments);
+    return _extends72.apply(this, arguments);
   }
   var ColGroup = (props) => {
     const {
@@ -68723,7 +72492,7 @@ html body {
     } = props;
     const {
       tableLayout
-    } = useContext112(TableContext_default, ["tableLayout"]);
+    } = useContext117(TableContext_default, ["tableLayout"]);
     const cols = [];
     const len = columCount || columns.length;
     let mustInsert = false;
@@ -68744,7 +72513,7 @@ html body {
         } = _a, restAdditionalProps = __objRest(_a, [
           "columnType"
         ]);
-        cols.unshift(/* @__PURE__ */ React330.createElement("col", _extends66({
+        cols.unshift(/* @__PURE__ */ React344.createElement("col", _extends72({
           key: i,
           style: {
             width,
@@ -68754,15 +72523,15 @@ html body {
         mustInsert = true;
       }
     }
-    return cols.length > 0 ? /* @__PURE__ */ React330.createElement("colgroup", null, cols) : null;
+    return cols.length > 0 ? /* @__PURE__ */ React344.createElement("colgroup", null, cols) : null;
   };
   var ColGroup_default = ColGroup;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/FixedHolder/index.js
-  var React331 = __toESM(require_react());
-  var import_react121 = __toESM(require_react());
+  var React345 = __toESM(require_react());
+  var import_react129 = __toESM(require_react());
   function useColumnWidth(colWidths, columCount) {
-    return (0, import_react121.useMemo)(() => {
+    return (0, import_react129.useMemo)(() => {
       const cloneColumns = [];
       for (let i = 0; i < columCount; i += 1) {
         const val = colWidths[i];
@@ -68775,7 +72544,7 @@ html body {
       return cloneColumns;
     }, [colWidths.join("_"), columCount]);
   }
-  var FixedHolder = /* @__PURE__ */ React331.forwardRef((props, ref) => {
+  var FixedHolder = /* @__PURE__ */ React345.forwardRef((props, ref) => {
     if (true) {
       useRenderTimes_default(props);
     }
@@ -68825,15 +72594,15 @@ html body {
       scrollbarSize,
       isSticky,
       getComponent
-    } = useContext112(TableContext_default, ["prefixCls", "scrollbarSize", "isSticky", "getComponent"]);
+    } = useContext117(TableContext_default, ["prefixCls", "scrollbarSize", "isSticky", "getComponent"]);
     const TableComponent = getComponent(["header", "table"], "table");
     const combinationScrollBarSize = isSticky && !fixHeader ? 0 : scrollbarSize;
-    const scrollRef = React331.useRef(null);
-    const setScrollRef = React331.useCallback((element) => {
+    const scrollRef = React345.useRef(null);
+    const setScrollRef = React345.useCallback((element) => {
       fillRef(ref, element);
       fillRef(scrollRef, element);
     }, []);
-    React331.useEffect(() => {
+    React345.useEffect(() => {
       function onWheel(e3) {
         const {
           currentTarget,
@@ -68877,9 +72646,9 @@ html body {
         className: `${prefixCls}-cell-scrollbar`
       })
     };
-    const columnsWithScrollbar = (0, import_react121.useMemo)(() => combinationScrollBarSize ? [...columns, ScrollBarColumn] : columns, [combinationScrollBarSize, columns]);
-    const flattenColumnsWithScrollbar = (0, import_react121.useMemo)(() => combinationScrollBarSize ? [...flattenColumns, ScrollBarColumn] : flattenColumns, [combinationScrollBarSize, flattenColumns]);
-    const headerStickyOffsets = (0, import_react121.useMemo)(() => {
+    const columnsWithScrollbar = (0, import_react129.useMemo)(() => combinationScrollBarSize ? [...columns, ScrollBarColumn] : columns, [combinationScrollBarSize, columns]);
+    const flattenColumnsWithScrollbar = (0, import_react129.useMemo)(() => combinationScrollBarSize ? [...flattenColumns, ScrollBarColumn] : flattenColumns, [combinationScrollBarSize, flattenColumns]);
+    const headerStickyOffsets = (0, import_react129.useMemo)(() => {
       const {
         start,
         end
@@ -68891,11 +72660,11 @@ html body {
       });
     }, [combinationScrollBarSize, stickyOffsets, isSticky]);
     const mergedColumnWidth = useColumnWidth(colWidths, columCount);
-    const isColGroupEmpty = (0, import_react121.useMemo)(() => {
+    const isColGroupEmpty = (0, import_react129.useMemo)(() => {
       const noWidth = !mergedColumnWidth || !mergedColumnWidth.length || mergedColumnWidth.every((w) => !w);
       return noData || noWidth;
     }, [noData, mergedColumnWidth]);
-    return /* @__PURE__ */ React331.createElement("div", {
+    return /* @__PURE__ */ React345.createElement("div", {
       style: __spreadValues(__spreadValues({
         overflow: "hidden"
       }, isSticky ? {
@@ -68906,13 +72675,13 @@ html body {
       className: clsx(className, {
         [stickyClassName]: !!stickyClassName
       })
-    }, /* @__PURE__ */ React331.createElement(TableComponent, {
+    }, /* @__PURE__ */ React345.createElement(TableComponent, {
       style: {
         tableLayout,
         minWidth: "100%",
         width: scrollX
       }
-    }, isColGroupEmpty ? colGroup : /* @__PURE__ */ React331.createElement(ColGroup_default, {
+    }, isColGroupEmpty ? colGroup : /* @__PURE__ */ React345.createElement(ColGroup_default, {
       colWidths: [...mergedColumnWidth, combinationScrollBarSize],
       columCount: columCount + 1,
       columns: flattenColumnsWithScrollbar
@@ -68925,15 +72694,15 @@ html body {
   if (true) {
     FixedHolder.displayName = "FixedHolder";
   }
-  var FixedHolder_default = /* @__PURE__ */ React331.memo(FixedHolder);
+  var FixedHolder_default = /* @__PURE__ */ React345.memo(FixedHolder);
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Header/Header.js
-  var React333 = __toESM(require_react());
+  var React347 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Header/HeaderRow.js
-  var React332 = __toESM(require_react());
-  function _extends67() {
-    _extends67 = Object.assign ? Object.assign.bind() : function(target) {
+  var React346 = __toESM(require_react());
+  function _extends73() {
+    _extends73 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -68944,7 +72713,7 @@ html body {
       }
       return target;
     };
-    return _extends67.apply(this, arguments);
+    return _extends73.apply(this, arguments);
   }
   var HeaderRow = (props) => {
     const {
@@ -68954,19 +72723,19 @@ html body {
       rowComponent: RowComponent,
       cellComponent: CellComponent,
       onHeaderRow,
-      index: index2,
+      index,
       classNames,
       styles
     } = props;
     const {
       prefixCls
-    } = useContext112(TableContext_default, ["prefixCls"]);
+    } = useContext117(TableContext_default, ["prefixCls"]);
     let rowProps;
     if (onHeaderRow) {
-      rowProps = onHeaderRow(cells.map((cell) => cell.column), index2);
+      rowProps = onHeaderRow(cells.map((cell) => cell.column), index);
     }
     const columnsKey = getColumnsKey(cells.map((cell) => cell.column));
-    return /* @__PURE__ */ React332.createElement(RowComponent, _extends67({}, rowProps, {
+    return /* @__PURE__ */ React346.createElement(RowComponent, _extends73({}, rowProps, {
       className: classNames.row,
       style: styles.row
     }), cells.map((cell, cellIndex) => {
@@ -68979,7 +72748,7 @@ html body {
       } = cell;
       const fixedInfo = getCellFixedInfo(colStart, colEnd, flattenColumns, stickyOffsets);
       const additionalProps = ((_a = column2 == null ? void 0 : column2.onHeaderCell) == null ? void 0 : _a.call(column2, column2)) || {};
-      return /* @__PURE__ */ React332.createElement(Cell_default, _extends67({}, cell, {
+      return /* @__PURE__ */ React346.createElement(Cell_default, _extends73({}, cell, {
         scope: column2.title ? colSpan > 1 ? "colgroup" : "col" : null,
         ellipsis: column2.ellipsis,
         align: column2.align,
@@ -69060,22 +72829,22 @@ html body {
       getComponent,
       classNames,
       styles
-    } = useContext112(TableContext_default, ["prefixCls", "getComponent", "classNames", "styles"]);
+    } = useContext117(TableContext_default, ["prefixCls", "getComponent", "classNames", "styles"]);
     const {
       header: headerCls = {}
     } = classNames || {};
     const {
       header: headerStyles = {}
     } = styles || {};
-    const rows = React333.useMemo(() => parseHeaderRows(columns, headerCls, headerStyles), [columns, headerCls, headerStyles]);
+    const rows = React347.useMemo(() => parseHeaderRows(columns, headerCls, headerStyles), [columns, headerCls, headerStyles]);
     const WrapperComponent = getComponent(["header", "wrapper"], "thead");
     const trComponent = getComponent(["header", "row"], "tr");
     const thComponent = getComponent(["header", "cell"], "th");
-    return /* @__PURE__ */ React333.createElement(WrapperComponent, {
+    return /* @__PURE__ */ React347.createElement(WrapperComponent, {
       className: clsx(`${prefixCls}-thead`, headerCls.wrapper),
       style: headerStyles.wrapper
     }, rows.map((row, rowIndex) => {
-      const rowNode = /* @__PURE__ */ React333.createElement(HeaderRow_default, {
+      const rowNode = /* @__PURE__ */ React347.createElement(HeaderRow_default, {
         classNames: headerCls,
         styles: headerStyles,
         key: rowIndex,
@@ -69093,10 +72862,10 @@ html body {
   var Header_default = responseImmutable2(Header2);
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useColumns/index.js
-  var React335 = __toESM(require_react());
+  var React349 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useColumns/useWidthColumns.js
-  var React334 = __toESM(require_react());
+  var React348 = __toESM(require_react());
   function parseColWidth(totalWidth, width = "") {
     if (typeof width === "number") {
       return width;
@@ -69107,7 +72876,7 @@ html body {
     return null;
   }
   function useWidthColumns(flattenColumns, scrollWidth, clientWidth) {
-    return React334.useMemo(() => {
+    return React348.useMemo(() => {
       if (scrollWidth && scrollWidth > 0) {
         let totalWidth = 0;
         let missWidthCount = 0;
@@ -69141,9 +72910,9 @@ html body {
         if (realTotal < maxFitWidth) {
           const scale = maxFitWidth / realTotal;
           restWidth = maxFitWidth;
-          filledColumns.forEach((col, index2) => {
+          filledColumns.forEach((col, index) => {
             const colWidth = Math.floor(col.width * scale);
-            col.width = index2 === filledColumns.length - 1 ? restWidth : colWidth;
+            col.width = index === filledColumns.length - 1 ? restWidth : colWidth;
             restWidth -= colWidth;
           });
         }
@@ -69155,7 +72924,7 @@ html body {
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useColumns/index.js
   function convertChildrenToColumns(children) {
-    return toArray(children).filter((node2) => /* @__PURE__ */ React335.isValidElement(node2)).map((node2) => {
+    return toArray(children).filter((node2) => /* @__PURE__ */ React349.isValidElement(node2)).map((node2) => {
       const {
         key,
         props
@@ -69186,12 +72955,12 @@ html body {
     });
   }
   function flatColumns(columns, parentKey = "key") {
-    return columns.filter((column2) => column2 && typeof column2 === "object").reduce((list, column2, index2) => {
+    return columns.filter((column2) => column2 && typeof column2 === "object").reduce((list, column2, index) => {
       const {
         fixed
       } = column2;
       const parsedFixed = fixed === true || fixed === "left" ? "start" : fixed === "right" ? "end" : fixed;
-      const mergedKey = `${parentKey}-${index2}`;
+      const mergedKey = `${parentKey}-${index}`;
       const subColumns = column2.children;
       if (subColumns && subColumns.length > 0) {
         return [...list, ...flatColumns(subColumns, mergedKey).map((subColum) => {
@@ -69228,11 +72997,11 @@ html body {
     scrollWidth,
     clientWidth
   }, transformColumns) {
-    const baseColumns = React335.useMemo(() => {
+    const baseColumns = React349.useMemo(() => {
       const newColumns = columns || convertChildrenToColumns(children) || [];
       return filterHiddenColumns(newColumns.slice());
     }, [columns, children]);
-    const withExpandColumns = React335.useMemo(() => {
+    const withExpandColumns = React349.useMemo(() => {
       if (expandable) {
         let cloneColumns = baseColumns.slice();
         if (expandIconColumnIndex >= 0) {
@@ -69249,7 +73018,7 @@ html body {
           warning_default(false, "There exist more than one `EXPAND_COLUMN` in `columns`.");
         }
         const expandColumnIndex = cloneColumns.indexOf(EXPAND_COLUMN);
-        cloneColumns = cloneColumns.filter((column2, index2) => column2 !== EXPAND_COLUMN || index2 === expandColumnIndex);
+        cloneColumns = cloneColumns.filter((column2, index) => column2 !== EXPAND_COLUMN || index === expandColumnIndex);
         const prevColumn = baseColumns[expandColumnIndex];
         let fixedColumn;
         if (fixed) {
@@ -69266,8 +73035,8 @@ html body {
           fixed: fixedColumn,
           className: `${prefixCls}-row-expand-icon-cell`,
           width: columnWidth,
-          render: (_, record, index2) => {
-            const rowKey = getRowKey(record, index2);
+          render: (_, record, index) => {
+            const rowKey = getRowKey(record, index);
             const expanded = expandedKeys.has(rowKey);
             const recordExpandable = rowExpandable ? rowExpandable(record) : true;
             const icon = expandIcon({
@@ -69278,16 +73047,16 @@ html body {
               onExpand: onTriggerExpand
             });
             if (expandRowByClick) {
-              return /* @__PURE__ */ React335.createElement("span", {
+              return /* @__PURE__ */ React349.createElement("span", {
                 onClick: (e3) => e3.stopPropagation()
               }, icon);
             }
             return icon;
           }
         };
-        return cloneColumns.map((col, index2) => {
+        return cloneColumns.map((col, index) => {
           const column2 = col === EXPAND_COLUMN ? expandColumn : col;
-          if (index2 < expandedRowOffset) {
+          if (index < expandedRowOffset) {
             return __spreadProps(__spreadValues({}, column2), {
               fixed: column2.fixed || "start"
             });
@@ -69300,7 +73069,7 @@ html body {
       }
       return baseColumns.filter((col) => col !== EXPAND_COLUMN);
     }, [expandable, baseColumns, getRowKey, expandedKeys, expandIcon, direction, expandedRowOffset]);
-    const mergedColumns = React335.useMemo(() => {
+    const mergedColumns = React349.useMemo(() => {
       let finalColumns = withExpandColumns;
       if (transformColumns) {
         finalColumns = transformColumns(finalColumns);
@@ -69312,7 +73081,7 @@ html body {
       }
       return finalColumns;
     }, [transformColumns, withExpandColumns, direction]);
-    const flattenColumns = React335.useMemo(
+    const flattenColumns = React349.useMemo(
       () => flatColumns(mergedColumns),
       [mergedColumns, direction, scrollWidth]
     );
@@ -69322,7 +73091,7 @@ html body {
   var useColumns_default = useColumns;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useExpand.js
-  var React336 = __toESM(require_react());
+  var React350 = __toESM(require_react());
   function useExpand(props, mergedData, getRowKey) {
     const expandableConfig = getExpandableProps(props);
     const {
@@ -69337,7 +73106,7 @@ html body {
     } = expandableConfig;
     const mergedExpandIcon = expandIcon || renderExpandIcon;
     const mergedChildrenColumnName = childrenColumnName || "children";
-    const expandableType = React336.useMemo(() => {
+    const expandableType = React350.useMemo(() => {
       if (expandedRowRender) {
         return "row";
       }
@@ -69346,7 +73115,7 @@ html body {
       }
       return false;
     }, [!!expandedRowRender, mergedData]);
-    const [innerExpandedKeys, setInnerExpandedKeys] = React336.useState(() => {
+    const [innerExpandedKeys, setInnerExpandedKeys] = React350.useState(() => {
       if (defaultExpandedRowKeys) {
         return defaultExpandedRowKeys;
       }
@@ -69355,8 +73124,8 @@ html body {
       }
       return [];
     });
-    const mergedExpandedKeys = React336.useMemo(() => new Set(expandedRowKeys || innerExpandedKeys || []), [expandedRowKeys, innerExpandedKeys]);
-    const onTriggerExpand = React336.useCallback((record) => {
+    const mergedExpandedKeys = React350.useMemo(() => new Set(expandedRowKeys || innerExpandedKeys || []), [expandedRowKeys, innerExpandedKeys]);
+    const onTriggerExpand = React350.useCallback((record) => {
       const key = getRowKey(record, mergedData.indexOf(record));
       let newExpandedKeys;
       const hasKey = mergedExpandedKeys.has(key);
@@ -69383,19 +73152,19 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useFixedInfo.js
-  var React337 = __toESM(require_react());
+  var React351 = __toESM(require_react());
   function useFixedInfo(flattenColumns, stickyOffsets) {
-    const fixedInfoList = React337.useMemo(() => flattenColumns.map((_, colIndex) => getCellFixedInfo(colIndex, colIndex, flattenColumns, stickyOffsets)), [flattenColumns, stickyOffsets]);
+    const fixedInfoList = React351.useMemo(() => flattenColumns.map((_, colIndex) => getCellFixedInfo(colIndex, colIndex, flattenColumns, stickyOffsets)), [flattenColumns, stickyOffsets]);
     return useMemo(() => fixedInfoList, [fixedInfoList], (prev2, next2) => !isEqual_default(prev2, next2));
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useFrame.js
-  var import_react122 = __toESM(require_react());
+  var import_react130 = __toESM(require_react());
   function useLayoutState(defaultState) {
-    const stateRef = (0, import_react122.useRef)(defaultState);
-    const [, forceUpdate] = (0, import_react122.useState)({});
-    const lastPromiseRef = (0, import_react122.useRef)(null);
-    const updateBatchRef = (0, import_react122.useRef)([]);
+    const stateRef = (0, import_react130.useRef)(defaultState);
+    const [, forceUpdate] = (0, import_react130.useState)({});
+    const lastPromiseRef = (0, import_react130.useRef)(null);
+    const updateBatchRef = (0, import_react130.useRef)([]);
     function setFrameState(updater) {
       updateBatchRef.current.push(updater);
       const promise = Promise.resolve();
@@ -69415,14 +73184,14 @@ html body {
         }
       });
     }
-    (0, import_react122.useEffect)(() => () => {
+    (0, import_react130.useEffect)(() => () => {
       lastPromiseRef.current = null;
     }, []);
     return [stateRef.current, setFrameState];
   }
   function useTimeoutLock(defaultState) {
-    const frameRef = (0, import_react122.useRef)(defaultState || null);
-    const timeoutRef = (0, import_react122.useRef)(null);
+    const frameRef = (0, import_react130.useRef)(defaultState || null);
+    const timeoutRef = (0, import_react130.useRef)(null);
     function cleanUp() {
       clearTimeout(timeoutRef.current);
     }
@@ -69437,16 +73206,16 @@ html body {
     function getState() {
       return frameRef.current;
     }
-    (0, import_react122.useEffect)(() => cleanUp, []);
+    (0, import_react130.useEffect)(() => cleanUp, []);
     return [setState, getState];
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useHover.js
-  var React338 = __toESM(require_react());
+  var React352 = __toESM(require_react());
   function useHover() {
-    const [startRow, setStartRow] = React338.useState(-1);
-    const [endRow, setEndRow] = React338.useState(-1);
-    const onHover = React338.useCallback((start, end) => {
+    const [startRow, setStartRow] = React352.useState(-1);
+    const [endRow, setEndRow] = React352.useState(-1);
+    const onHover = React352.useCallback((start, end) => {
       setStartRow(start);
       setEndRow(end);
     }, []);
@@ -69454,7 +73223,7 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useSticky.js
-  var React339 = __toESM(require_react());
+  var React353 = __toESM(require_react());
   var defaultContainer = canUseDom() ? window : null;
   function useSticky(sticky, prefixCls) {
     const {
@@ -69465,7 +73234,7 @@ html body {
     } = typeof sticky === "object" ? sticky : {};
     const container = getContainer2() || defaultContainer;
     const isSticky = !!sticky;
-    return React339.useMemo(() => {
+    return React353.useMemo(() => {
       return {
         isSticky,
         stickyClassName: isSticky ? `${prefixCls}-sticky-holder` : "",
@@ -69478,9 +73247,9 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/hooks/useStickyOffsets.js
-  var import_react123 = __toESM(require_react());
+  var import_react131 = __toESM(require_react());
   function useStickyOffsets(colWidths, flattenColumns) {
-    const stickyOffsets = (0, import_react123.useMemo)(() => {
+    const stickyOffsets = (0, import_react131.useMemo)(() => {
       const columnCount = flattenColumns.length;
       const getOffsets = (startIndex, endIndex, offset3) => {
         const offsets = [];
@@ -69506,14 +73275,14 @@ html body {
   var useStickyOffsets_default = useStickyOffsets;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Panel/index.js
-  var React340 = __toESM(require_react());
+  var React354 = __toESM(require_react());
   var Panel2 = (props) => {
     const {
       children,
       className,
       style: style2
     } = props;
-    return /* @__PURE__ */ React340.createElement("div", {
+    return /* @__PURE__ */ React354.createElement("div", {
       className,
       style: style2
     }, children);
@@ -69521,7 +73290,7 @@ html body {
   var Panel_default2 = Panel2;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/stickyScrollBar.js
-  var React341 = __toESM(require_react());
+  var React355 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/utils/offsetUtil.js
   function getOffset2(node2) {
@@ -69548,22 +73317,22 @@ html body {
       container,
       direction
     } = props;
-    const prefixCls = useContext112(TableContext_default, "prefixCls");
+    const prefixCls = useContext117(TableContext_default, "prefixCls");
     const bodyScrollWidth = ((_a = scrollBodyRef.current) == null ? void 0 : _a.scrollWidth) || 0;
     const bodyWidth = ((_b = scrollBodyRef.current) == null ? void 0 : _b.clientWidth) || 0;
     const scrollBarWidth = bodyScrollWidth && bodyWidth * (bodyWidth / bodyScrollWidth);
-    const scrollBarRef = React341.useRef(null);
+    const scrollBarRef = React355.useRef(null);
     const [scrollState, setScrollState] = useLayoutState({
       scrollLeft: 0,
       isHiddenScrollBar: true
     });
-    const refState = React341.useRef({
+    const refState = React355.useRef({
       delta: 0,
       x: 0
     });
-    const [isActive2, setActive] = React341.useState(false);
-    const rafRef = React341.useRef(null);
-    React341.useEffect(() => () => {
+    const [isActive2, setActive] = React355.useState(false);
+    const rafRef = React355.useRef(null);
+    React355.useEffect(() => () => {
       raf_default.cancel(rafRef.current);
     }, []);
     const onMouseUp = () => {
@@ -69624,11 +73393,11 @@ html body {
         });
       });
     };
-    React341.useImperativeHandle(ref, () => ({
+    React355.useImperativeHandle(ref, () => ({
       setScrollLeft,
       checkScrollBarVisible
     }));
-    React341.useEffect(() => {
+    React355.useEffect(() => {
       document.body.addEventListener(MOUSEUP_EVENT, onMouseUp, false);
       document.body.addEventListener(MOUSEMOVE_EVENT, onMouseMove, false);
       checkScrollBarVisible();
@@ -69637,7 +73406,7 @@ html body {
         document.body.removeEventListener(MOUSEMOVE_EVENT, onMouseMove);
       };
     }, [scrollBarWidth, isActive2]);
-    React341.useEffect(() => {
+    React355.useEffect(() => {
       if (scrollBodyRef.current) {
         const scrollParents = [];
         let parent = getDOM(scrollBodyRef.current);
@@ -69661,7 +73430,7 @@ html body {
         };
       }
     }, [container]);
-    React341.useEffect(() => {
+    React355.useEffect(() => {
       if (!scrollState.isHiddenScrollBar) {
         setScrollState((state) => {
           const bodyNode = scrollBodyRef.current;
@@ -69677,14 +73446,14 @@ html body {
     if (bodyScrollWidth <= bodyWidth || !scrollBarWidth || scrollState.isHiddenScrollBar) {
       return null;
     }
-    return /* @__PURE__ */ React341.createElement("div", {
+    return /* @__PURE__ */ React355.createElement("div", {
       style: {
         height: getScrollBarSize(),
         width: bodyWidth,
         bottom: offsetScroll
       },
       className: `${prefixCls}-sticky-scroll`
-    }, /* @__PURE__ */ React341.createElement("div", {
+    }, /* @__PURE__ */ React355.createElement("div", {
       onMouseDown,
       ref: scrollBarRef,
       className: clsx(`${prefixCls}-sticky-scroll-bar`, {
@@ -69696,11 +73465,11 @@ html body {
       }
     }));
   };
-  var stickyScrollBar_default = /* @__PURE__ */ React341.forwardRef(StickyScrollBar);
+  var stickyScrollBar_default = /* @__PURE__ */ React355.forwardRef(StickyScrollBar);
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/Table.js
-  function _extends68() {
-    _extends68 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends74() {
+    _extends74 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -69711,7 +73480,7 @@ html body {
       }
       return target;
     };
-    return _extends68.apply(this, arguments);
+    return _extends74.apply(this, arguments);
   }
   var DEFAULT_PREFIX = "rc-table";
   var EMPTY_DATA2 = [];
@@ -69767,8 +73536,8 @@ html body {
       });
       warning_default(!("getBodyWrapper" in props), "`getBodyWrapper` is deprecated, please use custom `components` instead.");
     }
-    const getComponent = React342.useCallback((path, defaultComponent) => get(components, path) || defaultComponent, [components]);
-    const getRowKey = React342.useMemo(() => {
+    const getComponent = React356.useCallback((path, defaultComponent) => get(components, path) || defaultComponent, [components]);
+    const getRowKey = React356.useMemo(() => {
       if (typeof rowKey === "function") {
         return rowKey;
       }
@@ -69784,7 +73553,7 @@ html body {
     const [startRow, endRow, onHover] = useHover();
     const [expandableConfig, expandableType, mergedExpandedKeys, mergedExpandIcon, mergedChildrenColumnName, onTriggerExpand] = useExpand(props, mergedData, getRowKey);
     const scrollX = scroll == null ? void 0 : scroll.x;
-    const [componentWidth, setComponentWidth] = React342.useState(0);
+    const [componentWidth, setComponentWidth] = React356.useState(0);
     const [columns, flattenColumns, flattenScrollX] = useColumns_default(__spreadProps(__spreadValues(__spreadValues({}, props), expandableConfig), {
       expandable: !!expandableConfig.expandedRowRender,
       columnTitle: expandableConfig.columnTitle,
@@ -69798,22 +73567,22 @@ html body {
       clientWidth: componentWidth
     }), useInternalHooks ? transformColumns : null);
     const mergedScrollX = flattenScrollX != null ? flattenScrollX : scrollX;
-    const columnContext = React342.useMemo(() => ({
+    const columnContext = React356.useMemo(() => ({
       columns,
       flattenColumns
     }), [columns, flattenColumns]);
-    const fullTableRef = React342.useRef(null);
-    const scrollHeaderRef = React342.useRef(null);
-    const scrollBodyRef = React342.useRef(null);
-    const scrollBodyContainerRef = React342.useRef(null);
-    React342.useImperativeHandle(ref, () => {
+    const fullTableRef = React356.useRef(null);
+    const scrollHeaderRef = React356.useRef(null);
+    const scrollBodyRef = React356.useRef(null);
+    const scrollBodyContainerRef = React356.useRef(null);
+    React356.useImperativeHandle(ref, () => {
       return {
         nativeElement: fullTableRef.current,
         scrollTo: (config) => {
           var _a2, _b2;
           if (scrollBodyRef.current instanceof HTMLElement) {
             const {
-              index: index2,
+              index,
               top,
               key,
               offset: offset3
@@ -69823,7 +73592,7 @@ html body {
                 top
               });
             } else {
-              const mergedKey = key != null ? key : getRowKey(mergedData[index2]);
+              const mergedKey = key != null ? key : getRowKey(mergedData[index]);
               const targetElement = scrollBodyRef.current.querySelector(`[data-row-key="${mergedKey}"]`);
               if (targetElement) {
                 if (!offset3) {
@@ -69842,20 +73611,20 @@ html body {
         }
       };
     });
-    const scrollSummaryRef = React342.useRef(null);
-    const [shadowStart, setShadowStart] = React342.useState(false);
-    const [shadowEnd, setShadowEnd] = React342.useState(false);
-    const [colsWidths, updateColsWidths] = React342.useState(/* @__PURE__ */ new Map());
+    const scrollSummaryRef = React356.useRef(null);
+    const [shadowStart, setShadowStart] = React356.useState(false);
+    const [shadowEnd, setShadowEnd] = React356.useState(false);
+    const [colsWidths, updateColsWidths] = React356.useState(/* @__PURE__ */ new Map());
     const colsKeys = getColumnsKey(flattenColumns);
     const pureColWidths = colsKeys.map((columnKey) => colsWidths.get(columnKey));
-    const colWidths = React342.useMemo(() => pureColWidths, [pureColWidths.join("_")]);
+    const colWidths = React356.useMemo(() => pureColWidths, [pureColWidths.join("_")]);
     const stickyOffsets = useStickyOffsets_default(colWidths, flattenColumns);
     const fixHeader = scroll && validateValue(scroll.y);
     const horizonScroll = scroll && validateValue(mergedScrollX) || Boolean(expandableConfig.fixed);
     const fixColumn = horizonScroll && flattenColumns.some(({
       fixed
     }) => fixed);
-    const stickyRef = React342.useRef(null);
+    const stickyRef = React356.useRef(null);
     const {
       isSticky,
       offsetHeader,
@@ -69864,8 +73633,8 @@ html body {
       stickyClassName,
       container
     } = useSticky(sticky, prefixCls);
-    const summaryNode = React342.useMemo(() => summary == null ? void 0 : summary(mergedData), [summary, mergedData]);
-    const fixFooter = (fixHeader || isSticky) && /* @__PURE__ */ React342.isValidElement(summaryNode) && summaryNode.type === Summary_default && summaryNode.props.fixed;
+    const summaryNode = React356.useMemo(() => summary == null ? void 0 : summary(mergedData), [summary, mergedData]);
+    const fixFooter = (fixHeader || isSticky) && /* @__PURE__ */ React356.isValidElement(summaryNode) && summaryNode.type === Summary_default && summaryNode.props.fixed;
     let scrollXStyle;
     let scrollYStyle;
     let scrollTableStyle;
@@ -69889,7 +73658,7 @@ html body {
         minWidth: "100%"
       };
     }
-    const onColumnResize = React342.useCallback((columnKey, width) => {
+    const onColumnResize = React356.useCallback((columnKey, width) => {
       updateColsWidths((widths) => {
         if (widths.get(columnKey) !== width) {
           const newWidths = new Map(widths);
@@ -69915,7 +73684,7 @@ html body {
         }
       }
     }
-    const [scrollInfo, setScrollInfo] = React342.useState([0, 0]);
+    const [scrollInfo, setScrollInfo] = React356.useState([0, 0]);
     const onInternalScroll = useEvent_default(({
       currentTarget,
       scrollLeft
@@ -69981,16 +73750,16 @@ html body {
         onFullTableResize();
       }
     }, [horizonScroll]);
-    const mounted = React342.useRef(false);
-    React342.useEffect(() => {
+    const mounted = React356.useRef(false);
+    React356.useEffect(() => {
       if (mounted.current) {
         triggerOnScroll();
       }
     }, [horizonScroll, data, columns.length]);
-    React342.useEffect(() => {
+    React356.useEffect(() => {
       mounted.current = true;
     }, []);
-    const [scrollbarSize, setScrollbarSize] = React342.useState(0);
+    const [scrollbarSize, setScrollbarSize] = React356.useState(0);
     useLayoutEffect_default(() => {
       if (!tailor || !useInternalHooks) {
         if (scrollBodyRef.current instanceof Element) {
@@ -70000,15 +73769,15 @@ html body {
         }
       }
     }, []);
-    React342.useEffect(() => {
+    React356.useEffect(() => {
       if (useInternalHooks && internalRefs) {
         internalRefs.body.current = scrollBodyRef.current;
       }
     });
-    const renderFixedHeaderTable = React342.useCallback((fixedHolderPassProps) => /* @__PURE__ */ React342.createElement(React342.Fragment, null, /* @__PURE__ */ React342.createElement(Header_default, fixedHolderPassProps), fixFooter === "top" && /* @__PURE__ */ React342.createElement(Footer_default, fixedHolderPassProps, summaryNode)), [fixFooter, summaryNode]);
-    const renderFixedFooterTable = React342.useCallback((fixedHolderPassProps) => /* @__PURE__ */ React342.createElement(Footer_default, fixedHolderPassProps, summaryNode), [summaryNode]);
+    const renderFixedHeaderTable = React356.useCallback((fixedHolderPassProps) => /* @__PURE__ */ React356.createElement(React356.Fragment, null, /* @__PURE__ */ React356.createElement(Header_default, fixedHolderPassProps), fixFooter === "top" && /* @__PURE__ */ React356.createElement(Footer_default, fixedHolderPassProps, summaryNode)), [fixFooter, summaryNode]);
+    const renderFixedFooterTable = React356.useCallback((fixedHolderPassProps) => /* @__PURE__ */ React356.createElement(Footer_default, fixedHolderPassProps, summaryNode), [summaryNode]);
     const TableComponent = getComponent(["table"], "table");
-    const mergedTableLayout = React342.useMemo(() => {
+    const mergedTableLayout = React356.useMemo(() => {
       if (tableLayout) {
         return tableLayout;
       }
@@ -70031,7 +73800,7 @@ html body {
       fixHeader,
       scroll
     };
-    const emptyNode = React342.useMemo(() => {
+    const emptyNode = React356.useMemo(() => {
       if (hasData) {
         return null;
       }
@@ -70040,17 +73809,17 @@ html body {
       }
       return emptyText;
     }, [hasData, emptyText]);
-    const bodyTable = /* @__PURE__ */ React342.createElement(Body_default, {
+    const bodyTable = /* @__PURE__ */ React356.createElement(Body_default, {
       data: mergedData,
       measureColumnWidth: fixHeader || horizonScroll || isSticky
     });
-    const bodyColGroup = /* @__PURE__ */ React342.createElement(ColGroup_default, {
+    const bodyColGroup = /* @__PURE__ */ React356.createElement(ColGroup_default, {
       colWidths: flattenColumns.map(({
         width
       }) => width),
       columns: flattenColumns
     });
-    const captionElement = caption !== null && caption !== void 0 ? /* @__PURE__ */ React342.createElement("caption", {
+    const captionElement = caption !== null && caption !== void 0 ? /* @__PURE__ */ React356.createElement("caption", {
       className: `${prefixCls}-caption`
     }, caption) : void 0;
     const dataProps = pickAttrs(props, {
@@ -70069,8 +73838,8 @@ html body {
         });
         headerProps.colWidths = flattenColumns.map(({
           width
-        }, index2) => {
-          const colWidth = index2 === flattenColumns.length - 1 ? width - scrollbarSize : width;
+        }, index) => {
+          const colWidth = index === flattenColumns.length - 1 ? width - scrollbarSize : width;
           if (typeof colWidth === "number" && !Number.isNaN(colWidth)) {
             return colWidth;
           }
@@ -70080,16 +73849,16 @@ html body {
           return 0;
         });
       } else {
-        bodyContent = /* @__PURE__ */ React342.createElement("div", {
+        bodyContent = /* @__PURE__ */ React356.createElement("div", {
           style: __spreadValues(__spreadValues({}, scrollXStyle), scrollYStyle),
           onScroll: onBodyScroll,
           ref: scrollBodyRef,
           className: `${prefixCls}-body`
-        }, /* @__PURE__ */ React342.createElement(TableComponent, _extends68({
+        }, /* @__PURE__ */ React356.createElement(TableComponent, _extends74({
           style: __spreadProps(__spreadValues({}, scrollTableStyle), {
             tableLayout: mergedTableLayout
           })
-        }, ariaProps), captionElement, bodyColGroup, bodyTable, !fixFooter && summaryNode && /* @__PURE__ */ React342.createElement(Footer_default, {
+        }, ariaProps), captionElement, bodyColGroup, bodyTable, !fixFooter && summaryNode && /* @__PURE__ */ React356.createElement(Footer_default, {
           stickyOffsets,
           flattenColumns
         }, summaryNode)));
@@ -70104,17 +73873,17 @@ html body {
         tableLayout: mergedTableLayout,
         onScroll: onInternalScroll
       });
-      groupTableNode = /* @__PURE__ */ React342.createElement(React342.Fragment, null, showHeader !== false && /* @__PURE__ */ React342.createElement(FixedHolder_default, _extends68({}, fixedHolderProps, {
+      groupTableNode = /* @__PURE__ */ React356.createElement(React356.Fragment, null, showHeader !== false && /* @__PURE__ */ React356.createElement(FixedHolder_default, _extends74({}, fixedHolderProps, {
         stickyTopOffset: offsetHeader,
         className: `${prefixCls}-header`,
         ref: scrollHeaderRef,
         colGroup: bodyColGroup
-      }), renderFixedHeaderTable), bodyContent, fixFooter && fixFooter !== "top" && /* @__PURE__ */ React342.createElement(FixedHolder_default, _extends68({}, fixedHolderProps, {
+      }), renderFixedHeaderTable), bodyContent, fixFooter && fixFooter !== "top" && /* @__PURE__ */ React356.createElement(FixedHolder_default, _extends74({}, fixedHolderProps, {
         stickyBottomOffset: offsetSummary,
         className: `${prefixCls}-summary`,
         ref: scrollSummaryRef,
         colGroup: bodyColGroup
-      }), renderFixedFooterTable), isSticky && scrollBodyRef.current && scrollBodyRef.current instanceof Element && /* @__PURE__ */ React342.createElement(stickyScrollBar_default, {
+      }), renderFixedFooterTable), isSticky && scrollBodyRef.current && scrollBodyRef.current instanceof Element && /* @__PURE__ */ React356.createElement(stickyScrollBar_default, {
         ref: stickyRef,
         offsetScroll,
         scrollBodyRef,
@@ -70123,16 +73892,16 @@ html body {
         direction
       }));
     } else {
-      groupTableNode = /* @__PURE__ */ React342.createElement("div", {
+      groupTableNode = /* @__PURE__ */ React356.createElement("div", {
         style: __spreadValues(__spreadValues(__spreadValues({}, scrollXStyle), scrollYStyle), styles == null ? void 0 : styles.content),
         className: clsx(`${prefixCls}-content`, classNames == null ? void 0 : classNames.content),
         onScroll: onInternalScroll,
         ref: scrollBodyRef
-      }, /* @__PURE__ */ React342.createElement(TableComponent, _extends68({
+      }, /* @__PURE__ */ React356.createElement(TableComponent, _extends74({
         style: __spreadProps(__spreadValues({}, scrollTableStyle), {
           tableLayout: mergedTableLayout
         })
-      }, ariaProps), captionElement, bodyColGroup, showHeader !== false && /* @__PURE__ */ React342.createElement(Header_default, _extends68({}, headerProps, columnContext)), bodyTable, summaryNode && /* @__PURE__ */ React342.createElement(Footer_default, {
+      }, ariaProps), captionElement, bodyColGroup, showHeader !== false && /* @__PURE__ */ React356.createElement(Header_default, _extends74({}, headerProps, columnContext)), bodyTable, summaryNode && /* @__PURE__ */ React356.createElement(Footer_default, {
         stickyOffsets,
         flattenColumns
       }, summaryNode)));
@@ -70141,7 +73910,7 @@ html body {
     if (isSticky) {
       tableStyle["--columns-count"] = flattenColumns.length;
     }
-    let fullTable = /* @__PURE__ */ React342.createElement("div", _extends68({
+    let fullTable = /* @__PURE__ */ React356.createElement("div", _extends74({
       className: clsx(prefixCls, className, {
         [`${prefixCls}-rtl`]: direction === "rtl",
         [`${prefixCls}-fix-start-shadow`]: horizonScroll,
@@ -70158,26 +73927,26 @@ html body {
       style: tableStyle,
       id,
       ref: fullTableRef
-    }, dataProps), title && /* @__PURE__ */ React342.createElement(Panel_default2, {
+    }, dataProps), title && /* @__PURE__ */ React356.createElement(Panel_default2, {
       className: clsx(`${prefixCls}-title`, classNames == null ? void 0 : classNames.title),
       style: styles == null ? void 0 : styles.title
-    }, title(mergedData)), /* @__PURE__ */ React342.createElement("div", {
+    }, title(mergedData)), /* @__PURE__ */ React356.createElement("div", {
       ref: scrollBodyContainerRef,
       className: clsx(`${prefixCls}-container`, classNames == null ? void 0 : classNames.section),
       style: styles == null ? void 0 : styles.section
-    }, groupTableNode), footer && /* @__PURE__ */ React342.createElement(Panel_default2, {
+    }, groupTableNode), footer && /* @__PURE__ */ React356.createElement(Panel_default2, {
       className: clsx(`${prefixCls}-footer`, classNames == null ? void 0 : classNames.footer),
       style: styles == null ? void 0 : styles.footer
     }, footer(mergedData)));
     if (horizonScroll) {
-      fullTable = /* @__PURE__ */ React342.createElement(es_default, {
+      fullTable = /* @__PURE__ */ React356.createElement(es_default, {
         onResize: ({
           offsetWidth
         }) => onFullTableResize(offsetWidth)
       }, fullTable);
     }
     const fixedInfoList = useFixedInfo(flattenColumns, stickyOffsets);
-    const TableContextValue = React342.useMemo(() => ({
+    const TableContextValue = React356.useMemo(() => ({
       scrollX: mergedScrollX,
       scrollInfo,
       classNames,
@@ -70261,11 +74030,11 @@ html body {
       rowHoverable,
       measureRowRender
     ]);
-    return /* @__PURE__ */ React342.createElement(TableContext_default.Provider, {
+    return /* @__PURE__ */ React356.createElement(TableContext_default.Provider, {
       value: TableContextValue
     }, fullTable);
   };
-  var RefTable = /* @__PURE__ */ React342.forwardRef(Table);
+  var RefTable = /* @__PURE__ */ React356.forwardRef(Table);
   if (true) {
     RefTable.displayName = "Table";
   }
@@ -70281,24 +74050,24 @@ html body {
   var Table_default = ImmutableTable;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/VirtualTable/index.js
-  var React346 = __toESM(require_react());
+  var React360 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/VirtualTable/BodyGrid.js
-  var React345 = __toESM(require_react());
+  var React359 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/VirtualTable/BodyLine.js
-  var React344 = __toESM(require_react());
+  var React358 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/VirtualTable/VirtualCell.js
-  var React343 = __toESM(require_react());
+  var React357 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/VirtualTable/context.js
-  var StaticContext = createContext37(null);
-  var GridContext = createContext37(null);
+  var StaticContext = createContext38(null);
+  var GridContext = createContext38(null);
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/VirtualTable/VirtualCell.js
-  function _extends69() {
-    _extends69 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends75() {
+    _extends75 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -70309,7 +74078,7 @@ html body {
       }
       return target;
     };
-    return _extends69.apply(this, arguments);
+    return _extends75.apply(this, arguments);
   }
   function getColumnWidth(colIndex, colSpan, columnsOffset) {
     const mergedColSpan = colSpan || 1;
@@ -70321,7 +74090,7 @@ html body {
       column: column2,
       colIndex,
       indent,
-      index: index2,
+      index,
       component,
       renderIndex,
       record,
@@ -70331,20 +74100,20 @@ html body {
       getHeight
     } = props;
     const {
-      render: render4,
+      render: render2,
       dataIndex,
       className: columnClassName,
       width: colWidth
     } = column2;
     const {
       columnsOffset
-    } = useContext112(GridContext, ["columnsOffset"]);
+    } = useContext117(GridContext, ["columnsOffset"]);
     const {
       key,
       fixedInfo,
       appendCellNode,
       additionalCellProps
-    } = getCellProps(rowInfo, column2, colIndex, indent, index2);
+    } = getCellProps(rowInfo, column2, colIndex, indent, index);
     const {
       style: cellStyle,
       colSpan = 1,
@@ -70359,7 +74128,7 @@ html body {
       marginRight: marginOffset,
       pointerEvents: "auto"
     });
-    const needHide = React343.useMemo(() => {
+    const needHide = React357.useMemo(() => {
       if (inverse) {
         return rowSpan <= 1;
       } else {
@@ -70371,13 +74140,13 @@ html body {
     } else if (inverse) {
       mergedStyle.height = getHeight == null ? void 0 : getHeight(rowSpan);
     }
-    const mergedRender = needHide ? () => null : render4;
+    const mergedRender = needHide ? () => null : render2;
     const cellSpan = {};
     if (rowSpan === 0 || colSpan === 0) {
       cellSpan.rowSpan = 1;
       cellSpan.colSpan = 1;
     }
-    return /* @__PURE__ */ React343.createElement(Cell_default, _extends69({
+    return /* @__PURE__ */ React357.createElement(Cell_default, _extends75({
       className: clsx(columnClassName, className),
       ellipsis: column2.ellipsis,
       align: column2.align,
@@ -70386,7 +74155,7 @@ html body {
       prefixCls: rowInfo.prefixCls,
       key,
       record,
-      index: index2,
+      index,
       renderIndex,
       dataIndex,
       render: mergedRender,
@@ -70401,8 +74170,8 @@ html body {
   var VirtualCell_default = VirtualCell;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/VirtualTable/BodyLine.js
-  function _extends70() {
-    _extends70 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends76() {
+    _extends76 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -70413,12 +74182,12 @@ html body {
       }
       return target;
     };
-    return _extends70.apply(this, arguments);
+    return _extends76.apply(this, arguments);
   }
-  var BodyLine = /* @__PURE__ */ React344.forwardRef((props, ref) => {
+  var BodyLine = /* @__PURE__ */ React358.forwardRef((props, ref) => {
     const _a = props, {
       data,
-      index: index2,
+      index,
       className,
       rowKey,
       style: style2,
@@ -70444,11 +74213,11 @@ html body {
       prefixCls,
       fixColumn,
       componentWidth
-    } = useContext112(TableContext_default, ["prefixCls", "flattenColumns", "fixColumn", "componentWidth", "scrollX"]);
+    } = useContext117(TableContext_default, ["prefixCls", "flattenColumns", "fixColumn", "componentWidth", "scrollX"]);
     const {
       getComponent
-    } = useContext112(StaticContext, ["getComponent"]);
-    const rowInfo = useRowInfo(record, rowKey, index2, indent);
+    } = useContext117(StaticContext, ["getComponent"]);
+    const rowInfo = useRowInfo(record, rowKey, index, indent);
     const RowComponent = getComponent(["body", "row"], "div");
     const cellComponent = getComponent(["body", "cell"], "div");
     const {
@@ -70460,8 +74229,8 @@ html body {
     } = rowInfo;
     let expandRowNode;
     if (rowSupportExpand && expanded) {
-      const expandContent = expandedRowRender(record, index2, indent + 1, expanded);
-      const expandedClsName = computedExpandedClassName(expandedRowClassName, record, index2, indent);
+      const expandContent = expandedRowRender(record, index, indent + 1, expanded);
+      const expandedClsName = computedExpandedClassName(expandedRowClassName, record, index, indent);
       let additionalProps = {};
       if (fixColumn) {
         additionalProps = {
@@ -70471,9 +74240,9 @@ html body {
         };
       }
       const rowCellCls = `${prefixCls}-expanded-row-cell`;
-      expandRowNode = /* @__PURE__ */ React344.createElement(RowComponent, {
+      expandRowNode = /* @__PURE__ */ React358.createElement(RowComponent, {
         className: clsx(`${prefixCls}-expanded-row`, `${prefixCls}-expanded-row-level-${indent + 1}`, expandedClsName)
-      }, /* @__PURE__ */ React344.createElement(Cell_default, {
+      }, /* @__PURE__ */ React358.createElement(Cell_default, {
         component: cellComponent,
         prefixCls,
         className: clsx(rowCellCls, {
@@ -70489,7 +74258,7 @@ html body {
       rowStyle.position = "absolute";
       rowStyle.pointerEvents = "none";
     }
-    const rowNode = /* @__PURE__ */ React344.createElement(RowComponent, _extends70({}, rowProps, restProps, {
+    const rowNode = /* @__PURE__ */ React358.createElement(RowComponent, _extends76({}, rowProps, restProps, {
       "data-row-key": rowKey,
       ref: rowSupportExpand ? null : ref,
       className: clsx(className, `${prefixCls}-row`, rowProps == null ? void 0 : rowProps.className, {
@@ -70497,14 +74266,14 @@ html body {
       }),
       style: __spreadValues(__spreadValues({}, rowStyle), rowProps == null ? void 0 : rowProps.style)
     }), flattenColumns.map((column2, colIndex) => {
-      return /* @__PURE__ */ React344.createElement(VirtualCell_default, {
+      return /* @__PURE__ */ React358.createElement(VirtualCell_default, {
         key: colIndex,
         component: cellComponent,
         rowInfo,
         column: column2,
         colIndex,
         indent,
-        index: index2,
+        index,
         renderIndex,
         record,
         inverse: extra,
@@ -70512,7 +74281,7 @@ html body {
       });
     }));
     if (rowSupportExpand) {
-      return /* @__PURE__ */ React344.createElement("div", {
+      return /* @__PURE__ */ React358.createElement("div", {
         ref
       }, rowNode, expandRowNode);
     }
@@ -70525,7 +74294,7 @@ html body {
   var BodyLine_default = ResponseBodyLine;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/VirtualTable/BodyGrid.js
-  var Grid = /* @__PURE__ */ React345.forwardRef((props, ref) => {
+  var Grid = /* @__PURE__ */ React359.forwardRef((props, ref) => {
     const {
       data,
       onScroll
@@ -70539,17 +74308,17 @@ html body {
       childrenColumnName,
       scrollX,
       direction
-    } = useContext112(TableContext_default, ["flattenColumns", "onColumnResize", "getRowKey", "prefixCls", "expandedKeys", "childrenColumnName", "scrollX", "direction"]);
+    } = useContext117(TableContext_default, ["flattenColumns", "onColumnResize", "getRowKey", "prefixCls", "expandedKeys", "childrenColumnName", "scrollX", "direction"]);
     const {
       sticky,
       scrollY,
       listItemHeight,
       getComponent,
       onScroll: onTablePropScroll
-    } = useContext112(StaticContext);
-    const listRef = React345.useRef(null);
+    } = useContext117(StaticContext);
+    const listRef = React359.useRef(null);
     const flattenData2 = useFlattenRecords(data, childrenColumnName, expandedKeys, getRowKey);
-    const columnsWidth = React345.useMemo(() => {
+    const columnsWidth = React359.useMemo(() => {
       let total = 0;
       return flattenColumns.map(({
         width,
@@ -70561,13 +74330,13 @@ html body {
         return [key, finalWidth, total];
       });
     }, [flattenColumns]);
-    const columnsOffset = React345.useMemo(() => columnsWidth.map((colWidth) => colWidth[2]), [columnsWidth]);
-    React345.useEffect(() => {
+    const columnsOffset = React359.useMemo(() => columnsWidth.map((colWidth) => colWidth[2]), [columnsWidth]);
+    React359.useEffect(() => {
       columnsWidth.forEach(([key, width]) => {
         onColumnResize(key, width);
       });
     }, [columnsWidth]);
-    React345.useImperativeHandle(ref, () => {
+    React359.useImperativeHandle(ref, () => {
       var _a;
       const obj = {
         scrollTo: (config) => {
@@ -70614,14 +74383,14 @@ html body {
       });
       return obj;
     });
-    const getRowSpan = (column2, index2) => {
+    const getRowSpan = (column2, index) => {
       var _a, _b;
-      const record = (_a = flattenData2[index2]) == null ? void 0 : _a.record;
+      const record = (_a = flattenData2[index]) == null ? void 0 : _a.record;
       const {
         onCell
       } = column2;
       if (onCell) {
-        const cellProps = onCell(record, index2);
+        const cellProps = onCell(record, index);
         return (_b = cellProps == null ? void 0 : cellProps.rowSpan) != null ? _b : 1;
       }
       return 1;
@@ -70668,11 +74437,11 @@ html body {
           spanLines.push(i);
         }
       }
-      const nodes = spanLines.map((index2) => {
-        const item = flattenData2[index2];
-        const rowKey = getRowKey(item.record, index2);
+      const nodes = spanLines.map((index) => {
+        const item = flattenData2[index];
+        const rowKey = getRowKey(item.record, index);
         const getHeight = (rowSpan) => {
-          const endItemIndex = index2 + rowSpan - 1;
+          const endItemIndex = index + rowSpan - 1;
           const endItem = flattenData2[endItemIndex];
           if (!endItem || !endItem.record) {
             const safeEndIndex = Math.min(endItemIndex, flattenData2.length - 1);
@@ -70686,11 +74455,11 @@ html body {
           return sizeInfo2.bottom - sizeInfo2.top;
         };
         const sizeInfo = getSize2(rowKey);
-        return /* @__PURE__ */ React345.createElement(BodyLine_default, {
-          key: index2,
+        return /* @__PURE__ */ React359.createElement(BodyLine_default, {
+          key: index,
           data: item,
           rowKey,
-          index: index2,
+          index,
           style: {
             top: -offsetY + sizeInfo.top
           },
@@ -70700,7 +74469,7 @@ html body {
       });
       return nodes;
     };
-    const gridContext = React345.useMemo(() => ({
+    const gridContext = React359.useMemo(() => ({
       columnsOffset
     }), [columnsOffset]);
     const tblPrefixCls = `${prefixCls}-tbody`;
@@ -70713,9 +74482,9 @@ html body {
         horizontalScrollBarStyle.bottom = sticky.offsetScroll;
       }
     }
-    return /* @__PURE__ */ React345.createElement(GridContext.Provider, {
+    return /* @__PURE__ */ React359.createElement(GridContext.Provider, {
       value: gridContext
-    }, /* @__PURE__ */ React345.createElement(es_default9, {
+    }, /* @__PURE__ */ React359.createElement(es_default9, {
       fullHeight: false,
       ref: listRef,
       prefixCls: `${tblPrefixCls}-virtual`,
@@ -70741,12 +74510,12 @@ html body {
       },
       onScroll: onTablePropScroll,
       extraRender
-    }, (item, index2, itemProps) => {
-      const rowKey = getRowKey(item.record, index2);
-      return /* @__PURE__ */ React345.createElement(BodyLine_default, {
+    }, (item, index, itemProps) => {
+      const rowKey = getRowKey(item.record, index);
+      return /* @__PURE__ */ React359.createElement(BodyLine_default, {
         data: item,
         rowKey,
-        index: index2,
+        index,
         style: itemProps.style
       });
     }));
@@ -70758,8 +74527,8 @@ html body {
   var BodyGrid_default = ResponseGrid;
 
   // ../custom_dashboard/node_modules/@rc-component/table/es/VirtualTable/index.js
-  function _extends71() {
-    _extends71 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends77() {
+    _extends77 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -70770,14 +74539,14 @@ html body {
       }
       return target;
     };
-    return _extends71.apply(this, arguments);
+    return _extends77.apply(this, arguments);
   }
   var renderBody = (rawData, props) => {
     const {
       ref,
       onScroll
     } = props;
-    return /* @__PURE__ */ React346.createElement(BodyGrid_default, {
+    return /* @__PURE__ */ React360.createElement(BodyGrid_default, {
       ref,
       data: rawData,
       onScroll
@@ -70813,16 +74582,16 @@ html body {
     }
     const getComponent = useEvent_default((path, defaultComponent) => get(components, path) || defaultComponent);
     const onInternalScroll = useEvent_default(onScroll);
-    const context = React346.useMemo(() => ({
+    const context = React360.useMemo(() => ({
       sticky,
       scrollY,
       listItemHeight,
       getComponent,
       onScroll: onInternalScroll
     }), [sticky, scrollY, listItemHeight, getComponent, onInternalScroll]);
-    return /* @__PURE__ */ React346.createElement(StaticContext.Provider, {
+    return /* @__PURE__ */ React360.createElement(StaticContext.Provider, {
       value: context
-    }, /* @__PURE__ */ React346.createElement(Table_default, _extends71({}, props, {
+    }, /* @__PURE__ */ React360.createElement(Table_default, _extends77({}, props, {
       className: clsx(className, `${prefixCls}-virtual`),
       scroll: __spreadProps(__spreadValues({}, scroll), {
         x: scrollX
@@ -70836,7 +74605,7 @@ html body {
       ref
     })));
   };
-  var RefVirtualTable = /* @__PURE__ */ React346.forwardRef(VirtualTable);
+  var RefVirtualTable = /* @__PURE__ */ React360.forwardRef(VirtualTable);
   if (true) {
     RefVirtualTable.displayName = "VirtualTable";
   }
@@ -70854,22 +74623,22 @@ html body {
   var ColumnGroup_default2 = ColumnGroup2;
 
   // ../custom_dashboard/node_modules/antd/es/table/hooks/useSelection.js
-  var React351 = __toESM(require_react());
-  var import_react126 = __toESM(require_react());
+  var React365 = __toESM(require_react());
+  var import_react134 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/util.js
-  var import_react125 = __toESM(require_react());
+  var import_react133 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/TreeNode.js
-  var import_react124 = __toESM(require_react());
+  var import_react132 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/contextTypes.js
-  var React347 = __toESM(require_react());
-  var TreeContext = /* @__PURE__ */ React347.createContext(null);
-  var UnstableContext = /* @__PURE__ */ React347.createContext({});
+  var React361 = __toESM(require_react());
+  var TreeContext = /* @__PURE__ */ React361.createContext(null);
+  var UnstableContext = /* @__PURE__ */ React361.createContext({});
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/Indent.js
-  var React348 = __toESM(require_react());
+  var React362 = __toESM(require_react());
   var Indent = ({
     prefixCls,
     level,
@@ -70879,7 +74648,7 @@ html body {
     const baseClassName = `${prefixCls}-indent-unit`;
     const list = [];
     for (let i = 0; i < level; i += 1) {
-      list.push(/* @__PURE__ */ React348.createElement("span", {
+      list.push(/* @__PURE__ */ React362.createElement("span", {
         key: i,
         className: clsx(baseClassName, {
           [`${baseClassName}-start`]: isStart[i],
@@ -70887,16 +74656,16 @@ html body {
         })
       }));
     }
-    return /* @__PURE__ */ React348.createElement("span", {
+    return /* @__PURE__ */ React362.createElement("span", {
       "aria-hidden": "true",
       className: `${prefixCls}-indent`
     }, list);
   };
-  var Indent_default = /* @__PURE__ */ React348.memo(Indent);
+  var Indent_default = /* @__PURE__ */ React362.memo(Indent);
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/TreeNode.js
-  function _extends72() {
-    _extends72 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends78() {
+    _extends78 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -70907,7 +74676,7 @@ html body {
       }
       return target;
     };
-    return _extends72.apply(this, arguments);
+    return _extends78.apply(this, arguments);
   }
   var ICON_OPEN = "open";
   var ICON_CLOSE = "close";
@@ -70958,16 +74727,16 @@ html body {
       "treeId"
     ]);
     const nodeId = getId(treeId, eventKey);
-    const context = import_react124.default.useContext(TreeContext);
+    const context = import_react132.default.useContext(TreeContext);
     const {
       classNames: treeClassNames,
       styles
     } = context || {};
-    const unstableContext = import_react124.default.useContext(UnstableContext);
-    const selectHandleRef = import_react124.default.useRef(null);
-    const [dragNodeHighlight, setDragNodeHighlight] = import_react124.default.useState(false);
+    const unstableContext = import_react132.default.useContext(UnstableContext);
+    const selectHandleRef = import_react132.default.useRef(null);
+    const [dragNodeHighlight, setDragNodeHighlight] = import_react132.default.useState(false);
     const isDisabled = !!(context.disabled || props.disabled || ((_b = unstableContext.nodeDisabled) == null ? void 0 : _b.call(unstableContext, data)));
-    const isCheckable = import_react124.default.useMemo(() => {
+    const isCheckable = import_react132.default.useMemo(() => {
       if (!context.checkable || props.checkable === false) {
         return false;
       }
@@ -70988,7 +74757,7 @@ html body {
       }
       context.onNodeCheck(e3, convertNodePropsToEventData(props), !checked);
     };
-    const isSelectable = import_react124.default.useMemo(() => {
+    const isSelectable = import_react132.default.useMemo(() => {
       if (typeof selectable === "boolean") {
         return selectable;
       }
@@ -71014,7 +74783,7 @@ html body {
     const onContextMenu = (e3) => {
       context.onNodeContextMenu(e3, convertNodePropsToEventData(props));
     };
-    const isDraggable = import_react124.default.useMemo(() => {
+    const isDraggable = import_react132.default.useMemo(() => {
       return !!(context.draggable && (!context.draggable.nodeDraggable || context.draggable.nodeDraggable(data)));
     }, [context.draggable, data]);
     const onDragStart = (e3) => {
@@ -71057,16 +74826,16 @@ html body {
       }
       context.onNodeExpand(e3, convertNodePropsToEventData(props));
     };
-    const hasChildren = import_react124.default.useMemo(() => {
+    const hasChildren = import_react132.default.useMemo(() => {
       const {
         children
       } = getEntity(context.keyEntities, eventKey) || {};
       return Boolean((children || []).length);
     }, [context.keyEntities, eventKey]);
-    const memoizedIsLeaf = import_react124.default.useMemo(() => {
+    const memoizedIsLeaf = import_react132.default.useMemo(() => {
       return isLeafNode(isLeaf, context.loadData, hasChildren, props.loaded);
     }, [isLeaf, context.loadData, hasChildren, props.loaded]);
-    import_react124.default.useEffect(() => {
+    import_react132.default.useEffect(() => {
       if (loading) {
         return;
       }
@@ -71074,12 +74843,12 @@ html body {
         context.onNodeLoad(convertNodePropsToEventData(props));
       }
     }, [loading, context.loadData, context.onNodeLoad, expanded, memoizedIsLeaf, props]);
-    const dragHandlerNode = import_react124.default.useMemo(() => {
+    const dragHandlerNode = import_react132.default.useMemo(() => {
       var _a2;
       if (!((_a2 = context.draggable) == null ? void 0 : _a2.icon)) {
         return null;
       }
-      return /* @__PURE__ */ import_react124.default.createElement("span", {
+      return /* @__PURE__ */ import_react132.default.createElement("span", {
         className: `${context.prefixCls}-draggable-icon`
       }, context.draggable.icon);
     }, [context.draggable]);
@@ -71095,22 +74864,22 @@ html body {
     const renderSwitcher = () => {
       if (memoizedIsLeaf) {
         const switcherIconDom2 = renderSwitcherIconDom(true);
-        return switcherIconDom2 !== false ? /* @__PURE__ */ import_react124.default.createElement("span", {
+        return switcherIconDom2 !== false ? /* @__PURE__ */ import_react132.default.createElement("span", {
           className: clsx(`${context.prefixCls}-switcher`, `${context.prefixCls}-switcher-noop`)
         }, switcherIconDom2) : null;
       }
       const switcherIconDom = renderSwitcherIconDom(false);
-      return switcherIconDom !== false ? /* @__PURE__ */ import_react124.default.createElement("span", {
+      return switcherIconDom !== false ? /* @__PURE__ */ import_react132.default.createElement("span", {
         onClick: onExpand,
         className: clsx(`${context.prefixCls}-switcher`, `${context.prefixCls}-switcher_${expanded ? ICON_OPEN : ICON_CLOSE}`)
       }, switcherIconDom) : null;
     };
-    const checkboxNode = import_react124.default.useMemo(() => {
+    const checkboxNode = import_react132.default.useMemo(() => {
       if (!isCheckable) {
         return null;
       }
       const $custom = typeof isCheckable !== "boolean" ? isCheckable : null;
-      return /* @__PURE__ */ import_react124.default.createElement("span", {
+      return /* @__PURE__ */ import_react132.default.createElement("span", {
         className: clsx(`${context.prefixCls}-checkbox`, {
           [`${context.prefixCls}-checkbox-checked`]: checked,
           [`${context.prefixCls}-checkbox-indeterminate`]: !checked && halfChecked,
@@ -71123,21 +74892,21 @@ html body {
         "aria-labelledby": nodeId
       }, $custom);
     }, [isCheckable, checked, halfChecked, isDisabled, props.disableCheckbox, nodeId]);
-    const nodeState = import_react124.default.useMemo(() => {
+    const nodeState = import_react132.default.useMemo(() => {
       if (memoizedIsLeaf) {
         return null;
       }
       return expanded ? ICON_OPEN : ICON_CLOSE;
     }, [memoizedIsLeaf, expanded]);
-    const iconNode = import_react124.default.useMemo(() => {
-      return /* @__PURE__ */ import_react124.default.createElement("span", {
+    const iconNode = import_react132.default.useMemo(() => {
+      return /* @__PURE__ */ import_react132.default.createElement("span", {
         className: clsx(treeClassNames == null ? void 0 : treeClassNames.itemIcon, `${context.prefixCls}-iconEle`, `${context.prefixCls}-icon__${nodeState || "docu"}`, {
           [`${context.prefixCls}-icon_loading`]: loading
         }),
         style: styles == null ? void 0 : styles.itemIcon
       });
     }, [context.prefixCls, nodeState, loading]);
-    const dropIndicatorNode = import_react124.default.useMemo(() => {
+    const dropIndicatorNode = import_react132.default.useMemo(() => {
       const rootDraggable = Boolean(context.draggable);
       const showIndicator = !props.disabled && rootDraggable && context.dragOverNodeKey === eventKey;
       if (!showIndicator) {
@@ -71151,7 +74920,7 @@ html body {
         direction: context.direction
       });
     }, [context.dropPosition, context.dropLevelOffset, context.indent, context.prefixCls, context.direction, context.draggable, context.dragOverNodeKey, context.dropIndicatorRender]);
-    const selectorNode = import_react124.default.useMemo(() => {
+    const selectorNode = import_react132.default.useMemo(() => {
       const {
         title = defaultTitle
       } = props;
@@ -71159,7 +74928,7 @@ html body {
       let $icon;
       if (context.showIcon) {
         const currentIcon = props.icon || context.icon;
-        $icon = currentIcon ? /* @__PURE__ */ import_react124.default.createElement("span", {
+        $icon = currentIcon ? /* @__PURE__ */ import_react132.default.createElement("span", {
           className: clsx(treeClassNames == null ? void 0 : treeClassNames.itemIcon, `${context.prefixCls}-iconEle`, `${context.prefixCls}-icon__customize`),
           style: styles == null ? void 0 : styles.itemIcon
         }, typeof currentIcon === "function" ? currentIcon(props) : currentIcon) : iconNode;
@@ -71174,7 +74943,7 @@ html body {
       } else {
         titleNode = title;
       }
-      return /* @__PURE__ */ import_react124.default.createElement("span", {
+      return /* @__PURE__ */ import_react132.default.createElement("span", {
         ref: selectHandleRef,
         title: typeof title === "string" ? title : "",
         className: clsx(wrapClass, `${wrapClass}-${nodeState || "normal"}`, {
@@ -71185,7 +74954,7 @@ html body {
         onContextMenu,
         onClick: onSelectorClick,
         onDoubleClick: onSelectorDoubleClick
-      }, $icon, /* @__PURE__ */ import_react124.default.createElement("span", {
+      }, $icon, /* @__PURE__ */ import_react132.default.createElement("span", {
         className: clsx(`${context.prefixCls}-title`, treeClassNames == null ? void 0 : treeClassNames.itemTitle),
         style: styles == null ? void 0 : styles.itemTitle
       }, titleNode), dropIndicatorNode);
@@ -71200,7 +74969,7 @@ html body {
     const isEndNode = isEnd[isEnd.length - 1];
     const draggableWithoutDisabled = !isDisabled && isDraggable;
     const dragging = context.draggingNodeKey === eventKey;
-    return /* @__PURE__ */ import_react124.default.createElement("div", _extends72({
+    return /* @__PURE__ */ import_react132.default.createElement("div", _extends78({
       ref: domRef,
       role: "treeitem",
       id: nodeId,
@@ -71236,7 +75005,7 @@ html body {
       onDrop: isDraggable ? onDrop : void 0,
       onDragEnd: isDraggable ? onDragEnd : void 0,
       onMouseMove
-    }, dataOrAriaAttributeProps), /* @__PURE__ */ import_react124.default.createElement(Indent_default, {
+    }, dataOrAriaAttributeProps), /* @__PURE__ */ import_react132.default.createElement(Indent_default, {
       prefixCls: context.prefixCls,
       level,
       isStart,
@@ -71254,9 +75023,9 @@ html body {
     if (!list)
       return [];
     const clone = list.slice();
-    const index2 = clone.indexOf(value);
-    if (index2 >= 0) {
-      clone.splice(index2, 1);
+    const index = clone.indexOf(value);
+    if (index >= 0) {
+      clone.splice(index, 1);
     }
     return clone;
   }
@@ -71513,8 +75282,8 @@ html body {
     const warning6 = devUseWarning("Table");
     const [multipleSelect, updatePrevSelectedIndex] = useMultipleSelect((item) => item);
     const [mergedSelectedKeys, setMergedSelectedKeys] = useControlledState(defaultSelectedRowKeys || EMPTY_LIST4, selectedRowKeys);
-    const preserveRecordsRef = React351.useRef(/* @__PURE__ */ new Map());
-    const updatePreserveRecordsCache = (0, import_react126.useCallback)((keys2) => {
+    const preserveRecordsRef = React365.useRef(/* @__PURE__ */ new Map());
+    const updatePreserveRecordsCache = (0, import_react134.useCallback)((keys2) => {
       if (preserveSelectedRowKeys) {
         const newCache = /* @__PURE__ */ new Map();
         keys2.forEach((key) => {
@@ -71527,13 +75296,13 @@ html body {
         preserveRecordsRef.current = newCache;
       }
     }, [getRecordByKey, preserveSelectedRowKeys]);
-    React351.useEffect(() => {
+    React365.useEffect(() => {
       updatePreserveRecordsCache(mergedSelectedKeys);
     }, [mergedSelectedKeys]);
-    const flattedData = (0, import_react126.useMemo)(() => flattenData(childrenColumnName, pageData), [childrenColumnName, pageData]);
+    const flattedData = (0, import_react134.useMemo)(() => flattenData(childrenColumnName, pageData), [childrenColumnName, pageData]);
     const {
       keyEntities
-    } = (0, import_react126.useMemo)(() => {
+    } = (0, import_react134.useMemo)(() => {
       if (checkStrictly) {
         return {
           keyEntities: null
@@ -71550,17 +75319,17 @@ html body {
         childrenPropName: childrenColumnName
       });
     }, [data, getRowKey, checkStrictly, childrenColumnName, preserveSelectedRowKeys, flattedData]);
-    const checkboxPropsMap = (0, import_react126.useMemo)(() => {
+    const checkboxPropsMap = (0, import_react134.useMemo)(() => {
       const map = /* @__PURE__ */ new Map();
-      flattedData.forEach((record, index2) => {
-        const key = getRowKey(record, index2);
+      flattedData.forEach((record, index) => {
+        const key = getRowKey(record, index);
         const checkboxProps = (getCheckboxProps ? getCheckboxProps(record) : null) || {};
         map.set(key, checkboxProps);
         true ? warning6(!("checked" in checkboxProps || "defaultChecked" in checkboxProps), "usage", "Do not set `checked` or `defaultChecked` in `getCheckboxProps`. Please use `selectedRowKeys` instead.") : void 0;
       });
       return map;
     }, [flattedData, getRowKey, getCheckboxProps]);
-    const isCheckboxDisabled = (0, import_react126.useCallback)((r3) => {
+    const isCheckboxDisabled = (0, import_react134.useCallback)((r3) => {
       const rowKey = getRowKey(r3);
       let checkboxProps;
       if (checkboxPropsMap.has(rowKey)) {
@@ -71570,7 +75339,7 @@ html body {
       }
       return !!(checkboxProps == null ? void 0 : checkboxProps.disabled);
     }, [checkboxPropsMap, getRowKey]);
-    const [derivedSelectedKeys, derivedHalfSelectedKeys] = (0, import_react126.useMemo)(() => {
+    const [derivedSelectedKeys, derivedHalfSelectedKeys] = (0, import_react134.useMemo)(() => {
       if (checkStrictly) {
         return [mergedSelectedKeys || [], []];
       }
@@ -71580,17 +75349,17 @@ html body {
       } = conductCheck(mergedSelectedKeys, true, keyEntities, isCheckboxDisabled);
       return [checkedKeys || [], halfCheckedKeys];
     }, [mergedSelectedKeys, checkStrictly, keyEntities, isCheckboxDisabled]);
-    const derivedSelectedKeySet = (0, import_react126.useMemo)(() => {
+    const derivedSelectedKeySet = (0, import_react134.useMemo)(() => {
       const keys2 = selectionType === "radio" ? derivedSelectedKeys.slice(0, 1) : derivedSelectedKeys;
       return new Set(keys2);
     }, [derivedSelectedKeys, selectionType]);
-    const derivedHalfSelectedKeySet = (0, import_react126.useMemo)(() => selectionType === "radio" ? /* @__PURE__ */ new Set() : new Set(derivedHalfSelectedKeys), [derivedHalfSelectedKeys, selectionType]);
-    React351.useEffect(() => {
+    const derivedHalfSelectedKeySet = (0, import_react134.useMemo)(() => selectionType === "radio" ? /* @__PURE__ */ new Set() : new Set(derivedHalfSelectedKeys), [derivedHalfSelectedKeys, selectionType]);
+    React365.useEffect(() => {
       if (!rowSelection) {
         setMergedSelectedKeys(EMPTY_LIST4);
       }
     }, [!!rowSelection]);
-    const setSelectedKeys = (0, import_react126.useCallback)((keys2, method4) => {
+    const setSelectedKeys = (0, import_react134.useCallback)((keys2, method4) => {
       let availableKeys;
       let records;
       updatePreserveRecordsCache(keys2);
@@ -71613,14 +75382,14 @@ html body {
         type: method4
       });
     }, [setMergedSelectedKeys, getRecordByKey, onSelectionChange, preserveSelectedRowKeys]);
-    const triggerSingleSelection = (0, import_react126.useCallback)((key, selected, keys2, event) => {
+    const triggerSingleSelection = (0, import_react134.useCallback)((key, selected, keys2, event) => {
       if (onSelect) {
         const rows = keys2.map(getRecordByKey);
         onSelect(getRecordByKey(key), selected, rows, event);
       }
       setSelectedKeys(keys2, "single");
     }, [onSelect, getRecordByKey, setSelectedKeys]);
-    const mergedSelections = (0, import_react126.useMemo)(() => {
+    const mergedSelections = (0, import_react134.useMemo)(() => {
       if (!selections || hideSelectAll) {
         return null;
       }
@@ -71631,7 +75400,7 @@ html body {
             key: "all",
             text: tableLocale.selectionAll,
             onSelect() {
-              setSelectedKeys(data.map((record, index2) => getRowKey(record, index2)).filter((key) => {
+              setSelectedKeys(data.map((record, index) => getRowKey(record, index)).filter((key) => {
                 const checkProps = checkboxPropsMap.get(key);
                 return !(checkProps == null ? void 0 : checkProps.disabled) || derivedSelectedKeySet.has(key);
               }), "all");
@@ -71644,8 +75413,8 @@ html body {
             text: tableLocale.selectInvert,
             onSelect() {
               const keySet = new Set(derivedSelectedKeySet);
-              pageData.forEach((record, index2) => {
-                const key = getRowKey(record, index2);
+              pageData.forEach((record, index) => {
+                const key = getRowKey(record, index);
                 const checkProps = checkboxPropsMap.get(key);
                 if (!(checkProps == null ? void 0 : checkProps.disabled)) {
                   if (keySet.has(key)) {
@@ -71686,7 +75455,7 @@ html body {
         }
       }));
     }, [selections, hideSelectAll, tableLocale.selectionAll, tableLocale.selectInvert, tableLocale.selectNone, checkboxPropsMap, derivedSelectedKeySet, data, pageData, getRowKey, onSelectInvert, setSelectedKeys]);
-    const transformColumns = (0, import_react126.useCallback)((columns) => {
+    const transformColumns = (0, import_react134.useCallback)((columns) => {
       var _a;
       if (!rowSelection) {
         true ? warning6(!columns.includes(SELECTION_COLUMN), "usage", "`rowSelection` is not config but `SELECTION_COLUMN` exists in the `columns`.") : void 0;
@@ -71724,14 +75493,14 @@ html body {
         if (mergedSelections) {
           const menu = {
             getPopupContainer,
-            items: mergedSelections.map((selection, index2) => {
+            items: mergedSelections.map((selection, index) => {
               const {
                 key,
                 text,
                 onSelect: onSelectionClick
               } = selection;
               return {
-                key: key != null ? key : index2,
+                key: key != null ? key : index,
                 onClick: () => {
                   onSelectionClick == null ? void 0 : onSelectionClick(recordKeys);
                 },
@@ -71739,15 +75508,15 @@ html body {
               };
             })
           };
-          customizeSelections = /* @__PURE__ */ React351.createElement("div", {
+          customizeSelections = /* @__PURE__ */ React365.createElement("div", {
             className: `${prefixCls}-selection-extra`
-          }, /* @__PURE__ */ React351.createElement(dropdown_default3, {
+          }, /* @__PURE__ */ React365.createElement(dropdown_default3, {
             menu,
             getPopupContainer
-          }, /* @__PURE__ */ React351.createElement("span", null, /* @__PURE__ */ React351.createElement(DownOutlined_default2, null))));
+          }, /* @__PURE__ */ React365.createElement("span", null, /* @__PURE__ */ React365.createElement(DownOutlined_default2, null))));
         }
-        const allDisabledData = flattedData.map((record, index2) => {
-          const key = getRowKey(record, index2);
+        const allDisabledData = flattedData.map((record, index) => {
+          const key = getRowKey(record, index);
           const checkboxProps = checkboxPropsMap.get(key) || {};
           return __spreadValues({
             checked: keySet.has(key)
@@ -71767,7 +75536,7 @@ html body {
           onChange,
           disabled
         } = customCheckboxProps;
-        columnTitleCheckbox = /* @__PURE__ */ React351.createElement(checkbox_default, __spreadProps(__spreadValues({
+        columnTitleCheckbox = /* @__PURE__ */ React365.createElement(checkbox_default, __spreadProps(__spreadValues({
           "aria-label": customizeSelections ? "Custom selection" : "Select all"
         }, customCheckboxProps), {
           checked: !allDisabled ? !!flattedData.length && checkedCurrentAll : allDisabledAndChecked,
@@ -71779,18 +75548,18 @@ html body {
           disabled: disabled != null ? disabled : flattedData.length === 0 || allDisabled,
           skipGroup: true
         }));
-        title = !hideSelectAll && /* @__PURE__ */ React351.createElement("div", {
+        title = !hideSelectAll && /* @__PURE__ */ React365.createElement("div", {
           className: `${prefixCls}-selection`
         }, columnTitleCheckbox, customizeSelections);
       }
       let renderCell;
       if (selectionType === "radio") {
-        renderCell = (_, record, index2) => {
-          const key = getRowKey(record, index2);
+        renderCell = (_, record, index) => {
+          const key = getRowKey(record, index);
           const checked = keySet.has(key);
           const checkboxProps = checkboxPropsMap.get(key);
           return {
-            node: /* @__PURE__ */ React351.createElement(radio_default2, __spreadProps(__spreadValues({}, checkboxProps), {
+            node: /* @__PURE__ */ React365.createElement(radio_default2, __spreadProps(__spreadValues({}, checkboxProps), {
               checked,
               onClick: (e3) => {
                 var _a2;
@@ -71809,9 +75578,9 @@ html body {
           };
         };
       } else {
-        renderCell = (_, record, index2) => {
+        renderCell = (_, record, index) => {
           var _a2;
-          const key = getRowKey(record, index2);
+          const key = getRowKey(record, index);
           const checked = keySet.has(key);
           const indeterminate = derivedHalfSelectedKeySet.has(key);
           const checkboxProps = checkboxPropsMap.get(key);
@@ -71823,7 +75592,7 @@ html body {
             mergedIndeterminate = (_a2 = checkboxProps == null ? void 0 : checkboxProps.indeterminate) != null ? _a2 : indeterminate;
           }
           return {
-            node: /* @__PURE__ */ React351.createElement(checkbox_default, __spreadProps(__spreadValues({}, checkboxProps), {
+            node: /* @__PURE__ */ React365.createElement(checkbox_default, __spreadProps(__spreadValues({}, checkboxProps), {
               indeterminate: mergedIndeterminate,
               checked,
               skipGroup: true,
@@ -71882,13 +75651,13 @@ html body {
           };
         };
       }
-      const renderSelectionCell = (_, record, index2) => {
+      const renderSelectionCell = (_, record, index) => {
         const {
           node: node2,
           checked
-        } = renderCell(_, record, index2);
+        } = renderCell(_, record, index);
         if (customizeRenderCell) {
-          return customizeRenderCell(checked, record, index2, node2);
+          return customizeRenderCell(checked, record, index, node2);
         }
         return node2;
       };
@@ -71905,7 +75674,7 @@ html body {
       }
       const selectionColumnIndex = cloneColumns.indexOf(SELECTION_COLUMN);
       true ? warning6(cloneColumns.filter((col) => col === SELECTION_COLUMN).length <= 1, "usage", "Multiple `SELECTION_COLUMN` exist in `columns`.") : void 0;
-      cloneColumns = cloneColumns.filter((column2, index2) => column2 !== SELECTION_COLUMN || index2 === selectionColumnIndex);
+      cloneColumns = cloneColumns.filter((column2, index) => column2 !== SELECTION_COLUMN || index === selectionColumnIndex);
       const prevCol = cloneColumns[selectionColumnIndex - 1];
       const nextCol = cloneColumns[selectionColumnIndex + 1];
       let mergedFixed = fixed;
@@ -71950,10 +75719,10 @@ html body {
   var useSelection_default = useSelection;
 
   // ../custom_dashboard/node_modules/antd/es/table/InternalTable.js
-  var React380 = __toESM(require_react());
+  var React394 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/table/ExpandIcon.js
-  var React352 = __toESM(require_react());
+  var React366 = __toESM(require_react());
   "use client";
   function renderExpandIcon2(locale6) {
     return (props) => {
@@ -71965,7 +75734,7 @@ html body {
         expandable
       } = props;
       const iconPrefix = `${prefixCls}-row-expand-icon`;
-      return /* @__PURE__ */ React352.createElement("button", {
+      return /* @__PURE__ */ React366.createElement("button", {
         type: "button",
         onClick: (e3) => {
           onExpand(record, e3);
@@ -72000,7 +75769,7 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/antd/es/table/hooks/useFilter/index.js
-  var React374 = __toESM(require_react());
+  var React388 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/antd/es/table/util.js
   var getColumnKey = (column2, defaultKey) => {
@@ -72012,8 +75781,8 @@ html body {
     }
     return defaultKey;
   };
-  function getColumnPos(index2, pos) {
-    return pos ? `${pos}-${index2}` : `${index2}`;
+  function getColumnPos(index, pos) {
+    return pos ? `${pos}-${index}` : `${index}`;
   }
   var renderColumnTitle = (title, props) => {
     if (typeof title === "function") {
@@ -72030,18 +75799,18 @@ html body {
   };
 
   // ../custom_dashboard/node_modules/antd/es/table/hooks/useFilter/FilterDropdown.js
-  var React373 = __toESM(require_react());
+  var React387 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FilterFilled.js
-  var React353 = __toESM(require_react());
+  var React367 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/FilterFilled.js
   var FilterFilled = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M349 838c0 17.7 14.2 32 31.8 32h262.4c17.6 0 31.8-14.3 31.8-32V642H349v196zm531.1-684H143.9c-24.5 0-39.8 26.7-27.5 48l221.3 376h348.8l221.3-376c12.1-21.3-3.2-48-27.7-48z" } }] }, "name": "filter", "theme": "filled" };
   var FilterFilled_default = FilterFilled;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FilterFilled.js
-  function _extends73() {
-    _extends73 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends79() {
+    _extends79 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -72052,23 +75821,23 @@ html body {
       }
       return target;
     };
-    return _extends73.apply(this, arguments);
+    return _extends79.apply(this, arguments);
   }
-  var FilterFilled2 = (props, ref) => /* @__PURE__ */ React353.createElement(AntdIcon_default, _extends73({}, props, {
+  var FilterFilled2 = (props, ref) => /* @__PURE__ */ React367.createElement(AntdIcon_default, _extends79({}, props, {
     ref,
     icon: FilterFilled_default
   }));
-  var RefIcon19 = /* @__PURE__ */ React353.forwardRef(FilterFilled2);
+  var RefIcon22 = /* @__PURE__ */ React367.forwardRef(FilterFilled2);
   if (true) {
-    RefIcon19.displayName = "FilterFilled";
+    RefIcon22.displayName = "FilterFilled";
   }
-  var FilterFilled_default2 = RefIcon19;
+  var FilterFilled_default2 = RefIcon22;
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/Tree.js
-  var React358 = __toESM(require_react());
+  var React372 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/DropIndicator.js
-  var import_react127 = __toESM(require_react());
+  var import_react135 = __toESM(require_react());
   var DropIndicator = (props) => {
     const {
       dropPosition,
@@ -72096,7 +75865,7 @@ html body {
         style2.left = indent;
         break;
     }
-    return /* @__PURE__ */ import_react127.default.createElement("div", {
+    return /* @__PURE__ */ import_react135.default.createElement("div", {
       style: style2
     });
   };
@@ -72106,15 +75875,15 @@ html body {
   var DropIndicator_default = DropIndicator;
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/NodeList.js
-  var React357 = __toESM(require_react());
+  var React371 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/MotionTreeNode.js
-  var React356 = __toESM(require_react());
+  var React370 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/useUnmount.js
-  var React355 = __toESM(require_react());
+  var React369 = __toESM(require_react());
   function useUnmount(triggerStart, triggerEnd) {
-    const [firstMount, setFirstMount] = React355.useState(false);
+    const [firstMount, setFirstMount] = React369.useState(false);
     useLayoutEffect_default(() => {
       if (firstMount) {
         triggerStart();
@@ -72133,8 +75902,8 @@ html body {
   var useUnmount_default = useUnmount;
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/MotionTreeNode.js
-  function _extends74() {
-    _extends74 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends80() {
+    _extends80 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -72145,13 +75914,13 @@ html body {
       }
       return target;
     };
-    return _extends74.apply(this, arguments);
+    return _extends80.apply(this, arguments);
   }
-  var MotionTreeNode = /* @__PURE__ */ React356.forwardRef((oriProps, ref) => {
+  var MotionTreeNode = /* @__PURE__ */ React370.forwardRef((oriProps, ref) => {
     const _a = oriProps, {
       className,
       style: style2,
-      motion,
+      motion: motion2,
       motionNodes,
       motionType,
       onMotionStart: onOriginMotionStart,
@@ -72169,10 +75938,10 @@ html body {
       "active",
       "treeNodeRequiredProps"
     ]);
-    const [visible, setVisible] = React356.useState(true);
+    const [visible, setVisible] = React370.useState(true);
     const {
       prefixCls
-    } = React356.useContext(TreeContext);
+    } = React370.useContext(TreeContext);
     const targetVisible = motionNodes && motionType !== "hide";
     useLayoutEffect_default(() => {
       if (motionNodes) {
@@ -72186,7 +75955,7 @@ html body {
         onOriginMotionStart();
       }
     };
-    const triggerMotionEndRef = React356.useRef(false);
+    const triggerMotionEndRef = React370.useRef(false);
     const triggerMotionEnd = () => {
       if (motionNodes && !triggerMotionEndRef.current) {
         triggerMotionEndRef.current = true;
@@ -72200,16 +75969,16 @@ html body {
       }
     };
     if (motionNodes) {
-      return /* @__PURE__ */ React356.createElement(es_default2, _extends74({
+      return /* @__PURE__ */ React370.createElement(es_default2, _extends80({
         ref,
         visible
-      }, motion, {
+      }, motion2, {
         motionAppear: motionType === "show",
         onVisibleChanged
       }), ({
         className: motionClassName,
         style: motionStyle
-      }, motionRef) => /* @__PURE__ */ React356.createElement("div", {
+      }, motionRef) => /* @__PURE__ */ React370.createElement("div", {
         ref: motionRef,
         className: clsx(`${prefixCls}-treenode-motion`, motionClassName),
         style: motionStyle
@@ -72224,7 +75993,7 @@ html body {
         } = _a2;
         delete restProps.children;
         const treeNodeProps = getTreeNodeProps(key, treeNodeRequiredProps);
-        return /* @__PURE__ */ React356.createElement(TreeNode_default, _extends74({}, restProps, treeNodeProps, {
+        return /* @__PURE__ */ React370.createElement(TreeNode_default, _extends80({}, restProps, treeNodeProps, {
           title,
           active,
           data: treeNode.data,
@@ -72234,7 +76003,7 @@ html body {
         }));
       })));
     }
-    return /* @__PURE__ */ React356.createElement(TreeNode_default, _extends74({
+    return /* @__PURE__ */ React370.createElement(TreeNode_default, _extends80({
       domRef: ref,
       className,
       style: style2
@@ -72288,8 +76057,8 @@ html body {
   }
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/NodeList.js
-  function _extends75() {
-    _extends75 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends81() {
+    _extends81 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -72300,7 +76069,7 @@ html body {
       }
       return target;
     };
-    return _extends75.apply(this, arguments);
+    return _extends81.apply(this, arguments);
   }
   var MOTION_KEY = `RC_TREE_MOTION_${Math.random()}`;
   var MotionNode = {
@@ -72337,7 +76106,7 @@ html body {
     } = item;
     return getKey2(key, pos);
   }
-  var NodeList = /* @__PURE__ */ React357.forwardRef((props, ref) => {
+  var NodeList = /* @__PURE__ */ React371.forwardRef((props, ref) => {
     const _a = props, {
       prefixCls,
       data,
@@ -72354,7 +76123,7 @@ html body {
       dragging,
       dragOverNodeKey,
       dropPosition,
-      motion,
+      motion: motion2,
       height,
       itemHeight,
       virtual,
@@ -72404,20 +76173,20 @@ html body {
       "onListChangeEnd"
     ]);
     const treeId = useId_default();
-    const listRef = React357.useRef(null);
-    const indentMeasurerRef = React357.useRef(null);
-    React357.useImperativeHandle(ref, () => ({
+    const listRef = React371.useRef(null);
+    const indentMeasurerRef = React371.useRef(null);
+    React371.useImperativeHandle(ref, () => ({
       scrollTo: (scroll) => {
         listRef.current.scrollTo(scroll);
       },
       getIndentWidth: () => indentMeasurerRef.current.offsetWidth
     }));
-    const [prevExpandedKeys, setPrevExpandedKeys] = React357.useState(expandedKeys);
-    const [prevData, setPrevData] = React357.useState(data);
-    const [transitionData, setTransitionData] = React357.useState(data);
-    const [transitionRange, setTransitionRange] = React357.useState([]);
-    const [motionType, setMotionType] = React357.useState(null);
-    const dataRef = React357.useRef(data);
+    const [prevExpandedKeys, setPrevExpandedKeys] = React371.useState(expandedKeys);
+    const [prevData, setPrevData] = React371.useState(data);
+    const [transitionData, setTransitionData] = React371.useState(data);
+    const [transitionRange, setTransitionRange] = React371.useState([]);
+    const [motionType, setMotionType] = React371.useState(null);
+    const dataRef = React371.useRef(data);
     dataRef.current = data;
     function onMotionEnd() {
       const latestData = dataRef.current;
@@ -72457,12 +76226,12 @@ html body {
         setTransitionData(data);
       }
     }, [expandedKeys, data]);
-    React357.useEffect(() => {
+    React371.useEffect(() => {
       if (!dragging) {
         onMotionEnd();
       }
     }, [dragging]);
-    const mergedData = motion ? transitionData : data;
+    const mergedData = motion2 ? transitionData : data;
     const treeNodeRequiredProps = {
       expandedKeys,
       selectedKeys,
@@ -72474,7 +76243,7 @@ html body {
       dropPosition,
       keyEntities
     };
-    return /* @__PURE__ */ React357.createElement(React357.Fragment, null, /* @__PURE__ */ React357.createElement("div", {
+    return /* @__PURE__ */ React371.createElement(React371.Fragment, null, /* @__PURE__ */ React371.createElement("div", {
       className: `${prefixCls}-treenode`,
       "aria-hidden": true,
       style: {
@@ -72486,12 +76255,12 @@ html body {
         border: 0,
         padding: 0
       }
-    }, /* @__PURE__ */ React357.createElement("div", {
+    }, /* @__PURE__ */ React371.createElement("div", {
       className: `${prefixCls}-indent`
-    }, /* @__PURE__ */ React357.createElement("div", {
+    }, /* @__PURE__ */ React371.createElement("div", {
       ref: indentMeasurerRef,
       className: `${prefixCls}-indent-unit`
-    }))), /* @__PURE__ */ React357.createElement(es_default9, _extends75({}, domProps, {
+    }))), /* @__PURE__ */ React371.createElement(es_default9, _extends81({}, domProps, {
       data: mergedData,
       itemKey: itemKey2,
       height,
@@ -72528,14 +76297,14 @@ html body {
       delete restProps.key;
       delete restProps.children;
       const treeNodeProps = getTreeNodeProps(mergedKey, treeNodeRequiredProps);
-      return /* @__PURE__ */ React357.createElement(MotionTreeNode_default, _extends75({}, restProps, treeNodeProps, {
+      return /* @__PURE__ */ React371.createElement(MotionTreeNode_default, _extends81({}, restProps, treeNodeProps, {
         title,
         active: !!activeItem && key === activeItem.key,
         pos,
         data: treeNode.data,
         isStart,
         isEnd,
-        motion,
+        motion: motion2,
         motionNodes: key === MOTION_KEY ? transitionRange : null,
         motionType,
         onMotionStart: onListChangeStart,
@@ -72554,8 +76323,8 @@ html body {
   var NodeList_default = NodeList;
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/Tree.js
-  function _extends76() {
-    _extends76 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends82() {
+    _extends82 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -72566,10 +76335,10 @@ html body {
       }
       return target;
     };
-    return _extends76.apply(this, arguments);
+    return _extends82.apply(this, arguments);
   }
   var MAX_RETRY_TIMES = 10;
-  var Tree = class extends React358.Component {
+  var Tree = class extends React372.Component {
     constructor() {
       super(...arguments);
       __publicField(this, "destroyed", false);
@@ -72604,7 +76373,7 @@ html body {
       __publicField(this, "dragNodeProps", null);
       __publicField(this, "currentMouseOverDroppableNodeKey", null);
       __publicField(this, "focusedByMouse", false);
-      __publicField(this, "listRef", /* @__PURE__ */ React358.createRef());
+      __publicField(this, "listRef", /* @__PURE__ */ React372.createRef());
       __publicField(this, "onNodeDragStart", (event, nodeProps) => {
         const {
           expandedKeys,
@@ -73284,14 +77053,14 @@ html body {
           flattenNodes,
           activeKey
         } = this.state;
-        let index2 = flattenNodes.findIndex(({
+        let index = flattenNodes.findIndex(({
           key
         }) => key === activeKey);
-        if (index2 === -1 && offset3 < 0) {
-          index2 = flattenNodes.length;
+        if (index === -1 && offset3 < 0) {
+          index = flattenNodes.length;
         }
-        index2 = (index2 + offset3 + flattenNodes.length) % flattenNodes.length;
-        const item = flattenNodes[index2];
+        index = (index + offset3 + flattenNodes.length) % flattenNodes.length;
+        const item = flattenNodes[index];
         if (item) {
           const {
             key
@@ -73594,7 +77363,7 @@ html body {
         checkable,
         checkStrictly,
         disabled,
-        motion,
+        motion: motion2,
         loadData,
         filterTreeNode,
         height,
@@ -73666,14 +77435,14 @@ html body {
         onNodeDragEnd: this.onNodeDragEnd,
         onNodeDrop: this.onNodeDrop
       };
-      return /* @__PURE__ */ React358.createElement(TreeContext.Provider, {
+      return /* @__PURE__ */ React372.createElement(TreeContext.Provider, {
         value: contextValue
-      }, /* @__PURE__ */ React358.createElement("div", {
+      }, /* @__PURE__ */ React372.createElement("div", {
         className: clsx(prefixCls, className, rootClassName, {
           [`${prefixCls}-show-line`]: showLine
         }),
         style: rootStyle
-      }, /* @__PURE__ */ React358.createElement(NodeList_default, _extends76({
+      }, /* @__PURE__ */ React372.createElement(NodeList_default, _extends82({
         ref: this.listRef,
         prefixCls,
         style: style2,
@@ -73681,7 +77450,7 @@ html body {
         disabled,
         selectable,
         checkable: !!checkable,
-        motion,
+        motion: motion2,
         dragging: draggingNodeKey !== null,
         height,
         itemHeight,
@@ -73727,21 +77496,21 @@ html body {
   var Tree_default = Tree;
 
   // ../custom_dashboard/node_modules/@rc-component/tree/es/index.js
-  var es_default18 = Tree_default;
+  var es_default21 = Tree_default;
 
   // ../custom_dashboard/node_modules/antd/es/tree/DirectoryTree.js
-  var React369 = __toESM(require_react());
+  var React383 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FileOutlined.js
-  var React359 = __toESM(require_react());
+  var React373 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/FileOutlined.js
   var FileOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M854.6 288.6L639.4 73.4c-6-6-14.1-9.4-22.6-9.4H192c-17.7 0-32 14.3-32 32v832c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V311.3c0-8.5-3.4-16.7-9.4-22.7zM790.2 326H602V137.8L790.2 326zm1.8 562H232V136h302v216a42 42 0 0042 42h216v494z" } }] }, "name": "file", "theme": "outlined" };
   var FileOutlined_default = FileOutlined;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FileOutlined.js
-  function _extends77() {
-    _extends77 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends83() {
+    _extends83 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -73752,28 +77521,28 @@ html body {
       }
       return target;
     };
-    return _extends77.apply(this, arguments);
+    return _extends83.apply(this, arguments);
   }
-  var FileOutlined2 = (props, ref) => /* @__PURE__ */ React359.createElement(AntdIcon_default, _extends77({}, props, {
+  var FileOutlined2 = (props, ref) => /* @__PURE__ */ React373.createElement(AntdIcon_default, _extends83({}, props, {
     ref,
     icon: FileOutlined_default
   }));
-  var RefIcon20 = /* @__PURE__ */ React359.forwardRef(FileOutlined2);
+  var RefIcon23 = /* @__PURE__ */ React373.forwardRef(FileOutlined2);
   if (true) {
-    RefIcon20.displayName = "FileOutlined";
+    RefIcon23.displayName = "FileOutlined";
   }
-  var FileOutlined_default2 = RefIcon20;
+  var FileOutlined_default2 = RefIcon23;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FolderOpenOutlined.js
-  var React360 = __toESM(require_react());
+  var React374 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/FolderOpenOutlined.js
   var FolderOpenOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M928 444H820V330.4c0-17.7-14.3-32-32-32H473L355.7 186.2a8.15 8.15 0 00-5.5-2.2H96c-17.7 0-32 14.3-32 32v592c0 17.7 14.3 32 32 32h698c13 0 24.8-7.9 29.7-20l134-332c1.5-3.8 2.3-7.9 2.3-12 0-17.7-14.3-32-32-32zM136 256h188.5l119.6 114.4H748V444H238c-13 0-24.8 7.9-29.7 20L136 643.2V256zm635.3 512H159l103.3-256h612.4L771.3 768z" } }] }, "name": "folder-open", "theme": "outlined" };
   var FolderOpenOutlined_default = FolderOpenOutlined;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FolderOpenOutlined.js
-  function _extends78() {
-    _extends78 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends84() {
+    _extends84 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -73784,28 +77553,28 @@ html body {
       }
       return target;
     };
-    return _extends78.apply(this, arguments);
+    return _extends84.apply(this, arguments);
   }
-  var FolderOpenOutlined2 = (props, ref) => /* @__PURE__ */ React360.createElement(AntdIcon_default, _extends78({}, props, {
+  var FolderOpenOutlined2 = (props, ref) => /* @__PURE__ */ React374.createElement(AntdIcon_default, _extends84({}, props, {
     ref,
     icon: FolderOpenOutlined_default
   }));
-  var RefIcon21 = /* @__PURE__ */ React360.forwardRef(FolderOpenOutlined2);
+  var RefIcon24 = /* @__PURE__ */ React374.forwardRef(FolderOpenOutlined2);
   if (true) {
-    RefIcon21.displayName = "FolderOpenOutlined";
+    RefIcon24.displayName = "FolderOpenOutlined";
   }
-  var FolderOpenOutlined_default2 = RefIcon21;
+  var FolderOpenOutlined_default2 = RefIcon24;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FolderOutlined.js
-  var React361 = __toESM(require_react());
+  var React375 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/FolderOutlined.js
   var FolderOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M880 298.4H521L403.7 186.2a8.15 8.15 0 00-5.5-2.2H144c-17.7 0-32 14.3-32 32v592c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V330.4c0-17.7-14.3-32-32-32zM840 768H184V256h188.5l119.6 114.4H840V768z" } }] }, "name": "folder", "theme": "outlined" };
   var FolderOutlined_default = FolderOutlined;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FolderOutlined.js
-  function _extends79() {
-    _extends79 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends85() {
+    _extends85 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -73816,31 +77585,31 @@ html body {
       }
       return target;
     };
-    return _extends79.apply(this, arguments);
+    return _extends85.apply(this, arguments);
   }
-  var FolderOutlined2 = (props, ref) => /* @__PURE__ */ React361.createElement(AntdIcon_default, _extends79({}, props, {
+  var FolderOutlined2 = (props, ref) => /* @__PURE__ */ React375.createElement(AntdIcon_default, _extends85({}, props, {
     ref,
     icon: FolderOutlined_default
   }));
-  var RefIcon22 = /* @__PURE__ */ React361.forwardRef(FolderOutlined2);
+  var RefIcon25 = /* @__PURE__ */ React375.forwardRef(FolderOutlined2);
   if (true) {
-    RefIcon22.displayName = "FolderOutlined";
+    RefIcon25.displayName = "FolderOutlined";
   }
-  var FolderOutlined_default2 = RefIcon22;
+  var FolderOutlined_default2 = RefIcon25;
 
   // ../custom_dashboard/node_modules/antd/es/tree/Tree.js
-  var import_react129 = __toESM(require_react());
+  var import_react137 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/HolderOutlined.js
-  var React362 = __toESM(require_react());
+  var React376 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/HolderOutlined.js
   var HolderOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M300 276.5a56 56 0 1056-97 56 56 0 00-56 97zm0 284a56 56 0 1056-97 56 56 0 00-56 97zM640 228a56 56 0 10112 0 56 56 0 00-112 0zm0 284a56 56 0 10112 0 56 56 0 00-112 0zM300 844.5a56 56 0 1056-97 56 56 0 00-56 97zM640 796a56 56 0 10112 0 56 56 0 00-112 0z" } }] }, "name": "holder", "theme": "outlined" };
   var HolderOutlined_default = HolderOutlined;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/HolderOutlined.js
-  function _extends80() {
-    _extends80 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends86() {
+    _extends86 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -73851,17 +77620,17 @@ html body {
       }
       return target;
     };
-    return _extends80.apply(this, arguments);
+    return _extends86.apply(this, arguments);
   }
-  var HolderOutlined2 = (props, ref) => /* @__PURE__ */ React362.createElement(AntdIcon_default, _extends80({}, props, {
+  var HolderOutlined2 = (props, ref) => /* @__PURE__ */ React376.createElement(AntdIcon_default, _extends86({}, props, {
     ref,
     icon: HolderOutlined_default
   }));
-  var RefIcon23 = /* @__PURE__ */ React362.forwardRef(HolderOutlined2);
+  var RefIcon26 = /* @__PURE__ */ React376.forwardRef(HolderOutlined2);
   if (true) {
-    RefIcon23.displayName = "HolderOutlined";
+    RefIcon26.displayName = "HolderOutlined";
   }
-  var HolderOutlined_default2 = RefIcon23;
+  var HolderOutlined_default2 = RefIcon26;
 
   // ../custom_dashboard/node_modules/antd/es/tree/style/directory.js
   var genDirectoryStyle = ({
@@ -73959,7 +77728,7 @@ html body {
       }
     }
   });
-  var genBaseStyle6 = (prefixCls, token2) => {
+  var genBaseStyle5 = (prefixCls, token2) => {
     const {
       treeCls,
       treeNodeCls,
@@ -74223,7 +77992,7 @@ html body {
       treeNodePadding
     });
     return [
-      genBaseStyle6(prefixCls, treeToken),
+      genBaseStyle5(prefixCls, treeToken),
       enableDirectory && genDirectoryStyle(treeToken)
     ].filter(Boolean);
   };
@@ -74244,7 +78013,7 @@ html body {
       nodeSelectedColor: token2.colorText
     };
   };
-  var prepareComponentToken17 = (token2) => {
+  var prepareComponentToken19 = (token2) => {
     const {
       colorTextLightSolid,
       colorPrimary
@@ -74254,14 +78023,14 @@ html body {
       directoryNodeSelectedBg: colorPrimary
     });
   };
-  var style_default22 = genStyleHooks("Tree", (token2, {
+  var style_default24 = genStyleHooks("Tree", (token2, {
     prefixCls
   }) => [{
     [token2.componentCls]: getStyle(`${prefixCls}-checkbox`, token2)
-  }, genTreeStyle(prefixCls, token2), collapse_default(token2)], prepareComponentToken17);
+  }, genTreeStyle(prefixCls, token2), collapse_default(token2)], prepareComponentToken19);
 
   // ../custom_dashboard/node_modules/antd/es/tree/utils/dropIndicator.js
-  var import_react128 = __toESM(require_react());
+  var import_react136 = __toESM(require_react());
   "use client";
   var offset2 = 4;
   var dropIndicatorRender = (props) => {
@@ -74290,7 +78059,7 @@ html body {
         style2[startPosition] = indent + offset2;
         break;
     }
-    return /* @__PURE__ */ import_react128.default.createElement("div", {
+    return /* @__PURE__ */ import_react136.default.createElement("div", {
       style: style2,
       className: `${prefixCls}-drop-indicator`
     });
@@ -74298,18 +78067,18 @@ html body {
   var dropIndicator_default = dropIndicatorRender;
 
   // ../custom_dashboard/node_modules/antd/es/tree/utils/iconUtil.js
-  var React367 = __toESM(require_react());
+  var React381 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CaretDownFilled.js
-  var React364 = __toESM(require_react());
+  var React378 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/CaretDownFilled.js
   var CaretDownFilled = { "icon": { "tag": "svg", "attrs": { "viewBox": "0 0 1024 1024", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z" } }] }, "name": "caret-down", "theme": "filled" };
   var CaretDownFilled_default = CaretDownFilled;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CaretDownFilled.js
-  function _extends81() {
-    _extends81 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends87() {
+    _extends87 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -74320,28 +78089,28 @@ html body {
       }
       return target;
     };
-    return _extends81.apply(this, arguments);
+    return _extends87.apply(this, arguments);
   }
-  var CaretDownFilled2 = (props, ref) => /* @__PURE__ */ React364.createElement(AntdIcon_default, _extends81({}, props, {
+  var CaretDownFilled2 = (props, ref) => /* @__PURE__ */ React378.createElement(AntdIcon_default, _extends87({}, props, {
     ref,
     icon: CaretDownFilled_default
   }));
-  var RefIcon24 = /* @__PURE__ */ React364.forwardRef(CaretDownFilled2);
+  var RefIcon27 = /* @__PURE__ */ React378.forwardRef(CaretDownFilled2);
   if (true) {
-    RefIcon24.displayName = "CaretDownFilled";
+    RefIcon27.displayName = "CaretDownFilled";
   }
-  var CaretDownFilled_default2 = RefIcon24;
+  var CaretDownFilled_default2 = RefIcon27;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/MinusSquareOutlined.js
-  var React365 = __toESM(require_react());
+  var React379 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/MinusSquareOutlined.js
   var MinusSquareOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M328 544h368c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H328c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8z" } }, { "tag": "path", "attrs": { "d": "M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z" } }] }, "name": "minus-square", "theme": "outlined" };
   var MinusSquareOutlined_default = MinusSquareOutlined;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/MinusSquareOutlined.js
-  function _extends82() {
-    _extends82 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends88() {
+    _extends88 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -74352,28 +78121,28 @@ html body {
       }
       return target;
     };
-    return _extends82.apply(this, arguments);
+    return _extends88.apply(this, arguments);
   }
-  var MinusSquareOutlined2 = (props, ref) => /* @__PURE__ */ React365.createElement(AntdIcon_default, _extends82({}, props, {
+  var MinusSquareOutlined2 = (props, ref) => /* @__PURE__ */ React379.createElement(AntdIcon_default, _extends88({}, props, {
     ref,
     icon: MinusSquareOutlined_default
   }));
-  var RefIcon25 = /* @__PURE__ */ React365.forwardRef(MinusSquareOutlined2);
+  var RefIcon28 = /* @__PURE__ */ React379.forwardRef(MinusSquareOutlined2);
   if (true) {
-    RefIcon25.displayName = "MinusSquareOutlined";
+    RefIcon28.displayName = "MinusSquareOutlined";
   }
-  var MinusSquareOutlined_default2 = RefIcon25;
+  var MinusSquareOutlined_default2 = RefIcon28;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/PlusSquareOutlined.js
-  var React366 = __toESM(require_react());
+  var React380 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/PlusSquareOutlined.js
   var PlusSquareOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M328 544h152v152c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V544h152c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H544V328c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v152H328c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8z" } }, { "tag": "path", "attrs": { "d": "M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z" } }] }, "name": "plus-square", "theme": "outlined" };
   var PlusSquareOutlined_default = PlusSquareOutlined;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/PlusSquareOutlined.js
-  function _extends83() {
-    _extends83 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends89() {
+    _extends89 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -74384,17 +78153,17 @@ html body {
       }
       return target;
     };
-    return _extends83.apply(this, arguments);
+    return _extends89.apply(this, arguments);
   }
-  var PlusSquareOutlined2 = (props, ref) => /* @__PURE__ */ React366.createElement(AntdIcon_default, _extends83({}, props, {
+  var PlusSquareOutlined2 = (props, ref) => /* @__PURE__ */ React380.createElement(AntdIcon_default, _extends89({}, props, {
     ref,
     icon: PlusSquareOutlined_default
   }));
-  var RefIcon26 = /* @__PURE__ */ React366.forwardRef(PlusSquareOutlined2);
+  var RefIcon29 = /* @__PURE__ */ React380.forwardRef(PlusSquareOutlined2);
   if (true) {
-    RefIcon26.displayName = "PlusSquareOutlined";
+    RefIcon29.displayName = "PlusSquareOutlined";
   }
-  var PlusSquareOutlined_default2 = RefIcon26;
+  var PlusSquareOutlined_default2 = RefIcon29;
 
   // ../custom_dashboard/node_modules/antd/es/tree/utils/iconUtil.js
   "use client";
@@ -74413,10 +78182,10 @@ html body {
       loading
     } = treeNodeProps;
     if (loading) {
-      if (/* @__PURE__ */ React367.isValidElement(switcherLoadingIcon)) {
+      if (/* @__PURE__ */ React381.isValidElement(switcherLoadingIcon)) {
         return switcherLoadingIcon;
       }
-      return /* @__PURE__ */ React367.createElement(LoadingOutlined_default2, {
+      return /* @__PURE__ */ React381.createElement(LoadingOutlined_default2, {
         className: `${prefixCls}-switcher-loading-icon`
       });
     }
@@ -74431,22 +78200,22 @@ html body {
       if (typeof showLeafIcon !== "boolean" && !!showLeafIcon) {
         const leafIcon = typeof showLeafIcon === "function" ? showLeafIcon(treeNodeProps) : showLeafIcon;
         const leafCls = `${prefixCls}-switcher-line-custom-icon`;
-        if (/* @__PURE__ */ React367.isValidElement(leafIcon)) {
+        if (/* @__PURE__ */ React381.isValidElement(leafIcon)) {
           return cloneElement5(leafIcon, {
             className: clsx((_a = leafIcon.props) == null ? void 0 : _a.className, leafCls)
           });
         }
         return leafIcon;
       }
-      return showLeafIcon ? /* @__PURE__ */ React367.createElement(FileOutlined_default2, {
+      return showLeafIcon ? /* @__PURE__ */ React381.createElement(FileOutlined_default2, {
         className: `${prefixCls}-switcher-line-icon`
-      }) : /* @__PURE__ */ React367.createElement("span", {
+      }) : /* @__PURE__ */ React381.createElement("span", {
         className: `${prefixCls}-switcher-leaf-line`
       });
     }
     const switcherCls = `${prefixCls}-switcher-icon`;
     const switcher = typeof switcherIcon === "function" ? switcherIcon(treeNodeProps) : switcherIcon;
-    if (/* @__PURE__ */ React367.isValidElement(switcher)) {
+    if (/* @__PURE__ */ React381.isValidElement(switcher)) {
       return cloneElement5(switcher, {
         className: clsx((_b = switcher.props) == null ? void 0 : _b.className, switcherCls)
       });
@@ -74455,13 +78224,13 @@ html body {
       return switcher;
     }
     if (showLine) {
-      return expanded ? /* @__PURE__ */ React367.createElement(MinusSquareOutlined_default2, {
+      return expanded ? /* @__PURE__ */ React381.createElement(MinusSquareOutlined_default2, {
         className: `${prefixCls}-switcher-line-icon`
-      }) : /* @__PURE__ */ React367.createElement(PlusSquareOutlined_default2, {
+      }) : /* @__PURE__ */ React381.createElement(PlusSquareOutlined_default2, {
         className: `${prefixCls}-switcher-line-icon`
       });
     }
-    return /* @__PURE__ */ React367.createElement(CaretDownFilled_default2, {
+    return /* @__PURE__ */ React381.createElement(CaretDownFilled_default2, {
       className: switcherCls
     });
   };
@@ -74469,7 +78238,7 @@ html body {
 
   // ../custom_dashboard/node_modules/antd/es/tree/Tree.js
   "use client";
-  var Tree2 = /* @__PURE__ */ import_react129.default.forwardRef((props, ref) => {
+  var Tree2 = /* @__PURE__ */ import_react137.default.forwardRef((props, ref) => {
     var _a;
     const {
       getPrefixCls,
@@ -74481,7 +78250,7 @@ html body {
     } = useComponentConfig("tree");
     const {
       virtual
-    } = import_react129.default.useContext(ConfigContext);
+    } = import_react137.default.useContext(ConfigContext);
     const {
       prefixCls: customizePrefixCls,
       className,
@@ -74502,11 +78271,11 @@ html body {
       styles,
       icon
     } = props;
-    const contextDisabled = import_react129.default.useContext(DisabledContext_default);
+    const contextDisabled = import_react137.default.useContext(DisabledContext_default);
     const mergedDisabled = disabled != null ? disabled : contextDisabled;
     const prefixCls = getPrefixCls("tree", customizePrefixCls);
     const rootPrefixCls = getPrefixCls();
-    const motion = customMotion != null ? customMotion : __spreadProps(__spreadValues({}, motion_default(rootPrefixCls)), {
+    const motion2 = customMotion != null ? customMotion : __spreadProps(__spreadValues({}, motion_default(rootPrefixCls)), {
       motionAppear: false
     });
     const mergedProps = __spreadProps(__spreadValues({}, props), {
@@ -74515,7 +78284,7 @@ html body {
       checkable,
       selectable,
       disabled: mergedDisabled,
-      motion
+      motion: motion2
     });
     const [mergedClassNames, mergedStyles] = useMergeSemantic([contextClassNames, classNames], [contextStyles, styles], {
       props: mergedProps
@@ -74525,10 +78294,10 @@ html body {
       icon,
       dropIndicatorRender: dropIndicator_default
     });
-    const [hashId, cssVarCls] = style_default22(prefixCls);
+    const [hashId, cssVarCls] = style_default24(prefixCls);
     const [, token2] = useToken();
     const itemHeight = token2.paddingXS / 2 + (((_a = token2.Tree) == null ? void 0 : _a.titleHeight) || token2.controlHeightSM);
-    const draggableConfig = import_react129.default.useMemo(() => {
+    const draggableConfig = import_react137.default.useMemo(() => {
       if (!draggable) {
         return false;
       }
@@ -74544,18 +78313,18 @@ html body {
           break;
       }
       if (mergedDraggable.icon !== false) {
-        mergedDraggable.icon = mergedDraggable.icon || /* @__PURE__ */ import_react129.default.createElement(HolderOutlined_default2, null);
+        mergedDraggable.icon = mergedDraggable.icon || /* @__PURE__ */ import_react137.default.createElement(HolderOutlined_default2, null);
       }
       return mergedDraggable;
     }, [draggable]);
-    const renderSwitcherIcon = (nodeProps) => /* @__PURE__ */ import_react129.default.createElement(iconUtil_default, {
+    const renderSwitcherIcon = (nodeProps) => /* @__PURE__ */ import_react137.default.createElement(iconUtil_default, {
       prefixCls,
       switcherIcon,
       switcherLoadingIcon,
       treeNodeProps: nodeProps,
       showLine
     });
-    return /* @__PURE__ */ import_react129.default.createElement(es_default18, __spreadProps(__spreadValues({
+    return /* @__PURE__ */ import_react137.default.createElement(es_default21, __spreadProps(__spreadValues({
       itemHeight,
       ref,
       virtual
@@ -74574,7 +78343,7 @@ html body {
       classNames: mergedClassNames,
       styles: mergedStyles,
       direction,
-      checkable: checkable ? /* @__PURE__ */ import_react129.default.createElement("span", {
+      checkable: checkable ? /* @__PURE__ */ import_react137.default.createElement("span", {
         className: `${prefixCls}-checkbox-inner`
       }) : checkable,
       selectable,
@@ -74646,10 +78415,10 @@ html body {
     const restKeys = _toConsumableArray(keys2);
     const nodes = [];
     traverseNodesKey(treeData, (key, node2) => {
-      const index2 = restKeys.indexOf(key);
-      if (index2 !== -1) {
+      const index = restKeys.indexOf(key);
+      if (index !== -1) {
         nodes.push(node2);
-        restKeys.splice(index2, 1);
+        restKeys.splice(index, 1);
       }
       return !!restKeys.length;
     }, fillFieldNames2(fieldNames));
@@ -74664,9 +78433,9 @@ html body {
       expanded
     } = props;
     if (isLeaf) {
-      return /* @__PURE__ */ React369.createElement(FileOutlined_default2, null);
+      return /* @__PURE__ */ React383.createElement(FileOutlined_default2, null);
     }
-    return expanded ? /* @__PURE__ */ React369.createElement(FolderOpenOutlined_default2, null) : /* @__PURE__ */ React369.createElement(FolderOutlined_default2, null);
+    return expanded ? /* @__PURE__ */ React383.createElement(FolderOpenOutlined_default2, null) : /* @__PURE__ */ React383.createElement(FolderOutlined_default2, null);
   }
   function getTreeData({
     treeData,
@@ -74674,7 +78443,7 @@ html body {
   }) {
     return treeData || convertTreeToData(children);
   }
-  var DirectoryTree = /* @__PURE__ */ React369.forwardRef((oriProps, ref) => {
+  var DirectoryTree = /* @__PURE__ */ React383.forwardRef((oriProps, ref) => {
     const _a = oriProps, {
       defaultExpandAll,
       defaultExpandParent,
@@ -74684,8 +78453,8 @@ html body {
       "defaultExpandParent",
       "defaultExpandedKeys"
     ]);
-    const lastSelectedKeyRef = React369.useRef(null);
-    const cachedSelectedKeysRef = React369.useRef(null);
+    const lastSelectedKeyRef = React383.useRef(null);
+    const cachedSelectedKeysRef = React383.useRef(null);
     const getInitExpandedKeys = () => {
       const {
         keyEntities
@@ -74703,14 +78472,14 @@ html body {
       }
       return initExpandedKeys;
     };
-    const [selectedKeys, setSelectedKeys] = React369.useState(props.selectedKeys || props.defaultSelectedKeys || []);
-    const [expandedKeys, setExpandedKeys] = React369.useState(() => getInitExpandedKeys());
-    React369.useEffect(() => {
+    const [selectedKeys, setSelectedKeys] = React383.useState(props.selectedKeys || props.defaultSelectedKeys || []);
+    const [expandedKeys, setExpandedKeys] = React383.useState(() => getInitExpandedKeys());
+    React383.useEffect(() => {
       if ("selectedKeys" in props) {
         setSelectedKeys(props.selectedKeys);
       }
     }, [props.selectedKeys]);
-    React369.useEffect(() => {
+    React383.useEffect(() => {
       if ("expandedKeys" in props) {
         setExpandedKeys(props.expandedKeys);
       }
@@ -74770,7 +78539,7 @@ html body {
     const {
       getPrefixCls,
       direction
-    } = React369.useContext(ConfigContext);
+    } = React383.useContext(ConfigContext);
     const _b = props, {
       prefixCls: customizePrefixCls,
       className,
@@ -74786,7 +78555,7 @@ html body {
     const connectClassName = clsx(`${prefixCls}-directory`, {
       [`${prefixCls}-directory-rtl`]: direction === "rtl"
     }, className);
-    return /* @__PURE__ */ React369.createElement(Tree_default2, __spreadProps(__spreadValues({
+    return /* @__PURE__ */ React383.createElement(Tree_default2, __spreadProps(__spreadValues({
       icon: getIcon,
       ref,
       blockNode: true
@@ -74814,12 +78583,12 @@ html body {
   var tree_default = Tree3;
 
   // ../custom_dashboard/node_modules/antd/es/table/TableMeasureRowContext.js
-  var import_react130 = __toESM(require_react());
-  var TableMeasureRowContext = /* @__PURE__ */ import_react130.default.createContext(false);
+  var import_react138 = __toESM(require_react());
+  var TableMeasureRowContext = /* @__PURE__ */ import_react138.default.createContext(false);
   var TableMeasureRowContext_default = TableMeasureRowContext;
 
   // ../custom_dashboard/node_modules/antd/es/table/hooks/useFilter/FilterSearch.js
-  var React371 = __toESM(require_react());
+  var React385 = __toESM(require_react());
   "use client";
   var FilterSearch = (props) => {
     const {
@@ -74832,10 +78601,10 @@ html body {
     if (!filterSearch) {
       return null;
     }
-    return /* @__PURE__ */ React371.createElement("div", {
+    return /* @__PURE__ */ React385.createElement("div", {
       className: `${tablePrefixCls}-filter-dropdown-search`
-    }, /* @__PURE__ */ React371.createElement(Input_default4, {
-      prefix: /* @__PURE__ */ React371.createElement(SearchOutlined_default2, null),
+    }, /* @__PURE__ */ React385.createElement(Input_default4, {
+      prefix: /* @__PURE__ */ React385.createElement(SearchOutlined_default2, null),
       placeholder: locale6.filterSearchPlaceholder,
       onChange,
       value,
@@ -74846,7 +78615,7 @@ html body {
   var FilterSearch_default = FilterSearch;
 
   // ../custom_dashboard/node_modules/antd/es/table/hooks/useFilter/FilterWrapper.js
-  var React372 = __toESM(require_react());
+  var React386 = __toESM(require_react());
   "use client";
   var onKeyDown = (event) => {
     const {
@@ -74856,7 +78625,7 @@ html body {
       event.stopPropagation();
     }
   };
-  var FilterDropdownMenuWrapper = /* @__PURE__ */ React372.forwardRef((props, ref) => /* @__PURE__ */ React372.createElement("div", {
+  var FilterDropdownMenuWrapper = /* @__PURE__ */ React386.forwardRef((props, ref) => /* @__PURE__ */ React386.createElement("div", {
     className: props.className,
     onClick: (e3) => e3.stopPropagation(),
     onKeyDown,
@@ -74901,15 +78670,15 @@ html body {
     searchValue,
     filterSearch
   }) {
-    return filters.map((filter2, index2) => {
-      const key = String(filter2.value);
-      if (filter2.children) {
+    return filters.map((filter3, index) => {
+      const key = String(filter3.value);
+      if (filter3.children) {
         return {
-          key: key || index2,
-          label: filter2.text,
+          key: key || index,
+          label: filter3.text,
           popupClassName: `${prefixCls}-dropdown-submenu`,
           children: renderFilterItems({
-            filters: filter2.children,
+            filters: filter3.children,
             prefixCls,
             filteredKeys,
             filterMultiple,
@@ -74918,18 +78687,18 @@ html body {
           })
         };
       }
-      const Component7 = filterMultiple ? checkbox_default : radio_default2;
+      const Component5 = filterMultiple ? checkbox_default : radio_default2;
       const item = {
-        key: filter2.value !== void 0 ? key : index2,
-        label: /* @__PURE__ */ React373.createElement(React373.Fragment, null, /* @__PURE__ */ React373.createElement(Component7, {
+        key: filter3.value !== void 0 ? key : index,
+        label: /* @__PURE__ */ React387.createElement(React387.Fragment, null, /* @__PURE__ */ React387.createElement(Component5, {
           checked: filteredKeys.includes(key)
-        }), /* @__PURE__ */ React373.createElement("span", null, filter2.text))
+        }), /* @__PURE__ */ React387.createElement("span", null, filter3.text))
       };
       if (searchValue.trim()) {
         if (typeof filterSearch === "function") {
-          return filterSearch(searchValue, filter2) ? item : null;
+          return filterSearch(searchValue, filter3) ? item : null;
         }
-        return searchValueMatched(searchValue, filter2.text) ? item : null;
+        return searchValueMatched(searchValue, filter3.text) ? item : null;
       }
       return item;
     });
@@ -74963,8 +78732,8 @@ html body {
       filterDropdownOpen,
       onFilterDropdownOpenChange
     } = column2;
-    const [visible, setVisible] = React373.useState(false);
-    const inMeasureRow = React373.useContext(TableMeasureRowContext_default);
+    const [visible, setVisible] = React387.useState(false);
+    const inMeasureRow = React387.useContext(TableMeasureRowContext_default);
     const filtered = !!(filterState && (((_a = filterState.filteredKeys) == null ? void 0 : _a.length) || filterState.forceFiltered));
     const triggerVisible = (newVisible) => {
       var _a2;
@@ -75002,7 +78771,7 @@ html body {
         });
       }
     };
-    React373.useEffect(() => {
+    React387.useEffect(() => {
       if (!visible) {
         return;
       }
@@ -75010,18 +78779,18 @@ html body {
         selectedKeys: wrapStringListType(propFilteredKeys)
       });
     }, [propFilteredKeys]);
-    const [openKeys, setOpenKeys] = React373.useState([]);
+    const [openKeys, setOpenKeys] = React387.useState([]);
     const onOpenChange = (keys2) => {
       setOpenKeys(keys2);
     };
-    const [searchValue, setSearchValue] = React373.useState("");
+    const [searchValue, setSearchValue] = React387.useState("");
     const onSearch = (e3) => {
       const {
         value
       } = e3.target;
       setSearchValue(value);
     };
-    React373.useEffect(() => {
+    React387.useEffect(() => {
       if (!visible) {
         setSearchValue("");
       }
@@ -75098,15 +78867,15 @@ html body {
     };
     const getTreeData2 = ({
       filters
-    }) => (filters || []).map((filter2, index2) => {
-      const key = String(filter2.value);
+    }) => (filters || []).map((filter3, index) => {
+      const key = String(filter3.value);
       const item = {
-        title: filter2.text,
-        key: filter2.value !== void 0 ? key : String(index2)
+        title: filter3.text,
+        key: filter3.value !== void 0 ? key : String(index)
       };
-      if (filter2.children) {
+      if (filter3.children) {
         item.children = getTreeData2({
-          filters: filter2.children
+          filters: filter3.children
         });
       }
       return item;
@@ -75123,7 +78892,7 @@ html body {
     const {
       direction,
       renderEmpty
-    } = React373.useContext(ConfigContext);
+    } = React387.useContext(ConfigContext);
     if (typeof column2.filterDropdown === "function") {
       dropdownContent = column2.filterDropdown({
         prefixCls: `${dropdownPrefixCls}-custom`,
@@ -75145,7 +78914,7 @@ html body {
       const selectedKeys = getFilteredKeysSync() || [];
       const getFilterComponent = () => {
         var _a2, _b2;
-        const empty2 = (_a2 = renderEmpty == null ? void 0 : renderEmpty("Table.filter")) != null ? _a2 : /* @__PURE__ */ React373.createElement(empty_default2, {
+        const empty = (_a2 = renderEmpty == null ? void 0 : renderEmpty("Table.filter")) != null ? _a2 : /* @__PURE__ */ React387.createElement(empty_default2, {
           image: empty_default2.PRESENTED_IMAGE_SIMPLE,
           description: locale6.filterEmptyText,
           styles: {
@@ -75159,23 +78928,23 @@ html body {
           }
         });
         if ((column2.filters || []).length === 0) {
-          return empty2;
+          return empty;
         }
         if (filterMode === "tree") {
-          return /* @__PURE__ */ React373.createElement(React373.Fragment, null, /* @__PURE__ */ React373.createElement(FilterSearch_default, {
+          return /* @__PURE__ */ React387.createElement(React387.Fragment, null, /* @__PURE__ */ React387.createElement(FilterSearch_default, {
             filterSearch,
             value: searchValue,
             onChange: onSearch,
             tablePrefixCls,
             locale: locale6
-          }), /* @__PURE__ */ React373.createElement("div", {
+          }), /* @__PURE__ */ React387.createElement("div", {
             className: `${tablePrefixCls}-filter-dropdown-tree`
-          }, filterMultiple ? /* @__PURE__ */ React373.createElement(checkbox_default, {
+          }, filterMultiple ? /* @__PURE__ */ React387.createElement(checkbox_default, {
             checked: selectedKeys.length === flattenKeys(column2.filters).length,
             indeterminate: selectedKeys.length > 0 && selectedKeys.length < flattenKeys(column2.filters).length,
             className: `${tablePrefixCls}-filter-dropdown-checkall`,
             onChange: onCheckAll
-          }, (_b2 = locale6 == null ? void 0 : locale6.filterCheckall) != null ? _b2 : locale6 == null ? void 0 : locale6.filterCheckAll) : null, /* @__PURE__ */ React373.createElement(tree_default, {
+          }, (_b2 = locale6 == null ? void 0 : locale6.filterCheckall) != null ? _b2 : locale6 == null ? void 0 : locale6.filterCheckAll) : null, /* @__PURE__ */ React387.createElement(tree_default, {
             checkable: true,
             selectable: false,
             blockNode: true,
@@ -75207,14 +78976,14 @@ html body {
           filterMultiple,
           searchValue
         });
-        const isEmpty = items.every((item) => item === null);
-        return /* @__PURE__ */ React373.createElement(React373.Fragment, null, /* @__PURE__ */ React373.createElement(FilterSearch_default, {
+        const isEmpty2 = items.every((item) => item === null);
+        return /* @__PURE__ */ React387.createElement(React387.Fragment, null, /* @__PURE__ */ React387.createElement(FilterSearch_default, {
           filterSearch,
           value: searchValue,
           onChange: onSearch,
           tablePrefixCls,
           locale: locale6
-        }), isEmpty ? empty2 : /* @__PURE__ */ React373.createElement(menu_default2, {
+        }), isEmpty2 ? empty : /* @__PURE__ */ React387.createElement(menu_default2, {
           selectable: true,
           multiple: filterMultiple,
           prefixCls: `${dropdownPrefixCls}-menu`,
@@ -75234,25 +79003,25 @@ html body {
         }
         return selectedKeys.length === 0;
       };
-      dropdownContent = /* @__PURE__ */ React373.createElement(React373.Fragment, null, getFilterComponent(), /* @__PURE__ */ React373.createElement("div", {
+      dropdownContent = /* @__PURE__ */ React387.createElement(React387.Fragment, null, getFilterComponent(), /* @__PURE__ */ React387.createElement("div", {
         className: `${prefixCls}-dropdown-btns`
-      }, /* @__PURE__ */ React373.createElement(Button_default, {
+      }, /* @__PURE__ */ React387.createElement(Button_default, {
         type: "link",
         size: "small",
         disabled: getResetDisabled(),
         onClick: () => onReset()
-      }, locale6.filterReset), /* @__PURE__ */ React373.createElement(Button_default, {
+      }, locale6.filterReset), /* @__PURE__ */ React387.createElement(Button_default, {
         type: "primary",
         size: "small",
         onClick: onConfirm
       }, locale6.filterConfirm)));
     }
     if (column2.filterDropdown) {
-      dropdownContent = /* @__PURE__ */ React373.createElement(OverrideProvider, {
+      dropdownContent = /* @__PURE__ */ React387.createElement(OverrideProvider, {
         selectable: void 0
       }, dropdownContent);
     }
-    dropdownContent = /* @__PURE__ */ React373.createElement(FilterWrapper_default, {
+    dropdownContent = /* @__PURE__ */ React387.createElement(FilterWrapper_default, {
       className: `${prefixCls}-dropdown`
     }, dropdownContent);
     const getDropdownTrigger = () => {
@@ -75262,9 +79031,9 @@ html body {
       } else if (column2.filterIcon) {
         filterIcon = column2.filterIcon;
       } else {
-        filterIcon = /* @__PURE__ */ React373.createElement(FilterFilled_default2, null);
+        filterIcon = /* @__PURE__ */ React387.createElement(FilterFilled_default2, null);
       }
-      return /* @__PURE__ */ React373.createElement("span", {
+      return /* @__PURE__ */ React387.createElement("span", {
         role: "button",
         tabIndex: -1,
         className: clsx(`${prefixCls}-trigger`, {
@@ -75277,9 +79046,9 @@ html body {
     };
     const triggerNode = getDropdownTrigger();
     if (inMeasureRow) {
-      return /* @__PURE__ */ React373.createElement("div", {
+      return /* @__PURE__ */ React387.createElement("div", {
         className: `${prefixCls}-column`
-      }, /* @__PURE__ */ React373.createElement("span", {
+      }, /* @__PURE__ */ React387.createElement("span", {
         className: `${tablePrefixCls}-column-title`
       }, children), triggerNode);
     }
@@ -75299,11 +79068,11 @@ html body {
         return dropdownContent;
       }
     }));
-    return /* @__PURE__ */ React373.createElement("div", {
+    return /* @__PURE__ */ React387.createElement("div", {
       className: `${prefixCls}-column`
-    }, /* @__PURE__ */ React373.createElement("span", {
+    }, /* @__PURE__ */ React387.createElement("span", {
       className: `${tablePrefixCls}-column-title`
-    }, children), /* @__PURE__ */ React373.createElement(dropdown_default3, __spreadValues({}, mergedDropdownProps)));
+    }, children), /* @__PURE__ */ React387.createElement(dropdown_default3, __spreadValues({}, mergedDropdownProps)));
   };
   var FilterDropdown_default = FilterDropdown;
 
@@ -75311,9 +79080,9 @@ html body {
   "use client";
   var collectFilterStates = (columns, init, pos) => {
     let filterStates = [];
-    (columns || []).forEach((column2, index2) => {
+    (columns || []).forEach((column2, index) => {
       var _a;
-      const columnPos = getColumnPos(index2, pos);
+      const columnPos = getColumnPos(index, pos);
       const filterDropdownIsDefined = column2.filterDropdown !== void 0;
       if (column2.filters || filterDropdownIsDefined || "onFilter" in column2) {
         if ("filteredValue" in column2) {
@@ -75343,8 +79112,8 @@ html body {
     return filterStates;
   };
   function injectFilter(prefixCls, dropdownPrefixCls, columns, filterStates, locale6, triggerFilter, getPopupContainer, pos, rootClassName) {
-    return columns.map((column2, index2) => {
-      const columnPos = getColumnPos(index2, pos);
+    return columns.map((column2, index) => {
+      const columnPos = getColumnPos(index, pos);
       const {
         filterOnClose = true,
         filterMultiple = true,
@@ -75358,7 +79127,7 @@ html body {
           key
         }) => columnKey === key);
         newColumn = __spreadProps(__spreadValues({}, newColumn), {
-          title: (renderProps) => /* @__PURE__ */ React374.createElement(FilterDropdown_default, {
+          title: (renderProps) => /* @__PURE__ */ React388.createElement(FilterDropdown_default, {
             tablePrefixCls: prefixCls,
             prefixCls: `${prefixCls}-filter`,
             dropdownPrefixCls,
@@ -75448,9 +79217,9 @@ html body {
       rootClassName
     } = props;
     const warning6 = devUseWarning("Table");
-    const mergedColumns = React374.useMemo(() => getMergedColumns(rawMergedColumns || []), [rawMergedColumns]);
-    const [filterStates, setFilterStates] = React374.useState(() => collectFilterStates(mergedColumns, true));
-    const mergedFilterStates = React374.useMemo(() => {
+    const mergedColumns = React388.useMemo(() => getMergedColumns(rawMergedColumns || []), [rawMergedColumns]);
+    const [filterStates, setFilterStates] = React388.useState(() => collectFilterStates(mergedColumns, true));
+    const mergedFilterStates = React388.useMemo(() => {
       const collectedStates = collectFilterStates(mergedColumns, false);
       if (collectedStates.length === 0) {
         return collectedStates;
@@ -75467,7 +79236,7 @@ html body {
         }
       });
       if (filteredKeysIsAllNotControlled) {
-        const keyList = (mergedColumns || []).map((column2, index2) => getColumnKey(column2, getColumnPos(index2)));
+        const keyList = (mergedColumns || []).map((column2, index) => getColumnKey(column2, getColumnPos(index)));
         return filterStates.filter(({
           key
         }) => keyList.includes(key)).map((item) => {
@@ -75481,7 +79250,7 @@ html body {
       true ? warning6(filteredKeysIsAllControlled, "usage", "Columns should all contain `filteredValue` or not contain `filteredValue`.") : void 0;
       return collectedStates;
     }, [mergedColumns, filterStates]);
-    const filters = React374.useMemo(() => generateFilterInfo(mergedFilterStates), [mergedFilterStates]);
+    const filters = React388.useMemo(() => generateFilterInfo(mergedFilterStates), [mergedFilterStates]);
     const triggerFilter = (filterState) => {
       const newFilterStates = mergedFilterStates.filter(({
         key
@@ -75496,15 +79265,15 @@ html body {
   var useFilter_default = useFilter;
 
   // ../custom_dashboard/node_modules/antd/es/table/hooks/useLazyKVMap.js
-  var React375 = __toESM(require_react());
+  var React389 = __toESM(require_react());
   var useLazyKVMap = (data, childrenColumnName, getRowKey) => {
-    const mapCacheRef = React375.useRef({});
+    const mapCacheRef = React389.useRef({});
     function getRecordByKey(key) {
       var _a;
       if (!mapCacheRef.current || mapCacheRef.current.data !== data || mapCacheRef.current.childrenColumnName !== childrenColumnName || mapCacheRef.current.getRowKey !== getRowKey) {
         let dig = function(records) {
-          records.forEach((record, index2) => {
-            const rowKey = getRowKey(record, index2);
+          records.forEach((record, index) => {
+            const rowKey = getRowKey(record, index);
             kvMap.set(rowKey, record);
             if (record && typeof record === "object" && childrenColumnName in record) {
               dig(record[childrenColumnName] || []);
@@ -75527,7 +79296,7 @@ html body {
   var useLazyKVMap_default = useLazyKVMap;
 
   // ../custom_dashboard/node_modules/antd/es/table/hooks/usePagination.js
-  var import_react131 = __toESM(require_react());
+  var import_react139 = __toESM(require_react());
   var DEFAULT_PAGE_SIZE = 10;
   function getPaginationParam(mergedPagination, pagination) {
     const param = {
@@ -75549,7 +79318,7 @@ html body {
     } = _a, paginationObj = __objRest(_a, [
       "total"
     ]);
-    const [innerPagination, setInnerPagination] = (0, import_react131.useState)(() => ({
+    const [innerPagination, setInnerPagination] = (0, import_react139.useState)(() => ({
       current: "defaultCurrent" in paginationObj ? paginationObj.defaultCurrent : 1,
       pageSize: "defaultPageSize" in paginationObj ? paginationObj.defaultPageSize : DEFAULT_PAGE_SIZE
     }));
@@ -75585,18 +79354,18 @@ html body {
   var usePagination_default = usePagination;
 
   // ../custom_dashboard/node_modules/antd/es/table/hooks/useSorter.js
-  var React378 = __toESM(require_react());
+  var React392 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CaretDownOutlined.js
-  var React376 = __toESM(require_react());
+  var React390 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/CaretDownOutlined.js
   var CaretDownOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "0 0 1024 1024", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z" } }] }, "name": "caret-down", "theme": "outlined" };
   var CaretDownOutlined_default = CaretDownOutlined;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CaretDownOutlined.js
-  function _extends84() {
-    _extends84 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends90() {
+    _extends90 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -75607,28 +79376,28 @@ html body {
       }
       return target;
     };
-    return _extends84.apply(this, arguments);
+    return _extends90.apply(this, arguments);
   }
-  var CaretDownOutlined2 = (props, ref) => /* @__PURE__ */ React376.createElement(AntdIcon_default, _extends84({}, props, {
+  var CaretDownOutlined2 = (props, ref) => /* @__PURE__ */ React390.createElement(AntdIcon_default, _extends90({}, props, {
     ref,
     icon: CaretDownOutlined_default
   }));
-  var RefIcon27 = /* @__PURE__ */ React376.forwardRef(CaretDownOutlined2);
+  var RefIcon30 = /* @__PURE__ */ React390.forwardRef(CaretDownOutlined2);
   if (true) {
-    RefIcon27.displayName = "CaretDownOutlined";
+    RefIcon30.displayName = "CaretDownOutlined";
   }
-  var CaretDownOutlined_default2 = RefIcon27;
+  var CaretDownOutlined_default2 = RefIcon30;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CaretUpOutlined.js
-  var React377 = __toESM(require_react());
+  var React391 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/CaretUpOutlined.js
   var CaretUpOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "0 0 1024 1024", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M858.9 689L530.5 308.2c-9.4-10.9-27.5-10.9-37 0L165.1 689c-12.2 14.2-1.2 35 18.5 35h656.8c19.7 0 30.7-20.8 18.5-35z" } }] }, "name": "caret-up", "theme": "outlined" };
   var CaretUpOutlined_default = CaretUpOutlined;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CaretUpOutlined.js
-  function _extends85() {
-    _extends85 = Object.assign ? Object.assign.bind() : function(target) {
+  function _extends91() {
+    _extends91 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -75639,17 +79408,17 @@ html body {
       }
       return target;
     };
-    return _extends85.apply(this, arguments);
+    return _extends91.apply(this, arguments);
   }
-  var CaretUpOutlined2 = (props, ref) => /* @__PURE__ */ React377.createElement(AntdIcon_default, _extends85({}, props, {
+  var CaretUpOutlined2 = (props, ref) => /* @__PURE__ */ React391.createElement(AntdIcon_default, _extends91({}, props, {
     ref,
     icon: CaretUpOutlined_default
   }));
-  var RefIcon28 = /* @__PURE__ */ React377.forwardRef(CaretUpOutlined2);
+  var RefIcon31 = /* @__PURE__ */ React391.forwardRef(CaretUpOutlined2);
   if (true) {
-    RefIcon28.displayName = "CaretUpOutlined";
+    RefIcon31.displayName = "CaretUpOutlined";
   }
-  var CaretUpOutlined_default2 = RefIcon28;
+  var CaretUpOutlined_default2 = RefIcon31;
 
   // ../custom_dashboard/node_modules/antd/es/table/hooks/useSorter.js
   "use client";
@@ -75686,8 +79455,8 @@ html body {
         sortOrder: column2.sortOrder
       });
     };
-    (columns || []).forEach((column2, index2) => {
-      const columnPos = getColumnPos(index2, pos);
+    (columns || []).forEach((column2, index) => {
+      const columnPos = getColumnPos(index, pos);
       if (column2.children) {
         if ("sortOrder" in column2) {
           pushState(column2, columnPos);
@@ -75709,8 +79478,8 @@ html body {
     return sortStates;
   };
   var injectSorter = (prefixCls, columns, sorterStates, triggerSorter, defaultSortDirections, tableLocale, tableShowSorterTooltip, pos, a11yLocale) => {
-    const finalColumns = (columns || []).map((column2, index2) => {
-      const columnPos = getColumnPos(index2, pos);
+    const finalColumns = (columns || []).map((column2, index) => {
+      const columnPos = getColumnPos(index, pos);
       let newColumn = column2;
       if (newColumn.sorter) {
         const sortDirections = newColumn.sortDirections || defaultSortDirections;
@@ -75727,21 +79496,21 @@ html body {
             sortOrder
           });
         } else {
-          const upNode = sortDirections.includes(ASCEND) && /* @__PURE__ */ React378.createElement(CaretUpOutlined_default2, {
+          const upNode = sortDirections.includes(ASCEND) && /* @__PURE__ */ React392.createElement(CaretUpOutlined_default2, {
             className: clsx(`${prefixCls}-column-sorter-up`, {
               active: sortOrder === ASCEND
             })
           });
-          const downNode = sortDirections.includes(DESCEND) && /* @__PURE__ */ React378.createElement(CaretDownOutlined_default2, {
+          const downNode = sortDirections.includes(DESCEND) && /* @__PURE__ */ React392.createElement(CaretDownOutlined_default2, {
             className: clsx(`${prefixCls}-column-sorter-down`, {
               active: sortOrder === DESCEND
             })
           });
-          sorter = /* @__PURE__ */ React378.createElement("span", {
+          sorter = /* @__PURE__ */ React392.createElement("span", {
             className: clsx(`${prefixCls}-column-sorter`, {
               [`${prefixCls}-column-sorter-full`]: !!(upNode && downNode)
             })
-          }, /* @__PURE__ */ React378.createElement("span", {
+          }, /* @__PURE__ */ React392.createElement("span", {
             className: `${prefixCls}-column-sorter-inner`,
             "aria-hidden": "true"
           }, upNode, downNode));
@@ -75768,19 +79537,19 @@ html body {
           }),
           title: (renderProps) => {
             const columnSortersClass = `${prefixCls}-column-sorters`;
-            const renderColumnTitleWrapper = /* @__PURE__ */ React378.createElement("span", {
+            const renderColumnTitleWrapper = /* @__PURE__ */ React392.createElement("span", {
               className: `${prefixCls}-column-title`
             }, renderColumnTitle(column2.title, renderProps));
-            const renderSortTitle = /* @__PURE__ */ React378.createElement("div", {
+            const renderSortTitle = /* @__PURE__ */ React392.createElement("div", {
               className: columnSortersClass
             }, renderColumnTitleWrapper, sorter);
             if (showSorterTooltip) {
               if (typeof showSorterTooltip !== "boolean" && (showSorterTooltip == null ? void 0 : showSorterTooltip.target) === "sorter-icon") {
-                return /* @__PURE__ */ React378.createElement("div", {
+                return /* @__PURE__ */ React392.createElement("div", {
                   className: clsx(columnSortersClass, `${columnSortersClass}-tooltip-target-sorter`)
-                }, renderColumnTitleWrapper, /* @__PURE__ */ React378.createElement(tooltip_default, __spreadValues({}, tooltipProps), sorter));
+                }, renderColumnTitleWrapper, /* @__PURE__ */ React392.createElement(tooltip_default, __spreadValues({}, tooltipProps), sorter));
               }
-              return /* @__PURE__ */ React378.createElement(tooltip_default, __spreadValues({}, tooltipProps), renderSortTitle);
+              return /* @__PURE__ */ React392.createElement(tooltip_default, __spreadValues({}, tooltipProps), renderSortTitle);
             }
             return renderSortTitle;
           },
@@ -75914,11 +79683,11 @@ html body {
       onSorterChange,
       globalLocale
     } = props;
-    const [sortStates, setSortStates] = React378.useState(() => collectSortStates(mergedColumns, true));
+    const [sortStates, setSortStates] = React392.useState(() => collectSortStates(mergedColumns, true));
     const getColumnKeys = (columns, pos) => {
       const newKeys = [];
-      columns.forEach((item, index2) => {
-        const columnPos = getColumnPos(index2, pos);
+      columns.forEach((item, index) => {
+        const columnPos = getColumnPos(index, pos);
         newKeys.push(getColumnKey(item, columnPos));
         if (Array.isArray(item.children)) {
           const childKeys = getColumnKeys(item.children, columnPos);
@@ -75927,7 +79696,7 @@ html body {
       });
       return newKeys;
     };
-    const mergedSorterStates = React378.useMemo(() => {
+    const mergedSorterStates = React392.useMemo(() => {
       let validate = true;
       const collectedStates = collectSortStates(mergedColumns, false);
       if (!collectedStates.length) {
@@ -75966,7 +79735,7 @@ html body {
       });
       return validateStates;
     }, [mergedColumns, sortStates]);
-    const columnTitleSorterProps = React378.useMemo(() => {
+    const columnTitleSorterProps = React392.useMemo(() => {
       var _a, _b;
       const sortColumns = mergedSorterStates.map(({
         column: column2,
@@ -76000,7 +79769,7 @@ html body {
   var useSorter_default = useFilterSorter;
 
   // ../custom_dashboard/node_modules/antd/es/table/hooks/useTitleColumns.js
-  var React379 = __toESM(require_react());
+  var React393 = __toESM(require_react());
   var fillTitle = (columns, columnTitleProps) => {
     const finalColumns = columns.map((column2) => {
       const cloneColumn = __spreadValues({}, column2);
@@ -76013,7 +79782,7 @@ html body {
     return finalColumns;
   };
   var useTitleColumns = (columnTitleProps) => {
-    const filledColumns = React379.useCallback((columns) => fillTitle(columns, columnTitleProps), [columnTitleProps]);
+    const filledColumns = React393.useCallback((columns) => fillTitle(columns, columnTitleProps), [columnTitleProps]);
     return [filledColumns];
   };
   var useTitleColumns_default = useTitleColumns;
@@ -76788,7 +80557,7 @@ html body {
   var selection_default = genSelectionStyle;
 
   // ../custom_dashboard/node_modules/antd/es/table/style/size.js
-  var genSizeStyle2 = (token2) => {
+  var genSizeStyle3 = (token2) => {
     const {
       componentCls,
       tableExpandColumnWidth,
@@ -76830,7 +80599,7 @@ html body {
       [`${componentCls}-wrapper`]: __spreadValues(__spreadValues({}, getSizeStyle("medium", token2.tablePaddingVerticalMiddle, token2.tablePaddingHorizontalMiddle, token2.tableFontSizeMiddle)), getSizeStyle("small", token2.tablePaddingVerticalSmall, token2.tablePaddingHorizontalSmall, token2.tableFontSizeSmall))
     };
   };
-  var size_default = genSizeStyle2;
+  var size_default = genSizeStyle3;
 
   // ../custom_dashboard/node_modules/antd/es/table/style/sorter.js
   var genSorterStyle = (token2) => {
@@ -77217,7 +80986,7 @@ html body {
       })
     };
   };
-  var prepareComponentToken18 = (token2) => {
+  var prepareComponentToken20 = (token2) => {
     const {
       colorFillAlter,
       colorBgContainer,
@@ -77290,7 +81059,7 @@ html body {
     };
   };
   var zIndexTableFixed = 2;
-  var style_default23 = genStyleHooks("Table", (token2) => {
+  var style_default25 = genStyleHooks("Table", (token2) => {
     const {
       colorTextHeading,
       colorSplit,
@@ -77368,7 +81137,7 @@ html body {
       tableScrollBg: colorSplit
     });
     return [genTableStyle(tableToken), pagination_default2(tableToken), summary_default(tableToken), sorter_default(tableToken), filter_default(tableToken), bordered_default2(tableToken), radius_default(tableToken), expand_default(tableToken), summary_default(tableToken), empty_default3(tableToken), selection_default(tableToken), fixed_default(tableToken), sticky_default(tableToken), ellipsis_default(tableToken), size_default(tableToken), rtl_default2(tableToken), virtual_default(tableToken)];
-  }, prepareComponentToken18, {
+  }, prepareComponentToken20, {
     resetFont: false,
     unitless: {
       expandIconScale: true
@@ -77415,10 +81184,10 @@ html body {
       virtual
     } = props;
     const warning6 = devUseWarning("Table");
-    const baseColumns = React380.useMemo(() => columns || convertChildrenToColumns(children), [columns, children]);
-    const needResponsive = React380.useMemo(() => baseColumns.some((col) => col.responsive), [baseColumns]);
+    const baseColumns = React394.useMemo(() => columns || convertChildrenToColumns(children), [columns, children]);
+    const needResponsive = React394.useMemo(() => baseColumns.some((col) => col.responsive), [baseColumns]);
     const screens = useBreakpoint_default(needResponsive);
-    const mergedColumns = React380.useMemo(() => {
+    const mergedColumns = React394.useMemo(() => {
       const matched = new Set(Object.keys(screens).filter((m) => screens[m]));
       return baseColumns.filter((c) => !c.responsive || c.responsive.some((r3) => matched.has(r3)));
     }, [baseColumns, screens]);
@@ -77426,7 +81195,7 @@ html body {
     const {
       locale: contextLocale = en_US_default6,
       table
-    } = React380.useContext(ConfigContext);
+    } = React394.useContext(ConfigContext);
     const {
       getPrefixCls,
       direction,
@@ -77462,7 +81231,7 @@ html body {
     const dropdownPrefixCls = getPrefixCls("dropdown", customizeDropdownPrefixCls);
     const [, token2] = useToken();
     const rootCls = useCSSVarCls_default(prefixCls);
-    const [hashId, cssVarCls] = style_default23(prefixCls, rootCls);
+    const [hashId, cssVarCls] = style_default25(prefixCls, rootCls);
     const mergedExpandable = __spreadProps(__spreadValues({
       childrenColumnName: legacyChildrenColumnName,
       expandIconColumnIndex
@@ -77472,7 +81241,7 @@ html body {
     const {
       childrenColumnName = "children"
     } = mergedExpandable;
-    const expandType = React380.useMemo(() => {
+    const expandType = React394.useMemo(() => {
       if (rawData.some((item) => item == null ? void 0 : item[childrenColumnName])) {
         return "nest";
       }
@@ -77482,11 +81251,11 @@ html body {
       return null;
     }, [childrenColumnName, rawData]);
     const internalRef = {
-      body: React380.useRef(null)
+      body: React394.useRef(null)
     };
     const getContainerWidth = useContainerWidth(prefixCls);
-    const rootRef = React380.useRef(null);
-    const tblRef = React380.useRef(null);
+    const rootRef = React394.useRef(null);
+    const tblRef = React394.useRef(null);
     useProxyImperativeHandle(ref, () => __spreadProps(__spreadValues({}, tblRef.current), {
       nativeElement: rootRef.current
     }));
@@ -77495,7 +81264,7 @@ html body {
     if (true) {
       true ? warning6(!(typeof rowKey === "function" && rowKey.length > 1), "usage", "`index` parameter of `rowKey` function is deprecated. There is no guarantee that it will work as expected.") : void 0;
     }
-    const getRowKey = React380.useMemo(() => {
+    const getRowKey = React394.useMemo(() => {
       if (typeof rowKey === "function") {
         return rowKey;
       }
@@ -77540,7 +81309,7 @@ html body {
       showSorterTooltip,
       globalLocale
     });
-    const sortedData = React380.useMemo(() => getSortData(rawData, sortStates, childrenColumnName), [childrenColumnName, rawData, sortStates]);
+    const sortedData = React394.useMemo(() => getSortData(rawData, sortStates, childrenColumnName), [childrenColumnName, rawData, sortStates]);
     changeEventInfo.sorter = getSorters();
     changeEventInfo.sorterStates = sortStates;
     const onFilterChange = (filters2, filterStates2) => {
@@ -77561,7 +81330,7 @@ html body {
     const mergedData = getFilterData(sortedData, filterStates, childrenColumnName);
     changeEventInfo.filters = filters;
     changeEventInfo.filterStates = filterStates;
-    const columnTitleProps = React380.useMemo(() => {
+    const columnTitleProps = React394.useMemo(() => {
       const mergedFilters = {};
       Object.keys(filters).forEach((filterKey) => {
         if (filters[filterKey] !== null) {
@@ -77584,7 +81353,7 @@ html body {
     const [mergedPagination, resetPagination] = usePagination_default(mergedData.length, onPaginationChange, pagination);
     changeEventInfo.pagination = pagination === false ? {} : getPaginationParam(mergedPagination, pagination);
     changeEventInfo.resetPagination = resetPagination;
-    const pageData = React380.useMemo(() => {
+    const pageData = React394.useMemo(() => {
       if (pagination === false || !mergedPagination.pageSize) {
         return mergedData;
       }
@@ -77614,10 +81383,10 @@ html body {
       locale: tableLocale,
       getPopupContainer: getPopupContainer || getContextPopupContainer
     }, rowSelection);
-    const internalRowClassName = (record, index2, indent) => {
-      const resolvedRowClassName = typeof rowClassName === "function" ? rowClassName(record, index2, indent) : rowClassName;
+    const internalRowClassName = (record, index, indent) => {
+      const resolvedRowClassName = typeof rowClassName === "function" ? rowClassName(record, index, indent) : rowClassName;
       return clsx({
-        [`${prefixCls}-row-selected`]: selectedKeySet.has(getRowKey(record, index2))
+        [`${prefixCls}-row-selected`]: selectedKeySet.has(getRowKey(record, index))
       }, resolvedRowClassName);
     };
     mergedExpandable.__PARENT_RENDER_ICON__ = mergedExpandable.expandIcon;
@@ -77630,7 +81399,7 @@ html body {
     if (typeof mergedExpandable.indentSize !== "number") {
       mergedExpandable.indentSize = typeof indentSize === "number" ? indentSize : 15;
     }
-    const transformColumns = React380.useCallback((innerColumns) => transformTitleColumns(transformSelectionColumns(transformFilterColumns(transformSorterColumns(innerColumns)))), [transformSorterColumns, transformFilterColumns, transformSelectionColumns]);
+    const transformColumns = React394.useCallback((innerColumns) => transformTitleColumns(transformSelectionColumns(transformFilterColumns(transformSorterColumns(innerColumns)))), [transformSorterColumns, transformFilterColumns, transformSelectionColumns]);
     let topPaginationNode;
     let bottomPaginationNode;
     if (pagination !== false && (mergedPagination == null ? void 0 : mergedPagination.total)) {
@@ -77640,7 +81409,7 @@ html body {
       } else {
         paginationSize = mergedSize === "small" || mergedSize === "medium" ? "small" : void 0;
       }
-      const renderPagination = (placement2 = "end") => /* @__PURE__ */ React380.createElement(pagination_default, __spreadProps(__spreadValues({}, mergedPagination), {
+      const renderPagination = (placement2 = "end") => /* @__PURE__ */ React394.createElement(pagination_default, __spreadProps(__spreadValues({}, mergedPagination), {
         classNames: mergedClassNames.pagination,
         styles: mergedStyles.pagination,
         className: clsx(`${prefixCls}-pagination ${prefixCls}-pagination-${placement2}`, mergedPagination.className),
@@ -77677,7 +81446,7 @@ html body {
         warning6.deprecated(!position3, "pagination.position", "pagination.placement");
       }
     }
-    const spinProps = React380.useMemo(() => {
+    const spinProps = React394.useMemo(() => {
       if (typeof loading === "boolean") {
         return {
           spinning: loading
@@ -77694,20 +81463,20 @@ html body {
       [`${prefixCls}-wrapper-rtl`]: direction === "rtl"
     }, className, rootClassName, mergedClassNames.root, hashId);
     const mergedStyle = __spreadValues(__spreadValues(__spreadValues({}, mergedStyles.root), contextStyle), style2);
-    const mergedEmptyNode = React380.useMemo(() => {
+    const mergedEmptyNode = React394.useMemo(() => {
       if ((spinProps == null ? void 0 : spinProps.spinning) && rawData === EMPTY_LIST5) {
         return null;
       }
       if (typeof (locale6 == null ? void 0 : locale6.emptyText) !== "undefined") {
         return locale6.emptyText;
       }
-      return (renderEmpty == null ? void 0 : renderEmpty("Table")) || /* @__PURE__ */ React380.createElement(defaultRenderEmpty_default, {
+      return (renderEmpty == null ? void 0 : renderEmpty("Table")) || /* @__PURE__ */ React394.createElement(defaultRenderEmpty_default, {
         componentName: "Table"
       });
     }, [spinProps == null ? void 0 : spinProps.spinning, rawData, locale6 == null ? void 0 : locale6.emptyText, renderEmpty]);
     const TableComponent = virtual ? VirtualTable_default2 : RcTable_default;
     const virtualProps = {};
-    const listItemHeight = React380.useMemo(() => {
+    const listItemHeight = React394.useMemo(() => {
       const {
         fontSize,
         lineHeight,
@@ -77729,13 +81498,13 @@ html body {
     if (virtual) {
       virtualProps.listItemHeight = listItemHeight;
     }
-    return /* @__PURE__ */ React380.createElement("div", {
+    return /* @__PURE__ */ React394.createElement("div", {
       ref: rootRef,
       className: wrappercls,
       style: mergedStyle
-    }, /* @__PURE__ */ React380.createElement(spin_default, __spreadValues({
+    }, /* @__PURE__ */ React394.createElement(spin_default, __spreadValues({
       spinning: false
-    }, spinProps), topPaginationNode, /* @__PURE__ */ React380.createElement(TableComponent, __spreadProps(__spreadValues(__spreadValues({}, virtualProps), tableProps), {
+    }, spinProps), topPaginationNode, /* @__PURE__ */ React394.createElement(TableComponent, __spreadProps(__spreadValues(__spreadValues({}, virtualProps), tableProps), {
       scroll: mergedScroll,
       classNames: mergedClassNames,
       styles: mergedStyles,
@@ -77758,26 +81527,26 @@ html body {
       internalRefs: internalRef,
       transformColumns,
       getContainerWidth,
-      measureRowRender: (measureRow) => /* @__PURE__ */ React380.createElement(TableMeasureRowContext_default.Provider, {
+      measureRowRender: (measureRow) => /* @__PURE__ */ React394.createElement(TableMeasureRowContext_default.Provider, {
         value: true
-      }, /* @__PURE__ */ React380.createElement(config_provider_default, {
+      }, /* @__PURE__ */ React394.createElement(config_provider_default, {
         getPopupContainer: (node2) => node2
       }, measureRow))
     })), bottomPaginationNode));
   };
-  var InternalTable_default = /* @__PURE__ */ React380.forwardRef(InternalTable);
+  var InternalTable_default = /* @__PURE__ */ React394.forwardRef(InternalTable);
 
   // ../custom_dashboard/node_modules/antd/es/table/Table.js
   "use client";
   var Table2 = (props, ref) => {
-    const renderTimesRef = React381.useRef(0);
+    const renderTimesRef = React395.useRef(0);
     renderTimesRef.current += 1;
-    return /* @__PURE__ */ React381.createElement(InternalTable_default, __spreadProps(__spreadValues({}, props), {
+    return /* @__PURE__ */ React395.createElement(InternalTable_default, __spreadProps(__spreadValues({}, props), {
       ref,
       _renderTimes: renderTimesRef.current
     }));
   };
-  var ForwardTable = /* @__PURE__ */ React381.forwardRef(Table2);
+  var ForwardTable = /* @__PURE__ */ React395.forwardRef(Table2);
   ForwardTable.SELECTION_COLUMN = SELECTION_COLUMN;
   ForwardTable.EXPAND_COLUMN = EXPAND_COLUMN;
   ForwardTable.SELECTION_ALL = SELECTION_ALL;
@@ -77796,1442 +81565,13 @@ html body {
   var table_default = Table_default2;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/DeleteOutlined.js
-  var React382 = __toESM(require_react());
+  var React396 = __toESM(require_react());
 
   // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/DeleteOutlined.js
   var DeleteOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M360 184h-8c4.4 0 8-3.6 8-8v8h304v-8c0 4.4 3.6 8 8 8h-8v72h72v-80c0-35.3-28.7-64-64-64H352c-35.3 0-64 28.7-64 64v80h72v-72zm504 72H160c-17.7 0-32 14.3-32 32v32c0 4.4 3.6 8 8 8h60.4l24.7 523c1.6 34.1 29.8 61 63.9 61h454c34.2 0 62.3-26.8 63.9-61l24.7-523H888c4.4 0 8-3.6 8-8v-32c0-17.7-14.3-32-32-32zM731.3 840H292.7l-24.2-512h487l-24.2 512z" } }] }, "name": "delete", "theme": "outlined" };
   var DeleteOutlined_default = DeleteOutlined;
 
   // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/DeleteOutlined.js
-  function _extends86() {
-    _extends86 = Object.assign ? Object.assign.bind() : function(target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
-      }
-      return target;
-    };
-    return _extends86.apply(this, arguments);
-  }
-  var DeleteOutlined2 = (props, ref) => /* @__PURE__ */ React382.createElement(AntdIcon_default, _extends86({}, props, {
-    ref,
-    icon: DeleteOutlined_default
-  }));
-  var RefIcon29 = /* @__PURE__ */ React382.forwardRef(DeleteOutlined2);
-  if (true) {
-    RefIcon29.displayName = "DeleteOutlined";
-  }
-  var DeleteOutlined_default2 = RefIcon29;
-
-  // ../custom_dashboard/node_modules/antd/es/upload/Dragger.js
-  var React392 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/antd/es/upload/Upload.js
-  var React391 = __toESM(require_react());
-  var import_react_dom8 = __toESM(require_react_dom());
-
-  // ../custom_dashboard/node_modules/@rc-component/upload/es/Upload.js
-  var import_react133 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@rc-component/upload/es/AjaxUploader.js
-  var import_react132 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@rc-component/upload/es/attr-accept.js
-  var attr_accept_default = (file, acceptedFiles) => {
-    if (file && acceptedFiles) {
-      const acceptedFilesArray = Array.isArray(acceptedFiles) ? acceptedFiles : acceptedFiles.split(",");
-      const fileName = file.name || "";
-      const mimeType = file.type || "";
-      const baseMimeType = mimeType.replace(/\/.*$/, "");
-      return acceptedFilesArray.some((type5) => {
-        const validType = type5.trim();
-        if (/^\*(\/\*)?$/.test(type5)) {
-          return true;
-        }
-        if (validType.charAt(0) === ".") {
-          const lowerFileName = fileName.toLowerCase();
-          const lowerType = validType.toLowerCase();
-          let affixList = [lowerType];
-          if (lowerType === ".jpg" || lowerType === ".jpeg") {
-            affixList = [".jpg", ".jpeg"];
-          }
-          return affixList.some((affix) => lowerFileName.endsWith(affix));
-        }
-        if (/\/\*$/.test(validType)) {
-          return baseMimeType === validType.replace(/\/.*$/, "");
-        }
-        if (mimeType === validType) {
-          return true;
-        }
-        if (/^\w+$/.test(validType)) {
-          warning_default(false, `Upload takes an invalidate 'accept' type '${validType}'.Skip for check.`);
-          return true;
-        }
-        return false;
-      });
-    }
-    return true;
-  };
-
-  // ../custom_dashboard/node_modules/@rc-component/upload/es/request.js
-  function getError(option, xhr) {
-    const msg = `cannot ${option.method} ${option.action} ${xhr.status}'`;
-    const err = new Error(msg);
-    err.status = xhr.status;
-    err.method = option.method;
-    err.url = option.action;
-    return err;
-  }
-  function getBody(xhr) {
-    const text = xhr.responseText || xhr.response;
-    if (!text) {
-      return text;
-    }
-    try {
-      return JSON.parse(text);
-    } catch (e3) {
-      return text;
-    }
-  }
-  function upload(option) {
-    const xhr = new XMLHttpRequest();
-    if (option.onProgress && xhr.upload) {
-      xhr.upload.onprogress = function progress(e3) {
-        if (e3.total > 0) {
-          e3.percent = e3.loaded / e3.total * 100;
-        }
-        option.onProgress(e3);
-      };
-    }
-    const formData = new FormData();
-    if (option.data) {
-      Object.keys(option.data).forEach((key) => {
-        const value = option.data[key];
-        if (Array.isArray(value)) {
-          value.forEach((item) => {
-            formData.append(`${key}[]`, item);
-          });
-          return;
-        }
-        formData.append(key, value);
-      });
-    }
-    if (option.file instanceof Blob) {
-      formData.append(option.filename, option.file, option.file.name);
-    } else {
-      formData.append(option.filename, option.file);
-    }
-    xhr.onerror = function error(e3) {
-      option.onError(e3);
-    };
-    xhr.onload = function onload() {
-      if (xhr.status < 200 || xhr.status >= 300) {
-        return option.onError(getError(option, xhr), getBody(xhr));
-      }
-      return option.onSuccess(getBody(xhr), xhr);
-    };
-    xhr.open(option.method, option.action, true);
-    if (option.withCredentials && "withCredentials" in xhr) {
-      xhr.withCredentials = true;
-    }
-    const headers = option.headers || {};
-    if (headers["X-Requested-With"] !== null) {
-      xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-    }
-    Object.keys(headers).forEach((h) => {
-      if (headers[h] !== null) {
-        xhr.setRequestHeader(h, headers[h]);
-      }
-    });
-    xhr.send(formData);
-    return {
-      abort() {
-        xhr.abort();
-      }
-    };
-  }
-
-  // ../custom_dashboard/node_modules/@rc-component/upload/es/traverseFileTree.js
-  var traverseFileTree = async (files, isAccepted) => {
-    const flattenFileList = [];
-    const progressFileList = [];
-    files.forEach((file) => progressFileList.push(file.webkitGetAsEntry()));
-    async function readDirectory(directory) {
-      const dirReader = directory.createReader();
-      const entries = [];
-      while (true) {
-        const results = await new Promise((resolve) => {
-          dirReader.readEntries(resolve, () => resolve([]));
-        });
-        const n2 = results.length;
-        if (!n2) {
-          break;
-        }
-        for (let i = 0; i < n2; i++) {
-          entries.push(results[i]);
-        }
-      }
-      return entries;
-    }
-    async function readFile(item) {
-      return new Promise((reslove) => {
-        item.file((file) => {
-          if (isAccepted(file)) {
-            if (item.fullPath && !file.webkitRelativePath) {
-              Object.defineProperties(file, {
-                webkitRelativePath: {
-                  writable: true
-                }
-              });
-              file.webkitRelativePath = item.fullPath.replace(/^\//, "");
-              Object.defineProperties(file, {
-                webkitRelativePath: {
-                  writable: false
-                }
-              });
-            }
-            reslove(file);
-          } else {
-            reslove(null);
-          }
-        });
-      });
-    }
-    const _traverseFileTree = async (item, path) => {
-      if (!item) {
-        return;
-      }
-      item.path = path || "";
-      if (item.isFile) {
-        const file = await readFile(item);
-        if (file) {
-          flattenFileList.push(file);
-        }
-      } else if (item.isDirectory) {
-        const entries = await readDirectory(item);
-        progressFileList.push(...entries);
-      }
-    };
-    let wipIndex = 0;
-    while (wipIndex < progressFileList.length) {
-      await _traverseFileTree(progressFileList[wipIndex]);
-      wipIndex++;
-    }
-    return flattenFileList;
-  };
-  var traverseFileTree_default = traverseFileTree;
-
-  // ../custom_dashboard/node_modules/@rc-component/upload/es/uid.js
-  var now = +new Date();
-  var index = 0;
-  function uid() {
-    return `rc-upload-${now}-${++index}`;
-  }
-
-  // ../custom_dashboard/node_modules/@rc-component/upload/es/AjaxUploader.js
-  function _extends87() {
-    _extends87 = Object.assign ? Object.assign.bind() : function(target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
-      }
-      return target;
-    };
-    return _extends87.apply(this, arguments);
-  }
-  var AjaxUploader = class extends import_react132.Component {
-    constructor() {
-      super(...arguments);
-      __publicField(this, "state", {
-        uid: uid()
-      });
-      __publicField(this, "reqs", {});
-      __publicField(this, "fileInput");
-      __publicField(this, "_isMounted");
-      __publicField(this, "filterFile", (file, force = false) => {
-        const {
-          accept,
-          directory
-        } = this.props;
-        let filterFn;
-        let acceptFormat;
-        if (typeof accept === "string") {
-          acceptFormat = accept;
-        } else {
-          const {
-            filter: filter2,
-            format: format2
-          } = accept || {};
-          acceptFormat = format2;
-          if (filter2 === "native") {
-            filterFn = () => true;
-          } else {
-            filterFn = filter2;
-          }
-        }
-        const mergedFilter = filterFn || (directory || force ? (currentFile) => attr_accept_default(currentFile, acceptFormat) : () => true);
-        return mergedFilter(file);
-      });
-      __publicField(this, "onChange", (e3) => {
-        const {
-          files
-        } = e3.target;
-        const acceptedFiles = [...files].filter((file) => this.filterFile(file));
-        this.uploadFiles(acceptedFiles);
-        this.reset();
-      });
-      __publicField(this, "onClick", (event) => {
-        const el = this.fileInput;
-        if (!el) {
-          return;
-        }
-        const target = event.target;
-        const {
-          onClick
-        } = this.props;
-        if (target && target.tagName === "BUTTON") {
-          const parent = el.parentNode;
-          parent.focus();
-          target.blur();
-        }
-        el.click();
-        if (onClick) {
-          onClick(event);
-        }
-      });
-      __publicField(this, "onKeyDown", (e3) => {
-        if (e3.key === "Enter") {
-          this.onClick(e3);
-        }
-      });
-      __publicField(this, "onDataTransferFiles", async (dataTransfer, existFileCallback) => {
-        const {
-          multiple,
-          directory
-        } = this.props;
-        const items = [...dataTransfer.items || []];
-        let files = [...dataTransfer.files || []];
-        if (files.length > 0 || items.some((item) => item.kind === "file")) {
-          existFileCallback == null ? void 0 : existFileCallback();
-        }
-        if (directory) {
-          files = await traverseFileTree_default(Array.prototype.slice.call(items), this.filterFile);
-          this.uploadFiles(files);
-        } else {
-          let acceptFiles = [...files].filter((file) => this.filterFile(file, true));
-          if (multiple === false) {
-            acceptFiles = files.slice(0, 1);
-          }
-          this.uploadFiles(acceptFiles);
-        }
-      });
-      __publicField(this, "onFilePaste", async (e3) => {
-        const {
-          pastable
-        } = this.props;
-        if (!pastable) {
-          return;
-        }
-        if (e3.type === "paste") {
-          const clipboardData = e3.clipboardData;
-          return this.onDataTransferFiles(clipboardData, () => {
-            e3.preventDefault();
-          });
-        }
-      });
-      __publicField(this, "onFileDragOver", (e3) => {
-        e3.preventDefault();
-      });
-      __publicField(this, "onFileDrop", async (e3) => {
-        e3.preventDefault();
-        if (e3.type === "drop") {
-          const dataTransfer = e3.dataTransfer;
-          return this.onDataTransferFiles(dataTransfer);
-        }
-      });
-      __publicField(this, "uploadFiles", (files) => {
-        const originFiles = [...files];
-        const postFiles = originFiles.map((file) => {
-          file.uid = uid();
-          return this.processFile(file, originFiles);
-        });
-        Promise.all(postFiles).then((fileList) => {
-          const {
-            onBatchStart
-          } = this.props;
-          onBatchStart == null ? void 0 : onBatchStart(fileList.map(({
-            origin,
-            parsedFile
-          }) => ({
-            file: origin,
-            parsedFile
-          })));
-          fileList.filter((file) => file.parsedFile !== null).forEach((file) => {
-            this.post(file);
-          });
-        });
-      });
-      __publicField(this, "processFile", async (file, fileList) => {
-        const {
-          beforeUpload
-        } = this.props;
-        let transformedFile = file;
-        if (beforeUpload) {
-          try {
-            transformedFile = await beforeUpload(file, fileList);
-          } catch (e3) {
-            transformedFile = false;
-          }
-          if (transformedFile === false) {
-            return {
-              origin: file,
-              parsedFile: null,
-              action: null,
-              data: null
-            };
-          }
-        }
-        const {
-          action
-        } = this.props;
-        let mergedAction;
-        if (typeof action === "function") {
-          mergedAction = await action(file);
-        } else {
-          mergedAction = action;
-        }
-        const {
-          data
-        } = this.props;
-        let mergedData;
-        if (typeof data === "function") {
-          mergedData = await data(file);
-        } else {
-          mergedData = data;
-        }
-        const parsedData = (typeof transformedFile === "object" || typeof transformedFile === "string") && transformedFile ? transformedFile : file;
-        let parsedFile;
-        if (parsedData instanceof File) {
-          parsedFile = parsedData;
-        } else {
-          parsedFile = new File([parsedData], file.name, {
-            type: file.type
-          });
-        }
-        const mergedParsedFile = parsedFile;
-        mergedParsedFile.uid = file.uid;
-        return {
-          origin: file,
-          data: mergedData,
-          parsedFile: mergedParsedFile,
-          action: mergedAction
-        };
-      });
-      __publicField(this, "saveFileInput", (node2) => {
-        this.fileInput = node2;
-      });
-    }
-    componentDidMount() {
-      this._isMounted = true;
-      const {
-        pastable
-      } = this.props;
-      if (pastable) {
-        document.addEventListener("paste", this.onFilePaste);
-      }
-    }
-    componentWillUnmount() {
-      this._isMounted = false;
-      this.abort();
-      document.removeEventListener("paste", this.onFilePaste);
-    }
-    componentDidUpdate(prevProps) {
-      const {
-        pastable
-      } = this.props;
-      if (pastable && !prevProps.pastable) {
-        document.addEventListener("paste", this.onFilePaste);
-      } else if (!pastable && prevProps.pastable) {
-        document.removeEventListener("paste", this.onFilePaste);
-      }
-    }
-    post({
-      data,
-      origin,
-      action,
-      parsedFile
-    }) {
-      if (!this._isMounted) {
-        return;
-      }
-      const {
-        onStart,
-        customRequest,
-        name,
-        headers,
-        withCredentials,
-        method: method4
-      } = this.props;
-      const {
-        uid: uid2
-      } = origin;
-      const request = customRequest || upload;
-      const requestOption = {
-        action,
-        filename: name,
-        data,
-        file: parsedFile,
-        headers,
-        withCredentials,
-        method: method4 || "post",
-        onProgress: (e3) => {
-          const {
-            onProgress
-          } = this.props;
-          onProgress == null ? void 0 : onProgress(e3, parsedFile);
-        },
-        onSuccess: (ret, xhr) => {
-          const {
-            onSuccess
-          } = this.props;
-          onSuccess == null ? void 0 : onSuccess(ret, parsedFile, xhr);
-          delete this.reqs[uid2];
-        },
-        onError: (err, ret) => {
-          const {
-            onError
-          } = this.props;
-          onError == null ? void 0 : onError(err, ret, parsedFile);
-          delete this.reqs[uid2];
-        }
-      };
-      onStart(origin);
-      this.reqs[uid2] = request(requestOption, {
-        defaultRequest: upload
-      });
-    }
-    reset() {
-      this.setState({
-        uid: uid()
-      });
-    }
-    abort(file) {
-      const {
-        reqs
-      } = this;
-      if (file) {
-        const uid2 = file.uid ? file.uid : file;
-        if (reqs[uid2] && reqs[uid2].abort) {
-          reqs[uid2].abort();
-        }
-        delete reqs[uid2];
-      } else {
-        Object.keys(reqs).forEach((uid2) => {
-          if (reqs[uid2] && reqs[uid2].abort) {
-            reqs[uid2].abort();
-          }
-          delete reqs[uid2];
-        });
-      }
-    }
-    render() {
-      const _a = this.props, {
-        component: Tag,
-        prefixCls,
-        className,
-        classNames = {},
-        disabled,
-        id,
-        name,
-        style: style2,
-        styles = {},
-        multiple,
-        accept,
-        capture,
-        children,
-        directory,
-        openFileDialogOnClick,
-        onMouseEnter,
-        onMouseLeave,
-        hasControlInside
-      } = _a, otherProps = __objRest(_a, [
-        "component",
-        "prefixCls",
-        "className",
-        "classNames",
-        "disabled",
-        "id",
-        "name",
-        "style",
-        "styles",
-        "multiple",
-        "accept",
-        "capture",
-        "children",
-        "directory",
-        "openFileDialogOnClick",
-        "onMouseEnter",
-        "onMouseLeave",
-        "hasControlInside"
-      ]);
-      const acceptFormat = typeof accept === "string" ? accept : accept == null ? void 0 : accept.format;
-      const cls = clsx(prefixCls, {
-        [`${prefixCls}-disabled`]: disabled,
-        [className]: className
-      });
-      const dirProps = directory ? {
-        directory: "directory",
-        webkitdirectory: "webkitdirectory"
-      } : {};
-      const events = disabled ? {} : {
-        onClick: openFileDialogOnClick ? this.onClick : () => {
-        },
-        onKeyDown: openFileDialogOnClick ? this.onKeyDown : () => {
-        },
-        onMouseEnter,
-        onMouseLeave,
-        onDrop: this.onFileDrop,
-        onDragOver: this.onFileDragOver,
-        tabIndex: hasControlInside ? void 0 : "0"
-      };
-      return /* @__PURE__ */ import_react132.default.createElement(Tag, _extends87({}, events, {
-        className: cls,
-        role: hasControlInside ? void 0 : "button",
-        style: style2
-      }), /* @__PURE__ */ import_react132.default.createElement("input", _extends87({}, pickAttrs(otherProps, {
-        aria: true,
-        data: true
-      }), {
-        id,
-        name,
-        disabled,
-        type: "file",
-        ref: this.saveFileInput,
-        onClick: (e3) => e3.stopPropagation(),
-        key: this.state.uid,
-        style: __spreadValues({
-          display: "none"
-        }, styles.input),
-        className: classNames.input,
-        accept: acceptFormat
-      }, dirProps, {
-        multiple,
-        onChange: this.onChange
-      }, capture != null ? {
-        capture
-      } : {})), children);
-    }
-  };
-  var AjaxUploader_default = AjaxUploader;
-
-  // ../custom_dashboard/node_modules/@rc-component/upload/es/Upload.js
-  function _extends88() {
-    _extends88 = Object.assign ? Object.assign.bind() : function(target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
-      }
-      return target;
-    };
-    return _extends88.apply(this, arguments);
-  }
-  function empty() {
-  }
-  var Upload = class extends import_react133.Component {
-    constructor() {
-      super(...arguments);
-      __publicField(this, "uploader");
-      __publicField(this, "saveUploader", (node2) => {
-        this.uploader = node2;
-      });
-    }
-    abort(file) {
-      this.uploader.abort(file);
-    }
-    render() {
-      return /* @__PURE__ */ import_react133.default.createElement(AjaxUploader_default, _extends88({}, this.props, {
-        ref: this.saveUploader
-      }));
-    }
-  };
-  __publicField(Upload, "defaultProps", {
-    component: "span",
-    prefixCls: "rc-upload",
-    data: {},
-    headers: {},
-    name: "file",
-    multipart: false,
-    onStart: empty,
-    onError: empty,
-    onSuccess: empty,
-    multiple: false,
-    beforeUpload: null,
-    customRequest: null,
-    withCredentials: false,
-    openFileDialogOnClick: true,
-    hasControlInside: false
-  });
-  var Upload_default = Upload;
-
-  // ../custom_dashboard/node_modules/@rc-component/upload/es/index.js
-  var es_default19 = Upload_default;
-
-  // ../custom_dashboard/node_modules/antd/es/upload/style/dragger.js
-  var genDraggerStyle = (token2) => {
-    const {
-      componentCls,
-      iconCls
-    } = token2;
-    return {
-      [`${componentCls}-wrapper`]: {
-        [`${componentCls}-drag`]: {
-          position: "relative",
-          width: "100%",
-          height: "100%",
-          textAlign: "center",
-          background: token2.colorFillAlter,
-          border: `${unit(token2.lineWidth)} dashed ${token2.colorBorder}`,
-          borderRadius: token2.borderRadiusLG,
-          cursor: "pointer",
-          transition: `border-color ${token2.motionDurationSlow}`,
-          [componentCls]: {
-            padding: token2.padding
-          },
-          [`${componentCls}-btn`]: {
-            display: "table",
-            width: "100%",
-            height: "100%",
-            outline: "none",
-            borderRadius: token2.borderRadiusLG,
-            "&:focus-visible": {
-              outline: `${unit(token2.lineWidthFocus)} solid ${token2.colorPrimaryBorder}`
-            }
-          },
-          [`${componentCls}-drag-container`]: {
-            display: "table-cell",
-            verticalAlign: "middle"
-          },
-          [`
-          &:not(${componentCls}-disabled):hover,
-          &-hover:not(${componentCls}-disabled)
-        `]: {
-            borderColor: token2.colorPrimaryHover
-          },
-          [`p${componentCls}-drag-icon`]: {
-            marginBottom: token2.margin,
-            [iconCls]: {
-              color: token2.colorPrimary,
-              fontSize: token2.uploadThumbnailSize
-            }
-          },
-          [`p${componentCls}-text`]: {
-            margin: `0 0 ${unit(token2.marginXXS)}`,
-            color: token2.colorTextHeading,
-            fontSize: token2.fontSizeLG
-          },
-          [`p${componentCls}-hint`]: {
-            color: token2.colorTextDescription,
-            fontSize: token2.fontSize
-          },
-          [`&${componentCls}-disabled`]: {
-            [`p${componentCls}-drag-icon ${iconCls},
-            p${componentCls}-text,
-            p${componentCls}-hint
-          `]: {
-              color: token2.colorTextDisabled
-            }
-          }
-        }
-      }
-    };
-  };
-  var dragger_default = genDraggerStyle;
-
-  // ../custom_dashboard/node_modules/antd/es/upload/style/list.js
-  var genListStyle = (token2) => {
-    const {
-      componentCls,
-      iconCls,
-      fontSize,
-      lineHeight,
-      motionDurationSlow,
-      calc
-    } = token2;
-    const itemCls = `${componentCls}-list-item`;
-    const actionsCls = `${itemCls}-actions`;
-    const actionCls = `${itemCls}-action`;
-    return {
-      [`${componentCls}-wrapper`]: {
-        [`${componentCls}-list`]: __spreadProps(__spreadValues({}, clearFix()), {
-          lineHeight: token2.lineHeight,
-          [itemCls]: {
-            position: "relative",
-            height: calc(token2.lineHeight).mul(fontSize).equal(),
-            marginTop: token2.marginXS,
-            fontSize,
-            display: "flex",
-            alignItems: "center",
-            transition: `background-color ${motionDurationSlow}`,
-            borderRadius: token2.borderRadiusSM,
-            "&:hover": {
-              backgroundColor: token2.controlItemBgHover
-            },
-            [`${itemCls}-name`]: __spreadProps(__spreadValues({}, textEllipsis), {
-              padding: `0 ${unit(token2.paddingXS)}`,
-              lineHeight,
-              flex: "auto",
-              transition: `all ${motionDurationSlow}`
-            }),
-            [actionsCls]: {
-              whiteSpace: "nowrap",
-              [actionCls]: {
-                opacity: 0
-              },
-              "@media (hover: none), (pointer: coarse)": {
-                [actionCls]: {
-                  opacity: 1
-                }
-              },
-              [iconCls]: {
-                color: token2.actionsColor,
-                transition: `all ${motionDurationSlow}`
-              },
-              [`
-              ${actionCls}:focus-visible,
-              &.picture ${actionCls}
-            `]: {
-                opacity: 1
-              }
-            },
-            [`${componentCls}-icon ${iconCls}`]: {
-              color: token2.colorIcon,
-              fontSize
-            },
-            [`${itemCls}-progress`]: {
-              position: "absolute",
-              bottom: token2.calc(token2.uploadProgressOffset).mul(-1).equal(),
-              width: "100%",
-              paddingInlineStart: calc(fontSize).add(token2.paddingXS).equal(),
-              fontSize,
-              lineHeight: 0,
-              pointerEvents: "none",
-              "> div": {
-                margin: 0
-              }
-            }
-          },
-          [`${itemCls}:hover ${actionCls}`]: {
-            opacity: 1
-          },
-          [`${itemCls}-error`]: {
-            color: token2.colorError,
-            [`${itemCls}-name, ${componentCls}-icon ${iconCls}`]: {
-              color: token2.colorError
-            },
-            [actionsCls]: {
-              [`${iconCls}, ${iconCls}:hover`]: {
-                color: token2.colorError
-              },
-              [actionCls]: {
-                opacity: 1
-              }
-            }
-          },
-          [`${componentCls}-list-item-container`]: {
-            transition: ["opacity", "height"].map((prop) => `${prop} ${motionDurationSlow}`).join(", "),
-            "&::before": {
-              display: "table",
-              width: 0,
-              height: 0,
-              content: '""'
-            }
-          }
-        })
-      }
-    };
-  };
-  var list_default = genListStyle;
-
-  // ../custom_dashboard/node_modules/antd/es/upload/style/motion.js
-  var genMotionStyle2 = (token2) => {
-    const {
-      componentCls
-    } = token2;
-    const uploadAnimateInlineIn = new Keyframes_default("uploadAnimateInlineIn", {
-      from: {
-        width: 0,
-        height: 0,
-        padding: 0,
-        opacity: 0,
-        margin: token2.calc(token2.marginXS).div(-2).equal()
-      }
-    });
-    const uploadAnimateInlineOut = new Keyframes_default("uploadAnimateInlineOut", {
-      to: {
-        width: 0,
-        height: 0,
-        padding: 0,
-        opacity: 0,
-        margin: token2.calc(token2.marginXS).div(-2).equal()
-      }
-    });
-    const inlineCls = `${componentCls}-animate-inline`;
-    return [{
-      [`${componentCls}-wrapper`]: {
-        [`${inlineCls}-appear, ${inlineCls}-enter, ${inlineCls}-leave`]: {
-          animationDuration: token2.motionDurationSlow,
-          animationTimingFunction: token2.motionEaseInOutCirc,
-          animationFillMode: "forwards"
-        },
-        [`${inlineCls}-appear, ${inlineCls}-enter`]: {
-          animationName: uploadAnimateInlineIn
-        },
-        [`${inlineCls}-leave`]: {
-          animationName: uploadAnimateInlineOut
-        }
-      }
-    }, {
-      [`${componentCls}-wrapper`]: initFadeMotion(token2)
-    }, uploadAnimateInlineIn, uploadAnimateInlineOut];
-  };
-  var motion_default3 = genMotionStyle2;
-
-  // ../custom_dashboard/node_modules/antd/es/upload/style/picture.js
-  var genPictureStyle = (token2) => {
-    const {
-      componentCls,
-      iconCls,
-      uploadThumbnailSize,
-      uploadProgressOffset,
-      calc
-    } = token2;
-    const listCls = `${componentCls}-list`;
-    const itemCls = `${listCls}-item`;
-    return {
-      [`${componentCls}-wrapper`]: {
-        [`
-        ${listCls}${listCls}-picture,
-        ${listCls}${listCls}-picture-card,
-        ${listCls}${listCls}-picture-circle
-      `]: {
-          [itemCls]: {
-            position: "relative",
-            height: calc(uploadThumbnailSize).add(calc(token2.lineWidth).mul(2)).add(calc(token2.paddingXS).mul(2)).equal(),
-            padding: token2.paddingXS,
-            border: `${unit(token2.lineWidth)} ${token2.lineType} ${token2.colorBorder}`,
-            borderRadius: token2.borderRadiusLG,
-            "&:hover": {
-              background: "transparent"
-            },
-            [`${itemCls}-thumbnail`]: __spreadProps(__spreadValues({}, textEllipsis), {
-              width: uploadThumbnailSize,
-              height: uploadThumbnailSize,
-              lineHeight: unit(calc(uploadThumbnailSize).add(token2.paddingSM).equal()),
-              textAlign: "center",
-              flex: "none",
-              [iconCls]: {
-                fontSize: token2.fontSizeHeading2,
-                color: token2.colorPrimary
-              },
-              img: {
-                display: "block",
-                width: "100%",
-                height: "100%",
-                overflow: "hidden"
-              }
-            }),
-            [`${itemCls}-progress`]: {
-              bottom: calc(token2.fontSize).mul(token2.lineHeight).div(2).add(uploadProgressOffset).equal(),
-              width: `calc(100% - ${unit(calc(token2.paddingSM).mul(2).equal())})`,
-              marginTop: 0,
-              paddingInlineStart: calc(uploadThumbnailSize).add(token2.paddingXS).equal()
-            }
-          },
-          [`${itemCls}-error`]: {
-            borderColor: token2.colorError,
-            [`${itemCls}-thumbnail ${iconCls}`]: {
-              [`svg path[fill='${blue[0]}']`]: {
-                fill: token2.colorErrorBg
-              },
-              [`svg path[fill='${blue.primary}']`]: {
-                fill: token2.colorError
-              }
-            }
-          },
-          [`${itemCls}-uploading`]: {
-            borderStyle: "dashed",
-            [`${itemCls}-name`]: {
-              marginBottom: uploadProgressOffset
-            }
-          }
-        },
-        [`${listCls}${listCls}-picture-circle ${itemCls}`]: {
-          [`&, &::before, ${itemCls}-thumbnail`]: {
-            borderRadius: "50%"
-          }
-        }
-      }
-    };
-  };
-  var genPictureCardStyle = (token2) => {
-    const {
-      componentCls,
-      iconCls,
-      fontSizeLG,
-      colorTextLightSolid,
-      calc
-    } = token2;
-    const listCls = `${componentCls}-list`;
-    const itemCls = `${listCls}-item`;
-    const uploadPictureCardSize = token2.uploadPicCardSize;
-    return {
-      [`
-      ${componentCls}-wrapper${componentCls}-picture-card-wrapper,
-      ${componentCls}-wrapper${componentCls}-picture-circle-wrapper
-    `]: __spreadProps(__spreadValues({}, clearFix()), {
-        display: "block",
-        [`${componentCls}${componentCls}-select`]: {
-          width: uploadPictureCardSize,
-          height: uploadPictureCardSize,
-          textAlign: "center",
-          verticalAlign: "top",
-          backgroundColor: token2.colorFillAlter,
-          border: `${unit(token2.lineWidth)} dashed ${token2.colorBorder}`,
-          borderRadius: token2.borderRadiusLG,
-          cursor: "pointer",
-          transition: `border-color ${token2.motionDurationSlow}`,
-          [`> ${componentCls}`]: {
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            height: "100%",
-            textAlign: "center"
-          },
-          [`&:not(${componentCls}-disabled):hover`]: {
-            borderColor: token2.colorPrimary
-          }
-        },
-        [`${listCls}${listCls}-picture-card, ${listCls}${listCls}-picture-circle`]: {
-          display: "flex",
-          flexWrap: "wrap",
-          "&:not(:empty)": {
-            minHeight: uploadPictureCardSize
-          },
-          "@supports not (gap: 1px)": {
-            "& > *": {
-              marginBlockEnd: token2.marginXS,
-              marginInlineEnd: token2.marginXS
-            }
-          },
-          "@supports (gap: 1px)": {
-            gap: token2.marginXS
-          },
-          [`${listCls}-item-container`]: {
-            display: "inline-block",
-            width: uploadPictureCardSize,
-            height: uploadPictureCardSize,
-            verticalAlign: "top"
-          },
-          "&::after": {
-            display: "none"
-          },
-          "&::before": {
-            display: "none"
-          },
-          [itemCls]: {
-            height: "100%",
-            margin: 0,
-            "&::before": {
-              position: "absolute",
-              zIndex: 1,
-              width: `calc(100% - ${unit(calc(token2.paddingXS).mul(2).equal())})`,
-              height: `calc(100% - ${unit(calc(token2.paddingXS).mul(2).equal())})`,
-              backgroundColor: token2.colorBgMask,
-              opacity: 0,
-              transition: `all ${token2.motionDurationSlow}`,
-              content: '" "'
-            }
-          },
-          [`${itemCls}:hover`]: {
-            [`&::before, ${itemCls}-actions`]: {
-              opacity: 1
-            }
-          },
-          [`${itemCls}-actions`]: {
-            position: "absolute",
-            insetInlineStart: 0,
-            zIndex: 10,
-            width: "100%",
-            whiteSpace: "nowrap",
-            textAlign: "center",
-            opacity: 0,
-            transition: `all ${token2.motionDurationSlow}`,
-            [`
-            ${iconCls}-eye,
-            ${iconCls}-download,
-            ${iconCls}-delete
-          `]: {
-              zIndex: 10,
-              width: fontSizeLG,
-              margin: `0 ${unit(token2.marginXXS)}`,
-              fontSize: fontSizeLG,
-              cursor: "pointer",
-              transition: `all ${token2.motionDurationSlow}`,
-              color: colorTextLightSolid,
-              "&:hover": {
-                color: colorTextLightSolid
-              },
-              svg: {
-                verticalAlign: "baseline"
-              }
-            }
-          },
-          [`${itemCls}-thumbnail, ${itemCls}-thumbnail img`]: {
-            position: "static",
-            display: "block",
-            width: "100%",
-            height: "100%",
-            objectFit: "contain"
-          },
-          [`${itemCls}-name`]: {
-            display: "none",
-            textAlign: "center"
-          },
-          [`${itemCls}-file + ${itemCls}-name`]: {
-            position: "absolute",
-            bottom: token2.margin,
-            display: "block",
-            width: `calc(100% - ${unit(calc(token2.paddingXS).mul(2).equal())})`
-          },
-          [`${itemCls}-uploading`]: {
-            [`&${itemCls}`]: {
-              backgroundColor: token2.colorFillAlter
-            },
-            [`&::before, ${iconCls}-eye, ${iconCls}-download, ${iconCls}-delete`]: {
-              display: "none"
-            }
-          },
-          [`${itemCls}-progress`]: {
-            bottom: token2.marginXL,
-            width: `calc(100% - ${unit(calc(token2.paddingXS).mul(2).equal())})`,
-            paddingInlineStart: 0
-          }
-        }
-      }),
-      [`${componentCls}-wrapper${componentCls}-picture-circle-wrapper`]: {
-        [`${componentCls}${componentCls}-select`]: {
-          borderRadius: "50%"
-        }
-      }
-    };
-  };
-
-  // ../custom_dashboard/node_modules/antd/es/upload/style/rtl.js
-  var genRtlStyle = (token2) => {
-    const {
-      componentCls
-    } = token2;
-    return {
-      [`${componentCls}-rtl`]: {
-        direction: "rtl"
-      }
-    };
-  };
-  var rtl_default3 = genRtlStyle;
-
-  // ../custom_dashboard/node_modules/antd/es/upload/style/index.js
-  var genBaseStyle7 = (token2) => {
-    const {
-      componentCls,
-      colorTextDisabled
-    } = token2;
-    return {
-      [`${componentCls}-wrapper`]: __spreadProps(__spreadValues({}, resetComponent(token2)), {
-        [componentCls]: {
-          outline: 0,
-          "input[type='file']": {
-            cursor: "pointer"
-          }
-        },
-        [`${componentCls}-select`]: {
-          display: "inline-block"
-        },
-        [`${componentCls}-hidden`]: {
-          display: "none"
-        },
-        [`${componentCls}-disabled`]: {
-          color: colorTextDisabled,
-          cursor: "not-allowed"
-        }
-      })
-    };
-  };
-  var prepareComponentToken19 = (token2) => ({
-    actionsColor: token2.colorIcon,
-    pictureCardSize: token2.controlHeightLG * 2.55
-  });
-  var style_default24 = genStyleHooks("Upload", (token2) => {
-    const {
-      fontSizeHeading3,
-      marginXS,
-      lineWidth,
-      pictureCardSize,
-      calc
-    } = token2;
-    const uploadToken = merge2(token2, {
-      uploadThumbnailSize: calc(fontSizeHeading3).mul(2).equal(),
-      uploadProgressOffset: calc(calc(marginXS).div(2)).add(lineWidth).equal(),
-      uploadPicCardSize: pictureCardSize
-    });
-    return [genBaseStyle7(uploadToken), dragger_default(uploadToken), genPictureStyle(uploadToken), genPictureCardStyle(uploadToken), list_default(uploadToken), motion_default3(uploadToken), rtl_default3(uploadToken), collapse_default(uploadToken)];
-  }, prepareComponentToken19);
-
-  // ../custom_dashboard/node_modules/antd/es/upload/UploadList/index.js
-  var React390 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FileTwoTone.js
-  var React385 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/FileTwoTone.js
-  var FileTwoTone = { "icon": function render2(primaryColor, secondaryColor) {
-    return { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M534 352V136H232v752h560V394H576a42 42 0 01-42-42z", "fill": secondaryColor } }, { "tag": "path", "attrs": { "d": "M854.6 288.6L639.4 73.4c-6-6-14.1-9.4-22.6-9.4H192c-17.7 0-32 14.3-32 32v832c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V311.3c0-8.5-3.4-16.7-9.4-22.7zM602 137.8L790.2 326H602V137.8zM792 888H232V136h302v216a42 42 0 0042 42h216v494z", "fill": primaryColor } }] };
-  }, "name": "file", "theme": "twotone" };
-  var FileTwoTone_default = FileTwoTone;
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/FileTwoTone.js
-  function _extends89() {
-    _extends89 = Object.assign ? Object.assign.bind() : function(target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
-      }
-      return target;
-    };
-    return _extends89.apply(this, arguments);
-  }
-  var FileTwoTone2 = (props, ref) => /* @__PURE__ */ React385.createElement(AntdIcon_default, _extends89({}, props, {
-    ref,
-    icon: FileTwoTone_default
-  }));
-  var RefIcon30 = /* @__PURE__ */ React385.forwardRef(FileTwoTone2);
-  if (true) {
-    RefIcon30.displayName = "FileTwoTone";
-  }
-  var FileTwoTone_default2 = RefIcon30;
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/PaperClipOutlined.js
-  var React386 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/PaperClipOutlined.js
-  var PaperClipOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M779.3 196.6c-94.2-94.2-247.6-94.2-341.7 0l-261 260.8c-1.7 1.7-2.6 4-2.6 6.4s.9 4.7 2.6 6.4l36.9 36.9a9 9 0 0012.7 0l261-260.8c32.4-32.4 75.5-50.2 121.3-50.2s88.9 17.8 121.2 50.2c32.4 32.4 50.2 75.5 50.2 121.2 0 45.8-17.8 88.8-50.2 121.2l-266 265.9-43.1 43.1c-40.3 40.3-105.8 40.3-146.1 0-19.5-19.5-30.2-45.4-30.2-73s10.7-53.5 30.2-73l263.9-263.8c6.7-6.6 15.5-10.3 24.9-10.3h.1c9.4 0 18.1 3.7 24.7 10.3 6.7 6.7 10.3 15.5 10.3 24.9 0 9.3-3.7 18.1-10.3 24.7L372.4 653c-1.7 1.7-2.6 4-2.6 6.4s.9 4.7 2.6 6.4l36.9 36.9a9 9 0 0012.7 0l215.6-215.6c19.9-19.9 30.8-46.3 30.8-74.4s-11-54.6-30.8-74.4c-41.1-41.1-107.9-41-149 0L463 364 224.8 602.1A172.22 172.22 0 00174 724.8c0 46.3 18.1 89.8 50.8 122.5 33.9 33.8 78.3 50.7 122.7 50.7 44.4 0 88.8-16.9 122.6-50.7l309.2-309C824.8 492.7 850 432 850 367.5c.1-64.6-25.1-125.3-70.7-170.9z" } }] }, "name": "paper-clip", "theme": "outlined" };
-  var PaperClipOutlined_default = PaperClipOutlined;
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/PaperClipOutlined.js
-  function _extends90() {
-    _extends90 = Object.assign ? Object.assign.bind() : function(target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
-      }
-      return target;
-    };
-    return _extends90.apply(this, arguments);
-  }
-  var PaperClipOutlined2 = (props, ref) => /* @__PURE__ */ React386.createElement(AntdIcon_default, _extends90({}, props, {
-    ref,
-    icon: PaperClipOutlined_default
-  }));
-  var RefIcon31 = /* @__PURE__ */ React386.forwardRef(PaperClipOutlined2);
-  if (true) {
-    RefIcon31.displayName = "PaperClipOutlined";
-  }
-  var PaperClipOutlined_default2 = RefIcon31;
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/PictureTwoTone.js
-  var React387 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/PictureTwoTone.js
-  var PictureTwoTone = { "icon": function render3(primaryColor, secondaryColor) {
-    return { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M928 160H96c-17.7 0-32 14.3-32 32v640c0 17.7 14.3 32 32 32h832c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32zm-40 632H136v-39.9l138.5-164.3 150.1 178L658.1 489 888 761.6V792zm0-129.8L664.2 396.8c-3.2-3.8-9-3.8-12.2 0L424.6 666.4l-144-170.7c-3.2-3.8-9-3.8-12.2 0L136 652.7V232h752v430.2z", "fill": primaryColor } }, { "tag": "path", "attrs": { "d": "M424.6 765.8l-150.1-178L136 752.1V792h752v-30.4L658.1 489z", "fill": secondaryColor } }, { "tag": "path", "attrs": { "d": "M136 652.7l132.4-157c3.2-3.8 9-3.8 12.2 0l144 170.7L652 396.8c3.2-3.8 9-3.8 12.2 0L888 662.2V232H136v420.7zM304 280a88 88 0 110 176 88 88 0 010-176z", "fill": secondaryColor } }, { "tag": "path", "attrs": { "d": "M276 368a28 28 0 1056 0 28 28 0 10-56 0z", "fill": secondaryColor } }, { "tag": "path", "attrs": { "d": "M304 456a88 88 0 100-176 88 88 0 000 176zm0-116c15.5 0 28 12.5 28 28s-12.5 28-28 28-28-12.5-28-28 12.5-28 28-28z", "fill": primaryColor } }] };
-  }, "name": "picture", "theme": "twotone" };
-  var PictureTwoTone_default = PictureTwoTone;
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/PictureTwoTone.js
-  function _extends91() {
-    _extends91 = Object.assign ? Object.assign.bind() : function(target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
-      }
-      return target;
-    };
-    return _extends91.apply(this, arguments);
-  }
-  var PictureTwoTone2 = (props, ref) => /* @__PURE__ */ React387.createElement(AntdIcon_default, _extends91({}, props, {
-    ref,
-    icon: PictureTwoTone_default
-  }));
-  var RefIcon32 = /* @__PURE__ */ React387.forwardRef(PictureTwoTone2);
-  if (true) {
-    RefIcon32.displayName = "PictureTwoTone";
-  }
-  var PictureTwoTone_default2 = RefIcon32;
-
-  // ../custom_dashboard/node_modules/antd/es/upload/utils.js
-  function file2Obj(file) {
-    return __spreadProps(__spreadValues({}, file), {
-      lastModified: file.lastModified,
-      lastModifiedDate: file.lastModifiedDate,
-      name: file.name,
-      size: file.size,
-      type: file.type,
-      uid: file.uid,
-      percent: 0,
-      originFileObj: file
-    });
-  }
-  function updateFileList(file, fileList) {
-    const nextFileList = _toConsumableArray(fileList);
-    const fileIndex = nextFileList.findIndex(({
-      uid: uid2
-    }) => uid2 === file.uid);
-    if (fileIndex === -1) {
-      nextFileList.push(file);
-    } else {
-      nextFileList[fileIndex] = file;
-    }
-    return nextFileList;
-  }
-  function getFileItem(file, fileList) {
-    const matchKey = file.uid !== void 0 ? "uid" : "name";
-    return fileList.filter((item) => item[matchKey] === file[matchKey])[0];
-  }
-  function removeFileItem(file, fileList) {
-    const matchKey = file.uid !== void 0 ? "uid" : "name";
-    const removed = fileList.filter((item) => item[matchKey] !== file[matchKey]);
-    if (removed.length === fileList.length) {
-      return null;
-    }
-    return removed;
-  }
-  var extname = (url2 = "") => {
-    const temp = url2.split("/");
-    const filename = temp[temp.length - 1];
-    const filenameWithoutSuffix = filename.split(/#|\?/)[0];
-    return (/\.[^./\\]*$/.exec(filenameWithoutSuffix) || [""])[0];
-  };
-  var isImageFileType = (type5) => type5.indexOf("image/") === 0;
-  var isImageUrl = (file) => {
-    if (file.type && !file.thumbUrl) {
-      return isImageFileType(file.type);
-    }
-    const url2 = file.thumbUrl || file.url || "";
-    const extension = extname(url2);
-    if (/^data:image\//.test(url2) || /(webp|svg|png|gif|jpg|jpeg|jfif|bmp|dpg|ico|heic|heif)$/i.test(extension)) {
-      return true;
-    }
-    if (/^data:/.test(url2)) {
-      return false;
-    }
-    if (extension) {
-      return false;
-    }
-    return true;
-  };
-  var MEASURE_SIZE = 200;
-  function previewImage(file) {
-    return new Promise((resolve) => {
-      if (!file.type || !isImageFileType(file.type)) {
-        resolve("");
-        return;
-      }
-      const canvas = document.createElement("canvas");
-      canvas.width = MEASURE_SIZE;
-      canvas.height = MEASURE_SIZE;
-      canvas.style.cssText = `position: fixed; left: 0; top: 0; width: ${MEASURE_SIZE}px; height: ${MEASURE_SIZE}px; z-index: 9999; display: none;`;
-      document.body.appendChild(canvas);
-      const ctx = canvas.getContext("2d");
-      const img = new Image();
-      img.onload = () => {
-        const {
-          width,
-          height
-        } = img;
-        let drawWidth = MEASURE_SIZE;
-        let drawHeight = MEASURE_SIZE;
-        let offsetX = 0;
-        let offsetY = 0;
-        if (width > height) {
-          drawHeight = height * (MEASURE_SIZE / width);
-          offsetY = -(drawHeight - drawWidth) / 2;
-        } else {
-          drawWidth = width * (MEASURE_SIZE / height);
-          offsetX = -(drawWidth - drawHeight) / 2;
-        }
-        ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
-        const dataURL = canvas.toDataURL();
-        document.body.removeChild(canvas);
-        window.URL.revokeObjectURL(img.src);
-        resolve(dataURL);
-      };
-      img.crossOrigin = "anonymous";
-      if (file.type.startsWith("image/svg+xml")) {
-        const reader = new FileReader();
-        reader.onload = () => {
-          if (reader.result && typeof reader.result === "string") {
-            img.src = reader.result;
-          }
-        };
-        reader.readAsDataURL(file);
-      } else if (file.type.startsWith("image/gif")) {
-        const reader = new FileReader();
-        reader.onload = () => {
-          if (reader.result) {
-            resolve(reader.result);
-          }
-        };
-        reader.readAsDataURL(file);
-      } else {
-        img.src = window.URL.createObjectURL(file);
-      }
-    });
-  }
-
-  // ../custom_dashboard/node_modules/antd/es/upload/UploadList/ListItem.js
-  var React389 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/DownloadOutlined.js
-  var React388 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/DownloadOutlined.js
-  var DownloadOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M505.7 661a8 8 0 0012.6 0l112-141.7c4.1-5.2.4-12.9-6.3-12.9h-74.1V168c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v338.3H400c-6.7 0-10.4 7.7-6.3 12.9l112 141.8zM878 626h-60c-4.4 0-8 3.6-8 8v154H214V634c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v198c0 17.7 14.3 32 32 32h684c17.7 0 32-14.3 32-32V634c0-4.4-3.6-8-8-8z" } }] }, "name": "download", "theme": "outlined" };
-  var DownloadOutlined_default = DownloadOutlined;
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/DownloadOutlined.js
   function _extends92() {
     _extends92 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -79246,781 +81586,30 @@ html body {
     };
     return _extends92.apply(this, arguments);
   }
-  var DownloadOutlined2 = (props, ref) => /* @__PURE__ */ React388.createElement(AntdIcon_default, _extends92({}, props, {
+  var DeleteOutlined2 = (props, ref) => /* @__PURE__ */ React396.createElement(AntdIcon_default, _extends92({}, props, {
     ref,
-    icon: DownloadOutlined_default
+    icon: DeleteOutlined_default
   }));
-  var RefIcon33 = /* @__PURE__ */ React388.forwardRef(DownloadOutlined2);
+  var RefIcon32 = /* @__PURE__ */ React396.forwardRef(DeleteOutlined2);
   if (true) {
-    RefIcon33.displayName = "DownloadOutlined";
+    RefIcon32.displayName = "DeleteOutlined";
   }
-  var DownloadOutlined_default2 = RefIcon33;
+  var DeleteOutlined_default2 = RefIcon32;
 
-  // ../custom_dashboard/node_modules/antd/es/upload/UploadList/ListItem.js
-  "use client";
-  var ListItem = /* @__PURE__ */ React389.forwardRef(({
-    prefixCls,
-    className,
-    style: style2,
-    classNames: itemClassNames,
-    styles,
-    locale: locale6,
-    listType,
-    file,
-    items,
-    progress: progressProps,
-    iconRender,
-    actionIconRender,
-    itemRender,
-    isImgUrl,
-    showPreviewIcon,
-    showRemoveIcon,
-    showDownloadIcon,
-    previewIcon: customPreviewIcon,
-    removeIcon: customRemoveIcon,
-    downloadIcon: customDownloadIcon,
-    extra: customExtra,
-    onPreview,
-    onDownload,
-    onClose
-  }, ref) => {
-    var _a, _b;
-    const {
-      status
-    } = file;
-    const [mergedStatus, setMergedStatus] = React389.useState(status);
-    React389.useEffect(() => {
-      if (status !== "removed") {
-        setMergedStatus(status);
-      }
-    }, [status]);
-    const [showProgress, setShowProgress] = React389.useState(false);
-    React389.useEffect(() => {
-      const timer = setTimeout(() => {
-        setShowProgress(true);
-      }, 300);
-      return () => {
-        clearTimeout(timer);
-      };
-    }, []);
-    const iconNode = iconRender(file);
-    let icon = /* @__PURE__ */ React389.createElement("div", {
-      className: `${prefixCls}-icon`
-    }, iconNode);
-    if (listType === "picture" || listType === "picture-card" || listType === "picture-circle") {
-      if (mergedStatus === "uploading" || !file.thumbUrl && !file.url) {
-        const uploadingClassName = clsx(`${prefixCls}-list-item-thumbnail`, {
-          [`${prefixCls}-list-item-file`]: mergedStatus !== "uploading"
-        });
-        icon = /* @__PURE__ */ React389.createElement("div", {
-          className: uploadingClassName
-        }, iconNode);
-      } else {
-        const thumbnail = (isImgUrl == null ? void 0 : isImgUrl(file)) ? /* @__PURE__ */ React389.createElement("img", {
-          src: file.thumbUrl || file.url,
-          alt: file.name,
-          className: `${prefixCls}-list-item-image`,
-          crossOrigin: file.crossOrigin
-        }) : iconNode;
-        const aClassName = clsx(`${prefixCls}-list-item-thumbnail`, {
-          [`${prefixCls}-list-item-file`]: isImgUrl && !isImgUrl(file)
-        });
-        icon = /* @__PURE__ */ React389.createElement("a", {
-          className: aClassName,
-          onClick: (e3) => onPreview(file, e3),
-          href: file.url || file.thumbUrl,
-          target: "_blank",
-          rel: "noopener noreferrer"
-        }, thumbnail);
-      }
-    }
-    const listItemClassName = clsx(`${prefixCls}-list-item`, `${prefixCls}-list-item-${mergedStatus}`, itemClassNames == null ? void 0 : itemClassNames.item);
-    const linkProps = typeof file.linkProps === "string" ? JSON.parse(file.linkProps) : file.linkProps;
-    const removeIcon = (typeof showRemoveIcon === "function" ? showRemoveIcon(file) : showRemoveIcon) ? actionIconRender(
-      (typeof customRemoveIcon === "function" ? customRemoveIcon(file) : customRemoveIcon) || /* @__PURE__ */ React389.createElement(DeleteOutlined_default2, null),
-      () => onClose(file),
-      prefixCls,
-      locale6.removeFile,
-      true
-    ) : null;
-    const downloadIcon = (typeof showDownloadIcon === "function" ? showDownloadIcon(file) : showDownloadIcon) && mergedStatus === "done" ? actionIconRender((typeof customDownloadIcon === "function" ? customDownloadIcon(file) : customDownloadIcon) || /* @__PURE__ */ React389.createElement(DownloadOutlined_default2, null), () => onDownload(file), prefixCls, locale6.downloadFile) : null;
-    const downloadOrDelete = listType !== "picture-card" && listType !== "picture-circle" && /* @__PURE__ */ React389.createElement("span", {
-      key: "download-delete",
-      className: clsx(`${prefixCls}-list-item-actions`, {
-        picture: listType === "picture"
-      })
-    }, downloadIcon, removeIcon);
-    const extraContent = typeof customExtra === "function" ? customExtra(file) : customExtra;
-    const extra = extraContent && /* @__PURE__ */ React389.createElement("span", {
-      className: `${prefixCls}-list-item-extra`
-    }, extraContent);
-    const listItemNameClass = clsx(`${prefixCls}-list-item-name`);
-    const fileName = file.url ? /* @__PURE__ */ React389.createElement("a", __spreadProps(__spreadValues({
-      key: "view",
-      target: "_blank",
-      rel: "noopener noreferrer",
-      className: listItemNameClass,
-      title: file.name
-    }, linkProps), {
-      href: file.url,
-      onClick: (e3) => onPreview(file, e3)
-    }), file.name, extra) : /* @__PURE__ */ React389.createElement("span", {
-      key: "view",
-      className: listItemNameClass,
-      onClick: (e3) => onPreview(file, e3),
-      title: file.name
-    }, file.name, extra);
-    const previewIcon = (typeof showPreviewIcon === "function" ? showPreviewIcon(file) : showPreviewIcon) && (file.url || file.thumbUrl) ? /* @__PURE__ */ React389.createElement("a", {
-      href: file.url || file.thumbUrl,
-      target: "_blank",
-      rel: "noopener noreferrer",
-      onClick: (e3) => onPreview(file, e3),
-      title: locale6.previewFile
-    }, typeof customPreviewIcon === "function" ? customPreviewIcon(file) : customPreviewIcon || /* @__PURE__ */ React389.createElement(EyeOutlined_default2, null)) : null;
-    const pictureCardActions = (listType === "picture-card" || listType === "picture-circle") && mergedStatus !== "uploading" && /* @__PURE__ */ React389.createElement("span", {
-      className: `${prefixCls}-list-item-actions`
-    }, previewIcon, mergedStatus === "done" && downloadIcon, removeIcon);
-    const {
-      getPrefixCls
-    } = React389.useContext(ConfigContext);
-    const rootPrefixCls = getPrefixCls();
-    const dom = /* @__PURE__ */ React389.createElement("div", {
-      className: listItemClassName,
-      style: styles == null ? void 0 : styles.item
-    }, icon, fileName, downloadOrDelete, pictureCardActions, showProgress && /* @__PURE__ */ React389.createElement(es_default2, {
-      motionName: `${rootPrefixCls}-fade`,
-      visible: mergedStatus === "uploading",
-      motionDeadline: 2e3
-    }, ({
-      className: motionClassName
-    }) => {
-      const loadingProgress = "percent" in file ? /* @__PURE__ */ React389.createElement(progress_default2, __spreadValues({
-        type: "line",
-        percent: file.percent,
-        "aria-label": file["aria-label"],
-        "aria-labelledby": file["aria-labelledby"]
-      }, progressProps)) : null;
-      return /* @__PURE__ */ React389.createElement("div", {
-        className: clsx(`${prefixCls}-list-item-progress`, motionClassName)
-      }, loadingProgress);
-    }));
-    const message2 = file.response && typeof file.response === "string" ? file.response : ((_a = file.error) == null ? void 0 : _a.statusText) || ((_b = file.error) == null ? void 0 : _b.message) || locale6.uploadError;
-    const item = mergedStatus === "error" ? /* @__PURE__ */ React389.createElement(tooltip_default, {
-      title: message2,
-      getPopupContainer: (node2) => node2.parentNode
-    }, dom) : dom;
-    return /* @__PURE__ */ React389.createElement("div", {
-      className: clsx(`${prefixCls}-list-item-container`, className),
-      style: style2,
-      ref
-    }, itemRender ? itemRender(item, file, items, {
-      download: onDownload.bind(null, file),
-      preview: onPreview.bind(null, file),
-      remove: onClose.bind(null, file)
-    }) : item);
-  });
-  var ListItem_default = ListItem;
+  // ../custom_dashboard/node_modules/antd/es/typography/Link.js
+  var React408 = __toESM(require_react());
 
-  // ../custom_dashboard/node_modules/antd/es/upload/UploadList/index.js
-  "use client";
-  var InternalUploadList = (props, ref) => {
-    const {
-      listType = "text",
-      previewFile = previewImage,
-      onPreview,
-      onDownload,
-      onRemove,
-      locale: locale6,
-      iconRender,
-      isImageUrl: isImgUrl = isImageUrl,
-      prefixCls: customizePrefixCls,
-      items = [],
-      showPreviewIcon = true,
-      showRemoveIcon = true,
-      showDownloadIcon = false,
-      removeIcon,
-      previewIcon,
-      downloadIcon,
-      extra,
-      progress = {
-        size: [-1, 2],
-        showInfo: false
-      },
-      appendAction,
-      appendActionVisible = true,
-      itemRender,
-      disabled,
-      classNames: uploadListClassNames,
-      styles
-    } = props;
-    const [, forceUpdate] = useForceUpdate();
-    const [motionAppear, setMotionAppear] = React390.useState(false);
-    const isPictureCardOrCirle = ["picture-card", "picture-circle"].includes(listType);
-    React390.useEffect(() => {
-      if (!listType.startsWith("picture")) {
-        return;
-      }
-      (items || []).forEach((file) => {
-        if (!(file.originFileObj instanceof File || file.originFileObj instanceof Blob) || file.thumbUrl !== void 0) {
-          return;
-        }
-        file.thumbUrl = "";
-        previewFile == null ? void 0 : previewFile(file.originFileObj).then((previewDataUrl) => {
-          file.thumbUrl = previewDataUrl || "";
-          forceUpdate();
-        });
-      });
-    }, [listType, items, previewFile]);
-    React390.useEffect(() => {
-      setMotionAppear(true);
-    }, []);
-    const onInternalPreview = (file, e3) => {
-      if (!onPreview) {
-        return;
-      }
-      e3 == null ? void 0 : e3.preventDefault();
-      return onPreview(file);
-    };
-    const onInternalDownload = (file) => {
-      if (typeof onDownload === "function") {
-        onDownload(file);
-      } else if (file.url) {
-        window.open(file.url);
-      }
-    };
-    const onInternalClose = (file) => {
-      onRemove == null ? void 0 : onRemove(file);
-    };
-    const internalIconRender = (file) => {
-      if (iconRender) {
-        return iconRender(file, listType);
-      }
-      const isLoading = file.status === "uploading";
-      if (listType.startsWith("picture")) {
-        const loadingIcon = listType === "picture" ? /* @__PURE__ */ React390.createElement(LoadingOutlined_default2, null) : locale6.uploading;
-        const fileIcon = (isImgUrl == null ? void 0 : isImgUrl(file)) ? /* @__PURE__ */ React390.createElement(PictureTwoTone_default2, null) : /* @__PURE__ */ React390.createElement(FileTwoTone_default2, null);
-        return isLoading ? loadingIcon : fileIcon;
-      }
-      return isLoading ? /* @__PURE__ */ React390.createElement(LoadingOutlined_default2, null) : /* @__PURE__ */ React390.createElement(PaperClipOutlined_default2, null);
-    };
-    const actionIconRender = (customIcon, callback, prefixCls2, title, acceptUploadDisabled) => {
-      const btnProps = {
-        type: "text",
-        size: "small",
-        title,
-        onClick: (e3) => {
-          var _a, _b;
-          callback();
-          if (/* @__PURE__ */ React390.isValidElement(customIcon)) {
-            (_b = (_a = customIcon.props).onClick) == null ? void 0 : _b.call(_a, e3);
-          }
-        },
-        className: `${prefixCls2}-list-item-action`,
-        disabled: acceptUploadDisabled ? disabled : false
-      };
-      return /* @__PURE__ */ React390.isValidElement(customIcon) ? /* @__PURE__ */ React390.createElement(Button_default, __spreadProps(__spreadValues({}, btnProps), {
-        icon: cloneElement5(customIcon, __spreadProps(__spreadValues({}, customIcon.props), {
-          onClick: () => {
-          }
-        }))
-      })) : /* @__PURE__ */ React390.createElement(Button_default, __spreadValues({}, btnProps), /* @__PURE__ */ React390.createElement("span", null, customIcon));
-    };
-    React390.useImperativeHandle(ref, () => ({
-      handlePreview: onInternalPreview,
-      handleDownload: onInternalDownload
-    }));
-    const {
-      getPrefixCls
-    } = React390.useContext(ConfigContext);
-    const prefixCls = getPrefixCls("upload", customizePrefixCls);
-    const rootPrefixCls = getPrefixCls();
-    const listClassNames = clsx(`${prefixCls}-list`, `${prefixCls}-list-${listType}`, uploadListClassNames == null ? void 0 : uploadListClassNames.list);
-    const listItemMotion = React390.useMemo(() => omit(motion_default(rootPrefixCls), ["onAppearEnd", "onEnterEnd", "onLeaveEnd"]), [rootPrefixCls]);
-    const motionConfig = __spreadProps(__spreadValues({}, isPictureCardOrCirle ? {} : listItemMotion), {
-      motionDeadline: 2e3,
-      motionName: `${prefixCls}-${isPictureCardOrCirle ? "animate-inline" : "animate"}`,
-      keys: _toConsumableArray(items.map((file) => ({
-        key: file.uid,
-        file
-      }))),
-      motionAppear
-    });
-    return /* @__PURE__ */ React390.createElement("div", {
-      className: listClassNames,
-      style: styles == null ? void 0 : styles.list
-    }, /* @__PURE__ */ React390.createElement(CSSMotionList_default, __spreadProps(__spreadValues({}, motionConfig), {
-      component: false
-    }), ({
-      key,
-      file,
-      className: motionClassName,
-      style: motionStyle
-    }) => /* @__PURE__ */ React390.createElement(ListItem_default, {
-      key,
-      locale: locale6,
-      prefixCls,
-      className: motionClassName,
-      style: motionStyle,
-      classNames: uploadListClassNames,
-      styles,
-      file,
-      items,
-      progress,
-      listType,
-      isImgUrl,
-      showPreviewIcon,
-      showRemoveIcon,
-      showDownloadIcon,
-      removeIcon,
-      previewIcon,
-      downloadIcon,
-      extra,
-      iconRender: internalIconRender,
-      actionIconRender,
-      itemRender,
-      onPreview: onInternalPreview,
-      onDownload: onInternalDownload,
-      onClose: onInternalClose
-    })), appendAction && /* @__PURE__ */ React390.createElement(es_default2, __spreadProps(__spreadValues({}, motionConfig), {
-      visible: appendActionVisible,
-      forceRender: true
-    }), ({
-      className: motionClassName,
-      style: motionStyle
-    }) => cloneElement5(appendAction, (oriProps) => ({
-      className: clsx(oriProps.className, motionClassName),
-      style: __spreadValues(__spreadProps(__spreadValues({}, motionStyle), {
-        pointerEvents: motionClassName ? "none" : void 0
-      }), oriProps.style)
-    }))));
-  };
-  var UploadList = /* @__PURE__ */ React390.forwardRef(InternalUploadList);
-  if (true) {
-    UploadList.displayName = "UploadList";
-  }
-  var UploadList_default = UploadList;
+  // ../custom_dashboard/node_modules/antd/es/typography/Base/index.js
+  var React407 = __toESM(require_react());
 
-  // ../custom_dashboard/node_modules/antd/es/upload/Upload.js
-  "use client";
-  var LIST_IGNORE = `__LIST_IGNORE_${Date.now()}__`;
-  var InternalUpload = (props, ref) => {
-    const config = useComponentConfig("upload");
-    const {
-      fileList,
-      defaultFileList,
-      onRemove,
-      showUploadList = true,
-      listType = "text",
-      onPreview,
-      onDownload,
-      onChange,
-      onDrop,
-      previewFile,
-      disabled: customDisabled,
-      locale: propLocale,
-      iconRender,
-      isImageUrl: isImageUrl2,
-      progress,
-      prefixCls: customizePrefixCls,
-      className,
-      type: type5 = "select",
-      children,
-      style: style2,
-      itemRender,
-      maxCount,
-      data = {},
-      multiple = false,
-      hasControlInside = true,
-      action = "",
-      accept = "",
-      supportServerRender = true,
-      rootClassName,
-      styles,
-      classNames
-    } = props;
-    const disabled = React391.useContext(DisabledContext_default);
-    const mergedDisabled = customDisabled != null ? customDisabled : disabled;
-    const customRequest = props.customRequest || config.customRequest;
-    const [internalFileList, setMergedFileList] = useControlledState(defaultFileList, fileList);
-    const mergedFileList = internalFileList || [];
-    const [dragState, setDragState] = React391.useState("drop");
-    const uploadRef = React391.useRef(null);
-    const wrapRef = React391.useRef(null);
-    if (true) {
-      const warning6 = devUseWarning("Upload");
-      true ? warning6("fileList" in props || !("value" in props), "usage", "`value` is not a valid prop, do you mean `fileList`?") : void 0;
-    }
-    React391.useMemo(() => {
-      const timestamp = Date.now();
-      (fileList || []).forEach((file, index2) => {
-        if (!file.uid && !Object.isFrozen(file)) {
-          file.uid = `__AUTO__${timestamp}_${index2}__`;
-        }
-      });
-    }, [fileList]);
-    const onInternalChange = (file, changedFileList, event) => {
-      let cloneList = _toConsumableArray(changedFileList);
-      let exceedMaxCount = false;
-      if (maxCount === 1) {
-        cloneList = cloneList.slice(-1);
-      } else if (maxCount) {
-        exceedMaxCount = cloneList.length > maxCount;
-        cloneList = cloneList.slice(0, maxCount);
-      }
-      (0, import_react_dom8.flushSync)(() => {
-        setMergedFileList(cloneList);
-      });
-      const changeInfo = {
-        file,
-        fileList: cloneList
-      };
-      if (event) {
-        changeInfo.event = event;
-      }
-      if (!exceedMaxCount || file.status === "removed" || cloneList.some((f) => f.uid === file.uid)) {
-        (0, import_react_dom8.flushSync)(() => {
-          onChange == null ? void 0 : onChange(changeInfo);
-        });
-      }
-    };
-    const mergedBeforeUpload = async (file, fileListArgs) => {
-      const {
-        beforeUpload
-      } = props;
-      let parsedFile = file;
-      if (beforeUpload) {
-        const result = await beforeUpload(file, fileListArgs);
-        if (result === false) {
-          return false;
-        }
-        delete file[LIST_IGNORE];
-        if (result === LIST_IGNORE) {
-          Object.defineProperty(file, LIST_IGNORE, {
-            value: true,
-            configurable: true
-          });
-          return false;
-        }
-        if (typeof result === "object" && result) {
-          parsedFile = result;
-        }
-      }
-      return parsedFile;
-    };
-    const onBatchStart = (batchFileInfoList) => {
-      const filteredFileInfoList = batchFileInfoList.filter((info) => !info.file[LIST_IGNORE]);
-      if (!filteredFileInfoList.length) {
-        return;
-      }
-      const objectFileList = filteredFileInfoList.map((info) => file2Obj(info.file));
-      let newFileList = _toConsumableArray(mergedFileList);
-      objectFileList.forEach((fileObj) => {
-        newFileList = updateFileList(fileObj, newFileList);
-      });
-      objectFileList.forEach((fileObj, index2) => {
-        let triggerFileObj = fileObj;
-        if (!filteredFileInfoList[index2].parsedFile) {
-          const {
-            originFileObj
-          } = fileObj;
-          let clone;
-          try {
-            clone = new File([originFileObj], originFileObj.name, {
-              type: originFileObj.type
-            });
-          } catch (e3) {
-            clone = new Blob([originFileObj], {
-              type: originFileObj.type
-            });
-            clone.name = originFileObj.name;
-            clone.lastModifiedDate = new Date();
-            clone.lastModified = new Date().getTime();
-          }
-          clone.uid = fileObj.uid;
-          triggerFileObj = clone;
-        } else {
-          fileObj.status = "uploading";
-        }
-        onInternalChange(triggerFileObj, newFileList);
-      });
-    };
-    const onSuccess = (response, file, xhr) => {
-      try {
-        if (typeof response === "string") {
-          response = JSON.parse(response);
-        }
-      } catch (e3) {
-      }
-      if (!getFileItem(file, mergedFileList)) {
-        return;
-      }
-      const targetItem = file2Obj(file);
-      targetItem.status = "done";
-      targetItem.percent = 100;
-      targetItem.response = response;
-      targetItem.xhr = xhr;
-      const nextFileList = updateFileList(targetItem, mergedFileList);
-      onInternalChange(targetItem, nextFileList);
-    };
-    const onProgress = (e3, file) => {
-      if (!getFileItem(file, mergedFileList)) {
-        return;
-      }
-      const targetItem = file2Obj(file);
-      targetItem.status = "uploading";
-      targetItem.percent = e3.percent;
-      const nextFileList = updateFileList(targetItem, mergedFileList);
-      onInternalChange(targetItem, nextFileList, e3);
-    };
-    const onError = (error, response, file) => {
-      if (!getFileItem(file, mergedFileList)) {
-        return;
-      }
-      const targetItem = file2Obj(file);
-      targetItem.error = error;
-      targetItem.response = response;
-      targetItem.status = "error";
-      const nextFileList = updateFileList(targetItem, mergedFileList);
-      onInternalChange(targetItem, nextFileList);
-    };
-    const handleRemove = (file) => {
-      let currentFile;
-      Promise.resolve(typeof onRemove === "function" ? onRemove(file) : onRemove).then((ret) => {
-        var _a;
-        if (ret === false) {
-          return;
-        }
-        const removedFileList = removeFileItem(file, mergedFileList);
-        if (removedFileList) {
-          currentFile = __spreadProps(__spreadValues({}, file), {
-            status: "removed"
-          });
-          mergedFileList == null ? void 0 : mergedFileList.forEach((item) => {
-            const matchKey = currentFile.uid !== void 0 ? "uid" : "name";
-            if (item[matchKey] === currentFile[matchKey] && !Object.isFrozen(item)) {
-              item.status = "removed";
-            }
-          });
-          (_a = uploadRef.current) == null ? void 0 : _a.abort(currentFile);
-          onInternalChange(currentFile, removedFileList);
-        }
-      });
-    };
-    const onFileDrop = (e3) => {
-      setDragState(e3.type);
-      if (e3.type === "drop") {
-        onDrop == null ? void 0 : onDrop(e3);
-      }
-    };
-    React391.useImperativeHandle(ref, () => ({
-      onBatchStart,
-      onSuccess,
-      onProgress,
-      onError,
-      fileList: mergedFileList,
-      upload: uploadRef.current,
-      nativeElement: wrapRef.current
-    }));
-    const {
-      getPrefixCls,
-      direction,
-      className: contextClassName,
-      style: contextStyle,
-      classNames: contextClassNames,
-      styles: contextStyles
-    } = useComponentConfig("upload");
-    const prefixCls = getPrefixCls("upload", customizePrefixCls);
-    const mergedProps = __spreadProps(__spreadValues({}, props), {
-      listType,
-      showUploadList,
-      type: type5,
-      multiple,
-      hasControlInside,
-      supportServerRender,
-      disabled: mergedDisabled
-    });
-    const [mergedClassNames, mergedStyles] = useMergeSemantic([contextClassNames, classNames], [contextStyles, styles], {
-      props: mergedProps
-    });
-    const rcUploadProps = __spreadProps(__spreadValues({
-      onBatchStart,
-      onError,
-      onProgress,
-      onSuccess
-    }, props), {
-      customRequest,
-      data,
-      multiple,
-      action,
-      accept,
-      supportServerRender,
-      prefixCls,
-      disabled: mergedDisabled,
-      beforeUpload: mergedBeforeUpload,
-      onChange: void 0,
-      hasControlInside
-    });
-    delete rcUploadProps.className;
-    delete rcUploadProps.style;
-    if (!children || mergedDisabled) {
-      delete rcUploadProps.id;
-    }
-    const wrapperCls = `${prefixCls}-wrapper`;
-    const [hashId, cssVarCls] = style_default24(prefixCls, wrapperCls);
-    const [contextLocale] = useLocale_default("Upload", en_US_default6.Upload);
-    const {
-      showRemoveIcon,
-      showPreviewIcon,
-      showDownloadIcon,
-      removeIcon,
-      previewIcon,
-      downloadIcon,
-      extra
-    } = typeof showUploadList === "boolean" ? {} : showUploadList;
-    const realShowRemoveIcon = typeof showRemoveIcon === "undefined" ? !mergedDisabled : showRemoveIcon;
-    const renderUploadList = (button, buttonVisible) => {
-      if (!showUploadList) {
-        return button;
-      }
-      return /* @__PURE__ */ React391.createElement(UploadList_default, {
-        classNames: mergedClassNames,
-        styles: mergedStyles,
-        prefixCls,
-        listType,
-        items: mergedFileList,
-        previewFile,
-        onPreview,
-        onDownload,
-        onRemove: handleRemove,
-        showRemoveIcon: realShowRemoveIcon,
-        showPreviewIcon,
-        showDownloadIcon,
-        removeIcon,
-        previewIcon,
-        downloadIcon,
-        iconRender,
-        extra,
-        locale: __spreadValues(__spreadValues({}, contextLocale), propLocale),
-        isImageUrl: isImageUrl2,
-        progress,
-        appendAction: button,
-        appendActionVisible: buttonVisible,
-        itemRender,
-        disabled: mergedDisabled
-      });
-    };
-    const mergedRootCls = clsx(wrapperCls, className, rootClassName, hashId, cssVarCls, contextClassName, mergedClassNames.root, {
-      [`${prefixCls}-rtl`]: direction === "rtl",
-      [`${prefixCls}-picture-card-wrapper`]: listType === "picture-card",
-      [`${prefixCls}-picture-circle-wrapper`]: listType === "picture-circle"
-    });
-    const mergedRootStyle = __spreadValues({}, mergedStyles.root);
-    const mergedStyle = __spreadValues(__spreadValues({}, contextStyle), style2);
-    if (type5 === "drag") {
-      const dragCls = clsx(hashId, prefixCls, `${prefixCls}-drag`, {
-        [`${prefixCls}-drag-uploading`]: mergedFileList.some((file) => file.status === "uploading"),
-        [`${prefixCls}-drag-hover`]: dragState === "dragover",
-        [`${prefixCls}-disabled`]: mergedDisabled,
-        [`${prefixCls}-rtl`]: direction === "rtl"
-      }, mergedClassNames.trigger);
-      return /* @__PURE__ */ React391.createElement("span", {
-        className: mergedRootCls,
-        ref: wrapRef,
-        style: mergedRootStyle
-      }, /* @__PURE__ */ React391.createElement("div", {
-        className: dragCls,
-        style: __spreadValues(__spreadValues({}, mergedStyle), mergedStyles.trigger),
-        onDrop: onFileDrop,
-        onDragOver: onFileDrop,
-        onDragLeave: onFileDrop
-      }, /* @__PURE__ */ React391.createElement(es_default19, __spreadProps(__spreadValues({}, rcUploadProps), {
-        ref: uploadRef,
-        className: `${prefixCls}-btn`
-      }), /* @__PURE__ */ React391.createElement("div", {
-        className: `${prefixCls}-drag-container`
-      }, children))), renderUploadList());
-    }
-    const uploadBtnCls = clsx(prefixCls, `${prefixCls}-select`, {
-      [`${prefixCls}-disabled`]: mergedDisabled,
-      [`${prefixCls}-hidden`]: !children
-    }, mergedClassNames.trigger);
-    const uploadButton = /* @__PURE__ */ React391.createElement("div", {
-      className: uploadBtnCls,
-      style: __spreadValues(__spreadValues({}, mergedStyle), mergedStyles.trigger)
-    }, /* @__PURE__ */ React391.createElement(es_default19, __spreadProps(__spreadValues({}, rcUploadProps), {
-      ref: uploadRef
-    })));
-    if (listType === "picture-card" || listType === "picture-circle") {
-      return /* @__PURE__ */ React391.createElement("span", {
-        className: mergedRootCls,
-        ref: wrapRef,
-        style: mergedRootStyle
-      }, renderUploadList(uploadButton, !!children));
-    }
-    return /* @__PURE__ */ React391.createElement("span", {
-      className: mergedRootCls,
-      ref: wrapRef,
-      style: mergedRootStyle
-    }, uploadButton, renderUploadList());
-  };
-  var Upload2 = /* @__PURE__ */ React391.forwardRef(InternalUpload);
-  if (true) {
-    Upload2.displayName = "Upload";
-  }
-  var Upload_default2 = Upload2;
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/EditOutlined.js
+  var React397 = __toESM(require_react());
 
-  // ../custom_dashboard/node_modules/antd/es/upload/Dragger.js
-  "use client";
-  var Dragger = /* @__PURE__ */ React392.forwardRef((props, ref) => {
-    const _a = props, {
-      style: style2,
-      height,
-      hasControlInside = false,
-      children
-    } = _a, restProps = __objRest(_a, [
-      "style",
-      "height",
-      "hasControlInside",
-      "children"
-    ]);
-    const mergedStyle = __spreadProps(__spreadValues({}, style2), {
-      height
-    });
-    return /* @__PURE__ */ React392.createElement(Upload_default2, __spreadProps(__spreadValues({
-      ref,
-      hasControlInside
-    }, restProps), {
-      style: mergedStyle,
-      type: "drag"
-    }), children);
-  });
-  if (true) {
-    Dragger.displayName = "Dragger";
-  }
-  var Dragger_default = Dragger;
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/EditOutlined.js
+  var EditOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M257.7 752c2 0 4-.2 6-.5L431.9 722c2-.4 3.9-1.3 5.3-2.8l423.9-423.9a9.96 9.96 0 000-14.1L694.9 114.9c-1.9-1.9-4.4-2.9-7.1-2.9s-5.2 1-7.1 2.9L256.8 538.8c-1.5 1.5-2.4 3.3-2.8 5.3l-29.5 168.2a33.5 33.5 0 009.4 29.8c6.6 6.4 14.9 9.9 23.8 9.9zm67.4-174.4L687.8 215l73.3 73.3-362.7 362.6-88.9 15.7 15.6-89zM880 836H144c-17.7 0-32 14.3-32 32v36c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-36c0-17.7-14.3-32-32-32z" } }] }, "name": "edit", "theme": "outlined" };
+  var EditOutlined_default = EditOutlined;
 
-  // ../custom_dashboard/node_modules/antd/es/upload/index.js
-  "use client";
-  var Upload3 = Upload_default2;
-  Upload3.Dragger = Dragger_default;
-  Upload3.LIST_IGNORE = LIST_IGNORE;
-  var upload_default = Upload3;
-
-  // ../custom_dashboard/node_modules/antd/es/index.js
-  "use client";
-  if (true) {
-    const majorVersion = getReactMajorVersion();
-    true ? warning_default2(majorVersion >= 18, "version", `antd v6 no longer supports React versions below 18. Please upgrade to React 18 or higher.`) : void 0;
-  }
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/BarChartOutlined.js
-  var React393 = __toESM(require_react());
-
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/BarChartOutlined.js
-  var BarChartOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M888 792H200V168c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v688c0 4.4 3.6 8 8 8h752c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm-600-80h56c4.4 0 8-3.6 8-8V560c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v144c0 4.4 3.6 8 8 8zm152 0h56c4.4 0 8-3.6 8-8V384c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v320c0 4.4 3.6 8 8 8zm152 0h56c4.4 0 8-3.6 8-8V462c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v242c0 4.4 3.6 8 8 8zm152 0h56c4.4 0 8-3.6 8-8V304c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v400c0 4.4 3.6 8 8 8z" } }] }, "name": "bar-chart", "theme": "outlined" };
-  var BarChartOutlined_default = BarChartOutlined;
-
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/BarChartOutlined.js
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/EditOutlined.js
   function _extends93() {
     _extends93 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -80035,24 +81624,27 @@ html body {
     };
     return _extends93.apply(this, arguments);
   }
-  var BarChartOutlined2 = (props, ref) => /* @__PURE__ */ React393.createElement(AntdIcon_default, _extends93({}, props, {
+  var EditOutlined2 = (props, ref) => /* @__PURE__ */ React397.createElement(AntdIcon_default, _extends93({}, props, {
     ref,
-    icon: BarChartOutlined_default
+    icon: EditOutlined_default
   }));
-  var RefIcon34 = /* @__PURE__ */ React393.forwardRef(BarChartOutlined2);
+  var RefIcon33 = /* @__PURE__ */ React397.forwardRef(EditOutlined2);
   if (true) {
-    RefIcon34.displayName = "BarChartOutlined";
+    RefIcon33.displayName = "EditOutlined";
   }
-  var BarChartOutlined_default2 = RefIcon34;
+  var EditOutlined_default2 = RefIcon33;
 
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/DashboardOutlined.js
-  var React394 = __toESM(require_react());
+  // ../custom_dashboard/node_modules/antd/es/typography/Editable.js
+  var React399 = __toESM(require_react());
 
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/DashboardOutlined.js
-  var DashboardOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M924.8 385.6a446.7 446.7 0 00-96-142.4 446.7 446.7 0 00-142.4-96C631.1 123.8 572.5 112 512 112s-119.1 11.8-174.4 35.2a446.7 446.7 0 00-142.4 96 446.7 446.7 0 00-96 142.4C75.8 440.9 64 499.5 64 560c0 132.7 58.3 257.7 159.9 343.1l1.7 1.4c5.8 4.8 13.1 7.5 20.6 7.5h531.7c7.5 0 14.8-2.7 20.6-7.5l1.7-1.4C901.7 817.7 960 692.7 960 560c0-60.5-11.9-119.1-35.2-174.4zM761.4 836H262.6A371.12 371.12 0 01140 560c0-99.4 38.7-192.8 109-263 70.3-70.3 163.7-109 263-109 99.4 0 192.8 38.7 263 109 70.3 70.3 109 163.7 109 263 0 105.6-44.5 205.5-122.6 276zM623.5 421.5a8.03 8.03 0 00-11.3 0L527.7 506c-18.7-5-39.4-.2-54.1 14.5a55.95 55.95 0 000 79.2 55.95 55.95 0 0079.2 0 55.87 55.87 0 0014.5-54.1l84.5-84.5c3.1-3.1 3.1-8.2 0-11.3l-28.3-28.3zM490 320h44c4.4 0 8-3.6 8-8v-80c0-4.4-3.6-8-8-8h-44c-4.4 0-8 3.6-8 8v80c0 4.4 3.6 8 8 8zm260 218v44c0 4.4 3.6 8 8 8h80c4.4 0 8-3.6 8-8v-44c0-4.4-3.6-8-8-8h-80c-4.4 0-8 3.6-8 8zm12.7-197.2l-31.1-31.1a8.03 8.03 0 00-11.3 0l-56.6 56.6a8.03 8.03 0 000 11.3l31.1 31.1c3.1 3.1 8.2 3.1 11.3 0l56.6-56.6c3.1-3.1 3.1-8.2 0-11.3zm-458.6-31.1a8.03 8.03 0 00-11.3 0l-31.1 31.1a8.03 8.03 0 000 11.3l56.6 56.6c3.1 3.1 8.2 3.1 11.3 0l31.1-31.1c3.1-3.1 3.1-8.2 0-11.3l-56.6-56.6zM262 530h-80c-4.4 0-8 3.6-8 8v44c0 4.4 3.6 8 8 8h80c4.4 0 8-3.6 8-8v-44c0-4.4-3.6-8-8-8z" } }] }, "name": "dashboard", "theme": "outlined" };
-  var DashboardOutlined_default = DashboardOutlined;
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/EnterOutlined.js
+  var React398 = __toESM(require_react());
 
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/DashboardOutlined.js
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/EnterOutlined.js
+  var EnterOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M864 170h-60c-4.4 0-8 3.6-8 8v518H310v-73c0-6.7-7.8-10.5-13-6.3l-141.9 112a8 8 0 000 12.6l141.9 112c5.3 4.2 13 .4 13-6.3v-75h498c35.3 0 64-28.7 64-64V178c0-4.4-3.6-8-8-8z" } }] }, "name": "enter", "theme": "outlined" };
+  var EnterOutlined_default = EnterOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/EnterOutlined.js
   function _extends94() {
     _extends94 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -80067,24 +81659,642 @@ html body {
     };
     return _extends94.apply(this, arguments);
   }
-  var DashboardOutlined2 = (props, ref) => /* @__PURE__ */ React394.createElement(AntdIcon_default, _extends94({}, props, {
+  var EnterOutlined2 = (props, ref) => /* @__PURE__ */ React398.createElement(AntdIcon_default, _extends94({}, props, {
     ref,
-    icon: DashboardOutlined_default
+    icon: EnterOutlined_default
   }));
-  var RefIcon35 = /* @__PURE__ */ React394.forwardRef(DashboardOutlined2);
+  var RefIcon34 = /* @__PURE__ */ React398.forwardRef(EnterOutlined2);
   if (true) {
-    RefIcon35.displayName = "DashboardOutlined";
+    RefIcon34.displayName = "EnterOutlined";
   }
-  var DashboardOutlined_default2 = RefIcon35;
+  var EnterOutlined_default2 = RefIcon34;
 
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/DatabaseOutlined.js
-  var React395 = __toESM(require_react());
+  // ../custom_dashboard/node_modules/antd/es/typography/style/mixins.js
+  var getTitleStyle = (fontSize, lineHeight, color, token2) => {
+    const {
+      titleMarginBottom,
+      fontWeightStrong
+    } = token2;
+    return {
+      marginBottom: titleMarginBottom,
+      color,
+      fontWeight: fontWeightStrong,
+      fontSize,
+      lineHeight
+    };
+  };
+  var getTitleStyles = (token2) => {
+    const headings = [1, 2, 3, 4, 5];
+    const styles = {};
+    headings.forEach((headingLevel) => {
+      styles[`
+      h${headingLevel}&,
+      div&-h${headingLevel},
+      div&-h${headingLevel} > textarea,
+      h${headingLevel}
+    `] = getTitleStyle(token2[`fontSizeHeading${headingLevel}`], token2[`lineHeightHeading${headingLevel}`], token2.colorTextHeading, token2);
+    });
+    return styles;
+  };
+  var getLinkStyles = (token2) => {
+    const {
+      componentCls
+    } = token2;
+    const linkCls = `${componentCls}-link`;
+    return {
+      [`&${linkCls}`]: __spreadProps(__spreadValues({}, operationUnit(token2)), {
+        userSelect: "text",
+        [`&[disabled], &${componentCls}-disabled`]: {
+          color: token2.colorTextDisabled,
+          cursor: "not-allowed",
+          "&:active, &:hover": {
+            color: token2.colorTextDisabled
+          },
+          "&:active": {
+            pointerEvents: "none"
+          }
+        }
+      })
+    };
+  };
+  var getResetStyles = (token2) => ({
+    code: {
+      margin: "0 0.2em",
+      paddingInline: "0.4em",
+      paddingBlock: "0.2em 0.1em",
+      fontSize: "85%",
+      fontFamily: token2.fontFamilyCode,
+      background: "rgba(150, 150, 150, 0.1)",
+      border: "1px solid rgba(100, 100, 100, 0.2)",
+      borderRadius: 3
+    },
+    kbd: {
+      margin: "0 0.2em",
+      paddingInline: "0.4em",
+      paddingBlock: "0.15em 0.1em",
+      fontSize: "90%",
+      fontFamily: token2.fontFamilyCode,
+      background: "rgba(150, 150, 150, 0.06)",
+      border: "1px solid rgba(100, 100, 100, 0.2)",
+      borderBottomWidth: 2,
+      borderRadius: 3
+    },
+    mark: {
+      padding: 0,
+      backgroundColor: gold[2]
+    },
+    "u, ins": {
+      textDecoration: "underline",
+      textDecorationSkipInk: "auto"
+    },
+    "s, del": {
+      textDecoration: "line-through"
+    },
+    strong: {
+      fontWeight: token2.fontWeightStrong
+    },
+    "ul, ol": {
+      marginInline: 0,
+      marginBlock: "0 1em",
+      padding: 0,
+      li: {
+        marginInline: "20px 0",
+        marginBlock: 0,
+        paddingInline: "4px 0",
+        paddingBlock: 0
+      }
+    },
+    ul: {
+      listStyleType: "circle",
+      ul: {
+        listStyleType: "disc"
+      }
+    },
+    ol: {
+      listStyleType: "decimal"
+    },
+    "pre, blockquote": {
+      margin: "1em 0"
+    },
+    pre: {
+      padding: "0.4em 0.6em",
+      whiteSpace: "pre-wrap",
+      wordWrap: "break-word",
+      background: "rgba(150, 150, 150, 0.1)",
+      border: "1px solid rgba(100, 100, 100, 0.2)",
+      borderRadius: 3,
+      fontFamily: token2.fontFamilyCode,
+      code: {
+        display: "inline",
+        margin: 0,
+        padding: 0,
+        fontSize: "inherit",
+        fontFamily: "inherit",
+        background: "transparent",
+        border: 0
+      }
+    },
+    blockquote: {
+      paddingInline: "0.6em 0",
+      paddingBlock: 0,
+      borderInlineStart: "4px solid rgba(100, 100, 100, 0.2)",
+      opacity: 0.85
+    }
+  });
+  var getEditableStyles = (token2) => {
+    const {
+      componentCls,
+      paddingSM
+    } = token2;
+    const inputShift = paddingSM;
+    return {
+      "&-edit-content": {
+        position: "relative",
+        "div&": {
+          insetInlineStart: token2.calc(token2.paddingSM).mul(-1).equal(),
+          insetBlockStart: token2.calc(inputShift).div(-2).add(1).equal(),
+          marginBottom: token2.calc(inputShift).div(2).sub(2).equal()
+        },
+        [`${componentCls}-edit-content-confirm`]: {
+          position: "absolute",
+          insetInlineEnd: token2.calc(token2.marginXS).add(2).equal(),
+          insetBlockEnd: token2.marginXS,
+          color: token2.colorIcon,
+          fontWeight: "normal",
+          fontSize: token2.fontSize,
+          fontStyle: "normal",
+          pointerEvents: "none"
+        },
+        textarea: {
+          margin: "0!important",
+          MozTransition: "none",
+          height: "1em"
+        }
+      }
+    };
+  };
+  var getCopyableStyles = (token2) => ({
+    [`${token2.componentCls}-copy-success`]: {
+      [`
+    &,
+    &:hover,
+    &:focus`]: {
+        color: token2.colorSuccess
+      }
+    },
+    [`${token2.componentCls}-copy-icon-only`]: {
+      marginInlineStart: 0
+    }
+  });
+  var getEllipsisStyles = () => ({
+    [`
+  a&-ellipsis,
+  span&-ellipsis
+  `]: {
+      display: "inline-block",
+      maxWidth: "100%"
+    },
+    "&-ellipsis-single-line": {
+      whiteSpace: "nowrap",
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+      "a&, span&": {
+        verticalAlign: "bottom"
+      },
+      "> code": {
+        paddingBlock: 0,
+        maxWidth: "calc(100% - 1.2em)",
+        display: "inline-block",
+        overflow: "hidden",
+        textOverflow: "ellipsis",
+        verticalAlign: "bottom",
+        boxSizing: "content-box"
+      }
+    },
+    "&-ellipsis-multiple-line": {
+      display: "-webkit-box",
+      overflow: "hidden",
+      WebkitLineClamp: 3,
+      WebkitBoxOrient: "vertical"
+    }
+  });
 
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/DatabaseOutlined.js
-  var DatabaseOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M832 64H192c-17.7 0-32 14.3-32 32v832c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V96c0-17.7-14.3-32-32-32zm-600 72h560v208H232V136zm560 480H232V408h560v208zm0 272H232V680h560v208zM304 240a40 40 0 1080 0 40 40 0 10-80 0zm0 272a40 40 0 1080 0 40 40 0 10-80 0zm0 272a40 40 0 1080 0 40 40 0 10-80 0z" } }] }, "name": "database", "theme": "outlined" };
-  var DatabaseOutlined_default = DatabaseOutlined;
+  // ../custom_dashboard/node_modules/antd/es/typography/style/index.js
+  var genTypographyStyle = (token2) => {
+    const {
+      componentCls,
+      titleMarginTop
+    } = token2;
+    return {
+      [componentCls]: __spreadProps(__spreadValues(__spreadValues(__spreadValues(__spreadProps(__spreadValues(__spreadValues(__spreadProps(__spreadValues({
+        color: token2.colorText,
+        wordBreak: "break-word",
+        lineHeight: token2.lineHeight,
+        [`&${componentCls}-secondary, &${componentCls}-link${componentCls}-secondary`]: {
+          color: token2.colorTextDescription
+        },
+        [`&${componentCls}-success, &${componentCls}-link${componentCls}-success`]: {
+          color: token2.colorSuccessText
+        },
+        [`&${componentCls}-warning, &${componentCls}-link${componentCls}-warning`]: {
+          color: token2.colorWarningText
+        },
+        [`&${componentCls}-danger, &${componentCls}-link${componentCls}-danger`]: {
+          color: token2.colorErrorText,
+          [`&${componentCls}-link:active, &${componentCls}-link:focus`]: {
+            color: token2.colorErrorTextActive
+          },
+          [`&${componentCls}-link:hover`]: {
+            color: token2.colorErrorTextHover
+          }
+        },
+        [`&${componentCls}-disabled`]: {
+          color: token2.colorTextDisabled,
+          cursor: "not-allowed",
+          userSelect: "none"
+        },
+        [`
+        div&,
+        p
+      `]: {
+          marginBottom: "1em"
+        }
+      }, getTitleStyles(token2)), {
+        [`
+      & + h1${componentCls},
+      & + h2${componentCls},
+      & + h3${componentCls},
+      & + h4${componentCls},
+      & + h5${componentCls}
+      `]: {
+          marginTop: titleMarginTop
+        },
+        [`
+      div,
+      ul,
+      li,
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5`]: {
+          [`
+        + h1,
+        + h2,
+        + h3,
+        + h4,
+        + h5
+        `]: {
+            marginTop: titleMarginTop
+          }
+        }
+      }), getResetStyles(token2)), getLinkStyles(token2)), {
+        [`${componentCls}-actions`]: {
+          display: "inline"
+        },
+        [`
+        ${componentCls}-expand,
+        ${componentCls}-collapse,
+        ${componentCls}-edit,
+        ${componentCls}-copy
+      `]: __spreadProps(__spreadValues({}, operationUnit(token2)), {
+          marginInlineStart: token2.marginXXS
+        })
+      }), getEditableStyles(token2)), getCopyableStyles(token2)), getEllipsisStyles()), {
+        "&-rtl": {
+          direction: "rtl"
+        }
+      })
+    };
+  };
+  var prepareComponentToken21 = () => ({
+    titleMarginTop: "1.2em",
+    titleMarginBottom: "0.5em"
+  });
+  var style_default26 = genStyleHooks("Typography", genTypographyStyle, prepareComponentToken21);
 
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/DatabaseOutlined.js
+  // ../custom_dashboard/node_modules/antd/es/typography/Editable.js
+  "use client";
+  var Editable = (props) => {
+    const {
+      prefixCls,
+      "aria-label": ariaLabel,
+      className,
+      style: style2,
+      direction,
+      maxLength,
+      autoSize = true,
+      value,
+      onSave,
+      onCancel,
+      onEnd,
+      component,
+      enterIcon = /* @__PURE__ */ React399.createElement(EnterOutlined_default2, null)
+    } = props;
+    const ref = React399.useRef(null);
+    const inCompositionRef = React399.useRef(false);
+    const lastKeyCodeRef = React399.useRef(null);
+    const [current, setCurrent] = React399.useState(value);
+    React399.useEffect(() => {
+      setCurrent(value);
+    }, [value]);
+    React399.useEffect(() => {
+      var _a;
+      if ((_a = ref.current) == null ? void 0 : _a.resizableTextArea) {
+        const {
+          textArea
+        } = ref.current.resizableTextArea;
+        textArea.focus();
+        const {
+          length: length2
+        } = textArea.value;
+        textArea.setSelectionRange(length2, length2);
+      }
+    }, []);
+    const onChange = ({
+      target
+    }) => {
+      setCurrent(target.value.replace(/[\n\r]/g, ""));
+    };
+    const onCompositionStart = () => {
+      inCompositionRef.current = true;
+    };
+    const onCompositionEnd = () => {
+      inCompositionRef.current = false;
+    };
+    const onKeyDown2 = ({
+      keyCode
+    }) => {
+      if (inCompositionRef.current) {
+        return;
+      }
+      lastKeyCodeRef.current = keyCode;
+    };
+    const confirmChange = () => {
+      onSave(current.trim());
+    };
+    const onKeyUp = ({
+      keyCode,
+      ctrlKey,
+      altKey,
+      metaKey,
+      shiftKey
+    }) => {
+      if (lastKeyCodeRef.current !== keyCode || inCompositionRef.current || ctrlKey || altKey || metaKey || shiftKey) {
+        return;
+      }
+      if (keyCode === KeyCode_default.ENTER) {
+        confirmChange();
+        onEnd == null ? void 0 : onEnd();
+      } else if (keyCode === KeyCode_default.ESC) {
+        onCancel();
+      }
+    };
+    const onBlur = () => {
+      confirmChange();
+    };
+    const [hashId, cssVarCls] = style_default26(prefixCls);
+    const textAreaClassName = clsx(prefixCls, `${prefixCls}-edit-content`, {
+      [`${prefixCls}-rtl`]: direction === "rtl",
+      [`${prefixCls}-${component}`]: !!component
+    }, className, hashId, cssVarCls);
+    return /* @__PURE__ */ React399.createElement("div", {
+      className: textAreaClassName,
+      style: style2
+    }, /* @__PURE__ */ React399.createElement(TextArea_default2, {
+      ref,
+      maxLength,
+      value: current,
+      onChange,
+      onKeyDown: onKeyDown2,
+      onKeyUp,
+      onCompositionStart,
+      onCompositionEnd,
+      onBlur,
+      "aria-label": ariaLabel,
+      rows: 1,
+      autoSize
+    }), enterIcon !== null ? cloneElement5(enterIcon, {
+      className: `${prefixCls}-edit-content-confirm`
+    }) : null);
+  };
+  var Editable_default = Editable;
+
+  // ../custom_dashboard/node_modules/antd/es/typography/hooks/useCopyClick.js
+  var React400 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/antd/es/_util/copy.js
+  var execCopy = (text, isHtmlFormat) => {
+    let copySuccess = false;
+    const onCopy = (event) => {
+      var _a, _b, _c;
+      event.stopPropagation();
+      event.preventDefault();
+      (_a = event.clipboardData) == null ? void 0 : _a.clearData();
+      (_b = event.clipboardData) == null ? void 0 : _b.setData("text/plain", text);
+      if (isHtmlFormat) {
+        (_c = event.clipboardData) == null ? void 0 : _c.setData("text/html", text);
+      }
+      copySuccess = true;
+    };
+    try {
+      document.addEventListener("copy", onCopy, {
+        capture: true
+      });
+      document.execCommand("copy");
+      return copySuccess;
+    } catch (e3) {
+      return false;
+    } finally {
+      document.removeEventListener("copy", onCopy, {
+        capture: true
+      });
+    }
+  };
+  var asyncCopy = async (text, isHtmlFormat) => {
+    try {
+      if (isHtmlFormat) {
+        await navigator.clipboard.write([new ClipboardItem({
+          "text/html": new Blob([text], {
+            type: "text/html"
+          }),
+          "text/plain": new Blob([text], {
+            type: "text/plain"
+          })
+        })]);
+      } else {
+        await navigator.clipboard.writeText(text);
+      }
+      return true;
+    } catch (e3) {
+      return false;
+    }
+  };
+  async function copy2(text, config) {
+    if (typeof text !== "string") {
+      true ? warning_default2(false, "The clipboard content must be of string type", "") : void 0;
+      return false;
+    }
+    const isHtmlFormat = (config == null ? void 0 : config.format) === "text/html";
+    if (await asyncCopy(text, isHtmlFormat)) {
+      return true;
+    }
+    if (execCopy(text, isHtmlFormat)) {
+      return true;
+    }
+    return false;
+  }
+  var copy_default = copy2;
+
+  // ../custom_dashboard/node_modules/antd/es/typography/hooks/useCopyClick.js
+  var useCopyClick = ({
+    copyConfig,
+    children
+  }) => {
+    const [copied, setCopied] = React400.useState(false);
+    const [copyLoading, setCopyLoading] = React400.useState(false);
+    const copyIdRef = React400.useRef(null);
+    const cleanCopyId = () => {
+      if (copyIdRef.current) {
+        clearTimeout(copyIdRef.current);
+      }
+    };
+    const copyOptions = {};
+    if (copyConfig.format) {
+      copyOptions.format = copyConfig.format;
+    }
+    React400.useEffect(() => cleanCopyId, []);
+    const onClick = useEvent_default(async (e3) => {
+      var _a;
+      e3 == null ? void 0 : e3.preventDefault();
+      e3 == null ? void 0 : e3.stopPropagation();
+      setCopyLoading(true);
+      try {
+        const text = typeof copyConfig.text === "function" ? await copyConfig.text() : copyConfig.text;
+        await copy_default(text || toList_default(children, {
+          skipEmpty: true
+        }).join("") || "", copyOptions);
+        setCopyLoading(false);
+        setCopied(true);
+        cleanCopyId();
+        copyIdRef.current = setTimeout(() => {
+          setCopied(false);
+        }, 3e3);
+        (_a = copyConfig.onCopy) == null ? void 0 : _a.call(copyConfig, e3);
+      } catch (error) {
+        setCopyLoading(false);
+        throw error;
+      }
+    });
+    return {
+      copied,
+      copyLoading,
+      onClick
+    };
+  };
+  var useCopyClick_default = useCopyClick;
+
+  // ../custom_dashboard/node_modules/antd/es/typography/hooks/useMergedConfig.js
+  var React401 = __toESM(require_react());
+  function useMergedConfig(propConfig, templateConfig) {
+    return React401.useMemo(() => {
+      const support = !!propConfig;
+      return [support, __spreadValues(__spreadValues({}, templateConfig), support && typeof propConfig === "object" ? propConfig : null)];
+    }, [propConfig]);
+  }
+
+  // ../custom_dashboard/node_modules/antd/es/typography/hooks/usePrevious.js
+  var import_react140 = __toESM(require_react());
+  var usePrevious = (value) => {
+    const ref = (0, import_react140.useRef)(void 0);
+    (0, import_react140.useEffect)(() => {
+      ref.current = value;
+    });
+    return ref.current;
+  };
+  var usePrevious_default = usePrevious;
+
+  // ../custom_dashboard/node_modules/antd/es/typography/hooks/useTooltipProps.js
+  var import_react141 = __toESM(require_react());
+  var useTooltipProps = (tooltip, editConfigText, children) => (0, import_react141.useMemo)(() => {
+    if (tooltip === true) {
+      return {
+        title: editConfigText != null ? editConfigText : children
+      };
+    }
+    if (/* @__PURE__ */ (0, import_react141.isValidElement)(tooltip)) {
+      return {
+        title: tooltip
+      };
+    }
+    if (typeof tooltip === "object") {
+      return __spreadValues({
+        title: editConfigText != null ? editConfigText : children
+      }, tooltip);
+    }
+    return {
+      title: tooltip
+    };
+  }, [tooltip, editConfigText, children]);
+  var useTooltipProps_default = useTooltipProps;
+
+  // ../custom_dashboard/node_modules/antd/es/typography/Typography.js
+  var React402 = __toESM(require_react());
+  "use client";
+  var Typography = /* @__PURE__ */ React402.forwardRef((props, ref) => {
+    const _a = props, {
+      prefixCls: customizePrefixCls,
+      component: Component5 = "article",
+      className,
+      rootClassName,
+      children,
+      direction: typographyDirection,
+      style: style2
+    } = _a, restProps = __objRest(_a, [
+      "prefixCls",
+      "component",
+      "className",
+      "rootClassName",
+      "children",
+      "direction",
+      "style"
+    ]);
+    const {
+      getPrefixCls,
+      direction: contextDirection,
+      className: contextClassName,
+      style: contextStyle
+    } = useComponentConfig("typography");
+    const direction = typographyDirection != null ? typographyDirection : contextDirection;
+    const prefixCls = getPrefixCls("typography", customizePrefixCls);
+    const [hashId, cssVarCls] = style_default26(prefixCls);
+    const componentClassName = clsx(prefixCls, contextClassName, {
+      [`${prefixCls}-rtl`]: direction === "rtl"
+    }, className, rootClassName, hashId, cssVarCls);
+    const mergedStyle = __spreadValues(__spreadValues({}, contextStyle), style2);
+    return /* @__PURE__ */ React402.createElement(Component5, __spreadValues({
+      className: componentClassName,
+      style: mergedStyle,
+      ref
+    }, restProps), children);
+  });
+  if (true) {
+    Typography.displayName = "Typography";
+  }
+  var Typography_default = Typography;
+
+  // ../custom_dashboard/node_modules/antd/es/typography/Base/CopyBtn.js
+  var React404 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CopyOutlined.js
+  var React403 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/CopyOutlined.js
+  var CopyOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z" } }] }, "name": "copy", "theme": "outlined" };
+  var CopyOutlined_default = CopyOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CopyOutlined.js
   function _extends95() {
     _extends95 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -80099,24 +82309,742 @@ html body {
     };
     return _extends95.apply(this, arguments);
   }
-  var DatabaseOutlined2 = (props, ref) => /* @__PURE__ */ React395.createElement(AntdIcon_default, _extends95({}, props, {
+  var CopyOutlined2 = (props, ref) => /* @__PURE__ */ React403.createElement(AntdIcon_default, _extends95({}, props, {
     ref,
-    icon: DatabaseOutlined_default
+    icon: CopyOutlined_default
   }));
-  var RefIcon36 = /* @__PURE__ */ React395.forwardRef(DatabaseOutlined2);
+  var RefIcon35 = /* @__PURE__ */ React403.forwardRef(CopyOutlined2);
   if (true) {
-    RefIcon36.displayName = "DatabaseOutlined";
+    RefIcon35.displayName = "CopyOutlined";
   }
-  var DatabaseOutlined_default2 = RefIcon36;
+  var CopyOutlined_default2 = RefIcon35;
 
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/MenuOutlined.js
-  var React396 = __toESM(require_react());
+  // ../custom_dashboard/node_modules/antd/es/typography/Base/util.js
+  var toCopyConfigList = (val) => {
+    if (val === false) {
+      return [false, false];
+    }
+    return toList_default(val);
+  };
+  function getNode(dom, defaultNode, needDom) {
+    if (dom === true || dom === void 0) {
+      return defaultNode;
+    }
+    return dom || needDom && defaultNode;
+  }
+  function isEleEllipsis(ele) {
+    const childDiv = document.createElement("em");
+    ele.appendChild(childDiv);
+    if (true) {
+      childDiv.className = "ant-typography-css-ellipsis-content-measure";
+    }
+    const rect = ele.getBoundingClientRect();
+    const childRect = childDiv.getBoundingClientRect();
+    ele.removeChild(childDiv);
+    return rect.left > childRect.left || childRect.right > rect.right || rect.top > childRect.top || childRect.bottom > rect.bottom;
+  }
+  var isValidText = (val) => ["string", "number"].includes(typeof val);
 
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/MenuOutlined.js
-  var MenuOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z" } }] }, "name": "menu", "theme": "outlined" };
-  var MenuOutlined_default = MenuOutlined;
+  // ../custom_dashboard/node_modules/antd/es/typography/Base/CopyBtn.js
+  "use client";
+  var CopyBtn = (props) => {
+    const {
+      prefixCls,
+      copied,
+      locale: locale6,
+      iconOnly,
+      tooltips,
+      icon,
+      tabIndex,
+      onCopy,
+      loading: btnLoading
+    } = props;
+    const tooltipNodes = toCopyConfigList(tooltips);
+    const iconNodes = toCopyConfigList(icon);
+    const {
+      copied: copiedText,
+      copy: copyText
+    } = locale6 != null ? locale6 : {};
+    const systemStr = copied ? copiedText : copyText;
+    const copyTitle = getNode(tooltipNodes[copied ? 1 : 0], systemStr);
+    const ariaLabel = typeof copyTitle === "string" ? copyTitle : systemStr;
+    return /* @__PURE__ */ React404.createElement(tooltip_default, {
+      title: copyTitle
+    }, /* @__PURE__ */ React404.createElement("button", {
+      type: "button",
+      className: clsx(`${prefixCls}-copy`, {
+        [`${prefixCls}-copy-success`]: copied,
+        [`${prefixCls}-copy-icon-only`]: iconOnly
+      }),
+      onClick: onCopy,
+      "aria-label": ariaLabel,
+      tabIndex
+    }, copied ? getNode(iconNodes[1], /* @__PURE__ */ React404.createElement(CheckOutlined_default2, null), true) : getNode(iconNodes[0], btnLoading ? /* @__PURE__ */ React404.createElement(LoadingOutlined_default2, null) : /* @__PURE__ */ React404.createElement(CopyOutlined_default2, null), true)));
+  };
+  var CopyBtn_default = CopyBtn;
 
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/MenuOutlined.js
+  // ../custom_dashboard/node_modules/antd/es/typography/Base/Ellipsis.js
+  var React405 = __toESM(require_react());
+  "use client";
+  var MeasureText = /* @__PURE__ */ React405.forwardRef(({
+    style: style2,
+    children
+  }, ref) => {
+    const spanRef = React405.useRef(null);
+    React405.useImperativeHandle(ref, () => ({
+      isExceed: () => {
+        const span = spanRef.current;
+        return span.scrollHeight > span.clientHeight;
+      },
+      getHeight: () => spanRef.current.clientHeight
+    }));
+    return /* @__PURE__ */ React405.createElement("span", {
+      "aria-hidden": true,
+      ref: spanRef,
+      style: __spreadValues({
+        position: "fixed",
+        display: "block",
+        left: 0,
+        top: 0,
+        pointerEvents: "none",
+        backgroundColor: "rgba(255, 0, 0, 0.65)"
+      }, style2)
+    }, children);
+  });
+  var getNodesLen = (nodeList) => nodeList.reduce((totalLen, node2) => totalLen + (isValidText(node2) ? String(node2).length : 1), 0);
+  function sliceNodes(nodeList, len) {
+    let currLen = 0;
+    const currentNodeList = [];
+    for (let i = 0; i < nodeList.length; i += 1) {
+      if (currLen === len) {
+        return currentNodeList;
+      }
+      const node2 = nodeList[i];
+      const canCut = isValidText(node2);
+      const nodeLen = canCut ? String(node2).length : 1;
+      const nextLen = currLen + nodeLen;
+      if (nextLen > len) {
+        const restLen = len - currLen;
+        currentNodeList.push(String(node2).slice(0, restLen));
+        return currentNodeList;
+      }
+      currentNodeList.push(node2);
+      currLen = nextLen;
+    }
+    return nodeList;
+  }
+  var STATUS_MEASURE_NONE = 0;
+  var STATUS_MEASURE_PREPARE = 1;
+  var STATUS_MEASURE_START = 2;
+  var STATUS_MEASURE_NEED_ELLIPSIS = 3;
+  var STATUS_MEASURE_NO_NEED_ELLIPSIS = 4;
+  var lineClipStyle = {
+    display: "-webkit-box",
+    overflow: "hidden",
+    WebkitBoxOrient: "vertical"
+  };
+  function EllipsisMeasure(props) {
+    const {
+      enableMeasure,
+      width,
+      text,
+      children,
+      rows,
+      expanded,
+      miscDeps,
+      onEllipsis
+    } = props;
+    const nodeList = React405.useMemo(() => toArray(text), [text]);
+    const nodeLen = React405.useMemo(() => getNodesLen(nodeList), [text]);
+    const fullContent = React405.useMemo(() => children(nodeList, false), [text]);
+    const [ellipsisCutIndex, setEllipsisCutIndex] = React405.useState(null);
+    const cutMidRef = React405.useRef(null);
+    const measureWhiteSpaceRef = React405.useRef(null);
+    const needEllipsisRef = React405.useRef(null);
+    const descRowsEllipsisRef = React405.useRef(null);
+    const symbolRowEllipsisRef = React405.useRef(null);
+    const [canEllipsis, setCanEllipsis] = React405.useState(false);
+    const [needEllipsis, setNeedEllipsis] = React405.useState(STATUS_MEASURE_NONE);
+    const [ellipsisHeight, setEllipsisHeight] = React405.useState(0);
+    const [parentWhiteSpace, setParentWhiteSpace] = React405.useState(null);
+    useLayoutEffect_default(() => {
+      if (enableMeasure && width && nodeLen) {
+        setNeedEllipsis(STATUS_MEASURE_PREPARE);
+      } else {
+        setNeedEllipsis(STATUS_MEASURE_NONE);
+      }
+    }, [width, text, rows, enableMeasure, nodeList]);
+    useLayoutEffect_default(() => {
+      var _a, _b, _c, _d;
+      if (needEllipsis === STATUS_MEASURE_PREPARE) {
+        setNeedEllipsis(STATUS_MEASURE_START);
+        const nextWhiteSpace = measureWhiteSpaceRef.current && getComputedStyle(measureWhiteSpaceRef.current).whiteSpace;
+        setParentWhiteSpace(nextWhiteSpace);
+      } else if (needEllipsis === STATUS_MEASURE_START) {
+        const isOverflow = !!((_a = needEllipsisRef.current) == null ? void 0 : _a.isExceed());
+        setNeedEllipsis(isOverflow ? STATUS_MEASURE_NEED_ELLIPSIS : STATUS_MEASURE_NO_NEED_ELLIPSIS);
+        setEllipsisCutIndex(isOverflow ? [0, nodeLen] : null);
+        setCanEllipsis(isOverflow);
+        const baseRowsEllipsisHeight = ((_b = needEllipsisRef.current) == null ? void 0 : _b.getHeight()) || 0;
+        const descRowsEllipsisHeight = rows === 1 ? 0 : ((_c = descRowsEllipsisRef.current) == null ? void 0 : _c.getHeight()) || 0;
+        const symbolRowEllipsisHeight = ((_d = symbolRowEllipsisRef.current) == null ? void 0 : _d.getHeight()) || 0;
+        const maxRowsHeight = Math.max(
+          baseRowsEllipsisHeight,
+          descRowsEllipsisHeight + symbolRowEllipsisHeight
+        );
+        setEllipsisHeight(maxRowsHeight + 1);
+        onEllipsis(isOverflow);
+      }
+    }, [needEllipsis]);
+    const cutMidIndex = ellipsisCutIndex ? Math.ceil((ellipsisCutIndex[0] + ellipsisCutIndex[1]) / 2) : 0;
+    useLayoutEffect_default(() => {
+      var _a;
+      const [minIndex, maxIndex] = ellipsisCutIndex || [0, 0];
+      if (minIndex !== maxIndex) {
+        const midHeight = ((_a = cutMidRef.current) == null ? void 0 : _a.getHeight()) || 0;
+        const isOverflow = midHeight > ellipsisHeight;
+        let targetMidIndex = cutMidIndex;
+        if (maxIndex - minIndex === 1) {
+          targetMidIndex = isOverflow ? minIndex : maxIndex;
+        }
+        setEllipsisCutIndex(isOverflow ? [minIndex, targetMidIndex] : [targetMidIndex, maxIndex]);
+      }
+    }, [ellipsisCutIndex, cutMidIndex]);
+    const finalContent = React405.useMemo(() => {
+      if (!enableMeasure) {
+        return children(nodeList, false);
+      }
+      if (needEllipsis !== STATUS_MEASURE_NEED_ELLIPSIS || !ellipsisCutIndex || ellipsisCutIndex[0] !== ellipsisCutIndex[1]) {
+        const content = children(nodeList, false);
+        if ([STATUS_MEASURE_NO_NEED_ELLIPSIS, STATUS_MEASURE_NONE].includes(needEllipsis)) {
+          return content;
+        }
+        return /* @__PURE__ */ React405.createElement("span", {
+          style: __spreadProps(__spreadValues({}, lineClipStyle), {
+            WebkitLineClamp: rows
+          })
+        }, content);
+      }
+      return children(expanded ? nodeList : sliceNodes(nodeList, ellipsisCutIndex[0]), canEllipsis);
+    }, [expanded, needEllipsis, ellipsisCutIndex, nodeList].concat(_toConsumableArray(miscDeps)));
+    const measureStyle = {
+      width,
+      margin: 0,
+      padding: 0,
+      whiteSpace: parentWhiteSpace === "nowrap" ? "normal" : "inherit"
+    };
+    return /* @__PURE__ */ React405.createElement(React405.Fragment, null, finalContent, needEllipsis === STATUS_MEASURE_START && /* @__PURE__ */ React405.createElement(React405.Fragment, null, /* @__PURE__ */ React405.createElement(MeasureText, {
+      style: __spreadProps(__spreadValues(__spreadValues({}, measureStyle), lineClipStyle), {
+        WebkitLineClamp: rows
+      }),
+      ref: needEllipsisRef
+    }, fullContent), /* @__PURE__ */ React405.createElement(MeasureText, {
+      style: __spreadProps(__spreadValues(__spreadValues({}, measureStyle), lineClipStyle), {
+        WebkitLineClamp: rows - 1
+      }),
+      ref: descRowsEllipsisRef
+    }, fullContent), /* @__PURE__ */ React405.createElement(MeasureText, {
+      style: __spreadProps(__spreadValues(__spreadValues({}, measureStyle), lineClipStyle), {
+        WebkitLineClamp: 1
+      }),
+      ref: symbolRowEllipsisRef
+    }, children([], true))), needEllipsis === STATUS_MEASURE_NEED_ELLIPSIS && ellipsisCutIndex && ellipsisCutIndex[0] !== ellipsisCutIndex[1] && /* @__PURE__ */ React405.createElement(MeasureText, {
+      style: __spreadProps(__spreadValues({}, measureStyle), {
+        top: 400
+      }),
+      ref: cutMidRef
+    }, children(sliceNodes(nodeList, cutMidIndex), true)), needEllipsis === STATUS_MEASURE_PREPARE && /* @__PURE__ */ React405.createElement("span", {
+      style: {
+        whiteSpace: "inherit"
+      },
+      ref: measureWhiteSpaceRef
+    }));
+  }
+
+  // ../custom_dashboard/node_modules/antd/es/typography/Base/EllipsisTooltip.js
+  var React406 = __toESM(require_react());
+  "use client";
+  var EllipsisTooltip = ({
+    enableEllipsis,
+    isEllipsis,
+    open: open2,
+    children,
+    tooltipProps
+  }) => {
+    if (!(tooltipProps == null ? void 0 : tooltipProps.title) || !enableEllipsis) {
+      return children;
+    }
+    const mergedOpen = open2 && isEllipsis;
+    return /* @__PURE__ */ React406.createElement(tooltip_default, __spreadValues({
+      open: mergedOpen
+    }, tooltipProps), children);
+  };
+  if (true) {
+    EllipsisTooltip.displayName = "EllipsisTooltip";
+  }
+  var EllipsisTooltip_default = EllipsisTooltip;
+
+  // ../custom_dashboard/node_modules/antd/es/typography/Base/index.js
+  "use client";
+  function wrapperDecorations({
+    mark,
+    code,
+    underline,
+    delete: del,
+    strong,
+    keyboard,
+    italic
+  }, content) {
+    let currentContent = content;
+    function wrap(tag, needed) {
+      if (!needed) {
+        return;
+      }
+      currentContent = /* @__PURE__ */ React407.createElement(tag, {}, currentContent);
+    }
+    wrap("strong", strong);
+    wrap("u", underline);
+    wrap("del", del);
+    wrap("code", code);
+    wrap("mark", mark);
+    wrap("kbd", keyboard);
+    wrap("i", italic);
+    return currentContent;
+  }
+  var ELLIPSIS_STR = "...";
+  var DECORATION_PROPS = ["delete", "mark", "code", "underline", "strong", "keyboard", "italic"];
+  var Base = /* @__PURE__ */ React407.forwardRef((props, ref) => {
+    var _b;
+    const _a = props, {
+      prefixCls: customizePrefixCls,
+      className,
+      style: style2,
+      type: type5,
+      disabled,
+      children,
+      ellipsis,
+      editable,
+      copyable,
+      component,
+      title,
+      onMouseEnter,
+      onMouseLeave
+    } = _a, restProps = __objRest(_a, [
+      "prefixCls",
+      "className",
+      "style",
+      "type",
+      "disabled",
+      "children",
+      "ellipsis",
+      "editable",
+      "copyable",
+      "component",
+      "title",
+      "onMouseEnter",
+      "onMouseLeave"
+    ]);
+    const {
+      getPrefixCls,
+      direction
+    } = React407.useContext(ConfigContext);
+    const [textLocale] = useLocale_default("Text");
+    const typographyRef = React407.useRef(null);
+    const editIconRef = React407.useRef(null);
+    const prefixCls = getPrefixCls("typography", customizePrefixCls);
+    const textProps = omit(restProps, DECORATION_PROPS);
+    const [enableEdit, editConfig] = useMergedConfig(editable);
+    const [editing, setEditing] = useControlledState(false, editConfig.editing);
+    const {
+      triggerType = ["icon"]
+    } = editConfig;
+    const triggerEdit = (edit) => {
+      var _a2;
+      if (edit) {
+        (_a2 = editConfig.onStart) == null ? void 0 : _a2.call(editConfig);
+      }
+      setEditing(edit);
+    };
+    const prevEditing = usePrevious_default(editing);
+    useLayoutEffect_default(() => {
+      var _a2;
+      if (!editing && prevEditing) {
+        (_a2 = editIconRef.current) == null ? void 0 : _a2.focus();
+      }
+    }, [editing]);
+    const onEditClick = (e3) => {
+      e3 == null ? void 0 : e3.preventDefault();
+      triggerEdit(true);
+    };
+    const onEditChange = (value) => {
+      var _a2;
+      (_a2 = editConfig.onChange) == null ? void 0 : _a2.call(editConfig, value);
+      triggerEdit(false);
+    };
+    const onEditCancel = () => {
+      var _a2;
+      (_a2 = editConfig.onCancel) == null ? void 0 : _a2.call(editConfig);
+      triggerEdit(false);
+    };
+    const [enableCopy, copyConfig] = useMergedConfig(copyable);
+    const {
+      copied,
+      copyLoading,
+      onClick: onCopyClick
+    } = useCopyClick_default({
+      copyConfig,
+      children
+    });
+    const [isLineClampSupport, setIsLineClampSupport] = React407.useState(false);
+    const [isTextOverflowSupport, setIsTextOverflowSupport] = React407.useState(false);
+    const [isJsEllipsis, setIsJsEllipsis] = React407.useState(false);
+    const [isNativeEllipsis, setIsNativeEllipsis] = React407.useState(false);
+    const [isNativeVisible, setIsNativeVisible] = React407.useState(true);
+    const [enableEllipsis, ellipsisConfig] = useMergedConfig(ellipsis, {
+      expandable: false,
+      symbol: (isExpanded) => isExpanded ? textLocale == null ? void 0 : textLocale.collapse : textLocale == null ? void 0 : textLocale.expand
+    });
+    const [expanded, setExpanded] = useControlledState(ellipsisConfig.defaultExpanded || false, ellipsisConfig.expanded);
+    const mergedEnableEllipsis = enableEllipsis && (!expanded || ellipsisConfig.expandable === "collapsible");
+    const {
+      rows = 1
+    } = ellipsisConfig;
+    const needMeasureEllipsis = React407.useMemo(() => mergedEnableEllipsis && (ellipsisConfig.suffix !== void 0 || ellipsisConfig.onEllipsis || ellipsisConfig.expandable || enableEdit || enableCopy), [mergedEnableEllipsis, ellipsisConfig, enableEdit, enableCopy]);
+    useLayoutEffect_default(() => {
+      if (enableEllipsis && !needMeasureEllipsis) {
+        setIsLineClampSupport(isStyleSupport("webkitLineClamp"));
+        setIsTextOverflowSupport(isStyleSupport("textOverflow"));
+      }
+    }, [needMeasureEllipsis, enableEllipsis]);
+    const [cssEllipsis, setCssEllipsis] = React407.useState(mergedEnableEllipsis);
+    const canUseCssEllipsis = React407.useMemo(() => {
+      if (needMeasureEllipsis) {
+        return false;
+      }
+      if (rows === 1) {
+        return isTextOverflowSupport;
+      }
+      return isLineClampSupport;
+    }, [needMeasureEllipsis, isTextOverflowSupport, isLineClampSupport]);
+    useLayoutEffect_default(() => {
+      setCssEllipsis(canUseCssEllipsis && mergedEnableEllipsis);
+    }, [canUseCssEllipsis, mergedEnableEllipsis]);
+    const isMergedEllipsis = mergedEnableEllipsis && (cssEllipsis ? isNativeEllipsis : isJsEllipsis);
+    const cssTextOverflow = mergedEnableEllipsis && rows === 1 && cssEllipsis;
+    const cssLineClamp = mergedEnableEllipsis && rows > 1 && cssEllipsis;
+    const onExpandClick = (e3, info) => {
+      var _a2;
+      setExpanded(info.expanded);
+      (_a2 = ellipsisConfig.onExpand) == null ? void 0 : _a2.call(ellipsisConfig, e3, info);
+    };
+    const [ellipsisWidth, setEllipsisWidth] = React407.useState(0);
+    const [isHoveringOperations, setIsHoveringOperations] = React407.useState(false);
+    const [isHoveringTypography, setIsHoveringTypography] = React407.useState(false);
+    const onResize2 = ({
+      offsetWidth
+    }) => {
+      setEllipsisWidth(offsetWidth);
+    };
+    const onJsEllipsis = (jsEllipsis) => {
+      var _a2;
+      setIsJsEllipsis(jsEllipsis);
+      if (isJsEllipsis !== jsEllipsis) {
+        (_a2 = ellipsisConfig.onEllipsis) == null ? void 0 : _a2.call(ellipsisConfig, jsEllipsis);
+      }
+    };
+    React407.useEffect(() => {
+      const textEle = typographyRef.current;
+      if (enableEllipsis && cssEllipsis && textEle) {
+        const currentEllipsis = isEleEllipsis(textEle);
+        if (isNativeEllipsis !== currentEllipsis) {
+          setIsNativeEllipsis(currentEllipsis);
+        }
+      }
+    }, [enableEllipsis, cssEllipsis, children, cssLineClamp, isNativeVisible, ellipsisWidth]);
+    React407.useEffect(() => {
+      const textEle = typographyRef.current;
+      if (typeof IntersectionObserver === "undefined" || !textEle || !cssEllipsis || !mergedEnableEllipsis) {
+        return;
+      }
+      const observer2 = new IntersectionObserver(() => {
+        setIsNativeVisible(!!textEle.offsetParent);
+      });
+      observer2.observe(textEle);
+      return () => {
+        observer2.disconnect();
+      };
+    }, [cssEllipsis, mergedEnableEllipsis]);
+    const tooltipProps = useTooltipProps_default(ellipsisConfig.tooltip, editConfig.text, children);
+    const topAriaLabel = React407.useMemo(() => {
+      if (!enableEllipsis || cssEllipsis) {
+        return void 0;
+      }
+      return [editConfig.text, children, title, tooltipProps.title].find(isValidText);
+    }, [enableEllipsis, cssEllipsis, title, tooltipProps.title, isMergedEllipsis]);
+    if (editing) {
+      return /* @__PURE__ */ React407.createElement(Editable_default, {
+        value: (_b = editConfig.text) != null ? _b : typeof children === "string" ? children : "",
+        onSave: onEditChange,
+        onCancel: onEditCancel,
+        onEnd: editConfig.onEnd,
+        prefixCls,
+        className,
+        style: style2,
+        direction,
+        component,
+        maxLength: editConfig.maxLength,
+        autoSize: editConfig.autoSize,
+        enterIcon: editConfig.enterIcon
+      });
+    }
+    const renderExpand = () => {
+      const {
+        expandable,
+        symbol
+      } = ellipsisConfig;
+      return expandable ? /* @__PURE__ */ React407.createElement("button", {
+        type: "button",
+        key: "expand",
+        className: `${prefixCls}-${expanded ? "collapse" : "expand"}`,
+        onClick: (e3) => onExpandClick(e3, {
+          expanded: !expanded
+        }),
+        "aria-label": expanded ? textLocale.collapse : textLocale == null ? void 0 : textLocale.expand
+      }, typeof symbol === "function" ? symbol(expanded) : symbol) : null;
+    };
+    const renderEdit = () => {
+      if (!enableEdit) {
+        return;
+      }
+      const {
+        icon,
+        tooltip,
+        tabIndex
+      } = editConfig;
+      const editTitle = toArray(tooltip)[0] || (textLocale == null ? void 0 : textLocale.edit);
+      const ariaLabel = typeof editTitle === "string" ? editTitle : "";
+      return triggerType.includes("icon") ? /* @__PURE__ */ React407.createElement(tooltip_default, {
+        key: "edit",
+        title: tooltip === false ? "" : editTitle
+      }, /* @__PURE__ */ React407.createElement("button", {
+        type: "button",
+        ref: editIconRef,
+        className: `${prefixCls}-edit`,
+        onClick: onEditClick,
+        "aria-label": ariaLabel,
+        tabIndex
+      }, icon || /* @__PURE__ */ React407.createElement(EditOutlined_default2, {
+        role: "button"
+      }))) : null;
+    };
+    const renderCopy = () => {
+      if (!enableCopy) {
+        return null;
+      }
+      return /* @__PURE__ */ React407.createElement(CopyBtn_default, __spreadProps(__spreadValues({
+        key: "copy"
+      }, copyConfig), {
+        prefixCls,
+        copied,
+        locale: textLocale,
+        onCopy: onCopyClick,
+        loading: copyLoading,
+        iconOnly: !isNonNullable_default(children)
+      }));
+    };
+    const renderOperations = (canEllipsis) => {
+      const expandNode = canEllipsis && renderExpand();
+      const editNode = renderEdit();
+      const copyNode = renderCopy();
+      if (!expandNode && !editNode && !copyNode) {
+        return null;
+      }
+      return /* @__PURE__ */ React407.createElement("span", {
+        key: "operations",
+        className: `${prefixCls}-actions`,
+        onMouseEnter: () => setIsHoveringOperations(true),
+        onMouseLeave: () => setIsHoveringOperations(false)
+      }, expandNode, editNode, copyNode);
+    };
+    const renderEllipsis = (canEllipsis) => [canEllipsis && !expanded && /* @__PURE__ */ React407.createElement("span", {
+      "aria-hidden": true,
+      key: "ellipsis"
+    }, ELLIPSIS_STR), ellipsisConfig.suffix, renderOperations(canEllipsis)];
+    return /* @__PURE__ */ React407.createElement(es_default, {
+      onResize: onResize2,
+      disabled: !mergedEnableEllipsis
+    }, (resizeRef) => /* @__PURE__ */ React407.createElement(EllipsisTooltip_default, {
+      tooltipProps,
+      enableEllipsis: mergedEnableEllipsis,
+      isEllipsis: isMergedEllipsis,
+      open: isHoveringTypography && !isHoveringOperations
+    }, /* @__PURE__ */ React407.createElement(Typography_default, __spreadValues({
+      onMouseEnter: (e3) => {
+        setIsHoveringTypography(true);
+        onMouseEnter == null ? void 0 : onMouseEnter(e3);
+      },
+      onMouseLeave: (e3) => {
+        setIsHoveringTypography(false);
+        onMouseLeave == null ? void 0 : onMouseLeave(e3);
+      },
+      className: clsx({
+        [`${prefixCls}-${type5}`]: type5,
+        [`${prefixCls}-disabled`]: disabled,
+        [`${prefixCls}-ellipsis`]: enableEllipsis,
+        [`${prefixCls}-ellipsis-single-line`]: cssTextOverflow,
+        [`${prefixCls}-ellipsis-multiple-line`]: cssLineClamp,
+        [`${prefixCls}-link`]: component === "a"
+      }, className),
+      prefixCls: customizePrefixCls,
+      style: __spreadProps(__spreadValues({}, style2), {
+        WebkitLineClamp: cssLineClamp ? rows : void 0
+      }),
+      component,
+      ref: composeRef(resizeRef, typographyRef, ref),
+      direction,
+      onClick: triggerType.includes("text") ? onEditClick : void 0,
+      "aria-label": topAriaLabel == null ? void 0 : topAriaLabel.toString(),
+      title
+    }, textProps), /* @__PURE__ */ React407.createElement(EllipsisMeasure, {
+      enableMeasure: mergedEnableEllipsis && !cssEllipsis,
+      text: children,
+      rows,
+      width: ellipsisWidth,
+      onEllipsis: onJsEllipsis,
+      expanded,
+      miscDeps: [copied, expanded, copyLoading, enableEdit, enableCopy, textLocale].concat(_toConsumableArray(DECORATION_PROPS.map((key) => props[key])))
+    }, (node2, canEllipsis) => wrapperDecorations(props, /* @__PURE__ */ React407.createElement(React407.Fragment, null, node2.length > 0 && canEllipsis && !expanded && topAriaLabel ? /* @__PURE__ */ React407.createElement("span", {
+      key: "show-content",
+      "aria-hidden": true
+    }, node2) : node2, renderEllipsis(canEllipsis)))))));
+  });
+  var Base_default = Base;
+
+  // ../custom_dashboard/node_modules/antd/es/typography/Link.js
+  "use client";
+  var Link = /* @__PURE__ */ React408.forwardRef((props, ref) => {
+    const _a = props, {
+      ellipsis,
+      rel,
+      children,
+      navigate: _navigate
+    } = _a, restProps = __objRest(_a, [
+      "ellipsis",
+      "rel",
+      "children",
+      "navigate"
+    ]);
+    if (true) {
+      const warning6 = devUseWarning("Typography.Link");
+      true ? warning6(typeof ellipsis !== "object", "usage", "`ellipsis` only supports boolean value.") : void 0;
+    }
+    const mergedProps = __spreadProps(__spreadValues({}, restProps), {
+      rel: rel === void 0 && restProps.target === "_blank" ? "noopener noreferrer" : rel
+    });
+    return /* @__PURE__ */ React408.createElement(Base_default, __spreadProps(__spreadValues({}, mergedProps), {
+      ref,
+      ellipsis: !!ellipsis,
+      component: "a"
+    }), children);
+  });
+  var Link_default = Link;
+
+  // ../custom_dashboard/node_modules/antd/es/typography/Paragraph.js
+  var React409 = __toESM(require_react());
+  "use client";
+  var Paragraph2 = /* @__PURE__ */ React409.forwardRef((props, ref) => {
+    const _a = props, {
+      children
+    } = _a, restProps = __objRest(_a, [
+      "children"
+    ]);
+    return /* @__PURE__ */ React409.createElement(Base_default, __spreadProps(__spreadValues({
+      ref
+    }, restProps), {
+      component: "div"
+    }), children);
+  });
+  var Paragraph_default2 = Paragraph2;
+
+  // ../custom_dashboard/node_modules/antd/es/typography/Text.js
+  var React410 = __toESM(require_react());
+  "use client";
+  var Text = /* @__PURE__ */ React410.forwardRef((props, ref) => {
+    const _a = props, {
+      ellipsis,
+      children
+    } = _a, restProps = __objRest(_a, [
+      "ellipsis",
+      "children"
+    ]);
+    const mergedEllipsis = React410.useMemo(() => {
+      if (ellipsis && typeof ellipsis === "object") {
+        return omit(ellipsis, ["expandable", "rows"]);
+      }
+      return ellipsis;
+    }, [ellipsis]);
+    if (true) {
+      const warning6 = devUseWarning("Typography.Text");
+      true ? warning6(typeof ellipsis !== "object" || !ellipsis || !("expandable" in ellipsis) && !("rows" in ellipsis), "usage", "`ellipsis` do not support `expandable` or `rows` props.") : void 0;
+    }
+    return /* @__PURE__ */ React410.createElement(Base_default, __spreadProps(__spreadValues({
+      ref
+    }, restProps), {
+      ellipsis: mergedEllipsis,
+      component: "span"
+    }), children);
+  });
+  var Text_default = Text;
+
+  // ../custom_dashboard/node_modules/antd/es/typography/Title.js
+  var React411 = __toESM(require_react());
+  "use client";
+  var TITLE_ELE_LIST = [1, 2, 3, 4, 5];
+  var Title2 = /* @__PURE__ */ React411.forwardRef((props, ref) => {
+    const _a = props, {
+      level = 1,
+      children
+    } = _a, restProps = __objRest(_a, [
+      "level",
+      "children"
+    ]);
+    if (true) {
+      const warning6 = devUseWarning("Typography.Title");
+      true ? warning6(TITLE_ELE_LIST.includes(level), "usage", "Title only accept `1 | 2 | 3 | 4 | 5` as `level` value. And `5` need 4.6.0+ version.") : void 0;
+    }
+    const component = TITLE_ELE_LIST.includes(level) ? `h${level}` : `h1`;
+    return /* @__PURE__ */ React411.createElement(Base_default, __spreadProps(__spreadValues({
+      ref
+    }, restProps), {
+      component
+    }), children);
+  });
+  var Title_default2 = Title2;
+
+  // ../custom_dashboard/node_modules/antd/es/typography/index.js
+  "use client";
+  var Typography2 = Typography_default;
+  Typography2.Text = Text_default;
+  Typography2.Link = Link_default;
+  Typography2.Title = Title_default2;
+  Typography2.Paragraph = Paragraph_default2;
+  var typography_default = Typography2;
+
+  // ../custom_dashboard/node_modules/antd/es/index.js
+  "use client";
+  if (true) {
+    const majorVersion = getReactMajorVersion();
+    true ? warning_default2(majorVersion >= 18, "version", `antd v6 no longer supports React versions below 18. Please upgrade to React 18 or higher.`) : void 0;
+  }
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CheckCircleOutlined.js
+  var React412 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/CheckCircleOutlined.js
+  var CheckCircleOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M699 353h-46.9c-10.2 0-19.9 4.9-25.9 13.3L469 584.3l-71.2-98.8c-6-8.3-15.6-13.3-25.9-13.3H325c-6.5 0-10.3 7.4-6.5 12.7l124.6 172.8a31.8 31.8 0 0051.7 0l210.6-292c3.9-5.3.1-12.7-6.4-12.7z" } }, { "tag": "path", "attrs": { "d": "M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z" } }] }, "name": "check-circle", "theme": "outlined" };
+  var CheckCircleOutlined_default = CheckCircleOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CheckCircleOutlined.js
   function _extends96() {
     _extends96 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -80131,24 +83059,24 @@ html body {
     };
     return _extends96.apply(this, arguments);
   }
-  var MenuOutlined2 = (props, ref) => /* @__PURE__ */ React396.createElement(AntdIcon_default, _extends96({}, props, {
+  var CheckCircleOutlined2 = (props, ref) => /* @__PURE__ */ React412.createElement(AntdIcon_default, _extends96({}, props, {
     ref,
-    icon: MenuOutlined_default
+    icon: CheckCircleOutlined_default
   }));
-  var RefIcon37 = /* @__PURE__ */ React396.forwardRef(MenuOutlined2);
+  var RefIcon36 = /* @__PURE__ */ React412.forwardRef(CheckCircleOutlined2);
   if (true) {
-    RefIcon37.displayName = "MenuOutlined";
+    RefIcon36.displayName = "CheckCircleOutlined";
   }
-  var MenuOutlined_default2 = RefIcon37;
+  var CheckCircleOutlined_default2 = RefIcon36;
 
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/SettingOutlined.js
-  var React397 = __toESM(require_react());
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CreditCardOutlined.js
+  var React413 = __toESM(require_react());
 
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/SettingOutlined.js
-  var SettingOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M924.8 625.7l-65.5-56c3.1-19 4.7-38.4 4.7-57.8s-1.6-38.8-4.7-57.8l65.5-56a32.03 32.03 0 009.3-35.2l-.9-2.6a443.74 443.74 0 00-79.7-137.9l-1.8-2.1a32.12 32.12 0 00-35.1-9.5l-81.3 28.9c-30-24.6-63.5-44-99.7-57.6l-15.7-85a32.05 32.05 0 00-25.8-25.7l-2.7-.5c-52.1-9.4-106.9-9.4-159 0l-2.7.5a32.05 32.05 0 00-25.8 25.7l-15.8 85.4a351.86 351.86 0 00-99 57.4l-81.9-29.1a32 32 0 00-35.1 9.5l-1.8 2.1a446.02 446.02 0 00-79.7 137.9l-.9 2.6c-4.5 12.5-.8 26.5 9.3 35.2l66.3 56.6c-3.1 18.8-4.6 38-4.6 57.1 0 19.2 1.5 38.4 4.6 57.1L99 625.5a32.03 32.03 0 00-9.3 35.2l.9 2.6c18.1 50.4 44.9 96.9 79.7 137.9l1.8 2.1a32.12 32.12 0 0035.1 9.5l81.9-29.1c29.8 24.5 63.1 43.9 99 57.4l15.8 85.4a32.05 32.05 0 0025.8 25.7l2.7.5a449.4 449.4 0 00159 0l2.7-.5a32.05 32.05 0 0025.8-25.7l15.7-85a350 350 0 0099.7-57.6l81.3 28.9a32 32 0 0035.1-9.5l1.8-2.1c34.8-41.1 61.6-87.5 79.7-137.9l.9-2.6c4.5-12.3.8-26.3-9.3-35zM788.3 465.9c2.5 15.1 3.8 30.6 3.8 46.1s-1.3 31-3.8 46.1l-6.6 40.1 74.7 63.9a370.03 370.03 0 01-42.6 73.6L721 702.8l-31.4 25.8c-23.9 19.6-50.5 35-79.3 45.8l-38.1 14.3-17.9 97a377.5 377.5 0 01-85 0l-17.9-97.2-37.8-14.5c-28.5-10.8-55-26.2-78.7-45.7l-31.4-25.9-93.4 33.2c-17-22.9-31.2-47.6-42.6-73.6l75.5-64.5-6.5-40c-2.4-14.9-3.7-30.3-3.7-45.5 0-15.3 1.2-30.6 3.7-45.5l6.5-40-75.5-64.5c11.3-26.1 25.6-50.7 42.6-73.6l93.4 33.2 31.4-25.9c23.7-19.5 50.2-34.9 78.7-45.7l37.9-14.3 17.9-97.2c28.1-3.2 56.8-3.2 85 0l17.9 97 38.1 14.3c28.7 10.8 55.4 26.2 79.3 45.8l31.4 25.8 92.8-32.9c17 22.9 31.2 47.6 42.6 73.6L781.8 426l6.5 39.9zM512 326c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm79.2 255.2A111.6 111.6 0 01512 614c-29.9 0-58-11.7-79.2-32.8A111.6 111.6 0 01400 502c0-29.9 11.7-58 32.8-79.2C454 401.6 482.1 390 512 390c29.9 0 58 11.6 79.2 32.8A111.6 111.6 0 01624 502c0 29.9-11.7 58-32.8 79.2z" } }] }, "name": "setting", "theme": "outlined" };
-  var SettingOutlined_default = SettingOutlined;
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/CreditCardOutlined.js
+  var CreditCardOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M928 160H96c-17.7 0-32 14.3-32 32v640c0 17.7 14.3 32 32 32h832c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32zm-792 72h752v120H136V232zm752 560H136V440h752v352zm-237-64h165c4.4 0 8-3.6 8-8v-72c0-4.4-3.6-8-8-8H651c-4.4 0-8 3.6-8 8v72c0 4.4 3.6 8 8 8z" } }] }, "name": "credit-card", "theme": "outlined" };
+  var CreditCardOutlined_default = CreditCardOutlined;
 
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/SettingOutlined.js
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/CreditCardOutlined.js
   function _extends97() {
     _extends97 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -80163,24 +83091,24 @@ html body {
     };
     return _extends97.apply(this, arguments);
   }
-  var SettingOutlined2 = (props, ref) => /* @__PURE__ */ React397.createElement(AntdIcon_default, _extends97({}, props, {
+  var CreditCardOutlined2 = (props, ref) => /* @__PURE__ */ React413.createElement(AntdIcon_default, _extends97({}, props, {
     ref,
-    icon: SettingOutlined_default
+    icon: CreditCardOutlined_default
   }));
-  var RefIcon38 = /* @__PURE__ */ React397.forwardRef(SettingOutlined2);
+  var RefIcon37 = /* @__PURE__ */ React413.forwardRef(CreditCardOutlined2);
   if (true) {
-    RefIcon38.displayName = "SettingOutlined";
+    RefIcon37.displayName = "CreditCardOutlined";
   }
-  var SettingOutlined_default2 = RefIcon38;
+  var CreditCardOutlined_default2 = RefIcon37;
 
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/ShoppingCartOutlined.js
-  var React398 = __toESM(require_react());
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/DashboardOutlined.js
+  var React414 = __toESM(require_react());
 
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/ShoppingCartOutlined.js
-  var ShoppingCartOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "0 0 1024 1024", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M922.9 701.9H327.4l29.9-60.9 496.8-.9c16.8 0 31.2-12 34.2-28.6l68.8-385.1c1.8-10.1-.9-20.5-7.5-28.4a34.99 34.99 0 00-26.6-12.5l-632-2.1-5.4-25.4c-3.4-16.2-18-28-34.6-28H96.5a35.3 35.3 0 100 70.6h125.9L246 312.8l58.1 281.3-74.8 122.1a34.96 34.96 0 00-3 36.8c6 11.9 18.1 19.4 31.5 19.4h62.8a102.43 102.43 0 00-20.6 61.7c0 56.6 46 102.6 102.6 102.6s102.6-46 102.6-102.6c0-22.3-7.4-44-20.6-61.7h161.1a102.43 102.43 0 00-20.6 61.7c0 56.6 46 102.6 102.6 102.6s102.6-46 102.6-102.6c0-22.3-7.4-44-20.6-61.7H923c19.4 0 35.3-15.8 35.3-35.3a35.42 35.42 0 00-35.4-35.2zM305.7 253l575.8 1.9-56.4 315.8-452.3.8L305.7 253zm96.9 612.7c-17.4 0-31.6-14.2-31.6-31.6 0-17.4 14.2-31.6 31.6-31.6s31.6 14.2 31.6 31.6a31.6 31.6 0 01-31.6 31.6zm325.1 0c-17.4 0-31.6-14.2-31.6-31.6 0-17.4 14.2-31.6 31.6-31.6s31.6 14.2 31.6 31.6a31.6 31.6 0 01-31.6 31.6z" } }] }, "name": "shopping-cart", "theme": "outlined" };
-  var ShoppingCartOutlined_default = ShoppingCartOutlined;
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/DashboardOutlined.js
+  var DashboardOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M924.8 385.6a446.7 446.7 0 00-96-142.4 446.7 446.7 0 00-142.4-96C631.1 123.8 572.5 112 512 112s-119.1 11.8-174.4 35.2a446.7 446.7 0 00-142.4 96 446.7 446.7 0 00-96 142.4C75.8 440.9 64 499.5 64 560c0 132.7 58.3 257.7 159.9 343.1l1.7 1.4c5.8 4.8 13.1 7.5 20.6 7.5h531.7c7.5 0 14.8-2.7 20.6-7.5l1.7-1.4C901.7 817.7 960 692.7 960 560c0-60.5-11.9-119.1-35.2-174.4zM761.4 836H262.6A371.12 371.12 0 01140 560c0-99.4 38.7-192.8 109-263 70.3-70.3 163.7-109 263-109 99.4 0 192.8 38.7 263 109 70.3 70.3 109 163.7 109 263 0 105.6-44.5 205.5-122.6 276zM623.5 421.5a8.03 8.03 0 00-11.3 0L527.7 506c-18.7-5-39.4-.2-54.1 14.5a55.95 55.95 0 000 79.2 55.95 55.95 0 0079.2 0 55.87 55.87 0 0014.5-54.1l84.5-84.5c3.1-3.1 3.1-8.2 0-11.3l-28.3-28.3zM490 320h44c4.4 0 8-3.6 8-8v-80c0-4.4-3.6-8-8-8h-44c-4.4 0-8 3.6-8 8v80c0 4.4 3.6 8 8 8zm260 218v44c0 4.4 3.6 8 8 8h80c4.4 0 8-3.6 8-8v-44c0-4.4-3.6-8-8-8h-80c-4.4 0-8 3.6-8 8zm12.7-197.2l-31.1-31.1a8.03 8.03 0 00-11.3 0l-56.6 56.6a8.03 8.03 0 000 11.3l31.1 31.1c3.1 3.1 8.2 3.1 11.3 0l56.6-56.6c3.1-3.1 3.1-8.2 0-11.3zm-458.6-31.1a8.03 8.03 0 00-11.3 0l-31.1 31.1a8.03 8.03 0 000 11.3l56.6 56.6c3.1 3.1 8.2 3.1 11.3 0l31.1-31.1c3.1-3.1 3.1-8.2 0-11.3l-56.6-56.6zM262 530h-80c-4.4 0-8 3.6-8 8v44c0 4.4 3.6 8 8 8h80c4.4 0 8-3.6 8-8v-44c0-4.4-3.6-8-8-8z" } }] }, "name": "dashboard", "theme": "outlined" };
+  var DashboardOutlined_default = DashboardOutlined;
 
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/ShoppingCartOutlined.js
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/DashboardOutlined.js
   function _extends98() {
     _extends98 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -80195,24 +83123,24 @@ html body {
     };
     return _extends98.apply(this, arguments);
   }
-  var ShoppingCartOutlined2 = (props, ref) => /* @__PURE__ */ React398.createElement(AntdIcon_default, _extends98({}, props, {
+  var DashboardOutlined2 = (props, ref) => /* @__PURE__ */ React414.createElement(AntdIcon_default, _extends98({}, props, {
     ref,
-    icon: ShoppingCartOutlined_default
+    icon: DashboardOutlined_default
   }));
-  var RefIcon39 = /* @__PURE__ */ React398.forwardRef(ShoppingCartOutlined2);
+  var RefIcon38 = /* @__PURE__ */ React414.forwardRef(DashboardOutlined2);
   if (true) {
-    RefIcon39.displayName = "ShoppingCartOutlined";
+    RefIcon38.displayName = "DashboardOutlined";
   }
-  var ShoppingCartOutlined_default2 = RefIcon39;
+  var DashboardOutlined_default2 = RefIcon38;
 
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/UploadOutlined.js
-  var React399 = __toESM(require_react());
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/HeartFilled.js
+  var React415 = __toESM(require_react());
 
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/UploadOutlined.js
-  var UploadOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M400 317.7h73.9V656c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V317.7H624c6.7 0 10.4-7.7 6.3-12.9L518.3 163a8 8 0 00-12.6 0l-112 141.7c-4.1 5.3-.4 13 6.3 13zM878 626h-60c-4.4 0-8 3.6-8 8v154H214V634c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v198c0 17.7 14.3 32 32 32h684c17.7 0 32-14.3 32-32V634c0-4.4-3.6-8-8-8z" } }] }, "name": "upload", "theme": "outlined" };
-  var UploadOutlined_default = UploadOutlined;
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/HeartFilled.js
+  var HeartFilled = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M923 283.6a260.04 260.04 0 00-56.9-82.8 264.4 264.4 0 00-84-55.5A265.34 265.34 0 00679.7 125c-49.3 0-97.4 13.5-139.2 39-10 6.1-19.5 12.8-28.5 20.1-9-7.3-18.5-14-28.5-20.1-41.8-25.5-89.9-39-139.2-39-35.5 0-69.9 6.8-102.4 20.3-31.4 13-59.7 31.7-84 55.5a258.44 258.44 0 00-56.9 82.8c-13.9 32.3-21 66.6-21 101.9 0 33.3 6.8 68 20.3 103.3 11.3 29.5 27.5 60.1 48.2 91 32.8 48.9 77.9 99.9 133.9 151.6 92.8 85.7 184.7 144.9 188.6 147.3l23.7 15.2c10.5 6.7 24 6.7 34.5 0l23.7-15.2c3.9-2.5 95.7-61.6 188.6-147.3 56-51.7 101.1-102.7 133.9-151.6 20.7-30.9 37-61.5 48.2-91 13.5-35.3 20.3-70 20.3-103.3.1-35.3-7-69.6-20.9-101.9z" } }] }, "name": "heart", "theme": "filled" };
+  var HeartFilled_default = HeartFilled;
 
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/UploadOutlined.js
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/HeartFilled.js
   function _extends99() {
     _extends99 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -80227,24 +83155,24 @@ html body {
     };
     return _extends99.apply(this, arguments);
   }
-  var UploadOutlined2 = (props, ref) => /* @__PURE__ */ React399.createElement(AntdIcon_default, _extends99({}, props, {
+  var HeartFilled2 = (props, ref) => /* @__PURE__ */ React415.createElement(AntdIcon_default, _extends99({}, props, {
     ref,
-    icon: UploadOutlined_default
+    icon: HeartFilled_default
   }));
-  var RefIcon40 = /* @__PURE__ */ React399.forwardRef(UploadOutlined2);
+  var RefIcon39 = /* @__PURE__ */ React415.forwardRef(HeartFilled2);
   if (true) {
-    RefIcon40.displayName = "UploadOutlined";
+    RefIcon39.displayName = "HeartFilled";
   }
-  var UploadOutlined_default2 = RefIcon40;
+  var HeartFilled_default2 = RefIcon39;
 
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/UserOutlined.js
-  var React400 = __toESM(require_react());
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/MenuOutlined.js
+  var React416 = __toESM(require_react());
 
-  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/UserOutlined.js
-  var UserOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M858.5 763.6a374 374 0 00-80.6-119.5 375.63 375.63 0 00-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 00-80.6 119.5A371.7 371.7 0 00136 901.8a8 8 0 008 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 008-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z" } }] }, "name": "user", "theme": "outlined" };
-  var UserOutlined_default = UserOutlined;
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/MenuOutlined.js
+  var MenuOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z" } }] }, "name": "menu", "theme": "outlined" };
+  var MenuOutlined_default = MenuOutlined;
 
-  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/UserOutlined.js
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/MenuOutlined.js
   function _extends100() {
     _extends100 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -80259,15 +83187,239 @@ html body {
     };
     return _extends100.apply(this, arguments);
   }
-  var UserOutlined2 = (props, ref) => /* @__PURE__ */ React400.createElement(AntdIcon_default, _extends100({}, props, {
+  var MenuOutlined2 = (props, ref) => /* @__PURE__ */ React416.createElement(AntdIcon_default, _extends100({}, props, {
+    ref,
+    icon: MenuOutlined_default
+  }));
+  var RefIcon40 = /* @__PURE__ */ React416.forwardRef(MenuOutlined2);
+  if (true) {
+    RefIcon40.displayName = "MenuOutlined";
+  }
+  var MenuOutlined_default2 = RefIcon40;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/ProfileOutlined.js
+  var React417 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/ProfileOutlined.js
+  var ProfileOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656zM492 400h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H492c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8zm0 144h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H492c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8zm0 144h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H492c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8zM340 368a40 40 0 1080 0 40 40 0 10-80 0zm0 144a40 40 0 1080 0 40 40 0 10-80 0zm0 144a40 40 0 1080 0 40 40 0 10-80 0z" } }] }, "name": "profile", "theme": "outlined" };
+  var ProfileOutlined_default = ProfileOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/ProfileOutlined.js
+  function _extends101() {
+    _extends101 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends101.apply(this, arguments);
+  }
+  var ProfileOutlined2 = (props, ref) => /* @__PURE__ */ React417.createElement(AntdIcon_default, _extends101({}, props, {
+    ref,
+    icon: ProfileOutlined_default
+  }));
+  var RefIcon41 = /* @__PURE__ */ React417.forwardRef(ProfileOutlined2);
+  if (true) {
+    RefIcon41.displayName = "ProfileOutlined";
+  }
+  var ProfileOutlined_default2 = RefIcon41;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/QrcodeOutlined.js
+  var React418 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/QrcodeOutlined.js
+  var QrcodeOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M468 128H160c-17.7 0-32 14.3-32 32v308c0 4.4 3.6 8 8 8h332c4.4 0 8-3.6 8-8V136c0-4.4-3.6-8-8-8zm-56 284H192V192h220v220zm-138-74h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm194 210H136c-4.4 0-8 3.6-8 8v308c0 17.7 14.3 32 32 32h308c4.4 0 8-3.6 8-8V556c0-4.4-3.6-8-8-8zm-56 284H192V612h220v220zm-138-74h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm590-630H556c-4.4 0-8 3.6-8 8v332c0 4.4 3.6 8 8 8h332c4.4 0 8-3.6 8-8V160c0-17.7-14.3-32-32-32zm-32 284H612V192h220v220zm-138-74h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm194 210h-48c-4.4 0-8 3.6-8 8v134h-78V556c0-4.4-3.6-8-8-8H556c-4.4 0-8 3.6-8 8v332c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V644h78v102c0 4.4 3.6 8 8 8h190c4.4 0 8-3.6 8-8V556c0-4.4-3.6-8-8-8zM746 832h-48c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8zm142 0h-48c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8z" } }] }, "name": "qrcode", "theme": "outlined" };
+  var QrcodeOutlined_default = QrcodeOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/QrcodeOutlined.js
+  function _extends102() {
+    _extends102 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends102.apply(this, arguments);
+  }
+  var QrcodeOutlined2 = (props, ref) => /* @__PURE__ */ React418.createElement(AntdIcon_default, _extends102({}, props, {
+    ref,
+    icon: QrcodeOutlined_default
+  }));
+  var RefIcon42 = /* @__PURE__ */ React418.forwardRef(QrcodeOutlined2);
+  if (true) {
+    RefIcon42.displayName = "QrcodeOutlined";
+  }
+  var QrcodeOutlined_default2 = RefIcon42;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/RedoOutlined.js
+  var React419 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/RedoOutlined.js
+  var RedoOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M758.2 839.1C851.8 765.9 912 651.9 912 523.9 912 303 733.5 124.3 512.6 124 291.4 123.7 112 302.8 112 523.9c0 125.2 57.5 236.9 147.6 310.2 3.5 2.8 8.6 2.2 11.4-1.3l39.4-50.5c2.7-3.4 2.1-8.3-1.2-11.1-8.1-6.6-15.9-13.7-23.4-21.2a318.64 318.64 0 01-68.6-101.7C200.4 609 192 567.1 192 523.9s8.4-85.1 25.1-124.5c16.1-38.1 39.2-72.3 68.6-101.7 29.4-29.4 63.6-52.5 101.7-68.6C426.9 212.4 468.8 204 512 204s85.1 8.4 124.5 25.1c38.1 16.1 72.3 39.2 101.7 68.6 29.4 29.4 52.5 63.6 68.6 101.7 16.7 39.4 25.1 81.3 25.1 124.5s-8.4 85.1-25.1 124.5a318.64 318.64 0 01-68.6 101.7c-9.3 9.3-19.1 18-29.3 26L668.2 724a8 8 0 00-14.1 3l-39.6 162.2c-1.2 5 2.6 9.9 7.7 9.9l167 .8c6.7 0 10.5-7.7 6.3-12.9l-37.3-47.9z" } }] }, "name": "redo", "theme": "outlined" };
+  var RedoOutlined_default = RedoOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/RedoOutlined.js
+  function _extends103() {
+    _extends103 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends103.apply(this, arguments);
+  }
+  var RedoOutlined2 = (props, ref) => /* @__PURE__ */ React419.createElement(AntdIcon_default, _extends103({}, props, {
+    ref,
+    icon: RedoOutlined_default
+  }));
+  var RefIcon43 = /* @__PURE__ */ React419.forwardRef(RedoOutlined2);
+  if (true) {
+    RefIcon43.displayName = "RedoOutlined";
+  }
+  var RedoOutlined_default2 = RefIcon43;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/ShoppingCartOutlined.js
+  var React420 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/ShoppingCartOutlined.js
+  var ShoppingCartOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "0 0 1024 1024", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M922.9 701.9H327.4l29.9-60.9 496.8-.9c16.8 0 31.2-12 34.2-28.6l68.8-385.1c1.8-10.1-.9-20.5-7.5-28.4a34.99 34.99 0 00-26.6-12.5l-632-2.1-5.4-25.4c-3.4-16.2-18-28-34.6-28H96.5a35.3 35.3 0 100 70.6h125.9L246 312.8l58.1 281.3-74.8 122.1a34.96 34.96 0 00-3 36.8c6 11.9 18.1 19.4 31.5 19.4h62.8a102.43 102.43 0 00-20.6 61.7c0 56.6 46 102.6 102.6 102.6s102.6-46 102.6-102.6c0-22.3-7.4-44-20.6-61.7h161.1a102.43 102.43 0 00-20.6 61.7c0 56.6 46 102.6 102.6 102.6s102.6-46 102.6-102.6c0-22.3-7.4-44-20.6-61.7H923c19.4 0 35.3-15.8 35.3-35.3a35.42 35.42 0 00-35.4-35.2zM305.7 253l575.8 1.9-56.4 315.8-452.3.8L305.7 253zm96.9 612.7c-17.4 0-31.6-14.2-31.6-31.6 0-17.4 14.2-31.6 31.6-31.6s31.6 14.2 31.6 31.6a31.6 31.6 0 01-31.6 31.6zm325.1 0c-17.4 0-31.6-14.2-31.6-31.6 0-17.4 14.2-31.6 31.6-31.6s31.6 14.2 31.6 31.6a31.6 31.6 0 01-31.6 31.6z" } }] }, "name": "shopping-cart", "theme": "outlined" };
+  var ShoppingCartOutlined_default = ShoppingCartOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/ShoppingCartOutlined.js
+  function _extends104() {
+    _extends104 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends104.apply(this, arguments);
+  }
+  var ShoppingCartOutlined2 = (props, ref) => /* @__PURE__ */ React420.createElement(AntdIcon_default, _extends104({}, props, {
+    ref,
+    icon: ShoppingCartOutlined_default
+  }));
+  var RefIcon44 = /* @__PURE__ */ React420.forwardRef(ShoppingCartOutlined2);
+  if (true) {
+    RefIcon44.displayName = "ShoppingCartOutlined";
+  }
+  var ShoppingCartOutlined_default2 = RefIcon44;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/UserAddOutlined.js
+  var React421 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/UserAddOutlined.js
+  var UserAddOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M678.3 642.4c24.2-13 51.9-20.4 81.4-20.4h.1c3 0 4.4-3.6 2.2-5.6a371.67 371.67 0 00-103.7-65.8c-.4-.2-.8-.3-1.2-.5C719.2 505 759.6 431.7 759.6 349c0-137-110.8-248-247.5-248S264.7 212 264.7 349c0 82.7 40.4 156 102.6 201.1-.4.2-.8.3-1.2.5-44.7 18.9-84.8 46-119.3 80.6a373.42 373.42 0 00-80.4 119.5A373.6 373.6 0 00137 888.8a8 8 0 008 8.2h59.9c4.3 0 7.9-3.5 8-7.8 2-77.2 32.9-149.5 87.6-204.3C357 628.2 432.2 597 512.2 597c56.7 0 111.1 15.7 158 45.1a8.1 8.1 0 008.1.3zM512.2 521c-45.8 0-88.9-17.9-121.4-50.4A171.2 171.2 0 01340.5 349c0-45.9 17.9-89.1 50.3-121.6S466.3 177 512.2 177s88.9 17.9 121.4 50.4A171.2 171.2 0 01683.9 349c0 45.9-17.9 89.1-50.3 121.6C601.1 503.1 558 521 512.2 521zM880 759h-84v-84c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v84h-84c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h84v84c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-84h84c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8z" } }] }, "name": "user-add", "theme": "outlined" };
+  var UserAddOutlined_default = UserAddOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/UserAddOutlined.js
+  function _extends105() {
+    _extends105 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends105.apply(this, arguments);
+  }
+  var UserAddOutlined2 = (props, ref) => /* @__PURE__ */ React421.createElement(AntdIcon_default, _extends105({}, props, {
+    ref,
+    icon: UserAddOutlined_default
+  }));
+  var RefIcon45 = /* @__PURE__ */ React421.forwardRef(UserAddOutlined2);
+  if (true) {
+    RefIcon45.displayName = "UserAddOutlined";
+  }
+  var UserAddOutlined_default2 = RefIcon45;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/UserOutlined.js
+  var React422 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/UserOutlined.js
+  var UserOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M858.5 763.6a374 374 0 00-80.6-119.5 375.63 375.63 0 00-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 00-80.6 119.5A371.7 371.7 0 00136 901.8a8 8 0 008 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 008-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z" } }] }, "name": "user", "theme": "outlined" };
+  var UserOutlined_default = UserOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/UserOutlined.js
+  function _extends106() {
+    _extends106 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends106.apply(this, arguments);
+  }
+  var UserOutlined2 = (props, ref) => /* @__PURE__ */ React422.createElement(AntdIcon_default, _extends106({}, props, {
     ref,
     icon: UserOutlined_default
   }));
-  var RefIcon41 = /* @__PURE__ */ React400.forwardRef(UserOutlined2);
+  var RefIcon46 = /* @__PURE__ */ React422.forwardRef(UserOutlined2);
   if (true) {
-    RefIcon41.displayName = "UserOutlined";
+    RefIcon46.displayName = "UserOutlined";
   }
-  var UserOutlined_default2 = RefIcon41;
+  var UserOutlined_default2 = RefIcon46;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/WalletOutlined.js
+  var React423 = __toESM(require_react());
+
+  // ../custom_dashboard/node_modules/@ant-design/icons-svg/es/asn/WalletOutlined.js
+  var WalletOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 464H528V448h312v128zm0 264H184V184h656v200H496c-17.7 0-32 14.3-32 32v192c0 17.7 14.3 32 32 32h344v200zM580 512a40 40 0 1080 0 40 40 0 10-80 0z" } }] }, "name": "wallet", "theme": "outlined" };
+  var WalletOutlined_default = WalletOutlined;
+
+  // ../custom_dashboard/node_modules/@ant-design/icons/es/icons/WalletOutlined.js
+  function _extends107() {
+    _extends107 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends107.apply(this, arguments);
+  }
+  var WalletOutlined2 = (props, ref) => /* @__PURE__ */ React423.createElement(AntdIcon_default, _extends107({}, props, {
+    ref,
+    icon: WalletOutlined_default
+  }));
+  var RefIcon47 = /* @__PURE__ */ React423.forwardRef(WalletOutlined2);
+  if (true) {
+    RefIcon47.displayName = "WalletOutlined";
+  }
+  var WalletOutlined_default2 = RefIcon47;
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/config/theme.js
   var themeConfig = {
@@ -80299,24 +83451,24 @@ html body {
   };
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/config/navigation.jsx
-  var import_react139 = __toESM(require_react());
+  var import_react153 = __toESM(require_react());
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/pages/Dashboard.jsx
-  var import_react134 = __toESM(require_react());
+  var import_react142 = __toESM(require_react());
   var Dashboard = () => {
-    return /* @__PURE__ */ import_react134.default.createElement("div", null, /* @__PURE__ */ import_react134.default.createElement("h2", null, "Dashboard"), /* @__PURE__ */ import_react134.default.createElement("p", null, "Welcome to your custom dashboard!"));
+    return /* @__PURE__ */ import_react142.default.createElement("div", null, /* @__PURE__ */ import_react142.default.createElement("h2", null, "Dashboard"), /* @__PURE__ */ import_react142.default.createElement("p", null, "Welcome to your custom dashboard!"));
   };
   var Dashboard_default = Dashboard;
 
-  // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/pages/Customers.jsx
-  var import_react137 = __toESM(require_react());
+  // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/pages/Donors.jsx
+  var import_react144 = __toESM(require_react());
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/hooks/useFrappe.js
-  var import_react135 = __toESM(require_react());
+  var import_react143 = __toESM(require_react());
   var useFrappeGetDocList = (doctype, options = {}) => {
-    const [data, setData] = (0, import_react135.useState)([]);
-    const [loading, setLoading] = (0, import_react135.useState)(true);
-    const [error, setError] = (0, import_react135.useState)(null);
+    const [data, setData] = (0, import_react143.useState)([]);
+    const [loading, setLoading] = (0, import_react143.useState)(true);
+    const [error, setError] = (0, import_react143.useState)(null);
     const fetchData = () => {
       if (typeof frappe === "undefined") {
         setLoading(false);
@@ -80342,14 +83494,14 @@ html body {
         }
       });
     };
-    (0, import_react135.useEffect)(() => {
+    (0, import_react143.useEffect)(() => {
       fetchData();
     }, []);
     return { data, loading, error, mutate: fetchData };
   };
   var useFrappeCreateDoc = () => {
-    const [loading, setLoading] = (0, import_react135.useState)(false);
-    const [error, setError] = (0, import_react135.useState)(null);
+    const [loading, setLoading] = (0, import_react143.useState)(false);
+    const [error, setError] = (0, import_react143.useState)(null);
     const createDoc = (doctype, data) => {
       setLoading(true);
       return new Promise((resolve, reject) => {
@@ -80376,8 +83528,8 @@ html body {
     return { createDoc, loading, error };
   };
   var useFrappeUpdateDoc = () => {
-    const [loading, setLoading] = (0, import_react135.useState)(false);
-    const [error, setError] = (0, import_react135.useState)(null);
+    const [loading, setLoading] = (0, import_react143.useState)(false);
+    const [error, setError] = (0, import_react143.useState)(null);
     const updateDoc = (doctype, name, data) => {
       setLoading(true);
       return new Promise((resolve, reject) => {
@@ -80405,46 +83557,9 @@ html body {
     };
     return { updateDoc, loading, error };
   };
-  var useFrappeFileUpload = () => {
-    const [loading, setLoading] = (0, import_react135.useState)(false);
-    const [error, setError] = (0, import_react135.useState)(null);
-    const upload2 = (file, args) => {
-      setLoading(true);
-      return new Promise((resolve, reject) => {
-        const xhr = new XMLHttpRequest();
-        const formData = new FormData();
-        formData.append("file", file);
-        formData.append("is_private", args.is_private || 0);
-        formData.append("doctype", args.doctype);
-        formData.append("docname", args.docname);
-        formData.append("fieldname", args.fieldname);
-        xhr.open("POST", "/api/method/upload_file", true);
-        if (typeof frappe !== "undefined" && frappe.csrf_token) {
-          xhr.setRequestHeader("X-Frappe-CSRF-Token", frappe.csrf_token);
-        }
-        xhr.onload = function() {
-          setLoading(false);
-          if (xhr.status === 200) {
-            const response = JSON.parse(xhr.responseText);
-            resolve(response.message || response);
-          } else {
-            setError("Upload failed.");
-            reject("Upload failed");
-          }
-        };
-        xhr.onerror = () => {
-          setLoading(false);
-          setError("Network Error");
-          reject("Network Error");
-        };
-        xhr.send(formData);
-      });
-    };
-    return { upload: upload2, loading, error };
-  };
   var useFrappeDeleteDoc = () => {
-    const [loading, setLoading] = (0, import_react135.useState)(false);
-    const [error, setError] = (0, import_react135.useState)(null);
+    const [loading, setLoading] = (0, import_react143.useState)(false);
+    const [error, setError] = (0, import_react143.useState)(null);
     const deleteDoc = (doctype, name) => {
       setLoading(true);
       return new Promise((resolve, reject) => {
@@ -80466,105 +83581,97 @@ html body {
     return { deleteDoc, loading, error };
   };
 
-  // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/components/FileUpload.jsx
-  var import_react136 = __toESM(require_react());
-  var FileUpload = ({ value, onChange, accept = "image/*,application/pdf,.csv" }) => {
-    const [fileList, setFileList] = (0, import_react136.useState)([]);
-    const handleBeforeUpload = (file) => {
-      return false;
-    };
-    const handleChange = ({ fileList: newFileList }) => {
-      setFileList(newFileList);
-      if (onChange) {
-        onChange(newFileList.length > 0 ? newFileList[0].originFileObj : null);
-      }
-    };
-    return /* @__PURE__ */ import_react136.default.createElement(upload_default, {
-      beforeUpload: handleBeforeUpload,
-      fileList,
-      onChange: handleChange,
-      accept,
-      maxCount: 1
-    }, /* @__PURE__ */ import_react136.default.createElement(button_default, {
-      icon: /* @__PURE__ */ import_react136.default.createElement(UploadOutlined_default2, null)
-    }, "Select File"));
-  };
-  var FileUpload_default = FileUpload;
-
-  // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/pages/Customers.jsx
-  var Customers = () => {
-    const { data: customers, loading, error, mutate } = useFrappeGetDocList("Customer", {
-      fields: ["name", "customer_name", "phone", "image"]
+  // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/pages/Donors.jsx
+  var { Title: Title3, Text: Text2 } = typography_default;
+  var Donors = () => {
+    const { data: donors, loading, error, mutate } = useFrappeGetDocList("Donor", {
+      fields: ["name", "donor_name", "mobile_number", "address"],
+      limit: 100
     });
     const { createDoc, loading: creating } = useFrappeCreateDoc();
     const { updateDoc, loading: updating } = useFrappeUpdateDoc();
     const { deleteDoc } = useFrappeDeleteDoc();
-    const { upload: upload2, loading: uploading } = useFrappeFileUpload();
-    const [isModalOpen, setIsModalOpen] = (0, import_react137.useState)(false);
-    const [editingCustomer, setEditingCustomer] = (0, import_react137.useState)(null);
+    const [isModalOpen, setIsModalOpen] = (0, import_react144.useState)(false);
+    const [editingDonor, setEditingDonor] = (0, import_react144.useState)(null);
     const [form] = form_default.useForm();
+    const [searchText, setSearchText] = (0, import_react144.useState)("");
+    const filteredDonors = donors == null ? void 0 : donors.filter(
+      (donor) => {
+        var _a, _b;
+        return ((_a = donor.donor_name) == null ? void 0 : _a.toLowerCase().includes(searchText.toLowerCase())) || ((_b = donor.mobile_number) == null ? void 0 : _b.includes(searchText));
+      }
+    );
     const columns = [
       {
-        title: "ID",
+        title: "Donor ID",
         dataIndex: "name",
-        key: "name"
+        key: "name",
+        width: 150,
+        render: (text) => /* @__PURE__ */ import_react144.default.createElement(Text2, {
+          copyable: true
+        }, text)
       },
       {
-        title: "Image",
-        dataIndex: "image",
-        key: "image",
-        render: (text) => text ? /* @__PURE__ */ import_react137.default.createElement("img", {
-          src: text,
-          alt: "Customer",
-          style: { width: 40, height: 40, borderRadius: "50%", objectFit: "cover" }
-        }) : /* @__PURE__ */ import_react137.default.createElement("div", {
-          style: { width: 40, height: 40, borderRadius: "50%", background: "#eaeaea", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "12px", color: "#888" }
-        }, "N/A")
+        title: "Name",
+        dataIndex: "donor_name",
+        key: "donor_name",
+        render: (text) => /* @__PURE__ */ import_react144.default.createElement(Text2, {
+          strong: true
+        }, text),
+        sorter: (a, b) => a.donor_name.localeCompare(b.donor_name)
       },
       {
-        title: "Customer Name",
-        dataIndex: "customer_name",
-        key: "customer_name"
+        title: "Mobile Number",
+        dataIndex: "mobile_number",
+        key: "mobile_number"
       },
       {
-        title: "Phone",
-        dataIndex: "phone",
-        key: "phone"
+        title: "Address",
+        dataIndex: "address",
+        key: "address",
+        ellipsis: true,
+        render: (text) => text || /* @__PURE__ */ import_react144.default.createElement(Text2, {
+          type: "secondary"
+        }, "-")
       },
       {
-        title: "Manage",
+        title: "Actions",
         key: "actions",
-        render: (_, record) => /* @__PURE__ */ import_react137.default.createElement(space_default, {
+        width: 150,
+        render: (_, record) => /* @__PURE__ */ import_react144.default.createElement(space_default, {
           size: "middle"
-        }, /* @__PURE__ */ import_react137.default.createElement(button_default, {
-          type: "link",
+        }, /* @__PURE__ */ import_react144.default.createElement(button_default, {
+          type: "primary",
+          ghost: true,
+          icon: /* @__PURE__ */ import_react144.default.createElement(EditOutlined_default2, null),
           onClick: () => handleEdit(record)
-        }, "Edit"), /* @__PURE__ */ import_react137.default.createElement(button_default, {
-          type: "link",
+        }, "Edit"), /* @__PURE__ */ import_react144.default.createElement(button_default, {
           danger: true,
+          icon: /* @__PURE__ */ import_react144.default.createElement(DeleteOutlined_default2, null),
           onClick: () => handleDelete(record.name)
         }, "Delete"))
       }
     ];
     const showModal = () => {
-      setEditingCustomer(null);
+      setEditingDonor(null);
       form.resetFields();
       setIsModalOpen(true);
     };
-    const handleEdit = (customer) => {
-      setEditingCustomer(customer);
-      form.setFieldsValue(customer);
+    const handleEdit = (donor) => {
+      setEditingDonor(donor);
+      form.setFieldsValue(donor);
       setIsModalOpen(true);
     };
     const handleDelete = (name) => {
       modal_default.confirm({
-        title: "Are you sure you want to delete this customer?",
-        okText: "Yes",
+        title: "Are you sure you want to delete this donor?",
+        content: "This action cannot be undone.",
+        okText: "Yes, Delete",
         okType: "danger",
         cancelText: "No",
         onOk() {
-          return deleteDoc("Customer", name).then(() => {
-            message_default.success("Customer deleted successfully!");
+          return deleteDoc("Donor", name).then(() => {
+            message_default.success("Donor deleted successfully!");
             mutate();
           }).catch((err) => {
             message_default.error(err.message || "Failed to delete.");
@@ -80574,36 +83681,17 @@ html body {
     };
     const handleCancel = () => {
       setIsModalOpen(false);
-      setEditingCustomer(null);
+      setEditingDonor(null);
       form.resetFields();
     };
     const handleSave = async (values) => {
       try {
-        const file = values.attachment;
-        const uploadFile = async (docname) => {
-          if (file) {
-            await upload2(file, {
-              doctype: "Customer",
-              docname,
-              fieldname: "image",
-              is_private: 0
-            });
-          }
-        };
-        if (editingCustomer) {
-          await updateDoc("Customer", editingCustomer.name, {
-            customer_name: values.customer_name,
-            phone: values.phone
-          });
-          await uploadFile(editingCustomer.name);
-          message_default.success("Customer updated successfully!");
+        if (editingDonor) {
+          await updateDoc("Donor", editingDonor.name, values);
+          message_default.success("Donor updated successfully!");
         } else {
-          const doc = await createDoc("Customer", {
-            customer_name: values.customer_name,
-            phone: values.phone
-          });
-          await uploadFile(doc.name);
-          message_default.success("Customer created successfully!");
+          await createDoc("Donor", values);
+          message_default.success("Donor created successfully!");
         }
         handleCancel();
         await mutate();
@@ -80611,118 +83699,704 @@ html body {
         message_default.error(err.message || "Something went wrong");
       }
     };
-    return /* @__PURE__ */ import_react137.default.createElement("div", {
-      style: { padding: "20px", background: "#f5f7fa", minHeight: "100vh" }
-    }, /* @__PURE__ */ import_react137.default.createElement("div", {
-      style: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }
-    }, /* @__PURE__ */ import_react137.default.createElement("h2", {
-      style: { margin: 0 }
-    }, "Customers List"), /* @__PURE__ */ import_react137.default.createElement(button_default, {
+    return /* @__PURE__ */ import_react144.default.createElement("div", {
+      style: { padding: "24px" }
+    }, /* @__PURE__ */ import_react144.default.createElement(card_default, {
+      bordered: false,
+      className: "shadow-sm",
+      style: { borderRadius: "12px" }
+    }, /* @__PURE__ */ import_react144.default.createElement(row_default2, {
+      justify: "space-between",
+      align: "middle",
+      style: { marginBottom: "24px" }
+    }, /* @__PURE__ */ import_react144.default.createElement(col_default2, null, /* @__PURE__ */ import_react144.default.createElement(Title3, {
+      level: 2,
+      style: { margin: 0, fontWeight: 800 }
+    }, "Donors Management"), /* @__PURE__ */ import_react144.default.createElement(Text2, {
+      type: "secondary"
+    }, "View, add, edit or delete donor records")), /* @__PURE__ */ import_react144.default.createElement(col_default2, null, /* @__PURE__ */ import_react144.default.createElement(button_default, {
       type: "primary",
-      onClick: showModal
-    }, "+ Create Customer")), loading ? /* @__PURE__ */ import_react137.default.createElement("div", {
-      style: { textAlign: "center", padding: "50px" }
-    }, /* @__PURE__ */ import_react137.default.createElement(spin_default, {
-      size: "large"
-    })) : error ? /* @__PURE__ */ import_react137.default.createElement(alert_default, {
-      message: "Error",
-      description: error.message || "Something went wrong",
+      size: "large",
+      icon: /* @__PURE__ */ import_react144.default.createElement(UserAddOutlined_default2, null),
+      onClick: () => {
+        if (typeof frappe !== "undefined") {
+          frappe.set_route("aavatto-test", "donation");
+        }
+      },
+      style: { height: "48px", borderRadius: "8px", fontWeight: 600 }
+    }, "Add New Donor"))), /* @__PURE__ */ import_react144.default.createElement("div", {
+      style: { marginBottom: "20px" }
+    }, /* @__PURE__ */ import_react144.default.createElement(input_default, {
+      placeholder: "Search donors by name or mobile...",
+      prefix: /* @__PURE__ */ import_react144.default.createElement(SearchOutlined_default2, {
+        style: { color: "#bfbfbf" }
+      }),
+      onChange: (e3) => setSearchText(e3.target.value),
+      style: { width: "100%", maxWidth: "400px", borderRadius: "8px" },
+      allowClear: true
+    })), loading ? /* @__PURE__ */ import_react144.default.createElement("div", {
+      style: { textAlign: "center", padding: "100px" }
+    }, /* @__PURE__ */ import_react144.default.createElement(spin_default, {
+      size: "large",
+      tip: "Fetching donors..."
+    })) : error ? /* @__PURE__ */ import_react144.default.createElement(alert_default, {
+      message: "Connection Error",
+      description: error.message || "Failed to fetch donors list.",
       type: "error",
       showIcon: true
-    }) : /* @__PURE__ */ import_react137.default.createElement(table_default, {
-      dataSource: customers,
+    }) : /* @__PURE__ */ import_react144.default.createElement(table_default, {
+      dataSource: filteredDonors,
       columns,
       rowKey: "name",
-      pagination: { pageSize: 10 }
-    }), /* @__PURE__ */ import_react137.default.createElement(modal_default, {
-      title: editingCustomer ? "Edit Customer" : "Create New Customer",
+      pagination: {
+        pageSize: 10,
+        showSizeChanger: true,
+        showTotal: (total) => `Total ${total} donors`
+      },
+      className: "aavatto-table"
+    })), /* @__PURE__ */ import_react144.default.createElement(modal_default, {
+      title: editingDonor ? "Edit Donor Details" : "Register New Donor",
       open: isModalOpen,
       onCancel: handleCancel,
-      footer: null
-    }, /* @__PURE__ */ import_react137.default.createElement(form_default, {
+      footer: null,
+      destroyOnClose: true
+    }, /* @__PURE__ */ import_react144.default.createElement(form_default, {
       form,
       layout: "vertical",
-      onFinish: handleSave
-    }, /* @__PURE__ */ import_react137.default.createElement(form_default.Item, {
-      name: "customer_name",
-      label: "Customer Name",
-      rules: [{ required: true, message: "Please enter customer name!" }]
-    }, /* @__PURE__ */ import_react137.default.createElement(input_default, {
-      placeholder: "Enter Customer Name"
-    })), /* @__PURE__ */ import_react137.default.createElement(form_default.Item, {
-      name: "phone",
-      label: "Phone"
-    }, /* @__PURE__ */ import_react137.default.createElement(input_default, {
-      placeholder: "Enter Phone Number"
-    })), /* @__PURE__ */ import_react137.default.createElement(form_default.Item, {
-      name: "attachment",
-      label: "Attachment (PDF, CSV, Image)"
-    }, /* @__PURE__ */ import_react137.default.createElement(FileUpload_default, {
-      accept: "image/*,application/pdf,.csv,.xlsx"
-    })), /* @__PURE__ */ import_react137.default.createElement(form_default.Item, {
-      style: { marginTop: "20px", textAlign: "right" }
-    }, /* @__PURE__ */ import_react137.default.createElement(button_default, {
-      style: { marginRight: "10px" },
-      onClick: handleCancel
-    }, "Cancel"), /* @__PURE__ */ import_react137.default.createElement(button_default, {
+      onFinish: handleSave,
+      initialValues: { payment_mode: "Cash" }
+    }, /* @__PURE__ */ import_react144.default.createElement(form_default.Item, {
+      name: "donor_name",
+      label: "Full Name",
+      rules: [{ required: true, message: "Please enter the donor's full name!" }]
+    }, /* @__PURE__ */ import_react144.default.createElement(input_default, {
+      placeholder: "John Doe",
+      style: { borderRadius: "6px" }
+    })), /* @__PURE__ */ import_react144.default.createElement(form_default.Item, {
+      name: "mobile_number",
+      label: "Mobile Number",
+      rules: [
+        { required: true, message: "Please enter the mobile number!" },
+        { pattern: /^\d{10}$/, message: "Please enter a valid 10-digit number!" }
+      ]
+    }, /* @__PURE__ */ import_react144.default.createElement(input_default, {
+      placeholder: "9876543210",
+      style: { borderRadius: "6px" }
+    })), /* @__PURE__ */ import_react144.default.createElement(form_default.Item, {
+      name: "address",
+      label: "Address (Optional)"
+    }, /* @__PURE__ */ import_react144.default.createElement(input_default.TextArea, {
+      placeholder: "Enter full address",
+      rows: 3,
+      style: { borderRadius: "6px" }
+    })), /* @__PURE__ */ import_react144.default.createElement(form_default.Item, {
+      style: { marginBottom: 0, textAlign: "right", marginTop: "24px" }
+    }, /* @__PURE__ */ import_react144.default.createElement(space_default, null, /* @__PURE__ */ import_react144.default.createElement(button_default, {
+      onClick: handleCancel,
+      style: { borderRadius: "6px" }
+    }, "Cancel"), /* @__PURE__ */ import_react144.default.createElement(button_default, {
       type: "primary",
       htmlType: "submit",
-      loading: creating || updating || uploading
-    }, editingCustomer ? "Update" : "Create")))));
+      loading: creating || updating,
+      style: { borderRadius: "6px", minWidth: "100px" }
+    }, editingDonor ? "Save Changes" : "Create Donor"))))));
   };
-  var Customers_default = Customers;
+  var Donors_default = Donors;
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/pages/Orders.jsx
-  var import_react138 = __toESM(require_react());
-  var Orders = () => {
-    return /* @__PURE__ */ import_react138.default.createElement("div", null, /* @__PURE__ */ import_react138.default.createElement("h2", null, "Orders"), /* @__PURE__ */ import_react138.default.createElement("p", null, "Welcome to your custom dashboard!"));
+  var import_react145 = __toESM(require_react());
+
+  // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/pages/Donation.jsx
+  var import_react152 = __toESM(require_react());
+
+  // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/components/Donation/DonorSection.jsx
+  var import_react147 = __toESM(require_react());
+
+  // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/components/Donation/DonorModal.jsx
+  var import_react146 = __toESM(require_react());
+  var DonorModal = ({ open: open2, onCancel, onSuccess, initialMobileNumber }) => {
+    const [form] = form_default.useForm();
+    const { createDoc, loading } = useFrappeCreateDoc();
+    (0, import_react146.useEffect)(() => {
+      if (open2 && initialMobileNumber) {
+        form.setFieldsValue({ mobile_number: initialMobileNumber });
+      } else if (open2) {
+        form.resetFields();
+      }
+    }, [open2, initialMobileNumber]);
+    const handleSubmit = async () => {
+      try {
+        const values = await form.validateFields();
+        await createDoc("Donor", values);
+        message_default.success("Donor added successfully");
+        form.resetFields();
+        onSuccess(values);
+      } catch (error) {
+        console.error("Failed to add donor:", error);
+        message_default.error(error.message || "Failed to add donor");
+      }
+    };
+    return /* @__PURE__ */ import_react146.default.createElement(modal_default, {
+      title: "Add New Donor",
+      open: open2,
+      onCancel,
+      onOk: handleSubmit,
+      confirmLoading: loading,
+      destroyOnClose: true
+    }, /* @__PURE__ */ import_react146.default.createElement(form_default, {
+      form,
+      layout: "vertical"
+    }, /* @__PURE__ */ import_react146.default.createElement(form_default.Item, {
+      name: "donor_name",
+      label: "Donor Name",
+      rules: [{ required: true, message: "Please enter donor name" }]
+    }, /* @__PURE__ */ import_react146.default.createElement(input_default, {
+      placeholder: "Enter full name"
+    })), /* @__PURE__ */ import_react146.default.createElement(form_default.Item, {
+      name: "mobile_number",
+      label: "Mobile Number",
+      rules: [
+        { required: true, message: "Please enter mobile number" },
+        { pattern: /^\d{10}$/, message: "Please enter a valid 10-digit mobile number" }
+      ]
+    }, /* @__PURE__ */ import_react146.default.createElement(input_default, {
+      placeholder: "Enter 10-digit mobile number"
+    })), /* @__PURE__ */ import_react146.default.createElement(form_default.Item, {
+      name: "email",
+      label: "Email (Optional)"
+    }, /* @__PURE__ */ import_react146.default.createElement(input_default, {
+      placeholder: "Enter email address"
+    })), /* @__PURE__ */ import_react146.default.createElement(form_default.Item, {
+      name: "address",
+      label: "Address (Optional)"
+    }, /* @__PURE__ */ import_react146.default.createElement(input_default.TextArea, {
+      placeholder: "Enter address",
+      rows: 3
+    }))));
   };
-  var Orders_default = Orders;
+  var DonorModal_default = DonorModal;
+
+  // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/components/Donation/DonorSection.jsx
+  var { Text: Text3 } = typography_default;
+  var DonorSection = ({ onDonorSelect, selectedDonor }) => {
+    const [mobileNumber, setMobileNumber] = (0, import_react147.useState)("");
+    const [isModalOpen, setIsModalOpen] = (0, import_react147.useState)(false);
+    const [searching, setSearching] = (0, import_react147.useState)(false);
+    const handleSearch = (value) => {
+      setMobileNumber(value);
+      if (value.length === 10) {
+        setSearching(true);
+        frappe.call({
+          method: "frappe.client.get_list",
+          args: {
+            doctype: "Donor",
+            filters: { mobile_number: value },
+            fields: ["name", "donor_name", "mobile_number", "address"]
+          },
+          callback: (r3) => {
+            setSearching(false);
+            if (r3.message && r3.message.length > 0) {
+              onDonorSelect(r3.message[0]);
+            } else {
+              onDonorSelect(null);
+            }
+          }
+        });
+      } else {
+        onDonorSelect(null);
+      }
+    };
+    const handleNewDonor = (donor) => {
+      setIsModalOpen(false);
+      setMobileNumber(donor.mobile_number);
+      onDonorSelect(donor);
+    };
+    return /* @__PURE__ */ import_react147.default.createElement(card_default, {
+      title: "Donor Information",
+      size: "small",
+      className: "donation-card shadow-sm"
+    }, /* @__PURE__ */ import_react147.default.createElement(form_default, {
+      layout: "vertical"
+    }, /* @__PURE__ */ import_react147.default.createElement(row_default2, {
+      gutter: 16,
+      align: "bottom"
+    }, /* @__PURE__ */ import_react147.default.createElement(col_default2, {
+      xs: 24,
+      sm: 16,
+      md: 18
+    }, /* @__PURE__ */ import_react147.default.createElement(form_default.Item, {
+      label: "Mobile Number",
+      className: "mb-0"
+    }, /* @__PURE__ */ import_react147.default.createElement(input_default, {
+      placeholder: "Enter 10-digit mobile number",
+      prefix: /* @__PURE__ */ import_react147.default.createElement(SearchOutlined_default2, null),
+      value: mobileNumber,
+      onChange: (e3) => handleSearch(e3.target.value),
+      maxLength: 10,
+      allowClear: true,
+      style: { height: "40px" }
+    }))), /* @__PURE__ */ import_react147.default.createElement(col_default2, {
+      xs: 24,
+      sm: 8,
+      md: 6
+    }, !selectedDonor && mobileNumber.length === 10 && !searching && /* @__PURE__ */ import_react147.default.createElement(button_default, {
+      type: "primary",
+      icon: /* @__PURE__ */ import_react147.default.createElement(UserAddOutlined_default2, null),
+      onClick: () => setIsModalOpen(true),
+      block: true,
+      style: { height: "40px" }
+    }, "Add Donor"))), selectedDonor && /* @__PURE__ */ import_react147.default.createElement("div", {
+      className: "mt-4 donor-details-fade-in",
+      style: {
+        background: "#f8fafc",
+        borderRadius: "12px",
+        padding: "16px",
+        border: "1px solid #e2e8f0"
+      }
+    }, /* @__PURE__ */ import_react147.default.createElement("div", {
+      style: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "12px" }
+    }, /* @__PURE__ */ import_react147.default.createElement(Text3, {
+      strong: true,
+      style: { color: "#4f46e5", fontSize: "14px", textTransform: "uppercase", letterSpacing: "0.5px" }
+    }, "Matched Donor Profile"), /* @__PURE__ */ import_react147.default.createElement(button_default, {
+      type: "link",
+      danger: true,
+      size: "small",
+      onClick: () => {
+        onDonorSelect(null);
+        setMobileNumber("");
+      },
+      style: { padding: 0, height: "auto" }
+    }, "Change Donor")), /* @__PURE__ */ import_react147.default.createElement(row_default2, {
+      gutter: [16, 12]
+    }, /* @__PURE__ */ import_react147.default.createElement(col_default2, {
+      span: 24
+    }, /* @__PURE__ */ import_react147.default.createElement("div", {
+      style: { fontSize: "12px", color: "#64748b" }
+    }, "Full Name"), /* @__PURE__ */ import_react147.default.createElement(Text3, {
+      strong: true,
+      style: { fontSize: "16px" }
+    }, selectedDonor.donor_name)), /* @__PURE__ */ import_react147.default.createElement(col_default2, {
+      span: 12
+    }, /* @__PURE__ */ import_react147.default.createElement("div", {
+      style: { fontSize: "12px", color: "#64748b" }
+    }, "Mobile"), /* @__PURE__ */ import_react147.default.createElement(Text3, null, selectedDonor.mobile_number)), selectedDonor.email && /* @__PURE__ */ import_react147.default.createElement(col_default2, {
+      span: 12
+    }, /* @__PURE__ */ import_react147.default.createElement("div", {
+      style: { fontSize: "12px", color: "#64748b" }
+    }, "Email"), /* @__PURE__ */ import_react147.default.createElement(Text3, null, selectedDonor.email)), selectedDonor.address && /* @__PURE__ */ import_react147.default.createElement(col_default2, {
+      span: 24
+    }, /* @__PURE__ */ import_react147.default.createElement("div", {
+      style: { fontSize: "12px", color: "#64748b" }
+    }, "Address"), /* @__PURE__ */ import_react147.default.createElement(Text3, {
+      type: "secondary"
+    }, selectedDonor.address))))), /* @__PURE__ */ import_react147.default.createElement(DonorModal_default, {
+      open: isModalOpen,
+      onCancel: () => setIsModalOpen(false),
+      onSuccess: handleNewDonor,
+      initialMobileNumber: mobileNumber
+    }));
+  };
+  var DonorSection_default = DonorSection;
+
+  // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/components/Donation/TempleSelect.jsx
+  var import_react148 = __toESM(require_react());
+  var { Text: Text4 } = typography_default;
+  var TempleSelect = ({ onTempleSelect, selectedTemple }) => {
+    const { data: temples, loading } = useFrappeGetDocList("Temple", { fields: ["name", "temple_name"] });
+    return /* @__PURE__ */ import_react148.default.createElement(card_default, {
+      title: "Select Temple",
+      size: "small",
+      className: "donation-card shadow-sm mt-3"
+    }, /* @__PURE__ */ import_react148.default.createElement(select_default, {
+      placeholder: "Select a temple",
+      style: { width: "100%", height: "40px" },
+      value: selectedTemple,
+      onChange: onTempleSelect,
+      loading,
+      showSearch: true,
+      optionFilterProp: "children",
+      filterOption: (input, option) => {
+        var _a;
+        return ((_a = option == null ? void 0 : option.label) != null ? _a : "").toLowerCase().includes(input.toLowerCase());
+      },
+      options: temples && temples.map((t2) => ({
+        value: t2.name,
+        label: t2.temple_name
+      }))
+    }), temples && temples.length === 0 && !loading && /* @__PURE__ */ import_react148.default.createElement("div", {
+      className: "mt-2"
+    }, /* @__PURE__ */ import_react148.default.createElement(Text4, {
+      type: "warning"
+    }, "No temples found in the system")));
+  };
+  var TempleSelect_default = TempleSelect;
+
+  // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/components/Donation/DonationTypes.jsx
+  var import_react149 = __toESM(require_react());
+  var { Text: Text5, Title: Title4 } = typography_default;
+  var DonationTypes = ({ selectedTemple, onAddToCart }) => {
+    const [donationTypes, setDonationTypes] = (0, import_react149.useState)([]);
+    const [loading, setLoading] = (0, import_react149.useState)(false);
+    (0, import_react149.useEffect)(() => {
+      if (selectedTemple) {
+        fetchDonationTypes();
+      } else {
+        setDonationTypes([]);
+      }
+    }, [selectedTemple]);
+    const fetchDonationTypes = () => {
+      setLoading(true);
+      frappe.call({
+        method: "frappe.client.get_list",
+        args: {
+          doctype: "Donation Type",
+          filters: { temple: selectedTemple },
+          fields: ["name", "type_name", "temple"]
+        },
+        callback: (r3) => {
+          setLoading(false);
+          if (r3.message) {
+            setDonationTypes(r3.message);
+          } else {
+            setDonationTypes([]);
+          }
+        }
+      });
+    };
+    if (!selectedTemple) {
+      return /* @__PURE__ */ import_react149.default.createElement(card_default, {
+        className: "shadow-sm mt-3",
+        style: { height: "300px", display: "flex", alignItems: "center", justifyContent: "center" }
+      }, /* @__PURE__ */ import_react149.default.createElement(empty_default2, {
+        description: "Please select a temple first"
+      }));
+    }
+    return /* @__PURE__ */ import_react149.default.createElement(card_default, {
+      title: "Donation Types",
+      size: "small",
+      className: "donation-card shadow-sm mt-3"
+    }, loading ? /* @__PURE__ */ import_react149.default.createElement("div", {
+      style: { textAlign: "center", padding: "50px" }
+    }, /* @__PURE__ */ import_react149.default.createElement(spin_default, {
+      tip: "Loading donation types..."
+    })) : donationTypes.length > 0 ? /* @__PURE__ */ import_react149.default.createElement(row_default2, {
+      gutter: [12, 12]
+    }, donationTypes.map((type5) => /* @__PURE__ */ import_react149.default.createElement(col_default2, {
+      key: type5.name,
+      xs: 12,
+      sm: 12,
+      md: 8,
+      lg: 6
+    }, /* @__PURE__ */ import_react149.default.createElement(card_default, {
+      hoverable: true,
+      onClick: () => onAddToCart(type5),
+      className: "type-card",
+      bodyStyle: { padding: "16px", textAlign: "center" }
+    }, /* @__PURE__ */ import_react149.default.createElement("div", {
+      style: { fontSize: "24px", color: "#4f46e5", marginBottom: "8px" }
+    }, /* @__PURE__ */ import_react149.default.createElement(HeartFilled_default2, null)), /* @__PURE__ */ import_react149.default.createElement(Text5, {
+      strong: true
+    }, type5.type_name))))) : /* @__PURE__ */ import_react149.default.createElement(empty_default2, {
+      description: "No donation types available for this temple"
+    }));
+  };
+  var DonationTypes_default = DonationTypes;
+
+  // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/components/Donation/Cart.jsx
+  var import_react150 = __toESM(require_react());
+  var { Text: Text6, Title: Title5 } = typography_default;
+  var Cart = ({ items, onUpdateAmount, onRemoveItem, totalAmount }) => {
+    const quickAmounts = [101, 251, 501, 1001];
+    const columns = [
+      {
+        title: "Donation Type",
+        dataIndex: "type_name",
+        key: "type_name",
+        render: (text) => /* @__PURE__ */ import_react150.default.createElement(Text6, {
+          strong: true
+        }, text)
+      },
+      {
+        title: "Amount",
+        dataIndex: "amount",
+        key: "amount",
+        width: 150,
+        render: (amount, record, index) => /* @__PURE__ */ import_react150.default.createElement("div", {
+          style: { display: "flex", flexDirection: "column", gap: "8px" }
+        }, /* @__PURE__ */ import_react150.default.createElement(input_number_default, {
+          min: 1,
+          value: amount,
+          formatter: (value) => `\u20B9 ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+          parser: (value) => value.replace(/₹\s?|(,*)/g, ""),
+          onChange: (val) => onUpdateAmount(index, val),
+          style: { width: "100%" }
+        }), /* @__PURE__ */ import_react150.default.createElement("div", {
+          style: { display: "flex", gap: "4px", flexWrap: "wrap" }
+        }, quickAmounts.map((q) => /* @__PURE__ */ import_react150.default.createElement(button_default, {
+          key: q,
+          size: "small",
+          type: "dashed",
+          onClick: () => onUpdateAmount(index, q),
+          style: { fontSize: "10px", padding: "0 4px" }
+        }, q))))
+      },
+      {
+        title: "",
+        key: "action",
+        width: 50,
+        render: (_, __, index) => /* @__PURE__ */ import_react150.default.createElement(button_default, {
+          type: "text",
+          danger: true,
+          icon: /* @__PURE__ */ import_react150.default.createElement(DeleteOutlined_default2, null),
+          onClick: () => onRemoveItem(index)
+        })
+      }
+    ];
+    return /* @__PURE__ */ import_react150.default.createElement(card_default, {
+      title: /* @__PURE__ */ import_react150.default.createElement(Title5, {
+        level: 5,
+        style: { margin: 0 }
+      }, "Selection Cart"),
+      size: "small",
+      className: "donation-card shadow-sm h-100",
+      styles: { body: { padding: 0 } }
+    }, /* @__PURE__ */ import_react150.default.createElement("div", {
+      style: { height: "calc(100vh - 450px)", overflowY: "auto" }
+    }, /* @__PURE__ */ import_react150.default.createElement(table_default, {
+      columns,
+      dataSource: items,
+      pagination: false,
+      rowKey: (record, index) => index,
+      locale: { emptyText: /* @__PURE__ */ import_react150.default.createElement(empty_default2, {
+        description: "No items in cart"
+      }) }
+    })), /* @__PURE__ */ import_react150.default.createElement("div", {
+      style: { padding: "16px", borderTop: "1px solid #f0f0f0", backgroundColor: "#fafafa" }
+    }, /* @__PURE__ */ import_react150.default.createElement(row_default2, {
+      justify: "space-between",
+      align: "middle"
+    }, /* @__PURE__ */ import_react150.default.createElement(col_default2, null, /* @__PURE__ */ import_react150.default.createElement(Text6, {
+      strong: true,
+      style: { fontSize: "16px" }
+    }, "Total Amount")), /* @__PURE__ */ import_react150.default.createElement(col_default2, null, /* @__PURE__ */ import_react150.default.createElement(Text6, {
+      strong: true,
+      style: { fontSize: "24px", color: "#4f46e5" }
+    }, "\u20B9 ", totalAmount.toLocaleString())))));
+  };
+  var Cart_default = Cart;
+
+  // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/components/Donation/PaymentSection.jsx
+  var import_react151 = __toESM(require_react());
+  var { Text: Text7 } = typography_default;
+  var { useBreakpoint: useBreakpoint3 } = grid_default;
+  var PaymentSection = ({ paymentMode, onPaymentModeChange, onSubmit, loading, disabled }) => {
+    const screens = useBreakpoint3();
+    const isMobile2 = !screens.md;
+    const paymentModes = [
+      { label: "Cash", value: "Cash", icon: /* @__PURE__ */ import_react151.default.createElement(WalletOutlined_default2, null) },
+      { label: "UPI", value: "UPI", icon: /* @__PURE__ */ import_react151.default.createElement(QrcodeOutlined_default2, null) },
+      { label: "Card", value: "Card", icon: /* @__PURE__ */ import_react151.default.createElement(CreditCardOutlined_default2, null) },
+      { label: "Cheque", value: "Cheque", icon: /* @__PURE__ */ import_react151.default.createElement(ProfileOutlined_default2, null) }
+    ];
+    return /* @__PURE__ */ import_react151.default.createElement(card_default, {
+      title: "Payment Information",
+      size: "small",
+      className: "donation-card shadow-sm mt-3"
+    }, /* @__PURE__ */ import_react151.default.createElement(Text7, {
+      type: "secondary",
+      className: "mb-3 d-block"
+    }, "Select Payment Mode"), /* @__PURE__ */ import_react151.default.createElement(radio_default2.Group, {
+      value: paymentMode,
+      onChange: (e3) => onPaymentModeChange(e3.target.value),
+      style: { width: "100%", marginBottom: "24px" },
+      buttonStyle: "solid"
+    }, /* @__PURE__ */ import_react151.default.createElement("div", {
+      style: { display: "grid", gridTemplateColumns: isMobile2 ? "1fr 1fr" : "1fr 1fr 1fr 1fr", gap: "8px" }
+    }, paymentModes.map((mode) => /* @__PURE__ */ import_react151.default.createElement(radio_default2.Button, {
+      key: mode.value,
+      value: mode.value,
+      style: {
+        height: "auto",
+        padding: "12px",
+        textAlign: "center",
+        borderRadius: "8px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center"
+      }
+    }, /* @__PURE__ */ import_react151.default.createElement("div", {
+      style: { fontSize: "20px", marginBottom: "4px" }
+    }, mode.icon), /* @__PURE__ */ import_react151.default.createElement("div", null, mode.label))))), /* @__PURE__ */ import_react151.default.createElement(button_default, {
+      type: "primary",
+      size: "large",
+      block: true,
+      icon: /* @__PURE__ */ import_react151.default.createElement(CheckCircleOutlined_default2, null),
+      onClick: onSubmit,
+      loading,
+      disabled,
+      style: { height: "56px", fontSize: "18px", fontWeight: "bold" }
+    }, "Submit Donation"));
+  };
+  var PaymentSection_default = PaymentSection;
+
+  // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/pages/Donation.jsx
+  var { Title: Title6, Text: Text8 } = typography_default;
+  var Donation = () => {
+    const [selectedDonor, setSelectedDonor] = (0, import_react152.useState)(null);
+    const [selectedTemple, setSelectedTemple] = (0, import_react152.useState)(null);
+    const [cartItems, setCartItems] = (0, import_react152.useState)([]);
+    const [paymentMode, setPaymentMode] = (0, import_react152.useState)("Cash");
+    const [submitting, setSubmitting] = (0, import_react152.useState)(false);
+    const totalAmount = cartItems.reduce((acc, item) => acc + (item.amount || 0), 0);
+    const handleAddToCart = (donationType) => {
+      const exists = cartItems.find((item) => item.donation_type === donationType.name);
+      if (exists) {
+        message_default.info(`${donationType.type_name} is already in the cart`);
+        return;
+      }
+      const newItem = {
+        donation_type: donationType.name,
+        type_name: donationType.type_name,
+        amount: 101
+      };
+      setCartItems([...cartItems, newItem]);
+      message_default.success(`Added ${donationType.type_name}`);
+    };
+    const handleUpdateAmount = (index, amount) => {
+      const newItems = [...cartItems];
+      newItems[index].amount = amount;
+      setCartItems(newItems);
+    };
+    const handleRemoveItem = (index) => {
+      const newItems = cartItems.filter((_, i) => i !== index);
+      setCartItems(newItems);
+    };
+    const handleReset = () => {
+      setSelectedDonor(null);
+      setSelectedTemple(null);
+      setCartItems([]);
+      setPaymentMode("Cash");
+    };
+    const handleSubmit = () => {
+      if (!selectedDonor) {
+        message_default.error("Please select or add a donor");
+        return;
+      }
+      if (!selectedTemple) {
+        message_default.error("Please select a temple");
+        return;
+      }
+      if (cartItems.length === 0) {
+        message_default.error("Cart is empty. Please add donation types.");
+        return;
+      }
+      setSubmitting(true);
+      const donationData = {
+        donor: selectedDonor.name,
+        donor_name: selectedDonor.donor_name,
+        mobile_number: selectedDonor.mobile_number,
+        temple: selectedTemple,
+        cashier: typeof frappe !== "undefined" ? frappe.session.user : "Guest",
+        payment_mode: paymentMode,
+        total_amount: totalAmount,
+        items: cartItems.map((item) => ({
+          donation_type: item.donation_type,
+          amount: item.amount
+        }))
+      };
+      frappe.call({
+        method: "frappe.client.insert",
+        args: {
+          doc: __spreadValues({
+            doctype: "Donation"
+          }, donationData)
+        },
+        callback: (r3) => {
+          setSubmitting(false);
+          if (r3.message) {
+            message_default.success("Donation submitted successfully!");
+            handleReset();
+          }
+        },
+        error: (err) => {
+          setSubmitting(false);
+          message_default.error(err.message || "Failed to submit donation");
+        }
+      });
+    };
+    return /* @__PURE__ */ import_react152.default.createElement("div", {
+      className: "donation-page"
+    }, /* @__PURE__ */ import_react152.default.createElement("div", {
+      style: { marginBottom: "24px", display: "flex", justifyContent: "space-between", alignItems: "center" }
+    }, /* @__PURE__ */ import_react152.default.createElement(space_default, null, /* @__PURE__ */ import_react152.default.createElement(HeartFilled_default2, {
+      style: { fontSize: "24px", color: "#4f46e5" }
+    }), /* @__PURE__ */ import_react152.default.createElement(Title6, {
+      level: 2,
+      style: { margin: 0, fontWeight: 800, letterSpacing: "-0.5px" }
+    }, "Temple Donation POS")), /* @__PURE__ */ import_react152.default.createElement(button_default, {
+      icon: /* @__PURE__ */ import_react152.default.createElement(RedoOutlined_default2, null),
+      onClick: handleReset,
+      type: "text"
+    }, "Reset Form")), /* @__PURE__ */ import_react152.default.createElement(row_default2, {
+      gutter: [24, 24]
+    }, /* @__PURE__ */ import_react152.default.createElement(col_default2, {
+      xs: 24,
+      lg: 15
+    }, /* @__PURE__ */ import_react152.default.createElement(DonorSection_default, {
+      onDonorSelect: setSelectedDonor,
+      selectedDonor
+    }), /* @__PURE__ */ import_react152.default.createElement(TempleSelect_default, {
+      onTempleSelect: setSelectedTemple,
+      selectedTemple
+    }), /* @__PURE__ */ import_react152.default.createElement(DonationTypes_default, {
+      selectedTemple,
+      onAddToCart: handleAddToCart
+    })), /* @__PURE__ */ import_react152.default.createElement(col_default2, {
+      xs: 24,
+      lg: 9
+    }, /* @__PURE__ */ import_react152.default.createElement(Cart_default, {
+      items: cartItems,
+      onUpdateAmount: handleUpdateAmount,
+      onRemoveItem: handleRemoveItem,
+      totalAmount
+    }), /* @__PURE__ */ import_react152.default.createElement(PaymentSection_default, {
+      paymentMode,
+      onPaymentModeChange: setPaymentMode,
+      onSubmit: handleSubmit,
+      loading: submitting,
+      disabled: cartItems.length === 0
+    }))));
+  };
+  var Donation_default = Donation;
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/config/navigation.jsx
   var navigationItems = [
     {
       key: "dashboard",
-      icon: /* @__PURE__ */ import_react139.default.createElement(DashboardOutlined_default2, null),
+      icon: /* @__PURE__ */ import_react153.default.createElement(DashboardOutlined_default2, null),
       label: "Dashboard",
-      component: /* @__PURE__ */ import_react139.default.createElement(Dashboard_default, null)
+      component: /* @__PURE__ */ import_react153.default.createElement(Dashboard_default, null)
     },
     {
-      key: "customers",
-      icon: /* @__PURE__ */ import_react139.default.createElement(UserOutlined_default2, null),
-      label: "Customers",
-      component: /* @__PURE__ */ import_react139.default.createElement(Customers_default, null)
+      key: "donation",
+      icon: /* @__PURE__ */ import_react153.default.createElement(ShoppingCartOutlined_default2, null),
+      label: "Donation POS",
+      component: /* @__PURE__ */ import_react153.default.createElement(Donation_default, null),
+      hidden: true
     },
     {
-      key: "orders",
-      icon: /* @__PURE__ */ import_react139.default.createElement(ShoppingCartOutlined_default2, null),
-      label: "Orders",
-      component: /* @__PURE__ */ import_react139.default.createElement(Orders_default, null)
-    },
-    {
-      key: "inventory",
-      icon: /* @__PURE__ */ import_react139.default.createElement(DatabaseOutlined_default2, null),
-      label: "Inventory",
-      component: /* @__PURE__ */ import_react139.default.createElement(Dashboard_default, null)
-    },
-    {
-      key: "analytics",
-      icon: /* @__PURE__ */ import_react139.default.createElement(BarChartOutlined_default2, null),
-      label: "Analytics",
-      component: /* @__PURE__ */ import_react139.default.createElement(Dashboard_default, null)
-    },
-    {
-      key: "settings",
-      icon: /* @__PURE__ */ import_react139.default.createElement(SettingOutlined_default2, null),
-      label: "Settings",
-      component: /* @__PURE__ */ import_react139.default.createElement(Dashboard_default, null)
+      key: "donors",
+      icon: /* @__PURE__ */ import_react153.default.createElement(UserOutlined_default2, null),
+      label: "Donation List",
+      component: /* @__PURE__ */ import_react153.default.createElement(Donors_default, null)
     }
   ];
   var getComponentForRoute = (currentRoute) => {
     const item = navigationItems.find((nav) => nav.key === currentRoute);
-    return item ? item.component : /* @__PURE__ */ import_react139.default.createElement(Dashboard_default, null);
+    return item ? item.component : /* @__PURE__ */ import_react153.default.createElement(Dashboard_default, null);
   };
-  var menuItems = navigationItems.map(({ key, icon, label }) => ({
+  var menuItems = navigationItems.filter((item) => !item.hidden).map(({ key, icon, label }) => ({
     key,
     icon,
     label
@@ -80730,13 +84404,13 @@ html body {
 
   // ../custom_dashboard/custom_dashboard/public/js/aavatto_test/App.jsx
   var { Sider: Sider2, Content: Content3, Header: Header3 } = layout_default2;
-  var { useBreakpoint: useBreakpoint3 } = grid_default;
+  var { useBreakpoint: useBreakpoint4 } = grid_default;
   var App = () => {
-    const [currentRoute, setCurrentRoute] = (0, import_react140.useState)("dashboard");
-    const [drawerVisible, setDrawerVisible] = (0, import_react140.useState)(false);
-    const screens = useBreakpoint3();
-    const isMobile = !screens.lg;
-    (0, import_react140.useEffect)(() => {
+    const [currentRoute, setCurrentRoute] = (0, import_react154.useState)("dashboard");
+    const [drawerVisible, setDrawerVisible] = (0, import_react154.useState)(false);
+    const screens = useBreakpoint4();
+    const isMobile2 = !screens.lg;
+    (0, import_react154.useEffect)(() => {
       const handleRoute = () => {
         if (typeof frappe !== "undefined" && frappe.get_route) {
           const route = frappe.get_route();
@@ -80758,36 +84432,36 @@ html body {
       if (typeof frappe !== "undefined") {
         frappe.set_route("aavatto-test", key === "dashboard" ? "" : key);
       }
-      if (isMobile) {
+      if (isMobile2) {
         setDrawerVisible(false);
       }
     };
-    const SidebarContent = /* @__PURE__ */ import_react140.default.createElement(import_react140.default.Fragment, null, /* @__PURE__ */ import_react140.default.createElement("div", {
+    const SidebarContent = /* @__PURE__ */ import_react154.default.createElement(import_react154.default.Fragment, null, /* @__PURE__ */ import_react154.default.createElement("div", {
       className: "aavatto-sidebar-header",
       style: { padding: "24px 20px" }
-    }, /* @__PURE__ */ import_react140.default.createElement("div", {
+    }, /* @__PURE__ */ import_react154.default.createElement("div", {
       className: "aavatto-sidebar-brand",
       style: { display: "flex", alignItems: "center", gap: "12px", fontSize: "18px", fontWeight: "800", color: "#4f46e5" }
-    }, /* @__PURE__ */ import_react140.default.createElement(DashboardOutlined_default2, {
+    }, /* @__PURE__ */ import_react154.default.createElement(DashboardOutlined_default2, {
       style: { fontSize: "24px" }
-    }), /* @__PURE__ */ import_react140.default.createElement("span", {
+    }), /* @__PURE__ */ import_react154.default.createElement("span", {
       style: { letterSpacing: "-0.5px" }
-    }, "Aavatto Dashboard"))), /* @__PURE__ */ import_react140.default.createElement(menu_default2, {
+    }, "Aavatto Dashboard"))), /* @__PURE__ */ import_react154.default.createElement(menu_default2, {
       mode: "inline",
       selectedKeys: [currentRoute],
       items: menuItems,
       onClick: handleMenuClick,
       style: { borderRight: 0, padding: "0 12px" }
-    }), /* @__PURE__ */ import_react140.default.createElement("div", {
+    }), /* @__PURE__ */ import_react154.default.createElement("div", {
       style: { position: "absolute", bottom: 0, width: "100%", padding: "20px", borderTop: "1px solid #e5e7eb" }
-    }, /* @__PURE__ */ import_react140.default.createElement("small", {
+    }, /* @__PURE__ */ import_react154.default.createElement("small", {
       style: { color: "#6b7280", textTransform: "uppercase", letterSpacing: "0.5px", fontSize: "11px" }
     }, "v1.0.0")));
-    return /* @__PURE__ */ import_react140.default.createElement(config_provider_default, {
+    return /* @__PURE__ */ import_react154.default.createElement(config_provider_default, {
       theme: themeConfig
-    }, /* @__PURE__ */ import_react140.default.createElement(layout_default2, {
+    }, /* @__PURE__ */ import_react154.default.createElement(layout_default2, {
       style: { minHeight: "100vh" }
-    }, !isMobile && /* @__PURE__ */ import_react140.default.createElement(Sider2, {
+    }, !isMobile2 && /* @__PURE__ */ import_react154.default.createElement(Sider2, {
       theme: "light",
       width: 260,
       className: "aavatto-antd-sider",
@@ -80800,16 +84474,16 @@ html body {
         bottom: 0,
         zIndex: 100
       }
-    }, SidebarContent), /* @__PURE__ */ import_react140.default.createElement(drawer_default, {
+    }, SidebarContent), /* @__PURE__ */ import_react154.default.createElement(drawer_default, {
       placement: "left",
       onClose: () => setDrawerVisible(false),
       open: drawerVisible,
-      width: 260,
+      width: "260px",
       styles: { body: { padding: 0 } },
       closable: false
-    }, SidebarContent), /* @__PURE__ */ import_react140.default.createElement(layout_default2, {
-      style: { marginLeft: isMobile ? 0 : 260, transition: "all 0.2s" }
-    }, isMobile && /* @__PURE__ */ import_react140.default.createElement(Header3, {
+    }, SidebarContent), /* @__PURE__ */ import_react154.default.createElement(layout_default2, {
+      style: { marginLeft: isMobile2 ? 0 : 220, transition: "all 0.2s" }
+    }, isMobile2 && /* @__PURE__ */ import_react154.default.createElement(Header3, {
       style: {
         background: "#fff",
         padding: "0 20px",
@@ -80822,18 +84496,18 @@ html body {
         top: 0,
         zIndex: 10
       }
-    }, /* @__PURE__ */ import_react140.default.createElement("div", {
+    }, /* @__PURE__ */ import_react154.default.createElement("div", {
       style: { display: "flex", alignItems: "center", gap: "12px" }
-    }, /* @__PURE__ */ import_react140.default.createElement(button_default, {
+    }, /* @__PURE__ */ import_react154.default.createElement(button_default, {
       type: "text",
-      icon: /* @__PURE__ */ import_react140.default.createElement(MenuOutlined_default2, null),
+      icon: /* @__PURE__ */ import_react154.default.createElement(MenuOutlined_default2, null),
       onClick: () => setDrawerVisible(true),
       style: { fontSize: "18px" }
-    }), /* @__PURE__ */ import_react140.default.createElement("span", {
+    }), /* @__PURE__ */ import_react154.default.createElement("span", {
       style: { fontWeight: 700, color: "#4f46e5" }
-    }, "Aavatto"))), /* @__PURE__ */ import_react140.default.createElement(Content3, {
-      style: { padding: isMobile ? "16px" : "24px", background: "#f9fafb", minHeight: "100%" }
-    }, /* @__PURE__ */ import_react140.default.createElement("div", {
+    }, "Aavatto"))), /* @__PURE__ */ import_react154.default.createElement(Content3, {
+      style: { padding: isMobile2 ? "16px" : "24px", background: "#f9fafb", minHeight: "100%" }
+    }, /* @__PURE__ */ import_react154.default.createElement("div", {
       className: "aavatto-content-wrapper"
     }, getComponentForRoute(currentRoute))))));
   };
@@ -80852,7 +84526,7 @@ html body {
     setup_app() {
       const root = (0, import_client2.createRoot)(this.$wrapper.get(0));
       root.render(
-        /* @__PURE__ */ import_react141.default.createElement(App, null)
+        /* @__PURE__ */ import_react155.default.createElement(App, null)
       );
       this.$aavatto_test = root;
     }
@@ -80906,4 +84580,4 @@ html body {
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-//# sourceMappingURL=aavatto_test.bundle.W2SORG6Q.js.map
+//# sourceMappingURL=aavatto_test.bundle.KHGJORRR.js.map

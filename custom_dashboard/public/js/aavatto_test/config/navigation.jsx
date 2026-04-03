@@ -9,8 +9,9 @@ import {
 } from "@ant-design/icons";
 
 import Dashboard from "../pages/Dashboard";
-import Customers from "../pages/Customers";
+import Donors from "../pages/Donors";
 import Orders from "../pages/Orders";
+import Donation from "../pages/Donation";
 
 /**
  * Centralized navigation configuration.
@@ -24,35 +25,42 @@ export const navigationItems = [
         component: <Dashboard />,
     },
     {
-        key: "customers",
-        icon: <UserOutlined />,
-        label: "Customers",
-        component: <Customers />,
-    },
-    {
-        key: "orders",
+        key: "donation",
         icon: <ShoppingCartOutlined />,
-        label: "Orders",
-        component: <Orders />,
+        label: "Donation POS",
+        component: <Donation />,
+        hidden: true,
     },
     {
-        key: "inventory",
-        icon: <DatabaseOutlined />,
-        label: "Inventory",
-        component: <Dashboard />, // Placeholder until Inventory page is created
+        key: "donors",
+        icon: <UserOutlined />,
+        label: "Donation List",
+        component: <Donors />,
     },
-    {
-        key: "analytics",
-        icon: <BarChartOutlined />,
-        label: "Analytics",
-        component: <Dashboard />, // Placeholder until Analytics page is created
-    },
-    {
-        key: "settings",
-        icon: <SettingOutlined />,
-        label: "Settings",
-        component: <Dashboard />, // Placeholder until Settings page is created
-    },
+    // {
+    //     key: "orders",
+    //     icon: <ShoppingCartOutlined />,
+    //     label: "Orders",
+    //     component: <Orders />,
+    // },
+    // {
+    //     key: "inventory",
+    //     icon: <DatabaseOutlined />,
+    //     label: "Inventory",
+    //     component: <Dashboard />, // Placeholder until Inventory page is created
+    // },
+    // {
+    //     key: "analytics",
+    //     icon: <BarChartOutlined />,
+    //     label: "Analytics",
+    //     component: <Dashboard />, // Placeholder until Analytics page is created
+    // },
+    // {
+    //     key: "settings",
+    //     icon: <SettingOutlined />,
+    //     label: "Settings",
+    //     component: <Dashboard />, // Placeholder until Settings page is created
+    // },
 ];
 
 export const getComponentForRoute = (currentRoute) => {
@@ -60,8 +68,10 @@ export const getComponentForRoute = (currentRoute) => {
     return item ? item.component : <Dashboard />;
 };
 
-export const menuItems = navigationItems.map(({ key, icon, label }) => ({
-    key,
-    icon,
-    label,
-}));
+export const menuItems = navigationItems
+    .filter(item => !item.hidden)
+    .map(({ key, icon, label }) => ({
+        key,
+        icon,
+        label,
+    }));

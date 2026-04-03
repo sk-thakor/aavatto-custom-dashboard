@@ -1,7 +1,9 @@
 :root {
   --sidebar-width: 260px;
-  --primary-color: #4f46e5; /* Indigo-600 */
-  --primary-hover: #4338ca; /* Indigo-700 */
+  --primary-color: #4f46e5;
+  /* Indigo-600 */
+  --primary-hover: #4338ca;
+  /* Indigo-700 */
   --bg-color: #f9fafb;
   --card-bg: #ffffff;
   --text-main: #111827;
@@ -25,7 +27,8 @@ body {
   height: 100%;
   background: var(--card-bg);
   padding: 10px 0;
-  min-height: calc(100vh - 80px); /* Adjust based on Frappe Workspace height */
+  min-height: calc(100vh - 80px);
+  /* Adjust based on Frappe Workspace height */
 }
 
 .aavatto-sidebar-header {
@@ -113,9 +116,9 @@ body {
 
 /* Page Layout Overrides */
 .layout-side-section {
-    background: #fff !important;
-    border-right: 1px solid var(--border-color) !important;
-    padding: 0 !important;
+  background: #fff !important;
+  border-right: 1px solid var(--border-color) !important;
+  padding: 0 !important;
 }
 
 .layout-main-section {
@@ -125,11 +128,11 @@ body {
 }
 
 .page-head {
-    display: none !important;
-    background: #fff !important;
-    border-bottom: 1px solid var(--border-color) !important;
-    padding: 15px 30px !important;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05) !important;
+  display: none !important;
+  background: #fff !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  padding: 15px 30px !important;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
 }
 
 /* Card Styling */
@@ -149,8 +152,15 @@ body {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 #react-root {
@@ -159,7 +169,7 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1600px;
   margin: 0 auto;
   /* padding: 0 var(--container-padding); */
 }
